@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Utente\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Utente\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_HellsChicken.-930839669.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Utente\Documents\GitHub\HellsChicken" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="FireController.cs" t="Include" />
+        <e p="HellsChicken" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="Game" t="Include">
+              <e p="Player" t="Include">
+                <e p="PlayerController.cs" t="Include" />
+                <e p="PlayerInput.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="POLIMIGameCollective" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="ExtendedEventManager" t="Include">
+              <e p="EventManager.cs" t="Include" />
+            </e>
+            <e p="Localization" t="Include">
+              <e p="Editor" t="Include">
+                <e p="LocalizedTextEditor.cs" t="Include" />
+              </e>
+              <e p="LocalizationData.cs" t="Include" />
+              <e p="LocalizationManager.cs" t="Include" />
+              <e p="LocalizedText.cs" t="Include" />
+              <e p="StartupManager.cs" t="Include" />
+            </e>
+            <e p="ObjectPooling" t="Include">
+              <e p="ObjectPool.cs" t="Include" />
+              <e p="ObjectPoolingManager.cs" t="Include" />
+              <e p="ReadMe.txt" t="Include" />
+            </e>
+            <e p="OrderOfEvents" t="Include">
+              <e p="OrderOfEvents.cs" t="Include" />
+            </e>
+            <e p="ScreenBounds" t="Include">
+              <e p="ScreenBounds.cs" t="Include" />
+            </e>
+            <e p="ScriptableObjects" t="Include">
+              <e p="Editor" t="Include">
+                <e p="FloatReferenceDrawer.cs" t="Include" />
+              </e>
+              <e p="FloatReference.cs" t="Include" />
+              <e p="FloatVariable.cs" t="Include" />
+              <e p="Interval.cs" t="Include" />
+              <e p="RuntimeSet.cs" t="Include" />
+              <e p="StringVariable.cs" t="Include" />
+              <e p="Thing.cs" t="Include" />
+              <e p="ThingDisabler.cs" t="Include" />
+              <e p="ThingMonitor.cs" t="Include" />
+              <e p="ThingRuntimeSet.cs" t="Include" />
+            </e>
+            <e p="Singleton" t="Include">
+              <e p="Singleton.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Weapon.cs" t="Include" />
+      </e>
+      <e p="HellsChicken.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

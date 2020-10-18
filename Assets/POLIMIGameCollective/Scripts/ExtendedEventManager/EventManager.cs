@@ -1,6 +1,5 @@
-﻿Pusing UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace SimpleSpaceShooter
