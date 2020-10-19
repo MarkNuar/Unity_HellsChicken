@@ -524,7 +524,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c9b574b85860f34282f0bbdf9a73310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombPrefab: {fileID: 123396, guid: d6c1b1c4c00b08c4d84c7adc9668a6fb, type: 3}
+  bombPrefab: {fileID: 6565629925949264710, guid: 17c933ebcafab294a829c43c5c07c4d3,
+    type: 3}
+  vanishEffectPrefab: {fileID: 1953380545642034081, guid: ddffee03a08a51a4da279eefa3d9bdf4,
+    type: 3}
 --- !u!1 &656690152
 GameObject:
   m_ObjectHideFlags: 0
