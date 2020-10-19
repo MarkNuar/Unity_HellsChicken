@@ -1,10 +1,9 @@
-﻿Pusing UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace SimpleSpaceShooter
-{
+namespace EventManagerNamespace {
 	class IntUnityEvent : UnityEvent<int> { }
 	class FloatUnityEvent : UnityEvent<float> { }
 	class StringUnityEvent : UnityEvent<string> { }
