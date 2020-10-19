@@ -1,5 +1,6 @@
-﻿using HellsChicken.Scripts.Game.Input;
+﻿
 using UnityEngine;
+
 
 namespace HellsChicken.Scripts.Game.Player
 {
@@ -8,38 +9,40 @@ namespace HellsChicken.Scripts.Game.Player
     public class PlayerInput : MonoBehaviour
     {
         private PlayerController _playerController;
-        private NewInputSystem _playerInputSystem;
+        private NewInputSystem _newInputSystem;
         private float _horizontalMovement; //this will be 1 for right, -1 for left
-        private bool _jump;
-
+        
         private void Awake()
         {
             _playerController = gameObject.GetComponent<PlayerController>();
-            _playerInputSystem = new NewInputSystem();
+            _newInputSystem = new NewInputSystem();
         }
 
         private void OnEnable()
         {
-            _playerInputSystem.Enable();
+            _newInputSystem.Enable();
         }
 
         private void OnDisable()
         {
-            _playerInputSystem.Disable();
+            _newInputSystem.Disable();
         }
 
         // Start is called before the first frame update
         void Start()
         {
-            //Whenever the Jump is performed, the funtion Jump form the player controller is executed
-            _playerInputSystem.Walking.Jump.performed += _ => _playerController.Jump();
+            //Whenever the Jump is performed, the function Jump form the player controller is executed
+            _newInputSystem.Walking.Jump.performed += _ => _playerController.Jump();
+            _newInputSystem.Walking.EnterEggAiming.performed += _ => _playerController.EnterEggAiming();
+            _newInputSystem.Walking.ShootFlame.performed += _ => _playerController.ShootFlames();
         }
 
         // Update is called once per frame
         void Update()
         {
             //get input from the input system
-            _horizontalMovement = _playerInputSystem.Walking.Move.ReadValue<float>();
+            
+            _horizontalMovement = _newInputSystem.Walking.Move.ReadValue<float>();
         }
     
         private void FixedUpdate()
