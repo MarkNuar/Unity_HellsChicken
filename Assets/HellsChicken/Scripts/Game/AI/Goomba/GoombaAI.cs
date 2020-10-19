@@ -11,22 +11,15 @@ using UnityEngine;
  */
 public class GoombaAI : MonoBehaviour {
     
-    private Rigidbody _rigidbody;
     [SerializeField] private GameObject bombPrefab;
+    [SerializeField] private GameObject vanishEffectPrefab;
+
+    private Rigidbody _rigidbody;
     private bool right = true;
     private float agentVelocity = 8f;
     
     public void Awake() {
         _rigidbody = GetComponent<Rigidbody>();
-    }
-
-    // Start is called before the first frame update
-    void Start() {
-    }
-
-    // Update is called once per frame
-    void Update() {
-    
     }
 
     private void FixedUpdate() {
@@ -38,11 +31,22 @@ public class GoombaAI : MonoBehaviour {
 
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("wall")) {
+            
             right = !right;
+            
         }else if (other.gameObject.CompareTag("attack")) {
-            Destroy(gameObject);
+            
+            //creates the effect and starts the sound
+            Instantiate(vanishEffectPrefab, transform.position, Quaternion.identity);
+            EventManager.TriggerEvent("playTimerBomb");
+            
+            //create the bomb the right new position
             Vector3 newPosition = new Vector3(gameObject.transform.position.x,1,gameObject.transform.position.z);
-            Instantiate(bombPrefab,newPosition,Quaternion.identity);
+            Instantiate(bombPrefab,newPosition,Quaternion.Euler(0,0,90));
+            
+            //destroy the Goomba
+            Destroy(gameObject);
+            
         }
     }
 }

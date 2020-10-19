@@ -15,9 +15,16 @@
                   <e p="GoombaAI.cs" t="Include" />
                 </e>
               </e>
+              <e p="Audio" t="Include">
+                <e p="AudioManager.cs" t="Include" />
+              </e>
               <e p="Player" t="Include">
                 <e p="PlayerController.cs" t="Include" />
                 <e p="PlayerInput.cs" t="Include" />
+              </e>
+              <e p="Utils" t="Include">
+                <e p="EventManager.cs" t="Include" />
+                <e p="Singleton.cs" t="Include" />
               </e>
             </e>
           </e>
