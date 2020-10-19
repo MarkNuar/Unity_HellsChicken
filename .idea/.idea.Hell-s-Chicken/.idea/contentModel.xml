@@ -11,6 +11,7 @@
             <e p="Game" t="Include">
               <e p="AI" t="Include">
                 <e p="Goomba" t="Include">
+                  <e p="BombExplosion.cs" t="Include" />
                   <e p="GoombaAI.cs" t="Include" />
                 </e>
               </e>

@@ -12,6 +12,7 @@ using UnityEngine;
 public class GoombaAI : MonoBehaviour {
     
     private Rigidbody _rigidbody;
+    [SerializeField] private GameObject bombPrefab;
     private bool right = true;
     private float agentVelocity = 8f;
     
@@ -25,7 +26,7 @@ public class GoombaAI : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        print(right);
+    
     }
 
     private void FixedUpdate() {
@@ -38,6 +39,10 @@ public class GoombaAI : MonoBehaviour {
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("wall")) {
             right = !right;
+        }else if (other.gameObject.CompareTag("attack")) {
+            Destroy(gameObject);
+            Vector3 newPosition = new Vector3(gameObject.transform.position.x,1,gameObject.transform.position.z);
+            Instantiate(bombPrefab,newPosition,Quaternion.identity);
         }
     }
 }
