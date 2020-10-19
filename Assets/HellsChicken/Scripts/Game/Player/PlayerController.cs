@@ -12,19 +12,23 @@ namespace HellsChicken.Scripts.Game.Player
         [SerializeField] private float _jumpSpeed = 5.0f;
         [SerializeField] private float _gravityScale = 2.0f;
 
-        private float _gravity = 9.81f;
-        
+        private const float Gravity = 9.81f;
+
         private float _horizontalMovement;
         private bool _jump = false;
-
-        private Vector3 _moveDirection;
-        private Vector3 _playerVelocity;
+        private bool _glide;
+        private bool _isGliding;
         
+        
+        private Vector3 _moveDirection;
+
+        private Transform _transform;
         private CharacterController _characterController;
 
         private void Awake()
         {
             _characterController = gameObject.GetComponent<CharacterController>();
+            _transform = gameObject.GetComponent<Transform>();
             _moveDirection = Vector3.zero;
         }
 
@@ -35,16 +39,21 @@ namespace HellsChicken.Scripts.Game.Player
 
         public void Jump()
         {
-            if (_characterController.isGrounded)
+            _jump = _characterController.isGrounded;
+        }
+
+        public void Glide()
+        {
+            if (!_characterController.isGrounded)
             {
-                _jump = true;
+                _isGliding = true;
             }
             else
             {
-                _jump = false;
+                _isGliding = false;
             }
         }
-
+        
         public void ShootFlames()
         {
             Debug.Log("Shoot flames");
@@ -61,28 +70,44 @@ namespace HellsChicken.Scripts.Game.Player
             _moveDirection.z = 0f;
             if (_characterController.isGrounded)
             {
+                _moveDirection.y = -10f;
                 if (_jump)
                 {
                     _moveDirection.y = _jumpSpeed;
                     _jump = false;
                 }
             }
-            _moveDirection.y -= _gravityScale * _gravity * Time.fixedDeltaTime;
+            /*else
+            {
+                //gliding
+                if (_isGliding)
+                {
+                    
+                }
+            }*/
+            _moveDirection.y -= _gravityScale * Gravity * Time.fixedDeltaTime;
             //Faster discesa ??
             if (_moveDirection.y < 0f)
             {
-                _moveDirection.y -= 0.8f * _gravityScale * _gravity * Time.fixedDeltaTime;
+                _moveDirection.y -= 1f * _gravityScale * Gravity * Time.fixedDeltaTime;
             }
             _characterController.Move(_moveDirection * Time.fixedDeltaTime);
         }
 
+        /*
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
-            
-            if (!_characterController.isGrounded)
+            Debug.DrawLine(hit.normal, hit.normal * 2, Color.white, 0.5f);
+            if (!_characterController.isGrounded && hit.normal.y < -Mathf.Epsilon)
             {
-                _moveDirection.y = 0;
+                _moveDirection.y = 0f;
             }
-        }
+            //hit.normal
+            //TODO
+            /*if (!_characterController.isGrounded)
+            {
+                
+            }
+        }*/
     }
 }
