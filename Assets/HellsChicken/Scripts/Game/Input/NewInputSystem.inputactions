@@ -6,7 +6,7 @@
             "id": "6cdf7552-26d3-46fb-800c-eeca56e0f201",
             "actions": [
                 {
-                    "name": "Jump",
+                    "name": "JumpAndGlide",
                     "type": "PassThrough",
                     "id": "6dc977fb-c95a-4f4d-849a-1eaacd0a6ceb",
                     "expectedControlType": "Button",
@@ -36,6 +36,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Gliding",
+                    "type": "PassThrough",
+                    "id": "9b531295-87ad-41e2-9641-1d2464a5495a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -46,7 +54,7 @@
                     "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Jump",
+                    "action": "JumpAndGlide",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -57,7 +65,7 @@
                     "interactions": "Press",
                     "processors": "",
                     "groups": "XboxController",
-                    "action": "Jump",
+                    "action": "JumpAndGlide",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -146,6 +154,17 @@
                     "processors": "",
                     "groups": "XboxController",
                     "action": "ShootFlame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1876c4d0-bb6c-42f7-b9a2-7231fe9fa2ea",
+                    "path": "<Keyboard>/space",
+                    "interactions": "Hold(pressPoint=0.2)",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Gliding",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -1,5 +1,6 @@
 ﻿
 using UnityEngine;
+using UnityEngine.InputSystem.Interactions;
 
 
 namespace HellsChicken.Scripts.Game.Player
@@ -11,7 +12,7 @@ namespace HellsChicken.Scripts.Game.Player
         private PlayerController _playerController;
         private NewInputSystem _newInputSystem;
         private float _horizontalMovement; //this will be 1 for right, -1 for left
-        
+
         private void Awake()
         {
             _playerController = gameObject.GetComponent<PlayerController>();
@@ -32,17 +33,34 @@ namespace HellsChicken.Scripts.Game.Player
         void Start()
         {
             //Whenever the Jump is performed, the function Jump form the player controller is executed
-            _newInputSystem.Walking.Jump.performed += _ => _playerController.Jump();
-            _newInputSystem.Walking.EnterEggAiming.performed += _ => _playerController.EnterEggAiming();
+            _newInputSystem.Walking.JumpAndGlide.performed += ctx =>
+            {
+                if (_playerController.IsGrounded())
+                {
+                    _playerController.Jump();
+                }
+                else if (!_playerController.IsGliding())
+                {
+                    _playerController.StartGliding();
+                }
+                else
+                {
+                    _playerController.StopGliding();
+                }
+            };
+            
+            _newInputSystem.Walking.EnterEggAiming.performed += _ => _playerController.StartEggAiming();
             _newInputSystem.Walking.ShootFlame.performed += _ => _playerController.ShootFlames();
         }
 
+        
         // Update is called once per frame
         void Update()
         {
             //get input from the input system
-            
             _horizontalMovement = _newInputSystem.Walking.Move.ReadValue<float>();
+            if(_playerController.IsGliding() && _playerController.IsGrounded())
+                _playerController.StopGliding();
         }
     
         private void FixedUpdate()

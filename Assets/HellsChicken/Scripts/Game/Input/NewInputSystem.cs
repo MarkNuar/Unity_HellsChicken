@@ -19,7 +19,7 @@ public class @NewInputSystem : IInputActionCollection, IDisposable
             ""id"": ""6cdf7552-26d3-46fb-800c-eeca56e0f201"",
             ""actions"": [
                 {
-                    ""name"": ""Jump"",
+                    ""name"": ""JumpAndGlide"",
                     ""type"": ""PassThrough"",
                     ""id"": ""6dc977fb-c95a-4f4d-849a-1eaacd0a6ceb"",
                     ""expectedControlType"": ""Button"",
@@ -49,6 +49,14 @@ public class @NewInputSystem : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Gliding"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""9b531295-87ad-41e2-9641-1d2464a5495a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -59,7 +67,7 @@ public class @NewInputSystem : IInputActionCollection, IDisposable
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""Jump"",
+                    ""action"": ""JumpAndGlide"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -70,7 +78,7 @@ public class @NewInputSystem : IInputActionCollection, IDisposable
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""XboxController"",
-                    ""action"": ""Jump"",
+                    ""action"": ""JumpAndGlide"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -161,6 +169,17 @@ public class @NewInputSystem : IInputActionCollection, IDisposable
                     ""action"": ""ShootFlame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1876c4d0-bb6c-42f7-b9a2-7231fe9fa2ea"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": ""Hold(pressPoint=0.2)"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Gliding"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -192,10 +211,11 @@ public class @NewInputSystem : IInputActionCollection, IDisposable
 }");
         // Walking
         m_Walking = asset.FindActionMap("Walking", throwIfNotFound: true);
-        m_Walking_Jump = m_Walking.FindAction("Jump", throwIfNotFound: true);
+        m_Walking_JumpAndGlide = m_Walking.FindAction("JumpAndGlide", throwIfNotFound: true);
         m_Walking_Move = m_Walking.FindAction("Move", throwIfNotFound: true);
         m_Walking_EnterEggAiming = m_Walking.FindAction("EnterEggAiming", throwIfNotFound: true);
         m_Walking_ShootFlame = m_Walking.FindAction("ShootFlame", throwIfNotFound: true);
+        m_Walking_Gliding = m_Walking.FindAction("Gliding", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -245,18 +265,20 @@ public class @NewInputSystem : IInputActionCollection, IDisposable
     // Walking
     private readonly InputActionMap m_Walking;
     private IWalkingActions m_WalkingActionsCallbackInterface;
-    private readonly InputAction m_Walking_Jump;
+    private readonly InputAction m_Walking_JumpAndGlide;
     private readonly InputAction m_Walking_Move;
     private readonly InputAction m_Walking_EnterEggAiming;
     private readonly InputAction m_Walking_ShootFlame;
+    private readonly InputAction m_Walking_Gliding;
     public struct WalkingActions
     {
         private @NewInputSystem m_Wrapper;
         public WalkingActions(@NewInputSystem wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Jump => m_Wrapper.m_Walking_Jump;
+        public InputAction @JumpAndGlide => m_Wrapper.m_Walking_JumpAndGlide;
         public InputAction @Move => m_Wrapper.m_Walking_Move;
         public InputAction @EnterEggAiming => m_Wrapper.m_Walking_EnterEggAiming;
         public InputAction @ShootFlame => m_Wrapper.m_Walking_ShootFlame;
+        public InputAction @Gliding => m_Wrapper.m_Walking_Gliding;
         public InputActionMap Get() { return m_Wrapper.m_Walking; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -266,9 +288,9 @@ public class @NewInputSystem : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_WalkingActionsCallbackInterface != null)
             {
-                @Jump.started -= m_Wrapper.m_WalkingActionsCallbackInterface.OnJump;
-                @Jump.performed -= m_Wrapper.m_WalkingActionsCallbackInterface.OnJump;
-                @Jump.canceled -= m_Wrapper.m_WalkingActionsCallbackInterface.OnJump;
+                @JumpAndGlide.started -= m_Wrapper.m_WalkingActionsCallbackInterface.OnJumpAndGlide;
+                @JumpAndGlide.performed -= m_Wrapper.m_WalkingActionsCallbackInterface.OnJumpAndGlide;
+                @JumpAndGlide.canceled -= m_Wrapper.m_WalkingActionsCallbackInterface.OnJumpAndGlide;
                 @Move.started -= m_Wrapper.m_WalkingActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_WalkingActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_WalkingActionsCallbackInterface.OnMove;
@@ -278,13 +300,16 @@ public class @NewInputSystem : IInputActionCollection, IDisposable
                 @ShootFlame.started -= m_Wrapper.m_WalkingActionsCallbackInterface.OnShootFlame;
                 @ShootFlame.performed -= m_Wrapper.m_WalkingActionsCallbackInterface.OnShootFlame;
                 @ShootFlame.canceled -= m_Wrapper.m_WalkingActionsCallbackInterface.OnShootFlame;
+                @Gliding.started -= m_Wrapper.m_WalkingActionsCallbackInterface.OnGliding;
+                @Gliding.performed -= m_Wrapper.m_WalkingActionsCallbackInterface.OnGliding;
+                @Gliding.canceled -= m_Wrapper.m_WalkingActionsCallbackInterface.OnGliding;
             }
             m_Wrapper.m_WalkingActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Jump.started += instance.OnJump;
-                @Jump.performed += instance.OnJump;
-                @Jump.canceled += instance.OnJump;
+                @JumpAndGlide.started += instance.OnJumpAndGlide;
+                @JumpAndGlide.performed += instance.OnJumpAndGlide;
+                @JumpAndGlide.canceled += instance.OnJumpAndGlide;
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
@@ -294,6 +319,9 @@ public class @NewInputSystem : IInputActionCollection, IDisposable
                 @ShootFlame.started += instance.OnShootFlame;
                 @ShootFlame.performed += instance.OnShootFlame;
                 @ShootFlame.canceled += instance.OnShootFlame;
+                @Gliding.started += instance.OnGliding;
+                @Gliding.performed += instance.OnGliding;
+                @Gliding.canceled += instance.OnGliding;
             }
         }
     }
@@ -318,9 +346,10 @@ public class @NewInputSystem : IInputActionCollection, IDisposable
     }
     public interface IWalkingActions
     {
-        void OnJump(InputAction.CallbackContext context);
+        void OnJumpAndGlide(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnEnterEggAiming(InputAction.CallbackContext context);
         void OnShootFlame(InputAction.CallbackContext context);
+        void OnGliding(InputAction.CallbackContext context);
     }
 }

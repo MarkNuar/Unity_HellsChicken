@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -12,11 +13,17 @@ namespace HellsChicken.Scripts.Game.Player
         [SerializeField] private float _jumpSpeed = 5.0f;
         [SerializeField] private float _gravityScale = 2.0f;
 
+        [SerializeField] private float _fallingGravityIncrease = 1.0f;
+        [SerializeField] private float _glidingUpGravityIncrease = 5.0f;
+        [SerializeField] private float _glidingDownGravityDecrease = 0.1f;
+
+        [SerializeField] private float _maxVerticalSpeed = 40f;
+        [SerializeField] private float _glidingDescentFixedSpeed = 15f;
+        
         private const float Gravity = 9.81f;
 
         private float _horizontalMovement;
         private bool _jump = false;
-        private bool _glide;
         private bool _isGliding;
         
         
@@ -30,6 +37,7 @@ namespace HellsChicken.Scripts.Game.Player
             _characterController = gameObject.GetComponent<CharacterController>();
             _transform = gameObject.GetComponent<Transform>();
             _moveDirection = Vector3.zero;
+            _isGliding = false;
         }
 
         public void MoveHorizontally(float horizontalMovement)
@@ -41,27 +49,25 @@ namespace HellsChicken.Scripts.Game.Player
         {
             _jump = _characterController.isGrounded;
         }
-
-        public void Glide()
-        {
-            if (!_characterController.isGrounded)
-            {
-                _isGliding = true;
-            }
-            else
-            {
-                _isGliding = false;
-            }
-        }
         
         public void ShootFlames()
         {
             Debug.Log("Shoot flames");
         }
-
-        public void EnterEggAiming()
+        
+        public void StartEggAiming()
         {
-            Debug.Log("Enter Egg Aiming");
+            Debug.Log("Start Egg Aiming");
+        }
+        
+        public void StartGliding()
+        {
+            _isGliding = true;
+        }
+
+        public void StopGliding()
+        {
+            _isGliding = false;
         }
         
         private void FixedUpdate()
@@ -77,23 +83,52 @@ namespace HellsChicken.Scripts.Game.Player
                     _jump = false;
                 }
             }
-            /*else
+            else //not grounded, so maybe jumping or gliding
             {
-                //gliding
-                if (_isGliding)
+                //falling
+                if (!_isGliding)
                 {
-                    
+                    _moveDirection.y -= _gravityScale * Gravity * Time.fixedDeltaTime;
+                    //Faster fall when going down
+                    if (_moveDirection.y < 0f)
+                    {
+                        _moveDirection.y -= _fallingGravityIncrease * _gravityScale * Gravity * Time.fixedDeltaTime;
+                    }
                 }
-            }*/
-            _moveDirection.y -= _gravityScale * Gravity * Time.fixedDeltaTime;
-            //Faster discesa ??
-            if (_moveDirection.y < 0f)
-            {
-                _moveDirection.y -= 1f * _gravityScale * Gravity * Time.fixedDeltaTime;
+                //gliding
+                else
+                {
+                    if (_moveDirection.y > 0)
+                    {
+                        //quick reduction of gravity if the player is going up
+                        _moveDirection.y -= _glidingUpGravityIncrease * _gravityScale * Gravity * Time.fixedDeltaTime;
+                    }
+                    else
+                    {
+                        //now that there is no upward movement, the player float down slowly.
+                        //TODO: check if better with or without gravity acceleration
+                        _moveDirection.y = -_glidingDescentFixedSpeed;
+                        //_moveDirection.y -= _glidingDownGravityDecrease * _gravityScale * Gravity * Time.fixedDeltaTime;
+                    }
+                }
             }
+            if (_moveDirection.y > _maxVerticalSpeed)
+                _moveDirection.y = _maxVerticalSpeed;
+            if (_moveDirection.y < -_maxVerticalSpeed)
+                _moveDirection.y = -_maxVerticalSpeed;
             _characterController.Move(_moveDirection * Time.fixedDeltaTime);
         }
 
+        public bool IsGrounded()
+        {
+            return _characterController.isGrounded;
+        }
+
+        public bool IsGliding()
+        {
+            return _isGliding;
+        }
+        
         /*
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {

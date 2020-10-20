@@ -20,10 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="841a0d19-c31d-45a5-a4a8-c926733aa787" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Materials/PhysicsMaterials/Slippery.physicMaterial" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Materials/PhysicsMaterials/Slippery.physicMaterial" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/TestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/TestScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Input/NewInputSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Input/NewInputSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Input/NewInputSystem.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Input/NewInputSystem.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/CustomGravity.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/CustomGravity.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerInput.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +94,9 @@
       <updated>1602795232971</updated>
       <workItem from="1602795237514" duration="9463000" />
       <workItem from="1603038603205" duration="3047000" />
-      <workItem from="1603101438085" duration="22118000" />
+      <workItem from="1603101438085" duration="22203000" />
+      <workItem from="1603128755675" duration="327000" />
+      <workItem from="1603145727380" duration="8778000" />
     </task>
     <servers />
   </component>
@@ -123,5 +129,37 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="46" y="154" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1603101770749" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerInput.cs</url>
+          <line>29</line>
+          <properties documentPath="C:\Users\marco\Desktop\polimi\year_5_semester_1\VDP\UnityProjects\Hell's Chicken\Assets\HellsChicken\Scripts\Game\Player\PlayerInput.cs" initialLine="31">
+            <startOffsets>
+              <option value="756" />
+            </startOffsets>
+            <endOffsets>
+              <option value="757" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs</url>
+          <line>80</line>
+          <properties documentPath="C:\Users\marco\Desktop\polimi\year_5_semester_1\VDP\UnityProjects\Hell's Chicken\Assets\HellsChicken\Scripts\Game\Player\PlayerController.cs" initialLine="81">
+            <startOffsets>
+              <option value="2307" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2308" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
