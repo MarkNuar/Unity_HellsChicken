@@ -49,7 +49,9 @@ namespace HellsChicken.Scripts.Game.Player
                 }
             };
             
-            _newInputSystem.Walking.EnterEggAiming.performed += _ => _playerController.StartEggAiming();
+            //TODO: DISTINGUISH BETWEEN PRESS AND RELEASE
+            //ON RELEASE GET THE MOUSE POSITION TO COMPUTE THE VECTOR 2 DIRECTION. 
+            _newInputSystem.Walking.EggAiming.performed += _ => _playerController.StartEggAiming();
             _newInputSystem.Walking.ShootFlame.performed += _ => _playerController.ShootFlames();
         }
 
@@ -57,10 +59,7 @@ namespace HellsChicken.Scripts.Game.Player
         // Update is called once per frame
         void Update()
         {
-            //get input from the input system
             _horizontalMovement = _newInputSystem.Walking.Move.ReadValue<float>();
-            if(_playerController.IsGliding() && _playerController.IsGrounded())
-                _playerController.StopGliding();
         }
     
         private void FixedUpdate()

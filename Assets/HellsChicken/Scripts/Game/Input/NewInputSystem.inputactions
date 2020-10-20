@@ -22,7 +22,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "EnterEggAiming",
+                    "name": "EggAiming",
                     "type": "PassThrough",
                     "id": "acf16bee-7b48-47b0-9a56-eeed24fd15ad",
                     "expectedControlType": "Button",
@@ -33,14 +33,6 @@
                     "name": "ShootFlame",
                     "type": "PassThrough",
                     "id": "6e281560-905c-465a-aa9c-02af298e00c3",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Gliding",
-                    "type": "PassThrough",
-                    "id": "9b531295-87ad-41e2-9641-1d2464a5495a",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -117,10 +109,10 @@
                     "name": "",
                     "id": "39c111a8-dc38-48bd-a064-acaf8904fa9a",
                     "path": "<Mouse>/leftButton",
-                    "interactions": "Press",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "EnterEggAiming",
+                    "action": "EggAiming",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -128,10 +120,10 @@
                     "name": "",
                     "id": "3a141774-da48-47e4-aa5f-6d0d5204eed2",
                     "path": "<Gamepad>/rightTrigger",
-                    "interactions": "Press",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "XboxController",
-                    "action": "EnterEggAiming",
+                    "action": "EggAiming",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -154,17 +146,6 @@
                     "processors": "",
                     "groups": "XboxController",
                     "action": "ShootFlame",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1876c4d0-bb6c-42f7-b9a2-7231fe9fa2ea",
-                    "path": "<Keyboard>/space",
-                    "interactions": "Hold(pressPoint=0.2)",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Gliding",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

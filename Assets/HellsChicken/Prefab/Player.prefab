@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3533064644574432344}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -8}
+  m_LocalPosition: {x: 0, y: 0, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3533064645517681299}
@@ -57,7 +57,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 88
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -179,8 +179,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _walkSpeed: 10
-  _jumpSpeed: 5
+  _jumpSpeed: 18
   _gravityScale: 3
+  _fallingGravityIncrease: 2
+  _glidingUpGravityIncrease: 5
+  _maxVerticalSpeed: 25
+  _glidingDescentFixedSpeed: 4
+  _glideMaterial: {fileID: 2100000, guid: 907739f30a87c9748853ce39adaf9392, type: 2}
+  _normalMaterial: {fileID: 2100000, guid: 951f76f281239e54fbd8ead1ec404c22, type: 2}
 --- !u!114 &3278510984751445295
 MonoBehaviour:
   m_ObjectHideFlags: 0

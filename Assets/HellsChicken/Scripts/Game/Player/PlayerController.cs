@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 namespace HellsChicken.Scripts.Game.Player
 {
@@ -15,7 +16,8 @@ namespace HellsChicken.Scripts.Game.Player
 
         [SerializeField] private float _fallingGravityIncrease = 1.0f;
         [SerializeField] private float _glidingUpGravityIncrease = 5.0f;
-        [SerializeField] private float _glidingDownGravityDecrease = 0.1f;
+        //deprecated
+        //[SerializeField] private float _glidingDownGravityDecrease = 0.1f;
 
         [SerializeField] private float _maxVerticalSpeed = 40f;
         [SerializeField] private float _glidingDescentFixedSpeed = 15f;
@@ -31,11 +33,16 @@ namespace HellsChicken.Scripts.Game.Player
 
         private Transform _transform;
         private CharacterController _characterController;
+        private MeshRenderer _meshRenderer;
+
+        [SerializeField] private Material _glideMaterial;
+        [SerializeField] private Material _normalMaterial;
 
         private void Awake()
         {
             _characterController = gameObject.GetComponent<CharacterController>();
             _transform = gameObject.GetComponent<Transform>();
+            _meshRenderer = gameObject.GetComponent<MeshRenderer>();
             _moveDirection = Vector3.zero;
             _isGliding = false;
         }
@@ -47,9 +54,21 @@ namespace HellsChicken.Scripts.Game.Player
 
         public void Jump()
         {
-            _jump = _characterController.isGrounded;
+            //_jump = _characterController.isGrounded;
+            _jump = true;
         }
         
+        public void StartGliding()
+        {
+            _meshRenderer.material = _glideMaterial;
+            _isGliding = true;
+        }
+
+        public void StopGliding()
+        {
+            _meshRenderer.material = _normalMaterial;
+            _isGliding = false;
+        }
         public void ShootFlames()
         {
             Debug.Log("Shoot flames");
@@ -60,15 +79,8 @@ namespace HellsChicken.Scripts.Game.Player
             Debug.Log("Start Egg Aiming");
         }
         
-        public void StartGliding()
-        {
-            _isGliding = true;
-        }
-
-        public void StopGliding()
-        {
-            _isGliding = false;
-        }
+        
+        
         
         private void FixedUpdate()
         {
@@ -76,6 +88,8 @@ namespace HellsChicken.Scripts.Game.Player
             _moveDirection.z = 0f;
             if (_characterController.isGrounded)
             {
+                //If I'm on ground, then I stop gliding
+                StopGliding();
                 _moveDirection.y = -10f;
                 if (_jump)
                 {
@@ -107,15 +121,14 @@ namespace HellsChicken.Scripts.Game.Player
                     {
                         //now that there is no upward movement, the player float down slowly.
                         //TODO: check if better with or without gravity acceleration
-                        _moveDirection.y = -_glidingDescentFixedSpeed;
+                        _moveDirection.y = -_glidingDescentFixedSpeed;// * Random.Range(.5f, 2f);
                         //_moveDirection.y -= _glidingDownGravityDecrease * _gravityScale * Gravity * Time.fixedDeltaTime;
                     }
                 }
             }
-            if (_moveDirection.y > _maxVerticalSpeed)
-                _moveDirection.y = _maxVerticalSpeed;
-            if (_moveDirection.y < -_maxVerticalSpeed)
-                _moveDirection.y = -_maxVerticalSpeed;
+            //Clamping _moveDirection.y at _maxVerticalSpeed
+            if (Math.Abs(_moveDirection.y) > _maxVerticalSpeed)
+                _moveDirection.y = Math.Sign(_moveDirection.y)* _maxVerticalSpeed;
             _characterController.Move(_moveDirection * Time.fixedDeltaTime);
         }
 
@@ -132,17 +145,23 @@ namespace HellsChicken.Scripts.Game.Player
         /*
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
-            Debug.DrawLine(hit.normal, hit.normal * 2, Color.white, 0.5f);
-            if (!_characterController.isGrounded && hit.normal.y < -Mathf.Epsilon)
+            //TODO
+            //Idea: if collided, then do not consider collision until ground is touched?
+            if (_characterController.collisionFlags != CollisionFlags.Above) return;
+            if (Vector3.Dot(hit.normal, _moveDirection) < 0)
             {
-                _moveDirection.y = 0f;
+                _moveDirection -= hit.normal * Vector3.Dot( hit.normal, _moveDirection ) * _moveDirection.y;
+            }
+            /*
+            //Debug.DrawLine(hit.normal, hit.normal * 2, Color.white, 0.5f);
+            if (!_characterController.isGrounded && hit.normal.y < -.5f)
+            {
+                Debug.DrawLine(hit.normal, hit.normal * 2, Color.white, 0.5f);
+                _moveDirection.y = -(float) Math.Sqrt(Math.Abs(_moveDirection.y));
             }
             //hit.normal
             //TODO
-            /*if (!_characterController.isGrounded)
-            {
-                
-            }
+            
         }*/
     }
 }

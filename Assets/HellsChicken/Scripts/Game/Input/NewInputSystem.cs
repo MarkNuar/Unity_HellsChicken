@@ -35,7 +35,7 @@ public class @NewInputSystem : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""EnterEggAiming"",
+                    ""name"": ""EggAiming"",
                     ""type"": ""PassThrough"",
                     ""id"": ""acf16bee-7b48-47b0-9a56-eeed24fd15ad"",
                     ""expectedControlType"": ""Button"",
@@ -46,14 +46,6 @@ public class @NewInputSystem : IInputActionCollection, IDisposable
                     ""name"": ""ShootFlame"",
                     ""type"": ""PassThrough"",
                     ""id"": ""6e281560-905c-465a-aa9c-02af298e00c3"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Gliding"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""9b531295-87ad-41e2-9641-1d2464a5495a"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -130,10 +122,10 @@ public class @NewInputSystem : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""39c111a8-dc38-48bd-a064-acaf8904fa9a"",
                     ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": ""Press(behavior=2)"",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""EnterEggAiming"",
+                    ""action"": ""EggAiming"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -141,10 +133,10 @@ public class @NewInputSystem : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""3a141774-da48-47e4-aa5f-6d0d5204eed2"",
                     ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": ""Press(behavior=2)"",
                     ""processors"": """",
                     ""groups"": ""XboxController"",
-                    ""action"": ""EnterEggAiming"",
+                    ""action"": ""EggAiming"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -167,17 +159,6 @@ public class @NewInputSystem : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""XboxController"",
                     ""action"": ""ShootFlame"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1876c4d0-bb6c-42f7-b9a2-7231fe9fa2ea"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": ""Hold(pressPoint=0.2)"",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Gliding"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -213,9 +194,8 @@ public class @NewInputSystem : IInputActionCollection, IDisposable
         m_Walking = asset.FindActionMap("Walking", throwIfNotFound: true);
         m_Walking_JumpAndGlide = m_Walking.FindAction("JumpAndGlide", throwIfNotFound: true);
         m_Walking_Move = m_Walking.FindAction("Move", throwIfNotFound: true);
-        m_Walking_EnterEggAiming = m_Walking.FindAction("EnterEggAiming", throwIfNotFound: true);
+        m_Walking_EggAiming = m_Walking.FindAction("EggAiming", throwIfNotFound: true);
         m_Walking_ShootFlame = m_Walking.FindAction("ShootFlame", throwIfNotFound: true);
-        m_Walking_Gliding = m_Walking.FindAction("Gliding", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -267,18 +247,16 @@ public class @NewInputSystem : IInputActionCollection, IDisposable
     private IWalkingActions m_WalkingActionsCallbackInterface;
     private readonly InputAction m_Walking_JumpAndGlide;
     private readonly InputAction m_Walking_Move;
-    private readonly InputAction m_Walking_EnterEggAiming;
+    private readonly InputAction m_Walking_EggAiming;
     private readonly InputAction m_Walking_ShootFlame;
-    private readonly InputAction m_Walking_Gliding;
     public struct WalkingActions
     {
         private @NewInputSystem m_Wrapper;
         public WalkingActions(@NewInputSystem wrapper) { m_Wrapper = wrapper; }
         public InputAction @JumpAndGlide => m_Wrapper.m_Walking_JumpAndGlide;
         public InputAction @Move => m_Wrapper.m_Walking_Move;
-        public InputAction @EnterEggAiming => m_Wrapper.m_Walking_EnterEggAiming;
+        public InputAction @EggAiming => m_Wrapper.m_Walking_EggAiming;
         public InputAction @ShootFlame => m_Wrapper.m_Walking_ShootFlame;
-        public InputAction @Gliding => m_Wrapper.m_Walking_Gliding;
         public InputActionMap Get() { return m_Wrapper.m_Walking; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -294,15 +272,12 @@ public class @NewInputSystem : IInputActionCollection, IDisposable
                 @Move.started -= m_Wrapper.m_WalkingActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_WalkingActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_WalkingActionsCallbackInterface.OnMove;
-                @EnterEggAiming.started -= m_Wrapper.m_WalkingActionsCallbackInterface.OnEnterEggAiming;
-                @EnterEggAiming.performed -= m_Wrapper.m_WalkingActionsCallbackInterface.OnEnterEggAiming;
-                @EnterEggAiming.canceled -= m_Wrapper.m_WalkingActionsCallbackInterface.OnEnterEggAiming;
+                @EggAiming.started -= m_Wrapper.m_WalkingActionsCallbackInterface.OnEggAiming;
+                @EggAiming.performed -= m_Wrapper.m_WalkingActionsCallbackInterface.OnEggAiming;
+                @EggAiming.canceled -= m_Wrapper.m_WalkingActionsCallbackInterface.OnEggAiming;
                 @ShootFlame.started -= m_Wrapper.m_WalkingActionsCallbackInterface.OnShootFlame;
                 @ShootFlame.performed -= m_Wrapper.m_WalkingActionsCallbackInterface.OnShootFlame;
                 @ShootFlame.canceled -= m_Wrapper.m_WalkingActionsCallbackInterface.OnShootFlame;
-                @Gliding.started -= m_Wrapper.m_WalkingActionsCallbackInterface.OnGliding;
-                @Gliding.performed -= m_Wrapper.m_WalkingActionsCallbackInterface.OnGliding;
-                @Gliding.canceled -= m_Wrapper.m_WalkingActionsCallbackInterface.OnGliding;
             }
             m_Wrapper.m_WalkingActionsCallbackInterface = instance;
             if (instance != null)
@@ -313,15 +288,12 @@ public class @NewInputSystem : IInputActionCollection, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
-                @EnterEggAiming.started += instance.OnEnterEggAiming;
-                @EnterEggAiming.performed += instance.OnEnterEggAiming;
-                @EnterEggAiming.canceled += instance.OnEnterEggAiming;
+                @EggAiming.started += instance.OnEggAiming;
+                @EggAiming.performed += instance.OnEggAiming;
+                @EggAiming.canceled += instance.OnEggAiming;
                 @ShootFlame.started += instance.OnShootFlame;
                 @ShootFlame.performed += instance.OnShootFlame;
                 @ShootFlame.canceled += instance.OnShootFlame;
-                @Gliding.started += instance.OnGliding;
-                @Gliding.performed += instance.OnGliding;
-                @Gliding.canceled += instance.OnGliding;
             }
         }
     }
@@ -348,8 +320,7 @@ public class @NewInputSystem : IInputActionCollection, IDisposable
     {
         void OnJumpAndGlide(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
-        void OnEnterEggAiming(InputAction.CallbackContext context);
+        void OnEggAiming(InputAction.CallbackContext context);
         void OnShootFlame(InputAction.CallbackContext context);
-        void OnGliding(InputAction.CallbackContext context);
     }
 }
