@@ -24,7 +24,7 @@ namespace HellsChicken.Scripts.Game.Player
         [SerializeField] private Transform _firePosition;
         [SerializeField] private GameObject _fireStreamPrefab;
         
-        private const float Gravity = 9.81f;
+        private float _gravity;
 
         private float _horizontalMovement;
         private bool _jump = false;
@@ -47,6 +47,7 @@ namespace HellsChicken.Scripts.Game.Player
             _meshRenderer = gameObject.GetComponent<MeshRenderer>();
             _moveDirection = Vector3.zero;
             _isGliding = false;
+            _gravity = - Physics.gravity.y;
         }
 
         public void MoveHorizontally(float horizontalMovement)
@@ -105,11 +106,11 @@ namespace HellsChicken.Scripts.Game.Player
                 //falling
                 if (!_isGliding)
                 {
-                    _moveDirection.y -= _gravityScale * Gravity * Time.fixedDeltaTime;
+                    _moveDirection.y -= _gravityScale * _gravity * Time.fixedDeltaTime;
                     //Faster fall when going down
                     if (_moveDirection.y < 0f)
                     {
-                        _moveDirection.y -= _fallingGravityIncrease * _gravityScale * Gravity * Time.fixedDeltaTime;
+                        _moveDirection.y -= _fallingGravityIncrease * _gravityScale * _gravity * Time.fixedDeltaTime;
                     }
                 }
                 //gliding
@@ -118,7 +119,7 @@ namespace HellsChicken.Scripts.Game.Player
                     if (_moveDirection.y > 0)
                     {
                         //quick reduction of gravity if the player is going up
-                        _moveDirection.y -= _glidingUpGravityIncrease * _gravityScale * Gravity * Time.fixedDeltaTime;
+                        _moveDirection.y -= _glidingUpGravityIncrease * _gravityScale * _gravity * Time.fixedDeltaTime;
                     }
                     else
                     {
@@ -145,16 +146,18 @@ namespace HellsChicken.Scripts.Game.Player
             return _isGliding;
         }
         
-        /*
+        
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
             //TODO
             //Idea: if collided, then do not consider collision until ground is touched?
             if (_characterController.collisionFlags != CollisionFlags.Above) return;
-            if (Vector3.Dot(hit.normal, _moveDirection) < 0)
-            {
-                _moveDirection -= hit.normal * Vector3.Dot( hit.normal, _moveDirection ) * _moveDirection.y;
-            }
+            _moveDirection.y = -(float) Math.Sqrt(Math.Abs(_moveDirection.y));
+            _moveDirection.x = 0;
+            //if (Vector3.Dot(hit.normal, _moveDirection) < 0)
+            //{
+             //   _moveDirection -= hit.normal * Vector3.Dot( hit.normal, _moveDirection ) * _moveDirection.y;
+            //}
             /*
             //Debug.DrawLine(hit.normal, hit.normal * 2, Color.white, 0.5f);
             if (!_characterController.isGrounded && hit.normal.y < -.5f)
@@ -164,7 +167,7 @@ namespace HellsChicken.Scripts.Game.Player
             }
             //hit.normal
             //TODO
-            
-        }*/
+            */
+        }
     }
 }
