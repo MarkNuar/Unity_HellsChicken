@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
    public Transform _firePoint;
-       [SerializeField] [Range(0.1f,5.0f)] private float _waitBetweenFires = 2f;
-       public GameObject firePrefab;
+       public GameObject fireStreamPrefab;
        private bool _canShoot = true;
    
        private void Start()
@@ -17,24 +16,15 @@ public class PlayerInput : MonoBehaviour
        // Update is called once per frame
        void Update()
        {
-           if (Input.GetButtonDown("Fire1") && _canShoot==true)
-           {           
-               _canShoot = false;
+           if (Input.GetButton("Fire1"))
+           {
                Shoot();
-               StartCoroutine(EnableFire(_waitBetweenFires));
            }
        }
    
        public void Shoot()
        {
-           Instantiate(firePrefab, _firePoint.position, _firePoint.rotation);
+           Instantiate(fireStreamPrefab, _firePoint.position, _firePoint.rotation);
        }
        
-       IEnumerator EnableFire(float time)
-       {
-           yield return new WaitForSeconds(time);
-           _canShoot = true;
-           
-           yield return null;
-       }
 }

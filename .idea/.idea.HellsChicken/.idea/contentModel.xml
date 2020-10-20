@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Utente\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Utente\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_HellsChicken.-930839669.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Utente\Documents\GitHub\HellsChicken" t="IncludeRecursive">
+    <e p="C:\Users\Tallo\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Tallo\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_HellsChicken.-1599705074.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Tallo\Documents\GitHub\HellsChicken" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="FireController.cs" t="Include" />
         <e p="HellsChicken" t="Include">
           <e p="Scripts" t="Include">
             <e p="Game" t="Include">
+              <e p="Fire" t="Include">
+                <e p="FireController.cs" t="Include" />
+              </e>
               <e p="Player" t="Include">
                 <e p="PlayerController.cs" t="Include" />
                 <e p="PlayerInput.cs" t="Include" />
@@ -62,7 +64,6 @@
             </e>
           </e>
         </e>
-        <e p="Weapon.cs" t="Include" />
       </e>
       <e p="HellsChicken.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
