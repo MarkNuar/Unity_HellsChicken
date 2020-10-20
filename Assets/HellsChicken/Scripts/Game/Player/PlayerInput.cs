@@ -1,6 +1,5 @@
 ﻿
 using UnityEngine;
-using UnityEngine.InputSystem.Interactions;
 
 
 namespace HellsChicken.Scripts.Game.Player
@@ -10,63 +9,76 @@ namespace HellsChicken.Scripts.Game.Player
     public class PlayerInput : MonoBehaviour
     {
         private PlayerController _playerController;
-        private NewInputSystem _newInputSystem;
+        
         private float _horizontalMovement; //this will be 1 for right, -1 for left
-
+        private bool _jump;
+        private bool _glide;
+        private bool _shootFlames;
+        private bool _startEggAiming;
         private void Awake()
         {
             _playerController = gameObject.GetComponent<PlayerController>();
-            _newInputSystem = new NewInputSystem();
         }
 
         private void OnEnable()
         {
-            _newInputSystem.Enable();
+
         }
 
         private void OnDisable()
         {
-            _newInputSystem.Disable();
+            
         }
 
         // Start is called before the first frame update
         void Start()
         {
-            //Whenever the Jump is performed, the function Jump form the player controller is executed
-            _newInputSystem.Walking.JumpAndGlide.performed += ctx =>
-            {
-                if (_playerController.IsGrounded())
-                {
-                    _playerController.Jump();
-                }
-                else if (!_playerController.IsGliding())
-                {
-                    _playerController.StartGliding();
-                }
-                else
-                {
-                    _playerController.StopGliding();
-                }
-            };
             
-            //TODO: DISTINGUISH BETWEEN PRESS AND RELEASE
-            //ON RELEASE GET THE MOUSE POSITION TO COMPUTE THE VECTOR 2 DIRECTION. 
-            _newInputSystem.Walking.EggAiming.performed += _ => _playerController.StartEggAiming();
-            _newInputSystem.Walking.ShootFlame.performed += _ => _playerController.ShootFlames();
         }
 
         
         // Update is called once per frame
         void Update()
         {
-            _horizontalMovement = _newInputSystem.Walking.Move.ReadValue<float>();
+            //_horizontalMovement = _newInputSystem.Walking.Move.ReadValue<float>();
+            _horizontalMovement = Input.GetAxisRaw("Horizontal");
+            if (Input.GetButtonDown("Jump"))
+                _jump = true;
+            if (Input.GetButton("Jump"))
+                _glide = true;
+            if (Input.GetButtonDown("Fire1"))
+                _shootFlames = true;
+            if (Input.GetButtonDown("Fire2"))
+                _startEggAiming = true;
+            //TODO: END EGG AIMING.
+            
+            //todo : check with get button up if we can detect end of gliding. 
         }
     
         private void FixedUpdate()
         {
             _playerController.MoveHorizontally(_horizontalMovement);
+            if (_jump)
+            {
+                _playerController.Jump();
+                _jump = false;
+            }
+            if (_glide)
+            {
+                _playerController.Glide();
+                _glide = false;
+            }
+            if (_shootFlames)
+            {
+                _playerController.ShootFlames();
+                _shootFlames = false;
+            }
+            if (_startEggAiming)
+            {
+                _playerController.StartEggAiming();
+                _startEggAiming = false;
+            }
         }
-    
     }
 }
 
