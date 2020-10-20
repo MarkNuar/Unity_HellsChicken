@@ -563,6 +563,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce5a940080b9e7941bbaceb0a65b19fb, type: 3}
+--- !u!4 &189590181 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1290728662772395437, guid: 0da22613203881b4a910d2924af5e901,
+    type: 3}
+  m_PrefabInstance: {fileID: 582528741}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &239058670
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1120,6 +1126,17 @@ PrefabInstance:
       propertyPath: _fallingGravityIncrease
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4720627372636483684, guid: 0da22613203881b4a910d2924af5e901,
+        type: 3}
+      propertyPath: _firePosition
+      value: 
+      objectReference: {fileID: 189590181}
+    - target: {fileID: 4720627372636483684, guid: 0da22613203881b4a910d2924af5e901,
+        type: 3}
+      propertyPath: _fireStreamPrefab
+      value: 
+      objectReference: {fileID: 1973075987484898, guid: bccc7a794e75b2a44a4b0dac69160b7b,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0da22613203881b4a910d2924af5e901, type: 3}
 --- !u!1 &629541351
