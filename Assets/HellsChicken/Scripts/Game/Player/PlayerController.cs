@@ -21,10 +21,13 @@ namespace HellsChicken.Scripts.Game.Player
 
         [SerializeField] private float _maxVerticalSpeed = 40f;
         [SerializeField] private float _glidingDescentFixedSpeed = 15f;
+        [SerializeField] private ParticleSystem _flameThrower;
         [SerializeField] private Transform _firePosition;
         [SerializeField] private GameObject _fireStreamPrefab;
         
         private float _gravity;
+
+        private const float Gravity = 9.81f;
 
         private float _horizontalMovement;
         private bool _jump = false;
@@ -74,7 +77,8 @@ namespace HellsChicken.Scripts.Game.Player
         }
         public void ShootFlames()
         {
-            Instantiate(_fireStreamPrefab, _firePosition.position, _firePosition.rotation);
+            ParticleSystem myFlamethrower = Instantiate(_flameThrower, _firePosition.position, _firePosition.rotation);
+            (myFlamethrower).transform.parent = (_transform).transform;
             Debug.Log("Shoot flames");
         }
         

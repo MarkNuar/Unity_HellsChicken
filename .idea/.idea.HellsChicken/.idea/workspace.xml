@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44fa9eaf-4901-4eb4-b858-67c1b19b2312" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/EffectExamples/Fire &amp; Explosion Effects/Prefabs/FlameStream.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/EffectExamples/Fire &amp; Explosion Effects/Prefabs/FlameStream.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Platform.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Platform.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +33,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE47BE73-F7EF-409C-A5E5-CE4B121745B7/d1/46dc56a7/Object.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -40,6 +44,7 @@
         <option value="$PROJECT_DIR$/Assets/FireController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Fire/FireController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerInput.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
       </list>
     </option>
   </component>
@@ -88,7 +93,7 @@
       <workItem from="1603125863972" duration="125000" />
       <workItem from="1603126203633" duration="933000" />
       <workItem from="1603189580311" duration="416000" />
-      <workItem from="1603197846727" duration="292000" />
+      <workItem from="1603197846727" duration="7415000" />
     </task>
     <servers />
   </component>
