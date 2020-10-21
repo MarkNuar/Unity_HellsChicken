@@ -144,7 +144,7 @@ namespace HellsChicken.Scripts.Game.Player
             {
                 if (IsFalling())
                 {
-                    if (true)//!Input.GetButton("Jump")) //TODO
+                    if (!Input.GetButton("Jump")) //TODO
                     {
                         //FALLING DOWN AT A FASTER SPEED
                         _moveDirection.y -= _fallingGravityIncrease * _gravityScale * _gravity;
