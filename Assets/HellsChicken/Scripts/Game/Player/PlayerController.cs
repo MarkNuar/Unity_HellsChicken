@@ -23,7 +23,8 @@ namespace HellsChicken.Scripts.Game.Player
         [SerializeField] private float _glidingDescentFixedSpeed = 15f;
         [SerializeField] private ParticleSystem _flameThrower;
         [SerializeField] private Transform _firePosition;
-        [SerializeField] private GameObject _fireStreamPrefab;
+         private Boolean _canShoot = true;
+        [SerializeField] private float _flamesCooldown = 2f;
 
         private float _gravity;
 
@@ -67,9 +68,15 @@ namespace HellsChicken.Scripts.Game.Player
 
         public void ShootFlames()
         {
-            ParticleSystem myFlamethrower = Instantiate(_flameThrower, _firePosition.position, _firePosition.rotation);
-            (myFlamethrower).transform.parent = (_transform).transform;
-            Debug.Log("Shoot flames");
+            if (_canShoot)
+            {
+                ParticleSystem myFlamethrower =
+                    Instantiate(_flameThrower, _firePosition.position, _firePosition.rotation);
+                (myFlamethrower).transform.parent = (_transform).transform;
+                _canShoot = false;
+                Debug.Log("Shoot flames");
+                StartCoroutine(EnableFlames(_flamesCooldown));
+            }
         }
 
         public void StartEggAiming()
@@ -195,5 +202,15 @@ namespace HellsChicken.Scripts.Game.Player
                _moveDirection -= hit.normal * Vector3.Dot( hit.normal, _moveDirection ) * _moveDirection.y;
             }
         }
+        
+        IEnumerator EnableFlames(float time)
+        {
+            yield return new WaitForSeconds(time);
+            _canShoot = true;
+            yield return null;
+            //yield --:> Finché viene ritornata una wait, IEnumerator viene richiamato il frame successivo. 
+            //Non appena viene ritornato null, si esce da IEnumerator.
+        }
     }
+    
 }

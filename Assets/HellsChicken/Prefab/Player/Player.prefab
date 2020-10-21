@@ -217,7 +217,7 @@ MonoBehaviour:
   _glidingDescentFixedSpeed: 4
   _flameThrower: {fileID: 0}
   _firePosition: {fileID: 0}
-  _fireStreamPrefab: {fileID: 0}
+  _flamesCooldown: 2
 --- !u!114 &3278510984751445295
 MonoBehaviour:
   m_ObjectHideFlags: 0
