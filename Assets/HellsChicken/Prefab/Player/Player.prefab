@@ -72,7 +72,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.6226415, g: 0.07755997, b: 0.008810949, a: 0}
+  m_BackGroundColor: {r: 0.2735849, g: 0.031366423, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -216,6 +216,8 @@ MonoBehaviour:
   _glidingUpGravityIncrease: 5
   _maxVerticalSpeed: 25
   _glidingDescentFixedSpeed: 5
+  _firePosition: {fileID: 0}
+  _fireStreamPrefab: {fileID: 0}
   _glideMaterial: {fileID: 2100000, guid: 907739f30a87c9748853ce39adaf9392, type: 2}
   _normalMaterial: {fileID: 2100000, guid: 951f76f281239e54fbd8ead1ec404c22, type: 2}
 --- !u!114 &3278510984751445295
