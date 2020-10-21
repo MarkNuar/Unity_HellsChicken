@@ -70,6 +70,7 @@ namespace HellsChicken.Scripts.Game.Player
         {
             if (_canShoot)
             {
+
                 ParticleSystem myFlamethrower =
                     Instantiate(_flameThrower, _firePosition.position, _firePosition.rotation);
                 (myFlamethrower).transform.parent = (_transform).transform;

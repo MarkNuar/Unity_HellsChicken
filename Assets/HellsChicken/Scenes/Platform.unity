@@ -1096,6 +1096,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1290728662772395437, guid: 0da22613203881b4a910d2924af5e901,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.263
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290728662772395437, guid: 0da22613203881b4a910d2924af5e901,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290728662772395437, guid: 0da22613203881b4a910d2924af5e901,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290728662772395437, guid: 0da22613203881b4a910d2924af5e901,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290728662772395437, guid: 0da22613203881b4a910d2924af5e901,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290728662772395437, guid: 0da22613203881b4a910d2924af5e901,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.02
+      objectReference: {fileID: 0}
     - target: {fileID: 3533064644574432347, guid: 0da22613203881b4a910d2924af5e901,
         type: 3}
       propertyPath: field of view

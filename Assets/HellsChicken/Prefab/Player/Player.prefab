@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919787869776621174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 0.56, z: 0}
+  m_LocalPosition: {x: -0.06, y: 0.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3533064645517681299}
@@ -142,7 +142,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3533064645517681303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.53, y: -0.97, z: 0}
+  m_LocalPosition: {x: -0.56, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3533064644574432420}
@@ -215,7 +215,8 @@ MonoBehaviour:
   _fallingGravityIncrease: 3
   _maxVerticalSpeed: 25
   _glidingDescentFixedSpeed: 4
-  _flameThrower: {fileID: 0}
+  _flameThrower: {fileID: 198637950067575458, guid: 007c57e2df8e9b144b99f471b84f3d56,
+    type: 3}
   _firePosition: {fileID: 0}
   _flamesCooldown: 2
 --- !u!114 &3278510984751445295
