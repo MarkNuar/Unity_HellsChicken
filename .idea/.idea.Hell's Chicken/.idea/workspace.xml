@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bc89b660-8c2e-44f0-9184-66b8ac8c2637" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Input.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Platform.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Platform.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerInput.cs" afterDir="false" />
     </list>
@@ -67,7 +68,8 @@
       <option name="presentableId" value="Default" />
       <updated>1603213978241</updated>
       <workItem from="1603214007949" duration="3907000" />
-      <workItem from="1603234256166" duration="5965000" />
+      <workItem from="1603234256166" duration="5990000" />
+      <workItem from="1603267773154" duration="4445000" />
     </task>
     <servers />
   </component>
@@ -76,4 +78,42 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="WindowStateProjectService">
+    <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog" timestamp="1603270988076">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1603270988076" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs</url>
+          <line>81</line>
+          <properties documentPath="C:\Users\marco\Desktop\polimi\year_5_semester_1\VDP\UnityProjects\Hell's Chicken\Assets\HellsChicken\Scripts\Game\Player\PlayerController.cs" initialLine="83">
+            <startOffsets>
+              <option value="2611" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2633" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs</url>
+          <line>173</line>
+          <properties documentPath="C:\Users\marco\Desktop\polimi\year_5_semester_1\VDP\UnityProjects\Hell's Chicken\Assets\HellsChicken\Scripts\Game\Player\PlayerController.cs" initialLine="170">
+            <startOffsets>
+              <option value="6151" />
+            </startOffsets>
+            <endOffsets>
+              <option value="6152" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
 </project>
