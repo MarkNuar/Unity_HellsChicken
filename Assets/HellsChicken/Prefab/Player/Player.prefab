@@ -209,17 +209,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064b2c566ff50bb4794c80f8463f41c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _walkSpeed: 10
-  _jumpSpeed: 18
-  _gravityScale: 3
-  _fallingGravityIncrease: 2.5
-  _glidingUpGravityIncrease: 5
+  _walkSpeed: 15
+  _jumpSpeed: 40
+  _gravityScale: 0.05
+  _fallingGravityIncrease: 3
   _maxVerticalSpeed: 25
-  _glidingDescentFixedSpeed: 5
+  _glidingDescentFixedSpeed: 4
+  _flameThrower: {fileID: 0}
   _firePosition: {fileID: 0}
   _fireStreamPrefab: {fileID: 0}
-  _glideMaterial: {fileID: 2100000, guid: 907739f30a87c9748853ce39adaf9392, type: 2}
-  _normalMaterial: {fileID: 2100000, guid: 951f76f281239e54fbd8ead1ec404c22, type: 2}
 --- !u!114 &3278510984751445295
 MonoBehaviour:
   m_ObjectHideFlags: 0

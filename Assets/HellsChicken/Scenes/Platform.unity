@@ -240,7 +240,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.8
+  m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1096,6 +1096,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3533064644574432347, guid: 0da22613203881b4a910d2924af5e901,
+        type: 3}
+      propertyPath: field of view
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533064644574432347, guid: 0da22613203881b4a910d2924af5e901,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.6981132
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533064644574432347, guid: 0da22613203881b4a910d2924af5e901,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.07978437
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533064644574432347, guid: 0da22613203881b4a910d2924af5e901,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3533064645517681299, guid: 0da22613203881b4a910d2924af5e901,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1179,12 +1199,12 @@ PrefabInstance:
     - target: {fileID: 4720627372636483684, guid: 0da22613203881b4a910d2924af5e901,
         type: 3}
       propertyPath: _jumpSpeed
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4720627372636483684, guid: 0da22613203881b4a910d2924af5e901,
         type: 3}
       propertyPath: _gravityScale
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 4720627372636483684, guid: 0da22613203881b4a910d2924af5e901,
         type: 3}
@@ -1217,6 +1237,12 @@ PrefabInstance:
       propertyPath: _groundDeceleration
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 4720627372636483684, guid: 0da22613203881b4a910d2924af5e901,
+        type: 3}
+      propertyPath: _flameThrower
+      value: 
+      objectReference: {fileID: 198637950067575458, guid: 007c57e2df8e9b144b99f471b84f3d56,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0da22613203881b4a910d2924af5e901, type: 3}
 --- !u!1 &629541351
