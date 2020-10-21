@@ -34,7 +34,7 @@ namespace HellsChicken.Scripts.Game.Player
 
         private Vector3 _moveDirection;
 
-        // private Transform _transform;
+        private Transform _transform;
         private CharacterController _characterController;
         // private MeshRenderer _meshRenderer;
 
@@ -44,7 +44,7 @@ namespace HellsChicken.Scripts.Game.Player
         private void Awake()
         {
             _characterController = gameObject.GetComponent<CharacterController>();
-            // _transform = gameObject.GetComponent<Transform>();
+            _transform = gameObject.GetComponent<Transform>();
             // _meshRenderer = gameObject.GetComponent<MeshRenderer>();
             _moveDirection = Vector3.zero;
             _gravity = - Physics.gravity.y;
