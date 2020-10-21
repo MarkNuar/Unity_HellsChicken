@@ -40,6 +40,7 @@ namespace HellsChicken.Scripts.Game.Player
         // Update is called once per frame
         void Update()
         {
+            /*
             //_horizontalMovement = _newInputSystem.Walking.Move.ReadValue<float>();
             _horizontalMovement = Input.GetAxisRaw("Horizontal");
             if (Input.GetButtonDown("Jump"))
@@ -50,13 +51,15 @@ namespace HellsChicken.Scripts.Game.Player
                 _shootFlames = true;
             if (Input.GetButtonDown("Fire2"))
                 _startEggAiming = true;
+            */
             //TODO: END EGG AIMING.
-            
             //todo : check with get button up if we can detect end of gliding. 
         }
     
         private void FixedUpdate()
         {
+            //TODO
+            /*
             _playerController.MoveHorizontally(_horizontalMovement);
             if (_jump)
             {
@@ -78,6 +81,7 @@ namespace HellsChicken.Scripts.Game.Player
                 _playerController.StartEggAiming();
                 _startEggAiming = false;
             }
+            */
         }
     }
 }

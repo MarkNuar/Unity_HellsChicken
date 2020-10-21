@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Debug = UnityEngine.Debug;
 using Random = UnityEngine.Random;
 
 namespace HellsChicken.Scripts.Game.Player
@@ -13,11 +15,10 @@ namespace HellsChicken.Scripts.Game.Player
         [SerializeField] private float _walkSpeed = 5.0f;
         [SerializeField] private float _jumpSpeed = 5.0f;
         [SerializeField] private float _gravityScale = 2.0f;
-
         [SerializeField] private float _fallingGravityIncrease = 1.0f;
         [SerializeField] private float _glidingUpGravityIncrease = 5.0f;
         //deprecated
-        [SerializeField] private float _glidingDownGravityDecrease = 0.1f;
+        //[SerializeField] private float _glidingDownGravityDecrease = 0.1f;
 
         [SerializeField] private float _maxVerticalSpeed = 40f;
         [SerializeField] private float _glidingDescentFixedSpeed = 15f;
@@ -29,9 +30,7 @@ namespace HellsChicken.Scripts.Game.Player
         private float _horizontalMovement;
         private bool _jump = false;
         private bool _glide;
-        private bool _lastFrameCollided;
-        
-        
+
         private Vector3 _moveDirection;
 
         private Transform _transform;
@@ -48,32 +47,16 @@ namespace HellsChicken.Scripts.Game.Player
             _meshRenderer = gameObject.GetComponent<MeshRenderer>();
             _moveDirection = Vector3.zero;
             _gravity = - Physics.gravity.y;
-            _lastFrameCollided = false;
         }
 
         public void MoveHorizontally(float horizontalMovement)
         {
             _horizontalMovement = horizontalMovement;
         }
-
         public void Jump()
         {
             _jump = _characterController.isGrounded;
         }
-        
-        /*
-        public void StartGliding()
-        {
-            _meshRenderer.material = _glideMaterial;
-            _isGliding = true;
-        }
-
-        public void StopGliding()
-        {
-            _meshRenderer.material = _normalMaterial;
-            _isGliding = false;
-        }
-        */
         public void Glide()
         {
             _glide = IsFalling() && !_characterController.isGrounded;
@@ -91,6 +74,7 @@ namespace HellsChicken.Scripts.Game.Player
         
         private void FixedUpdate()
         {
+            
             _moveDirection.x = _horizontalMovement * _walkSpeed;
             _moveDirection.z = 0f;
             if (_characterController.isGrounded)
@@ -109,11 +93,11 @@ namespace HellsChicken.Scripts.Game.Player
                 //falling
                 if (!_glide)
                 {
-                    _moveDirection.y -= _gravityScale * _gravity * Time.fixedDeltaTime;
+                    _moveDirection.y -= _gravityScale * _gravity;
                     //Faster fall when going down
                     if (_moveDirection.y < 0f)
                     {
-                        _moveDirection.y -= _fallingGravityIncrease * _gravityScale * _gravity * Time.fixedDeltaTime;
+                        _moveDirection.y -= _fallingGravityIncrease * _gravityScale * _gravity;
                     }
                 }
                 //gliding
@@ -122,12 +106,11 @@ namespace HellsChicken.Scripts.Game.Player
                     if (_moveDirection.y > 0)
                     {
                         //quick reduction of gravity if the player is going up
-                        _moveDirection.y -= _glidingUpGravityIncrease * _gravityScale * _gravity * Time.fixedDeltaTime;
+                        _moveDirection.y -= _glidingUpGravityIncrease * _gravityScale * _gravity;
                     }
                     else
                     {
                         //now that there is no upward movement, the player float down slowly.
-                        //TODO: check if better with or without gravity acceleration
                         _moveDirection.y = -_glidingDescentFixedSpeed;// * Random.Range(.5f, 2f);
                         //_moveDirection.y -= _glidingDownGravityDecrease * _gravityScale * _gravity * Time.fixedDeltaTime;
                     }
@@ -136,8 +119,49 @@ namespace HellsChicken.Scripts.Game.Player
             }
             //Clamping _moveDirection.y at _maxVerticalSpeed
             if (Math.Abs(_moveDirection.y) > _maxVerticalSpeed)
+                _moveDirection.y = Math.Sign(_moveDirection.y) * _maxVerticalSpeed;
+            _characterController.Move(_moveDirection * Time.fixedDeltaTime);
+            
+            
+            
+            
+            //TODO VERSION WITHOUT PLAYER INPUT, IT ONLY INCREASES COMPLEXITY
+            //TODO add controls fetch in the Update function!!
+            /*
+            _moveDirection.x = Input.GetAxis("Horizontal") * _walkSpeed;
+            _moveDirection.z = 0f;
+            if (_characterController.isGrounded)
+            {
+                _moveDirection.y = -10f;
+                if (Input.GetButtonDown("Jump"))
+                {
+                    _moveDirection.y = _jumpSpeed;
+                    //CALL ANIMATOR FOR JUMP ANIMATION
+                }
+            }
+            else //not grounded, so falling or gliding
+            {
+                if (IsFalling())
+                {
+                    if (!Input.GetButton("Jump"))
+                    {
+                        _moveDirection.y -= _fallingGravityIncrease * _gravityScale * _gravity;
+                    }
+                    else
+                    {
+                        _moveDirection.y = -_glidingDescentFixedSpeed;
+                    }
+                }
+                else
+                {
+                    _moveDirection.y -= _gravityScale * _gravity;
+                }
+            }
+            //Clamping _moveDirection.y at _maxVerticalSpeed
+            if (Math.Abs(_moveDirection.y) > _maxVerticalSpeed)
                 _moveDirection.y = Math.Sign(_moveDirection.y)* _maxVerticalSpeed;
             _characterController.Move(_moveDirection * Time.fixedDeltaTime);
+            */
         }
 
         public bool IsGrounded()
@@ -149,44 +173,17 @@ namespace HellsChicken.Scripts.Game.Player
         {
             return _glide;
         }
-
-        public bool IsFalling()
+        private bool IsFalling()
         {
             return _moveDirection.y < 0;
         }
-        
-        
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
-            //TODO
-            //Idea: if collided, then do not consider collision until ground is touched?
             if (_characterController.collisionFlags != CollisionFlags.Above) return;
-            if (!_lastFrameCollided)
+            if (Vector3.Dot(hit.normal, _moveDirection) < 0)
             {
-                _moveDirection.y = -(float) Math.Sqrt(Math.Abs(_moveDirection.y));
-                //_moveDirection.x = 0;
-                _lastFrameCollided = true;
+               _moveDirection -= hit.normal * Vector3.Dot( hit.normal, _moveDirection ) * _moveDirection.y;
             }
-            else
-            {
-                _moveDirection.y = -3 * (float) Math.Sqrt(Math.Abs(_moveDirection.y));
-                _lastFrameCollided = false;
-            }
-            
-            //if (Vector3.Dot(hit.normal, _moveDirection) < 0)
-            //{
-             //   _moveDirection -= hit.normal * Vector3.Dot( hit.normal, _moveDirection ) * _moveDirection.y;
-            //}
-            /*
-            //Debug.DrawLine(hit.normal, hit.normal * 2, Color.white, 0.5f);
-            if (!_characterController.isGrounded && hit.normal.y < -.5f)
-            {
-                Debug.DrawLine(hit.normal, hit.normal * 2, Color.white, 0.5f);
-                _moveDirection.y = -(float) Math.Sqrt(Math.Abs(_moveDirection.y));
-            }
-            //hit.normal
-            //TODO
-            */
         }
     }
 }
