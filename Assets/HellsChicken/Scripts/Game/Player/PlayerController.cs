@@ -12,35 +12,27 @@ namespace HellsChicken.Scripts.Game.Player
     public class PlayerController : MonoBehaviour
     {
 
-        [SerializeField] private float _walkSpeed = 5.0f;
-        [SerializeField] private float _jumpSpeed = 5.0f;
-        [SerializeField] private float _gravityScale = 2.0f;
-        [SerializeField] private float _fallingGravityIncrease = 1.0f;
-        // [SerializeField] private float _glidingUpGravityIncrease = 5.0f;
-
-
-        [SerializeField] private float _maxVerticalSpeed = 40f;
-        [SerializeField] private float _glidingDescentFixedSpeed = 15f;
-        [SerializeField] private ParticleSystem _flameThrower;
-        [SerializeField] private Transform _firePosition;
+        [SerializeField] private float walkSpeed = 5.0f;
+        [SerializeField] private float jumpSpeed = 5.0f;
+        [SerializeField] private float gravityScale = 2.0f;
+        [SerializeField] private float fallMultiplier = 2.5f;
+        [SerializeField] private float lowJumpMultiplier = 2f;
+        [SerializeField] private float glidingSpeed = 15f;
+        [SerializeField] private ParticleSystem flameThrower;
+        [SerializeField] private Transform firePosition;
          private Boolean _canShoot = true;
-        [SerializeField] private float _flamesCooldown = 2f;
+        [SerializeField] private float flamesCooldown = 2f;
 
         private float _gravity;
-
-        // private float _horizontalMovement;
-        // private bool _jump = false;
-        // private bool _glide;
-
 
         private Vector3 _moveDirection;
 
         private Transform _transform;
         private CharacterController _characterController;
-        // private MeshRenderer _meshRenderer;
-
-        // [SerializeField] private Material _glideMaterial;
-        // [SerializeField] private Material _normalMaterial;
+        
+        private Quaternion _leftRotation;
+        private Quaternion _rightRotation;
+        private bool _lookingRight;
 
         private void Awake()
         {
@@ -48,23 +40,10 @@ namespace HellsChicken.Scripts.Game.Player
             _transform = gameObject.GetComponent<Transform>();
             // _meshRenderer = gameObject.GetComponent<MeshRenderer>();
             _moveDirection = Vector3.zero;
-            _gravity = - Physics.gravity.y;
+            _gravity = Physics.gravity.y;
+            _rightRotation = transform.rotation;
+            _leftRotation = _rightRotation * Quaternion.Euler(0, 180, 0); 
         }
-
-        /*
-        public void MoveHorizontally(float horizontalMovement)
-        {
-            _horizontalMovement = horizontalMovement;
-        }
-        public void Jump()
-        {
-            _jump = _characterController.isGrounded;
-        }
-        public void Glide()
-        {
-            _glide = IsFalling() && !_characterController.isGrounded;
-        }
-        */
 
         public void ShootFlames()
         {
@@ -72,11 +51,11 @@ namespace HellsChicken.Scripts.Game.Player
             {
 
                 ParticleSystem myFlamethrower =
-                    Instantiate(_flameThrower, _firePosition.position, _firePosition.rotation);
+                    Instantiate(flameThrower, firePosition.position, firePosition.rotation);
                 (myFlamethrower).transform.parent = (_transform).transform;
                 _canShoot = false;
                 Debug.Log("Shoot flames");
-                StartCoroutine(EnableFlames(_flamesCooldown));
+                StartCoroutine(EnableFlames(flamesCooldown));
             }
         }
 
@@ -87,93 +66,55 @@ namespace HellsChicken.Scripts.Game.Player
 
         private void Update()
         {
-            /*
-            _moveDirection.x = _horizontalMovement * _walkSpeed;
-            _moveDirection.z = 0f;
-            if (_characterController.isGrounded)
-            {
-                //If I'm on ground, then I stop gliding
-                _glide = false;
-                _moveDirection.y = -10f;
-                if (_jump)
-                {
-                    _moveDirection.y = _jumpSpeed;
-                    _jump = false;
-                }
-            }
-            else //not grounded, so falling or gliding
-            {
-                //falling
-                if (!_glide)
-                {
-                    _moveDirection.y -= _gravityScale * _gravity;
-                    //Faster fall when going down
-                    if (_moveDirection.y < 0f)
-                    {
-                        _moveDirection.y -= _fallingGravityIncrease * _gravityScale * _gravity;
-                    }
-                }
-                //gliding
-                else
-                {
-                    if (_moveDirection.y > 0)
-                    {
-                        //quick reduction of gravity if the player is going up
-                        _moveDirection.y -= _glidingUpGravityIncrease * _gravityScale * _gravity;
-                    }
-                    else
-                    {
-                        //now that there is no upward movement, the player float down slowly.
-                        _moveDirection.y = -_glidingDescentFixedSpeed;// * Random.Range(.5f, 2f);
-                        //_moveDirection.y -= _glidingDownGravityDecrease * _gravityScale * _gravity * Time.fixedDeltaTime;
-                    }
-                    _glide = false;
-                }
-            }
-            //Clamping _moveDirection.y at _maxVerticalSpeed
-            if (Math.Abs(_moveDirection.y) > _maxVerticalSpeed)
-                _moveDirection.y = Math.Sign(_moveDirection.y) * _maxVerticalSpeed;
-            _characterController.Move(_moveDirection * Time.fixedDeltaTime);
-            */
             if(Input.GetButtonDown("Fire1"))
                 ShootFlames();
             if(Input.GetButtonDown("Fire2"))
                 StartEggAiming();
 
-            _moveDirection.x = Input.GetAxis("Horizontal") * _walkSpeed;
+            _moveDirection.x = Input.GetAxis("Horizontal") * walkSpeed;
             _moveDirection.z = 0f;
-            if (IsGrounded())
+            //CHARACTER ROTATION
+            if (_moveDirection.x > 0.01f)
             {
-                _moveDirection.y = -20f;
-                if (Input.GetButtonDown("Jump"))
+                _lookingRight = true;
+                _transform.rotation = _rightRotation;
+            }
+            else if (_moveDirection.x < -0.01f)
+            {
+                _lookingRight = false;
+                _transform.rotation = _leftRotation;
+            }
+            //STICK TO THE PAVEMENT
+            if (IsGrounded() && IsFalling()) //The falling check is made because when the character is on ground, it has a negative velocity
+            {
+                _moveDirection.y = -8f;
+            }
+            //JUMPING
+            if (IsGrounded() && Input.GetButtonDown("Jump"))
+            {
+                _moveDirection.y = Mathf.Sqrt(jumpSpeed * -3.0f * _gravity * gravityScale);
+            }
+            //JUMP PROPORTIONAL TO BAR PRESSING
+            if (!IsFalling() && !Input.GetButton("Jump"))
+            {
+                _moveDirection.y += _gravity * gravityScale * (lowJumpMultiplier - 1) * Time.deltaTime;
+            }
+            //GRAVITY INCREASE WHEN FALLING
+            if (!IsGrounded() && IsFalling())
+            {
+                _moveDirection.y += _gravity * gravityScale * (fallMultiplier - 1) * Time.deltaTime;
+            }
+            //GRAVITY APPLICATION
+            _moveDirection.y += _gravity * gravityScale * Time.deltaTime;
+            //GLIDING
+            if (!IsGrounded() && IsFalling())
+            {
+                if (Input.GetButton("Jump")) //TODO
                 {
-                    _moveDirection.y = _jumpSpeed;
+                    _moveDirection.y = - glidingSpeed;
                 }
             }
-            else
-            {
-                if (IsFalling())
-                {
-                    if (!Input.GetButton("Jump")) //TODO
-                    {
-                        //FALLING DOWN AT A FASTER SPEED
-                        _moveDirection.y -= _fallingGravityIncrease * _gravityScale * _gravity;
-                    }
-                    else
-                    {
-                        //GLIDING DOWN
-                        _moveDirection.y = -_glidingDescentFixedSpeed;
-                    }
-                }
-                else
-                {
-                    //GOING UP AT A SLOWER SPEED
-                    _moveDirection.y -= _gravityScale * _gravity;
-                }
-            }
-            //CLAMPING MAX SPEED
-            if (Math.Abs(_moveDirection.y) > _maxVerticalSpeed)
-                _moveDirection.y = Math.Sign(_moveDirection.y)* _maxVerticalSpeed;
+            //MOVEMENT APPLICATION
             _characterController.Move(_moveDirection * Time.deltaTime);
         }
 
@@ -188,19 +129,12 @@ namespace HellsChicken.Scripts.Game.Player
             return _moveDirection.y < 0f ;
         }
 
-        //DEPRECATED
-        // public bool IsGliding()
-        // {
-        //     return _glide;
-        // }
-
-
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
             if (_characterController.collisionFlags != CollisionFlags.Above) return;
             if (Vector3.Dot(hit.normal, _moveDirection) < 0)
             {
-               _moveDirection -= hit.normal * Vector3.Dot( hit.normal, _moveDirection ) * _moveDirection.y;
+               _moveDirection -= hit.normal * Vector3.Dot(hit.normal, _moveDirection);
             }
         }
         
