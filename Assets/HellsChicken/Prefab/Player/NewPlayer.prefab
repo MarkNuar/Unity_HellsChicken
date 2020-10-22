@@ -322,9 +322,11 @@ MonoBehaviour:
   walkSpeed: 5
   jumpSpeed: 5
   gravityScale: 2
-  fallingGravityIncrease: 1
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 2
   glidingSpeed: 15
-  flameThrower: {fileID: 0}
+  flameThrower: {fileID: 198637950067575458, guid: 007c57e2df8e9b144b99f471b84f3d56,
+    type: 3}
   firePosition: {fileID: 9208901124896132889}
   flamesCooldown: 2
 --- !u!143 &6855313962796646440
