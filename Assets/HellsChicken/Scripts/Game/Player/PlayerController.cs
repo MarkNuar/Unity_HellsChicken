@@ -8,6 +8,7 @@ using Random = UnityEngine.Random;
 
 namespace HellsChicken.Scripts.Game.Player
 {
+    
     [RequireComponent(typeof(CharacterController))]
     public class PlayerController : MonoBehaviour
     {
@@ -42,7 +43,7 @@ namespace HellsChicken.Scripts.Game.Player
         private Vector3 lookDirection;
         private float angle;
 
-        private void Awake()
+        void Awake()
         {
             _characterController = gameObject.GetComponent<CharacterController>();
             _transform = gameObject.GetComponent<Transform>();
@@ -57,9 +58,7 @@ namespace HellsChicken.Scripts.Game.Player
         {
             if (_canShoot)
             {
-
-                ParticleSystem myFlamethrower =
-                    Instantiate(flameThrower, firePosition.position, firePosition.rotation);
+                ParticleSystem myFlamethrower =  Instantiate(flameThrower, firePosition.position, firePosition.rotation);
                 (myFlamethrower).transform.parent = (_transform).transform;
                 _canShoot = false;
                 Debug.Log("Shoot flames");
@@ -73,15 +72,22 @@ namespace HellsChicken.Scripts.Game.Player
             egg.GetComponent<Rigidbody>().velocity = direction * throwForce;
         }
 
-        private void Update()
+        void Update()
         {
-            lookDirection = EggThrow.GetTarget() - firePoint.position;
+            lookDirection = Target.GetTarget() - firePoint.position;
             angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
             firePoint.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
             
+            //FIRE
             if(Input.GetButtonDown("Fire1"))
                 ShootFlames();
-            if (Input.GetButtonDown("Fire2"))
+
+            //EGG
+            if (Input.GetButton("Fire2"))
+            {
+                //
+            }
+            if (Input.GetButtonUp("Fire2"))
             {
                 float distance = lookDirection.magnitude;
                 Vector2 direction = lookDirection / distance;
@@ -91,39 +97,46 @@ namespace HellsChicken.Scripts.Game.Player
 
             _moveDirection.x = Input.GetAxis("Horizontal") * walkSpeed;
             _moveDirection.z = 0f;
+            
             //CHARACTER ROTATION
-            if (_moveDirection.x > 0.01f)
+            if (lookDirection.x > 0.01f)
             {
                 _lookingRight = true;
                 _transform.rotation = _rightRotation;
             }
-            else if (_moveDirection.x < -0.01f)
+            else if (lookDirection.x < -0.01f)
             {
                 _lookingRight = false;
                 _transform.rotation = _leftRotation;
             }
+            
             //STICK TO THE PAVEMENT
             if (IsGrounded() && IsFalling()) //The falling check is made because when the character is on ground, it has a negative velocity
             {
                 _moveDirection.y = -8f;
             }
+            
             //JUMPING
             if (IsGrounded() && Input.GetButtonDown("Jump"))
             {
                 _moveDirection.y = Mathf.Sqrt(jumpSpeed * -3.0f * _gravity * gravityScale);
             }
+            
             //JUMP PROPORTIONAL TO BAR PRESSING
             if (!IsFalling() && !Input.GetButton("Jump"))
             {
                 _moveDirection.y += _gravity * gravityScale * (lowJumpMultiplier - 1) * Time.deltaTime;
             }
+            
             //GRAVITY INCREASE WHEN FALLING
             if (!IsGrounded() && IsFalling())
             {
                 _moveDirection.y += _gravity * gravityScale * (fallMultiplier - 1) * Time.deltaTime;
             }
+            
             //GRAVITY APPLICATION
             _moveDirection.y += _gravity * gravityScale * Time.deltaTime;
+            
             //GLIDING
             if (!IsGrounded() && IsFalling())
             {
@@ -132,22 +145,22 @@ namespace HellsChicken.Scripts.Game.Player
                     _moveDirection.y = - glidingSpeed;
                 }
             }
+            
             //MOVEMENT APPLICATION
             _characterController.Move(_moveDirection * Time.deltaTime);
         }
-
-
-        private bool IsGrounded()
+        
+        bool IsGrounded()
         {
             return _characterController.isGrounded;
         }
 
-        private bool IsFalling()
+        bool IsFalling()
         {
             return _moveDirection.y < 0f ;
         }
 
-        private void OnControllerColliderHit(ControllerColliderHit hit)
+        void OnControllerColliderHit(ControllerColliderHit hit)
         {
             if (_characterController.collisionFlags != CollisionFlags.Above) return;
             if (Vector3.Dot(hit.normal, _moveDirection) < 0)
@@ -164,6 +177,7 @@ namespace HellsChicken.Scripts.Game.Player
             //yield --:> Finché viene ritornata una wait, IEnumerator viene richiamato il frame successivo. 
             //Non appena viene ritornato null, si esce da IEnumerator.
         }
+        
     }
     
 }

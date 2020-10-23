@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EggExplosion : MonoBehaviour
 {
+    
     private float timer = 2f;
     private float countdown;
 
@@ -57,4 +58,5 @@ public class EggExplosion : MonoBehaviour
 
         Destroy(gameObject);
     }
+    
 }

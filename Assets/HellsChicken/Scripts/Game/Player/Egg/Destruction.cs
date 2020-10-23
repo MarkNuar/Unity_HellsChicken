@@ -8,7 +8,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Destruction : MonoBehaviour {
+public class Destruction : MonoBehaviour
+{
 
 	[SerializeField] GameObject destroyedVersion;
 	

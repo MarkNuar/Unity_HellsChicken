@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using EventManagerNamespace;
 using UnityEngine;
 
-public class BombExplosion : MonoBehaviour {
+public class BombExplosion : MonoBehaviour
+{
 
     [SerializeField] private GameObject explosionPrefab;
 
