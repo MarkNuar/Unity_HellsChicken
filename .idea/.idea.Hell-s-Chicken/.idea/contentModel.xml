@@ -12,6 +12,9 @@
             <e p="Game" t="Include">
               <e p="AI" t="Include">
                 <e p="Centaur" t="Include">
+                  <e p="Bow" t="Include">
+                    <e p="Arrow.cs" t="Include" />
+                  </e>
                   <e p="CentaurAI.cs" t="Include" />
                 </e>
                 <e p="DecisionTree" t="Include">

@@ -15,7 +15,10 @@ public class CentaurAI : MonoBehaviour {
     
     [SerializeField] private float agentVelocity = 8f;
     [SerializeField] private float timeReaction = 2f; //how often do the agent take decision?
-    
+    [SerializeField] private Transform player;
+    [SerializeField] private Transform arrowPosition;
+    [SerializeField] private GameObject arrowPrefab;
+
     private Rigidbody _rigidbody;
     private DecisionTree tree;
     
@@ -31,9 +34,11 @@ public class CentaurAI : MonoBehaviour {
         DTDecision d2 = new DTDecision(isPlayerStill);
         
         //Action
+        DTAction a1 = new DTAction(hit);
         DTAction a2 = new DTAction(move);
         DTAction a3 = new DTAction(stop);
         
+        d1.addLink(true,a1);
         d1.addLink(false,d2);
 
         d2.addLink(true, a2);
@@ -81,8 +86,30 @@ public class CentaurAI : MonoBehaviour {
         return null;
     }
 
+    public object hit() {
+        GameObject arrow = Instantiate(arrowPrefab,arrowPosition.position,Quaternion.identity);
+        Arrow ar = arrow.GetComponent<Arrow>();
+        ar.Target = player;
+        ar.Centaur = transform;
+        ar.launch();
+        return null;
+    }
+
     //Decisions
     public object isPlayerVisible() {
+        Vector3 ray = player.position - transform.position;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, ray, out hit)) {
+            if (hit.transform == player) {
+                //transform.LookAt(player.position);
+                if (Vector3.Dot(ray, transform.forward) <= 0 ) {
+                    transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
+                    right = !right;
+                }
+                movement = false;
+                return true;
+            }
+        }
         return false;
     }
 
@@ -104,6 +131,7 @@ public class CentaurAI : MonoBehaviour {
 
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("wall")) {
+            transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
             right = !right;
         }
     }
