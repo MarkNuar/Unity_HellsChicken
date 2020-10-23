@@ -360,6 +360,9 @@ MonoBehaviour:
     type: 3}
   firePosition: {fileID: 9208901124896132889}
   flamesCooldown: 2
+  eggPrefab: {fileID: 9045032837410467742, guid: de366eea063501149ad855357dddf584,
+    type: 3}
+  eggThrowPoint: {fileID: 1409568841327029750}
 --- !u!143 &6855313962796646440
 CharacterController:
   m_ObjectHideFlags: 0
