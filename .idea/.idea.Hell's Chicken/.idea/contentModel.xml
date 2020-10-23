@@ -7,6 +7,52 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="ExternalAssets" t="Include">
+          <e p="POLIMIGameCollective" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="ExtendedEventManager" t="Include">
+                <e p="EventManager.cs" t="Include" />
+              </e>
+              <e p="Localization" t="Include">
+                <e p="Editor" t="Include">
+                  <e p="LocalizedTextEditor.cs" t="Include" />
+                </e>
+                <e p="LocalizationData.cs" t="Include" />
+                <e p="LocalizationManager.cs" t="Include" />
+                <e p="LocalizedText.cs" t="Include" />
+                <e p="StartupManager.cs" t="Include" />
+              </e>
+              <e p="ObjectPooling" t="Include">
+                <e p="ObjectPool.cs" t="Include" />
+                <e p="ObjectPoolingManager.cs" t="Include" />
+                <e p="ReadMe.txt" t="Include" />
+              </e>
+              <e p="OrderOfEvents" t="Include">
+                <e p="OrderOfEvents.cs" t="Include" />
+              </e>
+              <e p="ScreenBounds" t="Include">
+                <e p="ScreenBounds.cs" t="Include" />
+              </e>
+              <e p="ScriptableObjects" t="Include">
+                <e p="Editor" t="Include">
+                  <e p="FloatReferenceDrawer.cs" t="Include" />
+                </e>
+                <e p="FloatReference.cs" t="Include" />
+                <e p="FloatVariable.cs" t="Include" />
+                <e p="Interval.cs" t="Include" />
+                <e p="RuntimeSet.cs" t="Include" />
+                <e p="StringVariable.cs" t="Include" />
+                <e p="Thing.cs" t="Include" />
+                <e p="ThingDisabler.cs" t="Include" />
+                <e p="ThingMonitor.cs" t="Include" />
+                <e p="ThingRuntimeSet.cs" t="Include" />
+              </e>
+              <e p="Singleton" t="Include">
+                <e p="Singleton.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
         <e p="HellsChicken" t="Include">
           <e p="Scripts" t="Include">
             <e p="Game" t="Include">
@@ -21,52 +67,13 @@
               </e>
               <e p="Player" t="Include">
                 <e p="CameraController.cs" t="Include" />
+                <e p="Egg" t="Include">
+                  <e p="Destruction.cs" t="Include" />
+                  <e p="EggExplosion.cs" t="Include" />
+                  <e p="Target.cs" t="Include" />
+                </e>
                 <e p="PlayerController.cs" t="Include" />
               </e>
-            </e>
-          </e>
-        </e>
-        <e p="POLIMIGameCollective" t="Include">
-          <e p="Scripts" t="Include">
-            <e p="ExtendedEventManager" t="Include">
-              <e p="EventManager.cs" t="Include" />
-            </e>
-            <e p="Localization" t="Include">
-              <e p="Editor" t="Include">
-                <e p="LocalizedTextEditor.cs" t="Include" />
-              </e>
-              <e p="LocalizationData.cs" t="Include" />
-              <e p="LocalizationManager.cs" t="Include" />
-              <e p="LocalizedText.cs" t="Include" />
-              <e p="StartupManager.cs" t="Include" />
-            </e>
-            <e p="ObjectPooling" t="Include">
-              <e p="ObjectPool.cs" t="Include" />
-              <e p="ObjectPoolingManager.cs" t="Include" />
-              <e p="ReadMe.txt" t="Include" />
-            </e>
-            <e p="OrderOfEvents" t="Include">
-              <e p="OrderOfEvents.cs" t="Include" />
-            </e>
-            <e p="ScreenBounds" t="Include">
-              <e p="ScreenBounds.cs" t="Include" />
-            </e>
-            <e p="ScriptableObjects" t="Include">
-              <e p="Editor" t="Include">
-                <e p="FloatReferenceDrawer.cs" t="Include" />
-              </e>
-              <e p="FloatReference.cs" t="Include" />
-              <e p="FloatVariable.cs" t="Include" />
-              <e p="Interval.cs" t="Include" />
-              <e p="RuntimeSet.cs" t="Include" />
-              <e p="StringVariable.cs" t="Include" />
-              <e p="Thing.cs" t="Include" />
-              <e p="ThingDisabler.cs" t="Include" />
-              <e p="ThingMonitor.cs" t="Include" />
-              <e p="ThingRuntimeSet.cs" t="Include" />
-            </e>
-            <e p="Singleton" t="Include">
-              <e p="Singleton.cs" t="Include" />
             </e>
           </e>
         </e>
