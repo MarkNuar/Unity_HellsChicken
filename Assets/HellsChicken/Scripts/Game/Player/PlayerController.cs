@@ -38,7 +38,7 @@ namespace HellsChicken.Scripts.Game.Player
         private float throwForce = 20f;
         
         [SerializeField] GameObject eggPrefab;
-        [SerializeField] Transform firePoint;
+        [SerializeField] Transform eggThrowPoint;
         
         private Vector3 lookDirection;
         private float angle;
@@ -68,15 +68,15 @@ namespace HellsChicken.Scripts.Game.Player
 
         void ThrowEgg(Vector2 direction)
         {
-            GameObject egg = Instantiate(eggPrefab, firePoint.transform.position, Quaternion.Euler(0.0f, 0.0f, angle));
+            GameObject egg = Instantiate(eggPrefab, eggThrowPoint.transform.position, Quaternion.Euler(0.0f, 0.0f, angle));
             egg.GetComponent<Rigidbody>().velocity = direction * throwForce;
         }
 
         void Update()
         {
-            lookDirection = Target.GetTarget() - firePoint.position;
+            lookDirection = Target.GetTarget() - eggThrowPoint.position;
             angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-            firePoint.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
+            eggThrowPoint.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
             
             //FIRE
             if(Input.GetButtonDown("Fire1"))
