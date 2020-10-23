@@ -33,6 +33,14 @@ namespace HellsChicken.Scripts.Game.Player
         private Quaternion _leftRotation;
         private Quaternion _rightRotation;
         private bool _lookingRight;
+        
+        private float throwForce = 20f;
+        
+        [SerializeField] GameObject eggPrefab;
+        [SerializeField] Transform firePoint;
+        
+        private Vector3 lookDirection;
+        private float angle;
 
         private void Awake()
         {
@@ -59,17 +67,27 @@ namespace HellsChicken.Scripts.Game.Player
             }
         }
 
-        public void StartEggAiming()
+        void ThrowEgg(Vector2 direction)
         {
-            Debug.Log("Start Egg Aiming");
+            GameObject egg = Instantiate(eggPrefab, firePoint.transform.position, Quaternion.Euler(0.0f, 0.0f, angle));
+            egg.GetComponent<Rigidbody>().velocity = direction * throwForce;
         }
 
         private void Update()
         {
+            lookDirection = EggThrow.GetTarget() - firePoint.position;
+            angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
+            firePoint.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
+            
             if(Input.GetButtonDown("Fire1"))
                 ShootFlames();
-            if(Input.GetButtonDown("Fire2"))
-                StartEggAiming();
+            if (Input.GetButtonDown("Fire2"))
+            {
+                float distance = lookDirection.magnitude;
+                Vector2 direction = lookDirection / distance;
+                direction.Normalize();
+                ThrowEgg(direction);
+            }
 
             _moveDirection.x = Input.GetAxis("Horizontal") * walkSpeed;
             _moveDirection.z = 0f;

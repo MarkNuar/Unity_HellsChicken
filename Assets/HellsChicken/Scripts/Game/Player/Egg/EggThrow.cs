@@ -6,14 +6,15 @@ using UnityEngine.Serialization;
 
 public class EggThrow : MonoBehaviour
 {
-    private float throwForce = 20f;
+    //private float throwForce = 20f;
 
-    [SerializeField] GameObject eggPrefab;
-    [SerializeField] Transform firePoint;
+    //[SerializeField] GameObject eggPrefab;
+    //[SerializeField] Transform firePoint;
     [SerializeField] GameObject crosshair;
     
-    private Vector3 target;
-    private float angle;
+    private static Vector3 target;
+    //private Vector3 lookDirection;
+    //private float angle;
     
     // Use this for initialization
     void Start () {
@@ -27,7 +28,8 @@ public class EggThrow : MonoBehaviour
 
         crosshair.transform.position = new Vector2(target.x, target.y);
         
-        Vector3 lookDirection = target - firePoint.position;
+        /*
+        lookDirection = target - firePoint.position;
         angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
         firePoint.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
         
@@ -42,12 +44,19 @@ public class EggThrow : MonoBehaviour
             direction.Normalize();
             ThrowEgg(direction);
         }
+        */
     }
 
+    public static Vector3 GetTarget()
+    {
+        return target;
+    }
+
+    /*
     void ThrowEgg(Vector2 direction)
     {
         GameObject egg = Instantiate(eggPrefab, firePoint.transform.position, Quaternion.Euler(0.0f, 0.0f, angle));
-        Rigidbody rb = egg.GetComponent<Rigidbody>();
         egg.GetComponent<Rigidbody>().velocity = direction * throwForce;
     }
+    */
 }
