@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="44fa9eaf-4901-4eb4-b858-67c1b19b2312" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Models.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +44,7 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/BombExplosion.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/Target.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/EggExplosion.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/PredictionManager.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
       </list>
     </option>
