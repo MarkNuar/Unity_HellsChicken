@@ -36,8 +36,18 @@ namespace HellsChicken.Scripts.Game.Player
         
         [SerializeField] GameObject eggPrefab;
         [SerializeField] Transform eggThrowPoint;
+        [SerializeField] GameObject crosshair;
+
+        private float timer = 2f;
+        private float _countdown;
+        private bool _isAiming;
         
         private Vector3 _lookDirection;
+        
+        // Use this for initialization
+        void Start () {
+            crosshair.transform.localScale = new Vector3(0, 0, 0);
+        }
         
         void Awake()
         {
@@ -70,35 +80,62 @@ namespace HellsChicken.Scripts.Game.Player
             direction.Normalize();
             GameObject egg = Instantiate(eggPrefab, eggThrowPoint.transform.position, Quaternion.Euler(0.0f, 0.0f, angle));
             egg.GetComponent<Rigidbody>().velocity = direction * throwForce;
+            
+            //TODO vettore forza + vettore movimento
+            
+            _countdown = timer;
         }
 
         void Update()
         {
             _lookDirection = Target.GetTarget() - eggThrowPoint.position;
+            _countdown -= Time.deltaTime;
             
             //FIRE
             if(Input.GetButtonDown("Fire1"))
                 ShootFlames();
 
             //EGG
-            if (Input.GetButton("Fire2"))
+            if (_countdown <= 0f)
             {
-                //Caricamento lancio
-            }
-            if (Input.GetButtonUp("Fire2"))
-            {
-                ThrowEgg();
+                if (Input.GetButton("Fire2"))
+                {
+                    _isAiming = true;
+                    
+                    crosshair.transform.localScale = new Vector3(0.25f, 0.25f, 1);
+                    crosshair.transform.position = new Vector2(Target.GetTarget().x, Target.GetTarget().y);
+                    
+                    if (_lookDirection.x > 0.01f)
+                    {
+                        _transform.rotation = _rightRotation;
+                    }
+                    else if (_lookDirection.x < -0.01f)
+                    {
+                        _transform.rotation = _leftRotation;
+                    }
+                    
+                    //TODO traiettoria
+                    
+                }
+
+                if (Input.GetButtonUp("Fire2"))
+                {
+                    ThrowEgg();
+                    crosshair.transform.localScale = new Vector3(0, 0, 0);
+                    _isAiming = false;
+
+                }
             }
 
             _moveDirection.x = Input.GetAxis("Horizontal") * walkSpeed;
             _moveDirection.z = 0f;
             
             //CHARACTER ROTATION
-            if (_lookDirection.x > 0.01f)
+            if (_moveDirection.x > 0.01f && !_isAiming)
             {
                 _transform.rotation = _rightRotation;
             }
-            else if (_lookDirection.x < -0.01f)
+            else if (_moveDirection.x < -0.01f && !_isAiming)
             {
                 _transform.rotation = _leftRotation;
             }
