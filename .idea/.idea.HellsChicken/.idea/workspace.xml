@@ -28,6 +28,8 @@
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Textures.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Camera.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Enemies.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/Target.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/Target.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,10 +49,10 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Fire/FireController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerInput.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/EggThrow.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/Target.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/EggExplosion.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/Destruction.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/BombExplosion.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/Target.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
       </list>
     </option>
@@ -111,6 +113,8 @@
       <workItem from="1603393198096" duration="308000" />
       <workItem from="1603437409909" duration="5008000" />
       <workItem from="1603453300407" duration="3542000" />
+      <workItem from="1603665825029" duration="75000" />
+      <workItem from="1603700170942" duration="1821000" />
     </task>
     <servers />
   </component>

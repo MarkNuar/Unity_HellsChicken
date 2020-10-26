@@ -36,8 +36,16 @@ namespace HellsChicken.Scripts.Game.Player
         
         [SerializeField] GameObject eggPrefab;
         [SerializeField] Transform eggThrowPoint;
+        [SerializeField] GameObject crosshair;
+
+        private bool _isAiming;
         
         private Vector3 _lookDirection;
+        
+        // Use this for initialization
+        void Start () {
+            crosshair.transform.localScale = new Vector3(0, 0, 0);
+        }
         
         void Awake()
         {
@@ -83,22 +91,36 @@ namespace HellsChicken.Scripts.Game.Player
             //EGG
             if (Input.GetButton("Fire2"))
             {
+                _isAiming = true;
+                crosshair.transform.localScale = new Vector3(0.25f, 0.25f, 1);
+                crosshair.transform.position = new Vector2(Target.GetTarget().x, Target.GetTarget().y);
+                
+                if (_lookDirection.x > 0.01f)
+                {
+                    _transform.rotation = _rightRotation;
+                }
+                else if (_lookDirection.x < -0.01f)
+                {
+                    _transform.rotation = _leftRotation;
+                }
                 //Caricamento lancio
             }
             if (Input.GetButtonUp("Fire2"))
             {
                 ThrowEgg();
+                crosshair.transform.localScale = new Vector3(0, 0, 0);
+                _isAiming = false;
             }
 
             _moveDirection.x = Input.GetAxis("Horizontal") * walkSpeed;
             _moveDirection.z = 0f;
             
             //CHARACTER ROTATION
-            if (_lookDirection.x > 0.01f)
+            if (_moveDirection.x > 0.01f && !_isAiming)
             {
                 _transform.rotation = _rightRotation;
             }
-            else if (_lookDirection.x < -0.01f)
+            else if (_moveDirection.x < -0.01f && !_isAiming)
             {
                 _transform.rotation = _leftRotation;
             }
