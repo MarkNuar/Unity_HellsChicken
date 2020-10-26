@@ -1509,6 +1509,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1248088847 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 203562917435394468, guid: 55d96076d85d0c1428e74d9a964edcf3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1253182765}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1253182765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1582,6 +1588,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1634767862067424, guid: 007c57e2df8e9b144b99f471b84f3d56,
         type: 3}
+    - target: {fileID: 3433442471293227728, guid: 55d96076d85d0c1428e74d9a964edcf3,
+        type: 3}
+      propertyPath: flameStream
+      value: 
+      objectReference: {fileID: 198421077076039884, guid: 0e583df00223bc54c85d9265454e9f1a,
+        type: 3}
+    - target: {fileID: 3433442471293227728, guid: 55d96076d85d0c1428e74d9a964edcf3,
+        type: 3}
+      propertyPath: crosshair
+      value: 
+      objectReference: {fileID: 1248088847}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55d96076d85d0c1428e74d9a964edcf3, type: 3}
 --- !u!1001 &1505953666
