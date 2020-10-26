@@ -17,7 +17,7 @@ namespace HellsChicken.Scripts.Game.Player
         [SerializeField] private float fallMultiplier = 2.5f;
         [SerializeField] private float lowJumpMultiplier = 2f;
         [SerializeField] private float glidingSpeed = 15f;
-        [SerializeField] private ParticleSystem flameThrower;
+        [SerializeField] private ParticleSystem flameStream;
         [SerializeField] private Transform firePosition;
         private Boolean _canShoot = true;
         [SerializeField] private float flamesCooldown = 2f;
@@ -54,8 +54,8 @@ namespace HellsChicken.Scripts.Game.Player
         {
             if (_canShoot)
             {
-                ParticleSystem myFlamethrower =  Instantiate(flameThrower, firePosition.position, firePosition.rotation);
-                (myFlamethrower).transform.parent = (_transform).transform;
+                ParticleSystem myFlameStream =  Instantiate(flameStream, firePosition.position, firePosition.rotation);
+                (myFlameStream).transform.SetParent(_transform.transform);
                 _canShoot = false;
                 Debug.Log("Shoot flames");
                 StartCoroutine(EnableFlames(flamesCooldown));
