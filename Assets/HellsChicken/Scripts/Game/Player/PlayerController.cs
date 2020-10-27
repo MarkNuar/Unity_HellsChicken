@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using EventManagerNamespace;
 using HellsChicken.Scripts.Game.Player.Egg;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
@@ -8,7 +9,7 @@ namespace HellsChicken.Scripts.Game.Player
 {
     
     [RequireComponent(typeof(CharacterController))]
-    [RequireComponent(typeof(HealthController))]
+    //[RequireComponent(typeof(HealthController))]
     public class PlayerController : MonoBehaviour
     {
 
@@ -29,8 +30,7 @@ namespace HellsChicken.Scripts.Game.Player
 
         private Transform _transform;
         private CharacterController _characterController;
-        private HealthController _healthController;
-        
+
         private Quaternion _leftRotation;
         private Quaternion _rightRotation;
         
@@ -40,14 +40,23 @@ namespace HellsChicken.Scripts.Game.Player
         [SerializeField] Transform eggThrowPoint;
         
         private Vector3 _lookDirection;
-        
+
+        //TODO
+        private bool _isImmune;
+        [SerializeField] private float immunityDuration = 2.0f;
+        [SerializeField] private Material immuneTransparentMaterial;
+
+        private void OnEnable()
+        {
+            EventManager.StartListening("PlayerDeath",Death);
+        }
+
         void Awake()
         {
             _characterController = gameObject.GetComponent<CharacterController>();
             _characterController.detectCollisions = true;
             _transform = gameObject.GetComponent<Transform>();
-            _healthController = gameObject.GetComponent<HealthController>();
-            // _meshRenderer = gameObject.GetComponent<MeshRenderer>();
+            _isImmune = false;
             _moveDirection = Vector3.zero;
             _gravity = Physics.gravity.y;
             _rightRotation = transform.rotation;
@@ -157,30 +166,25 @@ namespace HellsChicken.Scripts.Game.Player
             return _moveDirection.y < 0f ;
         }
 
-        void OnControllerColliderHit(ControllerColliderHit hit)
+        private void OnControllerColliderHit(ControllerColliderHit hit)
         {
+            if (!_isImmune)
+            {
+                if (hit.transform.tag.Equals("Enemy"))
+                {
+                    //start immune coroutine
+                    _isImmune = true;
+                    StartCoroutine(ImmunityTimer(immunityDuration));
+                    EventManager.TriggerEvent("DecreasePlayerHealth");
+                }
+            }
             if (_characterController.collisionFlags != CollisionFlags.Above) return;
             if (Vector3.Dot(hit.normal, _moveDirection) < 0)
             {
                _moveDirection -= hit.normal * Vector3.Dot(hit.normal, _moveDirection);
             }
         }
-        
-        private void OnCollisionEnter(Collision other)
-        {
-            //TODO
-            //move this code in the prev collision check and use the _isImmune bool var, 
-            //set to true on hit with enemy or enemyShoot. 
-            //Start coroutine to make me untouchable for n seconds, then is immune back to 
-            //false. 
-            //is immune will be used by the animator for making the immune animation, blinking. 
-            if (other.gameObject.tag.Equals("Enemy"))
-            {
-                _healthController.DecreaseHealth();
-                //START INVINCIBILITY FOR N SECONDS
-            }
-        }
-        
+
         IEnumerator EnableFlames(float time)
         {
             yield return new WaitForSeconds(time);
@@ -190,6 +194,23 @@ namespace HellsChicken.Scripts.Game.Player
             //Non appena viene ritornato null, si esce da IEnumerator.
         }
         
+        private IEnumerator ImmunityTimer(float time)
+        {
+            yield return new WaitForSeconds(time);
+            _isImmune = false;
+            yield return null;
+        }
+
+        private void Death()
+        {
+            EventManager.StopListening("PlayerDeath",Death);
+            Debug.Log("Kill player");
+        }
+
+        private void OnDisable()
+        {
+            EventManager.StopListening("PlayerDeath",Death);
+        }
     }
     
 }

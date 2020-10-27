@@ -281,7 +281,6 @@ GameObject:
   - component: {fileID: 6855313962796646437}
   - component: {fileID: 3433442471293227728}
   - component: {fileID: 6855313962796646440}
-  - component: {fileID: 3408422197463977886}
   m_Layer: 0
   m_Name: PlayerBody
   m_TagString: Untagged
@@ -379,6 +378,8 @@ MonoBehaviour:
   eggPrefab: {fileID: 9045032837410467742, guid: de366eea063501149ad855357dddf584,
     type: 3}
   eggThrowPoint: {fileID: 1409568841327029750}
+  immunityDuration: 2
+  immuneTransparentMaterial: {fileID: 0}
 --- !u!143 &6855313962796646440
 CharacterController:
   m_ObjectHideFlags: 0
@@ -397,27 +398,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3408422197463977886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6855313962796646435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87774c7e814b7924bb9a4ee8613fb9ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 3
-  numberOfHearts: 4
-  hearts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  fullHeart: {fileID: 0}
-  emptyHeart: {fileID: 0}
 --- !u!1 &8395119601846062274
 GameObject:
   m_ObjectHideFlags: 0
