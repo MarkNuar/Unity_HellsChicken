@@ -30,6 +30,7 @@ namespace HellsChicken.Scripts.Game.Player
 
         private Transform _transform;
         private CharacterController _characterController;
+        private MeshRenderer _meshRenderer;
 
         private Quaternion _leftRotation;
         private Quaternion _rightRotation;
@@ -50,7 +51,7 @@ namespace HellsChicken.Scripts.Game.Player
         private bool _isImmune;
         [SerializeField] private float immunityDuration = 2.0f;
         [SerializeField] private Material immuneTransparentMaterial;
-
+        
         private void OnEnable()
         {
             EventManager.StartListening("PlayerDeath",Death);
@@ -67,6 +68,7 @@ namespace HellsChicken.Scripts.Game.Player
             _characterController = gameObject.GetComponent<CharacterController>();
             _characterController.detectCollisions = true;
             _transform = gameObject.GetComponent<Transform>();
+            _meshRenderer = gameObject.GetComponent<MeshRenderer>();
             _isImmune = false;
             _moveDirection = Vector3.zero;
             _gravity = Physics.gravity.y;
@@ -211,7 +213,7 @@ namespace HellsChicken.Scripts.Game.Player
                 if (hit.transform.tag.Equals("Enemy"))
                 {
                     //start immune coroutine
-                    _isImmune = true;
+                    
                     StartCoroutine(ImmunityTimer(immunityDuration));
                     EventManager.TriggerEvent("DecreasePlayerHealth");
                 }
@@ -222,6 +224,35 @@ namespace HellsChicken.Scripts.Game.Player
                _moveDirection -= hit.normal * Vector3.Dot(hit.normal, _moveDirection);
             }
         }
+        
+        private IEnumerator ImmunityTimer(float time)
+        {
+            _isImmune = true;
+            Debug.Log("Transparent");
+            yield return new WaitForSeconds(time);
+            Debug.Log("Not Transparent Anymore");
+            _isImmune = false;
+            yield return null;
+        }
+
+        private void Death()
+        {
+            EventManager.StopListening("PlayerDeath",Death);
+            //Debug.Log("Kill player");
+            StartCoroutine(Respawn());
+        }
+
+        //TODO ASK TO OTHER WHAT TO DO WHEN DEAD.
+        //TODO IMPLEMENT A RESPAWN POINT SYSTEM 
+        IEnumerator Respawn() {
+            //TODO
+            Debug.Log ("Player dead");
+            _meshRenderer.enabled = false;
+            yield return new WaitForSeconds(5);
+            Debug.Log ("Player respawn");
+            _transform.position = Vector3.zero;
+            _meshRenderer.enabled = true;
+        }
 
         IEnumerator EnableFlames(float time)
         {
@@ -230,19 +261,6 @@ namespace HellsChicken.Scripts.Game.Player
             yield return null;
             //yield --:> Finché viene ritornata una wait, IEnumerator viene richiamato il frame successivo.
             //Non appena viene ritornato null, si esce da IEnumerator.
-        }
-
-        private IEnumerator ImmunityTimer(float time)
-        {
-            yield return new WaitForSeconds(time);
-            _isImmune = false;
-            yield return null;
-        }
-
-        private void Death()
-        {
-            EventManager.StopListening("PlayerDeath",Death);
-            Debug.Log("Kill player");
         }
 
         private void OnDisable()

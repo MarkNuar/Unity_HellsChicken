@@ -8,10 +8,10 @@ public class HealthController : MonoBehaviour
     [SerializeField] private int numberOfHearts;
     [SerializeField] private Sprite fullHeart;
     [SerializeField] private Sprite lostHeart;
-    [SerializeField] [Range(10f,100f)] private float heartIconSize = 40f;
-    [SerializeField] [Range(0.01f,0.1f)] private float spaceBetweenHearts = 0.1f;
-    
+    [SerializeField] private Image heartImage;
+    private const float SpaceBetweenHearts = 0.06f;
     private Image[] _hearts;
+    
     private void OnEnable()
     {
         EventManager.StartListening("DecreasePlayerHealth",DecreaseHealth);
@@ -23,15 +23,15 @@ public class HealthController : MonoBehaviour
         _hearts = new Image[numberOfHearts];
         for (var i = 0; i < numberOfHearts; i++)
         {
-            GameObject heartObject = new GameObject("Heart");
-            Image heartImage = heartObject.AddComponent<Image>();
-            heartImage.transform.SetParent(transform);
-            heartImage.sprite = fullHeart;
-            heartImage.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
-            heartImage.GetComponent<RectTransform>().sizeDelta = new Vector2(heartIconSize,heartIconSize);
-            heartImage.GetComponent<RectTransform>().pivot = new Vector2(0,1);
-            heartImage.GetComponent<RectTransform>().anchorMin = new Vector2(spaceBetweenHearts * i,1);
-            heartImage.GetComponent<RectTransform>().anchorMax = new Vector2(spaceBetweenHearts * i,1);
+            var heartImage = Instantiate(this.heartImage, transform, true);
+            RectTransform heartImageRect = heartImage.transform as RectTransform;
+            if (!(heartImageRect is null))
+            {
+                heartImageRect.anchoredPosition = Vector2.zero;
+                heartImageRect.sizeDelta = Vector2.zero;
+                heartImageRect.anchorMin += new Vector2(SpaceBetweenHearts, 0f) * i;
+                heartImageRect.anchorMax += new Vector2(SpaceBetweenHearts, 0f) * i;
+            }
             _hearts[i] = heartImage;
         }
     }
