@@ -31,11 +31,11 @@ public class GoombaAI : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision other) {
-        if (other.gameObject.CompareTag("wall")) {
+        if (other.gameObject.CompareTag("Wall")) {
             
             right = !right;
             
-        }else if (other.gameObject.CompareTag("attack")) {
+        }else if (other.gameObject.CompareTag("EnemyShot")) {
             
             //creates the effect and starts the sound
             Instantiate(vanishEffectPrefab, transform.position, Quaternion.identity);

@@ -54,20 +54,14 @@ public class CentaurAI : MonoBehaviour {
         StartCoroutine(treeCoroutine());
 
     }
-
-    // Update is called once per frame
-    void Update(){
-        
-    }
-
+    
     private void FixedUpdate() {
         if (movement) {
             if(right)
                 _rigidbody.MovePosition(_rigidbody.position + agentVelocity * Time.fixedDeltaTime * Vector3.right);
             else
                 _rigidbody.MovePosition(_rigidbody.position + agentVelocity * Time.fixedDeltaTime * Vector3.left);
-        }
-        else {
+        }else {
             _rigidbody.velocity = Vector3.zero;
         }
     }
@@ -91,11 +85,9 @@ public class CentaurAI : MonoBehaviour {
     }
 
     public object hit() {
-        GameObject arrow = Instantiate(arrowPrefab,arrowPosition.position,Quaternion.LookRotation(player.position,transform.position));
-        Arrow ar = arrow.GetComponent<Arrow>();
-        ar.Target = player;
-        ar.Centaur = transform;
-        ar.launch();
+        GameObject fire = Instantiate(arrowPrefab,arrowPosition.position,Quaternion.LookRotation(player.position,transform.position));
+        CentaurFire ar = fire.GetComponent<CentaurFire>();
+        ar.Target = player.position;
         return null;
     }
 
@@ -103,9 +95,8 @@ public class CentaurAI : MonoBehaviour {
     public object isPlayerVisible() {
         Vector3 ray = player.position - transform.position;
         RaycastHit hit;
-        if ( ray.magnitude < 30 && Physics.Raycast(transform.position, ray, out hit)) {
+        if (Physics.Raycast(transform.position, ray, out hit,30f)) {
             if (hit.transform == player) {
-                //transform.LookAt(player.position);
                 if (Vector3.Dot(ray, transform.forward) <= 0 ) {
                     transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
                     right = !right;
@@ -152,7 +143,7 @@ public class CentaurAI : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision other) {
-        if (other.gameObject.CompareTag("wall")) {
+        if (other.gameObject.CompareTag("Wall")) {
             transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
             right = !right;
         }
