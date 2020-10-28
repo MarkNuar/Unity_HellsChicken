@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Cinemachine;
 using EventManagerNamespace;
 using HellsChicken.Scripts.Game.Player.Egg;
 using UnityEngine;
@@ -210,10 +211,9 @@ namespace HellsChicken.Scripts.Game.Player
         {
             if (!_isImmune)
             {
-                if (hit.transform.tag.Equals("Enemy"))
+                if (hit.transform.CompareTag("Enemy") || hit.transform.CompareTag("EnemyShot") )
                 {
-                    //start immune coroutine
-                    
+                    gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
                     StartCoroutine(ImmunityTimer(immunityDuration));
                     EventManager.TriggerEvent("DecreasePlayerHealth");
                 }

@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -115,7 +115,5 @@ MonoBehaviour:
   numberOfHearts: 4
   fullHeart: {fileID: 21300000, guid: 054451ebc5577e44e8b2d93bdfb69cf4, type: 3}
   lostHeart: {fileID: 21300000, guid: d5eda5fd260ad8d47810d3b724fe37f5, type: 3}
-  heartIconSize: 40
-  spaceBetweenHearts: 0.07
-  imagePrefab: {fileID: 6627022350508898524, guid: ae09d61a0becd31498adf8b76e3008b4,
+  heartImage: {fileID: 5464529639475372259, guid: c5806977eda753e4d82acf3803e10252,
     type: 3}
