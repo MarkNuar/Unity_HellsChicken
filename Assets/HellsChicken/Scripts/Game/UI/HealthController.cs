@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class HealthController : MonoBehaviour
 {
-    [SerializeField] private int health;
+    private int _health;
     [SerializeField] private int numberOfHearts;
     [SerializeField] private Sprite fullHeart;
     [SerializeField] private Sprite lostHeart;
@@ -20,6 +20,7 @@ public class HealthController : MonoBehaviour
 
     private void Start ()
     {
+        _health = numberOfHearts;
         _hearts = new Image[numberOfHearts];
         for (var i = 0; i < numberOfHearts; i++)
         {
@@ -38,39 +39,51 @@ public class HealthController : MonoBehaviour
     
     private void Update()
     {
-        if (health > numberOfHearts)
-            health = numberOfHearts;
-        if(health==0)
+        if (_health > numberOfHearts)
+            _health = numberOfHearts;
+        if(_health == 1)
+            EventManager.TriggerEvent("LastHeart");
+        if (_health == 0)
+        {
+            //Debug.Log("Ready to respawn at "+ GameManager.Instance.GetCurrentCheckPointPos());
             EventManager.TriggerEvent("PlayerDeath");
+        }
     }
-
-    private void OnDisable()
-    {
-        EventManager.StopListening("DecreasePlayerHealth",DecreaseHealth);
-        EventManager.StopListening("IncreasePlayerHealth",IncreaseHealth);
-    }
-
+    
     private void IncreaseHealth()
     {
         EventManager.StopListening("IncreasePlayerHealth",IncreaseHealth);
-        if (health < numberOfHearts)
+        if (_health < numberOfHearts)
         {
-            health++;
-            _hearts[health].sprite = fullHeart;
+            _health++;
+            _hearts[_health].sprite = fullHeart;
         }
-        
         EventManager.StartListening("IncreasePlayerHealth",IncreaseHealth);
     }
 
     private void DecreaseHealth()
     {
         EventManager.StopListening("DecreasePlayerHealth",DecreaseHealth);
-        if (health > 0)
+        if (_health > 0)
         {
-            health--;
-            _hearts[health].sprite = lostHeart;
+            _health--;
+            _hearts[_health].sprite = lostHeart;
         }
         EventManager.StartListening("DecreasePlayerHealth",DecreaseHealth);
+    }
+    private void OnDisable()
+    {
+        EventManager.StopListening("DecreasePlayerHealth",DecreaseHealth);
+        EventManager.StopListening("IncreasePlayerHealth",IncreaseHealth);
+    }
+
+    private void RefillHealth()
+    {
+        _health = numberOfHearts;
+        foreach (var heart in _hearts)
+        {
+            heart.sprite = fullHeart;
+        }
     }
     
 }

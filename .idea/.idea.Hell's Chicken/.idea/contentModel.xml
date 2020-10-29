@@ -65,6 +65,8 @@
               <e p="Audio" t="Include">
                 <e p="AudioManager.cs" t="Include" />
               </e>
+              <e p="CheckPointManager.cs" t="Include" />
+              <e p="GameManager.cs" t="Include" />
               <e p="Player" t="Include">
                 <e p="CameraController.cs" t="Include" />
                 <e p="Egg" t="Include">
