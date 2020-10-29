@@ -201,7 +201,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.2735849, g: 0.031366423, b: 0, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -267,7 +267,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca896f6d4d177954281338ef20b51569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crosshair: {fileID: 203562917435394468}
 --- !u!1 &6855313962796646435
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,18 +365,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 10
-  jumpSpeed: 6
-  gravityScale: 2
+  jumpSpeed: 5
+  gravityScale: 4
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
   glidingSpeed: 5
-  flameThrower: {fileID: 198637950067575458, guid: 007c57e2df8e9b144b99f471b84f3d56,
-    type: 3}
+  flameStream: {fileID: 0}
   firePosition: {fileID: 9208901124896132889}
   flamesCooldown: 2
   eggPrefab: {fileID: 9045032837410467742, guid: de366eea063501149ad855357dddf584,
     type: 3}
   eggThrowPoint: {fileID: 1409568841327029750}
+  crosshair: {fileID: 0}
+  immunityDuration: 2
+  immuneTransparentMaterial: {fileID: 0}
 --- !u!143 &6855313962796646440
 CharacterController:
   m_ObjectHideFlags: 0
@@ -588,12 +589,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6890dae30d785e3418a742e13959c543, type: 3}
---- !u!1 &203562917435394468 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7788514568474450963, guid: 6890dae30d785e3418a742e13959c543,
-    type: 3}
-  m_PrefabInstance: {fileID: 7981908892432078263}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5563780140473658882 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2590672966404291509, guid: 6890dae30d785e3418a742e13959c543,
