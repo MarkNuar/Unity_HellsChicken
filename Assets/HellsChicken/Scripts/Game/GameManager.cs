@@ -26,7 +26,6 @@ public class GameManager : MonoBehaviour
 
     public Vector3 GetCurrentCheckPointPos()
     {
-        //Debug.LogError("Getting current checkpoint");
         return _currentCheckPointPos;
     }
     

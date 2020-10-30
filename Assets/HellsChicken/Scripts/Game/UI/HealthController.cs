@@ -44,10 +44,7 @@ public class HealthController : MonoBehaviour
         if(_health == 1)
             EventManager.TriggerEvent("LastHeart");
         if (_health == 0)
-        {
-            //Debug.Log("Ready to respawn at "+ GameManager.Instance.GetCurrentCheckPointPos());
             EventManager.TriggerEvent("PlayerDeath");
-        }
     }
     
     private void IncreaseHealth()
