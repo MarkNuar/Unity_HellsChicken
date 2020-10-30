@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
+using EventManagerNamespace;
 using HellsChicken.Scripts.Game.Player.Egg;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Debug = UnityEngine.Debug;
 
 namespace HellsChicken.Scripts.Game.Player
@@ -27,6 +29,7 @@ namespace HellsChicken.Scripts.Game.Player
 
         private Transform _transform;
         private CharacterController _characterController;
+        private MeshRenderer _meshRenderer;
 
         private Quaternion _leftRotation;
         private Quaternion _rightRotation;
@@ -43,10 +46,11 @@ namespace HellsChicken.Scripts.Game.Player
 
         private Vector3 _lookDirection;
 
-        // Use this for initialization
-        void Start () {
-            crosshair.transform.localScale = new Vector3(0, 0, 0);
-        }
+
+        [SerializeField] private float immunityDuration = 1.0f;
+        private bool _isImmune;
+        private bool _isLastHeart;
+        
 
         void Awake()
         {
@@ -216,7 +220,7 @@ namespace HellsChicken.Scripts.Game.Player
                 {
                     if(!_isLastHeart)
                     {
-                        gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
+                        //gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
                         StartCoroutine(ImmunityTimer(immunityDuration));
                     }
                     EventManager.TriggerEvent("DecreasePlayerHealth");
