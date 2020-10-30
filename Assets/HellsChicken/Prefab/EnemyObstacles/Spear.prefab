@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 9178801707754937960}
   - component: {fileID: 2301423219076782870}
   - component: {fileID: 1749512398529823039}
+  - component: {fileID: -9023117942437716560}
   m_Layer: 0
   m_Name: Spear
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,3 +95,15 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &-9023117942437716560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4997238994432374164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3b1246e41536594ca9f95679b8135a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

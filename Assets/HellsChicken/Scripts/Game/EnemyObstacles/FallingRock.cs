@@ -26,7 +26,7 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles
         {
             if (other.gameObject.name.Equals("PlayerBody"))
             {
-                Debug.Log("Got you!");
+                //Debug.Log("Got you!");
             }
         }
     }

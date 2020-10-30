@@ -7,8 +7,8 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles
 
         private Vector3 _startPosition;
 
-        private float frequency = 5.0f;
-        private float magnitude = 5.0f;
+        [SerializeField] private float frequency = 5.0f;
+        [SerializeField] private float magnitude = 5.0f;
         private float offset = 0.0f;
     
         // Start is called before the first frame update

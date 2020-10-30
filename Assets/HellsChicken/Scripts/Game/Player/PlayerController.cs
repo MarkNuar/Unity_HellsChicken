@@ -224,15 +224,16 @@ namespace HellsChicken.Scripts.Game.Player
             {
                 if (hit.transform.CompareTag("Enemy") || hit.transform.CompareTag("EnemyShot"))
                 {
+                    Debug.LogError("Hih by an enemy");
+                    gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
                     if (!_isLastHeart)
                     {
-                        gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
                         StartCoroutine(ImmunityTimer(immunityDuration));
                     }
-
+            
                     EventManager.TriggerEvent("DecreasePlayerHealth");
                 }
-
+            
                 // else if (hit.transform.CompareTag("Magma"))
                 // {
                 //     //TODO DIE IMMEDIATLY
@@ -243,6 +244,28 @@ namespace HellsChicken.Scripts.Game.Player
             if (Vector3.Dot(hit.normal, _moveDirection) < 0)
             {
                 _moveDirection -= hit.normal * Vector3.Dot(hit.normal, _moveDirection);
+            }
+        }
+
+        private void OnCollisionEnter(Collision other)
+        {
+            if (!_isImmune)
+            {
+                if (other.collider.CompareTag("Enemy") || other.collider.CompareTag("EnemyShot"))
+                {
+                    Debug.LogError("Hih by an enemy");
+                    if (!_isLastHeart)
+                    {
+                        gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
+                        StartCoroutine(ImmunityTimer(immunityDuration));
+                    }
+                    EventManager.TriggerEvent("DecreasePlayerHealth");
+                }
+
+                // else if (hit.transform.CompareTag("Magma"))
+                // {
+                //     //TODO DIE IMMEDIATLY
+                // }
             }
         }
 

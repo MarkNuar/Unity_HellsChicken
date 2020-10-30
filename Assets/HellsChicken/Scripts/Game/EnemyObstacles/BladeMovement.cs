@@ -5,8 +5,8 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles
     public class BladeMovement : MonoBehaviour
     {
 
-        private float rotatespeed = 5.0f;
-        private float speed = 5.0f;
+        [SerializeField] private float rotationSpeed = 5.0f;
+        [SerializeField] private float speed = 5.0f;
         
         [SerializeField] Transform startPoint;
         [SerializeField] Transform finishPoint;
@@ -16,7 +16,7 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles
         // Update is called once per frame
         void Update()
         {
-            transform.Rotate(0, 0, rotatespeed);
+            transform.Rotate(0, 0, rotationSpeed);
 
             if (transform.position.x <= startPoint.position.x)
             {

@@ -138,7 +138,16 @@
               <e p="Audio" t="Include">
                 <e p="AudioManager.cs" t="Include" />
               </e>
+              <e p="EnemyObstacles" t="Include">
+                <e p="BladeMovement.cs" t="Include" />
+                <e p="FallingRock.cs" t="Include" />
+                <e p="SpearMovement.cs" t="Include" />
+              </e>
               <e p="GameManager.cs" t="Include" />
+              <e p="Platform" t="Include">
+                <e p="PlatformMoveX.cs" t="Include" />
+                <e p="PlatformMoveY.cs" t="Include" />
+              </e>
               <e p="Player" t="Include">
                 <e p="CameraController.cs" t="Include" />
                 <e p="Egg" t="Include">
