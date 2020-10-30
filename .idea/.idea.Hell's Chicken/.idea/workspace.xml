@@ -21,8 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="bc89b660-8c2e-44f0-9184-66b8ac8c2637" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/Target.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/Target.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/UI/HealthCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/UI/HealthCanvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/DeathRespawnTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/DeathRespawnTest.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +46,11 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerInput.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/Target.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/GoombaAI.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/HealthController.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/HUD/HealthController.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/HealthController.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/CameraShaking.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
       </list>
     </option>
@@ -95,7 +102,13 @@
       <workItem from="1603361605186" duration="1968000" />
       <workItem from="1603389808716" duration="728000" />
       <workItem from="1603450479467" duration="1553000" />
-      <workItem from="1603535135823" duration="1191000" />
+      <workItem from="1603535135823" duration="1374000" />
+      <workItem from="1603667316718" duration="2718000" />
+      <workItem from="1603697858377" duration="11979000" />
+      <workItem from="1603750213727" duration="3520000" />
+      <workItem from="1603784056584" duration="12972000" />
+      <workItem from="1603799328031" duration="6086000" />
+      <workItem from="1603836241348" duration="6016000" />
     </task>
     <servers />
   </component>
@@ -117,10 +130,11 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog" timestamp="1603270988076">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog" timestamp="1603699135161">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1603270988076" />
+    <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1603698189358" />
+    <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1603699135161" />
     <state x="-6" y="0" width="781" height="840" key="dock-window-2" timestamp="1603359749535">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

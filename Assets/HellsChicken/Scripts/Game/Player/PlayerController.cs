@@ -6,11 +6,10 @@ using Debug = UnityEngine.Debug;
 
 namespace HellsChicken.Scripts.Game.Player
 {
-    
+
     [RequireComponent(typeof(CharacterController))]
     public class PlayerController : MonoBehaviour
     {
-
         [SerializeField] private float walkSpeed = 5.0f;
         [SerializeField] private float jumpSpeed = 5.0f;
         [SerializeField] private float gravityScale = 2.0f;
@@ -28,12 +27,12 @@ namespace HellsChicken.Scripts.Game.Player
 
         private Transform _transform;
         private CharacterController _characterController;
-        
+
         private Quaternion _leftRotation;
         private Quaternion _rightRotation;
-        
+
         private float throwForce = 20f;
-        
+
         [SerializeField] GameObject eggPrefab;
         [SerializeField] Transform eggThrowPoint;
         [SerializeField] GameObject crosshair;
@@ -41,23 +40,40 @@ namespace HellsChicken.Scripts.Game.Player
         private float timer = 2f;
         private float _countdown;
         private bool _isAiming;
-        
+
         private Vector3 _lookDirection;
-        
+
         // Use this for initialization
         void Start () {
             crosshair.transform.localScale = new Vector3(0, 0, 0);
         }
-        
+
         void Awake()
         {
             _characterController = gameObject.GetComponent<CharacterController>();
             _transform = gameObject.GetComponent<Transform>();
-            // _meshRenderer = gameObject.GetComponent<MeshRenderer>();
+            _meshRenderer = gameObject.GetComponent<MeshRenderer>();
+            _isImmune = false;
+            _isLastHeart = false;
             _moveDirection = Vector3.zero;
             _gravity = Physics.gravity.y;
             _rightRotation = transform.rotation;
-            _leftRotation = _rightRotation * Quaternion.Euler(0, 180, 0); 
+            _leftRotation = _rightRotation * Quaternion.Euler(0, 180, 0);
+        }
+
+        private void OnEnable()
+        {
+            EventManager.StartListening("PlayerDeath",Death);
+            EventManager.StartListening("LastHeart",LastHeart);
+        }
+
+        // Use this for initialization
+        void Start ()
+        {
+            crosshair.transform.localScale = new Vector3(0, 0, 0);
+            _characterController.enabled = false;
+            _transform.position = GameManager.Instance.GetCurrentCheckPointPos();
+            _characterController.enabled = true;
         }
 
         void ShootFlames()
@@ -80,9 +96,9 @@ namespace HellsChicken.Scripts.Game.Player
             direction.Normalize();
             GameObject egg = Instantiate(eggPrefab, eggThrowPoint.transform.position, Quaternion.Euler(0.0f, 0.0f, angle));
             egg.GetComponent<Rigidbody>().velocity = direction * throwForce;
-            
+
             //TODO vettore forza + vettore movimento
-            
+
             _countdown = timer;
         }
 
@@ -90,9 +106,9 @@ namespace HellsChicken.Scripts.Game.Player
         {
             _lookDirection = Target.GetTarget() - eggThrowPoint.position;
             _countdown -= Time.deltaTime;
-            
+
             //FIRE
-            if(Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1"))
                 ShootFlames();
 
             //EGG
@@ -101,10 +117,10 @@ namespace HellsChicken.Scripts.Game.Player
                 if (Input.GetButton("Fire2"))
                 {
                     _isAiming = true;
-                    
+
                     crosshair.transform.localScale = new Vector3(0.25f, 0.25f, 1);
                     crosshair.transform.position = new Vector2(Target.GetTarget().x, Target.GetTarget().y);
-                    
+
                     if (_lookDirection.x > 0.01f)
                     {
                         _transform.rotation = _rightRotation;
@@ -113,9 +129,9 @@ namespace HellsChicken.Scripts.Game.Player
                     {
                         _transform.rotation = _leftRotation;
                     }
-                    
+
                     //TODO traiettoria
-                    
+
                 }
 
                 if (Input.GetButtonUp("Fire2"))
@@ -127,9 +143,11 @@ namespace HellsChicken.Scripts.Game.Player
                 }
             }
 
+            //Debug.DrawLine(eggThrowPoint.position,Target.GetTarget());
+
             _moveDirection.x = Input.GetAxis("Horizontal") * walkSpeed;
             _moveDirection.z = 0f;
-            
+
             //CHARACTER ROTATION
             if (_moveDirection.x > 0.01f && !_isAiming)
             {
@@ -139,47 +157,47 @@ namespace HellsChicken.Scripts.Game.Player
             {
                 _transform.rotation = _leftRotation;
             }
-            
+
             //STICK TO THE PAVEMENT
-            if (IsGrounded() && IsFalling()) //The falling check is made because when the character is on ground, it has a negative velocity
+            if (IsGrounded() && IsFalling()
+            ) //The falling check is made because when the character is on ground, it has a negative velocity
             {
                 _moveDirection.y = -8f;
             }
-            
+
             //JUMPING
             if (IsGrounded() && Input.GetButtonDown("Jump"))
             {
                 _moveDirection.y = Mathf.Sqrt(jumpSpeed * -3.0f * _gravity * gravityScale);
             }
-            
+
             //JUMP PROPORTIONAL TO BAR PRESSING
             if (!IsFalling() && !Input.GetButton("Jump"))
             {
                 _moveDirection.y += _gravity * gravityScale * (lowJumpMultiplier - 1) * Time.deltaTime;
             }
-            
+
             //GRAVITY INCREASE WHEN FALLING
             if (!IsGrounded() && IsFalling())
             {
                 _moveDirection.y += _gravity * gravityScale * (fallMultiplier - 1) * Time.deltaTime;
             }
-            
+
             //GRAVITY APPLICATION
             _moveDirection.y += _gravity * gravityScale * Time.deltaTime;
-            
+
             //GLIDING
             if (!IsGrounded() && IsFalling())
             {
                 if (Input.GetButton("Jump")) //TODO
                 {
-                    _moveDirection.y = - glidingSpeed;
+                    _moveDirection.y = -glidingSpeed;
                 }
             }
-            
             //MOVEMENT APPLICATION
             _characterController.Move(_moveDirection * Time.deltaTime);
         }
-        
+
         bool IsGrounded()
         {
             return _characterController.isGrounded;
@@ -192,22 +210,69 @@ namespace HellsChicken.Scripts.Game.Player
 
         void OnControllerColliderHit(ControllerColliderHit hit)
         {
+            if (!_isImmune)
+            {
+                if (hit.transform.CompareTag("Enemy") || hit.transform.CompareTag("EnemyShot") )
+                {
+                    if(!_isLastHeart)
+                    {
+                        gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
+                        StartCoroutine(ImmunityTimer(immunityDuration));
+                    }
+                    EventManager.TriggerEvent("DecreasePlayerHealth");
+                }
+                // else if (hit.transform.CompareTag("Magma"))
+                // {
+                //     //TODO DIE IMMEDIATLY
+                // }
+            }
             if (_characterController.collisionFlags != CollisionFlags.Above) return;
             if (Vector3.Dot(hit.normal, _moveDirection) < 0)
             {
                _moveDirection -= hit.normal * Vector3.Dot(hit.normal, _moveDirection);
             }
         }
-        
+
+        private IEnumerator ImmunityTimer(float time)
+        {
+            _isImmune = true;
+            InvokeRepeating(nameof(FlashMesh), 0f, 0.2f);
+            //Debug.Log("Transparent");
+            yield return new WaitForSeconds(time);
+            //Debug.Log("Not Transparent Anymore");
+            _isImmune = false;
+            CancelInvoke();
+            _meshRenderer.enabled = true;
+            yield return null;
+        }
+
+        private void FlashMesh()
+        {
+            _meshRenderer.enabled = !_meshRenderer.enabled;
+        }
+
+        private void LastHeart()
+        {
+            EventManager.StopListening("LastHeart",LastHeart);
+            _isLastHeart = true;
+            EventManager.StartListening("LastHeart",LastHeart);
+        }
+
+        private void Death()
+        {
+            //If player dies, reload the entire scene.
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
         IEnumerator EnableFlames(float time)
         {
             yield return new WaitForSeconds(time);
             _canShoot = true;
             yield return null;
-            //yield --:> Finché viene ritornata una wait, IEnumerator viene richiamato il frame successivo. 
+            //yield --:> Finché viene ritornata una wait, IEnumerator viene richiamato il frame successivo.
             //Non appena viene ritornato null, si esce da IEnumerator.
         }
-        
+
     }
-    
+
 }
