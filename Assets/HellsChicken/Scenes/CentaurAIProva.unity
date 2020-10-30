@@ -271,7 +271,7 @@ PrefabInstance:
     - target: {fileID: 3595579498950602987, guid: 3103cef9db10dc4478f358d2f98aea90,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4000001
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3595579498950602987, guid: 3103cef9db10dc4478f358d2f98aea90,
         type: 3}
@@ -323,6 +323,12 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1472522087}
+    - target: {fileID: 3595579498950602988, guid: 3103cef9db10dc4478f358d2f98aea90,
+        type: 3}
+      propertyPath: bombPrefab
+      value: 
+      objectReference: {fileID: 1068816152313496709, guid: 67ce32e1a120d21429475377477bb910,
+        type: 3}
     - target: {fileID: 3595579498950602989, guid: 3103cef9db10dc4478f358d2f98aea90,
         type: 3}
       propertyPath: m_Name
@@ -332,6 +338,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3595579498950602991, guid: 3103cef9db10dc4478f358d2f98aea90,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3595579500161178157, guid: 3103cef9db10dc4478f358d2f98aea90,
         type: 3}
@@ -750,6 +761,53 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938271555}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &992996323 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6855313962796646435, guid: 55d96076d85d0c1428e74d9a964edcf3,
+    type: 3}
+  m_PrefabInstance: {fileID: 607318931}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &992996324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992996323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 1000
 --- !u!1 &1106133698 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 203562917435394468, guid: 55d96076d85d0c1428e74d9a964edcf3,
