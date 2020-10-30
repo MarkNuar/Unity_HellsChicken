@@ -220,10 +220,10 @@ namespace HellsChicken.Scripts.Game.Player
                     }
                     EventManager.TriggerEvent("DecreasePlayerHealth");
                 }
-                else if (hit.transform.CompareTag("Magma"))
-                {
-                    //TODO DIE IMMEDIATLY
-                }
+                // else if (hit.transform.CompareTag("Magma"))
+                // {
+                //     //TODO DIE IMMEDIATLY
+                // }
             }
             if (_characterController.collisionFlags != CollisionFlags.Above) return;
             if (Vector3.Dot(hit.normal, _moveDirection) < 0)
