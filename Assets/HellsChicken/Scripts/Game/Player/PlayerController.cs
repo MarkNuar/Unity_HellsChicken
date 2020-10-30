@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Cinemachine;
 using EventManagerNamespace;
 using HellsChicken.Scripts.Game.Player.Egg;
 using UnityEngine;
@@ -76,7 +77,8 @@ namespace HellsChicken.Scripts.Game.Player
         {
             crosshair.transform.localScale = new Vector3(0, 0, 0);
             _characterController.enabled = false;
-            _transform.position = GameManager.Instance.GetCurrentCheckPointPos();
+            if(GameManager.Instance)
+                _transform.position = GameManager.Instance.GetCurrentCheckPointPos();
             _characterController.enabled = true;
         }
 
@@ -220,7 +222,7 @@ namespace HellsChicken.Scripts.Game.Player
                 {
                     if(!_isLastHeart)
                     {
-                        //gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
+                        gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
                         StartCoroutine(ImmunityTimer(immunityDuration));
                     }
                     EventManager.TriggerEvent("DecreasePlayerHealth");

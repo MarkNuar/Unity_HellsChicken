@@ -151,6 +151,9 @@
               <e p="UI" t="Include">
                 <e p="HealthController.cs" t="Include" />
               </e>
+              <e p="Utility" t="Include">
+                <e p="CheckPointManager.cs" t="Include" />
+              </e>
             </e>
           </e>
         </e>

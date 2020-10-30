@@ -1,5 +1,4 @@
-﻿using EventManagerNamespace;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +16,7 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(Instance);
             SetCurrentCheckPointPos(initialCheckPoint.transform.position);
+            //Destroy(initialCheckPoint);//maybe initial checkpoint has to be destroyed after consumed.
         }
         else
         {
