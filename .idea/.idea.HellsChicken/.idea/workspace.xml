@@ -20,15 +20,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44fa9eaf-4901-4eb4-b858-67c1b19b2312" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/BladeObstacle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/BladeObstacle.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/BladeObstacle.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/BladeObstacle.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/BladeMovement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/PlatformMoveX.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/PlatformMoveX.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/PlatformMoveY.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/PlatformMoveY.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tree.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tree.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tree_Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tree_Textures/diffuse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tree_Textures/diffuse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tree_Textures/normal_specular.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tree_Textures/normal_specular.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tree_Textures/shadow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tree_Textures/shadow.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tree_Textures/translucency_gloss.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tree_Textures/translucency_gloss.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Animations.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Models/Here elements that are 3D.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Models/Monsters.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/Here elements that are 2D.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Camera.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Enemies.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Models.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,15 +53,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE47BE73-F7EF-409C-A5E5-CE4B121745B7/8c/fae1028a/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE47BE73-F7EF-409C-A5E5-CE4B121745B7/0c/8ff67625/Component.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE47BE73-F7EF-409C-A5E5-CE4B121745B7/1b/751c2bc4/Transform.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE47BE73-F7EF-409C-A5E5-CE4B121745B7/79/55991f87/Camera.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/Downloads/MySpaceShooter/Assets/SpaceShooter/Scripts/AudioManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE47BE73-F7EF-409C-A5E5-CE4B121745B7/f6/a1323b05/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE47BE73-F7EF-409C-A5E5-CE4B121745B7/37/ee59fbd2/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9B956647-017D-4DC1-B8D3-D25EEF012467/33/4d20b5e3/Collision.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C2135A90-8B80-458B-BECA-1277641502D0/a7/cfe1d621/ParticleSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/BladeMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/PlatformMoveX.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -64,6 +71,9 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/BombExplosion.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/PlatformMoveX.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/BladeMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/PlatformMoveY.cs" />
       </list>
     </option>
   </component>
