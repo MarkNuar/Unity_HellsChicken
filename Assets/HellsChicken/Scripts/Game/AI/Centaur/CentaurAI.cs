@@ -19,7 +19,7 @@ public class CentaurAI : MonoBehaviour {
     [SerializeField] private float timeReaction = 2f; //how often do the agent take decision?
     [SerializeField] private Transform player;
     [SerializeField] private Transform arrowPosition;
-    [SerializeField] private GameObject bombPrefab;
+    [SerializeField] private GameObject arrowPrefab;
     [SerializeField] private GameObject textPrefab;
 
     private Rigidbody _rigidbody;
@@ -85,11 +85,9 @@ public class CentaurAI : MonoBehaviour {
     }
 
     public object hit() {
-        GameObject fire = Instantiate(bombPrefab,arrowPosition.position,Quaternion.LookRotation(player.position,transform.position));
+        GameObject fire = Instantiate(arrowPrefab,arrowPosition.position,Quaternion.LookRotation(player.position,transform.position));
         CentaurFire ar = fire.GetComponent<CentaurFire>();
         ar.Target = player.position;
-        ar.CentaurPos = transform.position;
-        ar.findAngle(right);
         return null;
     }
 
