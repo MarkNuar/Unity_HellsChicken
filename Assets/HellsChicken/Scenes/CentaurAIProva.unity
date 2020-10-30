@@ -328,6 +328,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Centaur
       objectReference: {fileID: 0}
+    - target: {fileID: 3595579498950602989, guid: 3103cef9db10dc4478f358d2f98aea90,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3595579500161178157, guid: 3103cef9db10dc4478f358d2f98aea90,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3595579500509374407, guid: 3103cef9db10dc4478f358d2f98aea90,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3103cef9db10dc4478f358d2f98aea90, type: 3}
 --- !u!1 &482679094
@@ -541,9 +556,11 @@ MonoBehaviour:
   _bombAudioSource: {fileID: 1458686125}
   _bombTimerAudioSource: {fileID: 1451621518}
   _centaurShotAudioSource: {fileID: 1647391084}
+  _flameThrowerAudioSource: {fileID: 0}
   _bombSound: {fileID: 8300000, guid: 47dbd35d22a69414ca9c59cbcfa30a1b, type: 3}
   _bombTimerSound: {fileID: 8300000, guid: 121d4baec8e60184d82963eac1a5c1c1, type: 3}
   _centaurShotSound: {fileID: 8300000, guid: ca679721d8a1b6243acc9a7ce566789b, type: 3}
+  _flameThrowerSound: {fileID: 0}
 --- !u!4 &760885380
 Transform:
   m_ObjectHideFlags: 0
