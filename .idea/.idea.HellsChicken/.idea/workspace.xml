@@ -20,31 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44fa9eaf-4901-4eb4-b858-67c1b19b2312" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Animation.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Animation/QuestionMarkAnimation.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Animation/QuestionMarkAnimation.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Animation/Text.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Animation/Text.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/Rock.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/Rock.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/Spear.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/Spear.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/FallingRock.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/FallingRock.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/SpearMovement.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/SpearMovement.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Animation.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Animation/QuestionMarkAnimation.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Animation/QuestionMarkAnimation.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Animation/Text.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Animation/Text.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Egg/Egg.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Egg/Egg.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Platform.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Platform.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Animations.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Models/Here elements that are 3D.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Models/Monsters.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/Here elements that are 2D.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Camera.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Enemies.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +37,17 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE47BE73-F7EF-409C-A5E5-CE4B121745B7/8c/fae1028a/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE47BE73-F7EF-409C-A5E5-CE4B121745B7/0c/8ff67625/Component.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE47BE73-F7EF-409C-A5E5-CE4B121745B7/1b/751c2bc4/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE47BE73-F7EF-409C-A5E5-CE4B121745B7/79/55991f87/Camera.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/MySpaceShooter/Assets/SpaceShooter/Scripts/AudioManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE47BE73-F7EF-409C-A5E5-CE4B121745B7/f6/a1323b05/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE47BE73-F7EF-409C-A5E5-CE4B121745B7/37/ee59fbd2/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9B956647-017D-4DC1-B8D3-D25EEF012467/33/4d20b5e3/Collision.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C2135A90-8B80-458B-BECA-1277641502D0/a7/cfe1d621/ParticleSystem.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -67,11 +62,8 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/EggExplosion.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/Destruction.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/BombExplosion.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Enemy Obstacles/SpearMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Enemy Obstacles/FallingRock.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/SpearMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/FallingRock.cs" />
       </list>
     </option>
   </component>
@@ -134,8 +126,10 @@
       <workItem from="1603556349133" duration="256000" />
       <workItem from="1603641591732" duration="5725000" />
       <workItem from="1603709283656" duration="3469000" />
-      <workItem from="1603998148304" duration="1949000" />
-      <workItem from="1604053984000" duration="1693000" />
+      <workItem from="1603881456834" duration="9147000" />
+      <workItem from="1603979703158" duration="1347000" />
+      <workItem from="1603996812391" duration="5855000" />
+      <workItem from="1604052775524" duration="5931000" />
     </task>
     <servers />
   </component>
@@ -169,9 +163,5 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1603457127477" />
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604001793805">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1604001793805" />
   </component>
 </project>

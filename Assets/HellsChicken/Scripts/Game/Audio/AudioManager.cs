@@ -9,15 +9,18 @@ public class AudioManager : Singleton<AudioManager> {
     [SerializeField] private AudioSource _bombAudioSource;
     [SerializeField] private AudioSource _bombTimerAudioSource;
     [SerializeField] private AudioSource _centaurShotAudioSource;
+    [SerializeField] private AudioSource _flameThrowerAudioSource;
     
     [SerializeField] private AudioClip _bombSound;
     [SerializeField] private AudioClip _bombTimerSound;
     [SerializeField] private AudioClip _centaurShotSound;
+    [SerializeField] private AudioClip _flameThrowerSound;
 
     protected override void Awake() {
         EventManager.StartListening("playBomb",playBomb);
         EventManager.StartListening("playTimerBomb",playTimerBomb);
         EventManager.StartListening("centaurShot",centaurShot);
+        EventManager.StartListening("flameThrower", flameThrower);
     }
 
     private void OnDisable() {
@@ -45,5 +48,14 @@ public class AudioManager : Singleton<AudioManager> {
         _centaurShotAudioSource.clip = _centaurShotSound;
         _centaurShotAudioSource.Play();
         EventManager.StartListening("centaurShot",centaurShot);
+    }
+
+    public void flameThrower()
+    {
+        EventManager.StopListening("flameThrower", flameThrower);
+        _flameThrowerAudioSource.clip = _flameThrowerSound;
+        _flameThrowerAudioSource.Play();
+        EventManager.StartListening("flameThrower", flameThrower);
+
     }
 }

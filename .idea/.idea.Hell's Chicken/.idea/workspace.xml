@@ -20,9 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc89b660-8c2e-44f0-9184-66b8ac8c2637" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/UI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/UI/EmptyDrumStick.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/UI/EmptyDrumStick.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/UI/FullDrumStick.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/UI/FullDrumStick.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/Target.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/Target.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/CheckPoint/CheckPoint.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/CheckPoint/CheckPoint.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Platform.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Platform/Platform.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Platform/Platform.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +47,11 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../ExerciseProjects/MySpaceShooter/Assets/SpaceShooter/Scripts/PlayerShipController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Utility/CheckPointManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9B956647-017D-4DC1-B8D3-D25EEF012467/43/85405a58/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9B956647-017D-4DC1-B8D3-D25EEF012467/43/b8d9a524/CapsuleCollider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../ExerciseProjects/20201013-ClassMaterial/PennyPixel_2DTilemapProject2/Assets/PennyPixel/Scripts/PlayerPlatformerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9B956647-017D-4DC1-B8D3-D25EEF012467/76/115be256/Collider.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -44,6 +60,12 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerInput.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/Target.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/GoombaAI.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/HealthController.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/HUD/HealthController.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/HealthController.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/CameraShaking.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
       </list>
     </option>
@@ -95,7 +117,14 @@
       <workItem from="1603361605186" duration="1968000" />
       <workItem from="1603389808716" duration="728000" />
       <workItem from="1603450479467" duration="1553000" />
-      <workItem from="1603535135823" duration="1191000" />
+      <workItem from="1603535135823" duration="1374000" />
+      <workItem from="1603667316718" duration="2718000" />
+      <workItem from="1603697858377" duration="11979000" />
+      <workItem from="1603750213727" duration="3520000" />
+      <workItem from="1603784056584" duration="12972000" />
+      <workItem from="1603799328031" duration="6086000" />
+      <workItem from="1603836241348" duration="6016000" />
+      <workItem from="1604048652777" duration="309000" />
     </task>
     <servers />
   </component>
@@ -117,10 +146,11 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog" timestamp="1603270988076">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog" timestamp="1603699135161">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1603270988076" />
+    <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1603698189358" />
+    <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1603699135161" />
     <state x="-6" y="0" width="781" height="840" key="dock-window-2" timestamp="1603359749535">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
