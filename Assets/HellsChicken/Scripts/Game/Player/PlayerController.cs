@@ -51,7 +51,7 @@ namespace HellsChicken.Scripts.Game.Player
         [SerializeField] private float immunityDuration = 1.0f;
         private bool _isImmune;
         private bool _isLastHeart;
-        
+
 
         void Awake()
         {
@@ -68,16 +68,16 @@ namespace HellsChicken.Scripts.Game.Player
 
         private void OnEnable()
         {
-            EventManager.StartListening("PlayerDeath",Death);
-            EventManager.StartListening("LastHeart",LastHeart);
+            EventManager.StartListening("PlayerDeath", Death);
+            EventManager.StartListening("LastHeart", LastHeart);
         }
 
         // Use this for initialization
-        void Start ()
+        void Start()
         {
             crosshair.transform.localScale = new Vector3(0, 0, 0);
             _characterController.enabled = false;
-            if(GameManager.Instance)
+            if (GameManager.Instance)
                 _transform.position = GameManager.Instance.GetCurrentCheckPointPos();
             _characterController.enabled = true;
         }
@@ -86,8 +86,10 @@ namespace HellsChicken.Scripts.Game.Player
         {
             if (_canShoot)
             {
-                ParticleSystem myFlameStream =  Instantiate(flameStream, firePosition.position, firePosition.rotation);
+                ParticleSystem myFlameStream = Instantiate(flameStream, firePosition.position, firePosition.rotation);
                 (myFlameStream).transform.SetParent(_transform.transform);
+                StartCoroutine(DetachFlames(myFlameStream));
+                EventManager.TriggerEvent("flameThrower");
                 _canShoot = false;
                 Debug.Log("Shoot flames");
                 StartCoroutine(EnableFlames(flamesCooldown));
@@ -100,7 +102,8 @@ namespace HellsChicken.Scripts.Game.Player
             float distance = _lookDirection.magnitude;
             Vector2 direction = _lookDirection / distance;
             direction.Normalize();
-            GameObject egg = Instantiate(eggPrefab, eggThrowPoint.transform.position, Quaternion.Euler(0.0f, 0.0f, angle));
+            GameObject egg = Instantiate(eggPrefab, eggThrowPoint.transform.position,
+                Quaternion.Euler(0.0f, 0.0f, angle));
             egg.GetComponent<Rigidbody>().velocity = direction * throwForce;
 
             //TODO vettore forza + vettore movimento
@@ -200,6 +203,7 @@ namespace HellsChicken.Scripts.Game.Player
                     _moveDirection.y = -glidingSpeed;
                 }
             }
+
             //MOVEMENT APPLICATION
             _characterController.Move(_moveDirection * Time.deltaTime);
         }
@@ -211,31 +215,34 @@ namespace HellsChicken.Scripts.Game.Player
 
         bool IsFalling()
         {
-            return _moveDirection.y < 0f ;
+            return _moveDirection.y < 0f;
         }
 
         void OnControllerColliderHit(ControllerColliderHit hit)
         {
             if (!_isImmune)
             {
-                if (hit.transform.CompareTag("Enemy") || hit.transform.CompareTag("EnemyShot") )
+                if (hit.transform.CompareTag("Enemy") || hit.transform.CompareTag("EnemyShot"))
                 {
-                    if(!_isLastHeart)
+                    if (!_isLastHeart)
                     {
                         gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
                         StartCoroutine(ImmunityTimer(immunityDuration));
                     }
+
                     EventManager.TriggerEvent("DecreasePlayerHealth");
                 }
+
                 // else if (hit.transform.CompareTag("Magma"))
                 // {
                 //     //TODO DIE IMMEDIATLY
                 // }
             }
+
             if (_characterController.collisionFlags != CollisionFlags.Above) return;
             if (Vector3.Dot(hit.normal, _moveDirection) < 0)
             {
-               _moveDirection -= hit.normal * Vector3.Dot(hit.normal, _moveDirection);
+                _moveDirection -= hit.normal * Vector3.Dot(hit.normal, _moveDirection);
             }
         }
 
@@ -259,9 +266,9 @@ namespace HellsChicken.Scripts.Game.Player
 
         private void LastHeart()
         {
-            EventManager.StopListening("LastHeart",LastHeart);
+            EventManager.StopListening("LastHeart", LastHeart);
             _isLastHeart = true;
-            EventManager.StartListening("LastHeart",LastHeart);
+            EventManager.StartListening("LastHeart", LastHeart);
         }
 
         private void Death()
@@ -279,6 +286,15 @@ namespace HellsChicken.Scripts.Game.Player
             //Non appena viene ritornato null, si esce da IEnumerator.
         }
 
-    }
+        IEnumerator DetachFlames(ParticleSystem temp)
+        {
 
+            yield return new WaitForSecondsRealtime(temp.main.duration);
+            temp.transform.parent = null;
+            var mainModule = temp.main;
+            mainModule.simulationSpeed = 3f;
+            yield return null;
+        }
+    }
 }
+    

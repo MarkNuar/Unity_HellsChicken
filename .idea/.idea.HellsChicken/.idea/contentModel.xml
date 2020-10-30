@@ -138,6 +138,7 @@
               <e p="Audio" t="Include">
                 <e p="AudioManager.cs" t="Include" />
               </e>
+              <e p="GameManager.cs" t="Include" />
               <e p="Player" t="Include">
                 <e p="CameraController.cs" t="Include" />
                 <e p="Egg" t="Include">
@@ -146,6 +147,12 @@
                   <e p="Target.cs" t="Include" />
                 </e>
                 <e p="PlayerController.cs" t="Include" />
+              </e>
+              <e p="UI" t="Include">
+                <e p="HealthController.cs" t="Include" />
+              </e>
+              <e p="Utility" t="Include">
+                <e p="CheckPointManager.cs" t="Include" />
               </e>
             </e>
           </e>
