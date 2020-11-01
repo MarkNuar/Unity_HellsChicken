@@ -140,7 +140,10 @@
               </e>
               <e p="EnemyObstacles" t="Include">
                 <e p="BladeMovement.cs" t="Include" />
-                <e p="FallingRock.cs" t="Include" />
+                <e p="Rock" t="Include">
+                  <e p="Rock.cs" t="Include" />
+                  <e p="RockObstacle.cs" t="Include" />
+                </e>
                 <e p="SpearMovement.cs" t="Include" />
               </e>
               <e p="GameManager.cs" t="Include" />
@@ -149,7 +152,6 @@
                 <e p="PlatformMoveY.cs" t="Include" />
               </e>
               <e p="Player" t="Include">
-                <e p="CameraController.cs" t="Include" />
                 <e p="Egg" t="Include">
                   <e p="Destruction.cs" t="Include" />
                   <e p="EggExplosion.cs" t="Include" />

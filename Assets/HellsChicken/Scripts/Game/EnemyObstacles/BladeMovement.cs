@@ -11,7 +11,7 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles
         [SerializeField] Transform startPoint;
         [SerializeField] Transform finishPoint;
 
-        private bool _turnback;
+        private bool _turnBack;
         
         // Update is called once per frame
         void Update()
@@ -20,14 +20,14 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles
 
             if (transform.position.x <= startPoint.position.x)
             {
-                _turnback = false;
+                _turnBack = false;
             }
             if (transform.position.x >= finishPoint.position.x)
             {
-                _turnback = true;
+                _turnBack = true;
             }
 
-            if (_turnback)
+            if (_turnBack)
             {
                 transform.position = Vector3.MoveTowards(transform.position, startPoint.position, speed * Time.deltaTime);
             }
@@ -36,5 +36,5 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles
                 transform.position = Vector3.MoveTowards(transform.position, finishPoint.position, speed * Time.deltaTime);
             }
         }
-    }
+        }
 }

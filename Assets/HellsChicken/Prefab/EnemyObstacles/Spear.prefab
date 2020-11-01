@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4474012441438599592}
   - component: {fileID: 9178801707754937960}
   - component: {fileID: 2301423219076782870}
-  - component: {fileID: 1749512398529823039}
   - component: {fileID: -9023117942437716560}
+  - component: {fileID: 1856451740}
   m_Layer: 0
   m_Name: Spear
   m_TagString: Enemy
@@ -81,20 +81,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &1749512398529823039
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4997238994432374164}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!114 &-9023117942437716560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,3 +93,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3b1246e41536594ca9f95679b8135a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frequency: 5
+  magnitude: 5
+--- !u!65 &1856451740
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4997238994432374164}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 1.98, z: 1.0000002}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
