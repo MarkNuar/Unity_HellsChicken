@@ -42,7 +42,9 @@ namespace HellsChicken.Scripts.Game.Player
         private float timer = 2f;
         private float _countdownBetweenEggs;
         private bool _isAiming;
-
+        //TODO
+        private CrosshairSpriteController _crosshairSpriteController;
+        
         private Vector3 _lookDirection;
 
         [SerializeField] private float immunityDuration = 1.0f;
@@ -61,17 +63,20 @@ namespace HellsChicken.Scripts.Game.Player
             _gravity = Physics.gravity.y;
             _rightRotation = transform.rotation;
             _leftRotation = _rightRotation * Quaternion.Euler(0, 180, 0);
+            //TODO
+            _crosshairSpriteController = crosshair.GetComponent<CrosshairSpriteController>();
+            _isAiming = false;
         }
 
         private void OnEnable()
         {
             EventManager.StartListening("PlayerDeath", Death);
             EventManager.StartListening("LastHeart", LastHeart);
+            EventManager.StartListening("EggExplosionNotification", EggExplosionNotification);
         }
 
         private void Start()
         {
-            crosshair.transform.localScale = new Vector3(0, 0, 0);
             _characterController.enabled = false;
             if (GameManager.Instance)
                 _transform.position = GameManager.Instance.GetCurrentCheckPointPos();
@@ -105,13 +110,15 @@ namespace HellsChicken.Scripts.Game.Player
             _countdownBetweenEggs = timer;
         }
 
+        private void EggExplosionNotification()
+        {
+            EventManager.StopListening("EggExplosionNotification",EggExplosionNotification);
+            _crosshairSpriteController.SetCrosshairToIdle();
+            EventManager.StartListening("EggExplosionNotification",EggExplosionNotification);
+        }
+
         private void Update()
         {
-            if (_transform.position.z != 0)
-            {
-                Debug.Log("z needs to be corrected");
-            }
-            
             _lookDirection = Target.GetTarget() - eggThrowPoint.position;
             _countdownBetweenEggs -= Time.deltaTime;
 
@@ -119,16 +126,14 @@ namespace HellsChicken.Scripts.Game.Player
             if (Input.GetButtonDown("Fire1"))
                 ShootFlames();
 
-            //EGG
-            if (_countdownBetweenEggs <= 0f)
+            //EGG 
+            crosshair.transform.position = new Vector3(Target.GetTarget().x, Target.GetTarget().y, -3f); //crosshair always follows mouse
+            if (_countdownBetweenEggs <= 0)
             {
                 if (Input.GetButton("Fire2"))
                 {
                     _isAiming = true;
-
-                    crosshair.transform.localScale = new Vector3(0.25f, 0.25f, 1);
-                    crosshair.transform.position = new Vector2(Target.GetTarget().x, Target.GetTarget().y);
-
+                    _crosshairSpriteController.SetCrosshairToAiming();
                     if (_lookDirection.x > 0.01f)
                     {
                         _transform.rotation = _rightRotation;
@@ -137,22 +142,18 @@ namespace HellsChicken.Scripts.Game.Player
                     {
                         _transform.rotation = _leftRotation;
                     }
-
-                    //TODO traiettoria
-
                 }
-
                 if (Input.GetButtonUp("Fire2"))
                 {
-                    ThrowEgg();
-                    crosshair.transform.localScale = new Vector3(0, 0, 0);
                     _isAiming = false;
-
+                    _crosshairSpriteController.SetCrosshairToWaiting();
+                    ThrowEgg();
                 }
             }
+            //TODO SHOW EGG'S LAUNCHE DIRECTION
+            Debug.DrawLine(Target.GetTarget(), eggThrowPoint.position, Color.white,0.01f);
 
-            //Debug.DrawLine(eggThrowPoint.position,Target.GetTarget());
-
+            
             _moveDirection.x = Input.GetAxis("Horizontal") * walkSpeed;
             //_moveDirection.z = Input.GetAxis("Vertical") * 2; //just for fun, z movement
             _moveDirection.z = 0f;
@@ -208,6 +209,7 @@ namespace HellsChicken.Scripts.Game.Player
             _characterController.Move(_moveDirection * Time.deltaTime);
 
             //Constraint the Z position of the playerbody.
+            //TODO DO THIS IN THE LATE UPDATE
             ZConstraint();
         }
 
@@ -330,6 +332,7 @@ namespace HellsChicken.Scripts.Game.Player
         {
             EventManager.StopListening("PlayerDeath", Death);
             EventManager.StopListening("LastHeart", LastHeart);
+            EventManager.StopListening("EggExplosionNotification",EggExplosionNotification);
         }
     }
 }

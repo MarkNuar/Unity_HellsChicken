@@ -9,6 +9,7 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles.Rock
     
         private void OnCollisionEnter(Collision other)
         {
+            //TODO: IF HIT BY THE EGG, IT SHOULD FALL WITHOUT DESTROYING ITSELF
             //if (other.collider.CompareTag("Player"))
             {
                 Destroy(gameObject);

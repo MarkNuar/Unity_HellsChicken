@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using EventManagerNamespace;
+using UnityEngine;
 
 namespace HellsChicken.Scripts.Game.Player.Egg
 {
@@ -14,20 +16,30 @@ namespace HellsChicken.Scripts.Game.Player.Egg
         private float radius = 5f;
         private float force = 500f;
     
-        // Start is called before the first frame update
-        void Start()
-        {
-            _countdown = timer;
-        }
+        // // Start is called before the first frame update
+        // void Start()
+        // {
+        //     _countdown = timer;
+        // }
+        //
+        // // Update is called once per frame
+        // void Update()
+        // {
+        //     _countdown -= Time.deltaTime;
+        //     if (_countdown <= 0f && !_hasExploded)
+        //     {
+        //         Explode();
+        //         EventManager.TriggerEvent("EggExplosionNotification");
+        //         _hasExploded = true;
+        //     }
+        // }
 
-        // Update is called once per frame
-        void Update()
+        private void OnCollisionEnter(Collision other)
         {
-            _countdown -= Time.deltaTime;
-            if (_countdown <= 0f && !_hasExploded)
+            if (!other.collider.CompareTag("Player"))
             {
                 Explode();
-                _hasExploded = true;
+                EventManager.TriggerEvent("EggExplosionNotification");
             }
         }
 
