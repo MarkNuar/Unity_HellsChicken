@@ -16,30 +16,21 @@ namespace HellsChicken.Scripts.Game.Player.Egg
         private float radius = 5f;
         private float force = 500f;
     
-        // // Start is called before the first frame update
-        // void Start()
-        // {
-        //     _countdown = timer;
-        // }
-        //
-        // // Update is called once per frame
-        // void Update()
-        // {
-        //     _countdown -= Time.deltaTime;
-        //     if (_countdown <= 0f && !_hasExploded)
-        //     {
-        //         Explode();
-        //         EventManager.TriggerEvent("EggExplosionNotification");
-        //         _hasExploded = true;
-        //     }
-        // }
-
-        private void OnCollisionEnter(Collision other)
+        // Start is called before the first frame update
+        void Start()
         {
-            if (!other.collider.CompareTag("Player"))
+            _countdown = timer;
+        }
+        
+        // Update is called once per frame
+        void Update()
+        {
+            _countdown -= Time.deltaTime;
+            if (_countdown <= 0f && !_hasExploded)
             {
                 Explode();
                 EventManager.TriggerEvent("EggExplosionNotification");
+                _hasExploded = true;
             }
         }
 
@@ -67,7 +58,7 @@ namespace HellsChicken.Scripts.Game.Player.Egg
                     dest.Destroyer();
                 }
             }
-
+            
             Destroy(gameObject);
         }
     
