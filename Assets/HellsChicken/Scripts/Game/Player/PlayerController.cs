@@ -102,8 +102,7 @@ namespace HellsChicken.Scripts.Game.Player
             float distance = _lookDirection.magnitude;
             Vector2 direction = _lookDirection / distance;
             direction.Normalize();
-            GameObject egg = Instantiate(eggPrefab, eggThrowPoint.transform.position,
-                Quaternion.Euler(0.0f, 0.0f, angle));
+            GameObject egg = Instantiate(eggPrefab, eggThrowPoint.transform.position, Quaternion.Euler(0.0f, 0.0f, angle));
             egg.GetComponent<Rigidbody>().velocity = direction * throwForce;
 
             //TODO vettore forza + vettore movimento
