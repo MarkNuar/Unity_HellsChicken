@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using EventManagerNamespace;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
@@ -19,13 +20,16 @@ public class CentaurAI : MonoBehaviour {
     [SerializeField] private float timeReaction = 2f; //how often do the agent take decision?
     [SerializeField] private Transform player;
     [SerializeField] private Transform arrowPosition;
-    [SerializeField] private GameObject arrowPrefab;
+    [SerializeField] private GameObject bombPrefab;
     [SerializeField] private GameObject textPrefab;
+    [SerializeField] private GameObject startExplosion;
 
     private Rigidbody _rigidbody;
     private DecisionTree tree;
     private GameObject textInstance;
-    
+
+    private int shootIntervall = 0;
+
     private void Awake() {
         _rigidbody = GetComponent<Rigidbody>();
     }
@@ -76,66 +80,78 @@ public class CentaurAI : MonoBehaviour {
     //Actions
     public object move() {
         movement = true;
+        shootIntervall = 0;
         return null;
     }
     
     public object stop() {
         movement = false;
+        shootIntervall = 0;
         return null;
     }
 
     public object hit() {
-        GameObject fire = Instantiate(arrowPrefab,arrowPosition.position,Quaternion.LookRotation(player.position,transform.position));
-        CentaurFire ar = fire.GetComponent<CentaurFire>();
-        ar.Target = player.position;
+        if (shootIntervall == 0) {
+            Instantiate(startExplosion, arrowPosition.position, Quaternion.identity);
+            EventManager.TriggerEvent("centaurShot");
+            GameObject fire = Instantiate(bombPrefab, arrowPosition.position,
+                Quaternion.LookRotation(player.position, transform.position));
+            CentaurFire ar = fire.GetComponent<CentaurFire>();
+            ar.Target = player.position + new Vector3(0, 0.5f, 0);
+            ar.CentaurPos = transform.position;
+            ar.findAngle(right);
+        }
+        shootIntervall = (shootIntervall + 1) % 2;
         return null;
     }
 
     //Decisions
-    public object isPlayerVisible() {
-        Vector3 ray = player.position - transform.position;
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, ray, out hit,30f)) {
-            if (hit.transform == player) {
-                if (Vector3.Dot(ray, transform.forward) <= 0 ) {
-                    transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
-                    right = !right;
+    public object isPlayerVisible() { 
+            Vector3 ray = player.position - transform.position;
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, ray, out hit, 30f)) {
+                if (hit.transform == player) {
+                    if (Vector3.Dot(ray, transform.forward) <= 0) {
+                        transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
+                        right = !right;
+                    }
+
+                    if (textInstance != null)
+                        Destroy(textInstance);
+
+                    movement = false;
+                    still = 0;
+                    return true;
                 }
-                
-                if(textInstance != null)
-                    Destroy(textInstance);
-                
-                movement = false;
-                still = 0;
-                return true;
             }
+
+            return false;
         }
-        return false;
-    }
 
     public object isPlayerStill() {
         if (still == 0) {
-            if (Random.Range(0, 11) > 7) {
-                still += 1;
-                textInstance = Instantiate(textPrefab, gameObject.transform.position + new Vector3(-0.4f,3,0), Quaternion.identity);
+            if (Random.Range(0, 10) > 6) {
+                still = +1;
+                textInstance = Instantiate(textPrefab, gameObject.transform.position + new Vector3(-0.4f, 3, 0),
+                    Quaternion.identity);
                 return false;
-            }else 
+            }
+            else
                 return true;
-            
+
         }else {
             if (still > 0) {
-                if (still == 2) {
-                    still = -4;
-                    Destroy(textInstance);
+                still += 1;
+                if (still == 4) {
                     if (Random.Range(0, 2) == 0) {
                         transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
                         right = !right;
                     }
-                }else
-                    still += 1;
+                    Destroy(textInstance);
+                    still = -4;
+                }
                 return false;
-            }
-            else {
+            }else {
                 still += 1;
                 return true;
             }
