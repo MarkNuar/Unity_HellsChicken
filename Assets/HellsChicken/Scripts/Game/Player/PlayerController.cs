@@ -241,8 +241,26 @@ namespace HellsChicken.Scripts.Game.Player
             }
         }
         
-        //Damaged by an Enemy or an EnemyShot
+        //Damaged by an Enemy or an EnemyShot, staying on the enemy
         private void OnTriggerStay(Collider other)
+        {
+            if (!_isImmune)
+            {
+                if (other.transform.CompareTag("Enemy") || other.transform.CompareTag("EnemyShot"))
+                {
+                    // Debug.LogError("Hih by an enemy OnTriggerEnter");
+                    gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
+                    if (!_isLastHeart)
+                    {
+                        StartCoroutine(ImmunityTimer(immunityDuration));
+                    }
+                    EventManager.TriggerEvent("DecreasePlayerHealth");
+                }
+            }
+        }
+        
+        //Damaged by an Enemy or an EnemyShot, entering in contact with the enemy
+        private void OnTriggerEnter(Collider other)
         {
             if (!_isImmune)
             {
