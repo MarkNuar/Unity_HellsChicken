@@ -24,8 +24,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3314362004701236948}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.48, y: -3.68, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5.55, y: -0.43, z: 0}
+  m_LocalScale: {x: 1.1512, y: 1.1512, z: 1.1512}
   m_Children: []
   m_Father: {fileID: 3314362005228955531}
   m_RootOrder: 1
@@ -86,8 +86,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3314362005273132920}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.33, y: 0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3314362005228955531}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 6310032311629058270}
   - component: {fileID: 3971185500713512695}
   - component: {fileID: 6620714025764858206}
-  - component: {fileID: 3314362003759250432}
+  - component: {fileID: 552980342}
   m_Layer: 0
   m_Name: BladeObstacle
   m_TagString: Enemy
@@ -188,10 +188,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4466f1a177137bd4d95802925976652f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 5
+  speed: 5
   startPoint: {fileID: 3314362005273132921}
   finishPoint: {fileID: 3314362004701236949}
---- !u!135 &3314362003759250432
-SphereCollider:
+--- !u!136 &552980342
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -200,6 +202,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2.56
+  m_Radius: 2.2
+  m_Height: 6
+  m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
