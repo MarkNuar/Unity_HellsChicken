@@ -8,6 +8,8 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles.Rock
         [SerializeField] private GameObject rockObstacle;
         [SerializeField] private float gravityModifier = 10;
         
+        //[SerializeField] GameObject rockPrefab;
+        
         void Start()
         {
             _rockRb = rockObstacle.GetComponent<Rigidbody>();
@@ -19,7 +21,9 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles.Rock
             {
                 gameObject.GetComponent<BoxCollider>().enabled = false;
                 _rockRb.isKinematic = false;
-                _rockRb.AddForce(new Vector3(0,gravityModifier*Physics.gravity.y,0),ForceMode.Acceleration);
+                _rockRb.AddForce(new Vector3(0, gravityModifier * Physics.gravity.y, 0),ForceMode.Acceleration);
+                
+                //Destroy(rockPrefab, 3.0f);
             }
         }
     }
