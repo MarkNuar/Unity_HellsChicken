@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Configuration;
 using System.Diagnostics;
 using Cinemachine;
 using EventManagerNamespace;
@@ -42,9 +43,8 @@ namespace HellsChicken.Scripts.Game.Player
         [SerializeField] private GameObject eggPrefab;
         [SerializeField] private Transform eggThrowPoint;
         [SerializeField] private GameObject crosshair;
-        private float timer = 2f;
-        private float _countdownBetweenEggs;
         private bool _isAiming;
+        private bool _isWaitingForEggExplosion;
         private CrosshairSpriteController _crosshairSpriteController;
         
         private Vector3 _lookDirection;
@@ -59,16 +59,16 @@ namespace HellsChicken.Scripts.Game.Player
             _characterController = gameObject.GetComponent<CharacterController>();
             _transform = gameObject.GetComponent<Transform>();
             _meshRenderer = gameObject.GetComponent<MeshRenderer>();
+            _crosshairSpriteController = crosshair.GetComponent<CrosshairSpriteController>();
             _isImmune = false;
             _isLastHeart = false;
             _isYMovementCorrected = false;
+            _isAiming = false;
+            _isWaitingForEggExplosion = false;
             _moveDirection = Vector3.zero;
             _gravity = Physics.gravity.y;
             _rightRotation = transform.rotation;
             _leftRotation = _rightRotation * Quaternion.Euler(0, 180, 0);
-            //TODO
-            _crosshairSpriteController = crosshair.GetComponent<CrosshairSpriteController>();
-            _isAiming = false;
         }
 
         private void OnEnable()
@@ -112,30 +112,28 @@ namespace HellsChicken.Scripts.Game.Player
             if (_isYMovementCorrected)
                 velocityCorrected.y += _yMovementCorrection;
             egg.GetComponent<Rigidbody>().velocity = (direction * eggThrowForce) + (Vector2) velocityCorrected;
-            //TODO vettore forza + vettore movimento
-            //Note that this countdown should be the same in the egg prefab
-            _countdownBetweenEggs = timer;
         }
 
         private void EggExplosionNotification()
         {
             EventManager.StopListening("EggExplosionNotification",EggExplosionNotification);
             _crosshairSpriteController.SetCrosshairToIdle();
+            _isWaitingForEggExplosion = false;
             EventManager.StartListening("EggExplosionNotification",EggExplosionNotification);
         }
 
         private void Update()
         {
             _lookDirection = Target.GetTarget() - eggThrowPoint.position;
-            _countdownBetweenEggs -= Time.deltaTime;
 
             //FIRE
             if (Input.GetButtonDown("Fire1"))
                 ShootFlames();
 
             //EGG 
-            crosshair.transform.position = new Vector3(Target.GetTarget().x, Target.GetTarget().y, -3f); //crosshair always follows mouse
-            if (_countdownBetweenEggs <= 0)
+            //TODO avoid crosshair to disappear behind scene objects, by using a canvas...
+            crosshair.transform.position = new Vector3(Target.GetTarget().x, Target.GetTarget().y, 0f); //crosshair always follows mouse
+            if(!_isWaitingForEggExplosion)
             {
                 if (Input.GetButton("Fire2"))
                 {
@@ -154,11 +152,12 @@ namespace HellsChicken.Scripts.Game.Player
                 {
                     _isAiming = false;
                     _crosshairSpriteController.SetCrosshairToWaiting();
+                    _isWaitingForEggExplosion = true;
                     ThrowEgg();
                 }
             }
             
-            //TODO SHOW EGG'S LAUNCHE DIRECTION
+            //TODO SHOW EGG'S LAUNCH DIRECTION
             Debug.DrawLine(Target.GetTarget(), eggThrowPoint.position, Color.white,0.01f);
             
             
@@ -326,6 +325,12 @@ namespace HellsChicken.Scripts.Game.Player
 
         private void Death()
         {
+            //TODO: if death, it should only respawn player and destroyed objects
+            // EventManager.TriggerEvent("RefillPlayerHealth");
+            // _characterController.enabled = false;
+            // if (GameManager.Instance)
+            //     _transform.position = GameManager.Instance.GetCurrentCheckPointPos();
+            // _characterController.enabled = true;
             //If player dies, reload the entire scene.
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

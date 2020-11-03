@@ -21,19 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="bc89b660-8c2e-44f0-9184-66b8ac8c2637" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Materials/Colored/White.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Materials/Colored/White.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Materials/PhysicsMaterials/Bouncy.physicMaterial" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Materials/PhysicsMaterials/Bouncy.physicMaterial" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Egg/Crosshair.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Egg/Crosshair.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Egg/Egg.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Egg/Egg.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Egg/PixelArtCrossAirDisabled 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Egg/PixelArtCrossAirDisabled 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Egg/PixelArtCrossAirDisabled.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Egg/PixelArtCrossAirDisabled.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Egg/PixelArtCrossAirDisabled.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Egg/PixelArtCrossAirDisabled.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/DeathRespawnTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/DeathRespawnTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/Rock/RockObstacle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/Rock/RockObstacle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/EggExplosion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/EggExplosion.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/HealthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/HealthController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +54,6 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/GoombaAI.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/HealthController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/HUD/HealthController.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/HealthController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/CameraShaking.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/SpearMovement.cs" />
@@ -71,9 +61,10 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/BladeMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/CrossairSpriteController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/CrosshairSpriteController.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/EggExplosion.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/Rock/Rock.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/Rock/RockObstacle.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/EggExplosion.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/HealthController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
       </list>
     </option>
@@ -139,7 +130,7 @@
       <workItem from="1604236515513" duration="1961000" />
       <workItem from="1604268422154" duration="3829000" />
       <workItem from="1604331907597" duration="3704000" />
-      <workItem from="1604358102199" duration="1589000" />
+      <workItem from="1604358102199" duration="4936000" />
     </task>
     <servers />
   </component>

@@ -123,5 +123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2237f0a1d1dbc9e4b8a4fa6dba008838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerBeforeEggExplosion: 2
   explosionEffect: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3,
     type: 3}

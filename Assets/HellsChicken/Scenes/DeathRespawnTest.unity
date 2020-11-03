@@ -887,12 +887,12 @@ PrefabInstance:
     - target: {fileID: 2115291012285160338, guid: ce5a940080b9e7941bbaceb0a65b19fb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.1
+      value: 25.1
       objectReference: {fileID: 0}
     - target: {fileID: 2115291012285160338, guid: ce5a940080b9e7941bbaceb0a65b19fb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.8
+      value: 14.2
       objectReference: {fileID: 0}
     - target: {fileID: 2115291012285160338, guid: ce5a940080b9e7941bbaceb0a65b19fb,
         type: 3}
@@ -1680,16 +1680,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 201550727293673096, guid: 6ecdd647651f8024e9ce79ffe852169f,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1600841600118663131, guid: 6ecdd647651f8024e9ce79ffe852169f,
-        type: 3}
-      propertyPath: immunityDuration
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3690622280395660541, guid: 6ecdd647651f8024e9ce79ffe852169f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1749,26 +1739,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerWithCinemachine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6914246923931989809, guid: 6ecdd647651f8024e9ce79ffe852169f,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7400446572394493230, guid: 6ecdd647651f8024e9ce79ffe852169f,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 951f76f281239e54fbd8ead1ec404c22, type: 2}
-    - target: {fileID: 7400446573322165019, guid: 6ecdd647651f8024e9ce79ffe852169f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.7151735
-      objectReference: {fileID: 0}
-    - target: {fileID: 7409349275366072962, guid: 6ecdd647651f8024e9ce79ffe852169f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.7151735
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ecdd647651f8024e9ce79ffe852169f, type: 3}

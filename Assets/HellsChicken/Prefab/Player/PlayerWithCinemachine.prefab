@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1382601901217597342}
   - component: {fileID: 438132691596424672}
   - component: {fileID: 6914246923931989809}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2514146012719396926}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3035028315545016573}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EggThrowPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 7220483378611865424}
   - component: {fileID: 8001250304262511275}
   - component: {fileID: 201550727293673096}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Peak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4779472793321497645}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -260,7 +260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5070432510126635538}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FirePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 543942805}
   - component: {fileID: 543942806}
   - component: {fileID: 7293468285316627843}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerBody
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -350,7 +350,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 951f76f281239e54fbd8ead1ec404c22, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -393,11 +393,12 @@ MonoBehaviour:
     type: 3}
   firePosition: {fileID: 5070432510126635538}
   flamesCooldown: 2
+  eggThrowForce: 16
   eggPrefab: {fileID: 9045032837410467742, guid: de366eea063501149ad855357dddf584,
     type: 3}
   eggThrowPoint: {fileID: 3035028315545016573}
   crosshair: {fileID: 5722625154252255546}
-  immunityDuration: 1
+  immunityDuration: 1.5
 --- !u!143 &7400446572394493219
 CharacterController:
   m_ObjectHideFlags: 0
@@ -530,7 +531,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7400446573322165223}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.8914366, y: 1.3989234, z: -30}
+  m_LocalPosition: {x: 2.770683, y: 1.3989234, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3690622280395660541}
@@ -701,7 +702,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7409349275050121237}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CameraFollowPosition
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -748,7 +749,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7409349275366072963}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.8914366, y: 1.3989234, z: -30}
+  m_LocalPosition: {x: 2.770683, y: 1.3989234, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7409349275609828441}
