@@ -62,7 +62,8 @@ namespace HellsChicken.Scripts.Game.Player
             _characterController = gameObject.GetComponent<CharacterController>();
             _transform = gameObject.GetComponent<Transform>();
             _meshRenderer = gameObject.GetComponent<MeshRenderer>();
-            _crosshairImageController = crosshairCanvas.GetComponentInChildren<CrosshairImageController>();
+            _crosshairImageController = crosshairCanvas.transform.GetChild(0).GetComponent<CrosshairImageController>();
+            
             _target = playerCamera.GetComponent<Target>();
             _isImmune = false;
             _isLastHeart = false;
@@ -141,6 +142,7 @@ namespace HellsChicken.Scripts.Game.Player
                 {
                     _isAiming = true;
                     _crosshairImageController.SetCrosshairToAiming();
+                    //TODO: show vector
                     if (_lookDirection.x > 0.01f)
                     {
                         _transform.rotation = _rightRotation;
@@ -153,6 +155,7 @@ namespace HellsChicken.Scripts.Game.Player
                 if (Input.GetButtonUp("Fire2"))
                 {
                     _isAiming = false;
+                    //TODO: hide vector
                     _crosshairImageController.SetCrosshairToWaiting();
                     _isWaitingForEggExplosion = true;
                     ThrowEgg();

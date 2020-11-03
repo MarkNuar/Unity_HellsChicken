@@ -34,7 +34,7 @@ RectTransform:
   m_Father: {fileID: 2393207136299605683}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.485, y: 0.485}
+  m_AnchorMin: {x: 0.48, y: 0.48}
   m_AnchorMax: {x: 0.52, y: 0.52}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d55abc8a404da7146af25862227decac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a67db893a1be29c48b9c0de4d0ab0510, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd43ecc18eb28548bc592532d3ce730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enabledCrosshair: {fileID: 21300000, guid: d55abc8a404da7146af25862227decac, type: 3}
-  blockedCrosshair: {fileID: 21300000, guid: 8078c4579c70f714f9a8e30f3d8485f1, type: 3}
+  enabledCrosshair: {fileID: 21300000, guid: a67db893a1be29c48b9c0de4d0ab0510, type: 3}
+  blockedCrosshair: {fileID: 21300000, guid: f597e5be59edb6c4591d78eaa2163796, type: 3}
 --- !u!1 &2393207136299605695
 GameObject:
   m_ObjectHideFlags: 0
