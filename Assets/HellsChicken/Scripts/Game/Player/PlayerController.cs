@@ -5,6 +5,7 @@ using System.Diagnostics;
 using Cinemachine;
 using EventManagerNamespace;
 using HellsChicken.Scripts.Game.Player.Egg;
+using HellsChicken.Scripts.Game.UI.Crosshair;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Debug = UnityEngine.Debug;
@@ -42,10 +43,12 @@ namespace HellsChicken.Scripts.Game.Player
         [SerializeField] private float eggThrowForce = 20f;
         [SerializeField] private GameObject eggPrefab;
         [SerializeField] private Transform eggThrowPoint;
-        [SerializeField] private GameObject crosshair;
+        [SerializeField] private GameObject crosshairCanvas;
+        private CrosshairImageController _crosshairImageController;
+        [SerializeField] private GameObject playerCamera;
+        private Target _target;
         private bool _isAiming;
         private bool _isWaitingForEggExplosion;
-        private CrosshairSpriteController _crosshairSpriteController;
         
         private Vector3 _lookDirection;
 
@@ -59,7 +62,8 @@ namespace HellsChicken.Scripts.Game.Player
             _characterController = gameObject.GetComponent<CharacterController>();
             _transform = gameObject.GetComponent<Transform>();
             _meshRenderer = gameObject.GetComponent<MeshRenderer>();
-            _crosshairSpriteController = crosshair.GetComponent<CrosshairSpriteController>();
+            _crosshairImageController = crosshairCanvas.GetComponentInChildren<CrosshairImageController>();
+            _target = playerCamera.GetComponent<Target>();
             _isImmune = false;
             _isLastHeart = false;
             _isYMovementCorrected = false;
@@ -117,28 +121,26 @@ namespace HellsChicken.Scripts.Game.Player
         private void EggExplosionNotification()
         {
             EventManager.StopListening("EggExplosionNotification",EggExplosionNotification);
-            _crosshairSpriteController.SetCrosshairToIdle();
+            _crosshairImageController.SetCrosshairToIdle();
             _isWaitingForEggExplosion = false;
             EventManager.StartListening("EggExplosionNotification",EggExplosionNotification);
         }
 
         private void Update()
         {
-            _lookDirection = Target.GetTarget() - eggThrowPoint.position;
-
+            _lookDirection = _target.GetTarget() - eggThrowPoint.position;
+            
             //FIRE
             if (Input.GetButtonDown("Fire1"))
                 ShootFlames();
 
             //EGG 
-            //TODO avoid crosshair to disappear behind scene objects, by using a canvas...
-            crosshair.transform.position = new Vector3(Target.GetTarget().x, Target.GetTarget().y, 0f); //crosshair always follows mouse
             if(!_isWaitingForEggExplosion)
             {
                 if (Input.GetButton("Fire2"))
                 {
                     _isAiming = true;
-                    _crosshairSpriteController.SetCrosshairToAiming();
+                    _crosshairImageController.SetCrosshairToAiming();
                     if (_lookDirection.x > 0.01f)
                     {
                         _transform.rotation = _rightRotation;
@@ -151,14 +153,15 @@ namespace HellsChicken.Scripts.Game.Player
                 if (Input.GetButtonUp("Fire2"))
                 {
                     _isAiming = false;
-                    _crosshairSpriteController.SetCrosshairToWaiting();
+                    _crosshairImageController.SetCrosshairToWaiting();
                     _isWaitingForEggExplosion = true;
                     ThrowEgg();
                 }
             }
             
             //TODO SHOW EGG'S LAUNCH DIRECTION
-            Debug.DrawLine(Target.GetTarget(), eggThrowPoint.position, Color.white,0.01f);
+            //TODO Debug.DrawLine(Target.GetTarget(), eggThrowPoint.position, Color.white,0.01f);
+            //Debug.DrawLine(_target.GetTarget(), eggThrowPoint.position, Color.white, 0.01f);
             
             
             _moveDirection.x = Input.GetAxis("Horizontal") * walkSpeed;

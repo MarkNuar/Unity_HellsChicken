@@ -138,6 +138,9 @@
               <e p="Audio" t="Include">
                 <e p="AudioManager.cs" t="Include" />
               </e>
+              <e p="CheckPoint" t="Include">
+                <e p="CheckPointManager.cs" t="Include" />
+              </e>
               <e p="EnemyObstacles" t="Include">
                 <e p="BladeMovement.cs" t="Include" />
                 <e p="PendulumEngine.cs" t="Include" />
@@ -154,7 +157,6 @@
               </e>
               <e p="Player" t="Include">
                 <e p="Egg" t="Include">
-                  <e p="CrosshairSpriteController.cs" t="Include" />
                   <e p="Destruction.cs" t="Include" />
                   <e p="EggExplosion.cs" t="Include" />
                   <e p="Target.cs" t="Include" />
@@ -162,10 +164,13 @@
                 <e p="PlayerController.cs" t="Include" />
               </e>
               <e p="UI" t="Include">
-                <e p="HealthController.cs" t="Include" />
-              </e>
-              <e p="Utility" t="Include">
-                <e p="CheckPointManager.cs" t="Include" />
+                <e p="Crosshair" t="Include">
+                  <e p="CrosshairImageController.cs" t="Include" />
+                  <e p="FollowMouse.cs" t="Include" />
+                </e>
+                <e p="Health" t="Include">
+                  <e p="HealthController.cs" t="Include" />
+                </e>
               </e>
             </e>
           </e>
