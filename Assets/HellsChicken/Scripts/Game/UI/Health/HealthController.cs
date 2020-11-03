@@ -16,6 +16,7 @@ public class HealthController : MonoBehaviour
     {
         EventManager.StartListening("DecreasePlayerHealth",DecreaseHealth);
         EventManager.StartListening("IncreasePlayerHealth",IncreaseHealth);
+        EventManager.StartListening("RefillPlayerHealth", RefillHealth);
     }
 
     private void Start ()
@@ -68,19 +69,23 @@ public class HealthController : MonoBehaviour
         }
         EventManager.StartListening("DecreasePlayerHealth",DecreaseHealth);
     }
-    private void OnDisable()
-    {
-        EventManager.StopListening("DecreasePlayerHealth",DecreaseHealth);
-        EventManager.StopListening("IncreasePlayerHealth",IncreaseHealth);
-    }
-
+    
     private void RefillHealth()
     {
+        EventManager.StopListening("RefillPlayerHealth", RefillHealth);
         _health = numberOfHearts;
         foreach (var heart in _hearts)
         {
             heart.sprite = fullHeart;
         }
+        EventManager.StartListening("RefillPlayerHealth", RefillHealth);
+    }
+    
+    private void OnDisable()
+    {
+        EventManager.StopListening("DecreasePlayerHealth",DecreaseHealth);
+        EventManager.StopListening("IncreasePlayerHealth",IncreaseHealth);
+        EventManager.StopListening("RefillPlayerHealth", RefillHealth);
     }
     
 }

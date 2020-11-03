@@ -1,25 +1,27 @@
-﻿using UnityEngine;
+﻿using System;
+using EventManagerNamespace;
+using UnityEngine;
 
 namespace HellsChicken.Scripts.Game.Player.Egg
 {
     public class EggExplosion : MonoBehaviour
     {
-    
-        private float timer = 2f;
+        [SerializeField] private float timerBeforeEggExplosion = 2.0f;
+        
         private float _countdown;
 
         private bool _hasExploded;
 
-        [SerializeField] GameObject explosionEffect;
+        [SerializeField] private GameObject explosionEffect;
         private float radius = 5f;
         private float force = 500f;
     
         // Start is called before the first frame update
         void Start()
         {
-            _countdown = timer;
+            _countdown = timerBeforeEggExplosion;
         }
-
+        
         // Update is called once per frame
         void Update()
         {
@@ -27,6 +29,7 @@ namespace HellsChicken.Scripts.Game.Player.Egg
             if (_countdown <= 0f && !_hasExploded)
             {
                 Explode();
+                EventManager.TriggerEvent("EggExplosionNotification");
                 _hasExploded = true;
             }
         }
@@ -55,7 +58,7 @@ namespace HellsChicken.Scripts.Game.Player.Egg
                     dest.Destroyer();
                 }
             }
-
+            
             Destroy(gameObject);
         }
     

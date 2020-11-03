@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections;
+using System.Configuration;
+using System.Diagnostics;
 using Cinemachine;
 using EventManagerNamespace;
 using HellsChicken.Scripts.Game.Player.Egg;
+using HellsChicken.Scripts.Game.UI.Crosshair;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Debug = UnityEngine.Debug;
@@ -15,6 +18,8 @@ namespace HellsChicken.Scripts.Game.Player
     {
         [SerializeField] private float walkSpeed = 5.0f;
         [SerializeField] private float jumpSpeed = 5.0f;
+        private bool _isYMovementCorrected;
+        private float _yMovementCorrection = 8.0f;
         [SerializeField] private float gravityScale = 2.0f;
         [SerializeField] private float fallMultiplier = 2.5f;
         [SerializeField] private float lowJumpMultiplier = 2f;
@@ -34,14 +39,16 @@ namespace HellsChicken.Scripts.Game.Player
 
         private Quaternion _leftRotation;
         private Quaternion _rightRotation;
-        
-        private float throwForce = 20f;
+
+        [SerializeField] private float eggThrowForce = 20f;
         [SerializeField] private GameObject eggPrefab;
         [SerializeField] private Transform eggThrowPoint;
-        [SerializeField] private GameObject crosshair;
-        private float timer = 2f;
-        private float _countdownBetweenEggs;
+        [SerializeField] private GameObject crosshairCanvas;
+        private CrosshairImageController _crosshairImageController;
+        [SerializeField] private GameObject playerCamera;
+        private Target _target;
         private bool _isAiming;
+        private bool _isWaitingForEggExplosion;
 
         private Vector3 _lookDirection;
 
@@ -55,8 +62,13 @@ namespace HellsChicken.Scripts.Game.Player
             _characterController = gameObject.GetComponent<CharacterController>();
             _transform = gameObject.GetComponent<Transform>();
             _meshRenderer = gameObject.GetComponent<MeshRenderer>();
+            _crosshairImageController = crosshairCanvas.GetComponentInChildren<CrosshairImageController>();
+            _target = playerCamera.GetComponent<Target>();
             _isImmune = false;
             _isLastHeart = false;
+            _isYMovementCorrected = false;
+            _isAiming = false;
+            _isWaitingForEggExplosion = false;
             _moveDirection = Vector3.zero;
             _gravity = Physics.gravity.y;
             _rightRotation = transform.rotation;
@@ -67,11 +79,11 @@ namespace HellsChicken.Scripts.Game.Player
         {
             EventManager.StartListening("PlayerDeath", Death);
             EventManager.StartListening("LastHeart", LastHeart);
+            EventManager.StartListening("EggExplosionNotification", EggExplosionNotification);
         }
 
         private void Start()
         {
-            crosshair.transform.localScale = new Vector3(0, 0, 0);
             _characterController.enabled = false;
             if (GameManager.Instance)
                 _transform.position = GameManager.Instance.GetCurrentCheckPointPos();
@@ -98,36 +110,37 @@ namespace HellsChicken.Scripts.Game.Player
             float distance = _lookDirection.magnitude;
             Vector2 direction = _lookDirection / distance;
             direction.Normalize();
-            GameObject egg = Instantiate(eggPrefab, eggThrowPoint.transform.position, Quaternion.Euler(0.0f, 0.0f, angle));
-            egg.GetComponent<Rigidbody>().velocity = direction * throwForce;
-            //TODO vettore forza + vettore movimento
-            _countdownBetweenEggs = timer;
+            GameObject egg = Instantiate(eggPrefab, eggThrowPoint.transform.position,
+                Quaternion.Euler(0.0f, 0.0f, angle));
+            var velocityCorrected = new Vector3(_moveDirection.x, _moveDirection.y, 0f);
+            if (_isYMovementCorrected)
+                velocityCorrected.y += _yMovementCorrection;
+            egg.GetComponent<Rigidbody>().velocity = (direction * eggThrowForce) + (Vector2) velocityCorrected;
+        }
+
+        private void EggExplosionNotification()
+        {
+            EventManager.StopListening("EggExplosionNotification",EggExplosionNotification);
+            _crosshairImageController.SetCrosshairToIdle();
+            _isWaitingForEggExplosion = false;
+            EventManager.StartListening("EggExplosionNotification",EggExplosionNotification);
         }
 
         private void Update()
         {
-            if (_transform.position.z != 0)
-            {
-                Debug.Log("z needs to be corrected");
-            }
-            
-            _lookDirection = Target.GetTarget() - eggThrowPoint.position;
-            _countdownBetweenEggs -= Time.deltaTime;
+            _lookDirection = _target.GetTarget() - eggThrowPoint.position;
 
             //FIRE
             if (Input.GetButtonDown("Fire1"))
                 ShootFlames();
 
             //EGG
-            if (_countdownBetweenEggs <= 0f)
+            if(!_isWaitingForEggExplosion)
             {
                 if (Input.GetButton("Fire2"))
                 {
                     _isAiming = true;
-
-                    crosshair.transform.localScale = new Vector3(0.25f, 0.25f, 1);
-                    crosshair.transform.position = new Vector2(Target.GetTarget().x, Target.GetTarget().y);
-
+                    _crosshairImageController.SetCrosshairToAiming();
                     if (_lookDirection.x > 0.01f)
                     {
                         _transform.rotation = _rightRotation;
@@ -136,21 +149,20 @@ namespace HellsChicken.Scripts.Game.Player
                     {
                         _transform.rotation = _leftRotation;
                     }
-
-                    //TODO traiettoria
-
                 }
-
                 if (Input.GetButtonUp("Fire2"))
                 {
-                    ThrowEgg();
-                    crosshair.transform.localScale = new Vector3(0, 0, 0);
                     _isAiming = false;
-
+                    _crosshairImageController.SetCrosshairToWaiting();
+                    _isWaitingForEggExplosion = true;
+                    ThrowEgg();
                 }
             }
 
-            //Debug.DrawLine(eggThrowPoint.position,Target.GetTarget());
+            //TODO SHOW EGG'S LAUNCH DIRECTION
+            //TODO Debug.DrawLine(Target.GetTarget(), eggThrowPoint.position, Color.white,0.01f);
+            //Debug.DrawLine(_target.GetTarget(), eggThrowPoint.position, Color.white, 0.01f);
+
 
             _moveDirection.x = Input.GetAxis("Horizontal") * walkSpeed;
             //_moveDirection.z = Input.GetAxis("Vertical") * 2; //just for fun, z movement
@@ -166,11 +178,12 @@ namespace HellsChicken.Scripts.Game.Player
                 _transform.rotation = _leftRotation;
             }
 
+            _isYMovementCorrected = false;
             //STICK TO THE PAVEMENT
-            if (IsGrounded() && IsFalling()
-            ) //The falling check is made because when the character is on ground, it has a negative velocity
+            if (IsGrounded() && IsFalling()) //The falling check is made because when the character is on ground, it has a negative velocity
             {
-                _moveDirection.y = -8f;
+                _isYMovementCorrected = true;
+                _moveDirection.y = -_yMovementCorrection;
             }
 
             //JUMPING
@@ -205,7 +218,10 @@ namespace HellsChicken.Scripts.Game.Player
 
             //MOVEMENT APPLICATION
             _characterController.Move(_moveDirection * Time.deltaTime);
+        }
 
+        private void LateUpdate()
+        {
             //Constraint the Z position of the playerbody.
             ZConstraint();
         }
@@ -239,7 +255,7 @@ namespace HellsChicken.Scripts.Game.Player
                 _moveDirection -= hit.normal * Vector3.Dot(hit.normal, _moveDirection);
             }
         }
-        
+
         //Damaged by an Enemy or an EnemyShot, staying on the enemy
         private void OnTriggerStay(Collider other)
         {
@@ -257,7 +273,7 @@ namespace HellsChicken.Scripts.Game.Player
                 }
             }
         }
-        
+
         //Damaged by an Enemy or an EnemyShot, entering in contact with the enemy
         private void OnTriggerEnter(Collider other)
         {
@@ -285,13 +301,22 @@ namespace HellsChicken.Scripts.Game.Player
             //Debug.Log("Not Transparent Anymore");
             _isImmune = false;
             CancelInvoke();
-            _meshRenderer.enabled = true;
+            //_meshRenderer.enabled = true;
+            var material = _meshRenderer.material;
+            var temp = material.color;
+            temp.a = 1.0f;
+            material.color = temp;
             yield return null;
         }
 
         private void FlashMesh()
         {
-            _meshRenderer.enabled = !_meshRenderer.enabled;
+            //_meshRenderer.enabled = !_meshRenderer.enabled;
+            //Use the next lines if you want it to be transparent
+             var material = _meshRenderer.material;
+             var temp = material.color;
+             temp.a = temp.a > 0.5f ? 0.3f : 1.0f;
+             material.color = temp;
         }
 
         private void LastHeart()
@@ -303,6 +328,12 @@ namespace HellsChicken.Scripts.Game.Player
 
         private void Death()
         {
+            //TODO: if death, it should only respawn player and destroyed objects
+            // EventManager.TriggerEvent("RefillPlayerHealth");
+            // _characterController.enabled = false;
+            // if (GameManager.Instance)
+            //     _transform.position = GameManager.Instance.GetCurrentCheckPointPos();
+            // _characterController.enabled = true;
             //If player dies, reload the entire scene.
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
@@ -329,7 +360,7 @@ namespace HellsChicken.Scripts.Game.Player
         {
             EventManager.StopListening("PlayerDeath", Death);
             EventManager.StopListening("LastHeart", LastHeart);
+            EventManager.StopListening("EggExplosionNotification",EggExplosionNotification);
         }
     }
 }
-    

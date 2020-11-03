@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - EnemyShot
   - Wall
+  - GameManager
   layers:
   - Default
   - TransparentFX
@@ -19,8 +20,8 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
+  - Player
+  - Egg
   - 
   - 
   - 
@@ -45,4 +46,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Crosshair
+    uniqueID: 2815290621
     locked: 0
