@@ -37,15 +37,16 @@ namespace HellsChicken.Scripts.Game.Platform
 
         void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject == player)
+            if (other.transform.CompareTag("Player"))
             {
                 player.transform.parent = transform;
+                Debug.Log("ciao");
             }
         }
 
         void OnTriggerExit(Collider other)
         {
-            if (other.gameObject == player)
+            if (other.transform.CompareTag("Player"))
             {
                 player.transform.parent = null;
             }
