@@ -9,6 +9,7 @@ public class CentaurFire : MonoBehaviour {
     
     [SerializeField] private GameObject contactExplosion;
     [SerializeField] private float initialVelocity = 20f;
+    [SerializeField] private Animator _bowAnimator;
     
     private Rigidbody _rigidbody;
     private Vector3 target;
@@ -64,6 +65,8 @@ public class CentaurFire : MonoBehaviour {
 
          rotatedVector += centaurPos;
         
+         //_bowAnimator.Play("BowAnimation");
+         
          //Apply new velocity
          _rigidbody.velocity = (rotatedVector - centaurPos).normalized * initialVelocity;
     }

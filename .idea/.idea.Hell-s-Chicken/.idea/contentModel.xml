@@ -117,6 +117,7 @@
               <e p="AI" t="Include">
                 <e p="Centaur" t="Include">
                   <e p="Bow" t="Include">
+                    <e p="BowDirection.cs" t="Include" />
                     <e p="CentaurFire.cs" t="Include" />
                   </e>
                   <e p="CentaurAI.cs" t="Include" />
@@ -172,6 +173,24 @@
                   <e p="HealthController.cs" t="Include" />
                 </e>
               </e>
+            </e>
+          </e>
+        </e>
+        <e p="Hovl Studio" t="Include">
+          <e p="Procedural fire" t="Include">
+            <e p="Demo scene" t="Include">
+              <e p="ReadMe.txt" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="BowAndArrow" t="Include">
+            <e p="Demo" t="Include">
+              <e p="BowDemoScript.cs" t="Include" />
+            </e>
+            <e p="ReadMe.txt" t="Include" />
+            <e p="Script" t="Include">
+              <e p="BowScript.cs" t="Include" />
             </e>
           </e>
         </e>

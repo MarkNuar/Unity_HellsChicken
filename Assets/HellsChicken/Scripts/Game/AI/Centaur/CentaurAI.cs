@@ -113,6 +113,7 @@ public class CentaurAI : MonoBehaviour {
                 if (hit.transform == player) {
                     if (Vector3.Dot(ray, transform.forward) <= 0) {
                         transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
+                        EventManager.TriggerEvent("changeBowDirection");
                         right = !right;
                     }
 
@@ -145,6 +146,7 @@ public class CentaurAI : MonoBehaviour {
                 if (still == 4) {
                     if (Random.Range(0, 2) == 0) {
                         transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
+                        EventManager.TriggerEvent("changeBowDirection");
                         right = !right;
                     }
                     Destroy(textInstance);
@@ -161,6 +163,7 @@ public class CentaurAI : MonoBehaviour {
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("Wall")) {
             transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
+            EventManager.TriggerEvent("changeBowDirection");
             right = !right;
         }
 

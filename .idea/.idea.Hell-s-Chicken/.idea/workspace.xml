@@ -22,8 +22,38 @@
     <list default="true" id="fbb6fba1-aabc-4db2-8f6c-a4710cc59795" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/Hovl Studio/Procedural fire/Prefabs/Explosion.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/Hovl Studio/Procedural fire/Prefabs/Explosion.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/Centaur.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/Centaur.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Bomb/IS - Arrow 568.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Bomb/IS - Arrow 568.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/CentaurAIProva.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/CentaurAIProva.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/CentaurFire.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/CentaurFire.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Bow.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Bow/Bow size 472.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Bow/Bow size 472/IS - Arrow 568.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Bow/Bow size 472/IS - Arrow 568.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Bow/Bow size 472/IS - Bow 472-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Bow/Bow size 472/IS - Bow 472-1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Bow/Bow size 472/IS - Bow 472-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Bow/Bow size 472/IS - Bow 472-2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Bow/Bow size 472/IS - Bow 472-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Bow/Bow size 472/IS - Bow 472-3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Bow/Bow size 944.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Bow/Bow size 944/IS - Arrow 1136.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Bow/Bow size 944/IS - Arrow 1136.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Bow/Bow size 944/IS - Bow 944-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Bow/Bow size 944/IS - Bow 944-1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Bow/Bow size 944/IS - Bow 944-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Bow/Bow size 944/IS - Bow 944-2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Bow/Bow size 944/IS - Bow 944-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Bow/Bow size 944/IS - Bow 944-3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Demo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Demo/Demo scene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Demo/Demo scene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Documentation.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Documentation/How to setup.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IS - Bow and arrow/Documentation/How to setup.pdf.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +66,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/AudioManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/BowDirection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DTNode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DTDecision.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DTAction.cs" root0="FORCE_HIGHLIGHTING" />
@@ -61,6 +92,7 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/GoombaAI.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/Arrow.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAI.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/BowDirection.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/CentaurFire.cs" />
       </list>
     </option>
@@ -127,7 +159,8 @@
       <workItem from="1603999240857" duration="1557000" />
       <workItem from="1604074466258" duration="16986000" />
       <workItem from="1604332055598" duration="11909000" />
-      <workItem from="1604413452058" duration="9224000" />
+      <workItem from="1604413452058" duration="9686000" />
+      <workItem from="1604521477770" duration="5049000" />
     </task>
     <servers />
   </component>
