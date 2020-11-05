@@ -38,11 +38,11 @@ namespace HellsChicken.Scripts.Game.Player
         private Quaternion _leftRotation;
         private Quaternion _rightRotation;
 
-        [SerializeField] private float eggThrowForce = 20f;
+        [SerializeField] private float initialEggVelocity= 6f;
+        [SerializeField] private float deltaEggVelocity= 5f;
+        [SerializeField] private float maxEggVelocity= 20f;
         [SerializeField] private GameObject eggPrefab;
         [SerializeField] private Transform eggThrowPoint;
-        [SerializeField] [Range(0f, 10f)] private float startEggDottedLine = 1f;
-        [SerializeField] [Range(0f, 10f)] private float endEggDottedLine = 4f;
         [SerializeField] private GameObject crosshairCanvas;
         private CrosshairImageController _crosshairImageController;
         [SerializeField] private GameObject playerCamera;
@@ -107,18 +107,60 @@ namespace HellsChicken.Scripts.Game.Player
 
         private void ThrowEgg()
         {
-            float angle = Mathf.Atan2(_lookDirection.y, _lookDirection.x) * Mathf.Rad2Deg;
-            float distance = _lookDirection.magnitude;
-            Vector2 direction = _lookDirection / distance;
-            direction.Normalize();
+            float g = -_gravity;
+            float angle = float.NaN;
+            float v = initialEggVelocity; //initial throw egg force
+            while (float.IsNaN(angle))
+            {
+                float v2 = v * v;
+                float v4 = v2 * v2;
+                var sourcePosition = eggThrowPoint.position;
+                float x = _target.GetTarget().x - sourcePosition.x;
+                if (Mathf.Abs(x) < 0.01f)
+                {
+                    angle = Mathf.PI / 2;
+                }
+                else
+                {
+                    float y = _target.GetTarget().y - sourcePosition.y;
+                    float x2 = x * x;
+                    float squareRoot = (float) Mathf.Sqrt(v4 - g * (g * x2 + 2 * y * v2));
+                    angle = Mathf.Atan((v2 - squareRoot) / (g * x));
+                    if (_lookDirection.x < 0f)
+                        angle = Mathf.PI + angle;
+                    if (float.IsNaN(angle))
+                    {
+                        v = v + deltaEggVelocity;
+                        if (v > maxEggVelocity)
+                        {
+                            v = maxEggVelocity;
+                            angle = Mathf.PI / 4; //throw with the best angle for reaching maximum distance
+                        }
+                    }
+                }
+            }
             GameObject egg = Instantiate(eggPrefab, eggThrowPoint.transform.position,
-                Quaternion.Euler(0.0f, 0.0f, angle));
-            var velocityCorrected = new Vector3(_moveDirection.x, _moveDirection.y, 0f);
-            if (_isYMovementCorrected)
-                velocityCorrected.y += _yMovementCorrection;
-            egg.GetComponent<Rigidbody>().velocity = (direction * eggThrowForce) + (Vector2) velocityCorrected;
+                Quaternion.identity);
+            
+            var baseEggVelocity = new Vector3(v * Mathf.Cos(angle), v * Mathf.Sin(angle), 0f);
+            
+            // //TODO: velocity correction if only the player is grounded
+            // var playerVelocityCorrected = new Vector3(_moveDirection.x, _moveDirection.y, 0f);
+            // if (_isYMovementCorrected)
+            //     playerVelocityCorrected.y += _yMovementCorrection;
+            // if (!IsGrounded())
+            // {
+            //     egg.GetComponent<Rigidbody>().velocity = baseEggVelocity;
+            // }
+            // else //grounded
+            // {
+            //     egg.GetComponent<Rigidbody>().velocity = baseEggVelocity + playerVelocityCorrected;
+            // }
+            
+            egg.GetComponent<Rigidbody>().velocity = baseEggVelocity;
         }
 
+        
         private void EggExplosionNotification()
         {
             EventManager.StopListening("EggExplosionNotification",EggExplosionNotification);
@@ -151,36 +193,17 @@ namespace HellsChicken.Scripts.Game.Player
                     {
                         _transform.rotation = _leftRotation;
                     }
-                    
-                    //TODO: show vector
-                    var startPosition = eggThrowPoint.position;
-                    var dir = _lookDirection.normalized;
-                    DottedLine.Instance.DrawDottedLine (startPosition + startEggDottedLine*dir,startPosition + _lookDirection.magnitude*dir);
-                    
-                    // //todo: try showing the parabola.
-                    // float angle;
-                    // if (_lookDirection.x > 0.0)
-                    //     angle = Mathf.Atan2(_lookDirection.y, _lookDirection.x);
-                    // else
-                    //     angle = 180 + Mathf.Atan2(_lookDirection.y, _lookDirection.x);
-                    // DottedLine.Instance.DrawDottedParabola(eggThrowPoint.position,eggThrowForce, angle);
-                    
                 }
                 if (Input.GetButtonUp("Fire2"))
                 {
                     _isAiming = false;
-                    //TODO: hide vector
                     _crosshairImageController.SetCrosshairToWaiting();
                     _isWaitingForEggExplosion = true;
                     ThrowEgg();
                 }
             }
-
-            //TODO SHOW EGG'S LAUNCH DIRECTION
-            //TODO Debug.DrawLine(Target.GetTarget(), eggThrowPoint.position, Color.white,0.01f);
-            //Debug.DrawLine(_target.GetTarget(), eggThrowPoint.position, Color.white, 0.01f);
-
-
+            
+            
             _moveDirection.x = Input.GetAxis("Horizontal") * walkSpeed;
             //_moveDirection.z = Input.GetAxis("Vertical") * 2; //just for fun, z movement
             _moveDirection.z = 0f;
@@ -194,9 +217,9 @@ namespace HellsChicken.Scripts.Game.Player
             {
                 _transform.rotation = _leftRotation;
             }
-
-            _isYMovementCorrected = false;
+            
             //STICK TO THE PAVEMENT
+            _isYMovementCorrected = false;
             if (IsGrounded() && IsFalling()) //The falling check is made because when the character is on ground, it has a negative velocity
             {
                 _isYMovementCorrected = true;

@@ -20,26 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc89b660-8c2e-44f0-9184-66b8ac8c2637" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/POLIMIGameCollective/Scripts/Localization.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/POLIMIGameCollective/Scripts/Localization/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/POLIMIGameCollective/Scripts/Localization/Editor/LocalizedTextEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/POLIMIGameCollective/Scripts/Localization/Editor/LocalizedTextEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/POLIMIGameCollective/Scripts/Localization/LocalizationData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/POLIMIGameCollective/Scripts/Localization/LocalizationData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/POLIMIGameCollective/Scripts/Localization/LocalizationManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/POLIMIGameCollective/Scripts/Localization/LocalizationManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/POLIMIGameCollective/Scripts/Localization/LocalizedText.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/POLIMIGameCollective/Scripts/Localization/LocalizedText.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/POLIMIGameCollective/Scripts/Localization/StartupManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/POLIMIGameCollective/Scripts/Localization/StartupManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Egg/Egg.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Egg/Egg.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/PlayerWithCinemachine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/PlayerWithCinemachine.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/GoombaAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/GoombaAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerControllerEggToCrosshair.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerControllerEggToCrosshair.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,6 +152,7 @@
       <workItem from="1604567837689" duration="1939000" />
       <workItem from="1604570421549" duration="1209000" />
       <workItem from="1604574763336" duration="8334000" />
+      <workItem from="1604595121907" duration="4176000" />
     </task>
     <servers />
   </component>
@@ -196,10 +179,11 @@
     </state>
     <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1603698189358" />
     <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1603699135161" />
-    <state x="1126" y="0" width="416" height="840" key="dock-window-1" timestamp="1604584124390">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="1126" y="0" width="416" height="871" key="dock-window-1" timestamp="1604595797378">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="1126" y="0" width="416" height="840" key="dock-window-1/0.0.1536.834@0.0.1536.834" timestamp="1604584124390" />
+    <state x="1126" y="0" width="416" height="871" key="dock-window-1/0.0.1536.864@0.0.1536.864" timestamp="1604595797378" />
     <state x="-6" y="0" width="781" height="840" key="dock-window-2" timestamp="1603359749535">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
