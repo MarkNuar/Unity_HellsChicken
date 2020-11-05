@@ -28,6 +28,9 @@ public class CentaurFire : MonoBehaviour {
         _rigidbody = GetComponent<Rigidbody>();
     }
 
+    private void Start() {
+    }
+
     private void FixedUpdate() {
         transform.rotation = LookAt2D(_rigidbody.velocity);
     }
@@ -64,8 +67,6 @@ public class CentaurFire : MonoBehaviour {
          }
 
          rotatedVector += centaurPos;
-        
-         //_bowAnimator.Play("BowAnimation");
          
          //Apply new velocity
          _rigidbody.velocity = (rotatedVector - centaurPos).normalized * initialVelocity;

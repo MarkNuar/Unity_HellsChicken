@@ -15,6 +15,15 @@
               </e>
             </e>
           </e>
+          <e p="KY_effects" t="Include">
+            <e p="MagicEffectsPackFree" t="Include">
+              <e p="ReadMe.txt" t="Include" />
+            </e>
+            <e p="Script" t="Include">
+              <e p="ConGUI.cs" t="Include" />
+              <e p="Lighting.cs" t="Include" />
+            </e>
+          </e>
           <e p="POLIMIGameCollective" t="Include">
             <e p="Scripts" t="Include">
               <e p="ExtendedEventManager" t="Include">
@@ -173,24 +182,6 @@
                   <e p="HealthController.cs" t="Include" />
                 </e>
               </e>
-            </e>
-          </e>
-        </e>
-        <e p="Hovl Studio" t="Include">
-          <e p="Procedural fire" t="Include">
-            <e p="Demo scene" t="Include">
-              <e p="ReadMe.txt" t="Include" />
-            </e>
-          </e>
-        </e>
-        <e p="Scripts" t="Include">
-          <e p="BowAndArrow" t="Include">
-            <e p="Demo" t="Include">
-              <e p="BowDemoScript.cs" t="Include" />
-            </e>
-            <e p="ReadMe.txt" t="Include" />
-            <e p="Script" t="Include">
-              <e p="BowScript.cs" t="Include" />
             </e>
           </e>
         </e>

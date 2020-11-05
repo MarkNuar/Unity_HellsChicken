@@ -1376,8 +1376,13 @@ PrefabInstance:
         type: 3}
       propertyPath: bombPrefab
       value: 
-      objectReference: {fileID: 4715800830703026578, guid: 7a73f64cc7fa83445a46536184e750cb,
+      objectReference: {fileID: 1613469677927112970, guid: 8b739cd2346eec9418a267c5b39bc0ae,
         type: 3}
+    - target: {fileID: 8018146784048240725, guid: 3103cef9db10dc4478f358d2f98aea90,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 8018146784596532065, guid: 3103cef9db10dc4478f358d2f98aea90,
         type: 3}
       propertyPath: m_Name
