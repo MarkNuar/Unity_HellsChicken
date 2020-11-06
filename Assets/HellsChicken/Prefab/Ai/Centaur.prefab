@@ -129,7 +129,7 @@ MonoBehaviour:
   timeReaction: 1
   player: {fileID: 0}
   arrowPosition: {fileID: 8431065591022085243}
-  bombPrefab: {fileID: 4715800830703026578, guid: 7a73f64cc7fa83445a46536184e750cb,
+  bombPrefab: {fileID: 1613469677927112970, guid: 8b739cd2346eec9418a267c5b39bc0ae,
     type: 3}
   textPrefab: {fileID: 6954569493333036945, guid: b332db410af29fd45a0032890863a8cd,
     type: 3}
@@ -281,7 +281,7 @@ PrefabInstance:
     - target: {fileID: 3143820376446826917, guid: 32b9104cb21bde64ba2f50ae4530df58,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.04
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 3143820376446826917, guid: 32b9104cb21bde64ba2f50ae4530df58,
         type: 3}

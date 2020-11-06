@@ -490,14 +490,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 253213351, guid: 6ecdd647651f8024e9ce79ffe852169f, type: 3}
-      propertyPath: m_ShowToolkit
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 253213351, guid: 6ecdd647651f8024e9ce79ffe852169f, type: 3}
-      propertyPath: m_ShowCustomSorter
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3690622280395660541, guid: 6ecdd647651f8024e9ce79ffe852169f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -557,26 +549,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerWithCinemachine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7400446573322165019, guid: 6ecdd647651f8024e9ce79ffe852169f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.6051984
-      objectReference: {fileID: 0}
-    - target: {fileID: 7400446573322165019, guid: 6ecdd647651f8024e9ce79ffe852169f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.3989229
-      objectReference: {fileID: 0}
-    - target: {fileID: 7409349275366072962, guid: 6ecdd647651f8024e9ce79ffe852169f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.6051984
-      objectReference: {fileID: 0}
-    - target: {fileID: 7409349275366072962, guid: 6ecdd647651f8024e9ce79ffe852169f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.3989229
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ecdd647651f8024e9ce79ffe852169f, type: 3}
@@ -1372,17 +1344,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2118515927}
-    - target: {fileID: 6818518579532631535, guid: 3103cef9db10dc4478f358d2f98aea90,
-        type: 3}
-      propertyPath: bombPrefab
-      value: 
-      objectReference: {fileID: 1613469677927112970, guid: 8b739cd2346eec9418a267c5b39bc0ae,
-        type: 3}
-    - target: {fileID: 8018146784048240725, guid: 3103cef9db10dc4478f358d2f98aea90,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.05
-      objectReference: {fileID: 0}
     - target: {fileID: 8018146784596532065, guid: 3103cef9db10dc4478f358d2f98aea90,
         type: 3}
       propertyPath: m_Name

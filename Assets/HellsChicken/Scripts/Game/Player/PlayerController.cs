@@ -316,10 +316,10 @@ namespace HellsChicken.Scripts.Game.Player
         {
             //_meshRenderer.enabled = !_meshRenderer.enabled;
             //Use the next lines if you want it to be transparent
-             var material = _meshRenderer.material;
+             /*var material = _meshRenderer.material;
              var temp = material.color;
              temp.a = temp.a > 0.5f ? 0.3f : 1.0f;
-             material.color = temp;
+             material.color = temp;*/
         }
 
         private void LastHeart()

@@ -20,211 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbb6fba1-aabc-4db2-8f6c-a4710cc59795" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Bomb.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Bomb/Arrow2.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Bomb/Arrow2.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Bomb/BigExplosion.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Bomb/BigExplosion.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Bomb/Bomb.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Bomb/Bomb.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Bomb/DustExplosion.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Bomb/DustExplosion.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Bomb/Explosion.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Bomb/Explosion.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Bomb/Fire.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Bomb/Fire.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Bomb/IS - Arrow 568.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Bomb/IS - Arrow 568.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/Bomb/Arrow3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/Bomb/Arrow3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/Centaur.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/Centaur.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/PlayerWithCinemachine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/PlayerWithCinemachine.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/CentaurAIProva.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/CentaurAIProva.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/DeathRespawnTest_Profiles/PostFX Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/DeathRespawnTest_Profiles/PostFX Profile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/CentaurFire.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/CentaurFire.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/Concrete slab.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/Concrete slab.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/Concrete slab_Height.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/Concrete slab_Height.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/Concrete slab_MetallicSmoothness.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/Concrete slab_MetallicSmoothness.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/Concrete slab_Normal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/Concrete slab_Normal.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/Demo fire.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/Demo fire.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/Floor3.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/Floor3.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/LightingData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/LightingData.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/Lightmap-0_comp_dir.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/Lightmap-0_comp_dir.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/Lightmap-0_comp_light.exr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/Lightmap-0_comp_light.exr.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/Readme.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/Readme.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/ReflectionProbe-0.exr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/ReflectionProbe-0.exr.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/ReflectionProbe-1.exr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Demo scene/ReflectionProbe-1.exr.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Prefabs/Magic fire 0.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Prefabs/Magic fire 0.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Prefabs/Magic fire 1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Prefabs/Magic fire 1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Prefabs/Magic fire 2.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Prefabs/Magic fire 2.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Prefabs/Magic fire 3.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Prefabs/Magic fire 3.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Prefabs/Magic fire pro blue.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Prefabs/Magic fire pro blue.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Prefabs/Magic fire pro green.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Prefabs/Magic fire pro green.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Prefabs/Magic fire pro orange.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Prefabs/Magic fire pro orange.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Prefabs/Magic fire pro red.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Prefabs/Magic fire pro red.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Prefabs/Magic fire pro yellow.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Prefabs/Magic fire pro yellow.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Prefabs/RotatorPS1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Prefabs/RotatorPS1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Prefabs/RotatorPS2.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Procedural fire/Prefabs/RotatorPS2.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE).meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/FlakesA1_01.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/FlakesA1_01.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/FlakesA1_01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/FlakesA1_01.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/FrostFlake_01.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/FrostFlake_01.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/FrostFlake_01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/FrostFlake_01.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_02.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_02.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_02.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_02add.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_02add.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_02mobile.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_02mobile.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_03.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_03.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_04.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_04.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_04.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_05.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_06.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_06.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_06.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/PlaneMaterial 1.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/PlaneMaterial 1.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SmokeA1_01.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SmokeA1_01.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SmokeA1_01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SmokeA1_01.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SmokeA1_SphereM.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SmokeA1_SphereM.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_01.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_01.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_01.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_02.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_02.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_02.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_03.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_03.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_03.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_04.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_04.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_04.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Prefabs/Ef_IceMagicGlowFree01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Prefabs/Ef_IceMagicGlowFree01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Scene.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Scene/Scene_Demo_01.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Scene/Scene_Demo_01.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Sounds.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Sounds/Magic_Glow_01.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Magic VFX/Magic VFX - Ice (FREE)/Sounds/Magic_Glow_01.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Demo.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Demo/Background1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Demo/Background1.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Demo/BowDemoScript.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Demo/BowDemoScript.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Demo/TestScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Demo/TestScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Material.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Material/BowStringMaterial.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Material/BowStringMaterial.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Prefab/Bow.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Prefab/Bow.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Readme.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Readme.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Script.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Script/BowScript.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Script/BowScript.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/fork_media_warfare_arrow_impact.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/fork_media_warfare_arrow_impact.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/fork_media_warfare_arrow_pass_by.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/fork_media_warfare_arrow_pass_by.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_crossbow_bolt_pass_by_001.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_crossbow_bolt_pass_by_001.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_crossbow_bolt_pass_by_002.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_crossbow_bolt_pass_by_002.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_english_longbow_arrow_shoot_from_bow_001.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_english_longbow_arrow_shoot_from_bow_001.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_english_longbow_arrow_shoot_from_bow_002.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_english_longbow_arrow_shoot_from_bow_002.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_approach_001.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_approach_001.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_approach_002.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_approach_002.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_approach_003.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_approach_003.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_approach_004.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_approach_004.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_draw_001.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_draw_001.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_draw_002.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_draw_002.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_draw_003.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_draw_003.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_heavy_pass_by_001.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_heavy_pass_by_001.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_heavy_pass_by_002.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_heavy_pass_by_002.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_heavy_pass_by_003.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_heavy_pass_by_003.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_heavy_pass_by_004.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_heavy_pass_by_004.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_heavy_pass_by_005.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_heavy_pass_by_005.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_heavy_pass_by_006.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_heavy_pass_by_006.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_shoot_from_bow_002.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_shoot_from_bow_002.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_shoot_from_bow_003.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_shoot_from_bow_003.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_shoot_from_bow_004.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Sound/Bow/warfare_medieval_scythian_recurve_arrow_shoot_from_bow_004.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Textures/Arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Textures/Arrow.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Textures/Bow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Textures/Bow.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Textures/BowString.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BowAndArrow/Textures/BowString.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/GoombaAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/GoombaAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +58,6 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Utils/EventManager.cs" />
         <option value="$PROJECT_DIR$/Assets/POLIMIGameCollective/Scripts/ExtendedEventManager/EventManager.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/BombExplosion.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DTAction.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DTNode.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DecisionTree.cs" />
@@ -260,11 +65,12 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Explosion/Explosion.cs" />
         <option value="$PROJECT_DIR$/Assets/PyroParticles/Prefab/Script/FireCollisionForwardScript.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/AudioManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/GoombaAI.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/Arrow.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAI.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/BowDirection.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/CentaurFire.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAI.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/GoombaAI.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
       </list>
     </option>
   </component>
@@ -332,7 +138,7 @@
       <workItem from="1604332055598" duration="11909000" />
       <workItem from="1604413452058" duration="9686000" />
       <workItem from="1604521477770" duration="5049000" />
-      <workItem from="1604614854425" duration="288000" />
+      <workItem from="1604614854425" duration="4962000" />
     </task>
     <servers />
   </component>
