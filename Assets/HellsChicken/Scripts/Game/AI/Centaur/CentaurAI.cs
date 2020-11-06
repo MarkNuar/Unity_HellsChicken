@@ -161,6 +161,7 @@ public class CentaurAI : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision other) {
+        print(other.gameObject.tag);
         if (other.gameObject.CompareTag("Wall")) {
             transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
             EventManager.TriggerEvent("changeBowDirection");
