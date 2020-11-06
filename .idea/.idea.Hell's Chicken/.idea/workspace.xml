@@ -20,8 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc89b660-8c2e-44f0-9184-66b8ac8c2637" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerControllerEggToCrosshair.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerControllerEggToCrosshair.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/DeathRespawnTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/DeathRespawnTest.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +32,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../ExerciseProjects/MySpaceShooter/Assets/SpaceShooter/Scripts/PlayerShipController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/DottedLine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9B956647-017D-4DC1-B8D3-D25EEF012467/43/85405a58/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Crosshair/CrosshairImageController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9B956647-017D-4DC1-B8D3-D25EEF012467/cd/a7eca8ed/Rigidbody.cs" root0="SKIP_HIGHLIGHTING" />
@@ -152,7 +150,7 @@
       <workItem from="1604567837689" duration="1939000" />
       <workItem from="1604570421549" duration="1209000" />
       <workItem from="1604574763336" duration="8334000" />
-      <workItem from="1604595121907" duration="4176000" />
+      <workItem from="1604595121907" duration="4775000" />
     </task>
     <servers />
   </component>
@@ -179,10 +177,10 @@
     </state>
     <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1603698189358" />
     <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1603699135161" />
-    <state x="1126" y="0" width="416" height="871" key="dock-window-1" timestamp="1604595797378">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="762" y="0" width="781" height="840" key="dock-window-1" timestamp="1604603746902">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="1126" y="0" width="416" height="840" key="dock-window-1/0.0.1536.834@0.0.1536.834" timestamp="1604584124390" />
+    <state x="762" y="0" width="781" height="840" key="dock-window-1/0.0.1536.834@0.0.1536.834" timestamp="1604603746902" />
     <state x="1126" y="0" width="416" height="871" key="dock-window-1/0.0.1536.864@0.0.1536.864" timestamp="1604595797378" />
     <state x="-6" y="0" width="781" height="840" key="dock-window-2" timestamp="1603359749535">
       <screen x="0" y="0" width="1536" height="834" />
