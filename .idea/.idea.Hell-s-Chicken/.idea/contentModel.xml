@@ -15,6 +15,15 @@
               </e>
             </e>
           </e>
+          <e p="KY_effects" t="Include">
+            <e p="MagicEffectsPackFree" t="Include">
+              <e p="ReadMe.txt" t="Include" />
+            </e>
+            <e p="Script" t="Include">
+              <e p="ConGUI.cs" t="Include" />
+              <e p="Lighting.cs" t="Include" />
+            </e>
+          </e>
           <e p="POLIMIGameCollective" t="Include">
             <e p="Scripts" t="Include">
               <e p="ExtendedEventManager" t="Include">
@@ -117,6 +126,7 @@
               <e p="AI" t="Include">
                 <e p="Centaur" t="Include">
                   <e p="Bow" t="Include">
+                    <e p="BowDirection.cs" t="Include" />
                     <e p="CentaurFire.cs" t="Include" />
                   </e>
                   <e p="CentaurAI.cs" t="Include" />
@@ -137,6 +147,9 @@
               </e>
               <e p="Audio" t="Include">
                 <e p="AudioManager.cs" t="Include" />
+              </e>
+              <e p="CheckPoint" t="Include">
+                <e p="CheckPointManager.cs" t="Include" />
               </e>
               <e p="EnemyObstacles" t="Include">
                 <e p="BladeMovement.cs" t="Include" />
@@ -161,10 +174,13 @@
                 <e p="PlayerController.cs" t="Include" />
               </e>
               <e p="UI" t="Include">
-                <e p="HealthController.cs" t="Include" />
-              </e>
-              <e p="Utility" t="Include">
-                <e p="CheckPointManager.cs" t="Include" />
+                <e p="Crosshair" t="Include">
+                  <e p="CrosshairImageController.cs" t="Include" />
+                  <e p="FollowMouse.cs" t="Include" />
+                </e>
+                <e p="Health" t="Include">
+                  <e p="HealthController.cs" t="Include" />
+                </e>
               </e>
             </e>
           </e>

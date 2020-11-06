@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using EventManagerNamespace;
-using UnityEditor.UIElements;
+﻿using EventManagerNamespace;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -18,20 +14,30 @@ public class GoombaAI : MonoBehaviour {
     private Rigidbody _rigidbody;
     private bool right = true;
     private float agentVelocity = 8f;
+    private bool isColliding = false;
+    
+    public Vector3 position, velocity;
     
     public void Awake() {
         _rigidbody = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate() {
-        if(right)
-            _rigidbody.MovePosition(_rigidbody.position + agentVelocity * Time.fixedDeltaTime * Vector3.right);
-        else
-            _rigidbody.MovePosition(_rigidbody.position + agentVelocity * Time.fixedDeltaTime * Vector3.left);
+        if (!isColliding) {
+            if (right)
+                _rigidbody.MovePosition(_rigidbody.position + agentVelocity * Time.fixedDeltaTime * Vector3.right);
+            else
+                _rigidbody.MovePosition(_rigidbody.position + agentVelocity * Time.fixedDeltaTime * Vector3.left);
+            position = _rigidbody.position;
+            velocity = _rigidbody.velocity;
+        }
     }
 
     private void OnCollisionEnter(Collision other) {
-        if (other.gameObject.CompareTag("Wall")) {
+        if (other.gameObject.CompareTag("Player")) {
+            //Physics.IgnoreCollision(other.collider,GetComponent<CapsuleCollider>());
+            isColliding = true;
+        }else if (other.gameObject.CompareTag("Wall")) {
             
             right = !right;
             
@@ -50,4 +56,19 @@ public class GoombaAI : MonoBehaviour {
             
         }
     }
+    
+    void LateUpdate()
+    {
+        if (isColliding)
+        {
+            _rigidbody.position = position;
+            _rigidbody.velocity = velocity;
+        }
+    }
+    
+    void OnCollisionExit(Collision collision){
+        if (collision.collider.tag == "Player")
+            isColliding = false;
+    }
+
 }
