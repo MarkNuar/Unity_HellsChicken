@@ -39,6 +39,7 @@ public class AudioManager : Singleton<AudioManager> {
     public void playTimerBomb(){
         EventManager.StopListening("playTimerBomb",playTimerBomb);
         _bombTimerAudioSource.clip = _bombTimerSound;
+        _bombTimerAudioSource.time = 1f;
         _bombTimerAudioSource.Play();
         EventManager.StartListening("playTimerBomb",playTimerBomb);
     }

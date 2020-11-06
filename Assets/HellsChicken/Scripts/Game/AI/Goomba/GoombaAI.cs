@@ -1,4 +1,6 @@
-﻿using EventManagerNamespace;
+﻿using System;
+using EventManagerNamespace;
+using HellsChicken.Scripts.Game.Player.Egg;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -10,9 +12,9 @@ public class GoombaAI : MonoBehaviour {
     
     [SerializeField] private GameObject bombPrefab;
     [SerializeField] private GameObject vanishEffectPrefab;
-
+    [SerializeField] private bool right = true;
+    
     private Rigidbody _rigidbody;
-    private bool right = true;
     private float agentVelocity = 8f;
     private bool isColliding = false;
     
@@ -35,28 +37,32 @@ public class GoombaAI : MonoBehaviour {
 
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("Player")) {
-            //Physics.IgnoreCollision(other.collider,GetComponent<CapsuleCollider>());
             isColliding = true;
-        }else if (other.gameObject.CompareTag("Wall")) {
-            
+            Physics.IgnoreCollision(other.collider,GetComponent<CapsuleCollider>());
+        }else if (other.gameObject.CompareTag("Wall") || other.gameObject.CompareTag("Enemy")) {
             right = !right;
-            
-        }else if (other.gameObject.CompareTag("EnemyShot")) {
+            transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
+        }else if (other.gameObject.CompareTag("Attack")) {
             
             //creates the effect and starts the sound
             Instantiate(vanishEffectPrefab, transform.position, Quaternion.identity);
             EventManager.TriggerEvent("playTimerBomb");
             
-            //create the bomb the right new position
-            Vector3 newPosition = new Vector3(gameObject.transform.position.x,1,gameObject.transform.position.z);
-            Instantiate(bombPrefab,newPosition,Quaternion.Euler(0,0,90));
-            
-            //destroy the Goomba
-            Destroy(gameObject);
-            
+            Destruction dest = GetComponent<Destruction>();
+            if (dest != null)
+            {
+                dest.Destroyer();
+            }
         }
     }
-    
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.CompareTag("Wall")) {
+            right = !right;
+            transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
+        }
+    }
+
     void LateUpdate()
     {
         if (isColliding)
@@ -65,10 +71,11 @@ public class GoombaAI : MonoBehaviour {
             _rigidbody.velocity = velocity;
         }
     }
-    
+
     void OnCollisionExit(Collision collision){
-        if (collision.collider.tag == "Player")
+        if (collision.collider.tag == "Player") 
             isColliding = false;
+        
     }
 
 }
