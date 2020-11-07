@@ -64,7 +64,7 @@ public class CentaurFire : MonoBehaviour {
          }
 
          rotatedVector += centaurPos;
-         
+
          //Apply new velocity
          _rigidbody.velocity = (rotatedVector - centaurPos).normalized * initialVelocity;
     }

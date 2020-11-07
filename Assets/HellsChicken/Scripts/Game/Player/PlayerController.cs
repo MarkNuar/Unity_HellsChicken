@@ -286,8 +286,12 @@ namespace HellsChicken.Scripts.Game.Player
             return _moveDirection.y < 0f;
         }
 
-        private void OnControllerColliderHit(ControllerColliderHit hit)
-        {
+        private void OnControllerColliderHit(ControllerColliderHit hit){
+
+            if (hit.gameObject.CompareTag("MovingPlatform")) {
+                EventManager.TriggerEvent("platformCollide",hit.gameObject.name);
+            }
+            
             //Stop going up when the character controller collides with something over it
             if (_characterController.collisionFlags != CollisionFlags.Above) return;
             if (Vector3.Dot(hit.normal, _moveDirection) < 0)
@@ -353,10 +357,10 @@ namespace HellsChicken.Scripts.Game.Player
         {
             //_meshRenderer.enabled = !_meshRenderer.enabled;
             //Use the next lines if you want it to be transparent
-             /*var material = _meshRenderer.material;
+             var material = _meshRenderer.material;
              var temp = material.color;
              temp.a = temp.a > 0.5f ? 0.3f : 1.0f;
-             material.color = temp;*/
+             material.color = temp;
         }
 
         private void LastHeart()
@@ -403,4 +407,5 @@ namespace HellsChicken.Scripts.Game.Player
             EventManager.StopListening("EggExplosionNotification",EggExplosionNotification);
         }
     }
+    
 }

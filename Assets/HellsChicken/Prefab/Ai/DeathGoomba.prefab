@@ -13,11 +13,10 @@ GameObject:
   - component: {fileID: 143242655372243035}
   - component: {fileID: 143242655372243036}
   - component: {fileID: 143242655372243037}
-  - component: {fileID: 143242655372243038}
-  - component: {fileID: 850780480}
+  - component: {fileID: 8458840891617941544}
   m_Layer: 0
-  m_Name: Goomba
-  m_TagString: Enemy
+  m_Name: DeathGoomba
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +113,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!114 &143242655372243038
+--- !u!114 &8458840891617941544
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,29 +122,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 143242655372243039}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c9b574b85860f34282f0bbdf9a73310, type: 3}
+  m_Script: {fileID: 11500000, guid: 2781dd1b7860b31479961f6f243d7ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombPrefab: {fileID: 143242655372243039, guid: 31fccdef5ddff024fb84cca13e40bb3b,
-    type: 3}
-  vanishEffectPrefab: {fileID: 1025285306637258, guid: d8f0099df63275647a8bcf646df1ca00,
-    type: 3}
-  right: 0
-  position: {x: 0, y: 0, z: 0}
-  velocity: {x: 0, y: 0, z: 0}
---- !u!114 &850780480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 143242655372243039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7955de84ee5b40241a41f74e36dd38f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyedVersion: {fileID: 143242655372243039, guid: 31fccdef5ddff024fb84cca13e40bb3b,
+  explosionPrefab: {fileID: 1953380545642034081, guid: ddffee03a08a51a4da279eefa3d9bdf4,
     type: 3}
 --- !u!1 &143242655857141621
 GameObject:

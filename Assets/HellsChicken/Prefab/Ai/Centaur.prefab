@@ -135,6 +135,7 @@ MonoBehaviour:
     type: 3}
   startExplosion: {fileID: 3874816693228889484, guid: fed47f3c1cc06b248bb2820859febd46,
     type: 3}
+  attackTime: 2
 --- !u!1 &6818518580118198980
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,6 +239,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8018146784596532066}
+  - component: {fileID: 643309727}
   m_Layer: 0
   m_Name: Centaur
   m_TagString: Untagged
@@ -261,6 +263,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &643309727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8018146784596532065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7955de84ee5b40241a41f74e36dd38f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyedVersion: {fileID: 0}
 --- !u!1001 &4965000874660045296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -281,7 +296,7 @@ PrefabInstance:
     - target: {fileID: 3143820376446826917, guid: 32b9104cb21bde64ba2f50ae4530df58,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.05
+      value: -0.022
       objectReference: {fileID: 0}
     - target: {fileID: 3143820376446826917, guid: 32b9104cb21bde64ba2f50ae4530df58,
         type: 3}

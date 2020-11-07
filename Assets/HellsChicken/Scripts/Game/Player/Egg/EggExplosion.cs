@@ -49,11 +49,13 @@ namespace HellsChicken.Scripts.Game.Player.Egg
                 }
             }
         
+            //Non si può fare tutto in un ciclo?
+            
             Collider[] collidersToDestroy = Physics.OverlapSphere(transform.position, radius);
             foreach (Collider nearbyObject in collidersToDestroy)
             {
                 Destruction dest = nearbyObject.GetComponent<Destruction>();
-                if (dest != null)
+                if (dest != null && !nearbyObject.gameObject.CompareTag("Player"))
                 {
                     dest.Destroyer();
                 }
