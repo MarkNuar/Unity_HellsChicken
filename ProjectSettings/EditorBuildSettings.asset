@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/HellsChicken/Scenes/MainMenu.unity
+    guid: 9c97e0c40da890742bd3f641effadd4c
+  - enabled: 1
+    path: Assets/HellsChicken/Scenes/Level_1.unity
+    guid: 10be2e49c88ecc743844c6d9745cc9aa
   m_configObjects: {}
