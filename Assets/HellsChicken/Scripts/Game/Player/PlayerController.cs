@@ -134,7 +134,10 @@ namespace HellsChicken.Scripts.Game.Player
                         if (v > maxEggVelocity)
                         {
                             v = maxEggVelocity;
-                            angle = Mathf.PI / 4; //throw with the best angle for reaching maximum distance
+                            if (_lookDirection.x > 0f)
+                                angle = Mathf.PI / 4; //throw with the best angle for reaching maximum distance
+                            else
+                                angle = 3 * Mathf.PI / 4;
                         }
                     }
                 }

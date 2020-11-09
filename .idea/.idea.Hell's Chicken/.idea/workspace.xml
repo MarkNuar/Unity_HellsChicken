@@ -20,7 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc89b660-8c2e-44f0-9184-66b8ac8c2637" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/DeathRespawnTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/DeathRespawnTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/FallenPlatform.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/LinearEggExplosion.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,8 +70,8 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/NewDottedLines.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/NewDottedLine.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/DottedLine.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerControllerEggToCrosshair.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
       </list>
     </option>
   </component>
