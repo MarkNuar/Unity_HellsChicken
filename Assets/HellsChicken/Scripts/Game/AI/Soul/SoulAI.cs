@@ -17,8 +17,6 @@ namespace HellsChicken.Scripts.Game.AI.Soul
 
         private Seeker _seeker;
         private Rigidbody _rb;
-
-        [SerializeField] GameObject soulAI;
         
         // Start is called before the first frame update
         void Start()
@@ -66,7 +64,7 @@ namespace HellsChicken.Scripts.Game.AI.Soul
             Vector2 direction = (_path.vectorPath[_currentWaypoint] - _rb.position).normalized;
             Vector2 force = direction * speed * Time.deltaTime;
 
-            if (target.position.x > transform.position.x && target.rotation.y == 180 || target.position.x < transform.position.x && target.rotation.y == 0)
+            //if (target.position.x > transform.position.x && target.rotation.y == 180 || target.position.x < transform.position.x && target.rotation.y == 0)
             {
                 _rb.AddForce(force);
             }
@@ -92,7 +90,7 @@ namespace HellsChicken.Scripts.Game.AI.Soul
         {
             if (other.transform.CompareTag("Player"))
             {
-                Destroy(soulAI);
+                Destroy(gameObject);
             }
         }
     }
