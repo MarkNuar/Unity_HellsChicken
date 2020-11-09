@@ -550,6 +550,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerWithCinemachine
       objectReference: {fileID: 0}
+    - target: {fileID: 7400446572394493228, guid: 6ecdd647651f8024e9ce79ffe852169f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400446572394493228, guid: 6ecdd647651f8024e9ce79ffe852169f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400446573322165019, guid: 6ecdd647651f8024e9ce79ffe852169f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5989237
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400446573322165019, guid: 6ecdd647651f8024e9ce79ffe852169f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.9051981
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409349275366072962, guid: 6ecdd647651f8024e9ce79ffe852169f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5989237
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409349275366072962, guid: 6ecdd647651f8024e9ce79ffe852169f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.9051981
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ecdd647651f8024e9ce79ffe852169f, type: 3}
 --- !u!1 &938271555

@@ -20,11 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc89b660-8c2e-44f0-9184-66b8ac8c2637" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Materials/Colored/Fire.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Materials/Colored/Fire.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Materials/PhysicsMaterials/Rough.physicMaterial" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Materials/PhysicsMaterials/Rough.physicMaterial" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/LinearEggExplosion.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/FallenPlatform.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/LinearEggExplosion.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" afterDir="false" />
     </list>
@@ -75,7 +71,6 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/NewDottedLine.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/DottedLine.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerControllerEggToCrosshair.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/RigidBodyPlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
       </list>
     </option>
@@ -158,8 +153,6 @@
       <workItem from="1604570421549" duration="1209000" />
       <workItem from="1604574763336" duration="8334000" />
       <workItem from="1604595121907" duration="4775000" />
-      <workItem from="1604654533711" duration="5516000" />
-      <workItem from="1604834370745" duration="664000" />
     </task>
     <servers />
   </component>
@@ -186,10 +179,10 @@
     </state>
     <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1603698189358" />
     <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1603699135161" />
-    <state x="520" y="0" width="1022" height="840" key="dock-window-1" timestamp="1604659079110">
+    <state x="762" y="0" width="781" height="840" key="dock-window-1" timestamp="1604603746902">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="520" y="0" width="1022" height="840" key="dock-window-1/0.0.1536.834@0.0.1536.834" timestamp="1604659079110" />
+    <state x="762" y="0" width="781" height="840" key="dock-window-1/0.0.1536.834@0.0.1536.834" timestamp="1604603746902" />
     <state x="1126" y="0" width="416" height="871" key="dock-window-1/0.0.1536.864@0.0.1536.864" timestamp="1604595797378" />
     <state x="-6" y="0" width="781" height="840" key="dock-window-2" timestamp="1603359749535">
       <screen x="0" y="0" width="1536" height="834" />
@@ -199,9 +192,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="-6" y="0" width="781" height="840" key="dock-window-3/0.0.1536.834@0.0.1536.834" timestamp="1603361901525" />
-    <state x="430" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1604658390952">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1603535387294">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="430" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1604658390952" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1603535387294" />
   </component>
 </project>

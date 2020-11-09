@@ -1,3 +1,5 @@
+using System;
+using EventManagerNamespace;
 using UnityEngine;
 
 namespace HellsChicken.Scripts.Game.Player.Egg
@@ -6,12 +8,18 @@ namespace HellsChicken.Scripts.Game.Player.Egg
 	{
 		
 		[SerializeField] GameObject destroyedVersion;
-	
-		public void Destroyer ()
-		{
-			Instantiate(destroyedVersion, transform.position, transform.rotation);
+		
+
+		public void Destroyer () {
+			if(!gameObject.CompareTag("Player")){
+				if(destroyedVersion != null)
+					Instantiate(destroyedVersion, transform.position, transform.rotation);
 			
-			Destroy(gameObject);
+				Destroy(gameObject);
+			}
+			else {
+				EventManager.TriggerEvent("DecreasePlayerHealth");
+			}
 		}
 	}
 }

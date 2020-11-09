@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using EventManagerNamespace;
+using HellsChicken.Scripts.Game.Player.Egg;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
@@ -23,6 +24,7 @@ public class CentaurAI : MonoBehaviour {
     [SerializeField] private GameObject bombPrefab;
     [SerializeField] private GameObject textPrefab;
     [SerializeField] private GameObject startExplosion;
+    [SerializeField] private int attackTime;
 
     private Rigidbody _rigidbody;
     private DecisionTree tree;
@@ -101,7 +103,7 @@ public class CentaurAI : MonoBehaviour {
             ar.CentaurPos = transform.position;
             ar.findAngle(right);
         }
-        shootIntervall = (shootIntervall + 1) % 2;
+        shootIntervall = (shootIntervall + 1) % attackTime;
         return null;
     }
 
@@ -111,7 +113,7 @@ public class CentaurAI : MonoBehaviour {
             RaycastHit hit;
             if (Physics.Raycast(transform.position, ray, out hit, 30f)) {
                 if (hit.transform == player) {
-                    if (Vector3.Dot(ray, transform.forward) <= 0) {
+                    if (Vector3.Dot(ray, transform.right) <= 0) {
                         transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
                         EventManager.TriggerEvent("changeBowDirection");
                         right = !right;
@@ -161,15 +163,24 @@ public class CentaurAI : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision other) {
-        print(other.gameObject.tag);
         if (other.gameObject.CompareTag("Wall")) {
             transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
             EventManager.TriggerEvent("changeBowDirection");
             right = !right;
+        }else if (other.gameObject.CompareTag("Attack")) {
+            transform.parent.GetComponent<Destruction>().Destroyer();
         }
 
         if (other.gameObject.CompareTag("Player")) {
             Physics.IgnoreCollision(other.collider, GetComponent<CapsuleCollider>());
+        }
+    }
+    
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.CompareTag("Wall")) {
+            transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
+            EventManager.TriggerEvent("changeBowDirection");
+            right = !right;
         }
     }
 }
