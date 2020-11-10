@@ -49,6 +49,7 @@ namespace HellsChicken.Scripts.Game.Player
         private Target _target;
         private bool _isAiming;
         private bool _isWaitingForEggExplosion;
+        [SerializeField] private float eggCooldown = 2;
 
         private Vector3 _lookDirection;
 
@@ -163,6 +164,14 @@ namespace HellsChicken.Scripts.Game.Player
             egg.GetComponent<Rigidbody>().velocity = baseEggVelocity;
         }
 
+        private IEnumerator EnableEggThrow(float time)
+        {
+            _isWaitingForEggExplosion = true;
+            yield return new WaitForSeconds(time);
+            _crosshairImageController.SetCrosshairToIdle();
+            _isWaitingForEggExplosion = false;
+            yield return null;
+        }
         
         private void EggExplosionNotification()
         {
@@ -175,7 +184,7 @@ namespace HellsChicken.Scripts.Game.Player
         private void Update()
         {
             _lookDirection = _target.GetTarget() - eggThrowPoint.position;
-
+            
             //FIRE
             if (Input.GetButtonDown("Fire1"))
                 ShootFlames();
@@ -201,7 +210,7 @@ namespace HellsChicken.Scripts.Game.Player
                 {
                     _isAiming = false;
                     _crosshairImageController.SetCrosshairToWaiting();
-                    _isWaitingForEggExplosion = true;
+                    StartCoroutine(EnableEggThrow(eggCooldown));
                     ThrowEgg();
                 }
             }
