@@ -17,6 +17,7 @@ public class HealthController : MonoBehaviour
         EventManager.StartListening("DecreasePlayerHealth",DecreaseHealth);
         EventManager.StartListening("IncreasePlayerHealth",IncreaseHealth);
         EventManager.StartListening("RefillPlayerHealth", RefillHealth);
+        EventManager.StartListening("KillPlayer",KillPlayer);
     }
 
     private void Start ()
@@ -80,12 +81,20 @@ public class HealthController : MonoBehaviour
         }
         EventManager.StartListening("RefillPlayerHealth", RefillHealth);
     }
+
+    private void KillPlayer()
+    {
+        EventManager.StopListening("KillPlayer",KillPlayer);
+        EventManager.TriggerEvent("PlayerDeath");
+        EventManager.StartListening("KillPlayer",KillPlayer);
+    }
     
     private void OnDisable()
     {
         EventManager.StopListening("DecreasePlayerHealth",DecreaseHealth);
         EventManager.StopListening("IncreasePlayerHealth",IncreaseHealth);
         EventManager.StopListening("RefillPlayerHealth", RefillHealth);
+        EventManager.StopListening("KillPlayer",KillPlayer);
     }
     
 }

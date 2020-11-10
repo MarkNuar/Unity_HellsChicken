@@ -327,6 +327,10 @@ namespace HellsChicken.Scripts.Game.Player
                     }
                     EventManager.TriggerEvent("DecreasePlayerHealth");
                 }
+                if (other.transform.CompareTag("Lava"))
+                {
+                    EventManager.TriggerEvent("KillPlayer");
+                }
             }
         }
 
@@ -344,6 +348,10 @@ namespace HellsChicken.Scripts.Game.Player
                         StartCoroutine(ImmunityTimer(immunityDuration));
                     }
                     EventManager.TriggerEvent("DecreasePlayerHealth");
+                }
+                if (other.transform.CompareTag("Lava"))
+                {
+                    EventManager.TriggerEvent("KillPlayer");
                 }
             }
         }
