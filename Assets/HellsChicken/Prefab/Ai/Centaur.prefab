@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6818518579532631533}
   - component: {fileID: 6818518579532631532}
   - component: {fileID: 6818518579532631535}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Body
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 6818518580118198976}
   - component: {fileID: 6818518580118198979}
   - component: {fileID: 6818518580118198978}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Eye
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8018146784596532066}
   - component: {fileID: 643309727}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Centaur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,6 +347,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bow
+      objectReference: {fileID: 0}
+    - target: {fileID: 3143820376446826938, guid: 32b9104cb21bde64ba2f50ae4530df58,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3595579500307301770, guid: 32b9104cb21bde64ba2f50ae4530df58,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b9104cb21bde64ba2f50ae4530df58, type: 3}

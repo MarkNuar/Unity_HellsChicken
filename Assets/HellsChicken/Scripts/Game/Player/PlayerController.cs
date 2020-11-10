@@ -81,6 +81,7 @@ namespace HellsChicken.Scripts.Game.Player
         {
             EventManager.StartListening("PlayerDeath", Death);
             EventManager.StartListening("LastHeart", LastHeart);
+            EventManager.StartListening("StartImmunityCoroutine", StartImmunityCoroutine);
         }
 
         private void Start()
@@ -310,13 +311,7 @@ namespace HellsChicken.Scripts.Game.Player
             {
                 if (other.transform.CompareTag("Enemy") || other.transform.CompareTag("EnemyShot"))
                 {
-                    // Debug.LogError("Hih by an enemy OnTriggerEnter");
-                    gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
-                    if (!_isLastHeart)
-                    {
-                        StartCoroutine(ImmunityTimer(immunityDuration));
-                    }
-                    EventManager.TriggerEvent("DecreasePlayerHealth");
+                    EventManager.TriggerEvent("StartImmunityCoroutine");
                 }
                 if (other.transform.CompareTag("Lava"))
                 {
@@ -333,13 +328,7 @@ namespace HellsChicken.Scripts.Game.Player
             {
                 if (other.transform.CompareTag("Enemy") || other.transform.CompareTag("EnemyShot"))
                 {
-                    // Debug.LogError("Hih by an enemy OnTriggerEnter");
-                    gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
-                    if (!_isLastHeart)
-                    {
-                        StartCoroutine(ImmunityTimer(immunityDuration));
-                    }
-                    EventManager.TriggerEvent("DecreasePlayerHealth");
+                    EventManager.TriggerEvent("StartImmunityCoroutine");
                 }
                 if (other.transform.CompareTag("Lava"))
                 {
@@ -418,5 +407,17 @@ namespace HellsChicken.Scripts.Game.Player
             EventManager.StopListening("PlayerDeath", Death);
             EventManager.StopListening("LastHeart", LastHeart);
         }
+
+        private void StartImmunityCoroutine() {
+            EventManager.StopListening("StartImmunityCoroutine", StartImmunityCoroutine);
+            gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
+            if (!_isLastHeart)
+            {
+                StartCoroutine(ImmunityTimer(immunityDuration));
+            }
+            EventManager.TriggerEvent("DecreasePlayerHealth");
+            EventManager.StartListening("StartImmunityCoroutine", StartImmunityCoroutine);
+        }
+
     }
 }
