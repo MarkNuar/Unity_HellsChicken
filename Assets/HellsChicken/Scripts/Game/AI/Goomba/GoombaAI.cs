@@ -10,7 +10,6 @@ using UnityEngine;
  */
 public class GoombaAI : MonoBehaviour {
     
-    [SerializeField] private GameObject bombPrefab;
     [SerializeField] private GameObject vanishEffectPrefab;
     [SerializeField] private bool right = true;
     
@@ -18,7 +17,8 @@ public class GoombaAI : MonoBehaviour {
     private float agentVelocity = 8f;
     private bool isColliding = false;
     
-    public Vector3 position, velocity;
+    //da modificare
+    private Vector3 position, velocity;
     
     public void Awake() {
         _rigidbody = GetComponent<Rigidbody>();

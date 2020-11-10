@@ -8,30 +8,37 @@ namespace HellsChicken.Scripts.Game.Player.Egg
     {
         [SerializeField] private float timerBeforeEggExplosion = 2.0f;
         
-        private float _countdown;
+        //private float _countdown;
 
-        private bool _hasExploded;
+        //private bool _hasExploded;
 
         [SerializeField] private GameObject explosionEffect;
         private float radius = 5f;
         private float force = 500f;
     
-        // Start is called before the first frame update
-        void Start()
+        // // Start is called before the first frame update
+        // void Start()
+        // {
+        //     _countdown = timerBeforeEggExplosion;
+        // }
+        //
+        // // Update is called once per frame
+        // void Update()
+        // {
+        //     _countdown -= Time.deltaTime;
+        //     if (_countdown <= 0f && !_hasExploded)
+        //     {
+        //         Explode();
+        //         EventManager.TriggerEvent("EggExplosionNotification");
+        //         _hasExploded = true;
+        //     }
+        // }
+
+        private void OnCollisionEnter(Collision other)
         {
-            _countdown = timerBeforeEggExplosion;
-        }
-        
-        // Update is called once per frame
-        void Update()
-        {
-            _countdown -= Time.deltaTime;
-            if (_countdown <= 0f && !_hasExploded)
-            {
-                Explode();
-                EventManager.TriggerEvent("EggExplosionNotification");
-                _hasExploded = true;
-            }
+            Explode();
+            //EventManager.TriggerEvent("EggExplosionNotification");
+            //_hasExploded = true;
         }
 
         void Explode()

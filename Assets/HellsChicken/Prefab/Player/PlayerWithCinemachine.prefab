@@ -578,15 +578,16 @@ MonoBehaviour:
   flameStream: {fileID: 198421077076039884, guid: 0e583df00223bc54c85d9265454e9f1a,
     type: 3}
   firePosition: {fileID: 5070432510126635538}
-  flamesCooldown: 2
+  flamesCooldown: 1
   initialEggVelocity: 6
   deltaEggVelocity: 5
-  maxEggVelocity: 20
+  maxEggVelocity: 30
   eggPrefab: {fileID: 9045032837410467742, guid: de366eea063501149ad855357dddf584,
     type: 3}
   eggThrowPoint: {fileID: 3035028315545016573}
   crosshairCanvas: {fileID: 223670310770410241}
   playerCamera: {fileID: 7400446573322165223}
+  eggCooldown: 2
   immunityDuration: 1.5
 --- !u!114 &32284651
 MonoBehaviour:
@@ -630,7 +631,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7400446573322165223}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.794802, y: 20.598925, z: -29.76}
+  m_LocalPosition: {x: -14.757135, y: 20.598925, z: -29.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3690622280395660541}
@@ -848,7 +849,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7409349275366072963}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.794802, y: 20.598925, z: -29.76}
+  m_LocalPosition: {x: -14.757135, y: 20.598925, z: -29.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7409349275609828441}

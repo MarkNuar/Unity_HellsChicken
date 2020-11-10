@@ -153,6 +153,7 @@
               </e>
               <e p="GameManager.cs" t="Include" />
               <e p="Platform" t="Include">
+                <e p="FallenPlatform.cs" t="Include" />
                 <e p="PlatformMoveX.cs" t="Include" />
                 <e p="PlatformMoveY.cs" t="Include" />
               </e>
@@ -163,7 +164,6 @@
                   <e p="Target.cs" t="Include" />
                 </e>
                 <e p="PlayerController.cs" t="Include" />
-                <e p="RigidBodyPlayerController.cs" t="Include" />
               </e>
               <e p="UI" t="Include">
                 <e p="Crosshair" t="Include">
@@ -172,6 +172,10 @@
                 </e>
                 <e p="Health" t="Include">
                   <e p="HealthController.cs" t="Include" />
+                </e>
+                <e p="Menu" t="Include">
+                  <e p="MainMenu.cs" t="Include" />
+                  <e p="PauseMenu.cs" t="Include" />
                 </e>
               </e>
             </e>
