@@ -11,6 +11,8 @@ public class HealthController : MonoBehaviour
     [SerializeField] private Image heartImage;
     private const float SpaceBetweenHearts = 0.06f;
     private Image[] _hearts;
+    private bool _playerHasToBeKilled;
+    
     
     private void OnEnable()
     {
@@ -22,6 +24,7 @@ public class HealthController : MonoBehaviour
 
     private void Start ()
     {
+        _playerHasToBeKilled = false;
         _health = numberOfHearts;
         _hearts = new Image[numberOfHearts];
         for (var i = 0; i < numberOfHearts; i++)
@@ -45,8 +48,12 @@ public class HealthController : MonoBehaviour
             _health = numberOfHearts;
         if(_health == 1)
             EventManager.TriggerEvent("LastHeart");
-        if (_health == 0)
+        if (_health == 0 || _playerHasToBeKilled)
+        {
             EventManager.TriggerEvent("PlayerDeath");
+            _playerHasToBeKilled = false;
+        }
+            
     }
     
     private void IncreaseHealth()
@@ -85,7 +92,7 @@ public class HealthController : MonoBehaviour
     private void KillPlayer()
     {
         EventManager.StopListening("KillPlayer",KillPlayer);
-        EventManager.TriggerEvent("PlayerDeath");
+        _playerHasToBeKilled = true;
         EventManager.StartListening("KillPlayer",KillPlayer);
     }
     

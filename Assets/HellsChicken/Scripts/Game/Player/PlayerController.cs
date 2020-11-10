@@ -81,7 +81,6 @@ namespace HellsChicken.Scripts.Game.Player
         {
             EventManager.StartListening("PlayerDeath", Death);
             EventManager.StartListening("LastHeart", LastHeart);
-            EventManager.StartListening("EggExplosionNotification", EggExplosionNotification);
         }
 
         private void Start()
@@ -171,14 +170,6 @@ namespace HellsChicken.Scripts.Game.Player
             _crosshairImageController.SetCrosshairToIdle();
             _isWaitingForEggExplosion = false;
             yield return null;
-        }
-        
-        private void EggExplosionNotification()
-        {
-            EventManager.StopListening("EggExplosionNotification",EggExplosionNotification);
-            _crosshairImageController.SetCrosshairToIdle();
-            _isWaitingForEggExplosion = false;
-            EventManager.StartListening("EggExplosionNotification",EggExplosionNotification);
         }
 
         private void Update()
@@ -329,6 +320,7 @@ namespace HellsChicken.Scripts.Game.Player
                 }
                 if (other.transform.CompareTag("Lava"))
                 {
+                    gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
                     EventManager.TriggerEvent("KillPlayer");
                 }
             }
@@ -351,6 +343,7 @@ namespace HellsChicken.Scripts.Game.Player
                 }
                 if (other.transform.CompareTag("Lava"))
                 {
+                    gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
                     EventManager.TriggerEvent("KillPlayer");
                 }
             }
@@ -424,8 +417,6 @@ namespace HellsChicken.Scripts.Game.Player
         {
             EventManager.StopListening("PlayerDeath", Death);
             EventManager.StopListening("LastHeart", LastHeart);
-            EventManager.StopListening("EggExplosionNotification",EggExplosionNotification);
         }
     }
-    
 }
