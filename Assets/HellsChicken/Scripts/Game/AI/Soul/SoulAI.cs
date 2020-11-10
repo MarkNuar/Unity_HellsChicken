@@ -24,7 +24,7 @@ namespace HellsChicken.Scripts.Game.AI.Soul
             _seeker = GetComponent<Seeker>();
             _rb = GetComponent<Rigidbody>();
             
-            InvokeRepeating("UpdatePath", 0f, 0.5f);
+            InvokeRepeating(nameof(UpdatePath), 0f, 0.5f);
         }
 
         void UpdatePath()

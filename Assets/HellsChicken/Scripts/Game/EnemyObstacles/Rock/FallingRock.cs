@@ -2,17 +2,15 @@
 
 namespace HellsChicken.Scripts.Game.EnemyObstacles.Rock
 {
-    public class Rock : MonoBehaviour
+    public class FallingRock : MonoBehaviour
     {
         private Rigidbody _rockRb;
-        [SerializeField] private GameObject rockObstacle;
+        [SerializeField] private GameObject rockPrefab;
         [SerializeField] private float gravityModifier = 10;
-        
-        //[SerializeField] GameObject rockPrefab;
         
         void Start()
         {
-            _rockRb = rockObstacle.GetComponent<Rigidbody>();
+            _rockRb = rockPrefab.GetComponent<Rigidbody>();
         }
 
         void OnTriggerEnter(Collider other)
@@ -22,8 +20,6 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles.Rock
                 gameObject.GetComponent<BoxCollider>().enabled = false;
                 _rockRb.isKinematic = false;
                 _rockRb.AddForce(new Vector3(0, gravityModifier * Physics.gravity.y, 0),ForceMode.Acceleration);
-                
-                //Destroy(rockPrefab, 3.0f);
             }
         }
     }

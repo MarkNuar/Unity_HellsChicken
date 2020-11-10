@@ -1,5 +1,4 @@
-﻿using System;
-using EventManagerNamespace;
+﻿using EventManagerNamespace;
 using UnityEngine;
 
 namespace HellsChicken.Scripts.Game.Player.Egg
@@ -7,7 +6,6 @@ namespace HellsChicken.Scripts.Game.Player.Egg
     public class EggExplosion : MonoBehaviour
     {
         [SerializeField] private float timerBeforeEggExplosion = 2.0f;
-        
         private float _countdown;
 
         private bool _hasExploded;
@@ -48,8 +46,6 @@ namespace HellsChicken.Scripts.Game.Player.Egg
                     rb.AddExplosionForce(force, transform.position, radius);
                 }
             }
-        
-            //Non si può fare tutto in un ciclo?
             
             Collider[] collidersToDestroy = Physics.OverlapSphere(transform.position, radius);
             foreach (Collider nearbyObject in collidersToDestroy)
