@@ -114,9 +114,10 @@ public class CentaurAICC : MonoBehaviour
     //Decisions
     public object isPlayerVisible() { 
             Vector3 ray = player.position - transform.position;
+            Debug.DrawLine(transform.position,player.position, Color.white, 0.5f);
             RaycastHit hit;
             if (Physics.Raycast(transform.position, ray, out hit, 30f)) {
-                if (hit.transform == player) {
+                if (hit.transform.CompareTag("Player")) {
                     if (Vector3.Dot(ray, transform.right) <= 0) {
                         transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
                         EventManager.TriggerEvent("changeBowDirection");
