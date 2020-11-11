@@ -219,80 +219,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2018950810}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &345966349
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 850780480, guid: ed58ed192ce6c4540803435a8ab753f8, type: 3}
-      propertyPath: vanishEffectPrefab
-      value: 
-      objectReference: {fileID: 1025285306637258, guid: d8f0099df63275647a8bcf646df1ca00,
-        type: 3}
-    - target: {fileID: 143242655372243033, guid: ed58ed192ce6c4540803435a8ab753f8,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 47.82
-      objectReference: {fileID: 0}
-    - target: {fileID: 143242655372243033, guid: ed58ed192ce6c4540803435a8ab753f8,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 20.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 143242655372243033, guid: ed58ed192ce6c4540803435a8ab753f8,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 143242655372243033, guid: ed58ed192ce6c4540803435a8ab753f8,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 143242655372243033, guid: ed58ed192ce6c4540803435a8ab753f8,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 143242655372243033, guid: ed58ed192ce6c4540803435a8ab753f8,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 143242655372243033, guid: ed58ed192ce6c4540803435a8ab753f8,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 143242655372243033, guid: ed58ed192ce6c4540803435a8ab753f8,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 143242655372243033, guid: ed58ed192ce6c4540803435a8ab753f8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 143242655372243033, guid: ed58ed192ce6c4540803435a8ab753f8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 143242655372243033, guid: ed58ed192ce6c4540803435a8ab753f8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 143242655372243039, guid: ed58ed192ce6c4540803435a8ab753f8,
-        type: 3}
-      propertyPath: m_Name
-      value: Goomba
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ed58ed192ce6c4540803435a8ab753f8, type: 3}
 --- !u!1 &364326624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,11 +1267,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pendulum
-      objectReference: {fileID: 0}
-    - target: {fileID: 710195982014139835, guid: 211676c411e084a40b2f352afc066f8a,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 710195982014139838, guid: 211676c411e084a40b2f352afc066f8a,
         type: 3}
