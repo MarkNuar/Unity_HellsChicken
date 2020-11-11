@@ -24,7 +24,6 @@ namespace HellsChicken.Scripts.Game.Player
         [SerializeField] private float glidingSpeed = 15f;
         [SerializeField] private ParticleSystem flameStream;
         [SerializeField] private Transform firePosition;
-        private Boolean _canShoot = true;
         [SerializeField] private float flamesCooldown = 2f;
 
         private float _gravity;
@@ -51,6 +50,10 @@ namespace HellsChicken.Scripts.Game.Player
         private bool _isAiming;
         private bool _isWaitingForEggExplosion;
         private bool _isMoving;
+        private bool _isGliding;
+        private bool _isShootingFlames;
+        private bool _isShootingEgg;
+        private bool _canShoot;
         [SerializeField] private float eggCooldown = 2;
 
         private Vector3 _lookDirection;
@@ -73,7 +76,12 @@ namespace HellsChicken.Scripts.Game.Player
             _isYMovementCorrected = false;
             _isAiming = false;
             _isMoving = false;
+            _isGliding = false;
             _isWaitingForEggExplosion = false;
+            _isShootingEgg = false;
+            _isShootingFlames = false;
+            _canShoot = true;
+            
             _moveDirection = Vector3.zero;
             _gravity = Physics.gravity.y;
             _rightRotation = transform.rotation;
@@ -104,6 +112,7 @@ namespace HellsChicken.Scripts.Game.Player
                 StartCoroutine(DetachFlames(myFlameStream));
                 EventManager.TriggerEvent("flameThrower");
                 _canShoot = false;
+                _isShootingFlames = true;
                 Debug.Log("Shoot flames");
                 StartCoroutine(EnableFlames(flamesCooldown));
             }
@@ -111,6 +120,7 @@ namespace HellsChicken.Scripts.Game.Player
 
         private void ThrowEgg()
         {
+            _isShootingEgg = true;
             float g = -_gravity;
             float angle = float.NaN;
             float v = initialEggVelocity; //initial throw egg force
@@ -148,7 +158,6 @@ namespace HellsChicken.Scripts.Game.Player
             }
             GameObject egg = Instantiate(eggPrefab, eggThrowPoint.transform.position,
                 Quaternion.identity);
-            
             var baseEggVelocity = new Vector3(v * Mathf.Cos(angle), v * Mathf.Sin(angle), 0f);
             
             // //TODO: velocity correction if only the player is grounded
@@ -178,6 +187,8 @@ namespace HellsChicken.Scripts.Game.Player
 
         private void Update()
         {
+            _isShootingFlames = false;
+            _isShootingEgg = false;
             _lookDirection = _target.GetTarget() - eggThrowPoint.position;
             
             //FIRE
@@ -231,6 +242,7 @@ namespace HellsChicken.Scripts.Game.Player
             {
                 _isYMovementCorrected = true;
                 _moveDirection.y = -_yMovementCorrection;
+                _isGliding = false;
             }
 
             //JUMPING
@@ -259,14 +271,22 @@ namespace HellsChicken.Scripts.Game.Player
             {
                 if (Input.GetButton("Jump")) //TODO apply some variation to the velocity while gliding
                 {
+                    _isGliding = true;
                     _moveDirection.y = -glidingSpeed;
                 }
+                else
+                    _isGliding = false;
             }
 
+            //MOVEMENT CHECK
             if (_moveDirection.x != 0)
+            {
                 _isMoving = true;
+            }
             else
+            {
                 _isMoving = false;
+            }
 
             //MOVEMENT APPLICATION
             _characterController.Move(_moveDirection * Time.deltaTime);
@@ -274,6 +294,9 @@ namespace HellsChicken.Scripts.Game.Player
             //ANIMATION
             anim.SetBool("isGrounded",IsGrounded());
             anim.SetBool("isMoving",_isMoving);
+            anim.SetBool("isGliding", _isGliding);
+            anim.SetBool("isShootingFlames", _isShootingFlames);
+            anim.SetBool("isShootingEgg", _isShootingEgg);
             
         }
 
