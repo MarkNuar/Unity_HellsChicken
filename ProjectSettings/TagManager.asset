@@ -12,6 +12,7 @@ TagManager:
   - GameManager
   - MovingPlatform
   - Attack
+  - Lava
   layers:
   - Default
   - TransparentFX
@@ -24,8 +25,8 @@ TagManager:
   - PostProcessing
   - Player
   - Egg
-  - 
-  - 
+  - Enemy
+  - HittableObject
   - 
   - 
   - 

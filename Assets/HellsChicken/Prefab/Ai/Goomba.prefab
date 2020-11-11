@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 143242655372243037}
   - component: {fileID: 143242655372243038}
   - component: {fileID: 850780480}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Goomba
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -126,13 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c9b574b85860f34282f0bbdf9a73310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombPrefab: {fileID: 143242655372243039, guid: 31fccdef5ddff024fb84cca13e40bb3b,
-    type: 3}
   vanishEffectPrefab: {fileID: 1025285306637258, guid: d8f0099df63275647a8bcf646df1ca00,
     type: 3}
   right: 0
-  position: {x: 0, y: 0, z: 0}
-  velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &850780480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +155,7 @@ GameObject:
   - component: {fileID: 143242655857141617}
   - component: {fileID: 143242655857141618}
   - component: {fileID: 143242655857141619}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Eye
   m_TagString: Player
   m_Icon: {fileID: 0}

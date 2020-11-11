@@ -167,8 +167,6 @@ public class CentaurAI : MonoBehaviour {
             transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
             EventManager.TriggerEvent("changeBowDirection");
             right = !right;
-        }else if (other.gameObject.CompareTag("Attack")) {
-            transform.parent.GetComponent<Destruction>().Destroyer();
         }
 
         if (other.gameObject.CompareTag("Player")) {
