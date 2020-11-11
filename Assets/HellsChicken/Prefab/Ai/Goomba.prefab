@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 951f76f281239e54fbd8ead1ec404c22, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,8 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c9b574b85860f34282f0bbdf9a73310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vanishEffectPrefab: {fileID: 1025285306637258, guid: d8f0099df63275647a8bcf646df1ca00,
-    type: 3}
   right: 0
 --- !u!114 &850780480
 MonoBehaviour:

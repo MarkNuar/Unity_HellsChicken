@@ -361,6 +361,7 @@ namespace HellsChicken.Scripts.Game.Player
             //Use the next lines if you want it to be transparent
              var material = _meshRenderer.material;
              var temp = material.color;
+             print(material.color.a);
              temp.a = temp.a > 0.5f ? 0.3f : 1.0f;
              material.color = temp;
         }
