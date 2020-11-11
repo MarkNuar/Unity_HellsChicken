@@ -343,6 +343,9 @@ namespace HellsChicken.Scripts.Game.Player
         private IEnumerator ImmunityTimer(float time)
         {
             _isImmune = true;
+            
+            //TODO CHANGE LAYER OF THE PLAYER TO IMMUNEPLAYER
+            gameObject.layer = LayerMask.NameToLayer("ImmunePlayer");
             InvokeRepeating(nameof(FlashMesh), 0f, 0.2f);
             //Debug.Log("Transparent");
             yield return new WaitForSeconds(time);
@@ -354,6 +357,7 @@ namespace HellsChicken.Scripts.Game.Player
             var temp = material.color;
             temp.a = 1.0f;
             material.color = temp;
+            gameObject.layer = LayerMask.NameToLayer("Player");
             yield return null;
         }
 
