@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1705866360914875513}
   - component: {fileID: 7553157856854248602}
   - component: {fileID: 1438199386181724104}
-  - component: {fileID: 5077244713496699290}
-  - component: {fileID: 363344316}
+  - component: {fileID: 3122595131196491392}
+  - component: {fileID: 1220276830}
   m_Layer: 0
   m_Name: RockObstacle
   m_TagString: Enemy
@@ -98,7 +98,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!114 &5077244713496699290
+--- !u!135 &3122595131196491392
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970672947036636346}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1220276830
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,21 +123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4518307039171ad47989896a966218c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rockPrefab: {fileID: 0}
---- !u!136 &363344316
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 970672947036636346}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.47
-  m_Height: 1.5
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5591317282032941779
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3467972872876284851}
   - component: {fileID: 2677350791607484361}
-  - component: {fileID: 3313942547497946623}
+  - component: {fileID: 1181267708}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Untagged
@@ -171,7 +169,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 16, z: 1}
   m_Center: {x: 0, y: -8, z: 0}
---- !u!114 &3313942547497946623
+--- !u!114 &1181267708
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,5 +181,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba857672c5adaf74a99a997b1607a785, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rockObstacle: {fileID: 970672947036636346}
-  gravityModifier: 60
+  rockPrefab: {fileID: 970672947036636346}
+  gravityModifier: 10
