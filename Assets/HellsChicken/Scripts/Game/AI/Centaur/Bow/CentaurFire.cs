@@ -73,7 +73,7 @@ public class CentaurFire : MonoBehaviour {
         if (other.gameObject.CompareTag("Enemy")) {
             Physics.IgnoreCollision(other.collider, GetComponent<BoxCollider>());
         }else if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Wall")
-          || other.gameObject.CompareTag("Ground")) {
+          || other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Lava")) {
             Destroy(gameObject);
         }
         if(!other.gameObject.CompareTag("Enemy"))

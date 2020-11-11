@@ -7,7 +7,7 @@ namespace HellsChicken.Scripts.Game.Player.Egg
 {
     public class EggExplosion : MonoBehaviour
     {
-        [SerializeField] private float timerBeforeEggExplosion = 2.0f;
+        //[SerializeField] private float timerBeforeEggExplosion = 2.0f;
         
         //private float _countdown;
 
@@ -47,16 +47,17 @@ namespace HellsChicken.Scripts.Game.Player.Egg
             GameObject particle = Instantiate(explosionEffect, transform.position, transform.rotation);
             Destroy(particle, 1f);
             List<String> names =  new List<String>();
-        
+            
             Collider[] collidersToMove = Physics.OverlapSphere(transform.position, radius);
             foreach (Collider nearbyObject in collidersToMove) {
                 if (!names.Contains(nearbyObject.name)) {
+                    names.Add(nearbyObject.name);
                     Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
-                    Destruction dest = nearbyObject.GetComponent<Destruction>();
+                    //Destruction dest = nearbyObject.GetComponent<Destruction>();
 
                     if (nearbyObject.gameObject.layer == 12) {
-
-                        rb.AddExplosionForce(force, transform.position, radius);
+                        if(rb != null)
+                            rb.AddExplosionForce(force, transform.position, radius);
                     }
 
                     if (nearbyObject.gameObject.layer == 12 || nearbyObject.gameObject.layer == 11) {

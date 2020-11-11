@@ -140,8 +140,10 @@ namespace HellsChicken.Scripts.Game.Player
                     float x2 = x * x;
                     float squareRoot = (float) Mathf.Sqrt(v4 - g * (g * x2 + 2 * y * v2));
                     angle = Mathf.Atan((v2 - squareRoot) / (g * x));
+                    
                     if (_lookDirection.x < 0f)
                         angle = Mathf.PI + angle;
+                    
                     if (float.IsNaN(angle))
                     {
                         v = v + deltaEggVelocity;
@@ -221,7 +223,7 @@ namespace HellsChicken.Scripts.Game.Player
                 }
             }
             
-            
+            //HORIZONTAL MOVEMENT
             _moveDirection.x = Input.GetAxis("Horizontal") * walkSpeed;
             //_moveDirection.z = Input.GetAxis("Vertical") * 2; //just for fun, z movement
             _moveDirection.z = 0f;
@@ -377,6 +379,9 @@ namespace HellsChicken.Scripts.Game.Player
         private IEnumerator ImmunityTimer(float time)
         {
             _isImmune = true;
+            
+            //TODO CHANGE LAYER OF THE PLAYER TO IMMUNEPLAYER
+            gameObject.layer = LayerMask.NameToLayer("ImmunePlayer");
             InvokeRepeating(nameof(FlashMesh), 0f, 0.2f);
             //Debug.Log("Transparent");
             yield return new WaitForSeconds(time);
@@ -388,6 +393,7 @@ namespace HellsChicken.Scripts.Game.Player
             var temp = material.color;
             temp.a = 1.0f;
             material.color = temp;
+            gameObject.layer = LayerMask.NameToLayer("Player");
             yield return null;
         }
 

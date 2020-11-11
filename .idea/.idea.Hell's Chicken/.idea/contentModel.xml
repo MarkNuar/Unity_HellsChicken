@@ -121,6 +121,7 @@
                     <e p="CentaurFire.cs" t="Include" />
                   </e>
                   <e p="CentaurAI.cs" t="Include" />
+                  <e p="CentaurAICC.cs" t="Include" />
                   <e p="Explosion" t="Include">
                     <e p="Explosion.cs" t="Include" />
                   </e>
@@ -134,6 +135,7 @@
                 <e p="Goomba" t="Include">
                   <e p="BombExplosion.cs" t="Include" />
                   <e p="GoombaAI.cs" t="Include" />
+                  <e p="GoombaAICC.cs" t="Include" />
                 </e>
               </e>
               <e p="Audio" t="Include">
