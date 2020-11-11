@@ -34,6 +34,7 @@ namespace HellsChicken.Scripts.Game.Player
         private Transform _transform;
         private CharacterController _characterController;
         private MeshRenderer _meshRenderer;
+        public Animator anim;
 
         private Quaternion _leftRotation;
         private Quaternion _rightRotation;
@@ -49,6 +50,7 @@ namespace HellsChicken.Scripts.Game.Player
         private Target _target;
         private bool _isAiming;
         private bool _isWaitingForEggExplosion;
+        private bool _isMoving;
         [SerializeField] private float eggCooldown = 2;
 
         private Vector3 _lookDirection;
@@ -70,6 +72,7 @@ namespace HellsChicken.Scripts.Game.Player
             _isLastHeart = false;
             _isYMovementCorrected = false;
             _isAiming = false;
+            _isMoving = false;
             _isWaitingForEggExplosion = false;
             _moveDirection = Vector3.zero;
             _gravity = Physics.gravity.y;
@@ -260,8 +263,18 @@ namespace HellsChicken.Scripts.Game.Player
                 }
             }
 
+            if (_moveDirection.x != 0)
+                _isMoving = true;
+            else
+                _isMoving = false;
+
             //MOVEMENT APPLICATION
             _characterController.Move(_moveDirection * Time.deltaTime);
+            
+            //ANIMATION
+            anim.SetBool("isGrounded",IsGrounded());
+            anim.SetBool("isMoving",_isMoving);
+            
         }
 
         private void LateUpdate()
