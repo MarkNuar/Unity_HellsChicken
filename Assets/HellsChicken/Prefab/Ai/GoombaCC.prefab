@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8393277768196791589}
   - component: {fileID: 8393277768196791594}
   - component: {fileID: 1007378537}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: GoombaCC
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 8393277768545706784}
   - component: {fileID: 8393277768545706787}
   - component: {fileID: 8393277768545706786}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Eye
   m_TagString: Player
   m_Icon: {fileID: 0}
