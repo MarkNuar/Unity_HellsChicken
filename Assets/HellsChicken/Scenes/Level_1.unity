@@ -3455,7 +3455,7 @@ PrefabInstance:
     - target: {fileID: 7452342847877761328, guid: 7005d7e2bb4f0624c8b072def550a44a,
         type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Lava
       objectReference: {fileID: 0}
     - target: {fileID: 8468039704609421278, guid: 7005d7e2bb4f0624c8b072def550a44a,
         type: 3}
@@ -4360,7 +4360,7 @@ PrefabInstance:
     - target: {fileID: 7400446573322165019, guid: 6ecdd647651f8024e9ce79ffe852169f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.679527
+      value: -15.419188
       objectReference: {fileID: 0}
     - target: {fileID: 7400446573322165019, guid: 6ecdd647651f8024e9ce79ffe852169f,
         type: 3}
@@ -4395,7 +4395,7 @@ PrefabInstance:
     - target: {fileID: 7409349275366072962, guid: 6ecdd647651f8024e9ce79ffe852169f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.679527
+      value: -15.419188
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ecdd647651f8024e9ce79ffe852169f, type: 3}
