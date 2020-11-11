@@ -12,6 +12,7 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
     {
 
         [SerializeField] private GameObject explosionPrefab;
+        [SerializeField] private GameObject vanishEffectPrefab;
         
         private Color red = Color.red;
         private Color white = Color.white;
@@ -27,6 +28,8 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
 
         // Start is called before the first frame update
         void Start() {
+            Instantiate(vanishEffectPrefab, transform.position, Quaternion.identity);
+            EventManager.TriggerEvent("playTimerBomb");
             StartCoroutine(MakeExplosion());
         }
 

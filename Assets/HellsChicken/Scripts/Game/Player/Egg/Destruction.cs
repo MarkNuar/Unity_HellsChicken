@@ -10,14 +10,14 @@ namespace HellsChicken.Scripts.Game.Player.Egg
 		
 
 		public void Destroyer () {
-			if(!gameObject.CompareTag("Player")){
-				if(destroyedVersion != null)
+			if(!gameObject.CompareTag("Player")) {
+				if (destroyedVersion != null)
 					Instantiate(destroyedVersion, transform.position, transform.rotation);
-			
+
 				Destroy(gameObject);
 			}
 			else {
-				EventManager.TriggerEvent("DecreasePlayerHealth");
+				EventManager.TriggerEvent("StartImmunityCoroutine");
 			}
 		}
 	}

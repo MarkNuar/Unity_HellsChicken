@@ -49,6 +49,7 @@ namespace HellsChicken.Scripts.Game.Player
         private Target _target;
         private bool _isAiming;
         private bool _isWaitingForEggExplosion;
+        [SerializeField] private float eggCooldown = 2;
 
         private Vector3 _lookDirection;
 
@@ -80,7 +81,7 @@ namespace HellsChicken.Scripts.Game.Player
         {
             EventManager.StartListening("PlayerDeath", Death);
             EventManager.StartListening("LastHeart", LastHeart);
-            EventManager.StartListening("EggExplosionNotification", EggExplosionNotification);
+            EventManager.StartListening("StartImmunityCoroutine", StartImmunityCoroutine);
         }
 
         private void Start()
@@ -163,19 +164,19 @@ namespace HellsChicken.Scripts.Game.Player
             egg.GetComponent<Rigidbody>().velocity = baseEggVelocity;
         }
 
-        
-        private void EggExplosionNotification()
+        private IEnumerator EnableEggThrow(float time)
         {
-            EventManager.StopListening("EggExplosionNotification",EggExplosionNotification);
+            _isWaitingForEggExplosion = true;
+            yield return new WaitForSeconds(time);
             _crosshairImageController.SetCrosshairToIdle();
             _isWaitingForEggExplosion = false;
-            EventManager.StartListening("EggExplosionNotification",EggExplosionNotification);
+            yield return null;
         }
 
         private void Update()
         {
             _lookDirection = _target.GetTarget() - eggThrowPoint.position;
-
+            
             //FIRE
             if (Input.GetButtonDown("Fire1"))
                 ShootFlames();
@@ -201,7 +202,7 @@ namespace HellsChicken.Scripts.Game.Player
                 {
                     _isAiming = false;
                     _crosshairImageController.SetCrosshairToWaiting();
-                    _isWaitingForEggExplosion = true;
+                    StartCoroutine(EnableEggThrow(eggCooldown));
                     ThrowEgg();
                 }
             }
@@ -310,13 +311,12 @@ namespace HellsChicken.Scripts.Game.Player
             {
                 if (other.transform.CompareTag("Enemy") || other.transform.CompareTag("EnemyShot"))
                 {
-                    // Debug.LogError("Hih by an enemy OnTriggerEnter");
+                    EventManager.TriggerEvent("StartImmunityCoroutine");
+                }
+                if (other.transform.CompareTag("Lava"))
+                {
                     gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
-                    if (!_isLastHeart)
-                    {
-                        StartCoroutine(ImmunityTimer(immunityDuration));
-                    }
-                    EventManager.TriggerEvent("DecreasePlayerHealth");
+                    EventManager.TriggerEvent("KillPlayer");
                 }
             }
         }
@@ -328,13 +328,12 @@ namespace HellsChicken.Scripts.Game.Player
             {
                 if (other.transform.CompareTag("Enemy") || other.transform.CompareTag("EnemyShot"))
                 {
-                    // Debug.LogError("Hih by an enemy OnTriggerEnter");
+                    EventManager.TriggerEvent("StartImmunityCoroutine");
+                }
+                if (other.transform.CompareTag("Lava"))
+                {
                     gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
-                    if (!_isLastHeart)
-                    {
-                        StartCoroutine(ImmunityTimer(immunityDuration));
-                    }
-                    EventManager.TriggerEvent("DecreasePlayerHealth");
+                    EventManager.TriggerEvent("KillPlayer");
                 }
             }
         }
@@ -407,8 +406,18 @@ namespace HellsChicken.Scripts.Game.Player
         {
             EventManager.StopListening("PlayerDeath", Death);
             EventManager.StopListening("LastHeart", LastHeart);
-            EventManager.StopListening("EggExplosionNotification",EggExplosionNotification);
         }
+
+        private void StartImmunityCoroutine() {
+            EventManager.StopListening("StartImmunityCoroutine", StartImmunityCoroutine);
+            gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
+            if (!_isLastHeart)
+            {
+                StartCoroutine(ImmunityTimer(immunityDuration));
+            }
+            EventManager.TriggerEvent("DecreasePlayerHealth");
+            EventManager.StartListening("StartImmunityCoroutine", StartImmunityCoroutine);
+        }
+
     }
-    
 }

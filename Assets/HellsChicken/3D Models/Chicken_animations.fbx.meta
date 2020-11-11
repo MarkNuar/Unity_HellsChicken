@@ -13,14 +13,17 @@ ModelImporter:
       74: 4860975369832711082
     second: Chicken|Forward
   - first:
+      74: 4295506391973561174
+    second: Chicken|Glide
+  - first:
       74: 3789750784014294312
     second: Chicken|Idle
   - first:
       74: 6162507191466130151
     second: Chicken|Jump
   - first:
-      74: 4866520502662860903
-    second: Chicken|Landing
+      74: -285025980906001145
+    second: Chicken|Land
   externalObjects:
   - first:
       type: UnityEngine:Material
