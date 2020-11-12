@@ -35,8 +35,9 @@ public class FallenPlatform : MonoBehaviour {
     void FixedUpdate() {
         if (!isColliding && shake) {
             Vector3 newPos = _transform.position;
-            newPos.x = _startPosX + Mathf.Sin(Time.time * _speed) * _amount;
-            newPos.y = _startPosY + Mathf.Sin(Time.time * _speed) * _amount;
+            //TODO
+            newPos.x = _startPosX + Mathf.Sin(Time.fixedTime * _speed) * _amount;
+            newPos.y = _startPosY + Mathf.Sin(Time.fixedTime * _speed) * _amount;
             transform.position = newPos;
         }else if (isColliding){
             /**/

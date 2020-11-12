@@ -467,6 +467,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CentaurCC
       objectReference: {fileID: 0}
+    - target: {fileID: 3979258305056326384, guid: 933cc533cd697184980bc403017bf974,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 32284642}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 933cc533cd697184980bc403017bf974, type: 3}
 --- !u!1 &349103783
@@ -880,6 +885,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657384288}
   m_CullTransparentMesh: 0
+--- !u!1 &711912759 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3078230224256349244, guid: e9866ce1d839e9242bb713d88ee93b0e,
+    type: 3}
+  m_PrefabInstance: {fileID: 625882141}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &723094205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,7 +1143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af2cbda8bb112a4280eb3ca2775c678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialCheckPoint: {fileID: 1253861394}
+  initialCheckPoint: {fileID: 711912759}
 --- !u!1001 &781616606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2605,12 +2616,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9866ce1d839e9242bb713d88ee93b0e, type: 3}
---- !u!1 &1253861394 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3078230224256349244, guid: e9866ce1d839e9242bb713d88ee93b0e,
-    type: 3}
-  m_PrefabInstance: {fileID: 781616606}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1253861395 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3078230224256349240, guid: e9866ce1d839e9242bb713d88ee93b0e,
@@ -2886,6 +2891,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CentaurCC (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3979258305056326384, guid: 933cc533cd697184980bc403017bf974,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 32284642}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 933cc533cd697184980bc403017bf974, type: 3}
 --- !u!4 &1371516455 stripped
@@ -4117,6 +4127,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CentaurCC (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3979258305056326384, guid: 933cc533cd697184980bc403017bf974,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 32284642}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 933cc533cd697184980bc403017bf974, type: 3}
 --- !u!1 &1930470195
