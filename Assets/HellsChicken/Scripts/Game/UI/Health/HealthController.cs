@@ -46,6 +46,17 @@ public class HealthController : MonoBehaviour
     {
         if (_health > numberOfHearts)
             _health = numberOfHearts;
+        
+        for (var i = 0; i < _health; i++)
+        {
+            _hearts[i].sprite = fullHeart;
+        }
+
+        for (var i = _health; i < numberOfHearts; i++)
+        {
+            _hearts[i].sprite = lostHeart;
+        }
+        
         if(_health == 1)
             EventManager.TriggerEvent("LastHeart");
         if (_health == 0 || _playerHasToBeKilled)
@@ -53,7 +64,6 @@ public class HealthController : MonoBehaviour
             EventManager.TriggerEvent("PlayerDeath");
             _playerHasToBeKilled = false;
         }
-            
     }
     
     private void IncreaseHealth()
@@ -62,7 +72,7 @@ public class HealthController : MonoBehaviour
         if (_health < numberOfHearts)
         {
             _health++;
-            _hearts[_health].sprite = fullHeart;
+            //_hearts[_health].sprite = fullHeart;
         }
         EventManager.StartListening("IncreasePlayerHealth",IncreaseHealth);
     }
@@ -73,7 +83,7 @@ public class HealthController : MonoBehaviour
         if (_health > 0)
         {
             _health--;
-            _hearts[_health].sprite = lostHeart;
+            //_hearts[_health].sprite = lostHeart;
         }
         EventManager.StartListening("DecreasePlayerHealth",DecreaseHealth);
     }
@@ -82,10 +92,10 @@ public class HealthController : MonoBehaviour
     {
         EventManager.StopListening("RefillPlayerHealth", RefillHealth);
         _health = numberOfHearts;
-        foreach (var heart in _hearts)
-        {
-            heart.sprite = fullHeart;
-        }
+        // foreach (var heart in _hearts)
+        // {
+        //     heart.sprite = fullHeart;
+        // }
         EventManager.StartListening("RefillPlayerHealth", RefillHealth);
     }
 
@@ -103,5 +113,4 @@ public class HealthController : MonoBehaviour
         EventManager.StopListening("RefillPlayerHealth", RefillHealth);
         EventManager.StopListening("KillPlayer",KillPlayer);
     }
-    
 }

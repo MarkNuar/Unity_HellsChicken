@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Diagnostics;
 using Cinemachine;
 using EventManagerNamespace;
 using HellsChicken.Scripts.Game.Player.Egg;
@@ -347,11 +348,11 @@ namespace HellsChicken.Scripts.Game.Player
         {
             if (!_isImmune)
             {
-                if (other.transform.CompareTag("Enemy") || other.transform.CompareTag("EnemyShot"))
+                if (other.CompareTag("Enemy") || other.CompareTag("EnemyShot"))
                 {
                     EventManager.TriggerEvent("StartImmunityCoroutine");
                 }
-                if (other.transform.CompareTag("Lava"))
+                if (other.CompareTag("Lava"))
                 {
                     gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
                     EventManager.TriggerEvent("KillPlayer");
@@ -364,11 +365,11 @@ namespace HellsChicken.Scripts.Game.Player
         {
             if (!_isImmune)
             {
-                if (other.transform.CompareTag("Enemy") || other.transform.CompareTag("EnemyShot"))
+                if (other.CompareTag("Enemy") || other.CompareTag("EnemyShot"))
                 {
                     EventManager.TriggerEvent("StartImmunityCoroutine");
                 }
-                if (other.transform.CompareTag("Lava"))
+                if (other.CompareTag("Lava"))
                 {
                     gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
                     EventManager.TriggerEvent("KillPlayer");
