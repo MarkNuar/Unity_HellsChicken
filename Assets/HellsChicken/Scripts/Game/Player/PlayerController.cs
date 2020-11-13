@@ -246,6 +246,9 @@ namespace HellsChicken.Scripts.Game.Player
                 _isYMovementCorrected = true;
                 _moveDirection.y = -_yMovementCorrection;
                 _isGliding = false;
+                
+                if(_isMoving)
+                    EventManager.TriggerEvent("footSteps");
             }
 
             //JUMPING
@@ -283,16 +286,9 @@ namespace HellsChicken.Scripts.Game.Player
 
             //MOVEMENT CHECK AND SOUND
             if (_moveDirection.x != 0)
-            {
                 _isMoving = true;
-                Debug.Log("i'm moving");
-                EventManager.TriggerEvent("footSteps");
-            }
             else
-            {
                 _isMoving = false;
-                Debug.Log("i'm NOT moving");
-            }
 
             //MOVEMENT APPLICATION
             _characterController.Move(_moveDirection * Time.deltaTime);

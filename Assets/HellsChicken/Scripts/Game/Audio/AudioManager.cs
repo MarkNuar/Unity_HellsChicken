@@ -67,7 +67,8 @@ public class AudioManager : Singleton<AudioManager> {
     {
         EventManager.StopListening("footSteps", footSteps);
         _footStepsAudioSource.clip = _footStepsSound;
-        _footStepsAudioSource.Play();
+        if(!_footStepsAudioSource.isPlaying)
+            _footStepsAudioSource.Play();
         EventManager.StartListening("footSteps",footSteps);
     }
 }
