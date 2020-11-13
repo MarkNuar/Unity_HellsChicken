@@ -204,7 +204,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 951f76f281239e54fbd8ead1ec404c22, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -245,7 +245,7 @@ MonoBehaviour:
     type: 3}
   textPrefab: {fileID: 6954569493333036945, guid: b332db410af29fd45a0032890863a8cd,
     type: 3}
-  startExplosion: {fileID: 3874816693228889484, guid: fed47f3c1cc06b248bb2820859febd46,
+  startExplosion: {fileID: 1953380545642034081, guid: ddffee03a08a51a4da279eefa3d9bdf4,
     type: 3}
   attackTime: 2
   gravityScale: 4
