@@ -19,15 +19,31 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44fa9eaf-4901-4eb4-b858-67c1b19b2312" name="Default Changelist" comment="Falling Rock">
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Platforms/Doors/Key.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Platforms/Doors/Key/key.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Platforms/Doors/Key/key.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/OpeningButtonDoor.cs" afterDir="false" />
+    <list default="true" id="44fa9eaf-4901-4eb4-b858-67c1b19b2312" name="Default Changelist" comment="Opening Button Door">
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Platforms/Doors/KeyDoor.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Platforms/Doors/KeyDoor.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/UI/Key.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/UI/Key/KeyCanvas.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/UI/Key/KeyCanvas.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/ButtonDoor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/ButtonDoor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/Key.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/Key.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/KeyDoor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/KeyDoor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/KeyHolder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/KeyHolder.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/KeyImage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/KeyImage.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/PlayerWithCinemachine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/PlayerWithCinemachine.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/DeathRespawnTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/DeathRespawnTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/Key.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/Key.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/OpeningButtonDoor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/OpeningButtonDoor.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +59,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/Rock/FallingRock.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/PendulumEngine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/PlatformMoveX.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/OpeningButtonDoor.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -69,6 +84,18 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/OpeningDoor.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/OpeningButtonDoor.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/Key.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/ButtonDoor.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/Key/Key.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Health/HealthController.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/Key/KeyDoor.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyHolder.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/Key/KeyImage.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/Key.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/KeyDoor.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/KeyHolder.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/KeyImage.cs" />
       </list>
     </option>
   </component>
@@ -139,7 +166,7 @@
       <workItem from="1604307368819" duration="5052000" />
       <workItem from="1604687213579" duration="6371000" />
       <workItem from="1605175972625" duration="7840000" />
-      <workItem from="1605259953442" duration="1552000" />
+      <workItem from="1605259953442" duration="12589000" />
     </task>
     <task id="LOCAL-00001" summary="Platform and blade movement">
       <created>1604073585635</created>
@@ -183,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604314719334</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Opening Button Door">
+      <created>1605262865809</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1605262865809</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,7 +244,8 @@
     <MESSAGE value="Minor change" />
     <MESSAGE value="Pendulum obstacle" />
     <MESSAGE value="Enemy prefab modify" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enemy prefab modify" />
+    <MESSAGE value="Opening Button Door" />
+    <option name="LAST_COMMIT_MESSAGE" value="Opening Button Door" />
   </component>
   <component name="WindowStateProjectService">
     <state x="147" y="65" key="MergeDialog" timestamp="1605176946727">

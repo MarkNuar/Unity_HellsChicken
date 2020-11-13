@@ -363,8 +363,13 @@
               <e p="GameManager.cs" t="Include" />
               <e p="Platform" t="Include">
                 <e p="Doors" t="Include">
-                  <e p="Key.cs" t="Include" />
-                  <e p="OpeningButtonDoor.cs" t="Include" />
+                  <e p="ButtonDoor.cs" t="Include" />
+                  <e p="KeyDoor" t="Include">
+                    <e p="Key.cs" t="Include" />
+                    <e p="KeyDoor.cs" t="Include" />
+                    <e p="KeyHolder.cs" t="Include" />
+                    <e p="KeyImage.cs" t="Include" />
+                  </e>
                 </e>
                 <e p="FallenPlatform.cs" t="Include" />
                 <e p="PlatformMoveX.cs" t="Include" />

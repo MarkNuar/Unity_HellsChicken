@@ -2,7 +2,7 @@
 
 namespace HellsChicken.Scripts.Game.Platform.Doors
 {
-    public class OpeningButtonDoor : MonoBehaviour
+    public class ButtonDoor : MonoBehaviour
     {
         [SerializeField] private Transform door;
 
