@@ -20,23 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44fa9eaf-4901-4eb4-b858-67c1b19b2312" name="Default Changelist" comment="Opening Key Door">
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Audio/Chicken.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Audio/Chicken/408390_turchinoa_running-animal (mp3cut.net).mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Audio/Chicken/408390_turchinoa_running-animal (mp3cut.net).mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Audio/Fire/Fire Whoosh Sound Effect Commercial (mp3cut.net).mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Audio/Fire/Fire Whoosh Sound Effect Commercial (mp3cut.net).mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/footStep.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/footStep.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/footstepSound.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/footstepSound.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Audio/Fire/490166__samsterbirdies__flamethrower (mp3cut.net).wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Audio/Fire/490166__samsterbirdies__flamethrower (mp3cut.net).wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Audio/Fire/490166__samsterbirdies__flamethrower.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Audio/Fire/490166__samsterbirdies__flamethrower.wav.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/AudioManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/footStep.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/footStep.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/footstepSound.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/footstepSound.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +38,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/footstepSound.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Soul/SoulAI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE47BE73-F7EF-409C-A5E5-CE4B121745B7/d7/a4a66fbb/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/PendulumEngine.cs" root0="FORCE_HIGHLIGHTING" />
@@ -164,7 +154,7 @@
       <workItem from="1604687213579" duration="6371000" />
       <workItem from="1605175972625" duration="7840000" />
       <workItem from="1605259953442" duration="14874000" />
-      <workItem from="1605286811592" duration="2491000" />
+      <workItem from="1605286811592" duration="5109000" />
     </task>
     <task id="LOCAL-00001" summary="Platform and blade movement">
       <created>1604073585635</created>

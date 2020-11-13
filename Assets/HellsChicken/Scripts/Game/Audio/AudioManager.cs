@@ -30,7 +30,6 @@ public class AudioManager : Singleton<AudioManager> {
         EventManager.StopListening("playBomb",playBomb);
         EventManager.StopListening("playTimerBomb",playTimerBomb);
         EventManager.StopListening("centaurShot",centaurShot);
-        EventManager.StopListening("footSteps", footSteps);
     }
 
     public void playBomb(){

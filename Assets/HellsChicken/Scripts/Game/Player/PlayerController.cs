@@ -228,7 +228,7 @@ namespace HellsChicken.Scripts.Game.Player
             _moveDirection.x = Input.GetAxis("Horizontal") * walkSpeed;
             //_moveDirection.z = Input.GetAxis("Vertical") * 2; //just for fun, z movement
             _moveDirection.z = 0f;
-
+            
             //CHARACTER ROTATION
             if (_moveDirection.x > 0.01f && !_isAiming)
             {
@@ -285,11 +285,13 @@ namespace HellsChicken.Scripts.Game.Player
             if (_moveDirection.x != 0)
             {
                 _isMoving = true;
+                Debug.Log("i'm moving");
                 EventManager.TriggerEvent("footSteps");
             }
             else
             {
                 _isMoving = false;
+                Debug.Log("i'm NOT moving");
             }
 
             //MOVEMENT APPLICATION
