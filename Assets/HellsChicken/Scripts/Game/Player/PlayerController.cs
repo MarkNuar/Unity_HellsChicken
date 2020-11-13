@@ -281,10 +281,11 @@ namespace HellsChicken.Scripts.Game.Player
                     _isGliding = false;
             }
 
-            //MOVEMENT CHECK
+            //MOVEMENT CHECK AND SOUND
             if (_moveDirection.x != 0)
             {
                 _isMoving = true;
+                EventManager.TriggerEvent("footSteps");
             }
             else
             {
