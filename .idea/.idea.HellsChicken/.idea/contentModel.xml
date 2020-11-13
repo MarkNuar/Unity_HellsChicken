@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Utente\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Utente\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_HellsChicken.-930839669.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Utente\Documents\GitHub\HellsChicken" t="IncludeRecursive">
+    <e p="C:\Users\tomma\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\tomma\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_HellsChicken.-1096897409.00" t="ExcludeRecursive" />
+    <e p="C:\Users\tomma\RiderProjects\HellsChicken" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -325,6 +325,7 @@
                     <e p="CentaurFire.cs" t="Include" />
                   </e>
                   <e p="CentaurAI.cs" t="Include" />
+                  <e p="CentaurAICC.cs" t="Include" />
                   <e p="Explosion" t="Include">
                     <e p="Explosion.cs" t="Include" />
                   </e>
@@ -338,6 +339,7 @@
                 <e p="Goomba" t="Include">
                   <e p="BombExplosion.cs" t="Include" />
                   <e p="GoombaAI.cs" t="Include" />
+                  <e p="GoombaAICC.cs" t="Include" />
                 </e>
                 <e p="Soul" t="Include">
                   <e p="SoulAI.cs" t="Include" />
@@ -360,6 +362,10 @@
               </e>
               <e p="GameManager.cs" t="Include" />
               <e p="Platform" t="Include">
+                <e p="Doors" t="Include">
+                  <e p="Key.cs" t="Include" />
+                  <e p="OpeningButtonDoor.cs" t="Include" />
+                </e>
                 <e p="FallenPlatform.cs" t="Include" />
                 <e p="PlatformMoveX.cs" t="Include" />
                 <e p="PlatformMoveY.cs" t="Include" />
@@ -372,6 +378,9 @@
                 </e>
                 <e p="FlameStream" t="Include">
                   <e p="ParticleCollision.cs" t="Include" />
+                </e>
+                <e p="Heart" t="Include">
+                  <e p="HeartController.cs" t="Include" />
                 </e>
                 <e p="PlayerController.cs" t="Include" />
               </e>
