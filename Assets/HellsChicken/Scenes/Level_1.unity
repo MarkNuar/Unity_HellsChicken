@@ -647,7 +647,7 @@ MonoBehaviour:
   _bombTimerSound: {fileID: 8300000, guid: 121d4baec8e60184d82963eac1a5c1c1, type: 3}
   _centaurShotSound: {fileID: 8300000, guid: ca679721d8a1b6243acc9a7ce566789b, type: 3}
   _flameThrowerSound: {fileID: 8300000, guid: a4de4b4232e66c149a7538dc4688789f, type: 3}
-  _footStepsSound: {fileID: 8300000, guid: 798c3dc83bddcba41b6c6c7ffeffbf20, type: 3}
+  _footStepsSound: {fileID: 8300000, guid: 7f35bce1173c0b24bb4509246fce7484, type: 3}
 --- !u!4 &500652604
 Transform:
   m_ObjectHideFlags: 0
@@ -3431,7 +3431,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.109
   m_Pitch: 1
   Loop: 0
   Mute: 0
