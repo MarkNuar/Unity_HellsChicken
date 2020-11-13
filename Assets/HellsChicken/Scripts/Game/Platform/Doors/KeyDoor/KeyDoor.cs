@@ -37,10 +37,10 @@ namespace HellsChicken.Scripts.Game.Platform.Doors.KeyDoor
         
         void SetInitialReferences()
         {
-            Vector3 position = transform.position;
+            Vector3 doorPosition = transform.position;
             
-            _doorCloseTarget = position;
-            _doorOpenTarget = new Vector3(position.x, position.y + (sizeOfDoor * amountOfDoorInWall), position.z);
+            _doorCloseTarget = doorPosition;
+            _doorOpenTarget = new Vector3(doorPosition.x, doorPosition.y + (sizeOfDoor * amountOfDoorInWall), doorPosition.z);
             _totalDistanceToCover = Vector3.Distance(_doorCloseTarget, _doorOpenTarget);
         }
 
