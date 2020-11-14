@@ -12,6 +12,8 @@ public class AudioManager : Singleton<AudioManager> {
     [SerializeField] private AudioSource _flameThrowerAudioSource;
     [SerializeField] private AudioSource _footStepsAudioSource;
     [SerializeField] private AudioSource _wingsFlappingAudioSource;
+    [SerializeField] private AudioSource _chickenDamageAudioSource;
+    [SerializeField] private AudioSource _chickenDeathAudioSource;
 
 
     [SerializeField] private AudioClip _bombSound;
@@ -20,6 +22,8 @@ public class AudioManager : Singleton<AudioManager> {
     [SerializeField] private AudioClip _flameThrowerSound;
     [SerializeField] private AudioClip _footStepsSound;
     [SerializeField] private AudioClip _wingsFlappingSound;
+    [SerializeField] private AudioClip _chickenDamageSound;
+    [SerializeField] private AudioClip _chickenDeathSound;
 
     protected override void Awake() {
         EventManager.StartListening("playBomb",playBomb);
@@ -28,7 +32,8 @@ public class AudioManager : Singleton<AudioManager> {
         EventManager.StartListening("flameThrower", flameThrower);
         EventManager.StartListening("footSteps", footSteps);
         EventManager.StartListening("wingsFlap", wingsFlap);
-
+        EventManager.StartListening("chickenDamage",chickenDamage);
+        EventManager.StartListening("chickenDeath",chickenDeath);
     }
 
     private void OnDisable() {
@@ -84,5 +89,22 @@ public class AudioManager : Singleton<AudioManager> {
         if(!_wingsFlappingAudioSource.isPlaying)
             _wingsFlappingAudioSource.Play();
         EventManager.StartListening("wingsFlap",wingsFlap);
+    }
+    
+    public void chickenDamage()
+    {
+        EventManager.StopListening("chickenDamage",chickenDamage);
+        _chickenDamageAudioSource.clip = _chickenDamageSound;
+        _chickenDamageAudioSource.Play();
+        EventManager.StartListening("chickenDamage",chickenDamage);
+    }
+    
+    public void chickenDeath()
+    {
+        EventManager.StopListening("chickenDeath",chickenDeath);
+        _chickenDeathAudioSource.clip = _chickenDeathSound;
+        if(!_chickenDeathAudioSource.isPlaying)
+            _chickenDeathAudioSource.Play();
+        EventManager.StartListening("chickenDeath",chickenDeath);
     }
 }

@@ -55,6 +55,8 @@ namespace HellsChicken.Scripts.Game.Player
         private bool _isShootingFlames;
         private bool _isShootingEgg;
         private bool _canShoot;
+        private bool _isDead;
+        private bool _hasVibrated;
         [SerializeField] private float eggCooldown = 2;
 
         private Vector3 _lookDirection;
@@ -82,7 +84,8 @@ namespace HellsChicken.Scripts.Game.Player
             _isShootingEgg = false;
             _isShootingFlames = false;
             _canShoot = true;
-            
+            _isDead = false;
+            _hasVibrated = false;
             _moveDirection = Vector3.zero;
             _gravity = Physics.gravity.y;
             _rightRotation = transform.rotation;
@@ -190,116 +193,130 @@ namespace HellsChicken.Scripts.Game.Player
 
         private void Update()
         {
-            _isShootingFlames = false;
-            _isShootingEgg = false;
-            _lookDirection = _target.GetTarget() - eggThrowPoint.position;
-            
-            //FIRE
-            if (Input.GetButtonDown("Fire1"))
-                ShootFlames();
-
-            //EGG
-            if(!_isWaitingForEggExplosion)
+            if (!_isDead)
             {
-                if (Input.GetButton("Fire2"))
+                _isShootingFlames = false;
+                _isShootingEgg = false;
+                _lookDirection = _target.GetTarget() - eggThrowPoint.position;
+
+                //FIRE
+                if (Input.GetButtonDown("Fire1"))
+                    ShootFlames();
+
+                //EGG
+                if (!_isWaitingForEggExplosion)
                 {
-                    _isAiming = true;
-                    _crosshairImageController.SetCrosshairToAiming();
-                    
-                    if (_lookDirection.x > 0.01f)
+                    if (Input.GetButton("Fire2"))
                     {
-                        _transform.rotation = _rightRotation;
+                        _isAiming = true;
+                        _crosshairImageController.SetCrosshairToAiming();
+
+                        if (_lookDirection.x > 0.01f)
+                        {
+                            _transform.rotation = _rightRotation;
+                        }
+                        else if (_lookDirection.x < -0.01f)
+                        {
+                            _transform.rotation = _leftRotation;
+                        }
                     }
-                    else if (_lookDirection.x < -0.01f)
+
+                    if (Input.GetButtonUp("Fire2"))
                     {
-                        _transform.rotation = _leftRotation;
+                        _isAiming = false;
+                        _crosshairImageController.SetCrosshairToWaiting();
+                        StartCoroutine(EnableEggThrow(eggCooldown));
+                        ThrowEgg();
                     }
                 }
-                if (Input.GetButtonUp("Fire2"))
+
+                //HORIZONTAL MOVEMENT
+                _moveDirection.x = Input.GetAxis("Horizontal") * walkSpeed;
+                //_moveDirection.z = Input.GetAxis("Vertical") * 2; //just for fun, z movement
+                _moveDirection.z = 0f;
+
+                //CHARACTER ROTATION
+                if (_moveDirection.x > 0.01f && !_isAiming)
                 {
-                    _isAiming = false;
-                    _crosshairImageController.SetCrosshairToWaiting();
-                    StartCoroutine(EnableEggThrow(eggCooldown));
-                    ThrowEgg();
+                    _transform.rotation = _rightRotation;
                 }
-            }
-            
-            //HORIZONTAL MOVEMENT
-            _moveDirection.x = Input.GetAxis("Horizontal") * walkSpeed;
-            //_moveDirection.z = Input.GetAxis("Vertical") * 2; //just for fun, z movement
-            _moveDirection.z = 0f;
-            
-            //CHARACTER ROTATION
-            if (_moveDirection.x > 0.01f && !_isAiming)
-            {
-                _transform.rotation = _rightRotation;
-            }
-            else if (_moveDirection.x < -0.01f && !_isAiming)
-            {
-                _transform.rotation = _leftRotation;
-            }
-            
-            //STICK TO THE PAVEMENT
-            _isYMovementCorrected = false;
-            if (IsGrounded() && IsFalling()) //The falling check is made because when the character is on ground, it has a negative velocity
-            {
-                _isYMovementCorrected = true;
-                _moveDirection.y = -_yMovementCorrection;
-                _isGliding = false;
-                
-                if(_isMoving)
-                    EventManager.TriggerEvent("footSteps");
-            }
-
-            //JUMPING
-            if (IsGrounded() && Input.GetButtonDown("Jump"))
-            {
-                _moveDirection.y = Mathf.Sqrt(jumpSpeed * -3.0f * _gravity * gravityScale);
-            }
-
-            //JUMP PROPORTIONAL TO BAR PRESSING
-            if (!IsFalling() && !Input.GetButton("Jump"))
-            {
-                _moveDirection.y += _gravity * gravityScale * (lowJumpMultiplier - 1) * Time.deltaTime;
-            }
-
-            //GRAVITY INCREASE WHEN FALLING
-            if (!IsGrounded() && IsFalling())
-            {
-                _moveDirection.y += _gravity * gravityScale * (fallMultiplier - 1) * Time.deltaTime;
-            }
-
-            //GRAVITY APPLICATION
-            _moveDirection.y += _gravity * gravityScale * Time.deltaTime;
-
-            //GLIDING
-            if (!IsGrounded() && IsFalling())
-            {
-                if (Input.GetButton("Jump")) //TODO apply some variation to the velocity while gliding
+                else if (_moveDirection.x < -0.01f && !_isAiming)
                 {
-                    _isGliding = true;
-                    _moveDirection.y = -glidingSpeed;
-                    EventManager.TriggerEvent("wingsFlap");
+                    _transform.rotation = _leftRotation;
                 }
-                else
+
+                //STICK TO THE PAVEMENT
+                _isYMovementCorrected = false;
+                if (IsGrounded() && IsFalling()
+                ) //The falling check is made because when the character is on ground, it has a negative velocity
+                {
+                    _isYMovementCorrected = true;
+                    _moveDirection.y = -_yMovementCorrection;
                     _isGliding = false;
+
+                    if (_isMoving)
+                        EventManager.TriggerEvent("footSteps");
+                }
+
+                //JUMPING
+                if (IsGrounded() && Input.GetButtonDown("Jump"))
+                {
+                    _moveDirection.y = Mathf.Sqrt(jumpSpeed * -3.0f * _gravity * gravityScale);
+                }
+
+                //JUMP PROPORTIONAL TO BAR PRESSING
+                if (!IsFalling() && !Input.GetButton("Jump"))
+                {
+                    _moveDirection.y += _gravity * gravityScale * (lowJumpMultiplier - 1) * Time.deltaTime;
+                }
+
+                //GRAVITY INCREASE WHEN FALLING
+                if (!IsGrounded() && IsFalling())
+                {
+                    _moveDirection.y += _gravity * gravityScale * (fallMultiplier - 1) * Time.deltaTime;
+                }
+
+                //GRAVITY APPLICATION
+                _moveDirection.y += _gravity * gravityScale * Time.deltaTime;
+
+                //GLIDING
+                if (!IsGrounded() && IsFalling())
+                {
+                    if (Input.GetButton("Jump")) //TODO apply some variation to the velocity while gliding
+                    {
+                        _isGliding = true;
+                        _moveDirection.y = -glidingSpeed;
+                        EventManager.TriggerEvent("wingsFlap");
+                    }
+                    else
+                        _isGliding = false;
+                }
+
+                //MOVEMENT CHECK
+                if (_moveDirection.x != 0)
+                    _isMoving = true;
+                else
+                    _isMoving = false;
+
+                //MOVEMENT APPLICATION
+                _characterController.Move(_moveDirection * Time.deltaTime);
+                
+                //ANIMATION
+                anim.SetBool("isGrounded", IsGrounded());
+                anim.SetBool("isMoving", _isMoving);
+                anim.SetBool("isGliding", _isGliding);
+                anim.SetBool("isShootingFlames", _isShootingFlames);
+                anim.SetBool("isShootingEgg", _isShootingEgg);
             }
 
-            //MOVEMENT CHECK AND SOUND
-            if (_moveDirection.x != 0)
-                _isMoving = true;
-            else
-                _isMoving = false;
-
-            //MOVEMENT APPLICATION
-            _characterController.Move(_moveDirection * Time.deltaTime);
-            
-            //ANIMATION
-            anim.SetBool("isGrounded",IsGrounded());
-            anim.SetBool("isMoving",_isMoving);
-            anim.SetBool("isGliding", _isGliding);
-            anim.SetBool("isShootingFlames", _isShootingFlames);
-            anim.SetBool("isShootingEgg", _isShootingEgg);
+            //DEATH MANAGEMENT
+            else if (_isDead && !_hasVibrated)
+            {
+                gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse(); 
+                EventManager.TriggerEvent("chickenDeath");
+                StartCoroutine(EnableDeath(1.2f));
+                _hasVibrated = true;
+            }
             
         }
 
@@ -346,16 +363,20 @@ namespace HellsChicken.Scripts.Game.Player
         //Damaged by an Enemy or an EnemyShot, staying on the enemy
         private void OnTriggerStay(Collider other)
         {
-            if (!_isImmune)
+            if (!_isDead)
             {
-                if (other.CompareTag("Enemy") || other.CompareTag("EnemyShot"))
+                if (!_isImmune)
                 {
-                    EventManager.TriggerEvent("StartImmunityCoroutine");
-                }
-                if (other.CompareTag("Lava"))
-                {
-                    gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
-                    EventManager.TriggerEvent("KillPlayer");
+                    if (other.CompareTag("Enemy") || other.CompareTag("EnemyShot"))
+                    {
+                        EventManager.TriggerEvent("StartImmunityCoroutine");
+                        EventManager.TriggerEvent("chickenDamage");
+                    }
+
+                    if (other.CompareTag("Lava"))
+                    {
+                        _isDead = true;
+                    }
                 }
             }
         }
@@ -363,16 +384,20 @@ namespace HellsChicken.Scripts.Game.Player
         //Damaged by an Enemy or an EnemyShot, entering in contact with the enemy
         private void OnTriggerEnter(Collider other)
         {
-            if (!_isImmune)
+            if (!_isDead)
             {
-                if (other.CompareTag("Enemy") || other.CompareTag("EnemyShot"))
+                if (!_isImmune)
                 {
-                    EventManager.TriggerEvent("StartImmunityCoroutine");
-                }
-                if (other.CompareTag("Lava"))
-                {
-                    gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
-                    EventManager.TriggerEvent("KillPlayer");
+                    if (other.CompareTag("Enemy") || other.CompareTag("EnemyShot"))
+                    {
+                        EventManager.TriggerEvent("StartImmunityCoroutine");
+                        EventManager.TriggerEvent("chickenDamage");
+                    }
+
+                    if (other.CompareTag("Lava"))
+                    {
+                        _isDead = true;
+                    }
                 }
             }
         }
@@ -433,8 +458,6 @@ namespace HellsChicken.Scripts.Game.Player
             yield return new WaitForSeconds(time);
             _canShoot = true;
             yield return null;
-            //yield --:> Finché viene ritornata una wait, IEnumerator viene richiamato il frame successivo.
-            //Non appena viene ritornato null, si esce da IEnumerator.
         }
 
         private IEnumerator DetachFlames(ParticleSystem temp)
@@ -463,5 +486,11 @@ namespace HellsChicken.Scripts.Game.Player
             EventManager.StartListening("StartImmunityCoroutine", StartImmunityCoroutine);
         }
 
+        private IEnumerator EnableDeath(float time)
+        {
+            yield return new WaitForSeconds(time);
+            EventManager.TriggerEvent("KillPlayer");
+            yield return null;
+        }
     }
 }
