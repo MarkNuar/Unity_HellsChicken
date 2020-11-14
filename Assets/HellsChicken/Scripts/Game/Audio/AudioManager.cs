@@ -11,12 +11,15 @@ public class AudioManager : Singleton<AudioManager> {
     [SerializeField] private AudioSource _centaurShotAudioSource;
     [SerializeField] private AudioSource _flameThrowerAudioSource;
     [SerializeField] private AudioSource _footStepsAudioSource;
-    
+    [SerializeField] private AudioSource _wingsFlappingAudioSource;
+
+
     [SerializeField] private AudioClip _bombSound;
     [SerializeField] private AudioClip _bombTimerSound;
     [SerializeField] private AudioClip _centaurShotSound;
     [SerializeField] private AudioClip _flameThrowerSound;
     [SerializeField] private AudioClip _footStepsSound;
+    [SerializeField] private AudioClip _wingsFlappingSound;
 
     protected override void Awake() {
         EventManager.StartListening("playBomb",playBomb);
@@ -24,6 +27,8 @@ public class AudioManager : Singleton<AudioManager> {
         EventManager.StartListening("centaurShot",centaurShot);
         EventManager.StartListening("flameThrower", flameThrower);
         EventManager.StartListening("footSteps", footSteps);
+        EventManager.StartListening("wingsFlap", wingsFlap);
+
     }
 
     private void OnDisable() {
@@ -70,5 +75,14 @@ public class AudioManager : Singleton<AudioManager> {
         if(!_footStepsAudioSource.isPlaying)
             _footStepsAudioSource.Play();
         EventManager.StartListening("footSteps",footSteps);
+    }
+    
+    public void wingsFlap()
+    {
+        EventManager.StopListening("wingsFlap", wingsFlap);
+        _wingsFlappingAudioSource.clip = _wingsFlappingSound;
+        if(!_wingsFlappingAudioSource.isPlaying)
+            _wingsFlappingAudioSource.Play();
+        EventManager.StartListening("wingsFlap",wingsFlap);
     }
 }

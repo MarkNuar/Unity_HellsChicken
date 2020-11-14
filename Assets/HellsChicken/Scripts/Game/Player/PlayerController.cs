@@ -279,6 +279,7 @@ namespace HellsChicken.Scripts.Game.Player
                 {
                     _isGliding = true;
                     _moveDirection.y = -glidingSpeed;
+                    EventManager.TriggerEvent("wingsFlap");
                 }
                 else
                     _isGliding = false;
