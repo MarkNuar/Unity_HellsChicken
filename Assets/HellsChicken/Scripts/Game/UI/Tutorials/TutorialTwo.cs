@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,11 +9,16 @@ public class TutorialTwo : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.tag);
         if (other.gameObject.CompareTag("Player"))
         {   
             textTutorialOne.gameObject.SetActive(false);
             textTutorialTwo.gameObject.SetActive(true);
         }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }

@@ -20,26 +20,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44fa9eaf-4901-4eb4-b858-67c1b19b2312" name="Default Changelist" comment="Opening Key Door">
-      <change afterPath="$PROJECT_DIR$/Assets/ExternalAssets/TextMesh Pro/Resources/Fonts &amp; Materials/ampersand SDF.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ExternalAssets/TextMesh Pro/Resources/Fonts &amp; Materials/ampersand SDF.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ExternalAssets/TextMesh Pro/Resources/Fonts &amp; Materials/ampersand.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ExternalAssets/TextMesh Pro/Resources/Fonts &amp; Materials/ampersand.ttf.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/UI/TutorialTriggers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/UI/TutorialTriggers/TutorialTriggerFire.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/UI/TutorialTriggers/TutorialTriggerFire.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/UI/TutorialTriggers/TutorialTriggerJump.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/UI/TutorialTriggers/TutorialTriggerJump.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TutorialOne.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TutorialOne.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TutorialTwo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TutorialTwo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shapes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shapes/Circle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shapes/Circle.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shapes/Hexagon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shapes/Hexagon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shapes/HollowCircle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shapes/HollowCircle.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shapes/HollowHexagon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shapes/HollowHexagon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shapes/HollowSquare.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shapes/HollowSquare.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shapes/HollowTriangle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shapes/HollowTriangle.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shapes/Square.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shapes/Square.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shapes/Triangle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shapes/Triangle.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Tutorials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Tutorials/TutorialOne.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Tutorials/TutorialOne.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Tutorials/TutorialThree.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Tutorials/TutorialThree.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/EffectExamples/Fire &amp; Explosion Effects/Materials/SandParticle.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/EffectExamples/Fire &amp; Explosion Effects/Materials/SandParticle.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/EffectExamples/Fire &amp; Explosion Effects/Materials/SmokeDark.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/EffectExamples/Fire &amp; Explosion Effects/Materials/SmokeDark.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Materials/Colored/CheckPointColor/Activated.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Materials/Colored/CheckPointColor/Activated.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Materials/Colored/CheckPointColor/Deactivated.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Materials/Colored/CheckPointColor/Deactivated.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/TextMesh Pro/Resources/Fonts &amp; Materials/ampersand SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/TextMesh Pro/Resources/Fonts &amp; Materials/ampersand SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/Shapes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/Shapes/Circle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/Shapes/Circle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/Shapes/Hexagon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/Shapes/Hexagon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/Shapes/HollowCircle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/Shapes/HollowCircle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/Shapes/HollowHexagon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/Shapes/HollowHexagon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/Shapes/HollowSquare.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/Shapes/HollowSquare.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/Shapes/HollowTriangle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/Shapes/HollowTriangle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/Shapes/Square.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/Shapes/Square.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/Shapes/Triangle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/Shapes/Triangle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/UI/TutorialTriggers.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/UI/TutorialTriggers/TutorialTriggerFire.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/UI/TutorialTriggers/TutorialTriggerFire.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/UI/TutorialTriggers/TutorialTriggerJump.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/UI/TutorialTriggers/TutorialTriggerJump.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/UI/TutorialTriggers/TutorialTriggers.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/UI/TutorialTriggers/TutorialTriggers.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialOne.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialOne.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialTwo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TutorialTwo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialTwo.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TutorialTwo.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +85,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Soul/SoulAI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/TutorialTwo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE47BE73-F7EF-409C-A5E5-CE4B121745B7/d7/a4a66fbb/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/PendulumEngine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/BladeMovement.cs" root0="FORCE_HIGHLIGHTING" />
@@ -99,7 +132,9 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/TutorialOne.cs" />
+        <option value="$PROJECT_DIR$/Assets/TutorialThree.cs" />
         <option value="$PROJECT_DIR$/Assets/TutorialTwo.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Tutorials/TutorialThree.cs" />
       </list>
     </option>
   </component>
@@ -171,7 +206,7 @@
       <workItem from="1604687213579" duration="6371000" />
       <workItem from="1605175972625" duration="7840000" />
       <workItem from="1605259953442" duration="14874000" />
-      <workItem from="1605286811592" duration="17855000" />
+      <workItem from="1605286811592" duration="20396000" />
     </task>
     <task id="LOCAL-00001" summary="Platform and blade movement">
       <created>1604073585635</created>
@@ -281,5 +316,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1605281549431" />
+    <state x="347" y="184" width="672" height="678" key="search.everywhere.popup" timestamp="1605442092852">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="347" y="184" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1605442092852" />
   </component>
 </project>
