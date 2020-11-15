@@ -405,6 +405,8 @@
             </e>
           </e>
         </e>
+        <e p="TutorialOne.cs" t="Include" />
+        <e p="TutorialTwo.cs" t="Include" />
       </e>
       <e p="AstarPathfindingProject.csproj" t="IncludeRecursive" />
       <e p="AstarPathfindingProjectEditor.csproj" t="IncludeRecursive" />
