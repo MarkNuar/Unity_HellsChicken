@@ -50,9 +50,9 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
             
             Collider[] collidersToMove = Physics.OverlapSphere(transform.position, radius);
             List<String> names =  new List<String>();
-            
             foreach (Collider nearbyObject in collidersToMove) {
                 if (!names.Contains(nearbyObject.name) && !nearbyObject.gameObject.CompareTag("Enemy")) {
+                    
                     Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
                     if (rb != null) {
                         rb.AddExplosionForce(force, transform.position, radius);

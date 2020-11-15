@@ -101,7 +101,7 @@ public class CentaurAI : MonoBehaviour {
             CentaurFire ar = fire.GetComponent<CentaurFire>();
             ar.Target = player.position + new Vector3(0, 0.5f, 0);
             ar.CentaurPos = transform.position;
-            ar.findAngle(right);
+            //ar.findAngle(right);
         }
         shootIntervall = (shootIntervall + 1) % attackTime;
         return null;

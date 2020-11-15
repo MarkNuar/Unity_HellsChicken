@@ -7,7 +7,6 @@ public class HeartController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Increasing player health");
             EventManager.TriggerEvent("IncreasePlayerHealth");
             Destroy(gameObject);
         }

@@ -26,14 +26,15 @@ namespace HellsChicken.Scripts.Game.Player
         [SerializeField] private ParticleSystem flameStream;
         [SerializeField] private Transform firePosition;
         [SerializeField] private float flamesCooldown = 2f;
-
+        [SerializeField] private MeshRenderer[] _eyesMeshRenderer;
+        
         private float _gravity;
 
         private Vector3 _moveDirection;
 
         private Transform _transform;
         private CharacterController _characterController;
-        private MeshRenderer _meshRenderer;
+        private SkinnedMeshRenderer _skinnedMeshRenderer;
         public Animator anim;
 
         private Quaternion _leftRotation;
@@ -70,7 +71,7 @@ namespace HellsChicken.Scripts.Game.Player
         {
             _characterController = gameObject.GetComponent<CharacterController>();
             _transform = gameObject.GetComponent<Transform>();
-            _meshRenderer = gameObject.GetComponent<MeshRenderer>();
+            _skinnedMeshRenderer = gameObject.GetComponent<SkinnedMeshRenderer>();
             _crosshairImageController = crosshairCanvas.transform.GetChild(0).GetComponent<CrosshairImageController>();
             
             _target = playerCamera.GetComponent<Target>();
@@ -117,7 +118,6 @@ namespace HellsChicken.Scripts.Game.Player
                 EventManager.TriggerEvent("flameThrower");
                 _canShoot = false;
                 _isShootingFlames = true;
-                Debug.Log("Shoot flames");
                 StartCoroutine(EnableFlames(flamesCooldown));
             }
         }
@@ -415,10 +415,14 @@ namespace HellsChicken.Scripts.Game.Player
             _isImmune = false;
             CancelInvoke();
             //_meshRenderer.enabled = true;
-            var material = _meshRenderer.material;
+            var material = _skinnedMeshRenderer.material;
             var temp = material.color;
             temp.a = 1.0f;
             material.color = temp;
+            foreach (var mesh in _eyesMeshRenderer) {
+                mesh.material.color = temp;
+            }
+            //_eyesMeshRenderer.material.color = temp;
             gameObject.layer = LayerMask.NameToLayer("Player");
             yield return null;
         }
@@ -427,11 +431,14 @@ namespace HellsChicken.Scripts.Game.Player
         {
             //_meshRenderer.enabled = !_meshRenderer.enabled;
             //Use the next lines if you want it to be transparent
-             var material = _meshRenderer.material;
+             var material = _skinnedMeshRenderer.material;
              var temp = material.color;
-             print(material.color.a);
              temp.a = temp.a > 0.5f ? 0.3f : 1.0f;
              material.color = temp;
+             foreach (var mesh in _eyesMeshRenderer) {
+                 mesh.material.color = temp;
+             }
+             //_eyesMeshRenderer.material.color = temp;
         }
 
         private void LastHeart()

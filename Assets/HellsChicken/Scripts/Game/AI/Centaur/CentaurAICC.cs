@@ -15,11 +15,11 @@ public class CentaurAICC : MonoBehaviour
     [SerializeField] private Transform arrowPosition;
     [SerializeField] private GameObject bombPrefab;
     [SerializeField] private GameObject textPrefab;
-    [SerializeField] private GameObject startExplosion;
     [SerializeField] private int attackTime;
 
     [SerializeField] private float gravityScale = 1f;
-    
+    [SerializeField] private LayerMask mask;
+
     private CharacterController _characterController;
     private Vector3 _movement; 
     private DecisionTree tree;
@@ -98,14 +98,12 @@ public class CentaurAICC : MonoBehaviour
 
     public object hit() {
         if (shootIntervall == 0) {
-            Instantiate(startExplosion, arrowPosition.position, Quaternion.identity);
-            EventManager.TriggerEvent("centaurShot");
             GameObject fire = Instantiate(bombPrefab, arrowPosition.position,
-                Quaternion.LookRotation(player.position, transform.position));
+            Quaternion.LookRotation(player.position, transform.position));
             CentaurFire ar = fire.GetComponent<CentaurFire>();
             ar.Target = player.position + new Vector3(0, 0.5f, 0);
             ar.CentaurPos = transform.position;
-            ar.findAngle(right);
+            ar.findAngle(right,arrowPosition.position);
         }
         shootIntervall = (shootIntervall + 1) % attackTime;
         return null;
@@ -116,7 +114,8 @@ public class CentaurAICC : MonoBehaviour
             Vector3 ray = player.position - transform.position;
             //Debug.DrawLine(transform.position,player.position, Color.white, 0.5f);
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, ray, out hit, 30f)) {
+            //if (Physics.Raycast(transform.position, ray, out hit, 30f,mask)) {
+            if(Physics.SphereCast(transform.position,0.5f,ray,out hit,30,mask)){
                 if (hit.transform.CompareTag("Player")) {
                     if (Vector3.Dot(ray, transform.right) <= 0) {
                         transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
@@ -166,18 +165,6 @@ public class CentaurAICC : MonoBehaviour
             }
         }
     }
-
-    // private void OnCollisionEnter(Collision other) {
-    //     if (other.gameObject.CompareTag("Wall")) {
-    //         transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
-    //         EventManager.TriggerEvent("changeBowDirection");
-    //         right = !right;
-    //     }
-    //
-    //     if (other.gameObject.CompareTag("Player")) {
-    //         Physics.IgnoreCollision(other.collider, GetComponent<CapsuleCollider>());
-    //     }
-    // }
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")) {

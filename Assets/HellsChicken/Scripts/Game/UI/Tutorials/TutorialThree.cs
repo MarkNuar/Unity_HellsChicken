@@ -10,10 +10,8 @@ public class TutorialThree : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("dio cane!");
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("dio cane dio!");
             textTutorialTwo.gameObject.SetActive(false);
             textTutorialThree.gameObject.SetActive(true);
         }

@@ -60,7 +60,7 @@ namespace HellsChicken.Scripts.Game.Player.Egg
                             rb.AddExplosionForce(force, transform.position, radius);
                     }
 
-                    if (nearbyObject.gameObject.layer == 12 || nearbyObject.gameObject.layer == 11) {
+                    if (nearbyObject.gameObject.layer == 12 || nearbyObject.gameObject.layer == 13) {
                         Destruction destr = nearbyObject.GetComponent<Destruction>();
                         if (destr == null)
                             destr = nearbyObject.gameObject.transform.parent.GetComponent<Destruction>();

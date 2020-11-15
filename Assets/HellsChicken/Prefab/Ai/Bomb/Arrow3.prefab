@@ -102,6 +102,8 @@ MonoBehaviour:
   initialVelocity: 20
   _bowAnimator: {fileID: 3143820376446826939, guid: 32b9104cb21bde64ba2f50ae4530df58,
     type: 3}
+  startExplosion: {fileID: 1953380545642034081, guid: ddffee03a08a51a4da279eefa3d9bdf4,
+    type: 3}
 --- !u!54 &4917130135697158579
 Rigidbody:
   m_ObjectHideFlags: 0

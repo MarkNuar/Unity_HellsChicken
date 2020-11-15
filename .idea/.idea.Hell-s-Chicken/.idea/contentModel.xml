@@ -362,6 +362,15 @@
               </e>
               <e p="GameManager.cs" t="Include" />
               <e p="Platform" t="Include">
+                <e p="Doors" t="Include">
+                  <e p="ButtonDoor.cs" t="Include" />
+                  <e p="KeyDoor" t="Include">
+                    <e p="Key.cs" t="Include" />
+                    <e p="KeyDoor.cs" t="Include" />
+                    <e p="KeyHolder.cs" t="Include" />
+                    <e p="KeyImage.cs" t="Include" />
+                  </e>
+                </e>
                 <e p="FallenPlatform.cs" t="Include" />
                 <e p="PlatformMoveX.cs" t="Include" />
                 <e p="PlatformMoveY.cs" t="Include" />
@@ -391,6 +400,11 @@
                 <e p="Menu" t="Include">
                   <e p="MainMenu.cs" t="Include" />
                   <e p="PauseMenu.cs" t="Include" />
+                </e>
+                <e p="Tutorials" t="Include">
+                  <e p="TutorialOne.cs" t="Include" />
+                  <e p="TutorialThree.cs" t="Include" />
+                  <e p="TutorialTwo.cs" t="Include" />
                 </e>
               </e>
             </e>

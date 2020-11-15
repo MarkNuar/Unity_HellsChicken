@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1438199386181724104}
   - component: {fileID: 3122595131196491392}
   - component: {fileID: 1220276830}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RockObstacle
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 951f76f281239e54fbd8ead1ec404c22, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 3467972872876284851}
   - component: {fileID: 2677350791607484361}
   - component: {fileID: 8978483512140631001}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}

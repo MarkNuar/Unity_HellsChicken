@@ -40,9 +40,8 @@ public class FallenPlatform : MonoBehaviour {
             newPos.y = _startPosY + Mathf.Sin(Time.fixedTime * _speed) * _amount;
             transform.position = newPos;
         }else if (isColliding){
-            /**/
-            //transform.position = transform.position + Time.fixedDeltaTime * 30f * Vector3.down;
-            _rigidbody.AddForce(new Vector3(0, _gravityModifier * Physics.gravity.y, 0),ForceMode.Acceleration);
+           _rigidbody.AddForce(new Vector3(0, _gravityModifier * Physics.gravity.y, 0),ForceMode.Acceleration);
+           Destroy(gameObject,3f); 
         }
     }
 
@@ -60,12 +59,6 @@ public class FallenPlatform : MonoBehaviour {
             shake = false;   
         }
         yield return null;
-    }
-
-    //Non percepisce le collisioni :(
-    private void OnCollisionEnter(Collision other) {
-        /*if (other.gameObject.CompareTag("Player"))
-            isColliding = true;*/
     }
 
     public void platformCollide(String name) {

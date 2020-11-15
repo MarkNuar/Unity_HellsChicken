@@ -10,11 +10,13 @@ public class CentaurFire : MonoBehaviour {
     [SerializeField] private GameObject contactExplosion;
     [SerializeField] private float initialVelocity = 20f;
     [SerializeField] private Animator _bowAnimator;
+    [SerializeField] private GameObject startExplosion;
     
     private Rigidbody _rigidbody;
     private Vector3 target;
     private Vector3 centaurPos;
     private Vector3 lastPos;
+    private bool collision = true;
     
     public Vector3 Target {
         set => target = value;
@@ -32,8 +34,9 @@ public class CentaurFire : MonoBehaviour {
         transform.rotation = LookAt2D(_rigidbody.velocity);
     }
     
+    //Quando angolo sopra testa, non funziona.
     //Search for the angle for the trajectory.
-    public void findAngle(bool right) {
+    public void findAngle(bool right,Vector3 arrowPosition) {
          float angleCentaurTarget;
          Vector3 rotatedVector;
          
@@ -48,25 +51,34 @@ public class CentaurFire : MonoBehaviour {
          //This is the angle to be applied from the horizontal vector (but i couldn't get it).
          float angle = Mathf.Atan((v2 - squareRoot) / (g * x))*Mathf.Rad2Deg;
 
-         //Different angle if i am going right or left.
-         if (!right) { //Calculate the angle beetween the horizontal vector (here works) and the vector from the centaur to the target.
-            angleCentaurTarget = Mathf.Acos(Vector3.Dot(Vector3.left, (target - centaurPos).normalized)) *
-                      Mathf.Rad2Deg;
-            //Substracted the 2 angle and apply the rotation from the target (not from horizontal).
-            rotatedVector = Quaternion.AngleAxis(angle - angleCentaurTarget, Vector3.back) *
-                            (target - centaurPos); 
-         }else {
-             angleCentaurTarget = Mathf.Acos(Vector3.Dot(Vector3.left, (target - centaurPos).normalized)) *
-                            Mathf.Rad2Deg;
-             angleCentaurTarget = 180 - angleCentaurTarget;
-             rotatedVector = Quaternion.AngleAxis(angle - angleCentaurTarget, Vector3.forward) *
-                                  (target - centaurPos); 
+         if (!float.IsNaN(angle)) {
+
+             //Different angle if i am going right or left.
+             if (!right) {
+                 //Calculate the angle beetween the horizontal vector (here works) and the vector from the centaur to the target.
+                 angleCentaurTarget = Mathf.Acos(Vector3.Dot(Vector3.left, (target - centaurPos).normalized)) *
+                                      Mathf.Rad2Deg;
+                 //Substracted the 2 angle and apply the rotation from the target (not from horizontal).
+                 rotatedVector = Quaternion.AngleAxis(angle - angleCentaurTarget, Vector3.back) *
+                                 (target - centaurPos);
+             }
+             else {
+                 angleCentaurTarget = Mathf.Acos(Vector3.Dot(Vector3.left, (target - centaurPos).normalized)) *
+                                      Mathf.Rad2Deg;
+                 angleCentaurTarget = 180 - angleCentaurTarget;
+                 rotatedVector = Quaternion.AngleAxis(angle - angleCentaurTarget, Vector3.forward) *
+                                 (target - centaurPos);
+             }
+
+             rotatedVector += centaurPos;
+
+             Instantiate(startExplosion, arrowPosition, Quaternion.identity);
+             EventManager.TriggerEvent("centaurShot");
+             //Apply new velocity
+             _rigidbody.velocity = (rotatedVector - centaurPos).normalized * initialVelocity;
          }
-
-         rotatedVector += centaurPos;
-
-         //Apply new velocity
-         _rigidbody.velocity = (rotatedVector - centaurPos).normalized * initialVelocity;
+         else
+             collision = false;
     }
 
     public void OnCollisionEnter(Collision other) {
@@ -76,7 +88,7 @@ public class CentaurFire : MonoBehaviour {
           || other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Lava")) {
             Destroy(gameObject);
         }
-        if(!other.gameObject.CompareTag("Enemy"))
+        if(!other.gameObject.CompareTag("Enemy") && collision)
             Instantiate(contactExplosion, other.contacts[0].point, Quaternion.identity);
     }
     
