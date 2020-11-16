@@ -173,7 +173,6 @@ public class CentaurAICC : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")) {
-            Debug.LogError("centaur is colliding");
             isColliding = true;
         }
         if (other.gameObject.CompareTag("Wall")) {

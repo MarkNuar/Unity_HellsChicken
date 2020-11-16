@@ -25,17 +25,6 @@ public class GoombaAICC : MonoBehaviour
 
     private void Update() {
         _movement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
-        // if (!isColliding)
-        // {
-        //     if (right)
-        //         _movement.x = agentVelocity;
-        //     else
-        //         _movement.x = -agentVelocity;
-        // }
-        // else
-        // {
-        //     _movement.x = 0;
-        // }
         if (right)
                 _movement.x = agentVelocity;
         else
@@ -45,7 +34,6 @@ public class GoombaAICC : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")) {
-            Debug.LogError("goomba is colliding");
             isColliding = true;
         }else if (other.gameObject.CompareTag("Wall") || other.gameObject.CompareTag("Enemy")) {
             right = !right;
