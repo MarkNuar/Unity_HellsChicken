@@ -25,17 +25,21 @@ public class GoombaAICC : MonoBehaviour
 
     private void Update() {
         _movement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
-        if (!isColliding)
-        {
-            if (right)
+        // if (!isColliding)
+        // {
+        //     if (right)
+        //         _movement.x = agentVelocity;
+        //     else
+        //         _movement.x = -agentVelocity;
+        // }
+        // else
+        // {
+        //     _movement.x = 0;
+        // }
+        if (right)
                 _movement.x = agentVelocity;
-            else
-                _movement.x = -agentVelocity;
-        }
         else
-        {
-            _movement.x = 0;
-        }
+                _movement.x = -agentVelocity;
         _characterController.Move(_movement * Time.deltaTime);
     }
 
