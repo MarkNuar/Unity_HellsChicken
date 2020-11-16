@@ -19,6 +19,7 @@ public class GoombaAICC : MonoBehaviour
 
     private void Start()
     {
+        _characterController.detectCollisions = false;
         _movement = Vector3.zero; 
     }
 
@@ -31,11 +32,16 @@ public class GoombaAICC : MonoBehaviour
             else
                 _movement.x = -agentVelocity;
         }
+        else
+        {
+            _movement.x = 0;
+        }
         _characterController.Move(_movement * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")) {
+            Debug.LogError("goomba is colliding");
             isColliding = true;
         }else if (other.gameObject.CompareTag("Wall") || other.gameObject.CompareTag("Enemy")) {
             right = !right;

@@ -35,6 +35,7 @@ public class CentaurAICC : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
+        _characterController.detectCollisions = false;
         _movement = Vector3.zero;
 
         //Decision
@@ -68,6 +69,10 @@ public class CentaurAICC : MonoBehaviour
                     _movement.x = agentVelocity;
                 else
                     _movement.x = -agentVelocity;
+            }
+            else
+            {
+                _movement.x = 0;
             }
         }else
         {
@@ -168,6 +173,7 @@ public class CentaurAICC : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")) {
+            Debug.LogError("centaur is colliding");
             isColliding = true;
         }
         if (other.gameObject.CompareTag("Wall")) {

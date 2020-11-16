@@ -102,6 +102,7 @@ namespace HellsChicken.Scripts.Game.Player
 
         private void Start()
         {
+            _characterController.detectCollisions = false;
             _characterController.enabled = false;
             if (GameManager.Instance)
                 _transform.position = GameManager.Instance.GetCurrentCheckPointPos();
