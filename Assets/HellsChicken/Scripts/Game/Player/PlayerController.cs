@@ -249,8 +249,7 @@ namespace HellsChicken.Scripts.Game.Player
 
                 //STICK TO THE PAVEMENT
                 _isYMovementCorrected = false;
-                if (IsGrounded() && IsFalling()
-                ) //The falling check is made because when the character is on ground, it has a negative velocity
+                if (IsGrounded() && IsFalling()) //The falling check is made because when the character is on ground, it has a negative velocity
                 {
                     _isYMovementCorrected = true;
                     _moveDirection.y = -_yMovementCorrection;
@@ -260,6 +259,9 @@ namespace HellsChicken.Scripts.Game.Player
                         EventManager.TriggerEvent("footSteps");
                 }
 
+                if (!_isMoving || !IsGrounded())
+                    EventManager.TriggerEvent("stopFootSteps");
+                
                 //JUMPING
                 if (IsGrounded() && Input.GetButtonDown("Jump"))
                 {

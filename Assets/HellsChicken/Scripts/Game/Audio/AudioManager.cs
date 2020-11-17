@@ -31,6 +31,7 @@ public class AudioManager : Singleton<AudioManager> {
         EventManager.StartListening("centaurShot",centaurShot);
         EventManager.StartListening("flameThrower", flameThrower);
         EventManager.StartListening("footSteps", footSteps);
+        EventManager.StartListening("stopFootSteps",stopFootSteps);
         EventManager.StartListening("wingsFlap", wingsFlap);
         EventManager.StartListening("chickenDamage",chickenDamage);
         EventManager.StartListening("chickenDeath",chickenDeath);
@@ -82,6 +83,13 @@ public class AudioManager : Singleton<AudioManager> {
         EventManager.StartListening("footSteps",footSteps);
     }
     
+    public void stopFootSteps()
+    {
+        EventManager.StopListening("stopFootSteps",stopFootSteps);
+        _footStepsAudioSource.Stop();
+        EventManager.StartListening("stopFootSteps",stopFootSteps);
+    }
+    
     public void wingsFlap()
     {
         EventManager.StopListening("wingsFlap", wingsFlap);
@@ -107,4 +115,5 @@ public class AudioManager : Singleton<AudioManager> {
             _chickenDeathAudioSource.Play();
         EventManager.StartListening("chickenDeath",chickenDeath);
     }
+    
 }

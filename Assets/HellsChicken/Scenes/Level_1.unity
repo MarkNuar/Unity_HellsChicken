@@ -631,7 +631,7 @@ MonoBehaviour:
   _bombTimerSound: {fileID: 8300000, guid: 121d4baec8e60184d82963eac1a5c1c1, type: 3}
   _centaurShotSound: {fileID: 8300000, guid: ca679721d8a1b6243acc9a7ce566789b, type: 3}
   _flameThrowerSound: {fileID: 8300000, guid: a4de4b4232e66c149a7538dc4688789f, type: 3}
-  _footStepsSound: {fileID: 8300000, guid: 7f35bce1173c0b24bb4509246fce7484, type: 3}
+  _footStepsSound: {fileID: 8300000, guid: c6daf91db4ec2d0499c4166b3e016306, type: 3}
   _wingsFlappingSound: {fileID: 8300000, guid: 0180764aefbbc4c47a3b0b76f4b91af8, type: 3}
   _chickenDamageSound: {fileID: 8300000, guid: 97a766d834f1fbe4ea1b353821f4b588, type: 3}
   _chickenDeathSound: {fileID: 8300000, guid: a538169cf1fca9e468a7fb18938d46ce, type: 3}
@@ -6453,12 +6453,12 @@ PrefabInstance:
     - target: {fileID: 662464223060016629, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.733197
+      value: -14.916297
       objectReference: {fileID: 0}
     - target: {fileID: 671435095063938156, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.733197
+      value: -14.916297
       objectReference: {fileID: 0}
     - target: {fileID: 771729081860725613, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
