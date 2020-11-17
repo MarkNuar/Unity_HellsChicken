@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject PauseMenuUI;
+    public GameObject CommandsMenuUI;
 
     public GameObject EggCrosshairCanvas;
     // Update is called once per frame
@@ -29,6 +30,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         PauseMenuUI.SetActive(false);
+        CommandsMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
         EggCrosshairCanvas.SetActive(true);

@@ -2977,6 +2977,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 781616606}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1268509717 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7825149178345940463, guid: 3b2e08a2edd553945ad17d8016d01055,
+    type: 3}
+  m_PrefabInstance: {fileID: 1994400282154779102}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1283726761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4574,7 +4580,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenuUI: {fileID: 657384288}
-  EggCrosshairCanvas: {fileID: 0}
+  CommandsMenuUI: {fileID: 904034005}
+  EggCrosshairCanvas: {fileID: 1268509717}
 --- !u!1 &1740166394
 GameObject:
   m_ObjectHideFlags: 0
