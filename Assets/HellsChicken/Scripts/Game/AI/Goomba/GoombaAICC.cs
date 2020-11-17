@@ -19,7 +19,7 @@ public class GoombaAICC : MonoBehaviour
 
     private void Start()
     {
-        _characterController.detectCollisions = false;
+        //_characterController.detectCollisions = false;
         _movement = Vector3.zero; 
     }
 

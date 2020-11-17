@@ -35,7 +35,7 @@ public class CentaurAICC : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
-        _characterController.detectCollisions = false;
+        //_characterController.detectCollisions = false;
         _movement = Vector3.zero;
 
         //Decision

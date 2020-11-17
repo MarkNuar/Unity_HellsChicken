@@ -102,7 +102,7 @@ namespace HellsChicken.Scripts.Game.Player
 
         private void Start()
         {
-            _characterController.detectCollisions = false;
+            //_characterController.detectCollisions = false;
             _characterController.enabled = false;
             if (GameManager.Instance)
                 _transform.position = GameManager.Instance.GetCurrentCheckPointPos();
@@ -171,6 +171,7 @@ namespace HellsChicken.Scripts.Game.Player
             // var playerVelocityCorrected = new Vector3(_moveDirection.x, _moveDirection.y, 0f);
             // if (_isYMovementCorrected)
             //     playerVelocityCorrected.y += _yMovementCorrection;
+            // egg.GetComponent<Rigidbody>().velocity = baseEggVelocity + playerVelocityCorrected;
             // if (!IsGrounded())
             // {
             //     egg.GetComponent<Rigidbody>().velocity = baseEggVelocity;
