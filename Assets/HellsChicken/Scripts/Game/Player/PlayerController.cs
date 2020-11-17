@@ -27,7 +27,7 @@ namespace HellsChicken.Scripts.Game.Player
         [SerializeField] private Transform firePosition;
         [SerializeField] private float flamesCooldown = 2f;
         [SerializeField] private MeshRenderer[] _eyesMeshRenderer;
-        
+        [SerializeField] private PauseMenu _pauseMenu;
         private float _gravity;
 
         private Vector3 _moveDirection;
@@ -73,7 +73,6 @@ namespace HellsChicken.Scripts.Game.Player
             _transform = gameObject.GetComponent<Transform>();
             _skinnedMeshRenderer = gameObject.GetComponent<SkinnedMeshRenderer>();
             _crosshairImageController = crosshairCanvas.transform.GetChild(0).GetComponent<CrosshairImageController>();
-            
             _target = playerCamera.GetComponent<Target>();
             _isImmune = false;
             _isLastHeart = false;
@@ -195,7 +194,7 @@ namespace HellsChicken.Scripts.Game.Player
 
         private void Update()
         {
-            if (!_isDead)
+            if (!_isDead && !_pauseMenu.getGameIsPaused())
             {
                 _isShootingFlames = false;
                 _isShootingEgg = false;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool GameIsPaused = false;
+    private static bool GameIsPaused = false;
 
     public GameObject PauseMenuUI;
     public GameObject CommandsMenuUI;
@@ -49,5 +49,9 @@ public class PauseMenu : MonoBehaviour
     {
         Application.Quit();
     }
-    
+
+    public bool getGameIsPaused()
+    {
+        return GameIsPaused;
+    }
 }
