@@ -66,7 +66,9 @@ namespace HellsChicken.Scripts.Game.Player
         private bool _isImmune;
         private bool _isLastHeart;
 
-
+        //dissolveScript
+        private DissolveController _dissolve;
+        
         private void Awake()
         {
             _characterController = gameObject.GetComponent<CharacterController>();
@@ -90,6 +92,7 @@ namespace HellsChicken.Scripts.Game.Player
             _gravity = Physics.gravity.y;
             _rightRotation = transform.rotation;
             _leftRotation = _rightRotation * Quaternion.Euler(0, 180, 0);
+            _dissolve = GetComponent<DissolveController>();
         }
 
         private void OnEnable()
@@ -317,7 +320,8 @@ namespace HellsChicken.Scripts.Game.Player
             {
                 gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse(); 
                 EventManager.TriggerEvent("chickenDeath");
-                StartCoroutine(EnableDeath(1.2f));
+                //StartCoroutine(EnableDeath(1.2f));
+                EventManager.TriggerEvent("KillPlayer");
                 _hasVibrated = true;
             }
             
@@ -458,7 +462,10 @@ namespace HellsChicken.Scripts.Game.Player
             //     _transform.position = GameManager.Instance.GetCurrentCheckPointPos();
             // _characterController.enabled = true;
             //If player dies, reload the entire scene.
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            _dissolve.Dead = true;
+            gameObject.layer = LayerMask.NameToLayer("ImmunePlayer");
+            this.enabled = false;
         }
 
         private IEnumerator EnableFlames(float time)
