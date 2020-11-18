@@ -83,12 +83,18 @@ public class CentaurFire : MonoBehaviour {
         if (other.gameObject.CompareTag("Enemy")) {
             Physics.IgnoreCollision(other.collider, GetComponent<BoxCollider>());
         }else {
-            print(other.gameObject.tag);
             Instantiate(contactExplosion, other.contacts[0].point, Quaternion.identity);
             Destroy(gameObject);
         }
     }
-    
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.CompareTag("Player")) {
+            Instantiate(contactExplosion, other.transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+    }
+
     static Quaternion LookAt2D(Vector2 forward) {
         return Quaternion.Euler(0, 0, Mathf.Atan2(forward.y, forward.x) * Mathf.Rad2Deg);
     }

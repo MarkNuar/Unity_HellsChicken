@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using HellsChicken.Scripts.Game.Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class DissolveController : MonoBehaviour {
 
-    [SerializeField] private float fadeStartTime = 0.01f;
-    [SerializeField] private float fadeEndTime = 0.01f;
-    [SerializeField] private Renderer[] othersMaterials;
+     [SerializeField] private Renderer[] othersMaterials;
     
     private Material _material;
     private float i = 1;
     private bool dead = false;
+
 
     public bool Dead {
         get => dead;
@@ -29,10 +29,10 @@ public class DissolveController : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update(){
+    void FixedUpdate(){
         if (dead) {
             if (i < 1) {
-                i += fadeEndTime;
+                i += 0.006f;
                 _material.SetFloat("dissolveTime", i);
                 foreach (Renderer renderer in othersMaterials) {
                     renderer.material.SetFloat("dissolveTime", i);
@@ -43,10 +43,16 @@ public class DissolveController : MonoBehaviour {
             }
         }else {
             if (i > 0) {
-                i -= fadeStartTime;
+                i -= 0.008f;
                 _material.SetFloat("dissolveTime", i);
+                
                 foreach (Renderer renderer in othersMaterials) {
                     renderer.material.SetFloat("dissolveTime", i);
+                }
+
+                if (i <= 0) {
+                    //GetComponent<PlayerController>().enabled = true;
+                    gameObject.layer = LayerMask.NameToLayer("Player");
                 }
             }
         }

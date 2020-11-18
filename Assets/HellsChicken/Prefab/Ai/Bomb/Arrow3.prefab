@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 87003244538258846}
   - component: {fileID: 4917130135697158579}
   - component: {fileID: 2729023266917846678}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Arrow3
   m_TagString: EnemyShot
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 391ec6f1311384e75b4888fd6fc26b7e, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 391ec6f1311384e75b4888fd6fc26b7e, type: 3}
       propertyPath: m_Name
@@ -150,15 +150,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 391ec6f1311384e75b4888fd6fc26b7e, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 391ec6f1311384e75b4888fd6fc26b7e, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 391ec6f1311384e75b4888fd6fc26b7e, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 391ec6f1311384e75b4888fd6fc26b7e, type: 3}
       propertyPath: m_LocalPosition.x

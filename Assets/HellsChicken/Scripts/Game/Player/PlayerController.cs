@@ -409,9 +409,13 @@ namespace HellsChicken.Scripts.Game.Player
             }
         }
 
-        private IEnumerator ImmunityTimer(float time)
-        {
+        private IEnumerator ImmunityTimer(float time) {
             _isImmune = true;
+            var material = _skinnedMeshRenderer.material;
+            material.SetInt("alphaAnimation",1);
+            foreach (var mesh in _eyesMeshRenderer) {
+                mesh. material.SetInt("alphaAnimation",1);
+            }
             gameObject.layer = LayerMask.NameToLayer("ImmunePlayer");
             InvokeRepeating(nameof(FlashMesh), 0f, 0.2f);
             //Debug.Log("Transparent");
@@ -420,14 +424,16 @@ namespace HellsChicken.Scripts.Game.Player
             _isImmune = false;
             CancelInvoke();
             //_meshRenderer.enabled = true;
-            var material = _skinnedMeshRenderer.material;
-            var temp = material.color;
-            temp.a = 1.0f;
-            material.color = temp;
+            material.SetFloat("alphaValue",1.0f);
             foreach (var mesh in _eyesMeshRenderer) {
-                mesh.material.color = temp;
+                mesh.material.SetFloat("alphaValue", 1.0f);
             }
-            //_eyesMeshRenderer.material.color = temp;
+            
+            material.SetInt("alphaAnimation",0);
+            foreach (var mesh in _eyesMeshRenderer) {
+                mesh. material.SetInt("alphaAnimation",0);
+            }
+            
             gameObject.layer = LayerMask.NameToLayer("Player");
             yield return null;
         }
@@ -437,11 +443,9 @@ namespace HellsChicken.Scripts.Game.Player
             //_meshRenderer.enabled = !_meshRenderer.enabled;
             //Use the next lines if you want it to be transparent
              var material = _skinnedMeshRenderer.material;
-             var temp = material.color;
-             temp.a = temp.a > 0.5f ? 0.3f : 1.0f;
-             material.color = temp;
+             material.SetFloat("alphaValue", material.GetFloat("alphaValue") == 1.0f ? -0.1f : 1.0f);
              foreach (var mesh in _eyesMeshRenderer) {
-                 mesh.material.color = temp;
+                 mesh.material.SetFloat("alphaValue", mesh.material.GetFloat("alphaValue") == 1.0f ? -0.1f : 1.0f);
              }
              //_eyesMeshRenderer.material.color = temp;
         }
