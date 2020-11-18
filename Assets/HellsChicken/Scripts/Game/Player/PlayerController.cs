@@ -51,6 +51,7 @@ namespace HellsChicken.Scripts.Game.Player
         private Target _target;
         //TODO
         private bool _isSliding;
+        private float _slopeAngle = 0f;
         private bool _isAiming;
         private bool _isWaitingForEggExplosion;
         private bool _isMoving;
@@ -208,122 +209,132 @@ namespace HellsChicken.Scripts.Game.Player
         {
             if (!_isDead && !_pauseMenu.getGameIsPaused())
             {
-                _isShootingFlames = false;
-                _isShootingEgg = false;
-                _lookDirection = _target.GetTarget() - eggThrowPoint.position;
-
-                //FIRE
-                if (Input.GetButtonDown("Fire1"))
-                    ShootFlames();
-
-                //EGG
-                if (!_isWaitingForEggExplosion)
+                if (!_isSliding)
                 {
-                    if (Input.GetButton("Fire2"))
-                    {
-                        _isAiming = true;
-                        _crosshairImageController.SetCrosshairToAiming();
+                    _isShootingFlames = false;
+                    _isShootingEgg = false;
+                    _lookDirection = _target.GetTarget() - eggThrowPoint.position;
 
-                        if (_lookDirection.x > 0.01f)
+                    //FIRE
+                    if (Input.GetButtonDown("Fire1"))
+                        ShootFlames();
+
+                    //EGG
+                    if (!_isWaitingForEggExplosion)
+                    {
+                        if (Input.GetButton("Fire2"))
                         {
-                            _transform.rotation = _rightRotation;
+                            _isAiming = true;
+                            _crosshairImageController.SetCrosshairToAiming();
+
+                            if (_lookDirection.x > 0.01f)
+                            {
+                                _transform.rotation = _rightRotation;
+                            }
+                            else if (_lookDirection.x < -0.01f)
+                            {
+                                _transform.rotation = _leftRotation;
+                            }
                         }
-                        else if (_lookDirection.x < -0.01f)
+
+                        if (Input.GetButtonUp("Fire2"))
                         {
-                            _transform.rotation = _leftRotation;
+                            _isAiming = false;
+                            _crosshairImageController.SetCrosshairToWaiting();
+                            StartCoroutine(EnableEggThrow(eggCooldown));
+                            ThrowEgg();
                         }
                     }
 
-                    if (Input.GetButtonUp("Fire2"))
+                    //HORIZONTAL MOVEMENT
+                    _moveDirection.x = Input.GetAxis("Horizontal") * walkSpeed;
+                    //_moveDirection.z = Input.GetAxis("Vertical") * 2; //just for fun, z movement
+                    _moveDirection.z = 0f;
+
+                    //CHARACTER ROTATION
+                    if (_moveDirection.x > 0.01f && !_isAiming)
                     {
-                        _isAiming = false;
-                        _crosshairImageController.SetCrosshairToWaiting();
-                        StartCoroutine(EnableEggThrow(eggCooldown));
-                        ThrowEgg();
+                        _transform.rotation = _rightRotation;
                     }
-                }
-
-                //HORIZONTAL MOVEMENT
-                _moveDirection.x = Input.GetAxis("Horizontal") * walkSpeed;
-                //_moveDirection.z = Input.GetAxis("Vertical") * 2; //just for fun, z movement
-                _moveDirection.z = 0f;
-
-                //CHARACTER ROTATION
-                if (_moveDirection.x > 0.01f && !_isAiming)
-                {
-                    _transform.rotation = _rightRotation;
-                }
-                else if (_moveDirection.x < -0.01f && !_isAiming)
-                {
-                    _transform.rotation = _leftRotation;
-                }
-                
-                //STICK TO THE PAVEMENT
-                _isYMovementCorrected = false;
-                if (IsGrounded() && IsFalling()) //The falling check is made because when the character is on ground, it has a negative velocity
-                {
-                    _isYMovementCorrected = true;
-                    _moveDirection.y = -_yMovementCorrection;
-                    _isGliding = false;
-
-                    if (_isMoving)
-                        EventManager.TriggerEvent("footSteps");
-                }
-
-                if (!_isMoving || !IsGrounded())
-                    EventManager.TriggerEvent("stopFootSteps");
-                
-                //JUMPING
-                if (IsGrounded() && Input.GetButtonDown("Jump"))
-                {
-                    _moveDirection.y = Mathf.Sqrt(jumpSpeed * -3.0f * _gravity * gravityScale);
-                }
-
-                //JUMP PROPORTIONAL TO BAR PRESSING
-                if (!IsFalling() && !Input.GetButton("Jump"))
-                {
-                    _moveDirection.y += _gravity * gravityScale * (lowJumpMultiplier - 1) * Time.deltaTime;
-                }
-
-                //GRAVITY INCREASE WHEN FALLING
-                if (!IsGrounded() && IsFalling())
-                {
-                    _moveDirection.y += _gravity * gravityScale * (fallMultiplier - 1) * Time.deltaTime;
-                }
-
-                //GRAVITY APPLICATION
-                _moveDirection.y += _gravity * gravityScale * Time.deltaTime;
-
-                //GLIDING
-                if (!IsGrounded() && IsFalling())
-                {
-                    if (Input.GetButton("Jump")) //TODO apply some variation to the velocity while gliding
+                    else if (_moveDirection.x < -0.01f && !_isAiming)
                     {
-                        _isGliding = true;
-                        _moveDirection.y = -glidingSpeed;
-                        EventManager.TriggerEvent("wingsFlap");
+                        _transform.rotation = _leftRotation;
                     }
-                    else
+
+                    //STICK TO THE PAVEMENT
+                    _isYMovementCorrected = false;
+                    if (IsGrounded() && IsFalling()
+                    ) //The falling check is made because when the character is on ground, it has a negative velocity
+                    {
+                        _isYMovementCorrected = true;
+                        _moveDirection.y = -_yMovementCorrection;
                         _isGliding = false;
+
+                        if (_isMoving)
+                            EventManager.TriggerEvent("footSteps");
+                    }
+
+                    if (!_isMoving || !IsGrounded())
+                        EventManager.TriggerEvent("stopFootSteps");
+
+                    //JUMPING
+                    if (IsGrounded() && Input.GetButtonDown("Jump"))
+                    {
+                        _moveDirection.y = Mathf.Sqrt(jumpSpeed * -3.0f * _gravity * gravityScale);
+                    }
+
+                    //JUMP PROPORTIONAL TO BAR PRESSING
+                    if (!IsFalling() && !Input.GetButton("Jump"))
+                    {
+                        _moveDirection.y += _gravity * gravityScale * (lowJumpMultiplier - 1) * Time.deltaTime;
+                    }
+
+                    //GRAVITY INCREASE WHEN FALLING
+                    if (!IsGrounded() && IsFalling())
+                    {
+                        _moveDirection.y += _gravity * gravityScale * (fallMultiplier - 1) * Time.deltaTime;
+                    }
+
+                    //GRAVITY APPLICATION
+                    _moveDirection.y += _gravity * gravityScale * Time.deltaTime;
+
+                    //GLIDING
+                    if (!IsGrounded() && IsFalling())
+                    {
+                        if (Input.GetButton("Jump")) //TODO apply some variation to the velocity while gliding
+                        {
+                            _isGliding = true;
+                            _moveDirection.y = -glidingSpeed;
+                            EventManager.TriggerEvent("wingsFlap");
+                        }
+                        else
+                            _isGliding = false;
+                    }
+
+                    //MOVEMENT CHECK
+                    if (_moveDirection.x != 0)
+                        _isMoving = true;
+                    else
+                        _isMoving = false;
+
+                    //MOVEMENT APPLICATION
+                    _characterController.Move(_moveDirection * Time.deltaTime);
+
+                    //ANIMATION
+                    anim.SetBool("isGrounded", IsGrounded());
+                    anim.SetBool("isMoving", _isMoving);
+                    anim.SetBool("isGliding", _isGliding);
+                    anim.SetBool("isShootingFlames", _isShootingFlames);
+                    anim.SetBool("isShootingEgg", _isShootingEgg);
                 }
-
-                //MOVEMENT CHECK
-                if (_moveDirection.x != 0)
-                    _isMoving = true;
                 else
-                    _isMoving = false;
-
-                //MOVEMENT APPLICATION
-                _characterController.Move(_moveDirection * Time.deltaTime);
-                
-                //ANIMATION
-                anim.SetBool("isGrounded", IsGrounded());
-                anim.SetBool("isMoving", _isMoving);
-                anim.SetBool("isGliding", _isGliding);
-                anim.SetBool("isShootingFlames", _isShootingFlames);
-                anim.SetBool("isShootingEgg", _isShootingEgg);
+                {
+                    //is sliding
+                    // move along slope
+                    var moveDirection = new Vector3(-10*Mathf.Cos(_slopeAngle),-10*Mathf.Sin(_slopeAngle));
+                    _characterController.Move(moveDirection);
+                }
             }
-
             //DEATH MANAGEMENT
             else if (_isDead && !_hasVibrated)
             {
@@ -380,8 +391,8 @@ namespace HellsChicken.Scripts.Game.Player
                 // touching with our feet
                 var normal = hit.normal;
                 // angle represents the angle of the slope the player is on
-                var angle = Mathf.Abs(Mathf.Atan2(normal.y, normal.x) * Mathf.Rad2Deg - 90f);
-                if (angle > _characterController.slopeLimit)
+                _slopeAngle = Mathf.Abs(Mathf.Atan2(normal.y, normal.x) * Mathf.Rad2Deg - 90f);
+                if (_slopeAngle > _characterController.slopeLimit)
                 {
                     //Debug.Log("over the slope limit!");
                     // WE SHOULD SLIDE
