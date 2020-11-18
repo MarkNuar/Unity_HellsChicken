@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using EventManagerNamespace;
 using UnityEngine;
 
-public class AudioManager : Singleton<AudioManager> {
+public class ChickenAudioManager : Singleton<ChickenAudioManager> {
 
-    [SerializeField] private AudioSource _bombAudioSource;
-    [SerializeField] private AudioSource _bombTimerAudioSource;
+    
     [SerializeField] private AudioSource _centaurShotAudioSource;
     [SerializeField] private AudioSource _flameThrowerAudioSource;
     [SerializeField] private AudioSource _footStepsAudioSource;
@@ -15,9 +14,7 @@ public class AudioManager : Singleton<AudioManager> {
     [SerializeField] private AudioSource _chickenDamageAudioSource;
     [SerializeField] private AudioSource _chickenDeathAudioSource;
 
-
-    [SerializeField] private AudioClip _bombSound;
-    [SerializeField] private AudioClip _bombTimerSound;
+    
     [SerializeField] private AudioClip _centaurShotSound;
     [SerializeField] private AudioClip _flameThrowerSound;
     [SerializeField] private AudioClip _footStepsSound;
@@ -26,8 +23,6 @@ public class AudioManager : Singleton<AudioManager> {
     [SerializeField] private AudioClip _chickenDeathSound;
 
     protected override void Awake() {
-        EventManager.StartListening("playBomb",playBomb);
-        EventManager.StartListening("playTimerBomb",playTimerBomb);
         EventManager.StartListening("centaurShot",centaurShot);
         EventManager.StartListening("flameThrower", flameThrower);
         EventManager.StartListening("footSteps", footSteps);
@@ -38,25 +33,9 @@ public class AudioManager : Singleton<AudioManager> {
     }
 
     private void OnDisable() {
-        EventManager.StopListening("playBomb",playBomb);
-        EventManager.StopListening("playTimerBomb",playTimerBomb);
         EventManager.StopListening("centaurShot",centaurShot);
     }
-
-    public void playBomb(){
-        EventManager.StartListening("playBomb",playTimerBomb);
-        _bombAudioSource.clip = _bombSound;
-        _bombAudioSource.Play();
-        EventManager.StopListening("playBomb",playTimerBomb);
-    }
     
-    public void playTimerBomb(){
-        EventManager.StopListening("playTimerBomb",playTimerBomb);
-        _bombTimerAudioSource.clip = _bombTimerSound;
-        _bombTimerAudioSource.time = 1f;
-        _bombTimerAudioSource.Play();
-        EventManager.StartListening("playTimerBomb",playTimerBomb);
-    }
     
     public void centaurShot() {
         EventManager.StopListening("centaurShot",centaurShot);
@@ -78,7 +57,7 @@ public class AudioManager : Singleton<AudioManager> {
     {
         EventManager.StopListening("footSteps", footSteps);
         _footStepsAudioSource.clip = _footStepsSound;
-        if(!_footStepsAudioSource.isPlaying)
+        if (!_footStepsAudioSource.isPlaying)
             _footStepsAudioSource.Play();
         EventManager.StartListening("footSteps",footSteps);
     }

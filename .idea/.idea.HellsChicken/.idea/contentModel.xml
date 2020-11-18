@@ -346,7 +346,8 @@
                 </e>
               </e>
               <e p="Audio" t="Include">
-                <e p="AudioManager.cs" t="Include" />
+                <e p="ChickenAudioManager.cs" t="Include" />
+                <e p="EggAudioManager.cs" t="Include" />
               </e>
               <e p="CheckPoint" t="Include">
                 <e p="CheckPointManager.cs" t="Include" />

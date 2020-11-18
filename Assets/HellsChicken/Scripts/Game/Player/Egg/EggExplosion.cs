@@ -47,7 +47,7 @@ namespace HellsChicken.Scripts.Game.Player.Egg
             GameObject particle = Instantiate(explosionEffect, transform.position, transform.rotation);
             Destroy(particle, 1f);
             List<String> names =  new List<String>();
-            
+            EventManager.TriggerEvent("playBomb");
             Collider[] collidersToMove = Physics.OverlapSphere(transform.position, radius);
             foreach (Collider nearbyObject in collidersToMove) {
                 if (!names.Contains(nearbyObject.name)) {
