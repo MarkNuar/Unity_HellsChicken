@@ -49,6 +49,8 @@ namespace HellsChicken.Scripts.Game.Player
         private CrosshairImageController _crosshairImageController;
         [SerializeField] private GameObject playerCamera;
         private Target _target;
+        //TODO
+        private bool _isSliding;
         private bool _isAiming;
         private bool _isWaitingForEggExplosion;
         private bool _isMoving;
@@ -74,6 +76,8 @@ namespace HellsChicken.Scripts.Game.Player
             _skinnedMeshRenderer = gameObject.GetComponent<SkinnedMeshRenderer>();
             _crosshairImageController = crosshairCanvas.transform.GetChild(0).GetComponent<CrosshairImageController>();
             _target = playerCamera.GetComponent<Target>();
+            //TODO 
+            _isSliding = false;
             _isImmune = false;
             _isLastHeart = false;
             _isYMovementCorrected = false;
@@ -192,6 +196,14 @@ namespace HellsChicken.Scripts.Game.Player
             yield return null;
         }
 
+        private Vector3 GetVelocityCorrected()
+        {
+            var playerVelocityCorrected = new Vector3(_moveDirection.x, _moveDirection.y, 0f);
+            if (_isYMovementCorrected)
+                 playerVelocityCorrected.y += _yMovementCorrection;
+            return playerVelocityCorrected;
+        }
+
         private void Update()
         {
             if (!_isDead && !_pauseMenu.getGameIsPaused())
@@ -245,7 +257,7 @@ namespace HellsChicken.Scripts.Game.Player
                 {
                     _transform.rotation = _leftRotation;
                 }
-
+                
                 //STICK TO THE PAVEMENT
                 _isYMovementCorrected = false;
                 if (IsGrounded() && IsFalling()) //The falling check is made because when the character is on ground, it has a negative velocity
@@ -350,17 +362,33 @@ namespace HellsChicken.Scripts.Game.Player
         }
 
         private void OnControllerColliderHit(ControllerColliderHit hit){
-
             if (hit.gameObject.CompareTag("MovingPlatform")) {
                 EventManager.TriggerEvent("platformCollide",hit.gameObject.name);
             }
-            
+
+            _isSliding = false;
             //Stop going up when the character controller collides with something over it
-            if (_characterController.collisionFlags != CollisionFlags.Above) return;
-            if (Vector3.Dot(hit.normal, _moveDirection) < 0)
+            if (_characterController.collisionFlags == CollisionFlags.Above)
             {
-                _moveDirection -= hit.normal * Vector3.Dot(hit.normal, _moveDirection);
+                if (Vector3.Dot(hit.normal, _moveDirection) < 0)
+                {
+                    _moveDirection -= hit.normal * Vector3.Dot(hit.normal, _moveDirection);
+                }
             }
+            else if (_characterController.collisionFlags == CollisionFlags.Below)
+            {
+                // touching with our feet
+                var normal = hit.normal;
+                // angle represents the angle of the slope the player is on
+                var angle = Mathf.Abs(Mathf.Atan2(normal.y, normal.x) * Mathf.Rad2Deg - 90f);
+                if (angle > _characterController.slopeLimit)
+                {
+                    //Debug.Log("over the slope limit!");
+                    // WE SHOULD SLIDE
+                    _isSliding = true;
+                }
+            }
+            
         }
 
         //Damaged by an Enemy or an EnemyShot, staying on the enemy
