@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Diagnostics;
 using Cinemachine;
 using EventManagerNamespace;
 using HellsChicken.Scripts.Game.Player.Egg;
 using HellsChicken.Scripts.Game.UI.Crosshair;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Debug = UnityEngine.Debug;
 
 namespace HellsChicken.Scripts.Game.Player
 {
@@ -23,8 +26,8 @@ namespace HellsChicken.Scripts.Game.Player
         [SerializeField] private ParticleSystem flameStream;
         [SerializeField] private Transform firePosition;
         [SerializeField] private float flamesCooldown = 2f;
-        [SerializeField] private MeshRenderer[] eyesMeshRenderer;
-        [SerializeField] private PauseMenu pauseMenu;
+        [SerializeField] private MeshRenderer[] _eyesMeshRenderer;
+        [SerializeField] private PauseMenu _pauseMenu;
         private float _gravity;
 
         private Vector3 _moveDirection;
@@ -139,7 +142,7 @@ namespace HellsChicken.Scripts.Game.Player
                 {
                     float y = _target.GetTarget().y - sourcePosition.y;
                     float x2 = x * x;
-                    float squareRoot = Mathf.Sqrt(v4 - g * (g * x2 + 2 * y * v2));
+                    float squareRoot = (float) Mathf.Sqrt(v4 - g * (g * x2 + 2 * y * v2));
                     angle = Mathf.Atan((v2 - squareRoot) / (g * x));
                     
                     if (_lookDirection.x < 0f)
@@ -191,7 +194,7 @@ namespace HellsChicken.Scripts.Game.Player
 
         private void Update()
         {
-            if (!_isDead && !pauseMenu.getGameIsPaused())
+            if (!_isDead && !_pauseMenu.getGameIsPaused())
             {
                 _isShootingFlames = false;
                 _isShootingEgg = false;
@@ -417,7 +420,7 @@ namespace HellsChicken.Scripts.Game.Player
             var temp = material.color;
             temp.a = 1.0f;
             material.color = temp;
-            foreach (var mesh in eyesMeshRenderer) {
+            foreach (var mesh in _eyesMeshRenderer) {
                 mesh.material.color = temp;
             }
             //_eyesMeshRenderer.material.color = temp;
@@ -433,7 +436,7 @@ namespace HellsChicken.Scripts.Game.Player
              var temp = material.color;
              temp.a = temp.a > 0.5f ? 0.3f : 1.0f;
              material.color = temp;
-             foreach (var mesh in eyesMeshRenderer) {
+             foreach (var mesh in _eyesMeshRenderer) {
                  mesh.material.color = temp;
              }
              //_eyesMeshRenderer.material.color = temp;
@@ -467,10 +470,9 @@ namespace HellsChicken.Scripts.Game.Player
 
         private IEnumerator DetachFlames(ParticleSystem temp)
         {
-            var main = temp.main;
-            yield return new WaitForSecondsRealtime(main.duration);
+            yield return new WaitForSecondsRealtime(temp.main.duration);
             temp.transform.parent = null;
-            var mainModule = main;
+            var mainModule = temp.main;
             mainModule.simulationSpeed = 3f;
             yield return null;
         }
