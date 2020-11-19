@@ -19,15 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44fa9eaf-4901-4eb4-b858-67c1b19b2312" name="Default Changelist" comment="Rock spawner">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/PendulumEngine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/PendulumEngine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/KeyHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/KeyHolder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/FallenPlatform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/FallenPlatform.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/PlatformMoveX.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/PlatformMoveX.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/PlatformMoveY.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/PlatformMoveY.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/Destruction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/Destruction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/EggExplosion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/EggExplosion.cs" afterDir="false" />
+    <list default="true" id="44fa9eaf-4901-4eb4-b858-67c1b19b2312" name="Default Changelist" comment="Some fixing">
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/FlameStream/ParticleCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/FlameStream/ParticleCollision.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Heart/HeartController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Heart/HeartController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +38,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Soul/SoulAI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.3.4/Runtime/Impulse/CinemachineImpulseSource.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/Rock/FallingRock.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/tomma/RiderProjects/HellsChicken/Assets/HellsChicken/Scripts/Game/Player/Egg/Destruction.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/PendulumEngine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/PlatformMoveX.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/Rock/SpawningRock.cs" root0="FORCE_HIGHLIGHTING" />
@@ -81,7 +77,6 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Menu/PauseMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/EggAudioManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/ChickenAudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/EggAudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAI.cs" />
@@ -99,6 +94,9 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/FallenPlatform.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/Destruction.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/EggExplosion.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/FlameStream/ParticleCollision.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Heart/HeartController.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
       </list>
     </option>
   </component>
@@ -174,7 +172,7 @@
       <workItem from="1605627503313" duration="5059000" />
       <workItem from="1605694454414" duration="1768000" />
       <workItem from="1605776806497" duration="4001000" />
-      <workItem from="1605781005075" duration="6034000" />
+      <workItem from="1605781005075" duration="6505000" />
     </task>
     <task id="LOCAL-00001" summary="Platform and blade movement">
       <created>1604073585635</created>
@@ -239,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605784671643</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Some fixing">
+      <created>1605794715476</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1605794715476</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +274,8 @@
     <MESSAGE value="Opening Button Door" />
     <MESSAGE value="Opening Key Door" />
     <MESSAGE value="Rock spawner" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rock spawner" />
+    <MESSAGE value="Some fixing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some fixing" />
   </component>
   <component name="WindowStateProjectService">
     <state x="351" y="238" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605349818684">

@@ -1,14 +1,17 @@
 ﻿using EventManagerNamespace;
 using UnityEngine;
 
-public class HeartController : MonoBehaviour
+namespace HellsChicken.Scripts.Game.Player.Heart
 {
-    private void OnTriggerEnter(Collider other)
+    public class HeartController : MonoBehaviour
     {
-        if (other.CompareTag("Player"))
+        private void OnTriggerEnter(Collider other)
         {
-            EventManager.TriggerEvent("IncreasePlayerHealth");
-            Destroy(gameObject);
+            if (other.CompareTag("Player"))
+            {
+                EventManager.TriggerEvent("IncreasePlayerHealth");
+                Destroy(gameObject);
+            }
         }
     }
 }
