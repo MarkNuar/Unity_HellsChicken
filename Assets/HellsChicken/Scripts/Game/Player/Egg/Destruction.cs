@@ -8,7 +8,6 @@ namespace HellsChicken.Scripts.Game.Player.Egg
 		
 		[SerializeField] GameObject destroyedVersion;
 		
-
 		public void Destroyer () {
 			if(!gameObject.CompareTag("Player")) {
 				if (destroyedVersion != null)

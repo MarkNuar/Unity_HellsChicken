@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4518307039171ad47989896a966218c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gravityModifier: 10
 --- !u!1 &5591317282032941779
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +136,7 @@ GameObject:
   - component: {fileID: 2677350791607484361}
   - component: {fileID: 8978483512140631001}
   m_Layer: 2
-  m_Name: Rock
+  m_Name: FallingRock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

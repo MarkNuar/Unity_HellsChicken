@@ -4,7 +4,6 @@ namespace HellsChicken.Scripts.Game.Player.Egg
 {
     public class Target : MonoBehaviour
     {
-        
         private static Vector3 _target;
         private Camera _camera;
         
@@ -13,16 +12,9 @@ namespace HellsChicken.Scripts.Game.Player.Egg
             //Cursor.visible = false;
             _camera = GetComponent<Camera>();
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-            //_target = _camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -transform.position.z));
-        }
-
+        
         public Vector3 GetTarget()
         {
-            //return _target;
             return _camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -transform.position.z));
         }
 
