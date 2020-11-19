@@ -11,7 +11,10 @@ namespace HellsChicken.Scripts.Game.Player.Egg
 		public void Destroyer () {
 			if(!gameObject.CompareTag("Player")) {
 				if (destroyedVersion != null)
-					Instantiate(destroyedVersion, transform.position, transform.rotation);
+				{
+					Transform originalVersion = transform;
+					Instantiate(destroyedVersion, originalVersion.position, originalVersion.rotation);
+				}
 
 				Destroy(gameObject);
 			}

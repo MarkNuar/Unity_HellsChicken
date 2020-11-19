@@ -34,7 +34,7 @@ namespace HellsChicken.Scripts.Game.Platform.Doors.KeyDoor
             OnKeysChanged?.Invoke(this, EventArgs.Empty);
         }
 
-        private bool CointainsKey(Key.KeyType keyType)
+        private bool ContainsKey(Key.KeyType keyType)
         {
             return _keyList.Contains(keyType);
         }
@@ -49,16 +49,17 @@ namespace HellsChicken.Scripts.Game.Platform.Doors.KeyDoor
             }
 
             KeyDoor keyDoor = other.GetComponent<KeyDoor>();
-            if (keyDoor != null)
+            
+            if (keyDoor == null) 
+                return;
+            
+            if (ContainsKey(keyDoor.GetKeyType()))
             {
-                if (CointainsKey(keyDoor.GetKeyType()))
+                if (!keyDoor.IsOpened())
                 {
-                    if (!keyDoor.IsOpened())
-                    {
-                        RemoveKey(keyDoor.GetKeyType());
-                        keyDoor.Open();
-                        _open = true;
-                    }
+                    RemoveKey(keyDoor.GetKeyType());
+                    keyDoor.Open();
+                    _open = true;
                 }
             }
 

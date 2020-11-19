@@ -14,7 +14,7 @@ namespace HellsChicken.Scripts.Game.Player.Egg
         private float radius = 2f;
         private float force = 500f;
         
-        private void OnCollisionEnter(Collision other)
+        private void OnCollisionEnter()
         {
             if (!_hasExploded)
             {
@@ -26,7 +26,8 @@ namespace HellsChicken.Scripts.Game.Player.Egg
 
         void Explode()
         {
-            GameObject particle = Instantiate(explosionEffect, transform.position, transform.rotation);
+            Transform egg = transform;
+            GameObject particle = Instantiate(explosionEffect, egg.position, egg.rotation);
             Destroy(particle, 1f);
             
             List<String> names =  new List<String>();

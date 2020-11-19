@@ -11,28 +11,21 @@ namespace HellsChicken.Scripts.Game.Platform
 
         [SerializeField] GameObject player;
 
-        private bool _turnback;
+        private bool _turnBack;
         
         // Update is called once per frame
         void Update()
         {
             if (transform.position.x <= startPoint.position.x)
             {
-                _turnback = false;
+                _turnBack = false;
             }
             if (transform.position.x >= finishPoint.position.x)
             {
-                _turnback = true;
+                _turnBack = true;
             }
 
-            if (_turnback)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, startPoint.position, speed * Time.deltaTime);
-            }
-            else
-            {
-                transform.position = Vector3.MoveTowards(transform.position, finishPoint.position, speed * Time.deltaTime);
-            }
+            transform.position = Vector3.MoveTowards(transform.position, _turnBack ? startPoint.position : finishPoint.position, speed * Time.deltaTime);
         }
 
         void OnTriggerEnter(Collider other)
@@ -40,7 +33,6 @@ namespace HellsChicken.Scripts.Game.Platform
             if (other.transform.CompareTag("Player"))
             {
                 player.transform.parent = transform;
-                Debug.Log("ciao");
             }
         }
 

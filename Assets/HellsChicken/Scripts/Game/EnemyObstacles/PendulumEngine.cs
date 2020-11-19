@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace HellsChicken.Scripts.Game.EnemyObstacles
 {
@@ -9,7 +8,7 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles
         private Quaternion _start;
         private Quaternion _end;
 
-        private float angle = 90.0f;
+        private float startAngle = 90.0f;
         private float speed = 2.0f;
         
         [SerializeField] float startTime;
@@ -17,8 +16,8 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles
         // Start is called before the first frame update
         void Start()
         {
-            _start = PendulumRotation(angle);
-            _end = PendulumRotation(-angle);
+            _start = PendulumRotation(startAngle);
+            _end = PendulumRotation(-startAngle);
         }
         
         void FixedUpdate()
