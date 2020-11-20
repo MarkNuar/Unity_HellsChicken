@@ -1,9 +1,9 @@
 ﻿namespace HellsChicken.Scripts.Game.AI.DecisionTree
 {
     public class DecisionTree {
-        private DTNode _root;
+        private readonly IDTNode _root;
 
-        public DecisionTree(DTNode root) {
+        public DecisionTree(IDTNode root) {
             _root = root;
         }
 

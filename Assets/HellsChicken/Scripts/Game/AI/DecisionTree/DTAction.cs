@@ -1,8 +1,8 @@
 ﻿namespace HellsChicken.Scripts.Game.AI.DecisionTree
 {
-    public class DTAction : DTNode {
+    public class DTAction : IDTNode {
 
-        public DTCall Action;
+        public readonly DTCall Action;
     
         public DTAction (DTCall action) {
             Action = action;

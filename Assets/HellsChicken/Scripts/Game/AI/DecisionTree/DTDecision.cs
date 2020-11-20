@@ -2,15 +2,15 @@
 
 namespace HellsChicken.Scripts.Game.AI.DecisionTree
 {
-    public class DTDecision : DTNode {
+    public class DTDecision : IDTNode {
 
-        private DTCall _selector;
+        private readonly DTCall _selector;
 
-        private Dictionary<object, DTNode> _links;
+        private readonly Dictionary<object, IDTNode> _links;
 
         public DTDecision(DTCall selector) {
             this._selector = selector;
-            _links = new Dictionary<object, DTNode>();
+            _links = new Dictionary<object, IDTNode>();
         }
     
         public DTAction Walk() {
@@ -18,7 +18,7 @@ namespace HellsChicken.Scripts.Game.AI.DecisionTree
             return _links.ContainsKey(o) ? _links[o].Walk() : null;
         }
 
-        public void AddLink(object key, DTNode value) {
+        public void AddLink(object key, IDTNode value) {
             _links.Add(key,value);
         }
     
