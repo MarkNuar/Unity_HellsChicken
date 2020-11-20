@@ -1,25 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
-public class DTDecision : DTNode {
+namespace HellsChicken.Scripts.Game.AI.DecisionTree
+{
+    public class DTDecision : DTNode {
 
-    private DTCall selector;
+        private DTCall _selector;
 
-    private Dictionary<object, DTNode> links;
+        private Dictionary<object, DTNode> _links;
 
-    public DTDecision(DTCall selector) {
-        this.selector = selector;
-        links = new Dictionary<object, DTNode>();
-    }
+        public DTDecision(DTCall selector) {
+            this._selector = selector;
+            _links = new Dictionary<object, DTNode>();
+        }
     
-    public DTAction walk() {
-        object o = selector();
-        return links.ContainsKey(o) ? links[o].walk() : null;
-    }
+        public DTAction Walk() {
+            object o = _selector();
+            return _links.ContainsKey(o) ? _links[o].Walk() : null;
+        }
 
-    public void addLink(object key, DTNode value) {
-        links.Add(key,value);
-    }
+        public void AddLink(object key, DTNode value) {
+            _links.Add(key,value);
+        }
     
+    }
 }

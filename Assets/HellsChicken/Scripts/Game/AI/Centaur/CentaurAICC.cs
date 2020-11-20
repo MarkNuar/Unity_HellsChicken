@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using EventManagerNamespace;
+using HellsChicken.Scripts.Game.AI.Centaur.Bow;
+using HellsChicken.Scripts.Game.AI.DecisionTree;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -47,11 +49,11 @@ public class CentaurAICC : MonoBehaviour
         DTAction a2 = new DTAction(move);
         DTAction a3 = new DTAction(stop);
         
-        d1.addLink(true,a1);
-        d1.addLink(false,d2);
+        d1.AddLink(true,a1);
+        d1.AddLink(false,d2);
 
-        d2.addLink(true, a2);
-        d2.addLink(false, a3);
+        d2.AddLink(true, a2);
+        d2.AddLink(false, a3);
         
         //root
         tree = new DecisionTree(d1);
@@ -83,7 +85,7 @@ public class CentaurAICC : MonoBehaviour
     
     IEnumerator treeCoroutine() {
         while (true) {
-            tree.start();
+            tree.Start();
             yield return new WaitForSeconds(timeReaction);
         }
     }
@@ -108,7 +110,7 @@ public class CentaurAICC : MonoBehaviour
             CentaurFire ar = fire.GetComponent<CentaurFire>();
             ar.Target = player.position + new Vector3(0, 0.5f, 0);
             ar.CentaurPos = transform.position;
-            ar.findAngle(right,arrowPosition.position);
+            ar.FindAngle(right,arrowPosition.position);
         }
         shootIntervall = (shootIntervall + 1) % attackTime;
         return null;

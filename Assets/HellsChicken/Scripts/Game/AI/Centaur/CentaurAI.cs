@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using EventManagerNamespace;
+using HellsChicken.Scripts.Game.AI.Centaur.Bow;
+using HellsChicken.Scripts.Game.AI.DecisionTree;
 using HellsChicken.Scripts.Game.Player.Egg;
 using TMPro;
 using Unity.Mathematics;
@@ -48,11 +50,11 @@ public class CentaurAI : MonoBehaviour {
         DTAction a2 = new DTAction(move);
         DTAction a3 = new DTAction(stop);
         
-        d1.addLink(true,a1);
-        d1.addLink(false,d2);
+        d1.AddLink(true,a1);
+        d1.AddLink(false,d2);
 
-        d2.addLink(true, a2);
-        d2.addLink(false, a3);
+        d2.AddLink(true, a2);
+        d2.AddLink(false, a3);
         
         //root
         tree = new DecisionTree(d1);
@@ -74,7 +76,7 @@ public class CentaurAI : MonoBehaviour {
     
     IEnumerator treeCoroutine() {
         while (true) {
-            tree.start();
+            tree.Start();
             yield return new WaitForSeconds(timeReaction);
         }
     }

@@ -1,20 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿namespace HellsChicken.Scripts.Game.AI.DecisionTree
+{
+    public class DecisionTree {
+        private DTNode _root;
 
-public class DecisionTree {
+        public DecisionTree(DTNode root) {
+            _root = root;
+        }
 
-    public DTNode root;
+        public object Start() {
+            DTAction result = _root.Walk();
+            if (result != null) 
+                return result.Action();
+            return null;
+        }
 
-    public DecisionTree(DTNode root) {
-        this.root = root;
     }
-
-    public object start() {
-        DTAction result = root.walk();
-        if (result != null) 
-            return result.action();
-        return null;
-    }
-
 }

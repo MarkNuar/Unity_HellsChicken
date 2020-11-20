@@ -21,10 +21,14 @@
   <component name="ChangeListManager">
     <list default="true" id="44fa9eaf-4901-4eb4-b858-67c1b19b2312" name="Default Changelist" comment="Some fixing">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/BombExplosion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/BombExplosion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/GoombaAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/GoombaAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/GoombaAICC.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/GoombaAICC.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Soul/SoulAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Soul/SoulAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/BowDirection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/BowDirection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/CentaurFire.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/CentaurFire.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAICC.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAICC.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DTAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DTAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DTDecision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DTDecision.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DTNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DTNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DecisionTree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DecisionTree.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,25 +39,23 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Soul/SoulAI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/PendulumEngine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/tomma/RiderProjects/HellsChicken/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DecisionTree.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/tomma/RiderProjects/HellsChicken/Assets/HellsChicken/Scripts/Game/EnemyObstacles/BladeMovement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/Rock/SpawningRock.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/tomma/RiderProjects/HellsChicken/Assets/HellsChicken/Scripts/Game/AI/Goomba/BombExplosion.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/ChickenAudioManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/BladeMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/tomma/RiderProjects/HellsChicken/Assets/HellsChicken/Prefab/EnemyObstacles/Blade.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Soul/SoulAI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.3.4/Runtime/Impulse/CinemachineImpulseSource.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/Rock/FallingRock.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/tomma/RiderProjects/HellsChicken/Assets/HellsChicken/Scripts/Game/UI/Crosshair/CrosshairImageController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/PendulumEngine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/PlatformMoveX.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/tomma/RiderProjects/HellsChicken/Assets/HellsChicken/Scripts/Game/EnemyObstacles/BladeMovement.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/Rock/SpawningRock.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/Rock/Rock.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/OpeningDoor.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/OpeningButtonDoor.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/Key.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/Key/Key.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/Key/KeyDoor.cs" />
@@ -75,8 +77,6 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAI.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Explosion/Explosion.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAICC.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/CentaurFire.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/BowDirection.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/Rock/RockObstacle.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/Rock/SpawningRock.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/Target.cs" />
@@ -101,6 +101,12 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/GoombaAI.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/BombExplosion.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/GoombaAICC.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DTDecision.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DTNode.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DTAction.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DecisionTree.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/BowDirection.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/CentaurFire.cs" />
       </list>
     </option>
   </component>
@@ -177,7 +183,7 @@
       <workItem from="1605694454414" duration="1768000" />
       <workItem from="1605776806497" duration="4001000" />
       <workItem from="1605781005075" duration="6707000" />
-      <workItem from="1605865861814" duration="2747000" />
+      <workItem from="1605865861814" duration="3450000" />
     </task>
     <task id="LOCAL-00001" summary="Platform and blade movement">
       <created>1604073585635</created>
@@ -298,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605870546702</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Some fixing">
+      <created>1605871532623</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1605871532623</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

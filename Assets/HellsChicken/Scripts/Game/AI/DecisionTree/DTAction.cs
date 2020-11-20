@@ -1,16 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿namespace HellsChicken.Scripts.Game.AI.DecisionTree
+{
+    public class DTAction : DTNode {
 
-public class DTAction : DTNode {
-
-    public DTCall action;
+        public DTCall Action;
     
-    public DTAction (DTCall action) {
-        this.action = action;
-    }
+        public DTAction (DTCall action) {
+            Action = action;
+        }
 
-    public DTAction walk() {
-        return this;
+        public DTAction Walk() {
+            return this;
+        }
     }
 }

@@ -1,27 +1,28 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using EventManagerNamespace;
-using Unity.Mathematics;
+﻿using EventManagerNamespace;
 using UnityEngine;
 
-public class BowDirection : MonoBehaviour {
+namespace HellsChicken.Scripts.Game.AI.Centaur.Bow
+{
+    public class BowDirection : MonoBehaviour {
     
-    [SerializeField] private GameObject centaur;
+        [SerializeField] private GameObject centaur;
 
-    private void LateUpdate() {
-        transform.position = new Vector3(centaur.transform.position.x,centaur.transform.position.y,transform.position.z);
-    }
+        private void LateUpdate()
+        {
+            Vector3 position = centaur.transform.position;
+            transform.position = new Vector3(position.x, position.y, transform.position.z);
+        }
 
-    // Start is called before the first frame update
-    void Start(){
-        EventManager.StartListening("changeBowDirection",changeDirection);
-    }
+        // Start is called before the first frame update
+        private void Start(){
+            EventManager.StartListening("changeBowDirection",ChangeDirection);
+        }
 
-    void changeDirection() {
-        EventManager.StopListening("changeBowDirection",changeDirection);
-        transform.rotation = Quaternion.Euler(0,180,0) * transform.rotation;
-        EventManager.StartListening("changeBowDirection",changeDirection);
-    }
+        private void ChangeDirection() {
+            EventManager.StopListening("changeBowDirection",ChangeDirection);
+            transform.rotation = Quaternion.Euler(0,180,0) * transform.rotation;
+            EventManager.StartListening("changeBowDirection",ChangeDirection);
+        }
     
+    }
 }

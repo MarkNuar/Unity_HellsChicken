@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿namespace HellsChicken.Scripts.Game.AI.DecisionTree
+{
+    public interface DTNode { 
+        DTAction Walk();
+    }
 
-public interface DTNode { 
-    DTAction walk();
+    public delegate object DTCall ();
 }
-
-public delegate object DTCall ();
