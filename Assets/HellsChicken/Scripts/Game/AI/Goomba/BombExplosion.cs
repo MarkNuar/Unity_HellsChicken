@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using EventManagerNamespace;
 using HellsChicken.Scripts.Game.Player.Egg;
 using UnityEngine;
@@ -14,11 +13,11 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
         [SerializeField] private GameObject explosionPrefab;
         [SerializeField] private GameObject vanishEffectPrefab;
         
-        private Color red = Color.red;
-        private Color white = Color.white;
+        private Color _red = Color.red;
+        private Color _white = Color.white;
 
         private MeshRenderer _meshRenderer;
-        private int i = 0;
+        private int _cont;
         private float radius =5;
         private float force = 500f;
         
@@ -33,22 +32,21 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
             StartCoroutine(MakeExplosion());
         }
 
-        private void Update() {
-            if(i == 0)
-                _meshRenderer.material.color = red;
-            else 
-                _meshRenderer.material.color = white;
-            i = (i + 1) % 2;
-
+        private void Update()
+        {
+            _meshRenderer.material.color = _cont == 0 ? _red : _white;
+            _cont = (_cont + 1) % 2;
         }
 
         //Wait for 2 second and then make the bomb explode.
         IEnumerator MakeExplosion() {  
             yield return new WaitForSeconds(1);
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            
+            Vector3 position = transform.position;
+            Instantiate(explosionPrefab, position, Quaternion.identity);
             EventManager.TriggerEvent("playBomb");
             
-            Collider[] collidersToMove = Physics.OverlapSphere(transform.position, radius);
+            Collider[] collidersToMove = Physics.OverlapSphere(position, radius);
             List<String> names =  new List<String>();
             foreach (Collider nearbyObject in collidersToMove) {
                 if (!names.Contains(nearbyObject.name) && !nearbyObject.gameObject.CompareTag("Enemy")) {

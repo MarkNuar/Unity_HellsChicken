@@ -13,8 +13,7 @@ namespace HellsChicken.Scripts.Game.AI.Soul
         
         private Path _path;
         private int _currentWaypoint;
-        private bool _reachedEndOfPath;
-
+        
         private Seeker _seeker;
         private Rigidbody _rb;
         
@@ -53,14 +52,10 @@ namespace HellsChicken.Scripts.Game.AI.Soul
 
             if (_currentWaypoint >= _path.vectorPath.Count)
             {
-                _reachedEndOfPath = true;
+                //reached end of the path
                 return;
             }
-            else
-            {
-                _reachedEndOfPath = false;
-            }
-
+            
             Vector2 direction = (_path.vectorPath[_currentWaypoint] - _rb.position).normalized;
             Vector2 force = direction * speed * Time.deltaTime;
 
