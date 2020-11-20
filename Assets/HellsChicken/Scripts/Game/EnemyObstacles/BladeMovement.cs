@@ -27,14 +27,7 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles
                 _turnBack = true;
             }
 
-            if (_turnBack)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, startPoint.position, speed * Time.deltaTime);
-            }
-            else
-            {
-                transform.position = Vector3.MoveTowards(transform.position, finishPoint.position, speed * Time.deltaTime);
-            }
+            transform.position = Vector3.MoveTowards(transform.position, _turnBack ? startPoint.position : finishPoint.position, speed * Time.deltaTime);
         }
         }
 }
