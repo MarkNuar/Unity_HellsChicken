@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class DissolveController : MonoBehaviour {
 
-     [SerializeField] private Renderer[] othersMaterials;
-    
+    [SerializeField] private Renderer[] othersMaterials;
+
     private Material _material;
-    private float i = 1;
+    private float i = 0;
     private bool dead = false;
 
 
@@ -25,12 +25,12 @@ public class DissolveController : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        
+
     }
 
     // Update is called once per frame
-    void FixedUpdate(){
-        if (dead) {
+    void FixedUpdate() {
+        /*if (dead) {
             if (i < 1) {
                 i += 0.006f;
                 _material.SetFloat("dissolveTime", i);
@@ -55,6 +55,30 @@ public class DissolveController : MonoBehaviour {
                     gameObject.layer = LayerMask.NameToLayer("Player");
                 }
             }
+        }*/
+        if (dead) {
+            if (i < 1) {
+                i += 0.01f;
+                _material.SetFloat("burn", i);
+                foreach (Renderer renderer in othersMaterials) {
+                    renderer.material.SetFloat("burn", i);
+                }
+            }
+            if (i >= 0.6 & i < 1.6) {
+                i += 0.01f;
+                _material.SetFloat("vanish", i - 0.6f);
+
+                foreach (Renderer renderer in othersMaterials) {
+                    renderer.material.SetFloat("vanish", i - 0.6f);
+                }
+
+                /*if (i <= 0) {
+                    //GetComponent<PlayerController>().enabled = true;
+                    gameObject.layer = LayerMask.NameToLayer("Player");
+                }*/
+            }else if (i >= 1.6){
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
         }
     }
-}
+}    
