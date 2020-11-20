@@ -5,136 +5,137 @@ using HellsChicken.Scripts.Game.AI.DecisionTree;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class CentaurAICC : MonoBehaviour
+namespace HellsChicken.Scripts.Game.AI.Centaur
 {
-    private int still = 0; //Variable for checking if I have to be still. 
-    private bool movement = true; //Variable for checking if I can be still. 
-    private bool right = true;
+    public class CentaurAICC : MonoBehaviour
+    {
+        private int _still; //Variable for checking if I have to be still. 
+        private bool _canMove = true; //Variable for checking if I can be still. 
+        private bool _right = true;
     
-    [SerializeField] private float agentVelocity = 8f;
-    [SerializeField] private float timeReaction = 2f; //how often do the agent take decision?
-    [SerializeField] private Transform player;
-    [SerializeField] private Transform arrowPosition;
-    [SerializeField] private GameObject bombPrefab;
-    [SerializeField] private GameObject textPrefab;
-    [SerializeField] private int attackTime;
+        [SerializeField] private float agentVelocity = 8f;
+        [SerializeField] private float timeReaction = 2f; //how often do the agent take decision?
+        [SerializeField] private Transform player;
+        [SerializeField] private Transform arrowPosition;
+        [SerializeField] private GameObject bombPrefab;
+        [SerializeField] private GameObject textPrefab;
+        [SerializeField] private int attackTime;
 
-    [SerializeField] private float gravityScale = 1f;
-    [SerializeField] private LayerMask mask;
+        [SerializeField] private float gravityScale = 1f;
+        [SerializeField] private LayerMask mask;
 
-    private CharacterController _characterController;
-    private Vector3 _movement; 
-    private DecisionTree tree;
-    private GameObject textInstance;
+        private CharacterController _characterController;
+        private Vector3 _movement; 
+        private DecisionTree.DecisionTree _tree;
+        private GameObject _textInstance;
 
-    private int shootIntervall = 0;
+        private int _shootInterval;
 
-    private bool isColliding = false;
+        private bool _isColliding;
     
-    private void Awake() {
-        _characterController = GetComponent<CharacterController>();
-    }
+        private void Awake() {
+            _characterController = GetComponent<CharacterController>();
+        }
 
-    // Start is called before the first frame update
-    void Start() {
-        //_characterController.detectCollisions = false;
-        _movement = Vector3.zero;
+        // Start is called before the first frame update
+        void Start() {
+            //_characterController.detectCollisions = false;
+            _movement = Vector3.zero;
 
-        //Decision
-        DTDecision d1 = new DTDecision(isPlayerVisible);
-        DTDecision d2 = new DTDecision(isPlayerStill);
+            //Decision
+            DTDecision d1 = new DTDecision(IsPlayerVisible);
+            DTDecision d2 = new DTDecision(IsPlayerStill);
         
-        //Action
-        DTAction a1 = new DTAction(hit);
-        DTAction a2 = new DTAction(move);
-        DTAction a3 = new DTAction(stop);
+            //Action
+            DTAction a1 = new DTAction(Hit);
+            DTAction a2 = new DTAction(Move);
+            DTAction a3 = new DTAction(Stop);
         
-        d1.AddLink(true,a1);
-        d1.AddLink(false,d2);
+            d1.AddLink(true,a1);
+            d1.AddLink(false,d2);
 
-        d2.AddLink(true, a2);
-        d2.AddLink(false, a3);
+            d2.AddLink(true, a2);
+            d2.AddLink(false, a3);
         
-        //root
-        tree = new DecisionTree(d1);
+            //root
+            _tree = new DecisionTree.DecisionTree(d1);
 
-        StartCoroutine(treeCoroutine());
+            StartCoroutine(TreeCoroutine());
         
-    }
+        }
     
-    private void Update() {
-        _movement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
-        if (movement) {
-            if (!isColliding)
-            {
-                if (right)
-                    _movement.x = agentVelocity;
+        private void Update() {
+            _movement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
+            if (_canMove) {
+                if (!_isColliding)
+                {
+                    if (_right)
+                        _movement.x = agentVelocity;
+                    else
+                        _movement.x = -agentVelocity;
+                }
                 else
-                    _movement.x = -agentVelocity;
-            }
-            else
+                {
+                    _movement.x = 0;
+                }
+            }else
             {
                 _movement.x = 0;
             }
-        }else
-        {
-            _movement.x = 0;
+            _characterController.Move(_movement * Time.deltaTime);
         }
-        _characterController.Move(_movement * Time.deltaTime);
-    }
     
-    IEnumerator treeCoroutine() {
-        while (true) {
-            tree.Start();
-            yield return new WaitForSeconds(timeReaction);
+        IEnumerator TreeCoroutine() {
+            while (true) {
+                _tree.Start();
+                yield return new WaitForSeconds(timeReaction);
+            }
         }
-    }
     
-    //Actions
-    public object move() {
-        movement = true;
-        shootIntervall = 0;
-        return null;
-    }
-    
-    public object stop() {
-        movement = false;
-        shootIntervall = 0;
-        return null;
-    }
+        //Actions
+        private object Move() {
+            _canMove = true;
+            _shootInterval = 0;
+            return null;
+        }
 
-    public object hit() {
-        if (shootIntervall == 0) {
-            GameObject fire = Instantiate(bombPrefab, arrowPosition.position,
-            Quaternion.LookRotation(player.position, transform.position));
-            CentaurFire ar = fire.GetComponent<CentaurFire>();
-            ar.Target = player.position + new Vector3(0, 0.5f, 0);
-            ar.CentaurPos = transform.position;
-            ar.FindAngle(right,arrowPosition.position);
+        private object Stop() {
+            _canMove = false;
+            _shootInterval = 0;
+            return null;
         }
-        shootIntervall = (shootIntervall + 1) % attackTime;
-        return null;
-    }
 
-    //Decisions
-    public object isPlayerVisible() { 
+        private object Hit() {
+            if (_shootInterval == 0) {
+                GameObject fire = Instantiate(bombPrefab, arrowPosition.position,
+                    Quaternion.LookRotation(player.position, transform.position));
+                CentaurFire ar = fire.GetComponent<CentaurFire>();
+                ar.Target = player.position + new Vector3(0, 0.5f, 0);
+                ar.CentaurPos = transform.position;
+                ar.FindAngle(_right,arrowPosition.position);
+            }
+            _shootInterval = (_shootInterval + 1) % attackTime;
+            return null;
+        }
+
+        //Decisions
+        private object IsPlayerVisible() { 
             Vector3 ray = player.position - transform.position;
             //Debug.DrawLine(transform.position,player.position, Color.white, 0.5f);
-            RaycastHit hit;
             //if (Physics.Raycast(transform.position, ray, out hit, 30f,mask)) {
-            if(Physics.SphereCast(transform.position,0.5f,ray,out hit,30,mask)){
+            if(Physics.SphereCast(transform.position,0.5f,ray,out var hit,30,mask)){
                 if (hit.transform.CompareTag("Player")) {
                     if (Vector3.Dot(ray, transform.right) <= 0) {
                         transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
                         EventManager.TriggerEvent("changeBowDirection");
-                        right = !right;
+                        _right = !_right;
                     }
 
-                    if (textInstance != null)
-                        Destroy(textInstance);
+                    if (_textInstance != null)
+                        Destroy(_textInstance);
 
-                    movement = false;
-                    still = 0;
+                    _canMove = false;
+                    _still = 0;
                     return true;
                 }
             }
@@ -142,51 +143,52 @@ public class CentaurAICC : MonoBehaviour
             return false;
         }
 
-    public object isPlayerStill() {
-        if (still == 0) {
-            if (Random.Range(0, 10) > 6) {
-                still = +1;
-                textInstance = Instantiate(textPrefab, gameObject.transform.position + new Vector3(-0.4f, 3, 0),
-                    Quaternion.identity);
-                return false;
-            }
-            else
-                return true;
-
-        }else {
-            if (still > 0) {
-                still += 1;
-                if (still == 4) {
-                    if (Random.Range(0, 2) == 0) {
-                        transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
-                        EventManager.TriggerEvent("changeBowDirection");
-                        right = !right;
-                    }
-                    Destroy(textInstance);
-                    still = -4;
+        private object IsPlayerStill() {
+            if (_still == 0) {
+                if (Random.Range(0, 10) > 6) {
+                    _still = +1;
+                    _textInstance = Instantiate(textPrefab, gameObject.transform.position + new Vector3(-0.4f, 3, 0),
+                        Quaternion.identity);
+                    return false;
                 }
-                return false;
+                else
+                    return true;
+
             }else {
-                still += 1;
-                return true;
+                if (_still > 0) {
+                    _still += 1;
+                    if (_still == 4) {
+                        if (Random.Range(0, 2) == 0) {
+                            transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
+                            EventManager.TriggerEvent("changeBowDirection");
+                            _right = !_right;
+                        }
+                        Destroy(_textInstance);
+                        _still = -4;
+                    }
+                    return false;
+                }else {
+                    _still += 1;
+                    return true;
+                }
             }
         }
-    }
 
-    private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.CompareTag("Player")) {
-            isColliding = true;
+        private void OnTriggerEnter(Collider other) {
+            if (other.gameObject.CompareTag("Player")) {
+                _isColliding = true;
+            }
+            if (other.gameObject.CompareTag("Wall")) {
+                transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
+                EventManager.TriggerEvent("changeBowDirection");
+                _right = !_right;
+            }
         }
-        if (other.gameObject.CompareTag("Wall")) {
-            transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
-            EventManager.TriggerEvent("changeBowDirection");
-            right = !right;
-        }
-    }
     
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.transform.CompareTag("Player")) 
-            isColliding = false;
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.transform.CompareTag("Player")) 
+                _isColliding = false;
+        }
     }
 }
