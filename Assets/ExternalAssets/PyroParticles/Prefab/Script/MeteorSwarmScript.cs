@@ -82,7 +82,7 @@ namespace DigitalRuby.PyroParticles
             Vector3 dest = gameObject.transform.position + (UnityEngine.Random.insideUnitSphere * DestinationRadius);
             dest.y = 0.0f;
 
-            // get the direction and set speed based on how fast the meteor should arrive at the destination
+            // get the direction and set moveSpeed based on how fast the meteor should arrive at the destination
             Vector3 dir = (dest - src);
             Vector3 vel = dir / TimeToImpact;
             Rigidbody r = meteor.GetComponent<Rigidbody>();

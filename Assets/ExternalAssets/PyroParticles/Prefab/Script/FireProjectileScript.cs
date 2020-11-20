@@ -33,7 +33,7 @@ namespace DigitalRuby.PyroParticles
         [Tooltip("An optional delay before the collider is sent off, in case the effect has a pre fire animation.")]
         public float ProjectileColliderDelay = 0.0f;
 
-        [Tooltip("The speed of the collider.")]
+        [Tooltip("The moveSpeed of the collider.")]
         public float ProjectileColliderSpeed = 450.0f;
 
         [Tooltip("The direction that the collider will go. For example, flame strike goes down, and fireball goes forward.")]
