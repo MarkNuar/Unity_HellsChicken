@@ -5529,6 +5529,11 @@ PrefabInstance:
       propertyPath: _pauseMenu
       value: 
       objectReference: {fileID: 1726577692}
+    - target: {fileID: 8035021252407303942, guid: 3b2e08a2edd553945ad17d8016d01055,
+        type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1726577692}
     - target: {fileID: 8330016071506394841, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
@@ -5732,6 +5737,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5826420462929175197, guid: 5f43eea203df769488d76c83f0e57e1b,
+        type: 3}
+      propertyPath: thighImage
+      value: 
+      objectReference: {fileID: 378512557818873191, guid: c5806977eda753e4d82acf3803e10252,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f43eea203df769488d76c83f0e57e1b, type: 3}
 --- !u!1001 &7410006076606634320

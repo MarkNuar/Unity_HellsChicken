@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace HellsChicken.Scripts.Game.UI
+namespace HellsChicken.Scripts.Game.UI.Crosshair
 {
     public class FollowMouse : MonoBehaviour
     {

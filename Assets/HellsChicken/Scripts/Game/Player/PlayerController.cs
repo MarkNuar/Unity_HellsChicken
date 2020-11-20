@@ -3,6 +3,7 @@ using Cinemachine;
 using EventManagerNamespace;
 using HellsChicken.Scripts.Game.Player.Egg;
 using HellsChicken.Scripts.Game.UI.Crosshair;
+using HellsChicken.Scripts.Game.UI.Menu;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

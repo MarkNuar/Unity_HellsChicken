@@ -24,7 +24,7 @@ namespace HellsChicken.Scripts.Game.UI.Crosshair
         public void SetCrosshairToAiming()
         {
             _image.sprite = enabledCrosshair;
-            var temp = _image.color;
+            Color temp = _image.color;
             temp.a = 1f;
             _image.color = temp;
         }
@@ -32,7 +32,7 @@ namespace HellsChicken.Scripts.Game.UI.Crosshair
         public void SetCrosshairToIdle()
         {
             _image.sprite = enabledCrosshair;
-            var temp = _image.color;
+            Color temp = _image.color;
             temp.a = 0.3f;
             _image.color = temp;
         }
@@ -40,7 +40,7 @@ namespace HellsChicken.Scripts.Game.UI.Crosshair
         public void SetCrosshairToWaiting()
         {
             _image.sprite = blockedCrosshair;
-            var temp = _image.color;
+            Color temp = _image.color;
             temp.a = 1f;
             _image.color = temp;
         }

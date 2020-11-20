@@ -1,57 +1,59 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PauseMenu : MonoBehaviour
+namespace HellsChicken.Scripts.Game.UI.Menu
 {
-    private static bool GameIsPaused = false;
-
-    public GameObject PauseMenuUI;
-    public GameObject CommandsMenuUI;
-
-    public GameObject EggCrosshairCanvas;
-    // Update is called once per frame
-    void Update()
+    public class PauseMenu : MonoBehaviour
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (GameIsPaused)
-            {
-                Resume();
-            }
+        private static bool _gameIsPaused;
 
-            else
+        public GameObject pauseMenuUI;
+        public GameObject commandsMenuUI;
+
+        public GameObject eggCrosshairCanvas;
+        
+        // Update is called once per frame
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Pause();
+                if (_gameIsPaused)
+                {
+                    Resume();
+                }
+
+                else
+                {
+                    Pause();
+                }
             }
         }
-    }
 
-    public void Resume()
-    {
-        PauseMenuUI.SetActive(false);
-        CommandsMenuUI.SetActive(false);
-        Time.timeScale = 1f;
-        GameIsPaused = false;
-        EggCrosshairCanvas.SetActive(true);
-    }
+        public void Resume()
+        {
+            pauseMenuUI.SetActive(false);
+            commandsMenuUI.SetActive(false);
+            Time.timeScale = 1f;
+            _gameIsPaused = false;
+            eggCrosshairCanvas.SetActive(true);
+        }
     
-    void Pause()
-    {
-        PauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        GameIsPaused = true;
-        EggCrosshairCanvas.SetActive(false);
+        void Pause()
+        {
+            pauseMenuUI.SetActive(true);
+            Time.timeScale = 0f;
+            _gameIsPaused = true;
+            eggCrosshairCanvas.SetActive(false);
         
-    }
+        }
     
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
 
-    public bool getGameIsPaused()
-    {
-        return GameIsPaused;
+        public bool getGameIsPaused()
+        {
+            return _gameIsPaused;
+        }
     }
 }
