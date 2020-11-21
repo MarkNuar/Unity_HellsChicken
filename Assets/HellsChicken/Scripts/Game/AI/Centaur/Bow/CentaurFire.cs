@@ -77,21 +77,24 @@ public class CentaurFire : MonoBehaviour {
              //Apply new velocity
              _rigidbody.velocity = (rotatedVector - centaurPos).normalized * initialVelocity;
          }
-         else
-             collision = false;
     }
 
     public void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("Enemy")) {
             Physics.IgnoreCollision(other.collider, GetComponent<BoxCollider>());
-        }else if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Wall")
-          || other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Lava")) {
+        }else {
+            Instantiate(contactExplosion, other.contacts[0].point, Quaternion.identity);
             Destroy(gameObject);
         }
-        if(!other.gameObject.CompareTag("Enemy") && collision)
-            Instantiate(contactExplosion, other.contacts[0].point, Quaternion.identity);
     }
-    
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.CompareTag("Player")) {
+            Instantiate(contactExplosion, other.transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+    }
+
     static Quaternion LookAt2D(Vector2 forward) {
         return Quaternion.Euler(0, 0, Mathf.Atan2(forward.y, forward.x) * Mathf.Rad2Deg);
     }
