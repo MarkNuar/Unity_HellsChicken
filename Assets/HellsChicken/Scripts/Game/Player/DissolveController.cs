@@ -10,7 +10,7 @@ public class DissolveController : MonoBehaviour {
     [SerializeField] private Renderer[] othersMaterials;
 
     private Material _material;
-    private float i = 0;
+    private float i = 1;
     private bool dead = false;
 
 
@@ -30,7 +30,7 @@ public class DissolveController : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate() {
-        /*if (dead) {
+        if (dead) {
             if (i < 1) {
                 i += 0.006f;
                 _material.SetFloat("dissolveTime", i);
@@ -43,7 +43,7 @@ public class DissolveController : MonoBehaviour {
             }
         }else {
             if (i > 0) {
-                i -= 0.008f;
+                i -= 0.01f;
                 _material.SetFloat("dissolveTime", i);
                 
                 foreach (Renderer renderer in othersMaterials) {
@@ -51,12 +51,14 @@ public class DissolveController : MonoBehaviour {
                 }
 
                 if (i <= 0) {
+                    //Non si puo disattivare perchè interferisce con i checkpoint?
                     //GetComponent<PlayerController>().enabled = true;
+                    _material.SetFloat("EdgeValue", 0.06f);
                     gameObject.layer = LayerMask.NameToLayer("Player");
                 }
             }
-        }*/
-        if (dead) {
+        }
+        /*if (dead) {
             if (i < 1) {
                 i += 0.01f;
                 _material.SetFloat("burn", i);
@@ -75,10 +77,10 @@ public class DissolveController : MonoBehaviour {
                 /*if (i <= 0) {
                     //GetComponent<PlayerController>().enabled = true;
                     gameObject.layer = LayerMask.NameToLayer("Player");
-                }*/
+                }
             }else if (i >= 1.6){
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
-        }
+        }*/
     }
 }    
