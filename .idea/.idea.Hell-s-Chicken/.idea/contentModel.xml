@@ -376,6 +376,7 @@
                 <e p="PlatformMoveY.cs" t="Include" />
               </e>
               <e p="Player" t="Include">
+                <e p="DissolveController.cs" t="Include" />
                 <e p="Egg" t="Include">
                   <e p="Destruction.cs" t="Include" />
                   <e p="EggExplosion.cs" t="Include" />
@@ -400,11 +401,6 @@
                 <e p="Menu" t="Include">
                   <e p="MainMenu.cs" t="Include" />
                   <e p="PauseMenu.cs" t="Include" />
-                </e>
-                <e p="Tutorials" t="Include">
-                  <e p="TutorialOne.cs" t="Include" />
-                  <e p="TutorialThree.cs" t="Include" />
-                  <e p="TutorialTwo.cs" t="Include" />
                 </e>
               </e>
             </e>

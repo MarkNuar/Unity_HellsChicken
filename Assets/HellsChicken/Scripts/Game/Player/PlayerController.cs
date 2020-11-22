@@ -1,11 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Diagnostics;
 using Cinemachine;
 using EventManagerNamespace;
 using HellsChicken.Scripts.Game.Player.Egg;
 using HellsChicken.Scripts.Game.UI.Crosshair;
-using HellsChicken.Scripts.Game.UI.Menu;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Debug = UnityEngine.Debug;
 
 namespace HellsChicken.Scripts.Game.Player
 {
@@ -24,8 +26,8 @@ namespace HellsChicken.Scripts.Game.Player
         [SerializeField] private ParticleSystem flameStream;
         [SerializeField] private Transform firePosition;
         [SerializeField] private float flamesCooldown = 2f;
-        [SerializeField] private MeshRenderer[] eyesMeshRenderer;
-        [SerializeField] private PauseMenu pauseMenu;
+        [SerializeField] private MeshRenderer[] _eyesMeshRenderer;
+        [SerializeField] private PauseMenu _pauseMenu;
         private float _gravity;
 
         private Vector3 _moveDirection;
@@ -64,7 +66,9 @@ namespace HellsChicken.Scripts.Game.Player
         private bool _isImmune;
         private bool _isLastHeart;
 
-
+        //dissolveScript
+        private DissolveController _dissolve;
+        
         private void Awake()
         {
             _characterController = gameObject.GetComponent<CharacterController>();
@@ -88,6 +92,7 @@ namespace HellsChicken.Scripts.Game.Player
             _gravity = Physics.gravity.y;
             _rightRotation = transform.rotation;
             _leftRotation = _rightRotation * Quaternion.Euler(0, 180, 0);
+            _dissolve = GetComponent<DissolveController>();
         }
 
         private void OnEnable()
@@ -140,7 +145,7 @@ namespace HellsChicken.Scripts.Game.Player
                 {
                     float y = _target.GetTarget().y - sourcePosition.y;
                     float x2 = x * x;
-                    float squareRoot = Mathf.Sqrt(v4 - g * (g * x2 + 2 * y * v2));
+                    float squareRoot = (float) Mathf.Sqrt(v4 - g * (g * x2 + 2 * y * v2));
                     angle = Mathf.Atan((v2 - squareRoot) / (g * x));
                     
                     if (_lookDirection.x < 0f)
@@ -192,7 +197,7 @@ namespace HellsChicken.Scripts.Game.Player
 
         private void Update()
         {
-            if (!_isDead && !pauseMenu.getGameIsPaused())
+            if (!_isDead && !_pauseMenu.getGameIsPaused())
             {
                 _isShootingFlames = false;
                 _isShootingEgg = false;
@@ -315,7 +320,8 @@ namespace HellsChicken.Scripts.Game.Player
             {
                 gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse(); 
                 EventManager.TriggerEvent("chickenDeath");
-                StartCoroutine(EnableDeath(1.2f));
+                //StartCoroutine(EnableDeath(1.2f));
+                EventManager.TriggerEvent("KillPlayer");
                 _hasVibrated = true;
             }
             
@@ -403,9 +409,13 @@ namespace HellsChicken.Scripts.Game.Player
             }
         }
 
-        private IEnumerator ImmunityTimer(float time)
-        {
+        private IEnumerator ImmunityTimer(float time) {
             _isImmune = true;
+            var material = _skinnedMeshRenderer.material;
+            material.SetInt("alphaAnimation",1);
+            foreach (var mesh in _eyesMeshRenderer) {
+                mesh. material.SetInt("alphaAnimation",1);
+            }
             gameObject.layer = LayerMask.NameToLayer("ImmunePlayer");
             InvokeRepeating(nameof(FlashMesh), 0f, 0.2f);
             //Debug.Log("Transparent");
@@ -414,14 +424,16 @@ namespace HellsChicken.Scripts.Game.Player
             _isImmune = false;
             CancelInvoke();
             //_meshRenderer.enabled = true;
-            var material = _skinnedMeshRenderer.material;
-            var temp = material.color;
-            temp.a = 1.0f;
-            material.color = temp;
-            foreach (var mesh in eyesMeshRenderer) {
-                mesh.material.color = temp;
+            material.SetFloat("alphaValue",1.0f);
+            foreach (var mesh in _eyesMeshRenderer) {
+                mesh.material.SetFloat("alphaValue", 1.0f);
             }
-            //_eyesMeshRenderer.material.color = temp;
+            
+            material.SetInt("alphaAnimation",0);
+            foreach (var mesh in _eyesMeshRenderer) {
+                mesh. material.SetInt("alphaAnimation",0);
+            }
+            
             gameObject.layer = LayerMask.NameToLayer("Player");
             yield return null;
         }
@@ -431,11 +443,9 @@ namespace HellsChicken.Scripts.Game.Player
             //_meshRenderer.enabled = !_meshRenderer.enabled;
             //Use the next lines if you want it to be transparent
              var material = _skinnedMeshRenderer.material;
-             var temp = material.color;
-             temp.a = temp.a > 0.5f ? 0.3f : 1.0f;
-             material.color = temp;
-             foreach (var mesh in eyesMeshRenderer) {
-                 mesh.material.color = temp;
+             material.SetFloat("alphaValue", material.GetFloat("alphaValue") == 1.0f ? -0.1f : 1.0f);
+             foreach (var mesh in _eyesMeshRenderer) {
+                 mesh.material.SetFloat("alphaValue", mesh.material.GetFloat("alphaValue") == 1.0f ? -0.1f : 1.0f);
              }
              //_eyesMeshRenderer.material.color = temp;
         }
@@ -456,7 +466,10 @@ namespace HellsChicken.Scripts.Game.Player
             //     _transform.position = GameManager.Instance.GetCurrentCheckPointPos();
             // _characterController.enabled = true;
             //If player dies, reload the entire scene.
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            _dissolve.Dead = true;
+            gameObject.layer = LayerMask.NameToLayer("ImmunePlayer");
+            this.enabled = false;
         }
 
         private IEnumerator EnableFlames(float time)
@@ -468,10 +481,9 @@ namespace HellsChicken.Scripts.Game.Player
 
         private IEnumerator DetachFlames(ParticleSystem temp)
         {
-            var main = temp.main;
-            yield return new WaitForSecondsRealtime(main.duration);
+            yield return new WaitForSecondsRealtime(temp.main.duration);
             temp.transform.parent = null;
-            var mainModule = main;
+            var mainModule = temp.main;
             mainModule.simulationSpeed = 3f;
             yield return null;
         }

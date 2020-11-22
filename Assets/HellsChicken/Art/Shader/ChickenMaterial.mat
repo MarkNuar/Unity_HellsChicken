@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ChickenMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: c14af84042e79664fbb022cfd7004c57,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Texture2DAsset_AD4E5E7D_Out_0:
+        m_Texture: {fileID: 2800000, guid: 41aadaee6f3156743b920f1ed641080c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Boolean_F98A3ED7: 1
+    - EdgeValue: 0
+    - Vector1_2D89D71B: 0
+    - Vector1_3719967C: 200
+    - Vector1_9B2091CB: 0
+    - Vector1_D71A7400: 0
+    - alphaAnimation: 0
+    - alphaValue: 1.1
+    - dissolveTime: -0.83
+    m_Colors:
+    - Color_1891614B: {r: 2.6390157, g: 0.15648556, b: 0, a: 0}
+    - EdgeColor: {r: 1.981031, g: 0.2618418, b: 0, a: 0}
+    - EdgeValue: {r: 1.981031, g: 0.2618418, b: 0, a: 0}
