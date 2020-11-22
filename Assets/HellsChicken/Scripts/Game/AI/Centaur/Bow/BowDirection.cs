@@ -10,7 +10,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur.Bow
         private void LateUpdate()
         {
             Vector3 position = centaur.transform.position;
-            transform.position = new Vector3(position.x, position.y, transform.position.z);
+            transform.position = new Vector3(position.x, position.y, position.z);
         }
 
         // Start is called before the first frame update

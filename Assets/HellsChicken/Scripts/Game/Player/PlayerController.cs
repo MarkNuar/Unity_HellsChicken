@@ -5,6 +5,7 @@ using Cinemachine;
 using EventManagerNamespace;
 using HellsChicken.Scripts.Game.Player.Egg;
 using HellsChicken.Scripts.Game.UI.Crosshair;
+using HellsChicken.Scripts.Game.UI.Menu;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Debug = UnityEngine.Debug;
@@ -299,10 +300,7 @@ namespace HellsChicken.Scripts.Game.Player
                 }
 
                 //MOVEMENT CHECK
-                if (_moveDirection.x != 0)
-                    _isMoving = true;
-                else
-                    _isMoving = false;
+                _isMoving = _moveDirection.x != 0;
 
                 //MOVEMENT APPLICATION
                 _characterController.Move(_moveDirection * Time.deltaTime);
@@ -329,7 +327,7 @@ namespace HellsChicken.Scripts.Game.Player
 
         private void LateUpdate()
         {
-            //Constraint the Z position of the playerbody.
+            //Constraint the Z position of the player body.
             ZConstraint();
         }
 
@@ -337,7 +335,7 @@ namespace HellsChicken.Scripts.Game.Player
         {
             if (_transform.position.z == 0) return;
             _characterController.enabled = false;
-            var position = _transform.position;
+            Vector3 position = _transform.position;
             position = new Vector3(position.x,position.y, 0f);
             _transform.position = position;
             _characterController.enabled = true;
