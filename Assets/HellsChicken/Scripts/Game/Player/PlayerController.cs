@@ -25,8 +25,8 @@ namespace HellsChicken.Scripts.Game.Player
         [SerializeField] private ParticleSystem flameStream;
         [SerializeField] private Transform firePosition;
         [SerializeField] private float flamesCooldown = 2f;
-        [SerializeField] private MeshRenderer[] _eyesMeshRenderer;
-        [SerializeField] private PauseMenu _pauseMenu;
+        [SerializeField] private MeshRenderer[] eyesMeshRenderer;
+        [SerializeField] private PauseMenu pauseMenu;
         private float _gravity;
 
         private Vector3 _moveDirection;
@@ -54,8 +54,8 @@ namespace HellsChicken.Scripts.Game.Player
         private float _slopeAngle;
         private bool _wasSlidingOnPrevFame;
         private bool _isSliding;
-        private float _slideHorizontalMovementAccumulator = 0f;
-        private float _slideVerticalMovementAccumulator = 0f;
+        private float _slideHorizontalMovementAccumulator;
+        private float _slideVerticalMovementAccumulator;
         private Vector3 _hitNormal;
         [SerializeField] private float slideFriction = 0.3f;
         [SerializeField] private LayerMask slideMask;
@@ -152,7 +152,7 @@ namespace HellsChicken.Scripts.Game.Player
             {
                 float v2 = v * v;
                 float v4 = v2 * v2;
-                var sourcePosition = eggThrowPoint.position;
+                Vector3 sourcePosition = eggThrowPoint.position;
                 float x = _target.GetTarget().x - sourcePosition.x;
                 if (Mathf.Abs(x) < 0.01f)
                 {
@@ -162,7 +162,7 @@ namespace HellsChicken.Scripts.Game.Player
                 {
                     float y = _target.GetTarget().y - sourcePosition.y;
                     float x2 = x * x;
-                    float squareRoot = (float) Mathf.Sqrt(v4 - g * (g * x2 + 2 * y * v2));
+                    float squareRoot = Mathf.Sqrt(v4 - g * (g * x2 + 2 * y * v2));
                     angle = Mathf.Atan((v2 - squareRoot) / (g * x));
                     
                     if (_lookDirection.x < 0f)
@@ -222,7 +222,7 @@ namespace HellsChicken.Scripts.Game.Player
         
         private void Update()
         {
-            if (!_isDead && !_pauseMenu.getGameIsPaused())
+            if (!_isDead && !pauseMenu.getGameIsPaused())
             {
                 _isShootingFlames = false;
                 _isShootingEgg = false;
@@ -534,7 +534,7 @@ namespace HellsChicken.Scripts.Game.Player
             _isImmune = true;
             var material = _skinnedMeshRenderer.material;
             material.SetInt("alphaAnimation",1);
-            foreach (var mesh in _eyesMeshRenderer) {
+            foreach (var mesh in eyesMeshRenderer) {
                 mesh. material.SetInt("alphaAnimation",1);
             }
             gameObject.layer = LayerMask.NameToLayer("ImmunePlayer");
@@ -546,12 +546,12 @@ namespace HellsChicken.Scripts.Game.Player
             CancelInvoke();
             //_meshRenderer.enabled = true;
             material.SetFloat("alphaValue",1.0f);
-            foreach (var mesh in _eyesMeshRenderer) {
+            foreach (var mesh in eyesMeshRenderer) {
                 mesh.material.SetFloat("alphaValue", 1.0f);
             }
             
             material.SetInt("alphaAnimation",0);
-            foreach (var mesh in _eyesMeshRenderer) {
+            foreach (var mesh in eyesMeshRenderer) {
                 mesh. material.SetInt("alphaAnimation",0);
             }
             
@@ -565,7 +565,7 @@ namespace HellsChicken.Scripts.Game.Player
             //Use the next lines if you want it to be transparent
              var material = _skinnedMeshRenderer.material;
              material.SetFloat("alphaValue", material.GetFloat("alphaValue") == 1.0f ? -0.1f : 1.0f);
-             foreach (var mesh in _eyesMeshRenderer) {
+             foreach (var mesh in eyesMeshRenderer) {
                  mesh.material.SetFloat("alphaValue", mesh.material.GetFloat("alphaValue") == 1.0f ? -0.1f : 1.0f);
              }
              //_eyesMeshRenderer.material.color = temp;

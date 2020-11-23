@@ -1,64 +1,55 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using HellsChicken.Scripts.Game.Player;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DissolveController : MonoBehaviour {
+namespace HellsChicken.Scripts.Game.Player
+{
+    public class DissolveController : MonoBehaviour {
 
-    [SerializeField] private Renderer[] othersMaterials;
+        [SerializeField] private Renderer[] othersMaterials;
 
-    private Material _material;
-    private float i = 1;
-    private bool dead = false;
+        private Material _material;
+        private float i = 1;
+        private bool _dead;
 
-
-    public bool Dead {
-        get => dead;
-        set => dead = value;
-    }
-
-    private void Awake() {
-        _material = GetComponent<Renderer>().material;
-    }
-
-    // Start is called before the first frame update
-    void Start() {
-
-    }
-
-    // Update is called once per frame
-    void FixedUpdate() {
-        if (dead) {
-            if (i < 1) {
-                i += 0.006f;
-                _material.SetFloat("dissolveTime", i);
-                foreach (Renderer renderer in othersMaterials) {
-                    renderer.material.SetFloat("dissolveTime", i);
-                }
-            }
-            else {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            }
-        }else {
-            if (i > 0) {
-                i -= 0.01f;
-                _material.SetFloat("dissolveTime", i);
-                
-                foreach (Renderer renderer in othersMaterials) {
-                    renderer.material.SetFloat("dissolveTime", i);
-                }
-
-                if (i <= 0) {
-                    //Non si puo disattivare perchè interferisce con i checkpoint?
-                    //GetComponent<PlayerController>().enabled = true;
-                    _material.SetFloat("EdgeValue", 0.06f);
-                    gameObject.layer = LayerMask.NameToLayer("Player");
-                }
-            }
+        public bool Dead {
+            set => _dead = value;
         }
-        /*if (dead) {
+
+        private void Awake() {
+            _material = GetComponent<Renderer>().material;
+        }
+        
+        // Update is called once per frame
+        void FixedUpdate() {
+            if (_dead) {
+                if (i < 1) {
+                    i += 0.006f;
+                    _material.SetFloat("dissolveTime", i);
+                    foreach (Renderer r in othersMaterials) {
+                        r.material.SetFloat("dissolveTime", i);
+                    }
+                }
+                else {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                }
+            }else {
+                if (i > 0) {
+                    i -= 0.01f;
+                    _material.SetFloat("dissolveTime", i);
+                
+                    foreach (Renderer r in othersMaterials) {
+                        r.material.SetFloat("dissolveTime", i);
+                    }
+
+                    if (i <= 0) {
+                        //Non si puo disattivare perchè interferisce con i checkpoint?
+                        //GetComponent<PlayerController>().enabled = true;
+                        _material.SetFloat("EdgeValue", 0.06f);
+                        gameObject.layer = LayerMask.NameToLayer("Player");
+                    }
+                }
+            }
+            /*if (dead) {
             if (i < 1) {
                 i += 0.01f;
                 _material.SetFloat("burn", i);
@@ -82,5 +73,6 @@ public class DissolveController : MonoBehaviour {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }*/
+        }
     }
 }    

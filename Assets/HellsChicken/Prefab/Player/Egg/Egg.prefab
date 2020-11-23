@@ -172,10 +172,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f78958da80aa6004a8674ad1def15447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bombAudioSource: {fileID: 207731331879928160}
-  _bombTimerAudioSource: {fileID: 9169398262542579629}
-  _bombSound: {fileID: 8300000, guid: 47dbd35d22a69414ca9c59cbcfa30a1b, type: 3}
-  _bombTimerSound: {fileID: 8300000, guid: 121d4baec8e60184d82963eac1a5c1c1, type: 3}
+  bombAudioSource: {fileID: 207731331879928160}
+  bombTimerAudioSource: {fileID: 9169398262542579629}
+  bombSound: {fileID: 8300000, guid: 47dbd35d22a69414ca9c59cbcfa30a1b, type: 3}
+  bombTimerSound: {fileID: 8300000, guid: 121d4baec8e60184d82963eac1a5c1c1, type: 3}
 --- !u!1 &6923912146378149102
 GameObject:
   m_ObjectHideFlags: 0

@@ -194,18 +194,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 460b4f873f1a7864fb8d6a49b7055c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _centaurShotAudioSource: {fileID: 0}
-  _flameThrowerAudioSource: {fileID: 2373898712993273151}
-  _footStepsAudioSource: {fileID: 8330016071506394841}
-  _wingsFlappingAudioSource: {fileID: 2812897520645955682}
-  _chickenDamageAudioSource: {fileID: 6170558326494685668}
-  _chickenDeathAudioSource: {fileID: 3961049242815583436}
-  _centaurShotSound: {fileID: 0}
-  _flameThrowerSound: {fileID: 8300000, guid: a4de4b4232e66c149a7538dc4688789f, type: 3}
-  _footStepsSound: {fileID: 8300000, guid: c6daf91db4ec2d0499c4166b3e016306, type: 3}
-  _wingsFlappingSound: {fileID: 8300000, guid: 0180764aefbbc4c47a3b0b76f4b91af8, type: 3}
-  _chickenDamageSound: {fileID: 8300000, guid: 97a766d834f1fbe4ea1b353821f4b588, type: 3}
-  _chickenDeathSound: {fileID: 8300000, guid: a538169cf1fca9e468a7fb18938d46ce, type: 3}
+  centaurShotAudioSource: {fileID: 7156695484194346149}
+  flameThrowerAudioSource: {fileID: 2373898712993273151}
+  footStepsAudioSource: {fileID: 8330016071506394841}
+  wingsFlappingAudioSource: {fileID: 2812897520645955682}
+  chickenDamageAudioSource: {fileID: 6170558326494685668}
+  chickenDeathAudioSource: {fileID: 3961049242815583436}
+  centaurShotSound: {fileID: 0}
+  flameThrowerSound: {fileID: 8300000, guid: a4de4b4232e66c149a7538dc4688789f, type: 3}
+  footStepsSound: {fileID: 8300000, guid: c6daf91db4ec2d0499c4166b3e016306, type: 3}
+  wingsFlappingSound: {fileID: 8300000, guid: 0180764aefbbc4c47a3b0b76f4b91af8, type: 3}
+  chickenDamageSound: {fileID: 8300000, guid: 97a766d834f1fbe4ea1b353821f4b588, type: 3}
+  chickenDeathSound: {fileID: 8300000, guid: a538169cf1fca9e468a7fb18938d46ce, type: 3}
 --- !u!1 &380966217745215060
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,6 +605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 10
   jumpSpeed: 5
+  maxSpeedVectorMagnitude: 100
   gravityScale: 4
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
@@ -613,8 +614,8 @@ MonoBehaviour:
     type: 3}
   firePosition: {fileID: 3017388391660182780}
   flamesCooldown: 1
-  _eyesMeshRenderer: []
-  _pauseMenu: {fileID: 0}
+  eyesMeshRenderer: []
+  pauseMenu: {fileID: 0}
   anim: {fileID: 2756826224257948348}
   initialEggVelocity: 6
   deltaEggVelocity: 5
@@ -624,6 +625,10 @@ MonoBehaviour:
   eggThrowPoint: {fileID: 5016085766894943763}
   crosshairCanvas: {fileID: 7825149178345940463}
   playerCamera: {fileID: 662464223060016393}
+  slideFriction: 0.3
+  slideMask:
+    serializedVersion: 2
+    m_Bits: 262144
   eggCooldown: 2
   immunityDuration: 1.5
 --- !u!114 &8035021250589292805

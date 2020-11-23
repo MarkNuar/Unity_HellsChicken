@@ -1,40 +1,43 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using EventManagerNamespace;
 using UnityEngine;
-using EventManagerNamespace;
 
-public class EggAudioManager : MonoBehaviour
+namespace HellsChicken.Scripts.Game.Audio
 {
-    [SerializeField] private AudioSource _bombAudioSource;
-    [SerializeField] private AudioSource _bombTimerAudioSource;
-    
-    [SerializeField] private AudioClip _bombSound;
-    [SerializeField] private AudioClip _bombTimerSound;
-
-    private void Awake()
+    public class EggAudioManager : MonoBehaviour
     {
-        EventManager.StartListening("playBomb",playBomb);
-        EventManager.StartListening("playTimerBomb",playTimerBomb);
-    }
+        [SerializeField] private AudioSource bombAudioSource;
+        [SerializeField] private AudioSource bombTimerAudioSource;
     
-    private void OnDisable() {
-        EventManager.StopListening("playBomb",playBomb);
-        EventManager.StopListening("playTimerBomb",playTimerBomb);
-    }
+        [SerializeField] private AudioClip bombSound;
+        [SerializeField] private AudioClip bombTimerSound;
+
+        private void Awake()
+        {
+            EventManager.StartListening("playBomb",PlayBomb);
+            EventManager.StartListening("playTimerBomb",PlayTimerBomb);
+        }
     
-    public void playBomb(){
-        EventManager.StartListening("playBomb",playBomb);
-        _bombAudioSource.clip = _bombSound;
-        _bombAudioSource.Play();
-        EventManager.StopListening("playBomb",playBomb);
-    }
+        private void OnDisable()
+        {
+            EventManager.StopListening("playBomb",PlayBomb);
+            EventManager.StopListening("playTimerBomb",PlayTimerBomb);
+        }
+
+        private void PlayBomb()
+        {
+            EventManager.StartListening("playBomb",PlayBomb);
+            bombAudioSource.clip = bombSound;
+            bombAudioSource.Play();
+            EventManager.StopListening("playBomb",PlayBomb);
+        }
     
-    public void playTimerBomb(){
-        EventManager.StopListening("playTimerBomb",playTimerBomb);
-        _bombTimerAudioSource.clip = _bombTimerSound;
-        _bombTimerAudioSource.time = 1f;
-        _bombTimerAudioSource.Play();
-        EventManager.StartListening("playTimerBomb",playTimerBomb);
+        private void PlayTimerBomb()
+        {
+            EventManager.StopListening("playTimerBomb",PlayTimerBomb);
+            bombTimerAudioSource.clip = bombTimerSound;
+            bombTimerAudioSource.time = 1f;
+            bombTimerAudioSource.Play();
+            EventManager.StartListening("playTimerBomb",PlayTimerBomb);
+        }
     }
 }

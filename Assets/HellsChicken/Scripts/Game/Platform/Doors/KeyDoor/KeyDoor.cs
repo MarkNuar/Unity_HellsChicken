@@ -19,23 +19,24 @@ namespace HellsChicken.Scripts.Game.Platform.Doors.KeyDoor
         private bool _isButtonPressed;
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             SetInitialReferences();
         }
         
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
-            OpenDoor();
+            if (!_isOpened && _isButtonPressed) 
+                OpenDoor();
         }
 
         public Key.KeyType GetKeyType()
         {
             return keyType;
         }
-        
-        void SetInitialReferences()
+
+        private void SetInitialReferences()
         {
             Vector3 doorPosition = transform.position;
             
@@ -44,20 +45,14 @@ namespace HellsChicken.Scripts.Game.Platform.Doors.KeyDoor
             _totalDistanceToCover = Vector3.Distance(_doorCloseTarget, _doorOpenTarget);
         }
 
-        void OpenDoor()
+        private void OpenDoor()
         {
-            if (!_isOpened && _isButtonPressed)
-            {
-                float distanceCovered = (Time.time - _startTime) * moveSpeed;
-                float fractionOfJourney = distanceCovered / _totalDistanceToCover;
-                transform.position = Vector3.Lerp(transform.position, _doorOpenTarget, fractionOfJourney);
+            float distanceCovered = (Time.time - _startTime) * moveSpeed;
+            float fractionOfJourney = distanceCovered / _totalDistanceToCover;
+            transform.position = Vector3.Lerp(transform.position, _doorOpenTarget, fractionOfJourney);
 
-                if (Mathf.Approximately(transform.position.y, _doorOpenTarget.y))
-                {
-                    Debug.Log("Door Opened");
-                    _isOpened = true;
-                }
-            }
+            if (Mathf.Approximately(transform.position.y, _doorOpenTarget.y)) 
+                _isOpened = true;
         }
 
         public bool IsOpened()

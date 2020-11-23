@@ -6,14 +6,15 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles.Rock
     {
         private Rigidbody _rockRb;
         [SerializeField] private GameObject rockPrefab;
-        [SerializeField] private float gravityModifier = 10;
         
-        void Start()
+        [SerializeField] private float gravityModifier = 10;
+
+        private void Start()
         {
             _rockRb = rockPrefab.GetComponent<Rigidbody>();
         }
 
-        void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Player"))
             {

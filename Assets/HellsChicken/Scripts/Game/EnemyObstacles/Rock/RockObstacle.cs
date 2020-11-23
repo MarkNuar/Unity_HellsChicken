@@ -7,8 +7,8 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles.Rock
         private Rigidbody _rockRb;
         
         [SerializeField] private float gravityModifier = 10;
-        
-        void Start()
+
+        private void Start()
         {
             _rockRb = GetComponent<Rigidbody>();
         }
