@@ -222,7 +222,7 @@ namespace HellsChicken.Scripts.Game.Player
         
         private void Update()
         {
-            if (!_isDead && !pauseMenu.getGameIsPaused())
+            if (!_isDead && !PauseMenu.GetGameIsPaused())
             {
                 _isShootingFlames = false;
                 _isShootingEgg = false;

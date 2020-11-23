@@ -8,8 +8,8 @@ namespace HellsChicken.Scripts.Game.Player.Egg
         private Camera _camera;
         
         // Use this for initialization
-        void Start () {
-            //Cursor.visible = false;
+        private void Start () 
+        {
             _camera = GetComponent<Camera>();
         }
         

@@ -33,12 +33,14 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
 
         private bool _isColliding;
     
-        private void Awake() {
+        private void Awake() 
+        {
             _characterController = GetComponent<CharacterController>();
         }
 
         // Start is called before the first frame update
-        void Start() {
+        void Start() 
+        {
             //_characterController.detectCollisions = false;
             _movement = Vector3.zero;
 
@@ -61,54 +63,65 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
             _tree = new DecisionTree.DecisionTree(d1);
 
             StartCoroutine(TreeCoroutine());
-        
         }
     
-        private void Update() {
+        private void Update() 
+        {
             _movement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
-            if (_canMove) {
+            if (_canMove) 
+            {
                 if (!_isColliding)
                 {
                     if (_right)
+                    {
                         _movement.x = agentVelocity;
+                    }
                     else
+                    {
                         _movement.x = -agentVelocity;
+                    }
                 }
                 else
                 {
                     _movement.x = 0;
                 }
-            }else
+            }
+            else
             {
                 _movement.x = 0;
             }
             _characterController.Move(_movement * Time.deltaTime);
         }
-    
-        IEnumerator TreeCoroutine() {
-            while (true) {
+
+        private IEnumerator TreeCoroutine() 
+        {
+            while (true) 
+            {
                 _tree.Start();
                 yield return new WaitForSeconds(timeReaction);
             }
         }
     
         //Actions
-        private object Move() {
+        private object Move() 
+        {
             _canMove = true;
             _shootInterval = 0;
             return null;
         }
 
-        private object Stop() {
+        private object Stop() 
+        {
             _canMove = false;
             _shootInterval = 0;
             return null;
         }
 
-        private object Hit() {
-            if (_shootInterval == 0) {
-                GameObject fire = Instantiate(bombPrefab, arrowPosition.position,
-                    Quaternion.LookRotation(player.position, transform.position));
+        private object Hit() 
+        {
+            if (_shootInterval == 0) 
+            {
+                GameObject fire = Instantiate(bombPrefab, arrowPosition.position, Quaternion.LookRotation(player.position, transform.position));
                 CentaurFire ar = fire.GetComponent<CentaurFire>();
                 ar.Target = player.position + new Vector3(0, 0.5f, 0);
                 ar.CentaurPos = transform.position;
@@ -119,13 +132,17 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
         }
 
         //Decisions
-        private object IsPlayerVisible() { 
+        private object IsPlayerVisible() 
+        { 
             Vector3 ray = player.position - transform.position;
             //Debug.DrawLine(transform.position,player.position, Color.white, 0.5f);
-            //if (Physics.Raycast(transform.position, ray, out hit, 30f,mask)) {
-            if(Physics.SphereCast(transform.position,0.5f,ray,out var hit,30,mask)){
-                if (hit.transform.CompareTag("Player")) {
-                    if (Vector3.Dot(ray, transform.right) <= 0) {
+            //if (Physics.Raycast(transform.position, ray, out hit, 30f,mask))
+            if(Physics.SphereCast(transform.position,0.5f,ray,out var hit,30,mask))
+            {
+                if (hit.transform.CompareTag("Player")) 
+                {
+                    if (Vector3.Dot(ray, transform.right) <= 0) 
+                    {
                         transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
                         EventManager.TriggerEvent("changeBowDirection");
                         _right = !_right;
@@ -143,23 +160,32 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
             return false;
         }
 
-        private object IsPlayerStill() {
-            if (_still == 0) {
-                if (Random.Range(0, 10) > 6) {
+        private object IsPlayerStill() 
+        {
+            if (_still == 0) 
+            {
+                if (Random.Range(0, 10) > 6) 
+                {
                     _still = +1;
                     _textInstance = Instantiate(textPrefab, gameObject.transform.position + new Vector3(-0.4f, 3, 0),
                         Quaternion.identity);
                     return false;
                 }
                 else
+                {
                     return true;
-
-            }else {
-                if (_still > 0) {
+                }
+            }
+            else 
+            {
+                if (_still > 0) 
+                {
                     _still += 1;
-                    if (_still == 4) {
-                        if (Random.Range(0, 2) == 0) {
-                            transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
+                    if (_still == 4) 
+                    {
+                        if (Random.Range(0, 2) == 0)
+                        {
+                            transform.rotation *= Quaternion.Euler(0, 180, 0);
                             EventManager.TriggerEvent("changeBowDirection");
                             _right = !_right;
                         }
@@ -167,18 +193,22 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
                         _still = -4;
                     }
                     return false;
-                }else {
+                }
+                else 
+                {
                     _still += 1;
                     return true;
                 }
             }
         }
 
-        private void OnTriggerEnter(Collider other) {
-            if (other.gameObject.CompareTag("Player")) {
+        private void OnTriggerEnter(Collider other) 
+        {
+            if (other.gameObject.CompareTag("Player"))
                 _isColliding = true;
-            }
-            if (other.gameObject.CompareTag("Wall")) {
+            
+            if (other.gameObject.CompareTag("Wall")) 
+            {
                 transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
                 EventManager.TriggerEvent("changeBowDirection");
                 _right = !_right;

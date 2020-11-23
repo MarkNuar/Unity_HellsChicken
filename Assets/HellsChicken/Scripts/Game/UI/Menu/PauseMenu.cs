@@ -12,7 +12,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
         public GameObject eggCrosshairCanvas;
         
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -20,7 +20,6 @@ namespace HellsChicken.Scripts.Game.UI.Menu
                 {
                     Resume();
                 }
-
                 else
                 {
                     Pause();
@@ -36,14 +35,13 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             _gameIsPaused = false;
             eggCrosshairCanvas.SetActive(true);
         }
-    
-        void Pause()
+
+        private void Pause()
         {
             pauseMenuUI.SetActive(true);
             Time.timeScale = 0f;
             _gameIsPaused = true;
             eggCrosshairCanvas.SetActive(false);
-        
         }
     
         public void QuitGame()
@@ -51,7 +49,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             Application.Quit();
         }
 
-        public bool getGameIsPaused()
+        public static bool GetGameIsPaused()
         {
             return _gameIsPaused;
         }

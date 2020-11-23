@@ -9,24 +9,23 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
 {
     public class BombExplosion : MonoBehaviour
     {
-
         [SerializeField] private GameObject explosionPrefab;
         [SerializeField] private GameObject vanishEffectPrefab;
         
-        private Color _red = Color.red;
-        private Color _white = Color.white;
-
         private MeshRenderer _meshRenderer;
         private int _cont;
-        private float radius =5;
-        private float force = 500f;
         
-        private void Awake() {
+        [SerializeField] private float radius = 5;
+        [SerializeField] private float force = 500f;
+        
+        private void Awake() 
+        {
             _meshRenderer = GetComponent<MeshRenderer>();
         }
 
         // Start is called before the first frame update
-        void Start() {
+        void Start() 
+        {
             Instantiate(vanishEffectPrefab, transform.position, Quaternion.identity);
             EventManager.TriggerEvent("playTimerBomb");
             StartCoroutine(MakeExplosion());
@@ -34,40 +33,45 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
 
         private void Update()
         {
-            _meshRenderer.material.color = _cont == 0 ? _red : _white;
+            _meshRenderer.material.color = _cont == 0 ? Color.red : Color.white;
             _cont = (_cont + 1) % 2;
         }
 
         //Wait for 2 second and then make the bomb explode.
-        IEnumerator MakeExplosion() {  
+        private IEnumerator MakeExplosion() 
+        {  
             yield return new WaitForSeconds(1);
             
             Vector3 position = transform.position;
             Instantiate(explosionPrefab, position, Quaternion.identity);
+            
+            List<String> names =  new List<String>();
             EventManager.TriggerEvent("playBomb");
             
             Collider[] collidersToMove = Physics.OverlapSphere(position, radius);
-            List<String> names =  new List<String>();
-            foreach (Collider nearbyObject in collidersToMove) {
-                if (!names.Contains(nearbyObject.name) && !nearbyObject.gameObject.CompareTag("Enemy")) {
+            
+            foreach (Collider nearbyObject in collidersToMove) 
+            {
+                if (!names.Contains(nearbyObject.name))
+                {
+                    names.Add(nearbyObject.gameObject.name);
                     
                     Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
-                    if (rb != null) {
-                        rb.AddExplosionForce(force, transform.position, radius);
-                    }
-
                     Destruction dest = nearbyObject.GetComponent<Destruction>();
-                    if (dest != null) {
-                        dest.Destroyer();
-                    }
 
-                    names.Add(nearbyObject.gameObject.name);
+                    if (!nearbyObject.gameObject.CompareTag("Enemy"))
+                    {
+                        if (rb != null)
+                            rb.AddExplosionForce(force, transform.position, radius);
+
+                        if (dest != null)
+                            dest.Destroyer();
+                    }
                 }
             }
             
             Destroy(gameObject);
             yield return null;
         }
-    
     }
 }

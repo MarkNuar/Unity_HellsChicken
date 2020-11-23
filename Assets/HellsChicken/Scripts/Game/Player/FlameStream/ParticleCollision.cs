@@ -5,11 +5,15 @@ namespace HellsChicken.Scripts.Game.Player.FlameStream
 {
     public class ParticleCollision : MonoBehaviour
     {
-        void OnParticleCollision(GameObject other) {
-            if (other.gameObject.CompareTag("Enemy")) {
+        private void OnParticleCollision(GameObject other) 
+        {
+            if (other.gameObject.CompareTag("Enemy")) 
+            {
                 Destruction destr = other.GetComponent<Destruction>();
+                
                 if(destr == null)    
                     destr = other.gameObject.transform.parent.GetComponent<Destruction>();
+                
                 destr.Destroyer();
             }
         }

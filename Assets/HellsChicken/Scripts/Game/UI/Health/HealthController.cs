@@ -14,8 +14,7 @@ namespace HellsChicken.Scripts.Game.UI.Health
         private const float SpaceBetweenHearts = 0.06f;
         private Image[] _hearts;
         private bool _playerHasToBeKilled;
-    
-    
+        
         private void OnEnable()
         {
             EventManager.StartListening("DecreasePlayerHealth",DecreaseHealth);
@@ -61,6 +60,7 @@ namespace HellsChicken.Scripts.Game.UI.Health
         
             if(_health == 1)
                 EventManager.TriggerEvent("LastHeart");
+            
             if (_health == 0 || _playerHasToBeKilled)
             {
                 EventManager.TriggerEvent("PlayerDeath");

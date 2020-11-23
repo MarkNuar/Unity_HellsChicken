@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace HellsChicken.Scripts.Game.AI.Centaur.Bow
 {
-    public class BowDirection : MonoBehaviour {
-    
+    public class BowDirection : MonoBehaviour 
+    {
         [SerializeField] private GameObject centaur;
 
         private void LateUpdate()
@@ -14,15 +14,16 @@ namespace HellsChicken.Scripts.Game.AI.Centaur.Bow
         }
 
         // Start is called before the first frame update
-        private void Start(){
+        private void Start()
+        {
             EventManager.StartListening("changeBowDirection",ChangeDirection);
         }
 
-        private void ChangeDirection() {
+        private void ChangeDirection() 
+        {
             EventManager.StopListening("changeBowDirection",ChangeDirection);
-            transform.rotation = Quaternion.Euler(0,180,0) * transform.rotation;
+            transform.rotation *= Quaternion.Euler(0,180,0);
             EventManager.StartListening("changeBowDirection",ChangeDirection);
         }
-    
     }
 }

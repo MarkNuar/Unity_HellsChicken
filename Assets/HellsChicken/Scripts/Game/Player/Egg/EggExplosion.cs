@@ -12,8 +12,8 @@ namespace HellsChicken.Scripts.Game.Player.Egg
         
         private bool _hasExploded;
         
-        private float radius = 2f;
-        private float force = 500f;
+        [SerializeField] private float radius = 2f;
+        [SerializeField] private float force = 500f;
         
         private void OnCollisionEnter()
         {
@@ -25,7 +25,7 @@ namespace HellsChicken.Scripts.Game.Player.Egg
             }
         }
 
-        void Explode()
+        private void Explode()
         {
             Transform egg = transform;
             GameObject particle = Instantiate(explosionEffect, egg.position, egg.rotation);
@@ -35,11 +35,13 @@ namespace HellsChicken.Scripts.Game.Player.Egg
             EventManager.TriggerEvent("playBomb");
             
             Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
+            
             foreach (Collider nearbyObject in colliders) 
             {
                 if (!names.Contains(nearbyObject.name)) 
                 {
                     names.Add(nearbyObject.name);
+                    
                     Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
                     Destruction dest = nearbyObject.GetComponent<Destruction>();
 
@@ -47,10 +49,7 @@ namespace HellsChicken.Scripts.Game.Player.Egg
                     {
                         if(rb != null)
                             rb.AddExplosionForce(force, transform.position, radius);
-                        //}
-
-                        //if (nearbyObject.gameObject.layer == 12 || nearbyObject.gameObject.layer == 13) {
-                        //Destruction dest = nearbyObject.GetComponent<Destruction>();
+                        
                         if (dest == null) 
                             dest = nearbyObject.gameObject.transform.parent.GetComponent<Destruction>();
                         
@@ -63,7 +62,7 @@ namespace HellsChicken.Scripts.Game.Player.Egg
             StartCoroutine(DelayDestroyEgg(2.0f));
         }
 
-        IEnumerator DelayDestroyEgg(float time)
+        private IEnumerator DelayDestroyEgg(float time)
         {
             yield return new WaitForSeconds(time);
             Destroy(gameObject);

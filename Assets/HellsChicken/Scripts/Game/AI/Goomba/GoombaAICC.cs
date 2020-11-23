@@ -6,11 +6,14 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
     {
         [SerializeField] private bool right = true;
         [SerializeField] private float gravityScale = 1f;
+        [SerializeField] private float agentVelocity = 8f;
+        
         private CharacterController _characterController;
-        private float agentVelocity = 8f;
 
-        private Vector3 _movement; 
-        public void Awake() {
+        private Vector3 _movement;
+        
+        public void Awake()
+        {
             _characterController = GetComponent<CharacterController>();
         }
 
@@ -20,7 +23,8 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
             _movement = Vector3.zero; 
         }
 
-        private void Update() {
+        private void Update()
+        {
             _movement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
             if (right)
                 _movement.x = agentVelocity;
@@ -29,10 +33,12 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
             _characterController.Move(_movement * Time.deltaTime);
         }
 
-        private void OnTriggerEnter(Collider other) {
-            if (other.gameObject.CompareTag("Wall") || other.gameObject.CompareTag("Enemy")) {
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Wall") || other.gameObject.CompareTag("Enemy"))
+            {
                 right = !right;
-                transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
+                transform.rotation *= Quaternion.Euler(0, 180, 0);
             }
         }
     }

@@ -1,6 +1,7 @@
 ﻿namespace HellsChicken.Scripts.Game.AI.DecisionTree
 {
-    public interface IDTNode { 
+    public interface IDTNode 
+    { 
         DTAction Walk();
     }
 

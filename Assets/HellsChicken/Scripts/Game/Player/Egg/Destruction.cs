@@ -5,11 +5,12 @@ namespace HellsChicken.Scripts.Game.Player.Egg
 {
 	public class Destruction : MonoBehaviour
 	{
+		[SerializeField] private GameObject destroyedVersion;
 		
-		[SerializeField] GameObject destroyedVersion;
-		
-		public void Destroyer () {
-			if(!gameObject.CompareTag("Player")) {
+		public void Destroyer () 
+		{
+			if(!gameObject.CompareTag("Player")) 
+			{
 				if (destroyedVersion != null)
 				{
 					Transform originalVersion = transform;
@@ -18,7 +19,8 @@ namespace HellsChicken.Scripts.Game.Player.Egg
 
 				Destroy(gameObject);
 			}
-			else {
+			else 
+			{
 				EventManager.TriggerEvent("StartImmunityCoroutine");
 			}
 		}

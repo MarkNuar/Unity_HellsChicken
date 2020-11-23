@@ -9,8 +9,8 @@ namespace HellsChicken.Scripts.Game.CheckPoint
 
         [SerializeField] private Material checkPointActivatedMaterial;
         [SerializeField] private Material checkPointDeactivatedMaterial;
-   
-        void Start()
+
+        private void Start()
         {
             gameObject.GetComponent<MeshRenderer>().material = checkPointDeactivatedMaterial;
         }
@@ -25,7 +25,7 @@ namespace HellsChicken.Scripts.Game.CheckPoint
             }
         }
 
-        IEnumerator CheckPointColorChange(float time)
+        private IEnumerator CheckPointColorChange(float time)
         {
             gameObject.GetComponent<MeshRenderer>().material = checkPointActivatedMaterial;
             yield return new WaitForSeconds(time);

@@ -5,6 +5,7 @@ namespace HellsChicken.Scripts.Game.UI.Crosshair
     public class FollowMouse : MonoBehaviour
     {
         private Transform _transform;
+        
         private void Awake()
         {
             _transform = gameObject.GetComponent<Transform>();
