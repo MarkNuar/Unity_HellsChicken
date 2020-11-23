@@ -3,45 +3,57 @@ using UnityEngine.SceneManagement;
 
 namespace HellsChicken.Scripts.Game.Player
 {
-    public class DissolveController : MonoBehaviour {
-
+    public class DissolveController : MonoBehaviour 
+    {
         [SerializeField] private Renderer[] othersMaterials;
 
         private Material _material;
         private float i = 1;
         private bool _dead;
 
-        public bool Dead {
+        public bool Dead 
+        {
             set => _dead = value;
         }
 
-        private void Awake() {
+        private void Awake() 
+        {
             _material = GetComponent<Renderer>().material;
         }
         
         // Update is called once per frame
-        void FixedUpdate() {
-            if (_dead) {
-                if (i < 1) {
+        private void FixedUpdate() 
+        {
+            if (_dead) 
+            {
+                if (i < 1) 
+                {
                     i += 0.006f;
                     _material.SetFloat("dissolveTime", i);
-                    foreach (Renderer r in othersMaterials) {
+                    foreach (Renderer r in othersMaterials) 
+                    {
                         r.material.SetFloat("dissolveTime", i);
                     }
                 }
-                else {
+                else 
+                {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 }
-            }else {
-                if (i > 0) {
+            }
+            else 
+            {
+                if (i > 0) 
+                {
                     i -= 0.01f;
                     _material.SetFloat("dissolveTime", i);
                 
-                    foreach (Renderer r in othersMaterials) {
+                    foreach (Renderer r in othersMaterials) 
+                    {
                         r.material.SetFloat("dissolveTime", i);
                     }
 
-                    if (i <= 0) {
+                    if (i <= 0) 
+                    {
                         //Non si puo disattivare perchè interferisce con i checkpoint?
                         //GetComponent<PlayerController>().enabled = true;
                         _material.SetFloat("EdgeValue", 0.06f);
@@ -49,6 +61,7 @@ namespace HellsChicken.Scripts.Game.Player
                     }
                 }
             }
+            
             /*if (dead) {
             if (i < 1) {
                 i += 0.01f;
@@ -73,6 +86,7 @@ namespace HellsChicken.Scripts.Game.Player
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }*/
+            
         }
     }
 }    

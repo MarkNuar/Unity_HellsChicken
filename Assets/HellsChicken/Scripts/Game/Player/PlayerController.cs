@@ -17,7 +17,7 @@ namespace HellsChicken.Scripts.Game.Player
         [SerializeField] private float jumpSpeed = 5.0f;
         [SerializeField] private float maxSpeedVectorMagnitude = 100f;
         private bool _isYMovementCorrected;
-        private float _yMovementCorrection = 8.0f;
+        [SerializeField] private float yMovementCorrection = 8.0f;
         [SerializeField] private float gravityScale = 2.0f;
         [SerializeField] private float fallMultiplier = 2.5f;
         [SerializeField] private float lowJumpMultiplier = 2f;
@@ -148,12 +148,14 @@ namespace HellsChicken.Scripts.Game.Player
             float g = -_gravity;
             float angle = float.NaN;
             float v = initialEggVelocity; //initial throw egg force
+            
             while (float.IsNaN(angle))
             {
                 float v2 = v * v;
                 float v4 = v2 * v2;
                 Vector3 sourcePosition = eggThrowPoint.position;
                 float x = _target.GetTarget().x - sourcePosition.x;
+                
                 if (Mathf.Abs(x) < 0.01f)
                 {
                     angle = Mathf.PI / 2;
@@ -171,9 +173,11 @@ namespace HellsChicken.Scripts.Game.Player
                     if (float.IsNaN(angle))
                     {
                         v = v + deltaEggVelocity;
+                        
                         if (v > maxEggVelocity)
                         {
                             v = maxEggVelocity;
+                            
                             if (_lookDirection.x > 0f)
                                 angle = Mathf.PI / 4; //throw with the best angle for reaching maximum distance
                             else
@@ -182,9 +186,9 @@ namespace HellsChicken.Scripts.Game.Player
                     }
                 }
             }
-            GameObject egg = Instantiate(eggPrefab, eggThrowPoint.transform.position,
-                Quaternion.identity);
-            var baseEggVelocity = new Vector3(v * Mathf.Cos(angle), v * Mathf.Sin(angle), 0f);
+            
+            GameObject egg = Instantiate(eggPrefab, eggThrowPoint.transform.position, Quaternion.identity);
+            Vector3 baseEggVelocity = new Vector3(v * Mathf.Cos(angle), v * Mathf.Sin(angle), 0f);
             
             // //TODO: velocity correction if only the player is grounded
             // var playerVelocityCorrected = new Vector3(_moveDirection.x, _moveDirection.y, 0f);
@@ -216,7 +220,7 @@ namespace HellsChicken.Scripts.Game.Player
         {
             var playerVelocityCorrected = new Vector3(_moveDirection.x, _moveDirection.y, 0f);
             if (_isYMovementCorrected)
-                playerVelocityCorrected.y += _yMovementCorrection;
+                playerVelocityCorrected.y += yMovementCorrection;
             return playerVelocityCorrected;
         }
         
@@ -316,7 +320,9 @@ namespace HellsChicken.Scripts.Game.Player
                         EventManager.TriggerEvent("wingsFlap");
                     }
                     else
+                    {
                         _isGliding = false;
+                    }
                 }
                 else
                 {
@@ -337,7 +343,7 @@ namespace HellsChicken.Scripts.Game.Player
                     if (IsGrounded() && IsFalling()) //The falling check is made because when the character is on ground, it has a negative velocity
                     {
                         _isYMovementCorrected = true;
-                        _moveDirection.y = -_yMovementCorrection;
+                        _moveDirection.y = -yMovementCorrection;
                         _isGliding = false;
 
                         if (_isMoving)
@@ -378,12 +384,12 @@ namespace HellsChicken.Scripts.Game.Player
                             EventManager.TriggerEvent("wingsFlap");
                         }
                         else
+                        {
                             _isGliding = false;
+                        }
                     }
                 }
                 
-                
-
                 //MOVEMENT CHECK
                 _isMoving = _moveDirection.x != 0;
 
@@ -440,14 +446,17 @@ namespace HellsChicken.Scripts.Game.Player
             return _moveDirection.y < 0f;
         }
 
-        private void OnControllerColliderHit(ControllerColliderHit hit){
-
-            if (hit.gameObject.CompareTag("MovingPlatform")) {
+        private void OnControllerColliderHit(ControllerColliderHit hit)
+        {
+            if (hit.gameObject.CompareTag("MovingPlatform")) 
+            {
                 EventManager.TriggerEvent("platformCollide",hit.gameObject.name);
             }
             
             //Stop going up when the character controller collides with something over it
-            if (_characterController.collisionFlags != CollisionFlags.Above) return;
+            if (_characterController.collisionFlags != CollisionFlags.Above) 
+                return;
+            
             if (Vector3.Dot(hit.normal, _moveDirection) < 0)
             {
                 _moveDirection -= hit.normal * Vector3.Dot(hit.normal, _moveDirection);
@@ -499,44 +508,47 @@ namespace HellsChicken.Scripts.Game.Player
         //If true, it sets _hitNormal and _slopeAngle variables to the current values. 
         private bool SlideCheck()
         {
-            var normalSum = Vector3.zero;
-            var cc = _characterController;
+            Vector3 normalSum = Vector3.zero;
+            CharacterController cc = _characterController;
             //var capRad = _capsuleCollider.radius;
-            var carRad = cc.radius;
-            var ccc = cc.center + transform.position;
+            float carRad = cc.radius;
+            Vector3 ccc = cc.center + transform.position;
             //var skinWidth = (capRad - carRad) * 2; //this is 0.1 in our case, correct
-            var skinWidth = 0.1f;
+            float skinWidth = 0.1f;
             Vector3 sourcePoint = new Vector3(ccc.x, ccc.y - (cc.height / 2 - carRad) + skinWidth / 2, ccc.z);
             RaycastHit[] slideHitPoints = new RaycastHit[5];
             // Debug.DrawLine(Vector3.zero,sourcePoint,Color.white, 3f);
             // Debug.Log(carRad);
-            var numberOfHits = Physics.SphereCastNonAlloc(sourcePoint, carRad, Vector3.down, slideHitPoints, skinWidth,
-                slideMask); //,maxDistance: 20f,layerMask: LayerMask.NameToLayer("SphereSlidingCheck"), QueryTriggerInteraction.Ignore);
+            var numberOfHits = Physics.SphereCastNonAlloc(sourcePoint, carRad, Vector3.down, slideHitPoints, skinWidth, slideMask); //,maxDistance: 20f,layerMask: LayerMask.NameToLayer("SphereSlidingCheck"), QueryTriggerInteraction.Ignore);
             // Debug.Log(numberOfHits);
+            
             if (numberOfHits == 0)
-            {
                 return false;
-            }
+            
             for(var i = 0; i < numberOfHits; i++)
             {
                 if (!slideHitPoints[i].collider.CompareTag("SlipperyGround"))
-                {
                     return false;
-                }
+                
                 normalSum += slideHitPoints[i].normal;
             }
+            
             _hitNormal = normalSum.normalized;
             _slopeAngle = Mathf.Deg2Rad * Vector3.Angle(Vector3.up, _hitNormal);
             return true;
         }
 
-        private IEnumerator ImmunityTimer(float time) {
+        private IEnumerator ImmunityTimer(float time) 
+        {
             _isImmune = true;
             var material = _skinnedMeshRenderer.material;
             material.SetInt("alphaAnimation",1);
-            foreach (var mesh in eyesMeshRenderer) {
+            
+            foreach (var mesh in eyesMeshRenderer)
+            {
                 mesh. material.SetInt("alphaAnimation",1);
             }
+            
             gameObject.layer = LayerMask.NameToLayer("ImmunePlayer");
             InvokeRepeating(nameof(FlashMesh), 0f, 0.2f);
             //Debug.Log("Transparent");
@@ -546,12 +558,15 @@ namespace HellsChicken.Scripts.Game.Player
             CancelInvoke();
             //_meshRenderer.enabled = true;
             material.SetFloat("alphaValue",1.0f);
-            foreach (var mesh in eyesMeshRenderer) {
+            
+            foreach (var mesh in eyesMeshRenderer) 
+            {
                 mesh.material.SetFloat("alphaValue", 1.0f);
             }
             
             material.SetInt("alphaAnimation",0);
-            foreach (var mesh in eyesMeshRenderer) {
+            foreach (var mesh in eyesMeshRenderer) 
+            {
                 mesh. material.SetInt("alphaAnimation",0);
             }
             
@@ -565,7 +580,9 @@ namespace HellsChicken.Scripts.Game.Player
             //Use the next lines if you want it to be transparent
              var material = _skinnedMeshRenderer.material;
              material.SetFloat("alphaValue", material.GetFloat("alphaValue") == 1.0f ? -0.1f : 1.0f);
-             foreach (var mesh in eyesMeshRenderer) {
+             
+             foreach (var mesh in eyesMeshRenderer) 
+             {
                  mesh.material.SetFloat("alphaValue", mesh.material.GetFloat("alphaValue") == 1.0f ? -0.1f : 1.0f);
              }
              //_eyesMeshRenderer.material.color = temp;
@@ -590,7 +607,7 @@ namespace HellsChicken.Scripts.Game.Player
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             _dissolve.Dead = true;
             gameObject.layer = LayerMask.NameToLayer("ImmunePlayer");
-            this.enabled = false;
+            enabled = false;
         }
 
         private IEnumerator EnableFlames(float time)
@@ -615,13 +632,16 @@ namespace HellsChicken.Scripts.Game.Player
             EventManager.StopListening("LastHeart", LastHeart);
         }
 
-        private void StartImmunityCoroutine() {
+        private void StartImmunityCoroutine() 
+        {
             EventManager.StopListening("StartImmunityCoroutine", StartImmunityCoroutine);
             gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
+            
             if (!_isLastHeart)
             {
                 StartCoroutine(ImmunityTimer(immunityDuration));
             }
+            
             EventManager.TriggerEvent("DecreasePlayerHealth");
             EventManager.StartListening("StartImmunityCoroutine", StartImmunityCoroutine);
         }
