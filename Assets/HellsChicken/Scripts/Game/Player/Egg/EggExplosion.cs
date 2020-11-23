@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using EventManagerNamespace;
 using UnityEngine;
@@ -57,9 +58,16 @@ namespace HellsChicken.Scripts.Game.Player.Egg
                     }
                 }
             }
-
-            Destroy(gameObject);
+            
+            gameObject.GetComponent<MeshRenderer>().enabled = false;
+            StartCoroutine(DelayDestroyEgg(2.0f));
         }
-    
+
+        IEnumerator DelayDestroyEgg(float time)
+        {
+            yield return new WaitForSeconds(time);
+            Destroy(gameObject);
+            yield return null;
+        }
     }
 }
