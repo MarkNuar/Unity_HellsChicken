@@ -6,7 +6,12 @@ ModelImporter:
   - first:
       74: -2896088815769593875
     second: ChickenThigh|ChickenThighAction
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 641806de031577c4dbd0f7adbe545c1d, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
