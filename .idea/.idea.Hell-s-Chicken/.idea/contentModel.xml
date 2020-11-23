@@ -315,6 +315,16 @@
             </e>
           </e>
         </e>
+        <e p="ForceShield" t="Include">
+          <e p="Script" t="Include">
+            <e p="LaserBullet.cs" t="Include" />
+            <e p="ShieldCollision.cs" t="Include" />
+            <e p="UserControl.cs" t="Include" />
+          </e>
+          <e p="Shader" t="Include">
+            <e p="ForceShield.shader" t="Include" />
+          </e>
+        </e>
         <e p="HellsChicken" t="Include">
           <e p="Scripts" t="Include">
             <e p="Game" t="Include">

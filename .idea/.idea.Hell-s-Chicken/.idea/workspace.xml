@@ -20,13 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbb6fba1-aabc-4db2-8f6c-a4710cc59795" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Materials/Colored/White.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Materials/Colored/White.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shader/ChickenMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shader/ChickenMaterial.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shader/Dissolve.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shader/Dissolve.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shader/LavaShader.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shader/LavaShader.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shader/LavaShader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shader/LavaShader.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shader/New Shader Graph.shadergraph" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shader/New Shader Graph.shadergraph.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shader/Shader Graphs_New Shader Graph.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shader/Shader Graphs_New Shader Graph.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/DeathRespawnTest_Profiles/PostFX Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/DeathRespawnTest_Profiles/PostFX Profile.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/DissolveController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/DissolveController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +45,6 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@7.3.1/Editor/ShaderGUI/ParticleGUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/FallenPlatform.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/AudioManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/BowDirection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DTNode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DTDecision.cs" root0="FORCE_HIGHLIGHTING" />
