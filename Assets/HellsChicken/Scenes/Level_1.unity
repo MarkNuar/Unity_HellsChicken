@@ -1086,12 +1086,12 @@ PrefabInstance:
     - target: {fileID: 3078230224256349240, guid: e9866ce1d839e9242bb713d88ee93b0e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.7
+      value: -8.5
       objectReference: {fileID: 0}
     - target: {fileID: 3078230224256349240, guid: e9866ce1d839e9242bb713d88ee93b0e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.8
+      value: 37.5
       objectReference: {fileID: 0}
     - target: {fileID: 3078230224256349240, guid: e9866ce1d839e9242bb713d88ee93b0e,
         type: 3}
@@ -5315,6 +5315,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: first level
       objectReference: {fileID: 0}
+    - target: {fileID: 7337584976896803068, guid: 1338c91b73915b1489b1f0fa126b73b9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7337584976896803068, guid: 1338c91b73915b1489b1f0fa126b73b9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 7971237223978572358, guid: 1338c91b73915b1489b1f0fa126b73b9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5459,7 +5469,7 @@ PrefabInstance:
     - target: {fileID: 662464223060016629, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.42263
+      value: -14.719404
       objectReference: {fileID: 0}
     - target: {fileID: 671435094775529212, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
@@ -5469,7 +5479,7 @@ PrefabInstance:
     - target: {fileID: 671435095063938156, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.42263
+      value: -14.719404
       objectReference: {fileID: 0}
     - target: {fileID: 771729081860725613, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
@@ -5900,6 +5910,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8035021252407303942, guid: 3b2e08a2edd553945ad17d8016d01055,
+        type: 3}
+      propertyPath: slideMask.m_Bits
+      value: 262144
       objectReference: {fileID: 0}
     - target: {fileID: 8189983783880571917, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
