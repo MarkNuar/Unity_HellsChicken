@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 192083133202830216}
   - component: {fileID: 3245905231599943135}
   - component: {fileID: 87709800144872036}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Spear
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -111,3 +111,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequency: 5
   magnitude: 5
+  offset: 0
