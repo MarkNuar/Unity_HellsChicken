@@ -226,7 +226,7 @@ namespace HellsChicken.Scripts.Game.Player
         
         private void Update()
         {
-            if (!_isDead && !PauseMenu.GetGameIsPaused())
+            if (!_isDead && !PauseMenu.GetGameIsPaused() )
             {
                 _isShootingFlames = false;
                 _isShootingEgg = false;
@@ -286,6 +286,9 @@ namespace HellsChicken.Scripts.Game.Player
                 //SLIDING
                 if (_isSliding)
                 {
+                    if (Mathf.Sign(cachedHorizontalMovement * _hitNormal.x) < 0) // in case we are gliding while sliding and heading towards the wall
+                        cachedHorizontalMovement = 0f;
+                    
                     //FIRST FRAME SLIDING
                     if (!_wasSlidingOnPrevFame)
                     {
@@ -297,13 +300,13 @@ namespace HellsChicken.Scripts.Game.Player
                     //NOT FIRST FRAME SLIDING
                     else
                     {
-                        _speedInclined += -_gravity * gravityScale * Mathf.Abs(Mathf.Sin(_slopeAngle)) * (1-slideFriction) * Time.deltaTime;
+                        _speedInclined += -_gravity * gravityScale * (fallMultiplier - 1) * Mathf.Abs(Mathf.Sin(_slopeAngle)) * (1-slideFriction) * Time.deltaTime;
                         _slideHorizontalMovementAccumulator += _speedInclined * Mathf.Cos(_slopeAngle) * Mathf.Sign(_hitNormal.x) * Time.deltaTime;
                         _slideVerticalMovementAccumulator += -_speedInclined * Mathf.Sin(_slopeAngle) * Time.deltaTime;
                     }
                     
                     //SLIDE MOVEMENT APPLICATION
-                    _moveDirection.x = _slideHorizontalMovementAccumulator;
+                    _moveDirection.x = _slideHorizontalMovementAccumulator;// + cachedHorizontalMovement;
                     _moveDirection.y = _slideVerticalMovementAccumulator;
                     
                     //GLIDING WHILE SLIDING
@@ -313,8 +316,8 @@ namespace HellsChicken.Scripts.Game.Player
                         _slideHorizontalMovementAccumulator = 0f;
                         _slideVerticalMovementAccumulator = 0f;
                         var slidingSpeedInclined = glidingSpeed * Mathf.Sin(_slopeAngle) * (1-slideFriction);
-                        if (Mathf.Sign(cachedHorizontalMovement * _hitNormal.x) < 0) // in case we are gliding while sliding and heading towards the wall
-                            cachedHorizontalMovement = 0f;
+                        // if (Mathf.Sign(cachedHorizontalMovement * _hitNormal.x) < 0) // in case we are gliding while sliding and heading towards the wall
+                        //     cachedHorizontalMovement = 0f;
                         _moveDirection.x = slidingSpeedInclined * Mathf.Cos(_slopeAngle) * Mathf.Sign(_hitNormal.x) + cachedHorizontalMovement;
                         _moveDirection.y = -slidingSpeedInclined * Mathf.Sin(_slopeAngle);
                         EventManager.TriggerEvent("wingsFlap");
@@ -417,7 +420,7 @@ namespace HellsChicken.Scripts.Game.Player
                 EventManager.TriggerEvent("KillPlayer");
                 _hasVibrated = true;
             }
-            
+                   
         }
 
         private void LateUpdate()
