@@ -20,13 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbb6fba1-aabc-4db2-8f6c-a4710cc59795" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Materials/Colored/White.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Materials/Colored/White.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shader/ChickenMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shader/ChickenMaterial.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shader/Dissolve.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shader/Dissolve.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/DissolveController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/DissolveController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,14 +36,13 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@7.3.1/Editor/ShaderGUI/ParticleGUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/FallenPlatform.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/AudioManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/BowDirection.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DTNode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DTDecision.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DTAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Explosion/Explosion.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DecisionTree.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Prova/Assets/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/BowDirection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NastyWizard_Depth/Demo/PostProcessing/Editor/PropertyDrawers/MinDrawer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/CentaurFire.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -71,7 +64,6 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/FlameStream/ParticleCollision.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/Destruction.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/GoombaAI.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/FallenPlatform.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Tutorials/TutorialThree.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Heart/HeartController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/BombExplosion.cs" />
@@ -81,6 +73,7 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/CentaurFire.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/DissolveController.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/FallenPlatform.cs" />
       </list>
     </option>
   </component>
@@ -161,6 +154,7 @@
       <workItem from="1605716003432" duration="9541000" />
       <workItem from="1605908734877" duration="3134000" />
       <workItem from="1605966302384" duration="3673000" />
+      <workItem from="1606226748498" duration="1399000" />
     </task>
     <servers />
   </component>
