@@ -334,7 +334,7 @@
                   <e p="DecisionTree.cs" t="Include" />
                   <e p="DTAction.cs" t="Include" />
                   <e p="DTDecision.cs" t="Include" />
-                  <e p="DTNode.cs" t="Include" />
+                  <e p="IDTNode.cs" t="Include" />
                 </e>
                 <e p="Goomba" t="Include">
                   <e p="BombExplosion.cs" t="Include" />
@@ -346,7 +346,8 @@
                 </e>
               </e>
               <e p="Audio" t="Include">
-                <e p="AudioManager.cs" t="Include" />
+                <e p="ChickenAudioManager.cs" t="Include" />
+                <e p="EggAudioManager.cs" t="Include" />
               </e>
               <e p="CheckPoint" t="Include">
                 <e p="CheckPointManager.cs" t="Include" />
@@ -357,6 +358,7 @@
                 <e p="Rock" t="Include">
                   <e p="FallingRock.cs" t="Include" />
                   <e p="RockObstacle.cs" t="Include" />
+                  <e p="SpawningRock.cs" t="Include" />
                 </e>
                 <e p="SpearMovement.cs" t="Include" />
               </e>

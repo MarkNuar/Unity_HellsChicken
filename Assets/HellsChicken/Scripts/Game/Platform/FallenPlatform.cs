@@ -10,6 +10,7 @@ namespace HellsChicken.Scripts.Game.Platform
         [SerializeField] private float speed = 1.0f;
         [SerializeField] private float amount = 1.0f;
         [SerializeField] private float gravityModifier = 60.0f;
+        [SerializeField] private float fallenTime = 1.0f;
         
         private Transform _transform;
         private Rigidbody _rigidbody;
@@ -64,7 +65,7 @@ namespace HellsChicken.Scripts.Game.Platform
         {
             while (!_isColliding) 
             {
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(2.0f);
                 _shake = true;
                 yield return new WaitForSeconds(seconds);
                 _shake = false;   
@@ -78,7 +79,7 @@ namespace HellsChicken.Scripts.Game.Platform
             EventManager.StopListening("platformCollide",PlatformCollide);
             
             if (stringName.Equals(gameObject.name))
-                StartCoroutine(WaitForCollide(0.5f));
+                StartCoroutine(WaitForCollide(fallenTime));
             
             EventManager.StartListening("platformCollide",PlatformCollide);
         }
