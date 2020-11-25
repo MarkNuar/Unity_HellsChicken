@@ -21,7 +21,7 @@ namespace HellsChicken.Scripts.Game.Platform.Doors.KeyDoor
 
         private void Start()
         {
-            keyHolder.OnKeysChanged += KeyHolder_OnKeysChanged;
+            //keyHolder.OnKeysChanged += KeyHolder_OnKeysChanged;
         }
 
         private void KeyHolder_OnKeysChanged(object sender, EventArgs e)

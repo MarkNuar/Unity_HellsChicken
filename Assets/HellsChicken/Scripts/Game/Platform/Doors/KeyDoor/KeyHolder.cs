@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using EventManagerNamespace;
 using UnityEngine;
 
 namespace HellsChicken.Scripts.Game.Platform.Doors.KeyDoor
 {
     public class KeyHolder : MonoBehaviour
     {
-        public event EventHandler OnKeysChanged;
-        
         private List<Key.KeyType> _keyList;
-
         private bool _open;
 
         private void Awake()
@@ -24,14 +21,14 @@ namespace HellsChicken.Scripts.Game.Platform.Doors.KeyDoor
 
         private void AddKey(Key.KeyType keyType)
         {
+            EventManager.TriggerEvent("AddKey");
             _keyList.Add(keyType);
-            OnKeysChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void RemoveKey(Key.KeyType keyType)
         {
+            EventManager.TriggerEvent("RemoveKey");
             _keyList.Remove(keyType);
-            OnKeysChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private bool ContainsKey(Key.KeyType keyType)
