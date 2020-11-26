@@ -19,7 +19,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44fa9eaf-4901-4eb4-b858-67c1b19b2312" name="Default Changelist" comment="KeyCanvas" />
+    <list default="true" id="44fa9eaf-4901-4eb4-b858-67c1b19b2312" name="Default Changelist" comment="Some fixing">
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1/Global Volume Profile.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1/Global Volume Profile.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/AllSkyFree/Overcast Low/Materials/AllSky_Overcast4_Low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/AllSkyFree/Overcast Low/Materials/AllSky_Overcast4_Low.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shader/LavaShader.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shader/LavaShader.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shader/LavaShader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shader/LavaShader.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/LevelPart/Torch.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/LevelPart/Torch.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/DeathRespawnTest_Profiles/PostFX Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/DeathRespawnTest_Profiles/PostFX Profile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,25 +40,25 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Key/KeyController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Soul/SoulAI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/tomma/RiderProjects/HellsChicken/Assets/HellsChicken/Scripts/Game/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/IDTNode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/PendulumEngine.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/Rock/SpawningRock.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/tomma/RiderProjects/HellsChicken/Assets/HellsChicken/Scenes/Level_1.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/ChickenAudioManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/Rock/SpawningRock.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/PendulumEngine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/BladeMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.3.4/Runtime/Impulse/CinemachineImpulseSource.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/IDTNode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/Rock/FallingRock.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/PlatformMoveX.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/tomma/RiderProjects/HellsChicken/Assets/HellsChicken/Scenes/Level_1.unity" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/Key/Key.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/Key/KeyDoor.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/Key/KeyImage.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/Key.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/KeyImage.cs" />
         <option value="$PROJECT_DIR$/Assets/footstepSound.cs" />
         <option value="$PROJECT_DIR$/Assets/TutorialOne.cs" />
         <option value="$PROJECT_DIR$/Assets/TutorialThree.cs" />
@@ -55,6 +66,7 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Tutorials/TutorialThree.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/EggAudioManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/KeyHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Heart/HeartController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/ChickenAudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/EggAudioManager.cs" />
@@ -67,9 +79,11 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/PendulumEngine.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/Rock/RockObstacle.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/Rock/FallingRock.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/KeyDoor.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/ButtonDoor.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/CheckPoint/CheckPointManager.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Crosshair/FollowMouse.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Health/HealthController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Menu/PauseMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Soul/SoulAI.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/GoombaAICC.cs" />
@@ -88,15 +102,8 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/EggExplosion.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/Destruction.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/FlameStream/ParticleCollision.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/DissolveController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/KeyDoor.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/KeyImage.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/KeyHolder.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Health/HealthController.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/SkyBoxRotation.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Key/KeyController.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/DissolveController.cs" />
       </list>
     </option>
   </component>
@@ -174,12 +181,7 @@
       <workItem from="1605776806497" duration="4001000" />
       <workItem from="1605781005075" duration="6505000" />
       <workItem from="1606143320376" duration="161000" />
-      <workItem from="1606226273262" duration="144000" />
-      <workItem from="1606235220166" duration="805000" />
-      <workItem from="1606296463986" duration="11189000" />
-      <workItem from="1606379391450" duration="7169000" />
-      <workItem from="1606402204912" duration="2116000" />
-      <workItem from="1606424877367" duration="4937000" />
+      <workItem from="1606413131882" duration="585000" />
     </task>
     <task id="LOCAL-00001" summary="Platform and blade movement">
       <created>1604073585635</created>
@@ -265,70 +267,7 @@
       <option name="project" value="LOCAL" />
       <updated>1606153839773</updated>
     </task>
-    <task id="LOCAL-00013" summary="Some fixing">
-      <created>1606154313029</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1606154313029</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Some fixing">
-      <created>1606154317727</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1606154317727</updated>
-    </task>
-    <task id="LOCAL-00015" summary="KeyCanvas">
-      <created>1606320128275</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1606320128275</updated>
-    </task>
-    <task id="LOCAL-00016" summary="KeyCanvas">
-      <created>1606320142111</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1606320142111</updated>
-    </task>
-    <task id="LOCAL-00017" summary="KeyCanvas">
-      <created>1606386443108</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1606386443108</updated>
-    </task>
-    <task id="LOCAL-00018" summary="KeyCanvas">
-      <created>1606425006359</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1606425006359</updated>
-    </task>
-    <task id="LOCAL-00019" summary="KeyCanvas">
-      <created>1606426358780</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1606426358780</updated>
-    </task>
-    <task id="LOCAL-00020" summary="KeyCanvas">
-      <created>1606428142910</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1606428142910</updated>
-    </task>
-    <task id="LOCAL-00021" summary="KeyCanvas">
-      <created>1606430052122</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1606430052122</updated>
-    </task>
-    <option name="localTasksCounter" value="22" />
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,38 +298,36 @@
     <MESSAGE value="Opening Key Door" />
     <MESSAGE value="Rock spawner" />
     <MESSAGE value="Some fixing" />
-    <MESSAGE value="KeyCanvas" />
-    <option name="LAST_COMMIT_MESSAGE" value="KeyCanvas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some fixing" />
   </component>
   <component name="WindowStateProjectService">
     <state x="351" y="238" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605349818684">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="351" y="238" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1368.872@0.0.1368.872" timestamp="1605349818684" />
-    <state x="147" y="65" key="MergeDialog" timestamp="1606425032537">
+    <state x="147" y="65" key="MergeDialog" timestamp="1605281584399">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1606425032537" />
-    <state x="407" y="174" key="MultipleFileMergeDialog" timestamp="1606425032548">
+    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1605281584399" />
+    <state x="407" y="174" key="MultipleFileMergeDialog" timestamp="1605281584407">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="407" y="174" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1606425032548" />
+    <state x="407" y="174" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1605281584407" />
     <state x="486" y="109" key="RiderGenerateDialog" timestamp="1605632305573">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="486" y="109" key="RiderGenerateDialog/0.0.1368.872@0.0.1368.872" timestamp="1605632305573" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1606426509108">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605784759086">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606426509108" />
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606430207827">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605784759086" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605794377127">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1606430207827" />
-    <state x="390" y="174" width="755" height="641" key="search.everywhere.popup" timestamp="1606382632202">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1605794377127" />
+    <state x="347" y="184" width="672" height="678" key="search.everywhere.popup" timestamp="1605442092852">
+      <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="347" y="184" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1605442092852" />
-    <state x="390" y="174" width="755" height="641" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1606382632202" />
   </component>
 </project>
