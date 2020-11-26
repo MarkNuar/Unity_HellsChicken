@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1167255050681342999}
   - component: {fileID: 1167255050681342996}
   - component: {fileID: 1167255050681342997}
-  - component: {fileID: 69029589819449476}
+  - component: {fileID: 3501952890754091320}
   m_Layer: 5
   m_Name: KeyCanvas
   m_TagString: Untagged
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &69029589819449476
+--- !u!114 &3501952890754091320
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,11 +108,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1167255050681342995}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 586efcf257ec71f46b021d27c6bed8db, type: 3}
+  m_Script: {fileID: 11500000, guid: 20b85251d75cb0347a68da26f9708dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfHearts: 4
-  fullHeart: {fileID: 21300000, guid: 054451ebc5577e44e8b2d93bdfb69cf4, type: 3}
-  lostHeart: {fileID: 21300000, guid: d5eda5fd260ad8d47810d3b724fe37f5, type: 3}
-  thighImage: {fileID: 378512557818873191, guid: c5806977eda753e4d82acf3803e10252,
+  keyHolder: {fileID: 0}
+  numberOfKeys: 3
+  key: {fileID: 21300000, guid: 44d89996b1ff433468e0360e0fdbf486, type: 3}
+  keyImage: {fileID: 2646249471758643835, guid: 10c04450f2f208d4194f7d17d5b497f2,
     type: 3}

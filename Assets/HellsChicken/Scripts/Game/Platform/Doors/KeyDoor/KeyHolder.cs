@@ -21,14 +21,14 @@ namespace HellsChicken.Scripts.Game.Platform.Doors.KeyDoor
 
         private void AddKey(Key.KeyType keyType)
         {
-            EventManager.TriggerEvent("AddKey");
             _keyList.Add(keyType);
+            EventManager.TriggerEvent("AddKey");
         }
 
         private void RemoveKey(Key.KeyType keyType)
         {
-            EventManager.TriggerEvent("RemoveKey");
             _keyList.Remove(keyType);
+            EventManager.TriggerEvent("RemoveKey");
         }
 
         private bool ContainsKey(Key.KeyType keyType)
