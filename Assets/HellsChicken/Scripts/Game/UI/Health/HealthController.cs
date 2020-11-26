@@ -31,7 +31,8 @@ namespace HellsChicken.Scripts.Game.UI.Health
             for (var i = 0; i < numberOfHearts; i++)
             {
                 var heartImage = Instantiate(thighImage, transform, true);
-                if (heartImage.transform is RectTransform heartImageRect)
+                RectTransform heartImageRect = heartImage.transform as RectTransform;
+                if (!(heartImageRect is null))
                 {
                     heartImageRect.anchoredPosition = Vector2.zero;
                     heartImageRect.sizeDelta = Vector2.zero;
