@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using EventManagerNamespace;
 using HellsChicken.Scripts.Game.Platform.Doors.KeyDoor;
 using UnityEngine;

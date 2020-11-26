@@ -1,48 +1,39 @@
 ﻿using UnityEngine;
 
-public class GameManager : MonoBehaviour
+namespace HellsChicken.Scripts.Game
 {
-
-    public static GameManager Instance;
-
-    [SerializeField] private GameObject initialCheckPoint;
-    
-    private Vector3 _currentCheckPointPos;
-    
-    private void Awake()
+    public class GameManager : MonoBehaviour
     {
-        if (Instance == null)
+
+        public static GameManager Instance;
+
+        [SerializeField] private GameObject initialCheckPoint;
+    
+        private Vector3 _currentCheckPointPos;
+    
+        private void Awake()
         {
-            Instance = this;
-            DontDestroyOnLoad(Instance);
-            SetCurrentCheckPointPos(initialCheckPoint.transform.position);
-            //Destroy(initialCheckPoint);//maybe initial checkpoint has to be destroyed after consumed.
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(Instance);
+                SetCurrentCheckPointPos(initialCheckPoint.transform.position);
+                //Destroy(initialCheckPoint);//maybe initial checkpoint has to be destroyed after consumed.
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
-        else
+
+        public Vector3 GetCurrentCheckPointPos()
         {
-            Destroy(gameObject);
+            return _currentCheckPointPos;
         }
-    }
-
-    public Vector3 GetCurrentCheckPointPos()
-    {
-        return _currentCheckPointPos;
-    }
     
-    public void SetCurrentCheckPointPos(Vector3 newCheckPointPos)
-    {
-        _currentCheckPointPos = newCheckPointPos;
-    }
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void SetCurrentCheckPointPos(Vector3 newCheckPointPos)
+        {
+            _currentCheckPointPos = newCheckPointPos;
+        }
     }
 }
