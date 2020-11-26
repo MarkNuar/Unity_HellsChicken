@@ -30,7 +30,7 @@ namespace HellsChicken.Scripts.Game.UI.Key
         private void Start()
         {
             _keys = new Image[numberOfKeys];
-            for (int i = 0; i < numberOfKeys; i++)
+            for (var i = 0; i < numberOfKeys; i++)
             {
                 var k = Instantiate(keyImage, transform, true);
                 if (k.transform is RectTransform heartImageRect)
@@ -46,9 +46,9 @@ namespace HellsChicken.Scripts.Game.UI.Key
 
         private void Update()
         {
-            for (int i = 0; i < _holdingKeys; i++)
+            for (var i = 0; i < _holdingKeys; i++)
             {
-                Platform.Doors.KeyDoor.Key.KeyType keyType = _keyList[i];
+                var keyType = _keyList[i];
                 switch (keyType)
                 {
                     case Platform.Doors.KeyDoor.Key.KeyType.Red:
@@ -60,10 +60,13 @@ namespace HellsChicken.Scripts.Game.UI.Key
                     case Platform.Doors.KeyDoor.Key.KeyType.Blue:
                         _keys[i].sprite = blueKey;
                         break;
+                    default:
+                        _keys[i].sprite = emptyKey;
+                        break;
                 }
             }
 
-            for (int i = _holdingKeys; i < numberOfKeys; i++)
+            for (var i = _holdingKeys; i < numberOfKeys; i++)
             {
                 _keys[i].sprite = emptyKey;
             }
@@ -73,7 +76,6 @@ namespace HellsChicken.Scripts.Game.UI.Key
         {
             EventManager.StopListening("AddKey", AddKey);
             
-            //Instantiate current key list
             _keyList = keyHolder.GetKeyList();
             if (_holdingKeys < numberOfKeys) 
                 _holdingKeys++;
@@ -85,7 +87,6 @@ namespace HellsChicken.Scripts.Game.UI.Key
         {
             EventManager.StopListening("RemoveKey", RemoveKey);
             
-            //Instantiate current key list
             _keyList = keyHolder.GetKeyList();
             if (_holdingKeys > 0)
                 _holdingKeys--;
