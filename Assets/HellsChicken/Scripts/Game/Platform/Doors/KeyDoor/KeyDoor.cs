@@ -16,7 +16,7 @@ namespace HellsChicken.Scripts.Game.Platform.Doors.KeyDoor
         private float _startTime;
         private float _totalDistanceToCover;
         private bool _isOpened;
-        private bool _haveKey;
+        private bool _isButtonPressed;
 
         // Start is called before the first frame update
         private void Start()
@@ -27,7 +27,7 @@ namespace HellsChicken.Scripts.Game.Platform.Doors.KeyDoor
         // Update is called once per frame
         private void Update()
         {
-            if (!_isOpened && _haveKey) 
+            if (!_isOpened && _isButtonPressed) 
                 OpenDoor();
         }
 
@@ -63,7 +63,7 @@ namespace HellsChicken.Scripts.Game.Platform.Doors.KeyDoor
         public void Open()
         {
             _startTime = Time.time;
-            _haveKey = true;
+            _isButtonPressed = true;
         }
     }
 }
