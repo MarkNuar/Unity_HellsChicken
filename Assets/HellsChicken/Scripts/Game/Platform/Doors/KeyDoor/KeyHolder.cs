@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using EventManagerNamespace;
 using UnityEngine;
 
 namespace HellsChicken.Scripts.Game.Platform.Doors.KeyDoor
 {
     public class KeyHolder : MonoBehaviour
     {
-        public event EventHandler OnKeysChanged;
-        
         private List<Key.KeyType> _keyList;
-
-        private bool _open;
-
+        
         private void Awake()
         {
             _keyList = new List<Key.KeyType>();
@@ -25,13 +21,13 @@ namespace HellsChicken.Scripts.Game.Platform.Doors.KeyDoor
         private void AddKey(Key.KeyType keyType)
         {
             _keyList.Add(keyType);
-            OnKeysChanged?.Invoke(this, EventArgs.Empty);
+            EventManager.TriggerEvent("AddKey");
         }
 
         private void RemoveKey(Key.KeyType keyType)
         {
             _keyList.Remove(keyType);
-            OnKeysChanged?.Invoke(this, EventArgs.Empty);
+            EventManager.TriggerEvent("RemoveKey");
         }
 
         private bool ContainsKey(Key.KeyType keyType)
@@ -41,15 +37,14 @@ namespace HellsChicken.Scripts.Game.Platform.Doors.KeyDoor
 
         private void OnTriggerEnter(Collider other)
         {
-            Key key = other.GetComponent<Key>();
+            var key = other.GetComponent<Key>();
             if (key != null)
             {
                 AddKey(key.GetKeyType());
                 Destroy(key.gameObject);
             }
 
-            KeyDoor keyDoor = other.GetComponent<KeyDoor>();
-            
+            var keyDoor = other.GetComponent<KeyDoor>();
             if (keyDoor == null) 
                 return;
             
@@ -59,15 +54,8 @@ namespace HellsChicken.Scripts.Game.Platform.Doors.KeyDoor
                 {
                     RemoveKey(keyDoor.GetKeyType());
                     keyDoor.Open();
-                    _open = true;
                 }
             }
-
-        }
-
-        public bool Opening()
-        {
-            return _open;
         }
     }
 }

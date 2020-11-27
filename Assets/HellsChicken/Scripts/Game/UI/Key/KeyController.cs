@@ -53,12 +53,14 @@ namespace HellsChicken.Scripts.Game.UI.Key
                 {
                     case Platform.Doors.KeyDoor.Key.KeyType.Red:
                         _keys[i].sprite = redKey;
+                        Debug.Log("ciao");
                         break;
                     case Platform.Doors.KeyDoor.Key.KeyType.Yellow:
                         _keys[i].sprite = yellowKey;
                         break;
                     case Platform.Doors.KeyDoor.Key.KeyType.Blue:
                         _keys[i].sprite = blueKey;
+                        Debug.Log("ehi");
                         break;
                     default:
                         _keys[i].sprite = emptyKey;
