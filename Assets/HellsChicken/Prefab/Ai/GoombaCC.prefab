@@ -131,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   right: 0
   gravityScale: 4
+  agentVelocity: 8
 --- !u!54 &8393277768196791594
 Rigidbody:
   m_ObjectHideFlags: 0

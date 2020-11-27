@@ -26,7 +26,7 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
         // Start is called before the first frame update
         void Start() 
         {
-            Instantiate(vanishEffectPrefab, transform.position, Quaternion.identity);
+            //Instantiate(vanishEffectPrefab, transform.position, Quaternion.identity);
             EventManager.TriggerEvent("playTimerBomb");
             StartCoroutine(MakeExplosion());
         }

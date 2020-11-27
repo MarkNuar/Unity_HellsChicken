@@ -12,7 +12,7 @@ namespace HellsChicken.Scripts.Game.Player.Egg
         
         private bool _hasExploded;
         
-        [SerializeField] private float radius = 2f;
+        [SerializeField] private float radius = 3f;
         [SerializeField] private float force = 500f;
         
         private void OnCollisionEnter()
