@@ -16,24 +16,12 @@ namespace HellsChicken.Scripts.Game.Platform.Doors.KeyDoor
         private float _startTime;
         private float _totalDistanceToCover;
         private bool _isOpened;
-        private bool _isButtonPressed;
+        private bool _haveKey;
 
         // Start is called before the first frame update
         private void Start()
         {
             SetInitialReferences();
-        }
-        
-        // Update is called once per frame
-        private void Update()
-        {
-            if (!_isOpened && _isButtonPressed) 
-                OpenDoor();
-        }
-
-        public Key.KeyType GetKeyType()
-        {
-            return keyType;
         }
 
         private void SetInitialReferences()
@@ -43,6 +31,13 @@ namespace HellsChicken.Scripts.Game.Platform.Doors.KeyDoor
             _doorCloseTarget = doorPosition;
             _doorOpenTarget = new Vector3(doorPosition.x, doorPosition.y + (sizeOfDoor * amountOfDoorInWall), doorPosition.z);
             _totalDistanceToCover = Vector3.Distance(_doorCloseTarget, _doorOpenTarget);
+        }
+
+        // Update is called once per frame
+        private void Update()
+        {
+            if (!_isOpened && _haveKey) 
+                OpenDoor();
         }
 
         private void OpenDoor()
@@ -55,6 +50,11 @@ namespace HellsChicken.Scripts.Game.Platform.Doors.KeyDoor
                 _isOpened = true;
         }
 
+        public Key.KeyType GetKeyType()
+        {
+            return keyType;
+        }
+
         public bool IsOpened()
         {
             return _isOpened;
@@ -63,7 +63,7 @@ namespace HellsChicken.Scripts.Game.Platform.Doors.KeyDoor
         public void Open()
         {
             _startTime = Time.time;
-            _isButtonPressed = true;
+            _haveKey = true;
         }
     }
 }

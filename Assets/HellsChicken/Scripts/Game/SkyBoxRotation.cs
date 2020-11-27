@@ -1,26 +1,22 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class SkyBoxRotation : MonoBehaviour {
+namespace HellsChicken.Scripts.Game
+{
+    public class SkyBoxRotation : MonoBehaviour {
 
-    private Material skyBoxMaterial;
-    private float i = 0;
-    
-    private void Awake() {
-        skyBoxMaterial = RenderSettings.skybox;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
+        private Material _skyBoxMaterial;
+        private float _angle;
         
-    }
+        private static readonly int Rotation = Shader.PropertyToID("_Rotation");
 
-    // Update is called once per frame
-    void Update() {
-        i = (i + 0.03f) % 360;
-        skyBoxMaterial.SetFloat("_Rotation",i);
+        private void Awake() {
+            _skyBoxMaterial = RenderSettings.skybox;
+        }
+        
+        // Update is called once per frame
+        private void Update() {
+            _angle = (_angle + 0.03f) % 360;
+            _skyBoxMaterial.SetFloat(Rotation, _angle);
+        }
     }
 }

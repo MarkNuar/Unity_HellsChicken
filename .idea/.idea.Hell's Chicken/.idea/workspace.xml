@@ -20,18 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc89b660-8c2e-44f0-9184-66b8ac8c2637" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/3D Models/Materials/ChickenThighTexture.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/3D Models/Materials/ChickenThighTexture.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/Blade.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/Blade.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/FallingRock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/FallingRock.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/Pendulum.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/Pendulum.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/RockSpawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/RockSpawner.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/Spear.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/Spear.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/Spike.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/Spike.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Heart/OneHeart.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Heart/OneHeart.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/AllSkyFree/Overcast Low/Materials/AllSky_Overcast4_Low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/AllSkyFree/Overcast Low/Materials/AllSky_Overcast4_Low.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/TextMesh Pro/Resources/Fonts &amp; Materials/ampersand SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/TextMesh Pro/Resources/Fonts &amp; Materials/ampersand SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/StartScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/StartScene.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/StartScene.unity.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +92,7 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/GoombaAICC.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAICC.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Key/KeyController.cs" />
       </list>
     </option>
   </component>
@@ -184,6 +182,9 @@
       <workItem from="1605621621190" duration="2219000" />
       <workItem from="1606203747680" duration="1582000" />
       <workItem from="1606226407853" duration="2732000" />
+      <workItem from="1606470606008" duration="4900000" />
+      <workItem from="1606476912288" duration="451000" />
+      <workItem from="1606483075789" duration="1218000" />
     </task>
     <servers />
   </component>
@@ -214,11 +215,11 @@
     </state>
     <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1605353846366" />
     <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1603699135161" />
-    <state x="762" y="0" width="781" height="870" key="dock-window-1" timestamp="1606140479710">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="762" y="0" width="781" height="840" key="dock-window-1" timestamp="1606485605834">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="762" y="0" width="781" height="840" key="dock-window-1/0.0.1536.834@0.0.1536.834" timestamp="1605538704427" />
-    <state x="762" y="0" width="781" height="870" key="dock-window-1/0.0.1536.864@0.0.1536.864" timestamp="1606140479710" />
+    <state x="762" y="0" width="781" height="840" key="dock-window-1/0.0.1536.834@0.0.1536.834" timestamp="1606485605834" />
+    <state x="762" y="0" width="781" height="870" key="dock-window-1/0.0.1536.864@0.0.1536.864" timestamp="1606477231007" />
     <state x="364" y="0" width="1186" height="820" maximized="true" key="dock-window-2" timestamp="1605105967403">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
