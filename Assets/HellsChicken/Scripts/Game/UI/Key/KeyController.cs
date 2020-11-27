@@ -29,49 +29,64 @@ namespace HellsChicken.Scripts.Game.UI.Key
 
         private void Start()
         {
+            _holdingKeys = 0; //at the beginning no keys held
             _keys = new Image[numberOfKeys];
             for (var i = 0; i < numberOfKeys; i++)
             {
                 var k = Instantiate(keyImage, transform, true);
                 if (k.transform is RectTransform heartImageRect)
                 {
-                    heartImageRect.anchoredPosition = new Vector2(1000, 0); //TODO Vector2.zero
+                    heartImageRect.anchoredPosition = Vector2.zero; //TODO Vector2.zero
                     heartImageRect.sizeDelta = Vector2.zero;
-                    heartImageRect.anchorMin += new Vector2(SpaceBetweenKeys, 0f) * i;
-                    heartImageRect.anchorMax += new Vector2(SpaceBetweenKeys, 0f) * i;
+                    heartImageRect.anchorMin -= new Vector2(SpaceBetweenKeys, 0f) * i;
+                    heartImageRect.anchorMax -= new Vector2(SpaceBetweenKeys, 0f) * i;
                 }
-                _keys[i] = keyImage;
+                _keys[i] = k;
             }
+            // swap array, since images are stored from right to left
+            // var tempKeys = _keys;
+            // for (var i = 0; i < numberOfKeys; i++)
+            // {
+            //     _keys[i] = tempKeys[(numberOfKeys - 1) - i];
+            // }
         }
 
         private void Update()
         {
-            for (var i = 0; i < _holdingKeys; i++)
+            for (var i = 0; i <_holdingKeys; i++)
             {
+                SetTransparency(false,_keys[i]);
                 var keyType = _keyList[i];
                 switch (keyType)
                 {
                     case Platform.Doors.KeyDoor.Key.KeyType.Red:
                         _keys[i].sprite = redKey;
-                        Debug.Log("ciao");
                         break;
                     case Platform.Doors.KeyDoor.Key.KeyType.Yellow:
                         _keys[i].sprite = yellowKey;
                         break;
                     case Platform.Doors.KeyDoor.Key.KeyType.Blue:
                         _keys[i].sprite = blueKey;
-                        Debug.Log("ehi");
                         break;
                     default:
                         _keys[i].sprite = emptyKey;
                         break;
                 }
             }
-
+            
             for (var i = _holdingKeys; i < numberOfKeys; i++)
             {
-                _keys[i].sprite = emptyKey;
+                SetTransparency(true,_keys[i]);
+                //_keys[i].sprite = emptyKey;
             }
+        }
+
+        private void SetTransparency(bool transparent, Image image)
+        {
+            float alpha = transparent ? 0 : 1;
+            var color = image.color;
+            color.a = alpha;
+            image.color = color;
         }
 
         private void AddKey()

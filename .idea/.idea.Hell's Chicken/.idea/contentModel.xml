@@ -8,6 +8,10 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="ExternalAssets" t="Include">
+          <e p="AllSkyFree" t="Include">
+            <e p="AllSkyFree_Menu.cs" t="Include" />
+            <e p="AllSkyFree_Readme.txt" t="Include" />
+          </e>
           <e p="AstarPathfindingProject" t="Include">
             <e p="AstarPathfindingProject.asmdef" t="Include" />
             <e p="Behaviors" t="Include">
@@ -370,7 +374,6 @@
                     <e p="Key.cs" t="Include" />
                     <e p="KeyDoor.cs" t="Include" />
                     <e p="KeyHolder.cs" t="Include" />
-                    <e p="KeyImage.cs" t="Include" />
                   </e>
                 </e>
                 <e p="FallenPlatform.cs" t="Include" />
@@ -392,6 +395,7 @@
                 </e>
                 <e p="PlayerController.cs" t="Include" />
               </e>
+              <e p="SkyBoxRotation.cs" t="Include" />
               <e p="UI" t="Include">
                 <e p="Crosshair" t="Include">
                   <e p="CrosshairImageController.cs" t="Include" />
@@ -399,6 +403,9 @@
                 </e>
                 <e p="Health" t="Include">
                   <e p="HealthController.cs" t="Include" />
+                </e>
+                <e p="Key" t="Include">
+                  <e p="KeyController.cs" t="Include" />
                 </e>
                 <e p="Menu" t="Include">
                   <e p="MainMenu.cs" t="Include" />
