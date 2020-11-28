@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AllSky_Overcast4_Low
-  m_Shader: {fileID: 103, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: WFX_M_FlameBig Add
+  m_Shader: {fileID: 200, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,12 +19,12 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Tex:
-        m_Texture: {fileID: 8900000, guid: c8f21f62fdb3e43c5b32917c84683698, type: 3}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 630c7e341b44a8943bcef0e113fa837b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Exposure: 0.69
-    - _Rotation: 36.87012
+    - _InvFade: 1
     m_Colors:
-    - _Tint: {r: 0.4716981, g: 0.04672481, b: 0.04672481, a: 0.5}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _TintColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 0.5019608}
