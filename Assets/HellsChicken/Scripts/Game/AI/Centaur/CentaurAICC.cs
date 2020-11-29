@@ -2,6 +2,7 @@
 using EventManagerNamespace;
 using HellsChicken.Scripts.Game.AI.Centaur.Bow;
 using HellsChicken.Scripts.Game.AI.DecisionTree;
+using HellsChicken.Scripts.Game.Player;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -32,10 +33,13 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
         private int _shootInterval;
 
         private bool _isColliding;
+
+        private PlayerController _playerController;
     
         private void Awake() 
         {
             _characterController = GetComponent<CharacterController>();
+            _playerController = player.gameObject.GetComponent<PlayerController>();
         }
 
         // Start is called before the first frame update
@@ -123,7 +127,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
             {
                 GameObject fire = Instantiate(bombPrefab, arrowPosition.position, Quaternion.LookRotation(player.position, transform.position));
                 CentaurFire ar = fire.GetComponent<CentaurFire>();
-                ar.Target = player.position + new Vector3(0, 0.5f, 0);
+                ar.Target = _playerController.getPredictedPosition();//player.position + new Vector3(0, 0.5f, 0);
                 ar.CentaurPos = transform.position;
                 ar.FindAngle(_right,arrowPosition.position);
             }
@@ -207,7 +211,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
             if (other.gameObject.CompareTag("Player"))
                 _isColliding = true;
             
-            if (other.gameObject.CompareTag("Wall")) 
+            if (other.gameObject.CompareTag("Wall") || other.gameObject.CompareTag("Enemy")) 
             {
                 transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
                 EventManager.TriggerEvent("changeBowDirection");

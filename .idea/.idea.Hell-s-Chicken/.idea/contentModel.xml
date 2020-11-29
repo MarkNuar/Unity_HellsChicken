@@ -433,7 +433,6 @@
                     <e p="Key.cs" t="Include" />
                     <e p="KeyDoor.cs" t="Include" />
                     <e p="KeyHolder.cs" t="Include" />
-                    <e p="KeyImage.cs" t="Include" />
                   </e>
                 </e>
                 <e p="FallenPlatform.cs" t="Include" />
@@ -464,6 +463,9 @@
                 </e>
                 <e p="Health" t="Include">
                   <e p="HealthController.cs" t="Include" />
+                </e>
+                <e p="Key" t="Include">
+                  <e p="KeyController.cs" t="Include" />
                 </e>
                 <e p="Menu" t="Include">
                   <e p="MainMenu.cs" t="Include" />

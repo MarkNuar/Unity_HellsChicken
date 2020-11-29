@@ -376,7 +376,6 @@ GameObject:
   - component: {fileID: 771729081860725613}
   - component: {fileID: 8035021252407303942}
   - component: {fileID: 8035021250589292805}
-  - component: {fileID: 8035021250508973169}
   - component: {fileID: 1067433705}
   m_Layer: 14
   m_Name: PlayerBody
@@ -393,7 +392,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662464222376940486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.4, y: 19.2, z: 0}
+  m_LocalPosition: {x: -15.3, y: 20.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 723738524893222833}
@@ -605,7 +604,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 10
   jumpSpeed: 5
-  maxSpeedVectorMagnitude: 100
+  maxSpeedVectorMagnitude: 40
+  yMovementCorrection: 8
   gravityScale: 4
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
@@ -614,7 +614,11 @@ MonoBehaviour:
     type: 3}
   firePosition: {fileID: 3017388391660182780}
   flamesCooldown: 1
-  eyesMeshRenderer: []
+  eyesMeshRenderer:
+  - {fileID: 589853453806040915}
+  - {fileID: 7894512863858541164}
+  - {fileID: 204142694825603065}
+  - {fileID: 1068821339368114021}
   pauseMenu: {fileID: 0}
   anim: {fileID: 2756826224257948348}
   initialEggVelocity: 6
@@ -644,18 +648,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyedVersion: {fileID: 0}
---- !u!114 &8035021250508973169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 662464222376940486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b35ea9e377ef08a45b9a2806078c1319, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1067433705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -703,7 +695,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662464223060016393}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.02183, y: 20.598925, z: -30}
+  m_LocalPosition: {x: -12.140418, y: 21.448923, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6680412922169686547}
@@ -718,14 +710,14 @@ Camera:
   m_GameObject: {fileID: 662464223060016393}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.3301887, g: 0.03653782, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 10.431441
+  m_FocalLength: 25.734083
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -736,7 +728,7 @@ Camera:
   far clip plane: 5000
   field of view: 50
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -746,7 +738,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 0
   m_HDR: 1
-  m_AllowMSAA: 0
+  m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 0
@@ -823,7 +815,7 @@ MonoBehaviour:
     m_Bits: 256
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
-  antialiasingMode: 0
+  antialiasingMode: 2
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25
@@ -859,8 +851,8 @@ MonoBehaviour:
       colorBlindnessType: 0
       colorBlindnessStrength: 1
   m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
+  m_ShowToolkit: 1
+  m_ShowCustomSorter: 1
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
@@ -878,8 +870,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
+  m_RequiresDepthTextureOption: 1
+  m_RequiresOpaqueTextureOption: 1
   m_CameraType: 0
   m_Cameras: []
   m_RendererIndex: -1
@@ -887,8 +879,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 2
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -952,7 +944,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671435095063938157}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.02183, y: 20.598925, z: -30}
+  m_LocalPosition: {x: -12.140418, y: 21.448923, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 671435095290145463}

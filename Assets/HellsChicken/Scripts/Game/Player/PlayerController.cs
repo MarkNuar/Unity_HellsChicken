@@ -71,6 +71,19 @@ namespace HellsChicken.Scripts.Game.Player
         private bool _hasVibrated;
         [SerializeField] private float eggCooldown = 2;
 
+        public Vector3 getPredictedPosition() {
+            Vector3 result = new Vector3(transform.position.x,transform.position.y,0);
+            if (!_isMoving)
+                return _transform.position;
+            else {
+                //result.x = transform.position.x + _lookDirection.normalized.x * walkSpeed * 5;
+                //result.y = transform.position.y + _lookDirection.normalized.y * walkSpeed * 2;
+                //result.y = 
+            }
+
+            return result;
+        }
+
         private Vector3 _lookDirection;
 
         [SerializeField] private float immunityDuration = 1.0f;
