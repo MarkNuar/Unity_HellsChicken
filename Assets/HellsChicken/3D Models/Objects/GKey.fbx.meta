@@ -1,20 +1,17 @@
 fileFormatVersion: 2
-guid: 80baf3afec0769042b411b171a4a32a0
+guid: ff47227a3c8efd54c88e14f5c0034e25
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
-      74: -3483976786865897838
-    second: ChickenThighAction
-  - first:
-      74: -2896088815769593875
-    second: ChickenThigh|ChickenThighAction
+      74: -8034076322563592017
+    second: Armature|KeyFloat
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 641806de031577c4dbd0f7adbe545c1d, type: 2}
+      name: GoldKeyMat
+    second: {fileID: 2100000, guid: 09f5687978d5df14291769b5d7aff2f1, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -41,7 +38,36 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|KeyFloat
+      takeName: Armature|KeyFloat
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
