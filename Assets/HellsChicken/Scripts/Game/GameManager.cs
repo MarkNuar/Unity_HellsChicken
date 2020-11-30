@@ -34,6 +34,7 @@ namespace HellsChicken.Scripts.Game
         public void SetCurrentCheckPointPos(Vector3 newCheckPointPos)
         {
             _currentCheckPointPos = newCheckPointPos;
+            
         }
     }
 }

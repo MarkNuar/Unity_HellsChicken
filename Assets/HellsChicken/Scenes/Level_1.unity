@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06517628, g: 0.0012253847, b: 0.001181835, a: 1}
+  m_IndirectSpecularColor: {r: 0.06517224, g: 0.0012254566, b: 0.0011820402, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1286,6 +1286,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &435168066 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3078230224256349244, guid: e9866ce1d839e9242bb713d88ee93b0e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1202986228}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &466503894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2105,12 +2111,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1880372753}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &680378808 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3078230224256349244, guid: e9866ce1d839e9242bb713d88ee93b0e,
-    type: 3}
-  m_PrefabInstance: {fileID: 781616606}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &682182485
 GameObject:
   m_ObjectHideFlags: 0
@@ -2454,7 +2454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af2cbda8bb112a4280eb3ca2775c678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialCheckPoint: {fileID: 680378808}
+  initialCheckPoint: {fileID: 435168066}
 --- !u!4 &778172013 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2920040249314812318, guid: 5d871d381fc88594ba1aadbb9e975e65,
@@ -7612,12 +7612,12 @@ PrefabInstance:
     - target: {fileID: 662464223060016629, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.809493
+      value: -12.816404
       objectReference: {fileID: 0}
     - target: {fileID: 671435095063938156, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.809493
+      value: -12.816404
       objectReference: {fileID: 0}
     - target: {fileID: 6454652167805699216, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
@@ -7747,6 +7747,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Goomba+Platf
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315704759988373550, guid: 5d871d381fc88594ba1aadbb9e975e65,
+        type: 3}
+      propertyPath: m_Height
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d871d381fc88594ba1aadbb9e975e65, type: 3}

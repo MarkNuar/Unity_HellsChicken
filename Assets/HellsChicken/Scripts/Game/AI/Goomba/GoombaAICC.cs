@@ -9,9 +9,8 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
         [SerializeField] private float agentVelocity = 8f;
         
         private CharacterController _characterController;
-
         private Vector3 _movement;
-        
+      
         public void Awake()
         {
             _characterController = GetComponent<CharacterController>();
@@ -27,9 +26,16 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
         {
             _movement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
             if (right)
+            {
                 _movement.x = agentVelocity;
+                transform.rotation = Quaternion.Euler(0, 90, 0);
+            }
             else
+            {
                 _movement.x = -agentVelocity;
+                transform.rotation = Quaternion.Euler(0, 270, 0);
+            }
+
             _characterController.Move(_movement * Time.deltaTime);
         }
 

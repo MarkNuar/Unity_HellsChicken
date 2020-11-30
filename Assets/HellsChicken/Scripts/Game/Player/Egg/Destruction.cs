@@ -14,7 +14,7 @@ namespace HellsChicken.Scripts.Game.Player.Egg
 				if (destroyedVersion != null)
 				{
 					Transform originalVersion = transform;
-					Instantiate(destroyedVersion, originalVersion.position, originalVersion.rotation);
+					Instantiate(destroyedVersion, originalVersion.position, Quaternion.Euler(0, 180, 0));
 				}
 
 				Destroy(gameObject);
