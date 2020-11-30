@@ -40,7 +40,7 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
         //Wait for 2 second and then make the bomb explode.
         private IEnumerator MakeExplosion() 
         {  
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2);
             
             Vector3 position = transform.position;
             Instantiate(explosionPrefab, position, Quaternion.identity);
