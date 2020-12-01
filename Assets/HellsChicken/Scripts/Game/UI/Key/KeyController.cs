@@ -51,7 +51,7 @@ namespace HellsChicken.Scripts.Game.UI.Key
             // }
         }
 
-        private void Update()
+        private void Updating()
         {
             for (var i = 0; i <_holdingKeys; i++)
             {
@@ -67,6 +67,7 @@ namespace HellsChicken.Scripts.Game.UI.Key
                         break;
                     case Platform.Doors.KeyDoor.Key.KeyType.Blue:
                         _keys[i].sprite = blueKey;
+                        Debug.Log("ciao");
                         break;
                     default:
                         _keys[i].sprite = emptyKey;
@@ -81,7 +82,7 @@ namespace HellsChicken.Scripts.Game.UI.Key
             }
         }
 
-        private void SetTransparency(bool transparent, Image image)
+        private static void SetTransparency(bool transparent, Image image)
         {
             float alpha = transparent ? 0 : 1;
             var color = image.color;
@@ -96,6 +97,7 @@ namespace HellsChicken.Scripts.Game.UI.Key
             _keyList = keyHolder.GetKeyList();
             if (_holdingKeys < numberOfKeys) 
                 _holdingKeys++;
+            Updating();
             
             EventManager.StartListening("AddKey", AddKey);
         }
@@ -107,6 +109,7 @@ namespace HellsChicken.Scripts.Game.UI.Key
             _keyList = keyHolder.GetKeyList();
             if (_holdingKeys > 0)
                 _holdingKeys--;
+            Updating();
             
             EventManager.StartListening("RemoveKey", RemoveKey);
         }

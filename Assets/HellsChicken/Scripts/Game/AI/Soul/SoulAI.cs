@@ -6,10 +6,12 @@ namespace HellsChicken.Scripts.Game.AI.Soul
     public class SoulAI : MonoBehaviour
     {
         [SerializeField] private Transform target;
+        [SerializeField] private Transform soul;
 
-        [SerializeField] private float speed = 1000f;
+        [SerializeField] private float speed = 200f;
+        //how close are enemy need to be to a way point before it moves to the next one
         [SerializeField] private float nextWaypointDistance = 3f;
-        
+
         private Path _path;
         private int _currentWaypoint;
         
@@ -33,41 +35,41 @@ namespace HellsChicken.Scripts.Game.AI.Soul
 
         private void OnPathComplete(Path p)
         {
-            if (!p.error)
-            {
-                _path = p;
-                _currentWaypoint = 0;
-            }
+            if (p.error) return;
+            
+            _path = p;
+            _currentWaypoint = 0;  //beginning of the new path
         }
 
         private void FixedUpdate()
         {
-            if (_path != null)
+            if (_path == null) return;
+            
+            //reached end of the path
+            if (_currentWaypoint >= _path.vectorPath.Count)
+                return;
+                
+            Vector2 direction = (_path.vectorPath[_currentWaypoint] - _rb.position).normalized;
+            var force = direction * speed * Time.deltaTime;
+                
+            //TODO
+            //if (target.position.x > transform.position.x && target.rotation.y == 180 || target.position.x < transform.position.x && target.rotation.y == 0)
             {
-                if (_currentWaypoint >= _path.vectorPath.Count)    //reached end of the path
-                    return;
+                _rb.AddForce(force);
+            }
                 
-                Vector2 direction = (_path.vectorPath[_currentWaypoint] - _rb.position).normalized;
-                Vector2 force = direction * speed * Time.deltaTime;
+            var distance = Vector2.Distance(_rb.position, _path.vectorPath[_currentWaypoint]);
+            if (distance < nextWaypointDistance)
+                _currentWaypoint++;
                 
-                //TODO
-                //if (target.position.x > transform.position.x && target.rotation.y == 180 || target.position.x < transform.position.x && target.rotation.y == 0)
-                {
-                    _rb.AddForce(force);
-                }
-                
-                float distance = Vector2.Distance(_rb.position, _path.vectorPath[_currentWaypoint]);
-                if (distance < nextWaypointDistance)
-                    _currentWaypoint++;
-                
-                if (force.x >= 0.01f)
-                {
-                    transform.localScale = new Vector3(-1f, 1f, 1f);
-                }
-                else if (force.x <= -0.01f)
-                {
-                    transform.localScale = new Vector3(1f, 1f, 1f);
-                }
+            //se all'inizio guarda a sinistra
+            if (force.x >= 0.01f)
+            {
+                soul.localScale = new Vector3(-1f, 1f, 1f);
+            }
+            else if (force.x <= -0.01f)
+            {
+                soul.localScale = new Vector3(1f, 1f, 1f);
             }
         }
 
