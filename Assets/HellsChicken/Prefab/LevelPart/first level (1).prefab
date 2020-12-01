@@ -106,9 +106,9 @@ GameObject:
   - component: {fileID: 6206557350509903359}
   - component: {fileID: 1566031655631355715}
   - component: {fileID: 6292322999187933145}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: platform02floor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -294,9 +294,9 @@ GameObject:
   - component: {fileID: 5843533284743568707}
   - component: {fileID: 6911845154767000892}
   - component: {fileID: 5806271827374162261}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: platform03floor1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -388,9 +388,9 @@ GameObject:
   - component: {fileID: 5154750448487535364}
   - component: {fileID: 7551650362090902138}
   - component: {fileID: 5799062567043612308}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: caveFloor2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -493,7 +493,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330307676017025662}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 21.1, y: 8.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -637,9 +637,9 @@ GameObject:
   - component: {fileID: 4103637105107642032}
   - component: {fileID: 9078080476119566033}
   - component: {fileID: 5283087644246747987}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: platform04
-  m_TagString: Untagged
+  m_TagString: SlipperyGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -733,7 +733,7 @@ GameObject:
   - component: {fileID: 8829598780326751496}
   - component: {fileID: 8829598780326751541}
   - component: {fileID: 8829598780326751540}
-  m_Layer: 11
+  m_Layer: 18
   m_Name: tempCube
   m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
@@ -846,7 +846,7 @@ MonoBehaviour:
   speed: 40
   amount: 0.15
   gravityModifier: 60
-  fallenTime: 1
+  fallenTime: 1.5
 --- !u!1 &3467598069469046357
 GameObject:
   m_ObjectHideFlags: 0
@@ -859,9 +859,9 @@ GameObject:
   - component: {fileID: 4762452815421496841}
   - component: {fileID: 8671615256541583957}
   - component: {fileID: 7916390601367379143}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: caveFloor3
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -953,9 +953,9 @@ GameObject:
   - component: {fileID: 3608609762277986349}
   - component: {fileID: 2504779192857317430}
   - component: {fileID: 8038083681490086856}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: SpearBlocks
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1000,7 +1000,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1537e029f067d584f8306001ebaa2221, type: 2}
+  - {fileID: 2100000, guid: 1aaf94e36e74c6945bd720ff741b60f3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1047,9 +1047,9 @@ GameObject:
   - component: {fileID: 6427553787340942561}
   - component: {fileID: 1480985850041470584}
   - component: {fileID: 7192365027433397497}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: platform03
-  m_TagString: Untagged
+  m_TagString: SlipperyGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1141,9 +1141,9 @@ GameObject:
   - component: {fileID: 8313230185715971019}
   - component: {fileID: 6197854551912882727}
   - component: {fileID: 2251082192611663775}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: cave
-  m_TagString: Ground
+  m_TagString: SlipperyGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1235,9 +1235,9 @@ GameObject:
   - component: {fileID: 5261821394985426221}
   - component: {fileID: 3478127106054036964}
   - component: {fileID: 1815942721719299293}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: caveFloor6
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1329,9 +1329,9 @@ GameObject:
   - component: {fileID: 1156151263034965716}
   - component: {fileID: 6731357672645395841}
   - component: {fileID: 2014670795619330363}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: caveFloor5
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1423,9 +1423,9 @@ GameObject:
   - component: {fileID: 3984609589765705786}
   - component: {fileID: 8733510544151723770}
   - component: {fileID: 1243961341732967831}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: platform05floor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1517,9 +1517,9 @@ GameObject:
   - component: {fileID: 1834681565519838047}
   - component: {fileID: 5167256436839426131}
   - component: {fileID: 1431460167919587491}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: platform03floor4
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1626,7 +1626,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6336325336600389362}
   m_LocalRotation: {x: -0.7863341, y: -0, z: -0, w: 0.6178015}
-  m_LocalPosition: {x: 902, y: -116, z: 39}
+  m_LocalPosition: {x: 902, y: -213, z: -18}
   m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children: []
   m_Father: {fileID: 6336325337434104703}
@@ -1814,7 +1814,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6336325336673211390}
   m_LocalRotation: {x: -0.21059914, y: 0.15428601, z: 0.060033657, w: 0.9634521}
-  m_LocalPosition: {x: 887, y: -376, z: -737}
+  m_LocalPosition: {x: 881, y: -385, z: -755}
   m_LocalScale: {x: 50, y: 30, z: 50}
   m_Children: []
   m_Father: {fileID: 6336325337434104703}
@@ -2037,7 +2037,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6336325337717389574}
   m_LocalRotation: {x: -0.16063946, y: 0.41002345, z: 0.89479464, w: 0.0736099}
-  m_LocalPosition: {x: 785, y: 46, z: 339}
+  m_LocalPosition: {x: 835, y: -185, z: 206}
   m_LocalScale: {x: 50, y: 10, z: 100}
   m_Children: []
   m_Father: {fileID: 6336325337434104703}
@@ -2210,9 +2210,9 @@ GameObject:
   - component: {fileID: 1635887485779434428}
   - component: {fileID: 9185846938512766715}
   - component: {fileID: 212171064336073556}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: platform03floor2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2304,9 +2304,9 @@ GameObject:
   - component: {fileID: 2458901208636833580}
   - component: {fileID: 6581572146384151715}
   - component: {fileID: 4104477467097112465}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: caveFloor1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2398,9 +2398,9 @@ GameObject:
   - component: {fileID: 2836582629288754870}
   - component: {fileID: 4354775577568333910}
   - component: {fileID: 4085851560448089542}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: platform05
-  m_TagString: Untagged
+  m_TagString: SlipperyGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2492,9 +2492,9 @@ GameObject:
   - component: {fileID: 768647087213773904}
   - component: {fileID: 1302318133519133225}
   - component: {fileID: 4063826994553223088}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: platform03floor3
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2586,9 +2586,9 @@ GameObject:
   - component: {fileID: 8969416095433140471}
   - component: {fileID: 3779097198419146226}
   - component: {fileID: 4066501277554719036}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: platform04floor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2680,7 +2680,7 @@ GameObject:
   - component: {fileID: 7643781788301304854}
   - component: {fileID: 4828191754868382434}
   - component: {fileID: 4313884069329284306}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: platform01
   m_TagString: SlipperyGround
   m_Icon: {fileID: 0}
@@ -2774,9 +2774,9 @@ GameObject:
   - component: {fileID: 1011158437389936918}
   - component: {fileID: 3721658643215068527}
   - component: {fileID: 3115964877429814561}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: platform02
-  m_TagString: Untagged
+  m_TagString: SlipperyGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2868,7 +2868,7 @@ GameObject:
   - component: {fileID: 1735218378510483858}
   - component: {fileID: 1253381422302854059}
   - component: {fileID: 2718641030278860275}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: platform01floor
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2962,9 +2962,9 @@ GameObject:
   - component: {fileID: 6672727134774438867}
   - component: {fileID: 6565473625188260591}
   - component: {fileID: 2766013591592783543}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: caveFloor4
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3365,6 +3365,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 122
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701861202670771531, guid: 84523db2c44d6344984725aa244c9d00,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701861202670771531, guid: 84523db2c44d6344984725aa244c9d00,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 5710422824774561651, guid: 84523db2c44d6344984725aa244c9d00,
         type: 3}

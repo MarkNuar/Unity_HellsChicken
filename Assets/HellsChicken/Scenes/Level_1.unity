@@ -7884,7 +7884,7 @@ PrefabInstance:
     - target: {fileID: 2831286501070804899, guid: 1fee09e5e850abb46b806c1576d97a8b,
         type: 3}
       propertyPath: m_Layer
-      value: 18
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2831286501070804899, guid: 1fee09e5e850abb46b806c1576d97a8b,
         type: 3}
@@ -8184,7 +8184,7 @@ PrefabInstance:
     - target: {fileID: 8829598780326751540, guid: 1fee09e5e850abb46b806c1576d97a8b,
         type: 3}
       propertyPath: fallenTime
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8908423432349971493, guid: 1fee09e5e850abb46b806c1576d97a8b,
         type: 3}
@@ -8219,12 +8219,12 @@ PrefabInstance:
     - target: {fileID: 662464223060016629, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.811531
+      value: -12.140418
       objectReference: {fileID: 0}
     - target: {fileID: 671435095063938156, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.811531
+      value: -12.140418
       objectReference: {fileID: 0}
     - target: {fileID: 6454652167805699216, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}

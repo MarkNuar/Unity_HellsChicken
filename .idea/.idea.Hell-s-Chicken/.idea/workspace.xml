@@ -23,15 +23,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/AllSkyFree/Overcast Low/Materials/AllSky_Overcast4_Low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/AllSkyFree/Overcast Low/Materials/AllSky_Overcast4_Low.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/CentaurCC.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/CentaurCC.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/GoombaCC.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/GoombaCC.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/LevelPart/first level.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/LevelPart/first level.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/PlayerWithCinemachine 1 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/PlayerWithCinemachine 1 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/Goomba+Platf.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/Goomba+Platf.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAICC.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAICC.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1/Global Volume Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1/Global Volume Profile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/BombExplosion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/BombExplosion.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,10 +79,10 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/SkyBoxRotation.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/ParticleDamage.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/EggExplosion.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/BombExplosion.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/CentaurFire.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAICC.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/BombExplosion.cs" />
       </list>
     </option>
   </component>
@@ -172,6 +167,7 @@
       <workItem from="1606339915984" duration="3214000" />
       <workItem from="1606421617526" duration="6035000" />
       <workItem from="1606679470626" duration="4889000" />
+      <workItem from="1606836559456" duration="682000" />
     </task>
     <servers />
   </component>

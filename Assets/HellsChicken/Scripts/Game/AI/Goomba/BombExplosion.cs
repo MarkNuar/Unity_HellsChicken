@@ -43,7 +43,7 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
             yield return new WaitForSeconds(2);
             
             Vector3 position = transform.position;
-            Instantiate(explosionPrefab, position, Quaternion.identity);
+            Instantiate(explosionPrefab, position - new Vector3(0,1,0), Quaternion.identity);
             
             List<String> names =  new List<String>();
             EventManager.TriggerEvent("playBomb");
