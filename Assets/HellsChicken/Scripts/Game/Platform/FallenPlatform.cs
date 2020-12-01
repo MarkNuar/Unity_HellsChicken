@@ -28,7 +28,7 @@ namespace HellsChicken.Scripts.Game.Platform
             _startPosX = position.x;
             _startPosY = position.y;
             
-            EventManager.StartListening("platformCollide",PlatformCollide);
+            //EventManager.StartListening("platformCollide",PlatformCollide);
         }
 
         private void Start() 
@@ -74,14 +74,23 @@ namespace HellsChicken.Scripts.Game.Platform
             yield return null;
         }
 
-        private void PlatformCollide(string stringName) 
+        //UNUSED
+        // private void PlatformCollide(string stringName) 
+        // {
+        //     EventManager.StopListening("platformCollide",PlatformCollide);
+        //     
+        //     if (stringName.Equals(gameObject.name))
+        //         StartCoroutine(WaitForCollide(fallenTime));
+        //     
+        //     EventManager.StartListening("platformCollide",PlatformCollide);
+        // }
+
+        private void OnTriggerEnter(Collider other)
         {
-            EventManager.StopListening("platformCollide",PlatformCollide);
-            
-            if (stringName.Equals(gameObject.name))
+            if (other.CompareTag("Player"))
+            {
                 StartCoroutine(WaitForCollide(fallenTime));
-            
-            EventManager.StartListening("platformCollide",PlatformCollide);
+            }
         }
     }
 }
