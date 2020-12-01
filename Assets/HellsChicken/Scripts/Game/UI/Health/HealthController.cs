@@ -60,7 +60,7 @@ namespace HellsChicken.Scripts.Game.UI.Health
             if(_health == 1)
                 EventManager.TriggerEvent("LastHeart");
             
-            if (_health == 0 || _playerHasToBeKilled)
+            if (_health == 0)
             {
                 EventManager.TriggerEvent("PlayerDeath");
                 _playerHasToBeKilled = false;
@@ -102,8 +102,8 @@ namespace HellsChicken.Scripts.Game.UI.Health
         private void KillPlayer()
         {
             EventManager.StopListening("KillPlayer",KillPlayer);
-            
-            _playerHasToBeKilled = true;
+            _health = 0;
+            Updating();
             
             EventManager.StartListening("KillPlayer",KillPlayer);
         }
