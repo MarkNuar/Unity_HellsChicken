@@ -1,35 +1,30 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 namespace HellsChicken.Scripts.Game.CheckPoint
 {
     public class CheckPointManager : MonoBehaviour
     {
         //NEVER PLACE TWO CHECKPOINTS IN THE SAME POSITION!
+        public Light pointLight;
 
-        [SerializeField] private Material checkPointActivatedMaterial;
-        [SerializeField] private Material checkPointDeactivatedMaterial;
-
-        private void Start()
-        {
-            gameObject.GetComponent<MeshRenderer>().material = checkPointDeactivatedMaterial;
-        }
-    
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
             {
                 GameManager.Instance.SetCurrentCheckPointPos(transform.position);
                 //TODO START CHECKPOINT ACTIVATION ANIMATION
-                StartCoroutine(CheckPointColorChange(1f));
+                StartCoroutine(CheckPointActivateLight(2f));
             }
         }
 
-        private IEnumerator CheckPointColorChange(float time)
+        private IEnumerator CheckPointActivateLight(float time)
         {
-            gameObject.GetComponent<MeshRenderer>().material = checkPointActivatedMaterial;
+            pointLight.enabled = true;
             yield return new WaitForSeconds(time);
-            gameObject.GetComponent<MeshRenderer>().material = checkPointDeactivatedMaterial;
+            pointLight.enabled = false;
             yield return null;
         }
     }
