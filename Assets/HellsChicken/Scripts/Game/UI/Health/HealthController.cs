@@ -31,8 +31,7 @@ namespace HellsChicken.Scripts.Game.UI.Health
             for (var i = 0; i < numberOfHearts; i++)
             {
                 var heartImage = Instantiate(thighImage, transform, true);
-                RectTransform heartImageRect = heartImage.transform as RectTransform;
-                if (!(heartImageRect is null))
+                if (heartImage.transform is RectTransform heartImageRect)
                 {
                     heartImageRect.anchoredPosition = Vector2.zero;
                     heartImageRect.sizeDelta = Vector2.zero;
@@ -43,7 +42,7 @@ namespace HellsChicken.Scripts.Game.UI.Health
             }
         }
     
-        private void Update()
+        private void Updating()
         {
             if (_health > numberOfHearts)
                 _health = numberOfHearts;
@@ -71,40 +70,41 @@ namespace HellsChicken.Scripts.Game.UI.Health
         private void IncreaseHealth()
         {
             EventManager.StopListening("IncreasePlayerHealth",IncreaseHealth);
+            
             if (_health < numberOfHearts)
-            {
                 _health++;
-                //_hearts[_health].sprite = fullHeart;
-            }
+            Updating();
+            
             EventManager.StartListening("IncreasePlayerHealth",IncreaseHealth);
         }
 
         private void DecreaseHealth()
         {
             EventManager.StopListening("DecreasePlayerHealth",DecreaseHealth);
+            
             if (_health > 0)
-            {
                 _health--;
-                //_hearts[_health].sprite = lostHeart;
-            }
+            Updating();
+            
             EventManager.StartListening("DecreasePlayerHealth",DecreaseHealth);
         }
     
         private void RefillHealth()
         {
             EventManager.StopListening("RefillPlayerHealth", RefillHealth);
+            
             _health = numberOfHearts;
-            // foreach (var heart in _hearts)
-            // {
-            //     heart.sprite = fullHeart;
-            // }
+            Updating();
+            
             EventManager.StartListening("RefillPlayerHealth", RefillHealth);
         }
 
         private void KillPlayer()
         {
             EventManager.StopListening("KillPlayer",KillPlayer);
+            
             _playerHasToBeKilled = true;
+            
             EventManager.StartListening("KillPlayer",KillPlayer);
         }
     

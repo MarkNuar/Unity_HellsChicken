@@ -42,13 +42,8 @@ namespace HellsChicken.Scripts.Game.UI.Key
                     heartImageRect.anchorMax -= new Vector2(SpaceBetweenKeys, 0f) * i;
                 }
                 _keys[i] = k;
+                SetTransparency(true, _keys[i]);
             }
-            // swap array, since images are stored from right to left
-            // var tempKeys = _keys;
-            // for (var i = 0; i < numberOfKeys; i++)
-            // {
-            //     _keys[i] = tempKeys[(numberOfKeys - 1) - i];
-            // }
         }
 
         private void Updating()
@@ -82,7 +77,7 @@ namespace HellsChicken.Scripts.Game.UI.Key
             }
         }
 
-        private static void SetTransparency(bool transparent, Image image)
+        private static void SetTransparency(bool transparent, Graphic image)
         {
             float alpha = transparent ? 0 : 1;
             var color = image.color;
