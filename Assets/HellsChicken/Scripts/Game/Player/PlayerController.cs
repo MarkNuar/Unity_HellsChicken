@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Cinemachine;
+using Cinemachine.Utility;
 using EventManagerNamespace;
 using HellsChicken.Scripts.Game.Player.Egg;
 using HellsChicken.Scripts.Game.UI.Crosshair;
@@ -50,16 +52,15 @@ namespace HellsChicken.Scripts.Game.Player
         [SerializeField] private GameObject playerCamera;
         private Target _target;
         
-        private float _speedInclined;
-        private float _slopeAngle;
+        private float _slopeAngle = 0f;
+        private float _prevSlopeAngle = 0f;
         private bool _wasSlidingOnPrevFame;
         private bool _isSliding;
-        private float _slideHorizontalMovementAccumulator;
-        private float _slideVerticalMovementAccumulator;
         private Vector3 _hitNormal;
         [SerializeField] private float slideFriction = 0.3f;
+        private readonly RaycastHit[] _slideHitPoints = new RaycastHit[5];
         [SerializeField] private LayerMask slideMask;
-        
+
         private bool _isAiming;
         private bool _isWaitingForEggExplosion;
         private bool _isMoving;
@@ -101,8 +102,6 @@ namespace HellsChicken.Scripts.Game.Player
             _crosshairImageController = crosshairCanvas.transform.GetChild(0).GetComponent<CrosshairImageController>();
             _target = playerCamera.GetComponent<Target>();
             
-            //TODO 
-            //_capsuleCollider = gameObject.GetComponent<CapsuleCollider>();
             _wasSlidingOnPrevFame = false;
             _isSliding = false;
             
@@ -278,61 +277,52 @@ namespace HellsChicken.Scripts.Game.Player
 
                 //SLIDE CHECK
                 _wasSlidingOnPrevFame = _isSliding;
+                _prevSlopeAngle = _slopeAngle; // slide check call will eventually change the slope angle 
                 _isSliding = SlideCheck();
-                
-                //HORIZONTAL MOVEMENT
-                _moveDirection.x = Input.GetAxis("Horizontal") * walkSpeed;
-                var cachedHorizontalMovement = _moveDirection.x;
-                //_moveDirection.z = Input.GetAxis("Vertical") * 2; //just for fun, z movement
-                _moveDirection.z = 0f;
 
+                //HORIZONTAL MOVEMENT CACHING
+                var cachedHorizontalMovement = Input.GetAxis("Horizontal") * walkSpeed;
+                _moveDirection.z = 0f;
+                
                 //CHARACTER ROTATION
-                if (_moveDirection.x > 0.01f && !_isAiming)
+                if (cachedHorizontalMovement > 0.01f && !_isAiming)
                 {
                     _transform.rotation = _rightRotation;
                 }
-                else if (_moveDirection.x < -0.01f && !_isAiming)
+                else if (cachedHorizontalMovement < -0.01f && !_isAiming)
                 {
                     _transform.rotation = _leftRotation;
                 }
-
+                
+                // Debug.DrawLine(Vector3.zero,_hitNormal,Color.green);
+                // Debug.Log(_isSliding);
+                
                 //SLIDING
                 if (_isSliding)
                 {
-                    if (Mathf.Sign(cachedHorizontalMovement * _hitNormal.x) < 0) // in case we are gliding while sliding and heading towards the wall
-                        cachedHorizontalMovement = 0f;
-                    
-                    //FIRST FRAME SLIDING
-                    if (!_wasSlidingOnPrevFame)
+                    //FIRST FRAME SLIDING OR SLOPE ANGLE CHANGE
+                    var slopeAngleChanged = Mathf.Abs(_slopeAngle - _prevSlopeAngle) > 5f; // check if the slide direction changed while sliding
+                    if (!_wasSlidingOnPrevFame || slopeAngleChanged) // reset the sliding at the beginning and when the slide direction changes.
                     {
-                        // first frame in which we are sliding
-                        _speedInclined = Mathf.Abs(GetVelocityCorrected().y) * Mathf.Sin(_slopeAngle) * (1-slideFriction);
-                        _slideHorizontalMovementAccumulator = _speedInclined * Mathf.Cos(_slopeAngle) * Mathf.Sign(_hitNormal.x);
-                        _slideVerticalMovementAccumulator = -_speedInclined * Mathf.Sin(_slopeAngle);
+                        _moveDirection = Vector3.Project(_moveDirection, Quaternion.Euler(0, 0, 90) * _hitNormal) * (1-slideFriction);
                     }
-                    //NOT FIRST FRAME SLIDING
-                    else
-                    {
-                        _speedInclined += -_gravity * gravityScale * (fallMultiplier - 1) * Mathf.Abs(Mathf.Sin(_slopeAngle)) * (1-slideFriction) * Time.deltaTime;
-                        _slideHorizontalMovementAccumulator += _speedInclined * Mathf.Cos(_slopeAngle) * Mathf.Sign(_hitNormal.x) * Time.deltaTime;
-                        _slideVerticalMovementAccumulator += -_speedInclined * Mathf.Sin(_slopeAngle) * Time.deltaTime;
-                    }
-                    
-                    //SLIDE MOVEMENT APPLICATION
-                    _moveDirection.x = _slideHorizontalMovementAccumulator;// + cachedHorizontalMovement;
-                    _moveDirection.y = _slideVerticalMovementAccumulator;
+                 
+                    //GRAVITY APPLICATION
+                    var gravityVector = new Vector3(0, _gravity * gravityScale * fallMultiplier, 0);
+                    _moveDirection += Vector3.Project(gravityVector, Quaternion.Euler(0, 0, 90) * _hitNormal) * ((1-slideFriction) * Time.deltaTime);
+
+                    //HORIZONTAL MOVEMENT
+                    if (Mathf.Sign(cachedHorizontalMovement * _hitNormal.x) < 0.1f) // in case we are moving while sliding and heading towards the wall
+                        cachedHorizontalMovement = 0f; 
+                    _moveDirection.x += cachedHorizontalMovement;
                     
                     //GLIDING WHILE SLIDING
                     if (Input.GetButton("Jump")) //TODO apply some variation to the velocity while gliding
                     {
                         _isGliding = true;
-                        _slideHorizontalMovementAccumulator = 0f;
-                        _slideVerticalMovementAccumulator = 0f;
-                        var slidingSpeedInclined = glidingSpeed * Mathf.Sin(_slopeAngle) * (1-slideFriction);
-                        // if (Mathf.Sign(cachedHorizontalMovement * _hitNormal.x) < 0) // in case we are gliding while sliding and heading towards the wall
-                        //     cachedHorizontalMovement = 0f;
-                        _moveDirection.x = slidingSpeedInclined * Mathf.Cos(_slopeAngle) * Mathf.Sign(_hitNormal.x) + cachedHorizontalMovement;
-                        _moveDirection.y = -slidingSpeedInclined * Mathf.Sin(_slopeAngle);
+                        var glideVector = new Vector3(0, -glidingSpeed, 0);
+                        _moveDirection = Vector3.Project(glideVector, Quaternion.Euler(0, 0, 90) * _hitNormal);
+                        _moveDirection.x += cachedHorizontalMovement;
                         EventManager.TriggerEvent("wingsFlap");
                     }
                     else
@@ -345,14 +335,11 @@ namespace HellsChicken.Scripts.Game.Player
                     //RESUME NORMAL SPEED AFTER SLIDING
                     if (_wasSlidingOnPrevFame)
                     {
-                        _moveDirection.x = cachedHorizontalMovement;
-                        _moveDirection.y = _slideVerticalMovementAccumulator;
-                        _slopeAngle = 0f;
-                        _speedInclined = 0f;
-                        _slideHorizontalMovementAccumulator = 0f;
-                        _slideVerticalMovementAccumulator = 0f;
-                        //do not update moveDirection
+                        _moveDirection = Vector3.Project(GetVelocityCorrected(), Vector3.down); //project velocity back on y axes
                     }
+                    
+                    //HORIZONTAL MOVEMENT APPLICATION
+                    _moveDirection.x = cachedHorizontalMovement;
                     
                     //STICK TO THE PAVEMENT
                     _isYMovementCorrected = false;
@@ -464,15 +451,14 @@ namespace HellsChicken.Scripts.Game.Player
 
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
-            if (hit.gameObject.CompareTag("MovingPlatform")) 
-            {
-                EventManager.TriggerEvent("platformCollide",hit.gameObject.name);
-            }
+            // if (hit.gameObject.CompareTag("MovingPlatform")) 
+            // {
+            //     EventManager.TriggerEvent("platformCollide",hit.gameObject.name);
+            // }
             
             //Stop going up when the character controller collides with something over it
             if (_characterController.collisionFlags != CollisionFlags.Above) 
                 return;
-            
             if (Vector3.Dot(hit.normal, _moveDirection) < 0)
             {
                 _moveDirection -= hit.normal * Vector3.Dot(hit.normal, _moveDirection);
@@ -524,33 +510,38 @@ namespace HellsChicken.Scripts.Game.Player
         //If true, it sets _hitNormal and _slopeAngle variables to the current values. 
         private bool SlideCheck()
         {
+            if (!IsFalling())
+            {
+                _hitNormal = Vector3.zero;
+                _slopeAngle = 0f;
+                return false;
+            }
             Vector3 normalSum = Vector3.zero;
             CharacterController cc = _characterController;
-            //var capRad = _capsuleCollider.radius;
             float carRad = cc.radius;
             Vector3 ccc = cc.center + transform.position;
-            //var skinWidth = (capRad - carRad) * 2; //this is 0.1 in our case, correct
-            float skinWidth = 0.1f;
+            var skinWidth = 0.5f;
             Vector3 sourcePoint = new Vector3(ccc.x, ccc.y - (cc.height / 2 - carRad) + skinWidth / 2, ccc.z);
-            RaycastHit[] slideHitPoints = new RaycastHit[5];
-            // Debug.DrawLine(Vector3.zero,sourcePoint,Color.white, 3f);
-            // Debug.Log(carRad);
-            var numberOfHits = Physics.SphereCastNonAlloc(sourcePoint, carRad, Vector3.down, slideHitPoints, skinWidth, slideMask); //,maxDistance: 20f,layerMask: LayerMask.NameToLayer("SphereSlidingCheck"), QueryTriggerInteraction.Ignore);
-            // Debug.Log(numberOfHits);
-            
+            var numberOfHits = Physics.SphereCastNonAlloc(sourcePoint, carRad, Vector3.down, _slideHitPoints, skinWidth, slideMask);
             if (numberOfHits == 0)
+            {
+                _hitNormal = Vector3.zero;
+                _slopeAngle = 0f;
                 return false;
-            
+            }
             for(var i = 0; i < numberOfHits; i++)
             {
-                if (!slideHitPoints[i].collider.CompareTag("SlipperyGround"))
+                if (!_slideHitPoints[i].collider.CompareTag("SlipperyGround"))
+                {
+                    _hitNormal = Vector3.zero;
+                    _slopeAngle = 0f;
                     return false;
-                
-                normalSum += slideHitPoints[i].normal;
+                }
+                normalSum += _slideHitPoints[i].normal;
             }
-            
-            _hitNormal = normalSum.normalized;
-            _slopeAngle = Mathf.Deg2Rad * Vector3.Angle(Vector3.up, _hitNormal);
+            //good but bad, okay for now
+            _hitNormal = Vector3.ProjectOnPlane(normalSum.normalized, new Vector3(0, 0, 1)).normalized;
+            _slopeAngle = Vector3.Angle(Vector3.up, _hitNormal);
             return true;
         }
 
