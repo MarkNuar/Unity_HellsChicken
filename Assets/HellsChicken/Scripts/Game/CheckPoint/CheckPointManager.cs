@@ -8,24 +8,28 @@ namespace HellsChicken.Scripts.Game.CheckPoint
     public class CheckPointManager : MonoBehaviour
     {
         //NEVER PLACE TWO CHECKPOINTS IN THE SAME POSITION!
-        public Light pointLight;
+        public UnityEngine.Light pointLight;
 
+        [SerializeField] private UnityEngine.Light directionalLight;
+        
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
             {
                 GameManager.Instance.SetCurrentCheckPointPos(transform.position);
+                GameManager.Instance.SetCurrentLightIntensity(directionalLight.intensity);
                 //TODO START CHECKPOINT ACTIVATION ANIMATION
-                StartCoroutine(CheckPointActivateLight(2f));
+                //StartCoroutine(CheckPointActivateLight(2f));
+                pointLight.enabled = true;
             }
         }
 
-        private IEnumerator CheckPointActivateLight(float time)
-        {
-            pointLight.enabled = true;
-            yield return new WaitForSeconds(time);
-            pointLight.enabled = false;
-            yield return null;
-        }
+        // private IEnumerator CheckPointActivateLight(float time)
+        // {
+        //     pointLight.enabled = true;
+        //     yield return new WaitForSeconds(time);
+        //     pointLight.enabled = false;
+        //     yield return null;
+        // }
     }
 }

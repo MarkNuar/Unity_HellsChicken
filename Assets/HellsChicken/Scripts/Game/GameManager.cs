@@ -8,8 +8,10 @@ namespace HellsChicken.Scripts.Game
         public static GameManager Instance;
 
         [SerializeField] private GameObject initialCheckPoint;
-    
+        [SerializeField] private UnityEngine.Light initialLight;
+        
         private Vector3 _currentCheckPointPos;
+        private float _currentLightIntensity;
     
         private void Awake()
         {
@@ -18,7 +20,7 @@ namespace HellsChicken.Scripts.Game
                 Instance = this;
                 DontDestroyOnLoad(Instance);
                 SetCurrentCheckPointPos(initialCheckPoint.transform.position);
-                //Destroy(initialCheckPoint);//maybe initial checkpoint has to be destroyed after consumed.
+                SetCurrentLightIntensity(initialLight.intensity);
             }
             else
             {
@@ -30,11 +32,20 @@ namespace HellsChicken.Scripts.Game
         {
             return _currentCheckPointPos;
         }
+
+        public float GetCurrentLightIntensity()
+        {
+            return _currentLightIntensity;
+        }
     
         public void SetCurrentCheckPointPos(Vector3 newCheckPointPos)
         {
             _currentCheckPointPos = newCheckPointPos;
-            
+        }
+
+        public void SetCurrentLightIntensity(float intensity)
+        {
+            _currentLightIntensity = intensity;
         }
     }
 }

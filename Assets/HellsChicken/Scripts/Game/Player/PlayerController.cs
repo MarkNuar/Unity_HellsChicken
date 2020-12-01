@@ -404,6 +404,7 @@ namespace HellsChicken.Scripts.Game.Player
                 _characterController.Move(_moveDirection * Time.deltaTime);
                 
                 //ANIMATION
+                anim.SetBool("isTrulyFalling", IsTrulyFalling());
                 anim.SetBool("isGrounded", IsGrounded());
                 anim.SetBool("isMoving", _isMoving);
                 anim.SetBool("isGliding", _isGliding);
@@ -449,6 +450,11 @@ namespace HellsChicken.Scripts.Game.Player
             return _moveDirection.y < 0f;
         }
 
+        private bool IsTrulyFalling()
+        {
+            return GetVelocityCorrected().y < 0f;
+        }
+        
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
             // if (hit.gameObject.CompareTag("MovingPlatform")) 
