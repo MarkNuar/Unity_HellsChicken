@@ -13,8 +13,7 @@ namespace HellsChicken.Scripts.Game.UI.Health
         [SerializeField] private Image thighImage;
         private const float SpaceBetweenHearts = 0.06f;
         private Image[] _hearts;
-        private bool _playerHasToBeKilled;
-        
+
         private void OnEnable()
         {
             EventManager.StartListening("DecreasePlayerHealth",DecreaseHealth);
@@ -25,7 +24,6 @@ namespace HellsChicken.Scripts.Game.UI.Health
 
         private void Start ()
         {
-            _playerHasToBeKilled = false;
             _health = numberOfHearts;
             _hearts = new Image[numberOfHearts];
             for (var i = 0; i < numberOfHearts; i++)
@@ -63,7 +61,6 @@ namespace HellsChicken.Scripts.Game.UI.Health
             if (_health == 0)
             {
                 EventManager.TriggerEvent("PlayerDeath");
-                _playerHasToBeKilled = false;
             }
         }
     
