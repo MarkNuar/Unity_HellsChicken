@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using EventManagerNamespace;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace HellsChicken.Scripts.Game.Player
@@ -20,7 +22,11 @@ namespace HellsChicken.Scripts.Game.Player
         {
             _material = GetComponent<Renderer>().material;
         }
-        
+
+        public void Start() {
+            //EventManager.TriggerEvent("chickenSpawnSound");
+        }
+
         // Update is called once per frame
         private void FixedUpdate() 
         {
@@ -54,8 +60,6 @@ namespace HellsChicken.Scripts.Game.Player
 
                     if (i <= 0) 
                     {
-                        //Non si puo disattivare perchè interferisce con i checkpoint?
-                        //GetComponent<PlayerController>().enabled = true;
                         _material.SetFloat("EdgeValue", 0.06f);
                         gameObject.layer = LayerMask.NameToLayer("Player");
                     }

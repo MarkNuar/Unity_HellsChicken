@@ -14,7 +14,7 @@ namespace HellsChicken.Scripts.Game.Player.Egg
         
         [SerializeField] private float radius = 3f;
         [SerializeField] private float force = 500f;
-        
+
         private void OnCollisionEnter()
         {
             if (!_hasExploded)
@@ -59,6 +59,7 @@ namespace HellsChicken.Scripts.Game.Player.Egg
             }
             
             gameObject.GetComponent<MeshRenderer>().enabled = false;
+            gameObject.GetComponent<SphereCollider>().enabled = false;
             StartCoroutine(DelayDestroyEgg(2.0f));
         }
 

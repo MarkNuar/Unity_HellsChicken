@@ -46,7 +46,6 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
             Instantiate(explosionPrefab, position - new Vector3(0,1,0), Quaternion.identity);
             
             List<String> names =  new List<String>();
-            EventManager.TriggerEvent("playBomb");
             
             Collider[] collidersToMove = Physics.OverlapSphere(position, radius);
             
@@ -69,7 +68,7 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
                     }
                 }
             }
-            
+            EventManager.TriggerEvent("playBomb");
             Destroy(gameObject);
             yield return null;
         }

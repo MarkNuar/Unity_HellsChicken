@@ -173,6 +173,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
                     _still = +1;
                     _textInstance = Instantiate(textPrefab, gameObject.transform.position + new Vector3(-0.4f, 3, 0),
                         Quaternion.identity);
+                    _textInstance.transform.parent = gameObject.transform.parent;
                     return false;
                 }
                 else
