@@ -8338,6 +8338,11 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4947932090175730584, guid: bc97e0f654916554fb052c22e25edc34,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4947932090175730585, guid: bc97e0f654916554fb052c22e25edc34,
         type: 3}
       propertyPath: m_Name
