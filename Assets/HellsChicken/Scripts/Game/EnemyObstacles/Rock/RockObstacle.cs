@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace HellsChicken.Scripts.Game.EnemyObstacles.Rock
 {
     public class RockObstacle : MonoBehaviour
     {
         private Rigidbody _rockRb;
-        
+        public Animator anim;
         [SerializeField] private float gravityModifier = 10;
 
         private void Start()
@@ -22,10 +23,17 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles.Rock
             }
             else 
             {
-                Destroy(gameObject);
+                anim.SetBool("hasCollided",true);
+                StartCoroutine(DestroyGameObject(5.0f));
+                transform.gameObject.tag = "deadEnemy";
             }
             
-            //Destroy(gameObject);
+        }
+
+        IEnumerator DestroyGameObject(float time)
+        {
+            yield return new WaitForSeconds(time);
+            Destroy(gameObject);
         }
     }
 }
