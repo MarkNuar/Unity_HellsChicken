@@ -1,10 +1,17 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 namespace HellsChicken.Scripts.Game.UI.Menu
 {
    public class MainMenu : MonoBehaviour
    {
+      public TMP_InputField tmpInputField;
+      private const string VideoGameName = "Hell's Chicken";
+    
+
       public void PlayGame()
       {
          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -14,5 +21,43 @@ namespace HellsChicken.Scripts.Game.UI.Menu
       {
          Application.Quit();
       }
+      
+      public void SendFeedback()
+      {
+         var feedback = tmpInputField.text;
+         if (feedback.Length > 0)
+         {
+            StartCoroutine(PostFeedback(VideoGameName, feedback));
+            tmpInputField.text = "";
+         }
+      }
+
+      public void CloseFeedbackPanel()
+      {
+         tmpInputField.text = "";
+      }
+      
+       private static IEnumerator PostFeedback(string videoGameName, string feedback) 
+       {
+            // https://docs.google.com/forms/d/e/1FAIpQLSdyQkpRLzqRzADYlLhlGJHwhbKZvKJILo6vGmMfSePJQqlZxA/viewform?usp=pp_url&entry.631493581=Simple+Game&entry.1313960569=Very%0AGood!
+
+            const string url = "https://docs.google.com/forms/d/e/1FAIpQLSdyQkpRLzqRzADYlLhlGJHwhbKZvKJILo6vGmMfSePJQqlZxA/formResponse";
+        
+            var form = new WWWForm();
+
+            form.AddField("entry.631493581", videoGameName);
+            form.AddField("entry.1313960569", feedback);
+
+            var www = UnityWebRequest.Post(url, form);
+
+            yield return www.SendWebRequest();
+
+            print(www.error);
+
+            Debug.Log(www.isNetworkError ? www.error : "Form upload complete!");
+
+            // at the end go back to the main menu
+            //MenuManager.Instance.OpenMainMenu();
+       }
    }
 }
