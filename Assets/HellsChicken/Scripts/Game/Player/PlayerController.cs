@@ -28,7 +28,6 @@ namespace HellsChicken.Scripts.Game.Player
         [SerializeField] private Transform firePosition;
         [SerializeField] private float flamesCooldown = 2f;
         [SerializeField] private MeshRenderer[] eyesMeshRenderer;
-        [SerializeField] private PauseMenu pauseMenu;
         private float _gravity;
 
         private Vector3 _moveDirection;
@@ -238,7 +237,7 @@ namespace HellsChicken.Scripts.Game.Player
         
         private void Update()
         {
-            if (!_isDead && !PauseMenu.GetGameIsPaused() )
+            if (!_isDead && !PauseMenu.GetGameIsPaused() && !EndMenu.GetGameIsPaused())
             {
                 _isShootingFlames = false;
                 _isShootingEgg = false;

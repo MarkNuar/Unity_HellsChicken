@@ -416,6 +416,7 @@
               </e>
               <e p="CheckPoint" t="Include">
                 <e p="CheckPointManager.cs" t="Include" />
+                <e p="EndLevelManager.cs" t="Include" />
               </e>
               <e p="EnemyObstacles" t="Include">
                 <e p="BladeMovement.cs" t="Include" />
@@ -474,6 +475,7 @@
                   <e p="KeyController.cs" t="Include" />
                 </e>
                 <e p="Menu" t="Include">
+                  <e p="EndMenu.cs" t="Include" />
                   <e p="MainMenu.cs" t="Include" />
                   <e p="PauseMenu.cs" t="Include" />
                 </e>

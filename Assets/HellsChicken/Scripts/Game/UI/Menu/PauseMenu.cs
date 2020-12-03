@@ -15,10 +15,15 @@ namespace HellsChicken.Scripts.Game.UI.Menu
         public GameObject feedbackMenuUI;
 
         public GameObject eggCrosshairCanvas;
-        
+
         public TMP_InputField tmpInputField;
         private const string VideoGameName = "Hell's Chicken";
         
+        private void Start()
+        {
+            _gameIsPaused = false;
+        }
+
         // Update is called once per frame
         private void Update()
         {
@@ -37,7 +42,6 @@ namespace HellsChicken.Scripts.Game.UI.Menu
 
         public void Resume()
         {
-            //TODO
             backGround.SetActive(false);
             pauseMenuUI.SetActive(false);
             commandsMenuUI.SetActive(false);
@@ -50,7 +54,6 @@ namespace HellsChicken.Scripts.Game.UI.Menu
 
         private void Pause()
         {
-            //TODO
             backGround.SetActive(true);
             pauseMenuUI.SetActive(true);
             Time.timeScale = 0f;
