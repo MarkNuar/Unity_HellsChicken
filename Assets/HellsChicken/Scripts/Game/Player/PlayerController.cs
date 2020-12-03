@@ -201,21 +201,17 @@ namespace HellsChicken.Scripts.Game.Player
             GameObject egg = Instantiate(eggPrefab, eggThrowPoint.transform.position, Quaternion.identity);
             Vector3 baseEggVelocity = new Vector3(v * Mathf.Cos(angle), v * Mathf.Sin(angle), 0f);
             
-            // //TODO: velocity correction if only the player is grounded
-            // var playerVelocityCorrected = new Vector3(_moveDirection.x, _moveDirection.y, 0f);
-            // if (_isYMovementCorrected)
-            //     playerVelocityCorrected.y += _yMovementCorrection;
-            // egg.GetComponent<Rigidbody>().velocity = baseEggVelocity + playerVelocityCorrected;
-            // if (!IsGrounded())
+            //TODO: velocity correction if only the player is grounded
+            // if (!IsGrounded()) //if the player is flying, do not add player velocity
             // {
             //     egg.GetComponent<Rigidbody>().velocity = baseEggVelocity;
             // }
             // else //grounded
             // {
-            //     egg.GetComponent<Rigidbody>().velocity = baseEggVelocity + playerVelocityCorrected;
+            //     egg.GetComponent<Rigidbody>().velocity = baseEggVelocity + GetVelocityCorrected();
             // }
-            
-            egg.GetComponent<Rigidbody>().velocity = baseEggVelocity;
+            egg.GetComponent<Rigidbody>().velocity = baseEggVelocity + GetVelocityCorrected();
+            //egg.GetComponent<Rigidbody>().velocity = baseEggVelocity;
         }
 
         private IEnumerator EnableEggThrow(float time)
