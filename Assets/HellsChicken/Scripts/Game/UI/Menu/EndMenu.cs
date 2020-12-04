@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using HellsChicken.Scripts.Game;
 using UnityEngine;
 using UnityEngine.Networking;
 using TMPro;
@@ -47,6 +48,8 @@ public class EndMenu : MonoBehaviour
 
     public void MainMenu()
     {
+        //TODO USE SCRIPTABLE OBJECTS, ONE FOR EACH LEVEL
+        GameManager.Instance.ResetGameManagerValues(); //for resetting checkpoints and lights
         Time.timeScale = 1f;
         _gameIsPaused = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); //test if it works
@@ -89,5 +92,4 @@ public class EndMenu : MonoBehaviour
         // at the end go back to the main menu
         //MenuManager.Instance.OpenMainMenu();
     }
-    
 }

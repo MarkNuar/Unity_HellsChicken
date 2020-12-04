@@ -13,6 +13,8 @@ namespace HellsChicken.Scripts.Game
         private Vector3 _currentCheckPointPos;
         private float _currentLightIntensity;
     
+        private Vector3 _startingCheckPointPos;
+        private float _startingLightIntensity;
         private void Awake()
         {
             if (Instance == null)
@@ -21,6 +23,8 @@ namespace HellsChicken.Scripts.Game
                 DontDestroyOnLoad(Instance);
                 SetCurrentCheckPointPos(initialCheckPoint.transform.position);
                 SetCurrentLightIntensity(initialLight.intensity);
+                _startingCheckPointPos = _currentCheckPointPos;
+                _startingLightIntensity = _currentLightIntensity;
             }
             else
             {
@@ -46,6 +50,12 @@ namespace HellsChicken.Scripts.Game
         public void SetCurrentLightIntensity(float intensity)
         {
             _currentLightIntensity = intensity;
+        }
+
+        public void ResetGameManagerValues()
+        {
+            _currentCheckPointPos= _startingCheckPointPos;
+            _currentLightIntensity = _startingLightIntensity;
         }
     }
 }
