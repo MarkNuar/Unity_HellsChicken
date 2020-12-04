@@ -52,8 +52,7 @@ namespace HellsChicken.Scripts.Game.Player.Egg
                         
                         if (dest == null) 
                             dest = nearbyObject.gameObject.transform.parent.GetComponent<Destruction>();
-                        
-                        if(dest != null)
+                        else
                             dest.Destroyer();
                     }
                 }

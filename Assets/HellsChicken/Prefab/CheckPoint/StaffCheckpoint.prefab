@@ -93,8 +93,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.9732058
-  m_Center: {x: 0.005443096, y: 2.9466314, z: 1.5516155}
+  m_Radius: 2.9384077
+  m_Center: {x: -0.041534424, y: 1.3835294, z: 1.551615}
 --- !u!114 &3329702079825037555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointLight: {fileID: 1746213826578795485}
+  directionalLight: {fileID: 0}
 --- !u!1 &1220225762779293421
 GameObject:
   m_ObjectHideFlags: 0

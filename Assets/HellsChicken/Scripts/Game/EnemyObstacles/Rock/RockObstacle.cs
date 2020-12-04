@@ -27,8 +27,7 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles.Rock
                 StartCoroutine(DestroyGameObject(5.0f));
                 transform.gameObject.tag = "deadEnemy";
 
-                if(other.gameObject.CompareTag("Player"))
-                    Physics.IgnoreCollision(other.gameObject.GetComponent<Collider>(),GetComponent<Collider>());
+                transform.gameObject.layer = 21;
             }
             
         }
