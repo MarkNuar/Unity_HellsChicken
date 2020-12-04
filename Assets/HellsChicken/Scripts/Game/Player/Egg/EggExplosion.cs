@@ -15,13 +15,41 @@ namespace HellsChicken.Scripts.Game.Player.Egg
         [SerializeField] private float radius = 3f;
         [SerializeField] private float force = 500f;
 
+
+        private bool _hasCollided = false;
+        
         private void OnCollisionEnter()
         {
-            if (!_hasExploded)
+            if (!_hasCollided)
             {
-                Explode();
-                EventManager.TriggerEvent("EggExplosionNotification");
-                _hasExploded = true;
+                _hasCollided = true;
+                if (!_hasExploded)
+                {
+                    gameObject.GetComponent<MeshRenderer>().enabled = false;
+                    gameObject.GetComponent<SphereCollider>().enabled = false;
+                    Explode();
+                    EventManager.TriggerEvent("EggExplosionNotification");
+                    _hasExploded = true;
+                }
+            }
+        }
+        
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Enemy"))
+            {
+                if (!_hasCollided)
+                {
+                    _hasCollided = true;
+                    if (!_hasExploded)
+                    {
+                        gameObject.GetComponent<MeshRenderer>().enabled = false;
+                        gameObject.GetComponent<SphereCollider>().enabled = false;
+                        Explode();
+                        EventManager.TriggerEvent("EggExplosionNotification");
+                        _hasExploded = true;
+                    }
+                }
             }
         }
 
@@ -58,8 +86,7 @@ namespace HellsChicken.Scripts.Game.Player.Egg
                 }
             }
             
-            gameObject.GetComponent<MeshRenderer>().enabled = false;
-            gameObject.GetComponent<SphereCollider>().enabled = false;
+            
             StartCoroutine(DelayDestroyEgg(2.0f));
         }
 

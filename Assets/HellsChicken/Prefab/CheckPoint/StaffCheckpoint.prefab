@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 402512}
   - component: {fileID: 3336740}
   - component: {fileID: 2364250}
-  - component: {fileID: -4364317587576186692}
   - component: {fileID: 3329702079825037555}
+  - component: {fileID: 3602824277800632340}
   m_Layer: 0
   m_Name: StaffCheckpoint
   m_TagString: Untagged
@@ -82,19 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &-4364317587576186692
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138184}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2.9384077
-  m_Center: {x: -0.041534424, y: 1.3835294, z: 1.551615}
 --- !u!114 &3329702079825037555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +96,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointLight: {fileID: 1746213826578795485}
   directionalLight: {fileID: 0}
+--- !u!65 &3602824277800632340
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138184}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.650177, y: 6.255249, z: 4.766588}
+  m_Center: {x: 0, y: 0, z: 2.015123}
 --- !u!1 &1220225762779293421
 GameObject:
   m_ObjectHideFlags: 0

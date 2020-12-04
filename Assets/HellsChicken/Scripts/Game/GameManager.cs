@@ -40,7 +40,7 @@ namespace HellsChicken.Scripts.Game
     
         public void SetCurrentCheckPointPos(Vector3 newCheckPointPos)
         {
-            _currentCheckPointPos = newCheckPointPos;
+            _currentCheckPointPos = new Vector3(newCheckPointPos.x,newCheckPointPos.y, 0f);
         }
 
         public void SetCurrentLightIntensity(float intensity)

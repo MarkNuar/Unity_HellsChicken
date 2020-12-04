@@ -5,7 +5,7 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
     public class GoombaAICC : MonoBehaviour
     {
         [SerializeField] private bool right = true;
-        [SerializeField] private float gravityScale = 1f;
+        [SerializeField] private float gravityScale = 10f;
         [SerializeField] private float agentVelocity = 8f;
         
         private CharacterController _characterController;

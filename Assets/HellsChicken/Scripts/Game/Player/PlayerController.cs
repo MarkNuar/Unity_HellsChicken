@@ -200,8 +200,16 @@ namespace HellsChicken.Scripts.Game.Player
             
             GameObject egg = Instantiate(eggPrefab, eggThrowPoint.transform.position, Quaternion.identity);
             Vector3 baseEggVelocity = new Vector3(v * Mathf.Cos(angle), v * Mathf.Sin(angle), 0f);
-            
-            egg.GetComponent<Rigidbody>().velocity = baseEggVelocity + new Vector3(GetVelocityCorrected().x,0f,0f);
+
+            if (!IsGrounded())
+            {
+                egg.GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(baseEggVelocity, maxEggVelocity);
+            }
+            else
+            {
+                egg.GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(baseEggVelocity + new Vector3(GetVelocityCorrected().x,0f,0f), maxEggVelocity); 
+            }
+            //egg.GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(baseEggVelocity + new Vector3(GetVelocityCorrected().x,0f,0f), maxEggVelocity);
             //egg.GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(baseEggVelocity + GetVelocityCorrected(),maxEggVelocity);
             //egg.GetComponent<Rigidbody>().velocity = baseEggVelocity;
         }

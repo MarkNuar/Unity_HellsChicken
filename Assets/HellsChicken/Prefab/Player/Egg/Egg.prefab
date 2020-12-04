@@ -317,6 +317,7 @@ GameObject:
   - component: {fileID: 9045032837410467741}
   - component: {fileID: 9045032837410467743}
   - component: {fileID: 2908870156893178881}
+  - component: {fileID: 1200030960352636966}
   m_Layer: 10
   m_Name: Egg
   m_TagString: Attack
@@ -393,7 +394,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9045032837410467742}
-  m_Material: {fileID: 13400000, guid: dcc66a531f5fe5a4383af15e483135fe, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -431,3 +432,16 @@ MonoBehaviour:
     type: 3}
   radius: 2.5
   force: 500
+--- !u!135 &1200030960352636966
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9045032837410467742}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.6
+  m_Center: {x: 0, y: 0, z: 0}
