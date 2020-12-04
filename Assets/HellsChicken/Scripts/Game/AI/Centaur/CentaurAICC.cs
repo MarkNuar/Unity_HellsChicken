@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using EventManagerNamespace;
 using HellsChicken.Scripts.Game.AI.Centaur.Bow;
 using HellsChicken.Scripts.Game.AI.DecisionTree;
@@ -224,6 +225,11 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
         {
             if (other.transform.CompareTag("Player")) 
                 _isColliding = false;
+        }
+
+        private void OnDestroy() {
+            if(_textInstance != null)
+                Destroy(_textInstance);                
         }
     }
 }
