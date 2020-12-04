@@ -1,9 +1,54 @@
 fileFormatVersion: 2
-guid: 9b2e9c04e0f19aa45a41a0a8a97fa682
+guid: 5df5106f3f691da429c2f048957a61ec
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Background
+    second: {fileID: 2100000, guid: 25d251d2918f2ec4da75705457fa7132, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gate
+    second: {fileID: 2100000, guid: 351f1c866e999f14084f21ca8613794c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LavaMat
+    second: {fileID: 2100000, guid: 6529fc8ea1f09ee47a60ee749e9f4aaf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rocks1
+    second: {fileID: 2100000, guid: 1537e029f067d584f8306001ebaa2221, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rocks2
+    second: {fileID: 2100000, guid: a3432559437774d468ee31af29f928be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SpearBlocks
+    second: {fileID: 2100000, guid: 1aaf94e36e74c6945bd720ff741b60f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cave1
+    second: {fileID: 2100000, guid: cfbe5e87c47784d4e82af26a46f2f043, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cave2
+    second: {fileID: 2100000, guid: ee8a66dbf5b86fb4c922c30390e65df7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cave3
+    second: {fileID: 2100000, guid: ae77ba38095e71b4b93ea8672a2e81e3, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
