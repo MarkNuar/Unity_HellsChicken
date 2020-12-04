@@ -210,6 +210,8 @@ namespace HellsChicken.Scripts.Game.Player
             // {
             //     egg.GetComponent<Rigidbody>().velocity = baseEggVelocity + GetVelocityCorrected();
             // }
+            Debug.DrawLine(Vector3.zero,GetVelocityCorrected(),Color.white,3f);
+            Debug.DrawLine(new Vector3(3, 0, 0), new Vector3(3,0,0) + _moveDirection, Color.magenta, 3f);
             egg.GetComponent<Rigidbody>().velocity = baseEggVelocity + GetVelocityCorrected();
             //egg.GetComponent<Rigidbody>().velocity = baseEggVelocity;
         }
@@ -227,7 +229,7 @@ namespace HellsChicken.Scripts.Game.Player
         {
             var playerVelocityCorrected = new Vector3(_moveDirection.x, _moveDirection.y, 0f);
             if (_isYMovementCorrected)
-                playerVelocityCorrected.y += yMovementCorrection;
+                playerVelocityCorrected.y = 0f;
             return playerVelocityCorrected;
         }
         
@@ -393,7 +395,8 @@ namespace HellsChicken.Scripts.Game.Player
 
                 //CLAMP PLAYER VELOCITY TO MAX MAGNITUDE
                 _moveDirection = Vector3.ClampMagnitude(_moveDirection, maxSpeedVectorMagnitude);
-                Debug.DrawLine(Vector3.zero,_moveDirection, Color.magenta);
+                //Debug.DrawLine(Vector3.zero,_moveDirection, Color.magenta);
+                
                 
                 //MOVEMENT APPLICATION
                 _characterController.Move(_moveDirection * Time.deltaTime);
