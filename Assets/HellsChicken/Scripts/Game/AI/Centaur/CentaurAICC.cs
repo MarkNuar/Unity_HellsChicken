@@ -72,7 +72,10 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
     
         private void Update() 
         {
-            _movement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
+            if (_characterController.isGrounded)
+                _movement.y = -20f;
+            else
+                _movement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
             if (_canMove) 
             {
                 if (!_isColliding)

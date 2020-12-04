@@ -24,7 +24,10 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
 
         private void Update()
         {
-            _movement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
+            if (_characterController.isGrounded)
+                _movement.y = -20f;
+            else
+                _movement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
             if (right)
             {
                 _movement.x = agentVelocity;
@@ -41,7 +44,7 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("Wall") || other.gameObject.CompareTag("Enemy"))
+            if (other.gameObject.CompareTag("Wall") || other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("deadEnemy"))
             {
                 right = !right;
                 transform.rotation *= Quaternion.Euler(0, 180, 0);
