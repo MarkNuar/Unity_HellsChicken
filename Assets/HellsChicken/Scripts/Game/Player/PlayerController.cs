@@ -201,18 +201,8 @@ namespace HellsChicken.Scripts.Game.Player
             GameObject egg = Instantiate(eggPrefab, eggThrowPoint.transform.position, Quaternion.identity);
             Vector3 baseEggVelocity = new Vector3(v * Mathf.Cos(angle), v * Mathf.Sin(angle), 0f);
             
-            //TODO: velocity correction if only the player is grounded
-            // if (!IsGrounded()) //if the player is flying, do not add player velocity
-            // {
-            //     egg.GetComponent<Rigidbody>().velocity = baseEggVelocity;
-            // }
-            // else //grounded
-            // {
-            //     egg.GetComponent<Rigidbody>().velocity = baseEggVelocity + GetVelocityCorrected();
-            // }
-            Debug.DrawLine(Vector3.zero,GetVelocityCorrected(),Color.white,3f);
-            Debug.DrawLine(new Vector3(3, 0, 0), new Vector3(3,0,0) + _moveDirection, Color.magenta, 3f);
-            egg.GetComponent<Rigidbody>().velocity = baseEggVelocity + GetVelocityCorrected();
+            egg.GetComponent<Rigidbody>().velocity = baseEggVelocity + new Vector3(GetVelocityCorrected().x,0f,0f);
+            //egg.GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(baseEggVelocity + GetVelocityCorrected(),maxEggVelocity);
             //egg.GetComponent<Rigidbody>().velocity = baseEggVelocity;
         }
 
@@ -395,7 +385,7 @@ namespace HellsChicken.Scripts.Game.Player
 
                 //CLAMP PLAYER VELOCITY TO MAX MAGNITUDE
                 _moveDirection = Vector3.ClampMagnitude(_moveDirection, maxSpeedVectorMagnitude);
-                //Debug.DrawLine(Vector3.zero,_moveDirection, Color.magenta);
+                Debug.DrawLine(Vector3.zero,_moveDirection, Color.magenta);
                 
                 
                 //MOVEMENT APPLICATION
