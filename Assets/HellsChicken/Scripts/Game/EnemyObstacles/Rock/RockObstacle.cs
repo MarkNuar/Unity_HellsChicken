@@ -26,8 +26,7 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles.Rock
                 anim.SetBool("hasCollided",true);
                 StartCoroutine(DestroyGameObject(5.0f));
                 transform.gameObject.tag = "deadEnemy";
-
-                transform.gameObject.layer = 21;
+                gameObject.layer = 21;
             }
             
         }
