@@ -1,31 +1,41 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using EventManagerNamespace;
 using UnityEngine;
 
 public class GameAudioManager : MonoBehaviour
 {
+    public static GameAudioManager Instance;
+    
     [SerializeField] private AudioSource gameAudioSource;
 
     [SerializeField] private AudioClip gameSoundtrackSound;
 
     private void Awake()
     {
-        EventManager.StartListening("gameSoundtrack",gameSoundtrack);
+
+        if (Instance == null)
+        {
+            EventManager.StartListening("gameSoundtrack",gameSoundtrack);
+            Instance = this;
+            DontDestroyOnLoad(Instance);
+        }
+
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void gameSoundtrack()
     {
         EventManager.StopListening("gameSoundtrack",gameSoundtrack);
         gameAudioSource.clip = gameSoundtrackSound;
-        if(!gameAudioSource.isPlaying)
-            gameAudioSource.Play();
+        gameAudioSource.loop = true;
+        gameAudioSource.Play();
         EventManager.StartListening("gameSoundtrack",gameSoundtrack);
     }
-
-    private void Start()
-    {
-        EventManager.TriggerEvent("gameSoundtrack");
-    }
+    
 }

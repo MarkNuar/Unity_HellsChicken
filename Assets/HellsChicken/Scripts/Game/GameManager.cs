@@ -26,6 +26,7 @@ namespace HellsChicken.Scripts.Game
                 SetCurrentLightIntensity(initialLight.intensity);
                 _startingCheckPointPos = _currentCheckPointPos;
                 _startingLightIntensity = _currentLightIntensity;
+                EventManager.TriggerEvent("gameSoundtrack");
             }
             else
             {
