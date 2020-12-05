@@ -60,7 +60,7 @@ namespace HellsChicken.Scripts.Game.Player.Egg
             Destroy(particle, 1f);
             
             List<String> names =  new List<String>();
-            EventManager.TriggerEvent("playBomb");
+            EventManager.TriggerEvent("EggExplosion");
             
             Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
             

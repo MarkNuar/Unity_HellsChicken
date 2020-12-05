@@ -5,7 +5,6 @@ namespace HellsChicken.Scripts.Game.Audio
 {
     public class ChickenAudioManager : Singleton<ChickenAudioManager>
     {
-        [SerializeField] private AudioSource centaurShotAudioSource;
         [SerializeField] private AudioSource flameThrowerAudioSource;
         [SerializeField] private AudioSource footStepsAudioSource;
         [SerializeField] private AudioSource wingsFlappingAudioSource;
@@ -13,7 +12,6 @@ namespace HellsChicken.Scripts.Game.Audio
         [SerializeField] private AudioSource chickenDeathAudioSource;
         [SerializeField] private AudioSource chickenSpawnAudioSource;
         
-        [SerializeField] private AudioClip centaurShotSound;
         [SerializeField] private AudioClip flameThrowerSound;
         [SerializeField] private AudioClip footStepsSound;
         [SerializeField] private AudioClip wingsFlappingSound;
@@ -22,7 +20,6 @@ namespace HellsChicken.Scripts.Game.Audio
         [SerializeField] private AudioClip chickenSpawnAudioSound;
 
         protected override void Awake() {
-            EventManager.StartListening("centaurShot",CentaurShot);
             EventManager.StartListening("flameThrower", FlameThrower);
             EventManager.StartListening("footSteps", FootSteps);
             EventManager.StartListening("stopFootSteps",StopFootSteps);
@@ -32,16 +29,6 @@ namespace HellsChicken.Scripts.Game.Audio
             EventManager.StartListening("chickenSpawnSound",ChickenSpawn);
         }
 
-        private void OnDisable() {
-            EventManager.StopListening("centaurShot",CentaurShot);
-        }
-        
-        private void CentaurShot() {
-            EventManager.StopListening("centaurShot",CentaurShot);
-            centaurShotAudioSource.clip = centaurShotSound;
-            centaurShotAudioSource.Play();
-            EventManager.StartListening("centaurShot",CentaurShot);
-        }
 
         private void FlameThrower()
         {

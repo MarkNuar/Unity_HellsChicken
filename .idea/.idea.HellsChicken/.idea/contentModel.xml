@@ -381,6 +381,11 @@
           </e>
         </e>
         <e p="HellsChicken" t="Include">
+          <e p="Audio" t="Include">
+            <e p="Goomba" t="Include">
+              <e p="DeathGoombaAudioManager.cs" t="Include" />
+            </e>
+          </e>
           <e p="Scripts" t="Include">
             <e p="Game" t="Include">
               <e p="AI" t="Include">

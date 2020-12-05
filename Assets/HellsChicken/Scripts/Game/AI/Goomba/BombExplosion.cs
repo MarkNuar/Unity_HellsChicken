@@ -11,6 +11,7 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
     {
         [SerializeField] private GameObject explosionPrefab;
         [SerializeField] private GameObject vanishEffectPrefab;
+        public GameObject DegoroAnimation;
         
         private MeshRenderer _meshRenderer;
         private int _cont;
@@ -68,7 +69,16 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
                     }
                 }
             }
-            EventManager.TriggerEvent("playBomb");
+            EventManager.TriggerEvent("GoombaExplosion");
+            DegoroAnimation.SetActive(false);
+            gameObject.GetComponent<CharacterController>().enabled = false;
+            gameObject.GetComponent<CapsuleCollider>().enabled = false;
+            StartCoroutine(DelayDestroyGoomba(2.0f));
+        }
+
+        private IEnumerator DelayDestroyGoomba(float time)
+        {
+            yield return new WaitForSeconds(time);
             Destroy(gameObject);
             yield return null;
         }
