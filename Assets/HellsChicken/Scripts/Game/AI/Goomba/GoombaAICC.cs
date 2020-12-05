@@ -24,22 +24,25 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
 
         private void Update()
         {
-            if (_characterController.isGrounded)
-                _movement.y = -20f;
-            else
-                _movement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
-            if (right)
+            if (_characterController.enabled)
             {
-                _movement.x = agentVelocity;
-                transform.rotation = Quaternion.Euler(0, 90, 0);
-            }
-            else
-            {
-                _movement.x = -agentVelocity;
-                transform.rotation = Quaternion.Euler(0, 270, 0);
-            }
+                if (_characterController.isGrounded)
+                    _movement.y = -20f;
+                else
+                    _movement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
+                if (right)
+                {
+                    _movement.x = agentVelocity;
+                    transform.rotation = Quaternion.Euler(0, 90, 0);
+                }
+                else
+                {
+                    _movement.x = -agentVelocity;
+                    transform.rotation = Quaternion.Euler(0, 270, 0);
+                }
 
-            _characterController.Move(_movement * Time.deltaTime);
+                _characterController.Move(_movement * Time.deltaTime);
+            }
         }
 
         private void OnTriggerEnter(Collider other)

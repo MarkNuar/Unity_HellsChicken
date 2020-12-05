@@ -72,33 +72,36 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
     
         private void Update() 
         {
-            if (_characterController.isGrounded)
-                _movement.y = -20f;
-            else
-                _movement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
-            if (_canMove) 
+            if (_characterController.enabled)
             {
-                if (!_isColliding)
+                if (_characterController.isGrounded)
+                    _movement.y = -20f;
+                else
+                    _movement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
+                if (_canMove) 
                 {
-                    if (_right)
+                    if (!_isColliding)
                     {
-                        _movement.x = agentVelocity;
+                        if (_right)
+                        {
+                            _movement.x = agentVelocity;
+                        }
+                        else
+                        {
+                            _movement.x = -agentVelocity;
+                        }
                     }
                     else
                     {
-                        _movement.x = -agentVelocity;
+                        _movement.x = 0;
                     }
                 }
                 else
                 {
                     _movement.x = 0;
                 }
+                _characterController.Move(_movement * Time.deltaTime);
             }
-            else
-            {
-                _movement.x = 0;
-            }
-            _characterController.Move(_movement * Time.deltaTime);
         }
 
         private IEnumerator TreeCoroutine() 

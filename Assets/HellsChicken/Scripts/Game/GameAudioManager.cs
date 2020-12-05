@@ -19,6 +19,7 @@ public class GameAudioManager : MonoBehaviour
         if (Instance == null)
         {
             EventManager.StartListening("gameSoundtrack",gameSoundtrack);
+            EventManager.TriggerEvent("gameSoundtrack");
             Instance = this;
             DontDestroyOnLoad(Instance);
         }

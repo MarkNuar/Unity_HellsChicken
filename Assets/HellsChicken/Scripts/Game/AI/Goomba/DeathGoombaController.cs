@@ -23,10 +23,13 @@ public class DeathGoombaController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_characterController.isGrounded)
-            _movement.y = -20f;
-        else
-            _movement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
-        _characterController.Move(_movement * Time.deltaTime);
+        if (_characterController.enabled)
+        {
+            if (_characterController.isGrounded)
+                _movement.y = -20f;
+            else
+                _movement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
+            _characterController.Move(_movement * Time.deltaTime);
+        }
     }
 }
