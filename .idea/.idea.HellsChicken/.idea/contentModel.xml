@@ -381,11 +381,6 @@
           </e>
         </e>
         <e p="HellsChicken" t="Include">
-          <e p="Audio" t="Include">
-            <e p="Goomba" t="Include">
-              <e p="DeathGoombaAudioManager.cs" t="Include" />
-            </e>
-          </e>
           <e p="Scripts" t="Include">
             <e p="Game" t="Include">
               <e p="AI" t="Include">
@@ -418,6 +413,7 @@
               </e>
               <e p="Audio" t="Include">
                 <e p="ChickenAudioManager.cs" t="Include" />
+                <e p="DeathGoombaAudioManager.cs" t="Include" />
                 <e p="EggAudioManager.cs" t="Include" />
               </e>
               <e p="CheckPoint" t="Include">
@@ -434,6 +430,7 @@
                 </e>
                 <e p="SpearMovement.cs" t="Include" />
               </e>
+              <e p="GameAudioManager.cs" t="Include" />
               <e p="GameManager.cs" t="Include" />
               <e p="Light" t="Include">
                 <e p="LightController.cs" t="Include" />

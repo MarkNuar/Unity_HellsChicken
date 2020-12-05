@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using EventManagerNamespace;
+using UnityEngine;
 
 namespace HellsChicken.Scripts.Game
 {
