@@ -24,6 +24,8 @@ namespace HellsChicken.Scripts.Game.Player
         [SerializeField] private float fallMultiplier = 2.5f;
         [SerializeField] private float lowJumpMultiplier = 2f;
         [SerializeField] private float glidingSpeed = 15f;
+        //[SerializeField] private float glidingFrequency = 20f;
+        [SerializeField] private float glidingAmplitude = 2f;
         [SerializeField] private ParticleSystem flameStream;
         [SerializeField] private Transform firePosition;
         [SerializeField] private float flamesCooldown = 2f;
@@ -71,6 +73,10 @@ namespace HellsChicken.Scripts.Game.Player
         private bool _hasVibrated;
         [SerializeField] private float eggCooldown = 2;
 
+
+        private bool _wasGlidingOnPrevFrame = false;
+        private float _glidingStartingTime;
+        
         public Vector3 getPredictedPosition() {
             Vector3 result = new Vector3(transform.position.x,transform.position.y,0);
             if (!_isMoving)
@@ -371,14 +377,17 @@ namespace HellsChicken.Scripts.Game.Player
 
                     //GRAVITY APPLICATION
                     _moveDirection.y += _gravity * gravityScale * Time.deltaTime;
-
+                    
                     //GLIDING
+                    _wasGlidingOnPrevFrame = _isGliding;
                     if (!IsGrounded() && IsFalling())
                     {
                         if (Input.GetButton("Jump")) //TODO apply some variation to the velocity while gliding
                         {
                             _isGliding = true;
-                            _moveDirection.y = -glidingSpeed;
+                            if (!_wasGlidingOnPrevFrame && _isGliding)
+                                _glidingStartingTime = Time.time;
+                            _moveDirection.y = -glidingSpeed - Mathf.Sin((Time.time - _glidingStartingTime) * 4 * 2 * Mathf.PI) * glidingAmplitude;;
                             EventManager.TriggerEvent("wingsFlap");
                         }
                         else
