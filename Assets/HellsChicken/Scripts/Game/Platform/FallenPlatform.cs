@@ -27,8 +27,6 @@ namespace HellsChicken.Scripts.Game.Platform
             Vector3 position = _transform.position;
             _startPosX = position.x;
             _startPosY = position.y;
-            
-            //EventManager.StartListening("platformCollide",PlatformCollide);
         }
 
         private void Start() 
@@ -49,15 +47,26 @@ namespace HellsChicken.Scripts.Game.Platform
             } 
             else if (_isColliding) 
             {
-                _rigidbody.AddForce(new Vector3(0, gravityModifier * Physics.gravity.y, 0),ForceMode.Acceleration);
-                Destroy(gameObject,3f); 
+                //_rigidbody.AddForce(new Vector3(0, gravityModifier * Physics.gravity.y, 0),ForceMode.Acceleration);
+                //Destroy(gameObject,3f); 
+            }
+        }
+
+        private void Update()
+        {
+            if (_isColliding)
+            {
+                _transform.position += new Vector3(0f, gravityModifier * Physics.gravity.y, 0f) * Time.deltaTime;
             }
         }
 
         private IEnumerator WaitForCollide(float seconds) 
         {
+            StopCoroutine(nameof(WaitForShake));
             yield return new WaitForSeconds(seconds);
             _isColliding = true;
+            yield return new WaitForSeconds(3f); 
+            Destroy(gameObject);
             yield return null;
         }
 
@@ -70,21 +79,9 @@ namespace HellsChicken.Scripts.Game.Platform
                 yield return new WaitForSeconds(seconds);
                 _shake = false;   
             }
-            
             yield return null;
         }
-
-        //UNUSED
-        // private void PlatformCollide(string stringName) 
-        // {
-        //     EventManager.StopListening("platformCollide",PlatformCollide);
-        //     
-        //     if (stringName.Equals(gameObject.name))
-        //         StartCoroutine(WaitForCollide(fallenTime));
-        //     
-        //     EventManager.StartListening("platformCollide",PlatformCollide);
-        // }
-
+        
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))

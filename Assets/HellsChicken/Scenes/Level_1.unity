@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 6fd5d73aec672f44488159ba97c9ca42,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -360,7 +360,7 @@ PrefabInstance:
     - target: {fileID: 3314362005228955531, guid: 11e4f0ef71b626845b3ff335d7d42744,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.30412292
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3314362005228955531, guid: 11e4f0ef71b626845b3ff335d7d42744,
         type: 3}
@@ -3847,7 +3847,7 @@ PrefabInstance:
     - target: {fileID: 9093001927357700348, guid: 5d871d381fc88594ba1aadbb9e975e65,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 161.4
+      value: 160.31
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d871d381fc88594ba1aadbb9e975e65, type: 3}
@@ -3961,7 +3961,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.15
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6210,7 +6210,7 @@ PrefabInstance:
     - target: {fileID: 3314362005228955531, guid: 11e4f0ef71b626845b3ff335d7d42744,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.68927
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3314362005228955531, guid: 11e4f0ef71b626845b3ff335d7d42744,
         type: 3}
@@ -7865,12 +7865,12 @@ PrefabInstance:
     - target: {fileID: 662464223060016629, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.812478
+      value: -12.81345
       objectReference: {fileID: 0}
     - target: {fileID: 671435095063938156, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.812478
+      value: -12.81345
       objectReference: {fileID: 0}
     - target: {fileID: 6454652167805699216, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
@@ -8328,11 +8328,21 @@ PrefabInstance:
       propertyPath: directionalLight
       value: 
       objectReference: {fileID: 1591134791}
+    - target: {fileID: 5145521354616243835, guid: a83347a573d18664cb2f67dc7d21455d,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6629389365709302902, guid: a83347a573d18664cb2f67dc7d21455d,
         type: 3}
       propertyPath: directionalLight
       value: 
       objectReference: {fileID: 1591134791}
+    - target: {fileID: 7019523792159524558, guid: a83347a573d18664cb2f67dc7d21455d,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a83347a573d18664cb2f67dc7d21455d, type: 3}
 --- !u!1001 &4619647348585272320
@@ -8704,6 +8714,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1176671866}
+    - target: {fileID: 6471970983575172829, guid: c8b1d6afbdfd7dd4cb699c9119d099c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8518587087267543621, guid: c8b1d6afbdfd7dd4cb699c9119d099c0,
         type: 3}
       propertyPath: m_LocalPosition.x
