@@ -505,6 +505,7 @@ GameObject:
   - component: {fileID: 8035021250589292805}
   - component: {fileID: 1067433705}
   - component: {fileID: 1731720207454670681}
+  - component: {fileID: 8661170284109409537}
   m_Layer: 14
   m_Name: PlayerBody
   m_TagString: Player
@@ -738,6 +739,7 @@ MonoBehaviour:
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
   glidingSpeed: 5
+  glidingAmplitude: 2
   flameStream: {fileID: 198421077076039884, guid: 0e583df00223bc54c85d9265454e9f1a,
     type: 3}
   firePosition: {fileID: 3017388391660182780}
@@ -804,6 +806,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b35ea9e377ef08a45b9a2806078c1319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!81 &8661170284109409537
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662464222376940486}
+  m_Enabled: 1
 --- !u!1 &662464223060016393
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,7 +824,6 @@ GameObject:
   m_Component:
   - component: {fileID: 662464223060016629}
   - component: {fileID: 662464223060016394}
-  - component: {fileID: 662464223060016392}
   - component: {fileID: 771220078343465967}
   - component: {fileID: 662464223060016391}
   - component: {fileID: 8035021250435603529}
@@ -834,7 +843,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662464223060016393}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.813655, y: 21.448923, z: -30}
+  m_LocalPosition: {x: -12.811152, y: 21.448923, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6680412922169686547}
@@ -883,14 +892,6 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &662464223060016392
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 662464223060016393}
-  m_Enabled: 1
 --- !u!114 &771220078343465967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1083,7 +1084,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671435095063938157}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.813655, y: 21.448923, z: -30}
+  m_LocalPosition: {x: -12.811152, y: 21.448923, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 671435095290145463}
