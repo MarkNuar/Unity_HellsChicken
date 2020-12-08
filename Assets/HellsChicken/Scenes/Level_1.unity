@@ -7862,57 +7862,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1861375506, guid: 3b2e08a2edd553945ad17d8016d01055, type: 3}
-      propertyPath: DopplerLevel
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861375506, guid: 3b2e08a2edd553945ad17d8016d01055, type: 3}
-      propertyPath: m_Volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861375506, guid: 3b2e08a2edd553945ad17d8016d01055, type: 3}
-      propertyPath: Priority
-      value: 128
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861375506, guid: 3b2e08a2edd553945ad17d8016d01055, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 535368592921623705, guid: 3b2e08a2edd553945ad17d8016d01055,
-        type: 3}
-      propertyPath: chickenSpawnAudioSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 89521ffa0a3746c40a111dea017fb19c, type: 3}
-    - target: {fileID: 662464223060016629, guid: 3b2e08a2edd553945ad17d8016d01055,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -12.811152
-      objectReference: {fileID: 0}
-    - target: {fileID: 671435095063938156, guid: 3b2e08a2edd553945ad17d8016d01055,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -12.811152
-      objectReference: {fileID: 0}
-    - target: {fileID: 2373898712993273151, guid: 3b2e08a2edd553945ad17d8016d01055,
-        type: 3}
-      propertyPath: DopplerLevel
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2812897520645955682, guid: 3b2e08a2edd553945ad17d8016d01055,
-        type: 3}
-      propertyPath: DopplerLevel
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3961049242815583436, guid: 3b2e08a2edd553945ad17d8016d01055,
-        type: 3}
-      propertyPath: DopplerLevel
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6170558326494685668, guid: 3b2e08a2edd553945ad17d8016d01055,
-        type: 3}
-      propertyPath: DopplerLevel
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6454652167805699216, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
       propertyPath: m_Name
@@ -7971,16 +7920,6 @@ PrefabInstance:
     - target: {fileID: 6680412922169686547, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8035021252407303942, guid: 3b2e08a2edd553945ad17d8016d01055,
-        type: 3}
-      propertyPath: maxEggVelocity
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 8330016071506394841, guid: 3b2e08a2edd553945ad17d8016d01055,
-        type: 3}
-      propertyPath: DopplerLevel
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -756,7 +756,7 @@ MonoBehaviour:
   anim: {fileID: 2756826224257948348}
   initialEggVelocity: 6
   deltaEggVelocity: 5
-  maxEggVelocity: 30
+  maxEggVelocity: 22
   eggPrefab: {fileID: 9045032837410467742, guid: de366eea063501149ad855357dddf584,
     type: 3}
   eggThrowPoint: {fileID: 5016085766894943763}
@@ -847,7 +847,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662464223060016393}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.811152, y: 21.448923, z: -30}
+  m_LocalPosition: {x: -15.3, y: 21.448923, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6680412922169686547}
@@ -1088,7 +1088,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671435095063938157}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.811152, y: 21.448923, z: -30}
+  m_LocalPosition: {x: -15.3, y: 21.448923, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 671435095290145463}
@@ -1201,13 +1201,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LookaheadTime: 0
+  m_LookaheadTime: 0.3
   m_LookaheadSmoothing: 10
-  m_LookaheadIgnoreY: 0
+  m_LookaheadIgnoreY: 1
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 0
-  m_ScreenX: 0.45
+  m_ScreenX: 0.5
   m_ScreenY: 0.55
   m_CameraDistance: 30
   m_DeadZoneWidth: 0
