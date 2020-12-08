@@ -1,5 +1,7 @@
 ﻿using System.Collections;
+using EventManagerNamespace;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace HellsChicken.Scripts.Game.EnemyObstacles.Rock
 {
@@ -27,8 +29,9 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles.Rock
                 StartCoroutine(DestroyGameObject(5.0f));
                 transform.gameObject.tag = "deadEnemy";
                 gameObject.layer = 21;
+                EventManager.TriggerEvent("rockSound");
             }
-            
+
         }
 
         IEnumerator DestroyGameObject(float time)

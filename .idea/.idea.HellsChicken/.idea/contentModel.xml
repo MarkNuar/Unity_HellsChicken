@@ -380,7 +380,6 @@
             </e>
           </e>
         </e>
-        <e p="GoombaAudioManager.cs" t="Include" />
         <e p="HellsChicken" t="Include">
           <e p="Scripts" t="Include">
             <e p="Game" t="Include">
@@ -413,9 +412,14 @@
                 </e>
               </e>
               <e p="Audio" t="Include">
+                <e p="BladeAudioManager.cs" t="Include" />
                 <e p="ChickenAudioManager.cs" t="Include" />
                 <e p="DeathGoombaAudioManager.cs" t="Include" />
                 <e p="EggAudioManager.cs" t="Include" />
+                <e p="GoombaAudioManager.cs" t="Include" />
+                <e p="PendulumAudioManager.cs" t="Include" />
+                <e p="RockAudioSource.cs" t="Include" />
+                <e p="SpearAudioManager.cs" t="Include" />
               </e>
               <e p="CheckPoint" t="Include">
                 <e p="CheckPointManager.cs" t="Include" />
