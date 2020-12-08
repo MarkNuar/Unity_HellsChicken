@@ -403,6 +403,7 @@
                 </e>
                 <e p="Goomba" t="Include">
                   <e p="BombExplosion.cs" t="Include" />
+                  <e p="DeathGoombaController.cs" t="Include" />
                   <e p="GoombaAI.cs" t="Include" />
                   <e p="GoombaAICC.cs" t="Include" />
                 </e>
@@ -412,10 +413,12 @@
               </e>
               <e p="Audio" t="Include">
                 <e p="ChickenAudioManager.cs" t="Include" />
+                <e p="DeathGoombaAudioManager.cs" t="Include" />
                 <e p="EggAudioManager.cs" t="Include" />
               </e>
               <e p="CheckPoint" t="Include">
                 <e p="CheckPointManager.cs" t="Include" />
+                <e p="EndLevelManager.cs" t="Include" />
               </e>
               <e p="EnemyObstacles" t="Include">
                 <e p="BladeMovement.cs" t="Include" />
@@ -427,6 +430,7 @@
                 </e>
                 <e p="SpearMovement.cs" t="Include" />
               </e>
+              <e p="GameAudioManager.cs" t="Include" />
               <e p="GameManager.cs" t="Include" />
               <e p="Light" t="Include">
                 <e p="LightController.cs" t="Include" />
@@ -454,6 +458,7 @@
                   <e p="Target.cs" t="Include" />
                 </e>
                 <e p="FlameStream" t="Include">
+                  <e p="CheckEnemies.cs" t="Include" />
                   <e p="particleCollision.cs" t="Include" />
                 </e>
                 <e p="Heart" t="Include">
@@ -474,6 +479,7 @@
                   <e p="KeyController.cs" t="Include" />
                 </e>
                 <e p="Menu" t="Include">
+                  <e p="EndMenu.cs" t="Include" />
                   <e p="MainMenu.cs" t="Include" />
                   <e p="PauseMenu.cs" t="Include" />
                 </e>

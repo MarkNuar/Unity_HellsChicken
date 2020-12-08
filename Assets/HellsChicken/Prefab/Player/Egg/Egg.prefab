@@ -302,6 +302,8 @@ MonoBehaviour:
     type: 3}
   radius: 2.5
   force: 500
+  shieldCollider: {fileID: 3081090581138290113, guid: 4f766c2b9344fd04c948c0c9193c03cb,
+    type: 3}
 --- !u!135 &1200030960352636966
 SphereCollider:
   m_ObjectHideFlags: 0

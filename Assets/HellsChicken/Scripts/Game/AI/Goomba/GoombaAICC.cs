@@ -7,6 +7,7 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
         [SerializeField] private bool right = true;
         [SerializeField] private float gravityScale = 10f;
         [SerializeField] private float agentVelocity = 8f;
+        [SerializeField] private bool shieldOn = true;
         
         private CharacterController _characterController;
         private Vector3 _movement;

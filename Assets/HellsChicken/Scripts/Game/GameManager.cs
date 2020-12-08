@@ -1,4 +1,5 @@
-﻿using EventManagerNamespace;
+﻿using System;
+using EventManagerNamespace;
 using UnityEngine;
 
 namespace HellsChicken.Scripts.Game
@@ -32,7 +33,7 @@ namespace HellsChicken.Scripts.Game
                 Destroy(gameObject);
             }
         }
-
+        
         public Vector3 GetCurrentCheckPointPos()
         {
             return _currentCheckPointPos;

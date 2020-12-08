@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 198421077076039884}
   - component: {fileID: 199355249067051742}
   - component: {fileID: 8496026789880092076}
+  - component: {fileID: 151994960550904291}
   m_Layer: 0
   m_Name: FlameStream
   m_TagString: Attack
@@ -4765,5 +4766,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 328f79541c637244da06da125aaa5546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listScript: {fileID: 151994960550904291}
+--- !u!114 &151994960550904291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973075987484898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7693744a5af8f824d8cb53c181412b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

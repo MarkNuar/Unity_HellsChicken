@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using EventManagerNamespace;
 using UnityEngine;
 
@@ -14,9 +15,11 @@ namespace HellsChicken.Scripts.Game.Player.Egg
         
         [SerializeField] private float radius = 3f;
         [SerializeField] private float force = 500f;
+        [SerializeField] private Collider shieldCollider;
 
 
         private bool _hasCollided = false;
+        private bool shield = false;
         
         private void OnCollisionEnter()
         {
@@ -63,6 +66,13 @@ namespace HellsChicken.Scripts.Game.Player.Egg
             EventManager.TriggerEvent("EggExplosion");
             
             Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
+
+            foreach (Collider coll in colliders) {
+                if(coll.gameObject.CompareTag("Shield"))
+                    names.Add(coll.transform.parent.gameObject.name);
+            }
+                
+                
             
             foreach (Collider nearbyObject in colliders) 
             {
@@ -75,13 +85,13 @@ namespace HellsChicken.Scripts.Game.Player.Egg
 
                     if (nearbyObject.gameObject.layer == 12 || nearbyObject.gameObject.layer == 13) 
                     {
-                        if(rb != null)
-                            rb.AddExplosionForce(force, transform.position, radius);
-                        
-                        if (dest == null) 
-                            dest = nearbyObject.gameObject.transform.parent.GetComponent<Destruction>();
-                        else
-                            dest.Destroyer();
+                            if (rb != null)
+                                rb.AddExplosionForce(force, transform.position, radius);
+
+                            if (dest == null)
+                                dest = nearbyObject.gameObject.transform.parent.GetComponent<Destruction>();
+                            else
+                                dest.Destroyer();
                     }
                 }
             }
