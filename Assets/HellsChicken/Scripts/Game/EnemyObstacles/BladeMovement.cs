@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using EventManagerNamespace;
+using UnityEngine;
 
 namespace HellsChicken.Scripts.Game.EnemyObstacles
 {
@@ -24,6 +25,7 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles
                 _turnBack = true;
             
             transform.position = Vector3.MoveTowards(transform.position, _turnBack ? startPoint.position : finishPoint.position, speed * Time.deltaTime);
+            EventManager.TriggerEvent("bladeSound");
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using EventManagerNamespace;
+using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace HellsChicken.Scripts.Game.EnemyObstacles
 {
@@ -20,6 +23,7 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles
         private void Update()
         {
             transform.position = _startPosition + transform.up * Mathf.Sin(Time.time * frequency + offset) * magnitude;
+            EventManager.TriggerEvent("spearSound");
         }
     }
 }
