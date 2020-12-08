@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using EventManagerNamespace;
+using UnityEngine;
 
 namespace HellsChicken.Scripts.Game.AI.Goomba
 {
@@ -43,6 +44,8 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
 
                 _characterController.Move(_movement * Time.deltaTime);
             }
+            
+            EventManager.TriggerEvent("goombaFootsteps");
         }
 
         private void OnTriggerEnter(Collider other)
