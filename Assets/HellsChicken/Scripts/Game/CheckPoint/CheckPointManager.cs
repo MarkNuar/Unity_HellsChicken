@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Experimental.GlobalIllumination;
 
 namespace HellsChicken.Scripts.Game.CheckPoint
@@ -21,6 +22,7 @@ namespace HellsChicken.Scripts.Game.CheckPoint
                 //TODO START CHECKPOINT ACTIVATION ANIMATION
                 //StartCoroutine(CheckPointActivateLight(2f));
                 pointLight.enabled = true;
+                
             }
         }
 

@@ -11,6 +11,8 @@ namespace HellsChicken.Scripts.Game.Audio
         [SerializeField] private AudioSource chickenDamageAudioSource;
         [SerializeField] private AudioSource chickenDeathAudioSource;
         [SerializeField] private AudioSource chickenSpawnAudioSource;
+        [SerializeField] private AudioSource chickenJumpAudioSource;
+
         
         [SerializeField] private AudioClip flameThrowerSound;
         [SerializeField] private AudioClip footStepsSound;
@@ -18,6 +20,7 @@ namespace HellsChicken.Scripts.Game.Audio
         [SerializeField] private AudioClip chickenDamageSound;
         [SerializeField] private AudioClip chickenDeathSound;
         [SerializeField] private AudioClip chickenSpawnAudioSound;
+        [SerializeField] private AudioClip chickenJumpSound;
 
         protected override void Awake() {
             EventManager.StartListening("flameThrower", FlameThrower);
@@ -27,6 +30,7 @@ namespace HellsChicken.Scripts.Game.Audio
             EventManager.StartListening("chickenDamage",ChickenDamage);
             EventManager.StartListening("chickenDeath",ChickenDeath);
             EventManager.StartListening("chickenSpawnSound",ChickenSpawn);
+            EventManager.StartListening("chickenJumpSound",ChickenJump);
         }
 
 
@@ -83,9 +87,17 @@ namespace HellsChicken.Scripts.Game.Audio
         public void ChickenSpawn() {
             EventManager.StopListening("chickenSpawnSound",ChickenSpawn);
             chickenSpawnAudioSource.clip = chickenSpawnAudioSound;
-            chickenSpawnAudioSource.time = 1f;
             chickenSpawnAudioSource.Play();
             EventManager.StartListening("chickenSpawnSound",ChickenSpawn);
+        }
+
+        public void ChickenJump()
+        {
+            EventManager.StopListening("chickenJumpSound",ChickenJump);
+            chickenJumpAudioSource.clip = chickenJumpSound;
+            chickenJumpAudioSource.Play();
+            EventManager.StartListening("chickenJumpSound",ChickenJump);
+
         }
     }
 }

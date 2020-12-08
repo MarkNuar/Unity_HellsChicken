@@ -7,6 +7,7 @@ using HellsChicken.Scripts.Game.Player.Egg;
 using HellsChicken.Scripts.Game.UI.Crosshair;
 using HellsChicken.Scripts.Game.UI.Menu;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Debug = UnityEngine.Debug;
 
 namespace HellsChicken.Scripts.Game.Player
@@ -142,6 +143,7 @@ namespace HellsChicken.Scripts.Game.Player
             _characterController.enabled = false;
             if (GameManager.Instance)
                 _transform.position = GameManager.Instance.GetCurrentCheckPointPos();
+            EventManager.TriggerEvent("chickenSpawnSound");
             _characterController.enabled = true;
         }
 
