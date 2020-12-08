@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using EventManagerNamespace;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Experimental.GlobalIllumination;
@@ -21,6 +22,8 @@ namespace HellsChicken.Scripts.Game.CheckPoint
                 GameManager.Instance.SetCurrentLightIntensity(directionalLight.intensity);
                 //TODO START CHECKPOINT ACTIVATION ANIMATION
                 //StartCoroutine(CheckPointActivateLight(2f));
+                if(!pointLight.enabled)
+                    EventManager.TriggerEvent("checkpointActivation");
                 pointLight.enabled = true;
                 
             }

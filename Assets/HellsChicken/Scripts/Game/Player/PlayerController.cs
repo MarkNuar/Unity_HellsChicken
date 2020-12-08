@@ -167,6 +167,7 @@ namespace HellsChicken.Scripts.Game.Player
             float g = -_gravity;
             float angle = float.NaN;
             float v = initialEggVelocity; //initial throw egg force
+            EventManager.TriggerEvent("eggThrowSound");
             
             while (float.IsNaN(angle))
             {
@@ -363,6 +364,7 @@ namespace HellsChicken.Scripts.Game.Player
                     if (IsGrounded() && Input.GetButtonDown("Jump"))
                     {
                         _moveDirection.y = Mathf.Sqrt(jumpSpeed * -3.0f * _gravity * gravityScale);
+                        EventManager.TriggerEvent("chickenJumpSound");
                     }
 
                     //JUMP PROPORTIONAL TO BAR PRESSING

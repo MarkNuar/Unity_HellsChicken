@@ -137,6 +137,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
                 ar.Target = _playerController.getPredictedPosition();//player.position + new Vector3(0, 0.5f, 0);
                 ar.CentaurPos = transform.position;
                 ar.FindAngle(_right,arrowPosition.position);
+                EventManager.TriggerEvent("centaurShot");
             }
             _shootInterval = (_shootInterval + 1) % attackTime;
             return null;

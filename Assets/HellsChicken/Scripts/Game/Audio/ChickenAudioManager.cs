@@ -12,6 +12,7 @@ namespace HellsChicken.Scripts.Game.Audio
         [SerializeField] private AudioSource chickenDeathAudioSource;
         [SerializeField] private AudioSource chickenSpawnAudioSource;
         [SerializeField] private AudioSource chickenJumpAudioSource;
+        [SerializeField] private AudioSource eggThrowAudioSource;
 
         
         [SerializeField] private AudioClip flameThrowerSound;
@@ -21,6 +22,8 @@ namespace HellsChicken.Scripts.Game.Audio
         [SerializeField] private AudioClip chickenDeathSound;
         [SerializeField] private AudioClip chickenSpawnAudioSound;
         [SerializeField] private AudioClip chickenJumpSound;
+        [SerializeField] private AudioClip eggThrowSound;
+
 
         protected override void Awake() {
             EventManager.StartListening("flameThrower", FlameThrower);
@@ -31,6 +34,8 @@ namespace HellsChicken.Scripts.Game.Audio
             EventManager.StartListening("chickenDeath",ChickenDeath);
             EventManager.StartListening("chickenSpawnSound",ChickenSpawn);
             EventManager.StartListening("chickenJumpSound",ChickenJump);
+            EventManager.StartListening("eggThrowSound",EggThrow);
+
         }
 
 
@@ -98,6 +103,14 @@ namespace HellsChicken.Scripts.Game.Audio
             chickenJumpAudioSource.Play();
             EventManager.StartListening("chickenJumpSound",ChickenJump);
 
+        }
+
+        public void EggThrow()
+        {
+            EventManager.StopListening("eggThrowSound",EggThrow);
+            eggThrowAudioSource.clip = eggThrowSound;
+            eggThrowAudioSource.Play();
+            EventManager.StartListening("eggThrowSound",EggThrow);
         }
     }
 }
