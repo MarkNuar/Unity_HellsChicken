@@ -18,8 +18,15 @@ public class PendulumAudioManager : MonoBehaviour
     {
         EventManager.StopListening("pendulumSound", pendulumSound);
         pendulumAudioSource.clip = pendulumAudioSound;
-        if(!pendulumAudioSource.isPlaying)
-            pendulumAudioSource.Play();
+        if (!pendulumAudioSource.isPlaying)
+            StartCoroutine(PlayPendulumSound(0.4f));
+
         EventManager.StartListening("pendulumSound", pendulumSound);
+    }
+    
+    private IEnumerator PlayPendulumSound(float time)
+    {        
+        yield return new WaitForSeconds(time);
+        pendulumAudioSource.Play();
     }
 }

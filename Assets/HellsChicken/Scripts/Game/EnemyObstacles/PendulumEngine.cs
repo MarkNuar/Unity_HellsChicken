@@ -1,4 +1,6 @@
-﻿using EventManagerNamespace;
+﻿using System.Collections;
+using EventManagerNamespace;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 namespace HellsChicken.Scripts.Game.EnemyObstacles
@@ -23,8 +25,11 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles
         private void FixedUpdate()
         {
             startTime += Time.deltaTime;
-            transform.rotation = Quaternion.Lerp(_start, _end, (Mathf.Sin(startTime * speed + Mathf.PI / 2) + 1.0f) / 2.0f);
+            transform.rotation =
+                Quaternion.Lerp(_start, _end, (Mathf.Sin(startTime * speed + Mathf.PI / 2) + 1.0f) / 2.0f); 
+            
             EventManager.TriggerEvent("pendulumSound");
+
         }
 
         private Quaternion PendulumRotation(float angle)
@@ -42,5 +47,6 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles
 
             return pendulumRotation;
         }
+        
     }
 }
