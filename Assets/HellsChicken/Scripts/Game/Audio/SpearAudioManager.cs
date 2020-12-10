@@ -19,7 +19,7 @@ public class SpearAudioManager : MonoBehaviour
         EventManager.StopListening("spearSound", spearSound);
         spearAudioSource.clip = spearAudioSound;
         if(!spearAudioSource.isPlaying)
-            spearAudioSource.Play();
+           spearAudioSource.Play();
         EventManager.StartListening("spearSound", spearSound);
     }
 }

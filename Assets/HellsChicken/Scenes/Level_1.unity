@@ -1116,12 +1116,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 337846441}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &343348680 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 138184, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 898723096}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &359272848
 GameObject:
   m_ObjectHideFlags: 0
@@ -2012,6 +2006,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spear (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5418709856527060580, guid: 69d03239cda15a946a592c389731c170,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7293647930827049825, guid: 69d03239cda15a946a592c389731c170,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2640,7 +2639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af2cbda8bb112a4280eb3ca2775c678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialCheckPoint: {fileID: 343348680}
+  initialCheckPoint: {fileID: 1437861693}
   initialLight: {fileID: 1591134791}
 --- !u!4 &778172013 stripped
 Transform:
@@ -3826,6 +3825,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5380951454431276218, guid: 11e4f0ef71b626845b3ff335d7d42744,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11e4f0ef71b626845b3ff335d7d42744, type: 3}
 --- !u!4 &1140323316 stripped
@@ -4422,6 +4426,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spear
       objectReference: {fileID: 0}
+    - target: {fileID: 5418709856527060580, guid: 69d03239cda15a946a592c389731c170,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7293647930827049825, guid: 69d03239cda15a946a592c389731c170,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5016,6 +5025,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2920040249314812318, guid: 5d871d381fc88594ba1aadbb9e975e65,
     type: 3}
   m_PrefabInstance: {fileID: 2584799749895076473}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1437861693 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 138184, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1761734873}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1470038669
 GameObject:
@@ -6400,6 +6415,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spear (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418709856527060580, guid: 69d03239cda15a946a592c389731c170,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7293647930827049825, guid: 69d03239cda15a946a592c389731c170,
         type: 3}
@@ -7917,6 +7937,31 @@ PrefabInstance:
       propertyPath: chickenJumpSound
       value: 
       objectReference: {fileID: 8300000, guid: 0cf480c22a758ec4ebf7592235e0ce87, type: 3}
+    - target: {fileID: 4825436332430416035, guid: 3b2e08a2edd553945ad17d8016d01055,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825436332430416035, guid: 3b2e08a2edd553945ad17d8016d01055,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825436332430416035, guid: 3b2e08a2edd553945ad17d8016d01055,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825436332430416035, guid: 3b2e08a2edd553945ad17d8016d01055,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825436332430416035, guid: 3b2e08a2edd553945ad17d8016d01055,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6454652167805699216, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
       propertyPath: m_Name

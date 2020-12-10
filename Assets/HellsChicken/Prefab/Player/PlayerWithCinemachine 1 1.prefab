@@ -512,7 +512,6 @@ GameObject:
   - component: {fileID: 8035021250589292805}
   - component: {fileID: 1067433705}
   - component: {fileID: 1731720207454670681}
-  - component: {fileID: 8661170284109409537}
   m_Layer: 14
   m_Name: PlayerBody
   m_TagString: Player
@@ -536,6 +535,7 @@ Transform:
   - {fileID: 3017388391660182780}
   - {fileID: 5016085766894943763}
   - {fileID: 516758951866110276}
+  - {fileID: 4825436332430416035}
   m_Father: {fileID: 6680412922169686547}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -813,14 +813,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b35ea9e377ef08a45b9a2806078c1319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!81 &8661170284109409537
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 662464222376940486}
-  m_Enabled: 1
 --- !u!1 &662464223060016393
 GameObject:
   m_ObjectHideFlags: 0
@@ -2161,6 +2153,45 @@ Transform:
   m_Father: {fileID: 2729798315919226349}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3171457457803546553
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4825436332430416035}
+  - component: {fileID: 7545747065737696088}
+  m_Layer: 0
+  m_Name: AudioListener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4825436332430416035
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3171457457803546553}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 662464222376940482}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &7545747065737696088
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3171457457803546553}
+  m_Enabled: 1
 --- !u!1 &3307851250670447890
 GameObject:
   m_ObjectHideFlags: 0
