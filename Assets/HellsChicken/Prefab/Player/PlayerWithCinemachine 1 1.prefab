@@ -43,7 +43,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -338,8 +338,8 @@ MonoBehaviour:
   chickenDeathSound: {fileID: 8300000, guid: a538169cf1fca9e468a7fb18938d46ce, type: 3}
   chickenSpawnAudioSound: {fileID: 8300000, guid: 89521ffa0a3746c40a111dea017fb19c,
     type: 3}
-  chickenJumpSound: {fileID: 0}
-  eggThrowSound: {fileID: 0}
+  chickenJumpSound: {fileID: 8300000, guid: 0cf480c22a758ec4ebf7592235e0ce87, type: 3}
+  eggThrowSound: {fileID: 8300000, guid: a178685c90642ce40bc33456ce18790a, type: 3}
 --- !u!1 &380966217745215060
 GameObject:
   m_ObjectHideFlags: 0
@@ -2177,7 +2177,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3171457457803546553}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2679,7 +2679,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &4126998951596278218
@@ -4083,6 +4083,7 @@ GameObject:
   - component: {fileID: 7825149176896310601}
   - component: {fileID: 7825149176896310607}
   - component: {fileID: 7825149176896310604}
+  - component: {fileID: 7671621321639281906}
   m_Layer: 5
   m_Name: CrosshairImage
   m_TagString: Untagged
@@ -4104,8 +4105,8 @@ RectTransform:
   m_Father: {fileID: 7825149178345940451}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.48, y: 0.48}
-  m_AnchorMax: {x: 0.52, y: 0.52}
+  m_AnchorMin: {x: 0.47, y: 0.47}
+  m_AnchorMax: {x: 0.53, y: 0.53}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4136,7 +4137,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a67db893a1be29c48b9c0de4d0ab0510, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 00f0b0a1db96de24aa0185d2b7075cef, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4170,8 +4171,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd43ecc18eb28548bc592532d3ce730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enabledCrosshair: {fileID: 21300000, guid: a67db893a1be29c48b9c0de4d0ab0510, type: 3}
-  blockedCrosshair: {fileID: 21300000, guid: f430cc118b4a9474ab010ab537e50d39, type: 3}
+  anim: {fileID: 7671621321639281906}
+--- !u!95 &7671621321639281906
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7825149176896310603}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f1009570bad217a4eb85e6dddbb18113, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7825149178345940463
 GameObject:
   m_ObjectHideFlags: 0
@@ -4349,7 +4368,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &8205357637105581356

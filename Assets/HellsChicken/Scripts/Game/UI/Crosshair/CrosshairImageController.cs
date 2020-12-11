@@ -1,14 +1,13 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace HellsChicken.Scripts.Game.UI.Crosshair
 {
     public class CrosshairImageController : MonoBehaviour
     {
-        [SerializeField] private Sprite enabledCrosshair;
-        [SerializeField] private Sprite blockedCrosshair;
-        
         private Image _image;
+        public Animator anim;
         
         //CrossAir can be in 3 states: 
         // enabled
@@ -18,31 +17,30 @@ namespace HellsChicken.Scripts.Game.UI.Crosshair
         private void Start()
         {
             _image = gameObject.GetComponent<Image>();
-            SetCrosshairToIdle();
+            SetToIdle();
         }
     
-        public void SetCrosshairToAiming()
+        public void StartAiming()
         {
-            _image.sprite = enabledCrosshair;
             Color temp = _image.color;
             temp.a = 1f;
             _image.color = temp;
         }
-
-        public void SetCrosshairToIdle()
+        
+        public void SetToIdle()
         {
-            _image.sprite = enabledCrosshair;
             Color temp = _image.color;
             temp.a = 0.3f;
             _image.color = temp;
+            anim.SetBool("isIdle", true);
+            anim.SetBool("isCooldown", false);
         }
-    
-        public void SetCrosshairToWaiting()
+
+        public void StartCooldownAnimation(float duration)
         {
-            _image.sprite = blockedCrosshair;
-            Color temp = _image.color;
-            temp.a = 1f;
-            _image.color = temp;
+            anim.SetBool("isIdle", false);
+            anim.SetBool("isCooldown", true);
+            anim.SetFloat("cooldownSpeed",2.25f/duration);
         }
     }
 }
