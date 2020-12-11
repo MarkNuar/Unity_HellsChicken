@@ -33,10 +33,14 @@ public class SettingsMenu : MonoBehaviour
     resolutionDropdown.value = currentResolutionIndex;
     resolutionDropdown.RefreshShownValue();
   }
-  public void SetVolume(float volume)
-  { 
-    
+  public void SetMusicVolume(float volume)
+  {
     audioMixer.SetFloat("MusicVolume",volume);
+  }
+
+  public void SetEffectsVolume(float volume)
+  {
+    audioMixer.SetFloat("EffectsVolume", volume);
   }
 
   public void SetQuality(int qualityIndex)
