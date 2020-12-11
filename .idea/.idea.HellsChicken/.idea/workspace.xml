@@ -20,16 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44fa9eaf-4901-4eb4-b858-67c1b19b2312" name="Default Changelist" comment="Some changing">
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/40249403-172a-4a0f-8b1f-afab2323c30c.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/40249403-172a-4a0f-8b1f-afab2323c30c.jpg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/8aba8ab2-c346-467c-950e-d7715d6235fe.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/8aba8ab2-c346-467c-950e-d7715d6235fe.jpg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/ca0a1c1d-c533-46db-b215-eaa96fe9f3ca.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/ca0a1c1d-c533-46db-b215-eaa96fe9f3ca.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/MenuAudioSource.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/MenuAudioSource.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/MainMixer.mixer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/MainMixer.mixer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SettingsMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SettingsMenu.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/AllSkyFree/Overcast Low/Materials/AllSky_Overcast4_Low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/AllSkyFree/Overcast Low/Materials/AllSky_Overcast4_Low.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/UI/MainMenu/MainMenuCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/UI/MainMenu/MainMenuCanvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MenuAudioSource.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MenuAudioSource.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +45,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/PendulumEngine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/BladeMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.3.4/Runtime/Impulse/CinemachineImpulseSource.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MenuAudioSource.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/KeyHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Key/KeyController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/KeyDoor.cs" root0="FORCE_HIGHLIGHTING" />
@@ -60,7 +59,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/ButtonDoor.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Crosshair/FollowMouse.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Menu/PauseMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/GoombaAI.cs" />
@@ -111,6 +109,7 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Menu/MainMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Health/HealthController.cs" />
+        <option value="$PROJECT_DIR$/Assets/SettingsMenu.cs" />
       </list>
     </option>
   </component>
@@ -202,7 +201,7 @@
       <workItem from="1607383708273" duration="1495000" />
       <workItem from="1607455015310" duration="11517000" />
       <workItem from="1607626466226" duration="2157000" />
-      <workItem from="1607682552876" duration="7008000" />
+      <workItem from="1607682552876" duration="8800000" />
     </task>
     <task id="LOCAL-00001" summary="Platform and blade movement">
       <created>1604073585635</created>

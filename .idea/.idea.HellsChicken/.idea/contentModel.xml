@@ -420,6 +420,7 @@
                 <e p="DeathGoombaAudioManager.cs" t="Include" />
                 <e p="EggAudioManager.cs" t="Include" />
                 <e p="GoombaAudioManager.cs" t="Include" />
+                <e p="MenuAudioSource.cs" t="Include" />
                 <e p="PendulumAudioManager.cs" t="Include" />
                 <e p="RockAudioSource.cs" t="Include" />
                 <e p="SpearAudioManager.cs" t="Include" />
@@ -495,7 +496,7 @@
             </e>
           </e>
         </e>
-        <e p="MenuAudioSource.cs" t="Include" />
+        <e p="SettingsMenu.cs" t="Include" />
       </e>
       <e p="AstarPathfindingProject.csproj" t="IncludeRecursive" />
       <e p="AstarPathfindingProjectEditor.csproj" t="IncludeRecursive" />
