@@ -20,16 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44fa9eaf-4901-4eb4-b858-67c1b19b2312" name="Default Changelist" comment="Some changing">
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/MenuAudioSource.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/MenuAudioSource.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MainMixer.mixer" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MainMixer.mixer.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SettingsMenu.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SettingsMenu.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MenuAudioSource.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MenuAudioSource.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/AllSkyFree/Overcast Low/Materials/AllSky_Overcast4_Low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/AllSkyFree/Overcast Low/Materials/AllSky_Overcast4_Low.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SettingsMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SettingsMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +34,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE47BE73-F7EF-409C-A5E5-CE4B121745B7/17/dcba49ad/QualitySettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Soul/SoulAI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/Rock/SpawningRock.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/PendulumEngine.cs" root0="FORCE_HIGHLIGHTING" />
@@ -201,7 +196,7 @@
       <workItem from="1607383708273" duration="1495000" />
       <workItem from="1607455015310" duration="11517000" />
       <workItem from="1607626466226" duration="2157000" />
-      <workItem from="1607682552876" duration="8800000" />
+      <workItem from="1607682552876" duration="9883000" />
     </task>
     <task id="LOCAL-00001" summary="Platform and blade movement">
       <created>1604073585635</created>
