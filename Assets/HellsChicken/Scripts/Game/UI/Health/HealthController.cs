@@ -11,9 +11,11 @@ namespace HellsChicken.Scripts.Game.UI.Health
         [SerializeField] private Sprite fullHeart;
         [SerializeField] private Sprite lostHeart;
         [SerializeField] private Image thighImage;
+        
         private const float SpaceBetweenHearts = 0.06f;
         private Image[] _hearts;
-
+        public Animator transition;
+        
         private void OnEnable()
         {
             EventManager.StartListening("DecreasePlayerHealth",DecreaseHealth);
@@ -101,7 +103,7 @@ namespace HellsChicken.Scripts.Game.UI.Health
             EventManager.StopListening("KillPlayer",KillPlayer);
             _health = 0;
             Updating();
-            
+            transition.SetTrigger("Start");
             EventManager.StartListening("KillPlayer",KillPlayer);
         }
     
