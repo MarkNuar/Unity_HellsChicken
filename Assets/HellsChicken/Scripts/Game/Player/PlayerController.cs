@@ -227,7 +227,7 @@ namespace HellsChicken.Scripts.Game.Player
         {
             _isWaitingForEggExplosion = true;
             yield return new WaitForSeconds(time);
-            _crosshairImageController.SetCrosshairToIdle();
+            _crosshairImageController.SetToIdle();
             _isWaitingForEggExplosion = false;
             yield return null;
         }
@@ -258,7 +258,7 @@ namespace HellsChicken.Scripts.Game.Player
                     if (Input.GetButton("Fire2"))
                     {
                         _isAiming = true;
-                        _crosshairImageController.SetCrosshairToAiming();
+                        _crosshairImageController.StartAiming();
 
                         if (_lookDirection.x > 0.01f)
                         {
@@ -273,7 +273,7 @@ namespace HellsChicken.Scripts.Game.Player
                     if (Input.GetButtonUp("Fire2"))
                     {
                         _isAiming = false;
-                        _crosshairImageController.SetCrosshairToWaiting();
+                        _crosshairImageController.StartCooldownAnimation(eggCooldown);
                         StartCoroutine(EnableEggThrow(eggCooldown));
                         ThrowEgg();
                     }
