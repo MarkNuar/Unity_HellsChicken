@@ -8424,6 +8424,11 @@ PrefabInstance:
       propertyPath: directionalLight
       value: 
       objectReference: {fileID: 1591134791}
+    - target: {fileID: 4922784215904019525, guid: a83347a573d18664cb2f67dc7d21455d,
+        type: 3}
+      propertyPath: gravityModifier
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5145521354616243835, guid: a83347a573d18664cb2f67dc7d21455d,
         type: 3}
       propertyPath: m_Convex
