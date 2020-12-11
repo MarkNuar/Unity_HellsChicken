@@ -3,18 +3,24 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
+using ShadowQuality = UnityEngine.ShadowQuality;
+
 public class SettingsMenu : MonoBehaviour
 {
   public AudioMixer audioMixer;
   public TMP_Dropdown resolutionDropdown;
   Resolution[] resolutions;
+  private PostProcessLayer.Antialiasing _antialiasing;
+  private ShadowQuality _shadowQuality;
+  QualitySettings qualitySettings;
 
   void Start()
   {
     resolutions = Screen.resolutions;
     resolutionDropdown.ClearOptions();
-
     List<string> options = new List<string>();
 
     int currentResolutionIndex = 0;
@@ -58,4 +64,24 @@ public class SettingsMenu : MonoBehaviour
     Resolution resolution = resolutions[resolutionIndex];
     Screen.SetResolution(resolution.width,resolution.height, Screen.fullScreen);
   }
+
+  public void SetAntialiasing(bool activated)
+  {
+    if (!activated)
+      Camera.main.GetComponent<UniversalAdditionalCameraData>().antialiasing = 0;
+    else
+      Camera.main.GetComponent<UniversalAdditionalCameraData>().antialiasing = AntialiasingMode.SubpixelMorphologicalAntiAliasing;
+    
+  }
+
+  public void SetShadows(bool activated)
+  {
+    if (!activated)
+      Camera.main.GetComponent<UniversalAdditionalCameraData>().renderShadows = false;
+    else
+      Camera.main.GetComponent<UniversalAdditionalCameraData>().renderShadows = true;
+    
+  }
+  
+  
 }
