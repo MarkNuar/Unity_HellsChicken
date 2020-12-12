@@ -14,6 +14,12 @@ public class CheckEnemies : MonoBehaviour {
 
     private void Start() {
         _goList = new List<string>();
+        StartCoroutine(DestroyThisFlame(3f));
     }
     
+    IEnumerator DestroyThisFlame(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Destroy(gameObject);
+    }
 }
