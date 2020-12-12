@@ -13,9 +13,7 @@ public class SettingsMenu : MonoBehaviour
   public AudioMixer audioMixer;
   public TMP_Dropdown resolutionDropdown;
   Resolution[] resolutions;
-  private PostProcessLayer.Antialiasing _antialiasing;
-  private ShadowQuality _shadowQuality;
-  QualitySettings qualitySettings;
+  public Camera mainCamera;
 
   void Start()
   {
@@ -68,18 +66,18 @@ public class SettingsMenu : MonoBehaviour
   public void SetAntialiasing(bool activated)
   {
     if (!activated)
-      Camera.main.GetComponent<UniversalAdditionalCameraData>().antialiasing = 0;
+      mainCamera.GetComponent<UniversalAdditionalCameraData>().antialiasing = 0;
     else
-      Camera.main.GetComponent<UniversalAdditionalCameraData>().antialiasing = AntialiasingMode.SubpixelMorphologicalAntiAliasing;
+      mainCamera.GetComponent<UniversalAdditionalCameraData>().antialiasing = AntialiasingMode.SubpixelMorphologicalAntiAliasing;
     
   }
 
   public void SetShadows(bool activated)
   {
     if (!activated)
-      Camera.main.GetComponent<UniversalAdditionalCameraData>().renderShadows = false;
+      mainCamera.GetComponent<UniversalAdditionalCameraData>().renderShadows = false;
     else
-      Camera.main.GetComponent<UniversalAdditionalCameraData>().renderShadows = true;
+      mainCamera.GetComponent<UniversalAdditionalCameraData>().renderShadows = true;
     
   }
   

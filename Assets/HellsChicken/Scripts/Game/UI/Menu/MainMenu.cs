@@ -14,6 +14,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
       private const string VideoGameName = "Hell's Chicken";
       public Animator transition;
       public float transitionTime = 1f;
+      public Camera camera;
 
       public void Start()
       {
@@ -73,6 +74,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
           transition.SetTrigger("Start");
           EventManager.TriggerEvent("fadeOutMusic");
           yield return new WaitForSeconds(transitionTime);
+          DontDestroyOnLoad(camera);
           SceneManager.LoadScene(index);
 
        }
