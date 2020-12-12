@@ -13,12 +13,16 @@ namespace HellsChicken.Scripts.Game.Player.Egg
         private void Start () 
         {
             _camera = GetComponent<Camera>();
+            
             mainMenuCamera = GameObject.FindWithTag("MainMenuCamera");
-            _camera.GetComponent<UniversalAdditionalCameraData>().antialiasing =
-                mainMenuCamera.GetComponent<UniversalAdditionalCameraData>().antialiasing;
-            _camera.GetComponent<UniversalAdditionalCameraData>().renderShadows =
-                mainMenuCamera.GetComponent<UniversalAdditionalCameraData>().renderShadows;
-            Destroy(mainMenuCamera);
+            if (!(mainMenuCamera == null))
+            {
+                _camera.GetComponent<UniversalAdditionalCameraData>().antialiasing =
+                    mainMenuCamera.GetComponent<UniversalAdditionalCameraData>().antialiasing;
+                _camera.GetComponent<UniversalAdditionalCameraData>().renderShadows =
+                    mainMenuCamera.GetComponent<UniversalAdditionalCameraData>().renderShadows;
+                Destroy(mainMenuCamera);
+            }
         }
         
         public Vector3 GetTarget()
