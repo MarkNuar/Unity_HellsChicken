@@ -426,6 +426,7 @@
                 <e p="ChickenThighAudioManager.cs" t="Include" />
                 <e p="DeathGoombaAudioManager.cs" t="Include" />
                 <e p="EggAudioManager.cs" t="Include" />
+                <e p="GameAudioManager.cs" t="Include" />
                 <e p="GoombaAudioManager.cs" t="Include" />
                 <e p="MenuAudioSource.cs" t="Include" />
                 <e p="PendulumAudioManager.cs" t="Include" />
@@ -446,12 +447,12 @@
                 </e>
                 <e p="SpearMovement.cs" t="Include" />
               </e>
-              <e p="GameAudioManager.cs" t="Include" />
               <e p="GameManager.cs" t="Include" />
               <e p="Light" t="Include">
                 <e p="LightController.cs" t="Include" />
                 <e p="LightSwitchController.cs" t="Include" />
               </e>
+              <e p="LightningGeneratorScript.cs" t="Include" />
               <e p="Platform" t="Include">
                 <e p="Doors" t="Include">
                   <e p="ButtonDoor.cs" t="Include" />
@@ -482,6 +483,7 @@
                 </e>
                 <e p="PlayerController.cs" t="Include" />
               </e>
+              <e p="SettingsMenu.cs" t="Include" />
               <e p="SkyBoxRotation.cs" t="Include" />
               <e p="UI" t="Include">
                 <e p="Crosshair" t="Include">
@@ -503,8 +505,6 @@
             </e>
           </e>
         </e>
-        <e p="LightningGeneratorScript.cs" t="Include" />
-        <e p="SettingsMenu.cs" t="Include" />
       </e>
       <e p="AstarPathfindingProject.csproj" t="IncludeRecursive" />
       <e p="AstarPathfindingProjectEditor.csproj" t="IncludeRecursive" />
