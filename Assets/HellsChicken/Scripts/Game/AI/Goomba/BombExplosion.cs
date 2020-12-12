@@ -73,7 +73,7 @@ namespace HellsChicken.Scripts.Game.AI.Goomba
             DegoroAnimation.SetActive(false);
             gameObject.GetComponent<CharacterController>().enabled = false;
             gameObject.GetComponent<CapsuleCollider>().enabled = false;
-            StartCoroutine(DelayDestroyGoomba(2.0f));
+            StartCoroutine(DelayDestroyGoomba(4.0f));
         }
 
         private IEnumerator DelayDestroyGoomba(float time)

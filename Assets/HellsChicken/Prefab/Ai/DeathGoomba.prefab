@@ -219,9 +219,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 50
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -238,8 +238,8 @@ AudioSource:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1
-      value: 0
+      time: 0.40350342
+      value: 0.113601685
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -342,7 +342,7 @@ MonoBehaviour:
   bombTimerAudioSource: {fileID: 4927326484751159038}
   GoombaExplosionAudioSource: {fileID: 6539314958725526186}
   bombTimerSound: {fileID: 8300000, guid: 121d4baec8e60184d82963eac1a5c1c1, type: 3}
-  GoombaExplosionSound: {fileID: 8300000, guid: df47a2fd2c8445b48b01bdb17fda5588,
+  GoombaExplosionSound: {fileID: 8300000, guid: 2135cb58126a5e54686013e0f0b75985,
     type: 3}
 --- !u!1 &6132104406772204975
 GameObject:
