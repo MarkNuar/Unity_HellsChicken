@@ -14,7 +14,7 @@ public class LightningGeneratorScript : MonoBehaviour
     public LightningBoltScript lightningFour;
     public LightningBoltScript lightningFive;
     public LightningBoltScript lightningSix;
-
+    [SerializeField] public int lightningInterval = 5;
     public LightningBoltScript[] lightningBoltScripts;
 
     public AudioSource lightningAudioSource;
@@ -36,7 +36,7 @@ public class LightningGeneratorScript : MonoBehaviour
         lightningBoltScripts[3] = lightningFour;
         lightningBoltScripts[4] = lightningFive;
         lightningBoltScripts[5] = lightningSix;
-        StartCoroutine(WaitForNextLightning(5f));
+        StartCoroutine(WaitForNextLightning(lightningInterval));
 
     }
 
