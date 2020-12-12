@@ -290,6 +290,13 @@
               <e p="Lighting.cs" t="Include" />
             </e>
           </e>
+          <e p="LightningBolt" t="Include">
+            <e p="Editor" t="Include">
+              <e p="LightningBoltEditor.cs" t="Include" />
+            </e>
+            <e p="LightningBoltScript.cs" t="Include" />
+            <e p="ReadMe.txt" t="Include" />
+          </e>
           <e p="POLIMIGameCollective" t="Include">
             <e p="Scripts" t="Include">
               <e p="ExtendedEventManager" t="Include">
@@ -496,13 +503,7 @@
             </e>
           </e>
         </e>
-        <e p="LightningBolt" t="Include">
-          <e p="Editor" t="Include">
-            <e p="LightningBoltEditor.cs" t="Include" />
-          </e>
-          <e p="LightningBoltScript.cs" t="Include" />
-          <e p="ReadMe.txt" t="Include" />
-        </e>
+        <e p="LightningGeneratorScript.cs" t="Include" />
         <e p="SettingsMenu.cs" t="Include" />
       </e>
       <e p="AstarPathfindingProject.csproj" t="IncludeRecursive" />

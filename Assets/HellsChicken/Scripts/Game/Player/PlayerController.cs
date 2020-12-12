@@ -2,6 +2,7 @@
 using System.Collections;
 using Cinemachine;
 using Cinemachine.Utility;
+using DigitalRuby.LightningBolt;
 using EventManagerNamespace;
 using HellsChicken.Scripts.Game.Player.Egg;
 using HellsChicken.Scripts.Game.UI.Crosshair;
@@ -365,6 +366,7 @@ namespace HellsChicken.Scripts.Game.Player
                     {
                         _moveDirection.y = Mathf.Sqrt(jumpSpeed * -3.0f * _gravity * gravityScale);
                         EventManager.TriggerEvent("chickenJumpSound");
+                        
                     }
 
                     //JUMP PROPORTIONAL TO BAR PRESSING
