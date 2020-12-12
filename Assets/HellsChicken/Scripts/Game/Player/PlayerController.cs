@@ -492,7 +492,6 @@ namespace HellsChicken.Scripts.Game.Player
                     if (other.CompareTag("Enemy") || other.CompareTag("EnemyShot"))
                     {
                         EventManager.TriggerEvent("StartImmunityCoroutine");
-                        EventManager.TriggerEvent("chickenDamage");
                     }
 
                     if (other.CompareTag("Lava"))
@@ -513,7 +512,6 @@ namespace HellsChicken.Scripts.Game.Player
                     if (other.CompareTag("Enemy") || other.CompareTag("EnemyShot"))
                     {
                         EventManager.TriggerEvent("StartImmunityCoroutine");
-                        EventManager.TriggerEvent("chickenDamage");
                     }
 
                     if (other.CompareTag("Lava"))

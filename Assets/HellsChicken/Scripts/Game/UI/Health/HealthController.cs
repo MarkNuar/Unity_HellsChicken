@@ -62,6 +62,7 @@ namespace HellsChicken.Scripts.Game.UI.Health
             
             if (_health == 0)
             {
+                EventManager.TriggerEvent("chickenDeath");
                 EventManager.TriggerEvent("PlayerDeath");
             }
         }
@@ -80,11 +81,15 @@ namespace HellsChicken.Scripts.Game.UI.Health
         private void DecreaseHealth()
         {
             EventManager.StopListening("DecreasePlayerHealth",DecreaseHealth);
-            
+
+            if (_health > 1)
+                EventManager.TriggerEvent("chickenDamage");
+
             if (_health > 0)
                 _health--;
-            Updating();
             
+
+            Updating();
             EventManager.StartListening("DecreasePlayerHealth",DecreaseHealth);
         }
     

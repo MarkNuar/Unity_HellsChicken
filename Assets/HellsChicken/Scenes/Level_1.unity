@@ -7202,6 +7202,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: QualityDropdown
       objectReference: {fileID: 0}
+    - target: {fileID: 4067505301180959280, guid: 656b3940bd139914482aa7b5527b46d5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4294969972912170403, guid: 656b3940bd139914482aa7b5527b46d5,
         type: 3}
       propertyPath: m_Sprite
@@ -9660,7 +9665,12 @@ PrefabInstance:
         type: 3}
       propertyPath: chickenJumpSound
       value: 
-      objectReference: {fileID: 8300000, guid: 0cf480c22a758ec4ebf7592235e0ce87, type: 3}
+      objectReference: {fileID: 8300000, guid: 4fbe91aa155bdaa4d934a89826105921, type: 3}
+    - target: {fileID: 535368592921623705, guid: 3b2e08a2edd553945ad17d8016d01055,
+        type: 3}
+      propertyPath: chickenSpawnAudioSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 449cb0783b38dcf4198646a756472d01, type: 3}
     - target: {fileID: 4825436332430416035, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
       propertyPath: m_LocalRotation.x

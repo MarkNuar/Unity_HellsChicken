@@ -46,9 +46,9 @@ public class LightningGeneratorScript : MonoBehaviour
         {
             for (int i = 0; i < lightningBoltScripts.Length; i++)
             {
+                yield return new WaitForSeconds(timer);
                 lightningBoltScripts[i].Trigger();
                 EventManager.TriggerEvent("lightningSound");
-                yield return new WaitForSeconds(timer);
             }
         }
     }
