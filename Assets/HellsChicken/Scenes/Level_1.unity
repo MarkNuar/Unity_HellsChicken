@@ -6232,6 +6232,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1770070131209669887, guid: 656b3940bd139914482aa7b5527b46d5,
         type: 3}
+      propertyPath: m_Options.m_Options.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1770070131209669887, guid: 656b3940bd139914482aa7b5527b46d5,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
@@ -6254,6 +6259,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1770070131209669887, guid: 656b3940bd139914482aa7b5527b46d5,
+        type: 3}
+      propertyPath: m_Options.m_Options.Array.data[0].m_Text
+      value: Ultra
+      objectReference: {fileID: 0}
+    - target: {fileID: 1770070131209669887, guid: 656b3940bd139914482aa7b5527b46d5,
+        type: 3}
+      propertyPath: m_Options.m_Options.Array.data[1].m_Text
+      value: Very High
+      objectReference: {fileID: 0}
+    - target: {fileID: 1770070131209669887, guid: 656b3940bd139914482aa7b5527b46d5,
+        type: 3}
+      propertyPath: m_Options.m_Options.Array.data[2].m_Text
+      value: High
+      objectReference: {fileID: 0}
+    - target: {fileID: 1770070131209669887, guid: 656b3940bd139914482aa7b5527b46d5,
+        type: 3}
+      propertyPath: m_Options.m_Options.Array.data[3].m_Text
+      value: Medium
+      objectReference: {fileID: 0}
+    - target: {fileID: 1770070131209669887, guid: 656b3940bd139914482aa7b5527b46d5,
+        type: 3}
+      propertyPath: m_Options.m_Options.Array.data[4].m_Text
+      value: Low
+      objectReference: {fileID: 0}
+    - target: {fileID: 1770070131209669887, guid: 656b3940bd139914482aa7b5527b46d5,
+        type: 3}
+      propertyPath: m_Options.m_Options.Array.data[5].m_Text
+      value: Very Low
       objectReference: {fileID: 0}
     - target: {fileID: 2100217952905346746, guid: 656b3940bd139914482aa7b5527b46d5,
         type: 3}
