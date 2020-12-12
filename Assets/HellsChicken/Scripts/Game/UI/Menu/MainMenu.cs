@@ -26,6 +26,11 @@ namespace HellsChicken.Scripts.Game.UI.Menu
          StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
       }
 
+      public void PlayLevel(int levelIndex)
+      {
+         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + levelIndex));
+      }
+
       public void QuitGame()
       {
          Application.Quit();

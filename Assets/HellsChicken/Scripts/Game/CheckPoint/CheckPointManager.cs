@@ -18,8 +18,8 @@ namespace HellsChicken.Scripts.Game.CheckPoint
         {
             if (other.CompareTag("Player"))
             {
-                GameManager.Instance.SetCurrentCheckPointPos(transform.position);
-                GameManager.Instance.SetCurrentLightIntensity(directionalLight.intensity);
+                LevelManager.Instance.SetCurrentCheckPointPos(transform.position);
+                LevelManager.Instance.SetCurrentLightIntensity(directionalLight.intensity);
                 //TODO START CHECKPOINT ACTIVATION ANIMATION
                 //StartCoroutine(CheckPointActivateLight(2f));
                 if(!pointLight.enabled)
@@ -28,13 +28,5 @@ namespace HellsChicken.Scripts.Game.CheckPoint
                 
             }
         }
-
-        // private IEnumerator CheckPointActivateLight(float time)
-        // {
-        //     pointLight.enabled = true;
-        //     yield return new WaitForSeconds(time);
-        //     pointLight.enabled = false;
-        //     yield return null;
-        // }
     }
 }

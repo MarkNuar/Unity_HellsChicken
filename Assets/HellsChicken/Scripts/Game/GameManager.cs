@@ -8,25 +8,19 @@ namespace HellsChicken.Scripts.Game
     {
 
         public static GameManager Instance;
-
-        [SerializeField] private GameObject initialCheckPoint;
-        [SerializeField] private UnityEngine.Light initialLight;
         
-        private Vector3 _currentCheckPointPos;
-        private float _currentLightIntensity;
-    
-        private Vector3 _startingCheckPointPos;
-        private float _startingLightIntensity;
+        // level reached
+        // bool if settings changed
+        // settings values
+        
         private void Awake()
         {
             if (Instance == null)
             {
                 Instance = this;
                 DontDestroyOnLoad(Instance);
-                SetCurrentCheckPointPos(initialCheckPoint.transform.position);
-                SetCurrentLightIntensity(initialLight.intensity);
-                _startingCheckPointPos = _currentCheckPointPos;
-                _startingLightIntensity = _currentLightIntensity;
+                //QualitySettings.vSyncCount = 1;
+                Application.targetFrameRate = 60;
             }
             else
             {
@@ -34,30 +28,5 @@ namespace HellsChicken.Scripts.Game
             }
         }
         
-        public Vector3 GetCurrentCheckPointPos()
-        {
-            return _currentCheckPointPos;
-        }
-
-        public float GetCurrentLightIntensity()
-        {
-            return _currentLightIntensity;
-        }
-    
-        public void SetCurrentCheckPointPos(Vector3 newCheckPointPos)
-        {
-            _currentCheckPointPos = new Vector3(newCheckPointPos.x,newCheckPointPos.y, 0f);
-        }
-
-        public void SetCurrentLightIntensity(float intensity)
-        {
-            _currentLightIntensity = intensity;
-        }
-
-        public void ResetGameManagerValues()
-        {
-            _currentCheckPointPos= _startingCheckPointPos;
-            _currentLightIntensity = _startingLightIntensity;
-        }
     }
 }

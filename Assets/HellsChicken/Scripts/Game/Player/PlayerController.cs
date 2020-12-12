@@ -142,8 +142,9 @@ namespace HellsChicken.Scripts.Game.Player
         {
             //_characterController.detectCollisions = false;
             _characterController.enabled = false;
-            if (GameManager.Instance)
-                _transform.position = GameManager.Instance.GetCurrentCheckPointPos();
+            //TODO
+            if (LevelManager.Instance)
+                _transform.position = LevelManager.Instance.GetCurrentCheckPointPos();
             EventManager.TriggerEvent("chickenSpawnSound");
             _characterController.enabled = true;
         }
@@ -621,14 +622,7 @@ namespace HellsChicken.Scripts.Game.Player
 
         private void Death()
         {
-            //TODO: if death, it should only respawn player and destroyed objects
-            // EventManager.TriggerEvent("RefillPlayerHealth");
-            // _characterController.enabled = false;
-            // if (GameManager.Instance)
-            //     _transform.position = GameManager.Instance.GetCurrentCheckPointPos();
-            // _characterController.enabled = true;
-            //If player dies, reload the entire scene.
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //TODO: if death, it should only respawn player and destroyed object
             _dissolve.Dead = true;
             gameObject.layer = LayerMask.NameToLayer("ImmunePlayer");
             enabled = false;
