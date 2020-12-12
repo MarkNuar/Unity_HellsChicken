@@ -13,6 +13,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
         public GameObject pauseMenuUI;
         public GameObject commandsMenuUI;
         public GameObject feedbackMenuUI;
+        public GameObject settingsMenuUI;
 
         public GameObject eggCrosshairCanvas;
 
@@ -46,6 +47,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             pauseMenuUI.SetActive(false);
             commandsMenuUI.SetActive(false);
             feedbackMenuUI.SetActive(false);
+            settingsMenuUI.SetActive(false);
             Time.timeScale = 1f;
             _gameIsPaused = false;
             Cursor.visible = false;

@@ -21,6 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="44fa9eaf-4901-4eb4-b858-67c1b19b2312" name="Default Changelist" comment="Some changing">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/AllSkyFree/Overcast Low/Materials/AllSky_Overcast4_Low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/AllSkyFree/Overcast Low/Materials/AllSky_Overcast4_Low.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/PendulumEngine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/PendulumEngine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Menu/PauseMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Menu/PauseMenu.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +57,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Crosshair/FollowMouse.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Menu/PauseMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/GoombaAI.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DTDecision.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/IDTNode.cs" />
@@ -95,7 +97,6 @@
         <option value="$PROJECT_DIR$/Assets/ChickenThighAudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Heart/HeartController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/PendulumEngine.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/PendulumAudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/SpearAudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/MenuAudioSource.cs" />
@@ -104,6 +105,8 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/Target.cs" />
         <option value="$PROJECT_DIR$/Assets/SettingsMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/PendulumEngine.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Menu/PauseMenu.cs" />
       </list>
     </option>
   </component>
@@ -124,6 +127,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/Desktop/newBUILD\Hell'sChicken.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Utente\Desktop\newBUILD" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -196,6 +207,7 @@
       <workItem from="1607455015310" duration="11517000" />
       <workItem from="1607626466226" duration="2157000" />
       <workItem from="1607682552876" duration="13719000" />
+      <workItem from="1607767586559" duration="1128000" />
     </task>
     <task id="LOCAL-00001" summary="Platform and blade movement">
       <created>1604073585635</created>

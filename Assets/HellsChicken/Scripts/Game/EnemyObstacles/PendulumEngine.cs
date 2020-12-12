@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using EventManagerNamespace;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 namespace HellsChicken.Scripts.Game.EnemyObstacles
