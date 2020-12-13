@@ -49,7 +49,9 @@ namespace HellsChicken.Scripts.Game.Player
         [SerializeField] private float deltaEggVelocity= 5f;
         [SerializeField] private float maxEggVelocity= 20f;
         [SerializeField] private GameObject eggPrefab;
+        [SerializeField] private GameObject landingAnimationPrefab;
         [SerializeField] private Transform eggThrowPoint;
+        [SerializeField] private Transform landingAnimationSpawnPoint;
         [SerializeField] private GameObject crosshairCanvas;
         private CrosshairImageController _crosshairImageController;
         [SerializeField] private GameObject playerCamera;
@@ -73,6 +75,7 @@ namespace HellsChicken.Scripts.Game.Player
         private bool _canShoot;
         private bool _isDead;
         private bool _hasVibrated;
+        private bool _hasLanded;
         [SerializeField] private float eggCooldown = 2;
 
 
@@ -111,7 +114,7 @@ namespace HellsChicken.Scripts.Game.Player
             
             _wasSlidingOnPrevFame = false;
             _isSliding = false;
-            
+            _hasLanded = true;
             _isImmune = false;
             _isLastHeart = false;
             _isYMovementCorrected = false;
@@ -366,7 +369,7 @@ namespace HellsChicken.Scripts.Game.Player
                     {
                         _moveDirection.y = Mathf.Sqrt(jumpSpeed * -3.0f * _gravity * gravityScale);
                         EventManager.TriggerEvent("chickenJumpSound");
-                        
+                        _hasLanded = false;
                     }
 
                     //JUMP PROPORTIONAL TO BAR PRESSING
@@ -421,6 +424,7 @@ namespace HellsChicken.Scripts.Game.Player
                 anim.SetBool("isGliding", _isGliding);
                 anim.SetBool("isShootingFlames", _isShootingFlames);
                 anim.SetBool("isShootingEgg", _isShootingEgg);
+                
             }
 
             //DEATH MANAGEMENT
@@ -517,6 +521,13 @@ namespace HellsChicken.Scripts.Game.Player
                     if (other.CompareTag("Lava"))
                     {
                         _isDead = true;
+                    }
+                    
+                    if (other.CompareTag("Ground") && !_hasLanded)
+                    {
+                        _hasLanded = true;
+                        GameObject tempDust = Instantiate(landingAnimationPrefab, landingAnimationSpawnPoint.position, landingAnimationSpawnPoint.rotation);
+                        //(tempDust).transform.SetParent(_transform.transform);
                     }
                 }
             }
@@ -674,5 +685,6 @@ namespace HellsChicken.Scripts.Game.Player
             EventManager.TriggerEvent("KillPlayer");
             yield return null;
         }
+        
     }
 }

@@ -128,6 +128,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &7450349790952494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7217828883828264825}
+  m_Layer: 14
+  m_Name: LandingPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7217828883828264825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7450349790952494}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.13, y: -1.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 662464222376940482}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &90332534058437899
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +567,7 @@ Transform:
   - {fileID: 5016085766894943763}
   - {fileID: 516758951866110276}
   - {fileID: 4825436332430416035}
+  - {fileID: 7217828883828264825}
   m_Father: {fileID: 6680412922169686547}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -763,7 +794,10 @@ MonoBehaviour:
   maxEggVelocity: 22
   eggPrefab: {fileID: 9045032837410467742, guid: de366eea063501149ad855357dddf584,
     type: 3}
+  landingAnimationPrefab: {fileID: 1025285306637258, guid: d8f0099df63275647a8bcf646df1ca00,
+    type: 3}
   eggThrowPoint: {fileID: 5016085766894943763}
+  landingAnimationSpawnPoint: {fileID: 7217828883828264825}
   crosshairCanvas: {fileID: 7825149178345940463}
   playerCamera: {fileID: 662464223060016393}
   slideFriction: 0.3
