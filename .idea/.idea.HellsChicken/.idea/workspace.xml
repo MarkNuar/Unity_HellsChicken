@@ -20,14 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44fa9eaf-4901-4eb4-b858-67c1b19b2312" name="Default Changelist" comment="Some changing">
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Materials/PhysicsMaterials/RollingRock.physicMaterial" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Materials/PhysicsMaterials/RollingRock.physicMaterial.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/RollingRock.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/RollingRock.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RollingRockGenerator.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/AllSkyFree/Overcast Low/Materials/AllSky_Overcast4_Low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/AllSkyFree/Overcast Low/Materials/AllSky_Overcast4_Low.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/FallingRock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/FallingRock.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +58,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DTAction.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DecisionTree/DecisionTree.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAI.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Explosion/Explosion.cs" />
@@ -114,6 +108,7 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/LightningGeneratorScript.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Goomba/BombExplosion.cs" />
         <option value="$PROJECT_DIR$/Assets/RollingRockGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/Rock/FallingRock.cs" />
       </list>
     </option>
   </component>
@@ -215,7 +210,7 @@
       <workItem from="1607626466226" duration="2157000" />
       <workItem from="1607682552876" duration="13719000" />
       <workItem from="1607767586559" duration="1128000" />
-      <workItem from="1607806314886" duration="2164000" />
+      <workItem from="1607806314886" duration="3306000" />
     </task>
     <task id="LOCAL-00001" summary="Platform and blade movement">
       <created>1604073585635</created>
