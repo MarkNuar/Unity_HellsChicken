@@ -49,11 +49,10 @@ public class EndMenu : MonoBehaviour
 
     public void MainMenu()
     {
-        //TODO USE SCRIPTABLE OBJECTS, ONE FOR EACH LEVEL
-        LevelManager.Instance.DestroyLevelManagerInstance(); //DOES IT WORK??
+        LevelManager.Instance.DestroyLevelManagerInstance();
         Time.timeScale = 1f;
         _gameIsPaused = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); //test if it works
+        SceneManager.LoadScene(0); //test if it works
     }
     
     public void SendFeedback()

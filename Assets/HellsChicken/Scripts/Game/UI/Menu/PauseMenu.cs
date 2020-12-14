@@ -2,6 +2,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 namespace HellsChicken.Scripts.Game.UI.Menu
 {
@@ -67,6 +68,14 @@ namespace HellsChicken.Scripts.Game.UI.Menu
         public void QuitGame()
         {
             Application.Quit();
+        }
+        
+        public void MainMenu()
+        {
+            LevelManager.Instance.DestroyLevelManagerInstance();
+            Time.timeScale = 1f;
+            _gameIsPaused = false;
+            SceneManager.LoadScene(0); //test if it works
         }
 
         public static bool GetGameIsPaused()

@@ -1139,13 +1139,13 @@ MonoBehaviour:
   m_margin: {x: 3.8026276, y: -0.0014648438, z: 2.6964417, w: 1.8335266}
   m_textInfo:
     textComponent: {fileID: 700164981269942129}
-    characterCount: 0
+    characterCount: 8
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1381,7 +1381,7 @@ GameObject:
   - component: {fileID: 700164981335173306}
   - component: {fileID: 700164981335173307}
   m_Layer: 5
-  m_Name: ExitInnerPanel
+  m_Name: MenuInnerPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1676,7 +1676,7 @@ GameObject:
   - component: {fileID: 700164981512111303}
   - component: {fileID: 700164981512111160}
   m_Layer: 5
-  m_Name: ExitOuterPanel
+  m_Name: MenuOuterPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1803,7 +1803,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Exit
+  m_text: Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3747bf556077d6d45bef84f4a710d44f, type: 2}
   m_sharedMaterial: {fileID: 4676208420648631540, guid: 3747bf556077d6d45bef84f4a710d44f,
@@ -1835,7 +1835,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 35.95
+  m_fontSize: 32.1
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1879,13 +1879,13 @@ MonoBehaviour:
   m_margin: {x: 3.8026276, y: -0.0014648438, z: 2.6964417, w: 1.8335266}
   m_textInfo:
     textComponent: {fileID: 700164981526552434}
-    characterCount: 0
+    characterCount: 4
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1906,7 +1906,7 @@ GameObject:
   - component: {fileID: 700164981724073108}
   - component: {fileID: 700164981724073109}
   m_Layer: 5
-  m_Name: ExitButton
+  m_Name: MenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2013,7 +2013,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 700164981357215835}
-        m_MethodName: QuitGame
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2465,7 +2465,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 73.55
+  m_fontSize: 65.9
   m_fontSizeBase: 90
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2509,13 +2509,13 @@ MonoBehaviour:
   m_margin: {x: 3.8026276, y: -0.0014648438, z: 2.6964417, w: 1.8335266}
   m_textInfo:
     textComponent: {fileID: 700164981923814921}
-    characterCount: 0
+    characterCount: 6
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -6316,13 +6316,13 @@ MonoBehaviour:
   m_margin: {x: 3.8026276, y: -0.0014648438, z: 2.6964417, w: 1.8335266}
   m_textInfo:
     textComponent: {fileID: 4629671825229403933}
-    characterCount: 0
+    characterCount: 9
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 0
+    spaceCount: 1
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0

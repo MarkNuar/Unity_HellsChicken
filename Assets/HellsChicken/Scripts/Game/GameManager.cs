@@ -215,9 +215,12 @@ namespace HellsChicken.Scripts.Game
         private void OnDestroy()
         {
             //Create or update game state
-            var writer = new StreamWriter(_gameStatePath, false);
-            writer.WriteLine(JsonUtility.ToJson(_gameState));
-            writer.Close();
+            if (_gameStatePath != null)
+            {
+                var writer = new StreamWriter(_gameStatePath, false);
+                writer.WriteLine(JsonUtility.ToJson(_gameState));
+                writer.Close();
+            }
         }
     }
 }

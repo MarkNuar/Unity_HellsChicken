@@ -11,6 +11,7 @@ public class EndLevelManager : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //if boss is killed
+            //TODO: NOT INCREASE, BUT MARK THE LEVEL AS COMPLETED
             GameManager.Instance.IncreaseLevelToBeCompleted();
             endLevelCanvas.GetComponent<EndMenu>().Pause();
         }
