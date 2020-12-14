@@ -1,5 +1,6 @@
 ﻿using System;
-using EventManagerNamespace;
+using System.IO;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Rendering.Universal;
@@ -14,18 +15,34 @@ namespace HellsChicken.Scripts.Game
 
         public AudioMixer audioMixer;
         [SerializeField] private FPSDisplay fpsDisplayGui;
-        
-        //GAME STATE
-        private float _musicVolume;
-        private float _effectsVolume;
-        private int _qualityIndex;
-        private bool _isFullScreen;
-        private Resolution _resolution;
-        private bool _antiAlias;
-        private bool _shadows;
-        private bool _fpsDisplay;
-        private int _levelToBeCompleted; //current level to be completed
 
+        
+        [System.Serializable] public class GameState
+        {
+            public float musicVolume;
+            public float effectsVolume;
+            public int qualityIndex;
+            public bool isFullScreen;
+            public int screenWidth;
+            public int screenHeight;
+            public bool antiAlias;
+            public bool shadows;
+            public bool fpsDisplay;
+            public int levelToBeCompleted; //current level to be completed
+            
+            public static GameState CreateFromJsonString(string jsonString)
+            {
+                return JsonUtility.FromJson<GameState>(jsonString);
+            }
+            public string SaveToJsonString()
+            {
+                return JsonUtility.ToJson(this);
+            }
+        }
+        
+        private GameState _gameState;
+        private string _gameStatePath;
+        
         private void Awake()
         {
             if (Instance == null)
@@ -34,18 +51,51 @@ namespace HellsChicken.Scripts.Game
                 DontDestroyOnLoad(Instance);
                 //QualitySettings.vSyncCount = 1;
                 Application.targetFrameRate = 60;
+                
+                
                 //TODO deserialize settings and level reached
-                //mock deserialization, for testing
-                _musicVolume = -30f;
-                _effectsVolume = -30f;
-                _qualityIndex = 2;
-                _isFullScreen = true;
-                _resolution = Screen.currentResolution;
-                _antiAlias = true;
-                _shadows = false;
-                _fpsDisplay = true;
-                _levelToBeCompleted = 1;
-                //TODO
+                _gameStatePath = Application.persistentDataPath + Path.DirectorySeparatorChar + "gameState.json";
+                Debug.Log(_gameStatePath);
+                bool loaded = false;
+                if (System.IO.File.Exists(_gameStatePath))
+                {
+                    loaded = true;
+                    //There exists already a previous saved state
+                    var reader = new StreamReader(_gameStatePath);
+                    //Debug.Log(reader.ReadToEnd());
+                    _gameState = GameState.CreateFromJsonString(reader.ReadToEnd());
+                    if (_gameState != null)
+                    {
+                        loaded = true;
+                    }
+                    else
+                    {
+                        Debug.LogError("State not correctly loaded");
+                    }
+                    
+                }
+                if(!loaded)
+                {
+                    _gameState = new GameState
+                    {
+                        musicVolume = -30f,
+                        effectsVolume = -30f,
+                        qualityIndex = 0,
+                        isFullScreen = true,
+                        screenWidth = Screen.currentResolution.width,
+                        screenHeight = Screen.currentResolution.height,
+                        antiAlias = true,
+                        shadows = true,
+                        fpsDisplay = false,
+                        levelToBeCompleted = 1
+                    };
+
+                    //testing
+                    // string json = _gameState.SaveToJsonString();
+                    // Debug.Log(json);
+                    // GameState newGameState = GameState.CreateFromJsonString(json);
+                    // Debug.Log("shadows:"+newGameState.shadows);
+                }
             }
             else
             {
@@ -56,56 +106,62 @@ namespace HellsChicken.Scripts.Game
         public void SetMusicVolume(float volume)
         {
             audioMixer.SetFloat("MusicVolume",volume);
-            _musicVolume = volume;
+            _gameState.musicVolume = volume;
         }
 
         public float GetMusicVolume()
         {
-            return _musicVolume;
+            return _gameState.musicVolume;
         }
         
         public void SetEffectsVolume(float volume)
         {
             audioMixer.SetFloat("EffectsVolume", volume);
-            _effectsVolume = volume;
+            _gameState.effectsVolume = volume;
         }
 
         public float GetEffectsVolume()
         {
-            return _effectsVolume;
+            return _gameState.effectsVolume;
         }
         
         public void SetQuality(int qualityIndex)
         {
             QualitySettings.SetQualityLevel(qualityIndex);
-            _qualityIndex = qualityIndex;
+            _gameState.qualityIndex = qualityIndex;
         }
 
         public int GetQuality()
         {
-            return _qualityIndex;
+            return _gameState.qualityIndex;
         }
         
         public void SetFullscreen(bool isFullscreen)
         {
             Screen.fullScreen = isFullscreen;
-            _isFullScreen = isFullscreen;
+            _gameState.isFullScreen = isFullscreen;
         }
 
         public bool GetFullScreen()
         {
-            return _isFullScreen;
+            return _gameState.isFullScreen;
         }
 
-        public void SetResolution(Resolution resolution)
+        public void SetResolution(int width, int height)
         {
-            Screen.SetResolution(resolution.width,resolution.height, Screen.fullScreen);
-            _resolution = resolution;
+            Screen.SetResolution(width,height, _gameState.isFullScreen);
+            _gameState.screenWidth = width;
+            _gameState.screenHeight = height;
         }
 
-        public Resolution GetResolution()
+        public int GetScreenWidth()
         {
-            return _resolution;
+            return _gameState.screenWidth;
+        }
+        
+        public int GetScreenHeight()
+        {
+            return _gameState.screenHeight;
         }
         
         public void SetAntialiasing(bool activated)
@@ -114,12 +170,12 @@ namespace HellsChicken.Scripts.Game
                 _currentCamera.GetComponent<UniversalAdditionalCameraData>().antialiasing = 0;
             else
                 _currentCamera.GetComponent<UniversalAdditionalCameraData>().antialiasing = AntialiasingMode.SubpixelMorphologicalAntiAliasing;
-            _antiAlias = activated;
+            _gameState.antiAlias = activated;
         }
 
         public bool GetAntiAliasing()
         {
-            return _antiAlias;
+            return _gameState.antiAlias;
         }
         
         public void SetShadows(bool activated)
@@ -128,45 +184,49 @@ namespace HellsChicken.Scripts.Game
                 _currentCamera.GetComponent<UniversalAdditionalCameraData>().renderShadows = false;
             else
                 _currentCamera.GetComponent<UniversalAdditionalCameraData>().renderShadows = true;
-            _shadows = activated;
+            _gameState.shadows = activated;
         }
 
         public bool GetShadows()
         {
-            return _shadows;
+            return _gameState.shadows;
         }
         
         public void SetFPSDisplay(bool activation)
         {
             fpsDisplayGui.enabled = activation;
-            _fpsDisplay = activation;
+            _gameState.fpsDisplay = activation;
         }
 
         public bool GetFPSDisplay()
         {
-            return _fpsDisplay;
+            return _gameState.fpsDisplay;
         }
 
         public void UpdateCurrentCamera(Camera currentCam) //used by the settings menu to set current camera
         {
             this._currentCamera = currentCam;
-            this.SetShadows(_shadows);
-            this.SetAntialiasing(_antiAlias);
+            this.SetShadows(_gameState.shadows);
+            this.SetAntialiasing(_gameState.antiAlias);
         }
 
         public void IncreaseLevelToBeCompleted()
         {
-            _levelToBeCompleted++;
+            _gameState.levelToBeCompleted++;
+            //TODO: IF LEVEL TO BE COMPLETED >= FINAL LEVEL -> SHOW END SCREEN
         }
 
         public int GetLevelToBeCompleted()
         {
-            return _levelToBeCompleted;
+            return _gameState.levelToBeCompleted;
         }
         
         private void OnDestroy()
         {
-            //TODO save changed settings and level reached
+            //Create or update game state
+            var writer = new StreamWriter(_gameStatePath, false);
+            writer.WriteLine(JsonUtility.ToJson(_gameState));
+            writer.Close();
         }
     }
 }

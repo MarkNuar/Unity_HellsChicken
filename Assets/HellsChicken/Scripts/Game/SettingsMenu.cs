@@ -26,20 +26,17 @@ public class SettingsMenu : MonoBehaviour
     resolutions = Screen.resolutions;
     resolutionDropdown.ClearOptions();
     List<string> options = new List<string>();
-
+    
     int currentResolutionIndex = 0;
     for (int i = 0; i < resolutions.Length ;i++)
     {
       string option = resolutions[i].width + "x" + resolutions[i].height;
       options.Add(option);
-
-      if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+      if (resolutions[i].width == GameManager.Instance.GetScreenWidth() && resolutions[i].height == GameManager.Instance.GetScreenHeight())
       {
         currentResolutionIndex = i;
       }
     }
-    
-    
     resolutionDropdown.AddOptions(options);
     resolutionDropdown.value = currentResolutionIndex;
     resolutionDropdown.RefreshShownValue();
@@ -51,11 +48,9 @@ public class SettingsMenu : MonoBehaviour
     qualityDropDown.value = GameManager.Instance.GetQuality();
     fullscreenToggle.isOn = GameManager.Instance.GetFullScreen();
     fpsToggle.isOn = GameManager.Instance.GetFPSDisplay();
-    //resolutionDropdown.value = GameManager.Instance.GetResolution(); res already up to date
     GameManager.Instance.UpdateCurrentCamera(currentCamera);
     antiAliasToggle.isOn = GameManager.Instance.GetAntiAliasing();
     shadowsToggle.isOn = GameManager.Instance.GetShadows();
-
   }
 
   public void SetFPSDisplay(bool isDisplayed)
@@ -85,8 +80,9 @@ public class SettingsMenu : MonoBehaviour
 
   public void SetResolution(int resolutionIndex)
   {
+    //TODO
     Resolution resolution = resolutions[resolutionIndex];
-    GameManager.Instance.SetResolution(resolution);
+    GameManager.Instance.SetResolution(resolution.width, resolution.height);
   }
 
   public void SetAntialiasing(bool activated)
