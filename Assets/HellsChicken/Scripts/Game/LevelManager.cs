@@ -8,7 +8,8 @@ namespace HellsChicken.Scripts.Game
     
         [SerializeField] private GameObject initialCheckPoint;
         [SerializeField] private UnityEngine.Light initialLight;
-    
+        public int levelNumber;
+        
         private Vector3 _currentCheckPointPos;
         private float _currentLightIntensity;
     

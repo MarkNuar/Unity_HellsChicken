@@ -1,19 +1,21 @@
-﻿using HellsChicken.Scripts.Game;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class EndLevelManager : MonoBehaviour
+namespace HellsChicken.Scripts.Game.CheckPoint
 {
-
-    [SerializeField] private GameObject endLevelCanvas;
-    
-    private void OnTriggerEnter(Collider other)
+    public class EndLevelManager : MonoBehaviour
     {
-        if (other.CompareTag("Player"))
+
+        [SerializeField] private GameObject endLevelCanvas;
+    
+        private void OnTriggerEnter(Collider other)
         {
-            //if boss is killed
-            //TODO: NOT INCREASE, BUT MARK THE LEVEL AS COMPLETED
-            GameManager.Instance.IncreaseLevelToBeCompleted();
-            endLevelCanvas.GetComponent<EndMenu>().Pause();
+            if (other.CompareTag("Player"))
+            {
+                //if boss is killed
+                //TODO: NOT INCREASE, BUT MARK THE LEVEL AS COMPLETED
+                GameManager.Instance.SetLevelAsCompleted(LevelManager.Instance.levelNumber);
+                endLevelCanvas.GetComponent<EndMenu>().Pause();
+            }
         }
     }
 }

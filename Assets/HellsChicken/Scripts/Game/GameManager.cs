@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using UnityEditor;
+﻿using System.IO;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Rendering.Universal;
@@ -52,13 +50,13 @@ namespace HellsChicken.Scripts.Game
                 //QualitySettings.vSyncCount = 1;
                 Application.targetFrameRate = 60;
                 
-                //TODO deserialize settings and level reached
+                // Deserialize settings and level reached
                 _gameStatePath = Application.persistentDataPath + Path.DirectorySeparatorChar + "gameState.json";
                 Debug.Log(_gameStatePath);
-                bool loaded = false;
-                if (System.IO.File.Exists(_gameStatePath))
+                var loaded = false;
+                if (File.Exists(_gameStatePath))
                 {
-                    //There exists already a previous saved state
+                    // There exists already a previous saved state
                     var reader = new StreamReader(_gameStatePath);
                     _gameState = GameState.CreateFromJsonString(reader.ReadToEnd());
                     if (_gameState != null)
@@ -157,10 +155,7 @@ namespace HellsChicken.Scripts.Game
         
         public void SetAntialiasing(bool activated)
         {
-            if (!activated)
-                _currentCamera.GetComponent<UniversalAdditionalCameraData>().antialiasing = 0;
-            else
-                _currentCamera.GetComponent<UniversalAdditionalCameraData>().antialiasing = AntialiasingMode.SubpixelMorphologicalAntiAliasing;
+            _currentCamera.GetComponent<UniversalAdditionalCameraData>().antialiasing = !activated ? 0 : AntialiasingMode.SubpixelMorphologicalAntiAliasing;
             _gameState.antiAlias = activated;
         }
 
@@ -171,10 +166,7 @@ namespace HellsChicken.Scripts.Game
         
         public void SetShadows(bool activated)
         {
-            if (!activated)
-                _currentCamera.GetComponent<UniversalAdditionalCameraData>().renderShadows = false;
-            else
-                _currentCamera.GetComponent<UniversalAdditionalCameraData>().renderShadows = true;
+            _currentCamera.GetComponent<UniversalAdditionalCameraData>().renderShadows = activated;
             _gameState.shadows = activated;
         }
 
@@ -201,10 +193,14 @@ namespace HellsChicken.Scripts.Game
             this.SetAntialiasing(_gameState.antiAlias);
         }
 
-        public void IncreaseLevelToBeCompleted()
+        public void SetLevelAsCompleted(int levelIndex)
         {
-            _gameState.levelToBeCompleted++;
-            //TODO: IF LEVEL TO BE COMPLETED >= FINAL LEVEL -> SHOW END SCREEN
+            if(levelIndex == _gameState.levelToBeCompleted) //levels above should not be reachable
+                _gameState.levelToBeCompleted++;
+            if (_gameState.levelToBeCompleted > 3)
+            {
+                //TODO: IF LEVEL TO BE COMPLETED >= FINAL LEVEL -> SHOW END SCREEN
+            }
         }
 
         public int GetLevelToBeCompleted()
@@ -215,12 +211,10 @@ namespace HellsChicken.Scripts.Game
         private void OnDestroy()
         {
             //Create or update game state
-            if (_gameStatePath != null)
-            {
-                var writer = new StreamWriter(_gameStatePath, false);
-                writer.WriteLine(JsonUtility.ToJson(_gameState));
-                writer.Close();
-            }
+            if (_gameStatePath == null) return;
+            var writer = new StreamWriter(_gameStatePath, false);
+            writer.WriteLine(JsonUtility.ToJson(_gameState));
+            writer.Close();
         }
     }
 }
