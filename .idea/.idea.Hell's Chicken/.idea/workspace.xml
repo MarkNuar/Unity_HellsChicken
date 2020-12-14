@@ -20,47 +20,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc89b660-8c2e-44f0-9184-66b8ac8c2637" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell's Chicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/UI/Crosshair/Arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/UI/Crosshair/Arrow.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/UI/Crosshair/Arrow2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/UI/Crosshair/Arrow2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/UI/Crosshair/dot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/UI/Crosshair/dot.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/UI/Crosshair/dotBlackYellow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Sprites/UI/Crosshair/dotBlackYellow.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/PlayerWithCinemachine 1 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/PlayerWithCinemachine 1 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/UI/PauseMenu/PauseMenuCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/UI/PauseMenu/PauseMenuCanvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Crosshair/CrosshairImageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Crosshair/CrosshairImageController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/SettingsMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/SettingsMenu.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JSON File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../ExerciseProjects/MySpaceShooter/Assets/SpaceShooter/Scripts/PlayerShipController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAICC.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Heart/HeartController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9B956647-017D-4DC1-B8D3-D25EEF012467/43/b8d9a524/CapsuleCollider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Menu/EndMenu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9B956647-017D-4DC1-B8D3-D25EEF012467/76/115be256/Collider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9B956647-017D-4DC1-B8D3-D25EEF012467/43/85405a58/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Crosshair/CrosshairImageController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/CheckPoint/EndLevelManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAICC.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Heart/HeartController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9B956647-017D-4DC1-B8D3-D25EEF012467/cd/a7eca8ed/Rigidbody.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9B956647-017D-4DC1-B8D3-D25EEF012467/43/b8d9a524/CapsuleCollider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Menu/EndMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../ExerciseProjects/20201013-ClassMaterial/PennyPixel_2DTilemapProject2/Assets/PennyPixel/Scripts/PlayerPlatformerController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Light/LightController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9B956647-017D-4DC1-B8D3-D25EEF012467/76/115be256/Collider.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PhysicsTest/PhysicsObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerInput.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/HealthController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/HUD/HealthController.cs" />
@@ -96,7 +93,6 @@
         <option value="$PROJECT_DIR$/../../../../../PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/FallenPlatform.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Heart/HeartController.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/CheckPoint/CheckPointManager.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Light/LightController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Light/LightSwitchController.cs" />
@@ -110,6 +106,9 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Menu/EndMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/Crosshair/CrosshairImageController.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/SettingsMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/gameState.json" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/GameManager.cs" />
       </list>
     </option>
   </component>
@@ -245,10 +244,10 @@
     </state>
     <state x="762" y="0" width="781" height="840" key="dock-window-1/0.0.1536.834@0.0.1536.834" timestamp="1606485605834" />
     <state x="762" y="0" width="781" height="870" key="dock-window-1/0.0.1536.864@0.0.1536.864" timestamp="1606756240712" />
-    <state x="762" y="0" width="781" height="870" key="dock-window-2" timestamp="1606777560040">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="762" y="0" width="781" height="840" key="dock-window-2" timestamp="1607953327423">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="364" y="0" width="1186" height="820" maximized="true" key="dock-window-2/0.0.1536.834@0.0.1536.834" timestamp="1605105967403" />
+    <state x="762" y="0" width="781" height="840" key="dock-window-2/0.0.1536.834@0.0.1536.834" timestamp="1607953327423" />
     <state x="762" y="0" width="781" height="870" key="dock-window-2/0.0.1536.864@0.0.1536.864" timestamp="1606777560040" />
     <state x="-6" y="0" width="781" height="840" key="dock-window-3" timestamp="1603361901525">
       <screen x="0" y="0" width="1536" height="834" />

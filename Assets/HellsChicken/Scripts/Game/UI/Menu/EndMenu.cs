@@ -34,6 +34,7 @@ public class EndMenu : MonoBehaviour
         Cursor.visible = true;
         eggCrosshairCanvas.SetActive(false);
         healthCanvas.SetActive(false);
+        //TODO: SET LEVEL AS COMPLETED IN THE GAME MANAGER
     }
     
     public static bool GetGameIsPaused()
@@ -49,7 +50,7 @@ public class EndMenu : MonoBehaviour
     public void MainMenu()
     {
         //TODO USE SCRIPTABLE OBJECTS, ONE FOR EACH LEVEL
-        GameManager.Instance.ResetGameManagerValues(); //for resetting checkpoints and lights
+        LevelManager.Instance.DestroyLevelManagerInstance(); //DOES IT WORK??
         Time.timeScale = 1f;
         _gameIsPaused = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); //test if it works

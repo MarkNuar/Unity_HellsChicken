@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using EventManagerNamespace;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 namespace HellsChicken.Scripts.Game.UI.Menu
 {
@@ -14,16 +16,28 @@ namespace HellsChicken.Scripts.Game.UI.Menu
       private const string VideoGameName = "Hell's Chicken";
       public Animator transition;
       public float transitionTime = 1f;
-      public Camera camera;
 
+      public List<Button> levels;
+      private int _levelToBeCompleted;
       public void Start()
       {
          EventManager.TriggerEvent("menuSoundtrack");
+         _levelToBeCompleted = GameManager.Instance.GetLevelToBeCompleted();
+         for (var i = 0; i < levels.Count; i++)
+         {
+            levels[i].interactable = i < _levelToBeCompleted;
+         }
+         
       }
 
       public void PlayGame()
       {
          StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+      }
+
+      public void PlayLevel(int levelIndex)
+      {
+         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + levelIndex));
       }
 
       public void QuitGame()
@@ -74,9 +88,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
           transition.SetTrigger("Start");
           EventManager.TriggerEvent("fadeOutMusic");
           yield return new WaitForSeconds(transitionTime);
-          DontDestroyOnLoad(camera);
           SceneManager.LoadScene(index);
-
        }
    }
 }

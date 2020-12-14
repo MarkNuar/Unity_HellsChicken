@@ -10,6 +10,7 @@ public class LightController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        directionalLight.intensity = GameManager.Instance.GetCurrentLightIntensity();
+        //TODO
+        directionalLight.intensity = LevelManager.Instance.GetCurrentLightIntensity();
     }
 }
