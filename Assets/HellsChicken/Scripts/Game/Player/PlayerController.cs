@@ -29,7 +29,9 @@ namespace HellsChicken.Scripts.Game.Player
         //[SerializeField] private float glidingFrequency = 20f;
         [SerializeField] private float glidingAmplitude = 2f;
         [SerializeField] private ParticleSystem flameStream;
+        [SerializeField] private ParticleSystem landingAnimationPrefab;
         [SerializeField] private Transform firePosition;
+        [SerializeField] private Transform landingAnimationSpawnPoint;
         [SerializeField] private float flamesCooldown = 2f;
         [SerializeField] private MeshRenderer[] eyesMeshRenderer;
         private float _gravity;
@@ -49,9 +51,7 @@ namespace HellsChicken.Scripts.Game.Player
         [SerializeField] private float deltaEggVelocity= 5f;
         [SerializeField] private float maxEggVelocity= 20f;
         [SerializeField] private GameObject eggPrefab;
-        [SerializeField] private GameObject landingAnimationPrefab;
         [SerializeField] private Transform eggThrowPoint;
-        [SerializeField] private Transform landingAnimationSpawnPoint;
         [SerializeField] private GameObject crosshairCanvas;
         private CrosshairImageController _crosshairImageController;
         [SerializeField] private GameObject playerCamera;
@@ -526,8 +526,8 @@ namespace HellsChicken.Scripts.Game.Player
                     if (other.CompareTag("Ground") && !_hasLanded)
                     {
                         _hasLanded = true;
-                        GameObject tempDust = Instantiate(landingAnimationPrefab, landingAnimationSpawnPoint.position, landingAnimationSpawnPoint.rotation);
-                        //(tempDust).transform.SetParent(_transform.transform);
+                        Instantiate(landingAnimationPrefab, landingAnimationSpawnPoint.position, landingAnimationSpawnPoint.rotation);
+                        EventManager.TriggerEvent("chickenLand");
                     }
                 }
             }
@@ -658,7 +658,8 @@ namespace HellsChicken.Scripts.Game.Player
             mainModule.simulationSpeed = 3f;
             yield return null;
         }
-
+        
+        
         private void OnDisable()
         {
             EventManager.StopListening("PlayerDeath", Death);
@@ -679,12 +680,5 @@ namespace HellsChicken.Scripts.Game.Player
             EventManager.StartListening("StartImmunityCoroutine", StartImmunityCoroutine);
         }
 
-        private IEnumerator EnableDeath(float time)
-        {
-            yield return new WaitForSeconds(time);
-            EventManager.TriggerEvent("KillPlayer");
-            yield return null;
-        }
-        
     }
 }

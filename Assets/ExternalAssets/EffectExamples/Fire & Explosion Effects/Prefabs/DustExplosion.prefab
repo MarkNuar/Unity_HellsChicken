@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4203849390966504}
   - component: {fileID: 198220379293217532}
   - component: {fileID: 199791721206961466}
+  - component: {fileID: -8132773008685235718}
   m_Layer: 0
   m_Name: DustExplosion
   m_TagString: Untagged
@@ -40,7 +41,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025285306637258}
   serializedVersion: 6
-  lengthInSec: 0.5
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 3
@@ -4821,3 +4822,15 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &-8132773008685235718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025285306637258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8dcb7107b3dc7b489bc38ac182ff3a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

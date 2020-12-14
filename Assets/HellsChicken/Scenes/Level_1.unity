@@ -9738,6 +9738,11 @@ PrefabInstance:
       propertyPath: chickenSpawnAudioSound
       value: 
       objectReference: {fileID: 8300000, guid: 449cb0783b38dcf4198646a756472d01, type: 3}
+    - target: {fileID: 535368592921623705, guid: 3b2e08a2edd553945ad17d8016d01055,
+        type: 3}
+      propertyPath: chickenLandSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9439495a1b2727d4e959924f4d4c184d, type: 3}
     - target: {fileID: 4825436332430416035, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -9827,7 +9832,7 @@ PrefabInstance:
         type: 3}
       propertyPath: landingAnimationPrefab
       value: 
-      objectReference: {fileID: 1025285306637258, guid: d8f0099df63275647a8bcf646df1ca00,
+      objectReference: {fileID: 198220379293217532, guid: d8f0099df63275647a8bcf646df1ca00,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b2e08a2edd553945ad17d8016d01055, type: 3}
