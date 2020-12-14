@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using HellsChicken.Scripts.Game;
+using UnityEngine;
 
 public class EndLevelManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class EndLevelManager : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //if boss is killed
+            GameManager.Instance.IncreaseLevelToBeCompleted();
             endLevelCanvas.GetComponent<EndMenu>().Pause();
         }
     }

@@ -1,19 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using HellsChicken.Scripts.Game;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Audio;
-using UnityEngine.Rendering.PostProcessing;
-using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
-using ShadowQuality = UnityEngine.ShadowQuality;
 
 public class SettingsMenu : MonoBehaviour
 {
-  public AudioMixer audioMixer;
-  public TMP_Dropdown resolutionDropdown;
+  //public TMP_Dropdown resolutionDropdown;
   Resolution[] resolutions;
-  public Camera mainCamera;
+  public Camera currentCamera;
+
+  
+  [SerializeField] private Slider musicSlider;
+  [SerializeField] private Slider effectsSlider;
+  [SerializeField] private TMP_Dropdown qualityDropDown;
+  [SerializeField] private Toggle fullscreenToggle;
+  [SerializeField] private Toggle fpsToggle;
+  [SerializeField] private TMP_Dropdown resolutionDropdown;
+  [SerializeField] private Toggle antiAliasToggle;
+  [SerializeField] private Toggle shadowsToggle;
+  
 
   void Start()
   {
@@ -33,53 +39,63 @@ public class SettingsMenu : MonoBehaviour
       }
     }
     
+    
     resolutionDropdown.AddOptions(options);
     resolutionDropdown.value = currentResolutionIndex;
     resolutionDropdown.RefreshShownValue();
+    
+    
+    //TODO: FETCH CURRENT SETTINGS VALUES FROM THE GAME MANAGER
+    musicSlider.value = GameManager.Instance.GetMusicVolume();
+    effectsSlider.value = GameManager.Instance.GetEffectsVolume();
+    qualityDropDown.value = GameManager.Instance.GetQuality();
+    fullscreenToggle.isOn = GameManager.Instance.GetFullScreen();
+    fpsToggle.isOn = GameManager.Instance.GetFPSDisplay();
+    //resolutionDropdown.value = GameManager.Instance.GetResolution(); res already up to date
+    GameManager.Instance.UpdateCurrentCamera(currentCamera);
+    antiAliasToggle.isOn = GameManager.Instance.GetAntiAliasing();
+    shadowsToggle.isOn = GameManager.Instance.GetShadows();
+
   }
+
+  public void SetFPSDisplay(bool isDisplayed)
+  {
+    GameManager.Instance.SetFPSDisplay(isDisplayed);
+  }
+  
   public void SetMusicVolume(float volume)
   {
-    audioMixer.SetFloat("MusicVolume",volume);
+    GameManager.Instance.SetMusicVolume(volume);
   }
 
   public void SetEffectsVolume(float volume)
   {
-    audioMixer.SetFloat("EffectsVolume", volume);
+    GameManager.Instance.SetEffectsVolume(volume);
   }
 
   public void SetQuality(int qualityIndex)
   {
-    QualitySettings.SetQualityLevel(qualityIndex);
+    GameManager.Instance.SetQuality(qualityIndex);
   }
 
   public void SetFullscreen(bool isFullscreen)
   {
-    Screen.fullScreen = isFullscreen;
+    GameManager.Instance.SetFullscreen(isFullscreen);
   }
 
   public void SetResolution(int resolutionIndex)
   {
     Resolution resolution = resolutions[resolutionIndex];
-    Screen.SetResolution(resolution.width,resolution.height, Screen.fullScreen);
+    GameManager.Instance.SetResolution(resolution);
   }
 
   public void SetAntialiasing(bool activated)
   {
-    if (!activated)
-      mainCamera.GetComponent<UniversalAdditionalCameraData>().antialiasing = 0;
-    else
-      mainCamera.GetComponent<UniversalAdditionalCameraData>().antialiasing = AntialiasingMode.SubpixelMorphologicalAntiAliasing;
-    
+    GameManager.Instance.SetAntialiasing(activated);
   }
 
   public void SetShadows(bool activated)
   {
-    if (!activated)
-      mainCamera.GetComponent<UniversalAdditionalCameraData>().renderShadows = false;
-    else
-      mainCamera.GetComponent<UniversalAdditionalCameraData>().renderShadows = true;
-    
+    GameManager.Instance.SetShadows(activated);
   }
-  
-  
 }
