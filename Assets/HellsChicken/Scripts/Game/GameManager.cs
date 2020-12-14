@@ -41,6 +41,7 @@ namespace HellsChicken.Scripts.Game
         private GameState _gameState;
         private string _gameStatePath;
         
+        // SINGLETON
         private void Awake()
         {
             if (Instance == null)
