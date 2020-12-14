@@ -52,17 +52,14 @@ namespace HellsChicken.Scripts.Game
                 //QualitySettings.vSyncCount = 1;
                 Application.targetFrameRate = 60;
                 
-                
                 //TODO deserialize settings and level reached
                 _gameStatePath = Application.persistentDataPath + Path.DirectorySeparatorChar + "gameState.json";
                 Debug.Log(_gameStatePath);
                 bool loaded = false;
                 if (System.IO.File.Exists(_gameStatePath))
                 {
-                    loaded = true;
                     //There exists already a previous saved state
                     var reader = new StreamReader(_gameStatePath);
-                    //Debug.Log(reader.ReadToEnd());
                     _gameState = GameState.CreateFromJsonString(reader.ReadToEnd());
                     if (_gameState != null)
                     {
@@ -89,12 +86,6 @@ namespace HellsChicken.Scripts.Game
                         fpsDisplay = false,
                         levelToBeCompleted = 1
                     };
-
-                    //testing
-                    // string json = _gameState.SaveToJsonString();
-                    // Debug.Log(json);
-                    // GameState newGameState = GameState.CreateFromJsonString(json);
-                    // Debug.Log("shadows:"+newGameState.shadows);
                 }
             }
             else
