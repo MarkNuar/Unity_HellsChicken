@@ -4344,7 +4344,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3292198732328847436}
-  - component: {fileID: 1849907329}
   m_Layer: 5
   m_Name: SettingsMenu
   m_TagString: Untagged
@@ -4376,27 +4375,6 @@ RectTransform:
   m_AnchoredPosition: {x: 3.9000244, y: 0}
   m_SizeDelta: {x: 577.94275, y: 317.8164}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1849907329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2867500834731648997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3f52363d3a92834d9aa00fa683051e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentCamera: {fileID: 0}
-  musicSlider: {fileID: 0}
-  effectsSlider: {fileID: 0}
-  qualityDropDown: {fileID: 0}
-  fullscreenToggle: {fileID: 0}
-  fpsToggle: {fileID: 0}
-  resolutionDropdown: {fileID: 4506167130828945853}
-  antiAliasToggle: {fileID: 0}
-  shadowsToggle: {fileID: 0}
 --- !u!1 &2874535766035070095
 GameObject:
   m_ObjectHideFlags: 0
