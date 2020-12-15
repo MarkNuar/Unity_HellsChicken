@@ -62,7 +62,6 @@ namespace HellsChicken.Scripts.Game.UI.Key
                         break;
                     case Platform.Doors.KeyDoor.Key.KeyType.Blue:
                         _keys[i].sprite = blueKey;
-                        Debug.Log("ciao");
                         break;
                     default:
                         _keys[i].sprite = emptyKey;
