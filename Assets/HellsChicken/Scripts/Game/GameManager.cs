@@ -48,8 +48,8 @@ namespace HellsChicken.Scripts.Game
             {
                 Instance = this;
                 DontDestroyOnLoad(Instance);
-                //QualitySettings.vSyncCount = 1;
-                Application.targetFrameRate = 60;
+                QualitySettings.vSyncCount = 1;
+                //Application.targetFrameRate = 60;
                 
                 // Deserialize settings and level reached
                 _gameStatePath = Application.persistentDataPath + Path.DirectorySeparatorChar + "gameState.json";
