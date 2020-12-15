@@ -8,19 +8,19 @@ public class CentaurAudioManager : MonoBehaviour
     [SerializeField] private AudioSource centaurShotAudioSource;
     [SerializeField] private AudioSource QuestionMarkAudioSource;
     [SerializeField] private AudioSource centaurStepsAudioSource;
-    [SerializeField] private AudioSource playerVisibleAudioSource;
+    [SerializeField] private AudioSource centaurDeathAudioSource;
 
     [SerializeField] private AudioClip centaurShotAudioSound;
     [SerializeField] private AudioClip QuestionMarkSound;
     [SerializeField] private AudioClip centaurStepsSound;
-    [SerializeField] private AudioClip playerVisibleSound;
+    [SerializeField] private AudioClip centaurDeathSound;
 
 
     protected void Awake() {
         EventManager.StartListening("centaurShot", centaurShot);
         EventManager.StartListening("centaurQuestionMark", CentaurQuestionMark);
         EventManager.StartListening("centaurSteps", CentaurSteps);
-        EventManager.StartListening("playerVisible", PlayerVisible);
+        EventManager.StartListening("centaurDeath", CentaurDeath);
 
     }
 
@@ -37,7 +37,8 @@ public class CentaurAudioManager : MonoBehaviour
     {
         EventManager.StopListening("centaurQuestionMark", CentaurQuestionMark);
         QuestionMarkAudioSource.clip = QuestionMarkSound;
-        QuestionMarkAudioSource.Play();
+        if(!QuestionMarkAudioSource.isPlaying)
+            QuestionMarkAudioSource.Play();
         EventManager.StartListening("centaurQuestionMark", CentaurQuestionMark);
     }
     
@@ -49,11 +50,11 @@ public class CentaurAudioManager : MonoBehaviour
         EventManager.StartListening("centaurSteps", CentaurSteps);
     }
     
-    public void PlayerVisible()
+    public void CentaurDeath()
     {
-        EventManager.StopListening("playerVisible", PlayerVisible);
-        playerVisibleAudioSource.clip = playerVisibleSound;
-        playerVisibleAudioSource.Play();
-        EventManager.StartListening("playerVisible", PlayerVisible);
+        EventManager.StopListening("centaurDeath", CentaurDeath);
+        centaurDeathAudioSource.clip = centaurDeathSound; 
+        centaurDeathAudioSource.Play();
+        EventManager.StartListening("centaurDeath", CentaurDeath);
     }
 }

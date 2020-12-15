@@ -34,7 +34,8 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
         private int _shootInterval;
 
         private bool _isColliding;
-
+        private bool isQuestionMarkTriggered;
+        
         private PlayerController _playerController;
     
         private void Awake() 
@@ -48,6 +49,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
         {
             //_characterController.detectCollisions = false;
             _movement = Vector3.zero;
+            isQuestionMarkTriggered = true;
 
             //Decision
             DTDecision d1 = new DTDecision(IsPlayerVisible);
@@ -102,7 +104,17 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
                 }
                 _characterController.Move(_movement * Time.deltaTime);
             }
+
+            if (_textInstance != null && isQuestionMarkTriggered)
+            {
+                EventManager.TriggerEvent("centaurQuestionMark");
+                isQuestionMarkTriggered = false;
+            }
+
+            if (_textInstance == null)
+                isQuestionMarkTriggered = true;
         }
+        
 
         private IEnumerator TreeCoroutine() 
         {
