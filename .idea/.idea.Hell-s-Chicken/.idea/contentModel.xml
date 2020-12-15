@@ -333,6 +333,10 @@
             </e>
           </e>
           <e p="PyroParticles" t="Include">
+            <e p="Demo" t="Include">
+              <e p="DemoScript.cs" t="Include" />
+              <e p="DemoScriptEditor.cs" t="Include" />
+            </e>
             <e p="Prefab" t="Include">
               <e p="Editor" t="Include">
                 <e p="PyroParticlesEditor.cs" t="Include" />
@@ -446,6 +450,10 @@
                   <e p="SpawningRock.cs" t="Include" />
                 </e>
                 <e p="SpearMovement.cs" t="Include" />
+              </e>
+              <e p="FireBallGenerator" t="Include">
+                <e p="FireBallForce.cs" t="Include" />
+                <e p="FireBallGenerator.cs" t="Include" />
               </e>
               <e p="GameManager.cs" t="Include" />
               <e p="LevelManager.cs" t="Include" />
