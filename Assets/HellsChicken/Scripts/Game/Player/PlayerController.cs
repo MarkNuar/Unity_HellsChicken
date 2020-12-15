@@ -496,7 +496,7 @@ namespace HellsChicken.Scripts.Game.Player
             {
                 if (!_isImmune)
                 {
-                    if (other.CompareTag("Enemy") || other.CompareTag("EnemyShot"))
+                    if (other.CompareTag("Enemy") || other.CompareTag("EnemyShot") || other.CompareTag("Shield"))
                     {
                         EventManager.TriggerEvent("StartImmunityCoroutine");
                     }
@@ -516,7 +516,7 @@ namespace HellsChicken.Scripts.Game.Player
             {
                 if (!_isImmune)
                 {
-                    if (other.CompareTag("Enemy") || other.CompareTag("EnemyShot"))
+                    if (other.CompareTag("Enemy") || other.CompareTag("EnemyShot") || other.CompareTag("Shield"))
                     {
                         EventManager.TriggerEvent("StartImmunityCoroutine");
                     }

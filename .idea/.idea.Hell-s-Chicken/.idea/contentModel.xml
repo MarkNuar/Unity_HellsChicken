@@ -290,6 +290,13 @@
               <e p="Lighting.cs" t="Include" />
             </e>
           </e>
+          <e p="LightningBolt" t="Include">
+            <e p="Editor" t="Include">
+              <e p="LightningBoltEditor.cs" t="Include" />
+            </e>
+            <e p="LightningBoltScript.cs" t="Include" />
+            <e p="ReadMe.txt" t="Include" />
+          </e>
           <e p="POLIMIGameCollective" t="Include">
             <e p="Scripts" t="Include">
               <e p="ExtendedEventManager" t="Include">
@@ -412,9 +419,19 @@
                 </e>
               </e>
               <e p="Audio" t="Include">
+                <e p="BladeAudioManager.cs" t="Include" />
+                <e p="CentaurAudioManager.cs" t="Include" />
+                <e p="CheckPointAudioManager.cs" t="Include" />
                 <e p="ChickenAudioManager.cs" t="Include" />
+                <e p="ChickenThighAudioManager.cs" t="Include" />
                 <e p="DeathGoombaAudioManager.cs" t="Include" />
                 <e p="EggAudioManager.cs" t="Include" />
+                <e p="GameAudioManager.cs" t="Include" />
+                <e p="GoombaAudioManager.cs" t="Include" />
+                <e p="MenuAudioSource.cs" t="Include" />
+                <e p="PendulumAudioManager.cs" t="Include" />
+                <e p="RockAudioSource.cs" t="Include" />
+                <e p="SpearAudioManager.cs" t="Include" />
               </e>
               <e p="CheckPoint" t="Include">
                 <e p="CheckPointManager.cs" t="Include" />
@@ -430,12 +447,13 @@
                 </e>
                 <e p="SpearMovement.cs" t="Include" />
               </e>
-              <e p="GameAudioManager.cs" t="Include" />
               <e p="GameManager.cs" t="Include" />
+              <e p="LevelManager.cs" t="Include" />
               <e p="Light" t="Include">
                 <e p="LightController.cs" t="Include" />
                 <e p="LightSwitchController.cs" t="Include" />
               </e>
+              <e p="LightningGeneratorScript.cs" t="Include" />
               <e p="Platform" t="Include">
                 <e p="Doors" t="Include">
                   <e p="ButtonDoor.cs" t="Include" />
@@ -466,12 +484,14 @@
                 </e>
                 <e p="PlayerController.cs" t="Include" />
               </e>
+              <e p="SettingsMenu.cs" t="Include" />
               <e p="SkyBoxRotation.cs" t="Include" />
               <e p="UI" t="Include">
                 <e p="Crosshair" t="Include">
                   <e p="CrosshairImageController.cs" t="Include" />
                   <e p="FollowMouse.cs" t="Include" />
                 </e>
+                <e p="FPSDisplay.cs" t="Include" />
                 <e p="Health" t="Include">
                   <e p="HealthController.cs" t="Include" />
                 </e>
@@ -487,6 +507,8 @@
             </e>
           </e>
         </e>
+        <e p="LandingDustScript.cs" t="Include" />
+        <e p="RollingRockGenerator.cs" t="Include" />
       </e>
       <e p="AstarPathfindingProject.csproj" t="IncludeRecursive" />
       <e p="AstarPathfindingProjectEditor.csproj" t="IncludeRecursive" />
