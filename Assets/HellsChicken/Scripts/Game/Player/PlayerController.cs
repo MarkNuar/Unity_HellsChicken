@@ -6,6 +6,7 @@ using DigitalRuby.LightningBolt;
 using EventManagerNamespace;
 using HellsChicken.Scripts.Game.Player.Egg;
 using HellsChicken.Scripts.Game.UI.Crosshair;
+using HellsChicken.Scripts.Game.UI.Health;
 using HellsChicken.Scripts.Game.UI.Menu;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -138,6 +139,7 @@ namespace HellsChicken.Scripts.Game.Player
         {
             EventManager.StartListening("PlayerDeath", Death);
             EventManager.StartListening("LastHeart", LastHeart);
+            EventManager.StartListening("NotLastHeart", NotLastHeart);
             EventManager.StartListening("StartImmunityCoroutine", StartImmunityCoroutine);
         }
 
@@ -629,6 +631,13 @@ namespace HellsChicken.Scripts.Game.Player
             EventManager.StartListening("LastHeart", LastHeart);
         }
 
+        private void NotLastHeart()
+        {
+            EventManager.StopListening("NotLastHeart", NotLastHeart);
+            _isLastHeart = false;
+            EventManager.StartListening("NotLastHeart", NotLastHeart);
+        }
+        
         private void Death()
         {
             //TODO: if death, it should only respawn player and destroyed object
@@ -658,6 +667,7 @@ namespace HellsChicken.Scripts.Game.Player
         {
             EventManager.StopListening("PlayerDeath", Death);
             EventManager.StopListening("LastHeart", LastHeart);
+            EventManager.StopListening("NotLastHeart", NotLastHeart);
         }
 
         private void StartImmunityCoroutine() 

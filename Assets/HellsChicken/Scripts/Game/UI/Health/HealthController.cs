@@ -56,7 +56,8 @@ namespace HellsChicken.Scripts.Game.UI.Health
             {
                 _hearts[i].sprite = lostHeart;
             }
-        
+            if(_health > 1)
+                EventManager.TriggerEvent("NotLastHeart");
             if(_health == 1)
                 EventManager.TriggerEvent("LastHeart");
             
