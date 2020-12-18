@@ -775,7 +775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 10
   jumpSpeed: 5
-  maxSpeedVectorMagnitude: 40
+  maxSpeedVectorMagnitude: 30
   yMovementCorrection: 8
   gravityScale: 4
   fallMultiplier: 2.5
@@ -808,6 +808,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 262144
   eggCooldown: 2
+  windBreaking: 150
+  windPushing: 100
+  maxWindVelocity: 13
   immunityDuration: 1.5
 --- !u!114 &8035021250589292805
 MonoBehaviour:

@@ -82,7 +82,12 @@ namespace HellsChicken.Scripts.Game.Player
 
         private bool _wasGlidingOnPrevFrame = false;
         private float _glidingStartingTime;
-        
+
+        private bool _isFloating;
+        public float windBreaking = 20f;
+        public float windPushing = 20f;
+        public float maxWindVelocity = 20f;
+
         public Vector3 getPredictedPosition() {
             Vector3 result = new Vector3(transform.position.x,transform.position.y,0);
             if (!_isMoving)
@@ -128,6 +133,8 @@ namespace HellsChicken.Scripts.Game.Player
             _canShoot = true;
             _isDead = false;
             _hasVibrated = false;
+            //TODO
+            _isFloating = false;
             _moveDirection = Vector3.zero;
             _gravity = Physics.gravity.y;
             _rightRotation = transform.rotation;
@@ -341,8 +348,23 @@ namespace HellsChicken.Scripts.Game.Player
                         _isGliding = false;
                     }
                 }
+                else if (_isFloating)
+                {
+                    //HORIZONTAL MOVEMENT APPLICATION
+                    _moveDirection.x = cachedHorizontalMovement;
+                    
+                    //VERTICAL MOVEMENT BY WIND
+                    if (IsFalling() && !IsGrounded()) //wind against our fall
+                        _moveDirection.y += windBreaking * ((Mathf.Abs(_moveDirection.y)+2)/maxSpeedVectorMagnitude) * Time.deltaTime; //acceleration up
+                    else //wind with our fall
+                        _moveDirection.y += windPushing * Time.deltaTime;
+                    
+                    if (_moveDirection.y > maxWindVelocity)
+                        _moveDirection.y = maxWindVelocity;
+                }
                 else
                 {
+                    Debug.Log("not floating");
                     //RESUME NORMAL SPEED AFTER SLIDING
                     if (_wasSlidingOnPrevFame)
                     {
@@ -427,6 +449,7 @@ namespace HellsChicken.Scripts.Game.Player
                 anim.SetBool("isGliding", _isGliding);
                 anim.SetBool("isShootingFlames", _isShootingFlames);
                 anim.SetBool("isShootingEgg", _isShootingEgg);
+                anim.SetBool("isFloating", _isFloating);
                 
             }
 
@@ -533,9 +556,23 @@ namespace HellsChicken.Scripts.Game.Player
                         EventManager.TriggerEvent("chickenLand");
                     }
                 }
+
+                if (other.CompareTag("Wind"))
+                {
+                    _isFloating = true;
+                }
             }
         }
-        
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("Wind"))
+            {
+                _isFloating = false;
+            }
+        }
+
+
         //If true, it sets _hitNormal and _slopeAngle variables to the current values. 
         private bool SlideCheck()
         {
