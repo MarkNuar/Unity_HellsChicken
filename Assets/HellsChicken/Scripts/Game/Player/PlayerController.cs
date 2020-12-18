@@ -64,7 +64,7 @@ namespace HellsChicken.Scripts.Game.Player
         private bool _isSliding;
         private Vector3 _hitNormal;
         [SerializeField] private float slideFriction = 0.3f;
-        private readonly RaycastHit[] _slideHitPoints = new RaycastHit[5];
+        private readonly RaycastHit[] _feetHitPoints = new RaycastHit[5];
         [SerializeField] private LayerMask slideMask;
 
         private bool _isAiming;
@@ -87,6 +87,9 @@ namespace HellsChicken.Scripts.Game.Player
         public float windBreaking = 20f;
         public float windPushing = 20f;
         public float maxWindVelocity = 20f;
+        
+        //TODO
+        private Transform _cachedPlayerParent;
 
         public Vector3 getPredictedPosition() {
             Vector3 result = new Vector3(transform.position.x,transform.position.y,0);
@@ -152,7 +155,8 @@ namespace HellsChicken.Scripts.Game.Player
 
         private void Start()
         {
-            //_characterController.detectCollisions = false;
+            //TODO 
+            _cachedPlayerParent = _transform.parent;
             _characterController.enabled = false;
             //TODO
             if (LevelManager.Instance)
@@ -296,8 +300,9 @@ namespace HellsChicken.Scripts.Game.Player
                 //SLIDE CHECK
                 _wasSlidingOnPrevFame = _isSliding;
                 _prevSlopeAngle = _slopeAngle; // slide check call will eventually change the slope angle 
-                _isSliding = SlideCheck();
+                _isSliding = GroundCheck();
 
+                
                 //HORIZONTAL MOVEMENT CACHING
                 var cachedHorizontalMovement = Input.GetAxis("Horizontal") * walkSpeed;
                 _moveDirection.z = 0f;
@@ -364,7 +369,7 @@ namespace HellsChicken.Scripts.Game.Player
                 }
                 else
                 {
-                    Debug.Log("not floating");
+                    //Debug.Log("not floating");
                     //RESUME NORMAL SPEED AFTER SLIDING
                     if (_wasSlidingOnPrevFame)
                     {
@@ -561,6 +566,12 @@ namespace HellsChicken.Scripts.Game.Player
                 {
                     _isFloating = true;
                 }
+
+                if (other.CompareTag("MovingPlatform"))
+                {
+                    _cachedPlayerParent = _transform.parent;
+                    _transform.parent = other.transform;
+                }
             }
         }
 
@@ -570,11 +581,16 @@ namespace HellsChicken.Scripts.Game.Player
             {
                 _isFloating = false;
             }
+
+            if (other.CompareTag("MovingPlatform"))
+            {
+                _transform.parent = _cachedPlayerParent;
+            }
         }
 
 
         //If true, it sets _hitNormal and _slopeAngle variables to the current values. 
-        private bool SlideCheck()
+        private bool GroundCheck()
         {
             if (!IsFalling())
             {
@@ -588,7 +604,7 @@ namespace HellsChicken.Scripts.Game.Player
             Vector3 ccc = cc.center + transform.position;
             var skinWidth = 0.5f;
             Vector3 sourcePoint = new Vector3(ccc.x, ccc.y - (cc.height / 2 - carRad) + skinWidth / 2, ccc.z);
-            var numberOfHits = Physics.SphereCastNonAlloc(sourcePoint, carRad, Vector3.down, _slideHitPoints, skinWidth, slideMask);
+            var numberOfHits = Physics.SphereCastNonAlloc(sourcePoint, carRad, Vector3.down, _feetHitPoints, skinWidth, slideMask);
             if (numberOfHits == 0)
             {
                 _hitNormal = Vector3.zero;
@@ -597,13 +613,13 @@ namespace HellsChicken.Scripts.Game.Player
             }
             for(var i = 0; i < numberOfHits; i++)
             {
-                if (!_slideHitPoints[i].collider.CompareTag("SlipperyGround"))
+                if (!_feetHitPoints[i].collider.CompareTag("SlipperyGround"))
                 {
                     _hitNormal = Vector3.zero;
                     _slopeAngle = 0f;
                     return false;
                 }
-                normalSum += _slideHitPoints[i].normal;
+                normalSum += _feetHitPoints[i].normal;
             }
             //good but bad, okay for now
             _hitNormal = Vector3.ProjectOnPlane(normalSum.normalized, new Vector3(0, 0, 1)).normalized;
