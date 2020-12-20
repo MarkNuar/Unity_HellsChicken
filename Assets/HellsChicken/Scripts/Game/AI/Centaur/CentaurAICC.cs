@@ -22,6 +22,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
         [SerializeField] private GameObject bombPrefab;
         [SerializeField] private GameObject textPrefab;
         [SerializeField] private int attackTime;
+        public Animator anim;
 
         [SerializeField] private float gravityScale = 1f;
         [SerializeField] private LayerMask mask;
@@ -35,6 +36,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
 
         private bool _isColliding;
         private bool isQuestionMarkTriggered;
+        private bool isMoving;
         
         private PlayerController _playerController;
     
@@ -50,6 +52,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
             //_characterController.detectCollisions = false;
             _movement = Vector3.zero;
             isQuestionMarkTriggered = true;
+            isMoving = false;
 
             //Decision
             DTDecision d1 = new DTDecision(IsPlayerVisible);
@@ -113,6 +116,13 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
 
             if (_textInstance == null)
                 isQuestionMarkTriggered = true;
+
+            if (_movement.x!=0)
+                isMoving = true;
+            else
+                isMoving = false;
+
+            anim.SetBool("isMoving",isMoving);
         }
         
 
@@ -146,6 +156,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
             {
                 GameObject fire = Instantiate(bombPrefab, arrowPosition.position, Quaternion.LookRotation(player.position, transform.position));
                 CentaurFire ar = fire.GetComponent<CentaurFire>();
+                anim.SetTrigger("Shoot");
                 ar.Target = _playerController.getPredictedPosition();//player.position + new Vector3(0, 0.5f, 0);
                 ar.CentaurPos = transform.position;
                 ar.FindAngle(_right,arrowPosition.position);

@@ -335,7 +335,6 @@
           <e p="PyroParticles" t="Include">
             <e p="Demo" t="Include">
               <e p="DemoScript.cs" t="Include" />
-              <e p="DemoScriptEditor.cs" t="Include" />
             </e>
             <e p="Prefab" t="Include">
               <e p="Editor" t="Include">
@@ -396,12 +395,9 @@
             <e p="Game" t="Include">
               <e p="AI" t="Include">
                 <e p="Centaur" t="Include">
-                  <e p="Bow" t="Include">
-                    <e p="BowDirection.cs" t="Include" />
-                    <e p="CentaurFire.cs" t="Include" />
-                  </e>
                   <e p="CentaurAI.cs" t="Include" />
                   <e p="CentaurAICC.cs" t="Include" />
+                  <e p="CentaurFire.cs" t="Include" />
                   <e p="Explosion" t="Include">
                     <e p="Explosion.cs" t="Include" />
                   </e>
@@ -516,6 +512,17 @@
           </e>
         </e>
         <e p="LandingDustScript.cs" t="Include" />
+        <e p="Particle Ribbon by Moonflower Carnivore" t="Include">
+          <e p="readme_Simple_Particle_Ribbon.txt" t="Include" />
+          <e p="Scripts" t="Include">
+            <e p="randomParticleRotation.cs" t="Include" />
+            <e p="ReverseNormals.cs" t="Include" />
+            <e p="rotation.cs" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="Particle Alpha Blend HDR.shader" t="Include" />
+          </e>
+        </e>
         <e p="RollingRockGenerator.cs" t="Include" />
       </e>
       <e p="AstarPathfindingProject.csproj" t="IncludeRecursive" />
