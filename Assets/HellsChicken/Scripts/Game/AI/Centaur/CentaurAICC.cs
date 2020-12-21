@@ -24,7 +24,6 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
         [SerializeField] private GameObject textPrefab;
         [SerializeField] private int attackTime;
         public Animator anim;
-        private Destruction destruction;
 
         [SerializeField] private float gravityScale = 1f;
         [SerializeField] private LayerMask mask;
@@ -40,6 +39,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
         private bool isQuestionMarkTriggered;
         private bool isMoving;
         private bool isShooting;
+        private bool isDead;
         
         private PlayerController _playerController;
     
@@ -47,7 +47,6 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
         {
             _characterController = GetComponent<CharacterController>();
             _playerController = player.gameObject.GetComponent<PlayerController>();
-            destruction = GetComponent<Destruction>();
         }
 
         // Start is called before the first frame update
@@ -58,6 +57,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
             isQuestionMarkTriggered = true;
             isMoving = false;
             isShooting = false;
+            isDead = false;
 
             //Decision
             DTDecision d1 = new DTDecision(IsPlayerVisible);
@@ -163,7 +163,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
 
         private object Hit() 
         {
-            if (_shootInterval == 0 && !destruction.IsDead) 
+            if (_shootInterval == 0 && !isDead) 
             {
                 GameObject fire = Instantiate(bombPrefab, arrowPosition.position, Quaternion.LookRotation(player.position, transform.position));
                 CentaurFire ar = fire.GetComponent<CentaurFire>();
@@ -257,6 +257,10 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
                 transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
                 _right = !_right;
             }
+            
+            if(other.gameObject.CompareTag("Attack"))
+                StartCoroutine(CentaurDeath(3f));
+
         }
     
         private void OnTriggerExit(Collider other)
@@ -268,6 +272,17 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
         private void OnDestroy() {
             if(_textInstance != null)
                 Destroy(_textInstance);                
+        }
+        
+        IEnumerator CentaurDeath(float time)
+        {
+            isDead = true;
+            anim.SetBool("isDead",isDead);
+            gameObject.GetComponent<CapsuleCollider>().enabled = false;
+            gameObject.GetComponent<CharacterController>().enabled = false;
+            EventManager.TriggerEvent("centaurDeath");
+            yield return new WaitForSeconds(time);
+            Destroy(gameObject);
         }
     }
 }

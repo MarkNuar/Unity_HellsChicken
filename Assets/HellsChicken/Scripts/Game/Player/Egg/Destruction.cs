@@ -7,8 +7,6 @@ namespace HellsChicken.Scripts.Game.Player.Egg
 	public class Destruction : MonoBehaviour
 	{
 		[SerializeField] private GameObject destroyedVersion;
-		public Animator anim;
-		private bool isDead;
 		
 		public void Destroyer () 
 		{
@@ -19,29 +17,14 @@ namespace HellsChicken.Scripts.Game.Player.Egg
 					Transform originalVersion = transform;
 					Instantiate(destroyedVersion, originalVersion.position, Quaternion.Euler(0, 180, 0));
 				}
-
-				StartCoroutine(CentaurDeath(3f));
+				
+				Destroy(gameObject);
 			}
 			else 
 			{
 				EventManager.TriggerEvent("StartImmunityCoroutine");
 			}
 		}
-
-		IEnumerator CentaurDeath(float time)
-		{
-			isDead = true;
-			anim.SetBool("isDead",isDead);
-			gameObject.GetComponent<CapsuleCollider>().enabled = false;
-			gameObject.GetComponent<CharacterController>().enabled = false;
-			EventManager.TriggerEvent("centaurDeath");
-			yield return new WaitForSeconds(time);
-			Destroy(gameObject);
-		}
-
-		public bool IsDead
-		{
-			get => isDead;
-		}
+		
 	}
 }
