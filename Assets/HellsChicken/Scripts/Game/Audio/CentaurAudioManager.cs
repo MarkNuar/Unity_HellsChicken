@@ -21,7 +21,7 @@ public class CentaurAudioManager : MonoBehaviour
         EventManager.StartListening("centaurQuestionMark", CentaurQuestionMark);
         EventManager.StartListening("centaurSteps", CentaurSteps);
         EventManager.StartListening("centaurDeath", CentaurDeath);
-
+        EventManager.StartListening("stopCentaurSteps",StopCentaurSteps);
     }
 
 
@@ -46,7 +46,8 @@ public class CentaurAudioManager : MonoBehaviour
     {
         EventManager.StopListening("centaurSteps", CentaurSteps);
         centaurStepsAudioSource.clip = centaurStepsSound;
-        centaurStepsAudioSource.Play();
+        if (!centaurStepsAudioSource.isPlaying)
+            centaurStepsAudioSource.Play();
         EventManager.StartListening("centaurSteps", CentaurSteps);
     }
     
@@ -56,5 +57,12 @@ public class CentaurAudioManager : MonoBehaviour
         centaurDeathAudioSource.clip = centaurDeathSound; 
         centaurDeathAudioSource.Play();
         EventManager.StartListening("centaurDeath", CentaurDeath);
+    }
+    
+    private void StopCentaurSteps()
+    {
+        EventManager.StopListening("stopCentaurSteps",StopCentaurSteps);
+        centaurStepsAudioSource.Stop();
+        EventManager.StartListening("stopCentaurSteps",StopCentaurSteps);
     }
 }

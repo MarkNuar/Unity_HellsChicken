@@ -34,7 +34,7 @@ namespace HellsChicken.Scripts.Game.Player.Egg
 			anim.SetBool("isDead",isDead);
 			gameObject.GetComponent<CapsuleCollider>().enabled = false;
 			gameObject.GetComponent<CharacterController>().enabled = false;
-			EventManager.TriggerEvent("CentaurDeath");
+			EventManager.TriggerEvent("centaurDeath");
 			yield return new WaitForSeconds(time);
 			Destroy(gameObject);
 		}

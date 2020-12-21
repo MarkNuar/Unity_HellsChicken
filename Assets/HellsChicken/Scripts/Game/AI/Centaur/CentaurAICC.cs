@@ -123,12 +123,11 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
                 if (_textInstance == null)
                     isQuestionMarkTriggered = true;
 
-                if (_movement.x != 0)
+                if (_movement.x != 0) 
                     isMoving = true;
                 else
                     isMoving = false;
-
-
+                
                 anim.SetBool("isMoving", isMoving);
                 anim.SetBool("isShooting", isShooting);
         }
@@ -149,6 +148,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
             _canMove = true;
             _shootInterval = 0;
             isShooting = false;
+            EventManager.TriggerEvent("centaurSteps");
             return null;
         }
 
@@ -157,6 +157,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
             _canMove = false;
             _shootInterval = 0;
             isMoving = false;
+            EventManager.TriggerEvent("stopCentaurSteps");
             return null;
         }
 
@@ -211,7 +212,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
                 if (Random.Range(0, 10) > 6) 
                 {
                     _still = +1;
-                    _textInstance = Instantiate(textPrefab, gameObject.transform.position + new Vector3(-0.4f, 3, 0),
+                    _textInstance = Instantiate(textPrefab, gameObject.transform.position + new Vector3(1.5f, 6, 0),
                         Quaternion.identity);
                     _textInstance.transform.parent = gameObject.transform.parent;
                     return false;

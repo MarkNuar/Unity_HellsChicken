@@ -364,7 +364,6 @@ namespace HellsChicken.Scripts.Game.Player
                 }
                 else
                 {
-                    Debug.Log("not floating");
                     //RESUME NORMAL SPEED AFTER SLIDING
                     if (_wasSlidingOnPrevFame)
                     {
