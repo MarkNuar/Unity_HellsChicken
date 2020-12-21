@@ -10,8 +10,12 @@ public class PlatformController : MonoBehaviour
     public Animator anim;
     public void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.CompareTag("Attack"))
+        if (other.gameObject.CompareTag("Attack"))
+        {
             anim.SetTrigger("Destroy");
-        
+            gameObject.GetComponent<MeshRenderer>().enabled = false;
+            gameObject.GetComponent<MeshCollider>().enabled = false;
+        }
+
     }
 }
