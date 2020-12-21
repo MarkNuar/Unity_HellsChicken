@@ -4,6 +4,7 @@ using EventManagerNamespace;
 using HellsChicken.Scripts.Game.AI.Centaur.Bow;
 using HellsChicken.Scripts.Game.AI.DecisionTree;
 using HellsChicken.Scripts.Game.Player;
+using HellsChicken.Scripts.Game.Player.Egg;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -23,6 +24,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
         [SerializeField] private GameObject textPrefab;
         [SerializeField] private int attackTime;
         public Animator anim;
+        private Destruction destruction;
 
         [SerializeField] private float gravityScale = 1f;
         [SerializeField] private LayerMask mask;
@@ -37,6 +39,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
         private bool _isColliding;
         private bool isQuestionMarkTriggered;
         private bool isMoving;
+        private bool isShooting;
         
         private PlayerController _playerController;
     
@@ -44,6 +47,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
         {
             _characterController = GetComponent<CharacterController>();
             _playerController = player.gameObject.GetComponent<PlayerController>();
+            destruction = GetComponent<Destruction>();
         }
 
         // Start is called before the first frame update
@@ -53,6 +57,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
             _movement = Vector3.zero;
             isQuestionMarkTriggered = true;
             isMoving = false;
+            isShooting = false;
 
             //Decision
             DTDecision d1 = new DTDecision(IsPlayerVisible);
@@ -78,51 +83,54 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
         private void Update() 
         {
             if (_characterController.enabled)
-            {
-                if (_characterController.isGrounded)
-                    _movement.y = -20f;
-                else
-                    _movement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
-                if (_canMove) 
                 {
-                    if (!_isColliding)
+                    if (_characterController.isGrounded)
+                        _movement.y = -20f;
+                    else
+                        _movement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
+                    if (_canMove)
                     {
-                        if (_right)
+                        if (!_isColliding)
                         {
-                            _movement.x = agentVelocity;
+                            if (_right)
+                            {
+                                _movement.x = agentVelocity;
+                            }
+                            else
+                            {
+                                _movement.x = -agentVelocity;
+                            }
                         }
                         else
                         {
-                            _movement.x = -agentVelocity;
+                            _movement.x = 0;
                         }
                     }
                     else
                     {
                         _movement.x = 0;
                     }
+
+                    _characterController.Move(_movement * Time.deltaTime);
                 }
-                else
+
+                if (_textInstance != null && isQuestionMarkTriggered)
                 {
-                    _movement.x = 0;
+                    EventManager.TriggerEvent("centaurQuestionMark");
+                    isQuestionMarkTriggered = false;
                 }
-                _characterController.Move(_movement * Time.deltaTime);
-            }
 
-            if (_textInstance != null && isQuestionMarkTriggered)
-            {
-                EventManager.TriggerEvent("centaurQuestionMark");
-                isQuestionMarkTriggered = false;
-            }
+                if (_textInstance == null)
+                    isQuestionMarkTriggered = true;
 
-            if (_textInstance == null)
-                isQuestionMarkTriggered = true;
+                if (_movement.x != 0)
+                    isMoving = true;
+                else
+                    isMoving = false;
 
-            if (_movement.x!=0)
-                isMoving = true;
-            else
-                isMoving = false;
 
-            anim.SetBool("isMoving",isMoving);
+                anim.SetBool("isMoving", isMoving);
+                anim.SetBool("isShooting", isShooting);
         }
         
 
@@ -140,6 +148,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
         {
             _canMove = true;
             _shootInterval = 0;
+            isShooting = false;
             return null;
         }
 
@@ -147,20 +156,21 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
         {
             _canMove = false;
             _shootInterval = 0;
+            isMoving = false;
             return null;
         }
 
         private object Hit() 
         {
-            if (_shootInterval == 0) 
+            if (_shootInterval == 0 && !destruction.IsDead) 
             {
                 GameObject fire = Instantiate(bombPrefab, arrowPosition.position, Quaternion.LookRotation(player.position, transform.position));
                 CentaurFire ar = fire.GetComponent<CentaurFire>();
-                anim.SetTrigger("Shoot");
                 ar.Target = _playerController.getPredictedPosition();//player.position + new Vector3(0, 0.5f, 0);
                 ar.CentaurPos = transform.position;
                 ar.FindAngle(_right,arrowPosition.position);
                 EventManager.TriggerEvent("centaurShot");
+                isShooting = true;
             }
             _shootInterval = (_shootInterval + 1) % attackTime;
             return null;
@@ -179,7 +189,6 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
                     if (Vector3.Dot(ray, transform.right) <= 0) 
                     {
                         transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
-                        EventManager.TriggerEvent("changeBowDirection");
                         _right = !_right;
                     }
 
@@ -222,7 +231,6 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
                         if (Random.Range(0, 2) == 0)
                         {
                             transform.rotation *= Quaternion.Euler(0, 180, 0);
-                            EventManager.TriggerEvent("changeBowDirection");
                             _right = !_right;
                         }
                         Destroy(_textInstance);
@@ -246,7 +254,6 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
             if (other.gameObject.CompareTag("Wall") || other.gameObject.CompareTag("Enemy")) 
             {
                 transform.rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
-                EventManager.TriggerEvent("changeBowDirection");
                 _right = !_right;
             }
         }
