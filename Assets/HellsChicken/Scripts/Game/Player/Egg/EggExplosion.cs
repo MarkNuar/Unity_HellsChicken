@@ -16,6 +16,7 @@ namespace HellsChicken.Scripts.Game.Player.Egg
         [SerializeField] private float radius = 3f;
         [SerializeField] private float force = 500f;
         [SerializeField] private Collider shieldCollider;
+        public GameObject eggRenderer;
 
 
         private bool _hasCollided = false;
@@ -30,6 +31,7 @@ namespace HellsChicken.Scripts.Game.Player.Egg
                 {
                     gameObject.GetComponent<MeshRenderer>().enabled = false;
                     gameObject.GetComponent<SphereCollider>().enabled = false;
+                    eggRenderer.GetComponent<MeshRenderer>().enabled = false;
                     Explode();
                     EventManager.TriggerEvent("EggExplosionNotification");
                     _hasExploded = true;
@@ -48,6 +50,7 @@ namespace HellsChicken.Scripts.Game.Player.Egg
                     {
                         gameObject.GetComponent<MeshRenderer>().enabled = false;
                         gameObject.GetComponent<SphereCollider>().enabled = false;
+                        eggRenderer.GetComponent<MeshRenderer>().enabled = false;
                         Explode();
                         EventManager.TriggerEvent("EggExplosionNotification");
                         _hasExploded = true;
