@@ -464,10 +464,35 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4342655660005773405, guid: c0b92b74d287bff4daffbafbc697a9d0,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342655660005773405, guid: c0b92b74d287bff4daffbafbc697a9d0,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5284995578020499822, guid: c0b92b74d287bff4daffbafbc697a9d0,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593642259698052302, guid: c0b92b74d287bff4daffbafbc697a9d0,
+        type: 3}
+      propertyPath: m_Direction
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8593642259698052302, guid: c0b92b74d287bff4daffbafbc697a9d0,
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8716430587111493817, guid: c0b92b74d287bff4daffbafbc697a9d0,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 211875541858554009, guid: c0b92b74d287bff4daffbafbc697a9d0, type: 3}
