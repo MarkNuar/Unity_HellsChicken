@@ -60,4 +60,9 @@ public class GameAudioManager : MonoBehaviour
         }
     }
     
+    public void DestroyGameAudioManagerInstance()
+    {
+        Destroy(gameObject);
+    }
+    
 }

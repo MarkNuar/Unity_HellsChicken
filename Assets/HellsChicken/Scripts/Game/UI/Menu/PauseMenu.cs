@@ -74,6 +74,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
         public void MainMenu()
         {
             LevelManager.Instance.DestroyLevelManagerInstance();
+            GameAudioManager.Instance.DestroyGameAudioManagerInstance();
             Time.timeScale = 1f;
             _gameIsPaused = false;
             EventManager.TriggerEvent("stopGameSoundtrack");
