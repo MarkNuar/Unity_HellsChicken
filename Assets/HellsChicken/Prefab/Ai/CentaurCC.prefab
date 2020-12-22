@@ -904,7 +904,7 @@ MonoBehaviour:
     type: 3}
   QuestionMarkSound: {fileID: 8300000, guid: b6a067b5bdea72c4db2495f9980cb27e, type: 3}
   centaurStepsSound: {fileID: 8300000, guid: 6818851115100ca4db636517fbaee144, type: 3}
-  centaurDeathSound: {fileID: 0}
+  centaurDeathSound: {fileID: 8300000, guid: 860b6011fd33dcc46b0480a96c887d57, type: 3}
 --- !u!1 &8436983112494208352
 GameObject:
   m_ObjectHideFlags: 0
