@@ -19,6 +19,7 @@ public class GameAudioManager : MonoBehaviour
         if (Instance == null)
         {
             EventManager.StartListening("gameSoundtrack",gameSoundtrack);
+            EventManager.StartListening("stopGameSoundtrack",StopGameSoundtrack);
             EventManager.TriggerEvent("gameSoundtrack");
             Instance = this;
             DontDestroyOnLoad(Instance);
@@ -37,6 +38,26 @@ public class GameAudioManager : MonoBehaviour
         gameAudioSource.loop = true;
         gameAudioSource.Play();
         EventManager.StartListening("gameSoundtrack",gameSoundtrack);
+    }
+
+    private void StopGameSoundtrack()
+    {
+        EventManager.StopListening("stopGameSoundtrack",StopGameSoundtrack);
+        StartCoroutine(StartFade(gameAudioSource, 1, 0));
+        EventManager.StartListening("stopGameSoundtrack",StopGameSoundtrack);
+    }
+    
+    public static IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume)
+    {
+        float currentTime = 0;
+        float start = audioSource.volume;
+
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);
+            yield return null;
+        }
     }
     
 }

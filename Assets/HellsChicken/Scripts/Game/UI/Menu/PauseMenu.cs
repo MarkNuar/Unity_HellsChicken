@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using EventManagerNamespace;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Networking;
@@ -75,6 +76,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             LevelManager.Instance.DestroyLevelManagerInstance();
             Time.timeScale = 1f;
             _gameIsPaused = false;
+            EventManager.TriggerEvent("stopGameSoundtrack");
             SceneManager.LoadScene(0); //test if it works
         }
 

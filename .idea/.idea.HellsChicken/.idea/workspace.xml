@@ -21,11 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="44fa9eaf-4901-4eb4-b858-67c1b19b2312" name="Default Changelist" comment="Some changing">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/AllSkyFree/Overcast Low/Materials/AllSky_Overcast4_Low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/AllSkyFree/Overcast Low/Materials/AllSky_Overcast4_Low.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Egg/Egg.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Egg/Egg.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAICC.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAICC.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/EggExplosion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/EggExplosion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/GameAudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/GameAudioManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +57,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/CentaurFire.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/Bow/BowDirection.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/DissolveController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/KeyDoor.cs" />
@@ -112,6 +107,7 @@
         <option value="$PROJECT_DIR$/Assets/PlatformController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAICC.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/EggExplosion.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/GameAudioManager.cs" />
       </list>
     </option>
   </component>
