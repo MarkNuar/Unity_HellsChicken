@@ -212,8 +212,12 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
                 if (Random.Range(0, 10) > 6) 
                 {
                     _still = +1;
-                    _textInstance = Instantiate(textPrefab, gameObject.transform.position + new Vector3(1.5f, 6, 0),
-                        Quaternion.identity);
+                    
+                    if(transform.eulerAngles.y>90)
+                        _textInstance = Instantiate(textPrefab, gameObject.transform.position + new Vector3(-1.5f, 6f, 0), Quaternion.identity);
+                    else 
+                        _textInstance = Instantiate(textPrefab, gameObject.transform.position + new Vector3(1.5f, 6f, 0), Quaternion.identity);
+                        
                     _textInstance.transform.parent = gameObject.transform.parent;
                     return false;
                 }

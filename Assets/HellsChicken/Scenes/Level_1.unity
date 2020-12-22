@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 6fd5d73aec672f44488159ba97c9ca42,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4313,8 +4313,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -125, y: -194.22}
-  m_SizeDelta: {x: 25.16835, y: 7.793455}
+  m_AnchoredPosition: {x: -114.5, y: -193.03}
+  m_SizeDelta: {x: 26.854218, y: 8.756807}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &644404979
 MonoBehaviour:
@@ -4335,7 +4335,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: HOLD RIGHT-CLICK on your mouse to aim, RELEASE to throw an explosive egg!
+  m_text: HOLD RIGHT-CLICK on your mouse to aim, RELEASE to throw an explosive egg
+    on the cracked rock!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3747bf556077d6d45bef84f4a710d44f, type: 2}
   m_sharedMaterial: {fileID: 4676208420648631540, guid: 3747bf556077d6d45bef84f4a710d44f,
@@ -4386,7 +4387,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 80
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_isTextTruncated: 0
@@ -4410,12 +4411,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -0.032841556, w: 0}
   m_textInfo:
     textComponent: {fileID: 644404979}
-    characterCount: 73
+    characterCount: 93
     spriteCount: 0
-    spaceCount: 12
-    wordCount: 13
+    spaceCount: 16
+    wordCount: 17
     linkCount: 0
-    lineCount: 3
+    lineCount: 4
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -11992,6 +11993,11 @@ PrefabInstance:
       propertyPath: directionalLight
       value: 
       objectReference: {fileID: 1591134791}
+    - target: {fileID: 6868647279544510274, guid: a83347a573d18664cb2f67dc7d21455d,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7019523792159524558, guid: a83347a573d18664cb2f67dc7d21455d,
         type: 3}
       propertyPath: m_IsKinematic

@@ -17,11 +17,16 @@ namespace HellsChicken.Scripts.Game.Player.Egg
         [SerializeField] private float force = 500f;
         [SerializeField] private Collider shieldCollider;
         public GameObject eggRenderer;
-
+        
 
         private bool _hasCollided = false;
         private bool shield = false;
-        
+
+        public void Start()
+        {
+            gameObject.GetComponent<Rigidbody>().AddTorque(1000,1000,1000);
+        }
+
         private void OnCollisionEnter()
         {
             if (!_hasCollided)
