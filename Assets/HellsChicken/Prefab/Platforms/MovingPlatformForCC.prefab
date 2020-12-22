@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9076555419700710198}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.25, z: 0}
+  m_LocalPosition: {x: -2.5, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 9076555419966151822}
@@ -107,9 +107,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  startPoint: {fileID: 9076555421722737982}
-  finishPoint: {fileID: 9076555419965291475}
-  player: {fileID: 0}
+  endPoint: {fileID: 9076555421722737982}
+  startPoint: {fileID: 9076555419965291475}
+  startFromStartPoint: 1
 --- !u!1 &9076555419965291472
 GameObject:
   m_ObjectHideFlags: 0

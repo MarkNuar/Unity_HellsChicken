@@ -86,9 +86,8 @@ namespace HellsChicken.Scripts.Game.Player
         private bool _isFloating;
         public float windBreaking = 20f;
         public float windPushing = 20f;
-        public float maxWindVelocity = 20f;
+        //public float maxWindVelocity = 20f;
         
-        //TODO
         private Transform _cachedPlayerParent;
 
         public Vector3 getPredictedPosition() {
@@ -136,8 +135,8 @@ namespace HellsChicken.Scripts.Game.Player
             _canShoot = true;
             _isDead = false;
             _hasVibrated = false;
-            //TODO
             _isFloating = false;
+            _cachedPlayerParent = _transform.parent;
             _moveDirection = Vector3.zero;
             _gravity = Physics.gravity.y;
             _rightRotation = transform.rotation;
@@ -320,7 +319,7 @@ namespace HellsChicken.Scripts.Game.Player
                 // Debug.DrawLine(Vector3.zero,_hitNormal,Color.green);
                 // Debug.Log(_isSliding);
                 
-                //SLIDING
+                // SLIDING
                 if (_isSliding)
                 {
                     //FIRST FRAME SLIDING OR SLOPE ANGLE CHANGE
@@ -353,6 +352,7 @@ namespace HellsChicken.Scripts.Game.Player
                         _isGliding = false;
                     }
                 }
+                // FLOATING
                 else if (_isFloating)
                 {
                     //HORIZONTAL MOVEMENT APPLICATION
@@ -364,10 +364,11 @@ namespace HellsChicken.Scripts.Game.Player
                     else //wind with our fall
                         _moveDirection.y += windPushing * Time.deltaTime;
                     
-                    if (_moveDirection.y > maxWindVelocity)
-                        _moveDirection.y = maxWindVelocity;
+                    if (_moveDirection.y > maxSpeedVectorMagnitude)
+                        _moveDirection.y = maxSpeedVectorMagnitude;
                 }
-                else
+                // NORMAL MOVEMENT
+                else 
                 {
                     //Debug.Log("not floating");
                     //RESUME NORMAL SPEED AFTER SLIDING
@@ -569,8 +570,11 @@ namespace HellsChicken.Scripts.Game.Player
 
                 if (other.CompareTag("MovingPlatform"))
                 {
-                    _cachedPlayerParent = _transform.parent;
-                    _transform.parent = other.transform;
+                    if (other.transform.position.y < _transform.position.y)
+                    {
+                        _cachedPlayerParent = _transform.parent;
+                        _transform.parent = other.transform;
+                    }
                 }
             }
         }
