@@ -20,34 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44fa9eaf-4901-4eb4-b858-67c1b19b2312" name="Default Changelist" comment="Some changing">
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/DemonLord_PBR.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/DemonLord_PBR.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBossController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBossController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/RollingRockGenerator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/RollingRockGenerator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/LandingDustScript.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/LandingDustScript.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/PlatformController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/PlatformController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/SettingsMenu.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/UI/SettingsMenu.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/AllSkyFree/Overcast Low/Materials/AllSky_Overcast4_Low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/AllSkyFree/Overcast Low/Materials/AllSky_Overcast4_Low.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/HEROIC FANTASY CREATURES FULL PACK VOL 1/Demonic Creatures Pack/Demon Lord/DemonLord_Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/HEROIC FANTASY CREATURES FULL PACK VOL 1/Demonic Creatures Pack/Demon Lord/DemonLord_Controller.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/HEROIC FANTASY CREATURES FULL PACK VOL 1/Demonic Creatures Pack/Demon Lord/Prefabs/DemonLord_PBR.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/HEROIC FANTASY CREATURES FULL PACK VOL 1/Demonic Creatures Pack/Demon Lord/Prefabs/DemonLord_PBR.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/DemonLord_PBR.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/DemonLord_PBR.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Egg/Egg.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Player/Egg/Egg.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/BossTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/BossTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/SettingsMenu.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/SettingsMenu.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LandingDustScript.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LandingDustScript.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlatformController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlatformController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RollingRockGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RollingRockGenerator.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +218,7 @@
       <workItem from="1608069249742" duration="3108000" />
       <workItem from="1608637003813" duration="3393000" />
       <workItem from="1608661001256" duration="1195000" />
-      <workItem from="1608669428298" duration="2173000" />
+      <workItem from="1608669428298" duration="2763000" />
     </task>
     <task id="LOCAL-00001" summary="Platform and blade movement">
       <created>1604073585635</created>
