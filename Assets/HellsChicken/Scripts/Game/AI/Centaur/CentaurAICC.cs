@@ -83,64 +83,67 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
 
             StartCoroutine(TreeCoroutine());
         }
-    
-        private void Update() 
+
+        private void Update()
         {
-            if (_characterController.enabled)
-            {
-                // GroundCheck();
-                // Debug.DrawLine(Vector3.zero, Vector3.zero+_hitNormal,Color.green);
-                // _characterController.enabled = false;
-                // transform.rotation = Quaternion.Euler(0,0,Vector3.Angle(Vector3.up,_hitNormal));
-                // _characterController.enabled = true;
+            if(!isDead){
                 
-                
-                if (_characterController.isGrounded)
-                    _movement.y = -20f;
-                else
-                    _movement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
-                if (_canMove)
+                if (_characterController.enabled)
                 {
-                    if (!_isColliding)
+                    // GroundCheck();
+                    // Debug.DrawLine(Vector3.zero, Vector3.zero+_hitNormal,Color.green);
+                    // _characterController.enabled = false;
+                    // transform.rotation = Quaternion.Euler(0,0,Vector3.Angle(Vector3.up,_hitNormal));
+                    // _characterController.enabled = true;
+
+
+                    if (_characterController.isGrounded)
+                        _movement.y = -20f;
+                    else
+                        _movement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
+                    if (_canMove)
                     {
-                        if (_right)
+                        if (!_isColliding)
                         {
-                            _movement.x = agentVelocity;
+                            if (_right)
+                            {
+                                _movement.x = agentVelocity;
+                            }
+                            else
+                            {
+                                _movement.x = -agentVelocity;
+                            }
                         }
                         else
                         {
-                            _movement.x = -agentVelocity;
+                            _movement.x = 0;
                         }
                     }
                     else
                     {
                         _movement.x = 0;
                     }
+
+                    _characterController.Move(_movement * Time.deltaTime);
                 }
-                else
+
+                if (_textInstance != null && isQuestionMarkTriggered)
                 {
-                    _movement.x = 0;
+                    EventManager.TriggerEvent("centaurQuestionMark");
+                    isQuestionMarkTriggered = false;
                 }
 
-                _characterController.Move(_movement * Time.deltaTime);
-            }
+                if (_textInstance == null)
+                    isQuestionMarkTriggered = true;
 
-            if (_textInstance != null && isQuestionMarkTriggered)
-            {
-                EventManager.TriggerEvent("centaurQuestionMark");
-                isQuestionMarkTriggered = false;
-            }
+                if (_movement.x != 0)
+                    isMoving = true;
+                else
+                    isMoving = false;
 
-            if (_textInstance == null)
-                isQuestionMarkTriggered = true;
-
-            if (_movement.x != 0) 
-                isMoving = true;
-            else
-                isMoving = false;
-            
-            anim.SetBool("isMoving", isMoving);
-            anim.SetBool("isShooting", isShooting);
+                anim.SetBool("isMoving", isMoving);
+                anim.SetBool("isShooting", isShooting);
+            } 
         }
         
         
@@ -178,7 +181,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
 
         private IEnumerator TreeCoroutine() 
         {
-            while (true) 
+            while (!isDead) 
             {
                 _tree.Start();
                 yield return new WaitForSeconds(timeReaction);
@@ -325,6 +328,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
         {
             isDead = true;
             anim.SetBool("isDead",isDead);
+            Destroy(_textInstance);
             gameObject.GetComponent<CapsuleCollider>().enabled = false;
             gameObject.GetComponent<CharacterController>().enabled = false;
             EventManager.TriggerEvent("centaurDeath");
