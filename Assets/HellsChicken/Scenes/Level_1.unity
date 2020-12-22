@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 6fd5d73aec672f44488159ba97c9ca42,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4002,7 +4002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00020e6749226fd42b4112577a9888f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialCheckPoint: {fileID: 1603504162}
+  initialCheckPoint: {fileID: 1404610758}
   initialLight: {fileID: 1591134791}
   levelNumber: 1
 --- !u!1001 &1053470446
@@ -5592,6 +5592,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1556410543170635569, guid: 5df5106f3f691da429c2f048957a61ec, type: 3}
+--- !u!1 &1404610758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 138184, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 580081589}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1425389767 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 495179187880416369, guid: 933cc533cd697184980bc403017bf974,
@@ -6335,12 +6341,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4022345223647062595, guid: a78ef1c5dc5dd9d48b5cb4c6fb867766,
     type: 3}
   m_PrefabInstance: {fileID: 1512668714}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1603504162 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 138184, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1761734873}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1636278599
 PrefabInstance:
@@ -9747,7 +9747,7 @@ PrefabInstance:
     - target: {fileID: 4100157078927945596, guid: 10eea92f4e27b1b4c8af1ca7409328ff,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 787.61
+      value: 701.9
       objectReference: {fileID: 0}
     - target: {fileID: 4100157078927945596, guid: 10eea92f4e27b1b4c8af1ca7409328ff,
         type: 3}
