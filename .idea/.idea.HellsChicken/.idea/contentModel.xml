@@ -417,6 +417,7 @@
                   <e p="DTDecision.cs" t="Include" />
                   <e p="IDTNode.cs" t="Include" />
                 </e>
+                <e p="DemonBossController.cs" t="Include" />
                 <e p="Goomba" t="Include">
                   <e p="BombExplosion.cs" t="Include" />
                   <e p="DeathGoombaController.cs" t="Include" />
@@ -454,6 +455,7 @@
                   <e p="RockObstacle.cs" t="Include" />
                   <e p="SpawningRock.cs" t="Include" />
                 </e>
+                <e p="RollingRockGenerator.cs" t="Include" />
                 <e p="SpearMovement.cs" t="Include" />
               </e>
               <e p="FireBallGenerator" t="Include">
@@ -461,6 +463,7 @@
                 <e p="FireBallGenerator.cs" t="Include" />
               </e>
               <e p="GameManager.cs" t="Include" />
+              <e p="LandingDustScript.cs" t="Include" />
               <e p="LevelManager.cs" t="Include" />
               <e p="Light" t="Include">
                 <e p="LightController.cs" t="Include" />
@@ -477,6 +480,7 @@
                   </e>
                 </e>
                 <e p="FallenPlatform.cs" t="Include" />
+                <e p="PlatformController.cs" t="Include" />
                 <e p="PlatformMoveX.cs" t="Include" />
                 <e p="PlatformMoveY.cs" t="Include" />
               </e>
@@ -497,7 +501,6 @@
                 </e>
                 <e p="PlayerController.cs" t="Include" />
               </e>
-              <e p="SettingsMenu.cs" t="Include" />
               <e p="SkyBoxRotation.cs" t="Include" />
               <e p="UI" t="Include">
                 <e p="Crosshair" t="Include">
@@ -516,11 +519,11 @@
                   <e p="MainMenu.cs" t="Include" />
                   <e p="PauseMenu.cs" t="Include" />
                 </e>
+                <e p="SettingsMenu.cs" t="Include" />
               </e>
             </e>
           </e>
         </e>
-        <e p="LandingDustScript.cs" t="Include" />
         <e p="Particle Ribbon by Moonflower Carnivore" t="Include">
           <e p="readme_Simple_Particle_Ribbon.txt" t="Include" />
           <e p="Scripts" t="Include">
@@ -532,8 +535,6 @@
             <e p="Particle Alpha Blend HDR.shader" t="Include" />
           </e>
         </e>
-        <e p="PlatformController.cs" t="Include" />
-        <e p="RollingRockGenerator.cs" t="Include" />
       </e>
       <e p="AstarPathfindingProject.csproj" t="IncludeRecursive" />
       <e p="AstarPathfindingProjectEditor.csproj" t="IncludeRecursive" />

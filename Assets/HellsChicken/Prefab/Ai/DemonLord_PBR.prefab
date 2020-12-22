@@ -1250,6 +1250,7 @@ GameObject:
   - component: {fileID: 2492470858358494738}
   - component: {fileID: 2492470858362095242}
   - component: {fileID: 2492470858699579851}
+  - component: {fileID: 1776819478347152246}
   m_Layer: 0
   m_Name: SK_LavaWhip
   m_TagString: Untagged
@@ -1350,6 +1351,20 @@ MonoBehaviour:
   materialIndex: 1
   uvAnimationRate: {x: 0, y: -0.7}
   textureName: _MainTex
+--- !u!64 &1776819478347152246
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2492470858358917746}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300002, guid: d11bc3e45a9a33342a8e42eac9f0630d, type: 3}
 --- !u!1 &2492470858358917748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,6 +1376,7 @@ GameObject:
   - component: {fileID: 2492470858358494740}
   - component: {fileID: 2492470858362095244}
   - component: {fileID: 2492470858577603223}
+  - component: {fileID: 6319186926121363730}
   m_Layer: 0
   m_Name: SK_FireSword
   m_TagString: Untagged
@@ -1450,6 +1466,20 @@ MonoBehaviour:
   materialIndex: 1
   uvAnimationRate: {x: 0, y: -0.7}
   textureName: _MainTex
+--- !u!64 &6319186926121363730
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2492470858358917748}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300004, guid: d11bc3e45a9a33342a8e42eac9f0630d, type: 3}
 --- !u!1 &2492470858358917750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1514,6 +1544,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2492470858358494742}
   - component: {fileID: 2492470858362095246}
+  - component: {fileID: 170801928996541315}
+  - component: {fileID: 5193841563042469090}
   m_Layer: 0
   m_Name: SK_DemonLord
   m_TagString: Untagged
@@ -1663,6 +1695,35 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.34833992, y: -1.6282395, z: -0.00035989285}
     m_Extent: {x: 3.0799341, y: 3.306315, z: 2.6919317}
   m_DirtyAABB: 0
+--- !u!64 &170801928996541315
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2492470858358917752}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: d11bc3e45a9a33342a8e42eac9f0630d, type: 3}
+--- !u!114 &5193841563042469090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2492470858358917752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af014df6b99b35846a908927b8b20463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 100
+  _speed: 0
+  anim: {fileID: 2492470858366220366}
 --- !u!1 &2492470858358917754
 GameObject:
   m_ObjectHideFlags: 0

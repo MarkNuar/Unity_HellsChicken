@@ -2099,12 +2099,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2068486121}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &587578099 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 138184, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 898723096}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &613111801
 GameObject:
   m_ObjectHideFlags: 0
@@ -3939,7 +3933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00020e6749226fd42b4112577a9888f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialCheckPoint: {fileID: 587578099}
+  initialCheckPoint: {fileID: 1751796439}
   initialLight: {fileID: 1591134791}
   levelNumber: 1
 --- !u!1001 &1053470446
@@ -6549,6 +6543,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4619647348098489866, guid: 5f43eea203df769488d76c83f0e57e1b,
     type: 3}
   m_PrefabInstance: {fileID: 4619647348585272320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1751796439 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 138184, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1761734873}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1761734873
 PrefabInstance:
