@@ -57,14 +57,14 @@ namespace HellsChicken.Scripts.Game.Player
         private CrosshairImageController _crosshairImageController;
         [SerializeField] private GameObject playerCamera;
         private Target _target;
-        
+
         private float _slopeAngle = 0f;
         private float _prevSlopeAngle = 0f;
         private bool _wasSlidingOnPrevFame;
         private bool _isSliding;
         private Vector3 _hitNormal;
         [SerializeField] private float slideFriction = 0.3f;
-        private readonly RaycastHit[] _slideHitPoints = new RaycastHit[5];
+        private readonly RaycastHit[] _feetHitPoints = new RaycastHit[5];
         [SerializeField] private LayerMask slideMask;
 
         private bool _isAiming;
@@ -86,7 +86,9 @@ namespace HellsChicken.Scripts.Game.Player
         private bool _isFloating;
         public float windBreaking = 20f;
         public float windPushing = 20f;
-        public float maxWindVelocity = 20f;
+        //public float maxWindVelocity = 20f;
+
+        private Transform _cachedPlayerParent;
 
         public Vector3 getPredictedPosition() {
             Vector3 result = new Vector3(transform.position.x,transform.position.y,0);
@@ -95,7 +97,7 @@ namespace HellsChicken.Scripts.Game.Player
             else {
                 //result.x = transform.position.x + _lookDirection.normalized.x * walkSpeed * 5;
                 //result.y = transform.position.y + _lookDirection.normalized.y * walkSpeed * 2;
-                //result.y = 
+                //result.y =
             }
 
             return result;
@@ -109,7 +111,7 @@ namespace HellsChicken.Scripts.Game.Player
 
         //dissolveScript
         private DissolveController _dissolve;
-        
+
         private void Awake()
         {
             _characterController = gameObject.GetComponent<CharacterController>();
@@ -117,7 +119,7 @@ namespace HellsChicken.Scripts.Game.Player
             _skinnedMeshRenderer = gameObject.GetComponent<SkinnedMeshRenderer>();
             _crosshairImageController = crosshairCanvas.transform.GetChild(0).GetComponent<CrosshairImageController>();
             _target = playerCamera.GetComponent<Target>();
-            
+
             _wasSlidingOnPrevFame = false;
             _isSliding = false;
             _hasLanded = true;
@@ -133,8 +135,8 @@ namespace HellsChicken.Scripts.Game.Player
             _canShoot = true;
             _isDead = false;
             _hasVibrated = false;
-            //TODO
             _isFloating = false;
+            _cachedPlayerParent = _transform.parent;
             _moveDirection = Vector3.zero;
             _gravity = Physics.gravity.y;
             _rightRotation = transform.rotation;
@@ -152,7 +154,8 @@ namespace HellsChicken.Scripts.Game.Player
 
         private void Start()
         {
-            //_characterController.detectCollisions = false;
+            //TODO
+            _cachedPlayerParent = _transform.parent;
             _characterController.enabled = false;
             //TODO
             if (LevelManager.Instance)
@@ -182,14 +185,14 @@ namespace HellsChicken.Scripts.Game.Player
             float angle = float.NaN;
             float v = initialEggVelocity; //initial throw egg force
             EventManager.TriggerEvent("eggThrowSound");
-            
+
             while (float.IsNaN(angle))
             {
                 float v2 = v * v;
                 float v4 = v2 * v2;
                 Vector3 sourcePosition = eggThrowPoint.position;
                 float x = _target.GetTarget().x - sourcePosition.x;
-                
+
                 if (Mathf.Abs(x) < 0.01f)
                 {
                     angle = Mathf.PI / 2;
@@ -200,18 +203,18 @@ namespace HellsChicken.Scripts.Game.Player
                     float x2 = x * x;
                     float squareRoot = Mathf.Sqrt(v4 - g * (g * x2 + 2 * y * v2));
                     angle = Mathf.Atan((v2 - squareRoot) / (g * x));
-                    
+
                     if (_lookDirection.x < 0f)
                         angle = Mathf.PI + angle;
-                    
+
                     if (float.IsNaN(angle))
                     {
                         v = v + deltaEggVelocity;
-                        
+
                         if (v > maxEggVelocity)
                         {
                             v = maxEggVelocity;
-                            
+
                             if (_lookDirection.x > 0f)
                                 angle = Mathf.PI / 4; //throw with the best angle for reaching maximum distance
                             else
@@ -220,7 +223,7 @@ namespace HellsChicken.Scripts.Game.Player
                     }
                 }
             }
-            
+
             GameObject egg = Instantiate(eggPrefab, eggThrowPoint.transform.position, Quaternion.identity);
             Vector3 baseEggVelocity = new Vector3(v * Mathf.Cos(angle), v * Mathf.Sin(angle), 0f);
 
@@ -230,7 +233,7 @@ namespace HellsChicken.Scripts.Game.Player
             }
             else
             {
-                egg.GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(baseEggVelocity + new Vector3(GetVelocityCorrected().x,0f,0f), maxEggVelocity); 
+                egg.GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(baseEggVelocity + new Vector3(GetVelocityCorrected().x,0f,0f), maxEggVelocity);
             }
             //egg.GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(baseEggVelocity + new Vector3(GetVelocityCorrected().x,0f,0f), maxEggVelocity);
             //egg.GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(baseEggVelocity + GetVelocityCorrected(),maxEggVelocity);
@@ -245,7 +248,7 @@ namespace HellsChicken.Scripts.Game.Player
             _isWaitingForEggExplosion = false;
             yield return null;
         }
-        
+
         private Vector3 GetVelocityCorrected()
         {
             var playerVelocityCorrected = new Vector3(_moveDirection.x, _moveDirection.y, 0f);
@@ -253,7 +256,7 @@ namespace HellsChicken.Scripts.Game.Player
                 playerVelocityCorrected.y = 0f;
             return playerVelocityCorrected;
         }
-        
+
         private void Update()
         {
             if (!_isDead && !PauseMenu.GetGameIsPaused() && !EndMenu.GetGameIsPaused())
@@ -295,13 +298,14 @@ namespace HellsChicken.Scripts.Game.Player
 
                 //SLIDE CHECK
                 _wasSlidingOnPrevFame = _isSliding;
-                _prevSlopeAngle = _slopeAngle; // slide check call will eventually change the slope angle 
-                _isSliding = SlideCheck();
+                _prevSlopeAngle = _slopeAngle; // slide check call will eventually change the slope angle
+                _isSliding = GroundCheck();
+
 
                 //HORIZONTAL MOVEMENT CACHING
                 var cachedHorizontalMovement = Input.GetAxis("Horizontal") * walkSpeed;
                 _moveDirection.z = 0f;
-                
+
                 //CHARACTER ROTATION
                 if (cachedHorizontalMovement > 0.01f && !_isAiming)
                 {
@@ -311,11 +315,11 @@ namespace HellsChicken.Scripts.Game.Player
                 {
                     _transform.rotation = _leftRotation;
                 }
-                
+
                 // Debug.DrawLine(Vector3.zero,_hitNormal,Color.green);
                 // Debug.Log(_isSliding);
-                
-                //SLIDING
+
+                // SLIDING
                 if (_isSliding)
                 {
                     //FIRST FRAME SLIDING OR SLOPE ANGLE CHANGE
@@ -324,16 +328,16 @@ namespace HellsChicken.Scripts.Game.Player
                     {
                         _moveDirection = Vector3.Project(_moveDirection, Quaternion.Euler(0, 0, 90) * _hitNormal) * (1-slideFriction);
                     }
-                 
+
                     //GRAVITY APPLICATION
                     var gravityVector = new Vector3(0, _gravity * gravityScale * fallMultiplier, 0);
                     _moveDirection += Vector3.Project(gravityVector, Quaternion.Euler(0, 0, 90) * _hitNormal) * ((1-slideFriction) * Time.deltaTime);
 
                     //HORIZONTAL MOVEMENT
                     if (Mathf.Sign(cachedHorizontalMovement * _hitNormal.x) < 0.1f) // in case we are moving while sliding and heading towards the wall
-                        cachedHorizontalMovement = 0f; 
+                        cachedHorizontalMovement = 0f;
                     _moveDirection.x += cachedHorizontalMovement;
-                    
+
                     //GLIDING WHILE SLIDING
                     if (Input.GetButton("Jump")) //TODO apply some variation to the velocity while gliding
                     {
@@ -348,20 +352,22 @@ namespace HellsChicken.Scripts.Game.Player
                         _isGliding = false;
                     }
                 }
+                // FLOATING
                 else if (_isFloating)
                 {
                     //HORIZONTAL MOVEMENT APPLICATION
                     _moveDirection.x = cachedHorizontalMovement;
-                    
+
                     //VERTICAL MOVEMENT BY WIND
                     if (IsFalling() && !IsGrounded()) //wind against our fall
                         _moveDirection.y += windBreaking * ((Mathf.Abs(_moveDirection.y)+2)/maxSpeedVectorMagnitude) * Time.deltaTime; //acceleration up
                     else //wind with our fall
                         _moveDirection.y += windPushing * Time.deltaTime;
-                    
-                    if (_moveDirection.y > maxWindVelocity)
-                        _moveDirection.y = maxWindVelocity;
+
+                    if (_moveDirection.y > maxSpeedVectorMagnitude)
+                        _moveDirection.y = maxSpeedVectorMagnitude;
                 }
+                // NORMAL MOVEMENT
                 else
                 {
                     //RESUME NORMAL SPEED AFTER SLIDING
@@ -369,10 +375,10 @@ namespace HellsChicken.Scripts.Game.Player
                     {
                         _moveDirection = Vector3.Project(GetVelocityCorrected(), Vector3.down); //project velocity back on y axes
                     }
-                    
+
                     //HORIZONTAL MOVEMENT APPLICATION
                     _moveDirection.x = cachedHorizontalMovement;
-                    
+
                     //STICK TO THE PAVEMENT
                     _isYMovementCorrected = false;
                     if (IsGrounded() && IsFalling()) //The falling check is made because when the character is on ground, it has a negative velocity
@@ -387,7 +393,7 @@ namespace HellsChicken.Scripts.Game.Player
 
                     if (!_isMoving || !IsGrounded())
                         EventManager.TriggerEvent("stopFootSteps");
-                
+
                     //JUMPING
                     if (IsGrounded() && Input.GetButtonDown("Jump"))
                     {
@@ -410,7 +416,7 @@ namespace HellsChicken.Scripts.Game.Player
 
                     //GRAVITY APPLICATION
                     _moveDirection.y += _gravity * gravityScale * Time.deltaTime;
-                    
+
                     //GLIDING
                     _wasGlidingOnPrevFrame = _isGliding;
                     if (!IsGrounded() && IsFalling())
@@ -429,18 +435,18 @@ namespace HellsChicken.Scripts.Game.Player
                         }
                     }
                 }
-                
+
                 //MOVEMENT CHECK
                 _isMoving = _moveDirection.x != 0;
 
                 //CLAMP PLAYER VELOCITY TO MAX MAGNITUDE
                 _moveDirection = Vector3.ClampMagnitude(_moveDirection, maxSpeedVectorMagnitude);
                 Debug.DrawLine(Vector3.zero,_moveDirection, Color.magenta);
-                
-                
+
+
                 //MOVEMENT APPLICATION
                 _characterController.Move(_moveDirection * Time.deltaTime);
-                
+
                 //ANIMATION
                 anim.SetBool("isTrulyFalling", IsTrulyFalling());
                 anim.SetBool("isGrounded", IsGrounded());
@@ -449,19 +455,19 @@ namespace HellsChicken.Scripts.Game.Player
                 anim.SetBool("isShootingFlames", _isShootingFlames);
                 anim.SetBool("isShootingEgg", _isShootingEgg);
                 anim.SetBool("isFloating", _isFloating);
-                
+
             }
 
             //DEATH MANAGEMENT
             else if (_isDead && !_hasVibrated)
             {
-                gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse(); 
+                gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
                 EventManager.TriggerEvent("chickenDeath");
                 //StartCoroutine(EnableDeath(1.2f));
                 EventManager.TriggerEvent("KillPlayer");
                 _hasVibrated = true;
             }
-                   
+
         }
 
         private void LateUpdate()
@@ -494,16 +500,16 @@ namespace HellsChicken.Scripts.Game.Player
         {
             return GetVelocityCorrected().y < 0f;
         }
-        
+
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
-            // if (hit.gameObject.CompareTag("MovingPlatform")) 
+            // if (hit.gameObject.CompareTag("MovingPlatform"))
             // {
             //     EventManager.TriggerEvent("platformCollide",hit.gameObject.name);
             // }
-            
+
             //Stop going up when the character controller collides with something over it
-            if (_characterController.collisionFlags != CollisionFlags.Above) 
+            if (_characterController.collisionFlags != CollisionFlags.Above)
                 return;
             if (Vector3.Dot(hit.normal, _moveDirection) < 0)
             {
@@ -547,7 +553,7 @@ namespace HellsChicken.Scripts.Game.Player
                     {
                         _isDead = true;
                     }
-                    
+
                     if (other.CompareTag("Ground") && !_hasLanded)
                     {
                         _hasLanded = true;
@@ -560,6 +566,15 @@ namespace HellsChicken.Scripts.Game.Player
                 {
                     _isFloating = true;
                 }
+
+                if (other.CompareTag("MovingPlatform"))
+                {
+                    if (other.transform.position.y < _transform.position.y)
+                    {
+                        _cachedPlayerParent = _transform.parent;
+                        _transform.parent = other.transform;
+                    }
+                }
             }
         }
 
@@ -569,11 +584,16 @@ namespace HellsChicken.Scripts.Game.Player
             {
                 _isFloating = false;
             }
+
+            if (other.CompareTag("MovingPlatform"))
+            {
+                _transform.parent = _cachedPlayerParent;
+            }
         }
 
 
-        //If true, it sets _hitNormal and _slopeAngle variables to the current values. 
-        private bool SlideCheck()
+        //If true, it sets _hitNormal and _slopeAngle variables to the current values.
+        private bool GroundCheck()
         {
             if (!IsFalling())
             {
@@ -587,7 +607,7 @@ namespace HellsChicken.Scripts.Game.Player
             Vector3 ccc = cc.center + transform.position;
             var skinWidth = 0.5f;
             Vector3 sourcePoint = new Vector3(ccc.x, ccc.y - (cc.height / 2 - carRad) + skinWidth / 2, ccc.z);
-            var numberOfHits = Physics.SphereCastNonAlloc(sourcePoint, carRad, Vector3.down, _slideHitPoints, skinWidth, slideMask);
+            var numberOfHits = Physics.SphereCastNonAlloc(sourcePoint, carRad, Vector3.down, _feetHitPoints, skinWidth, slideMask);
             if (numberOfHits == 0)
             {
                 _hitNormal = Vector3.zero;
@@ -596,13 +616,13 @@ namespace HellsChicken.Scripts.Game.Player
             }
             for(var i = 0; i < numberOfHits; i++)
             {
-                if (!_slideHitPoints[i].collider.CompareTag("SlipperyGround"))
+                if (!_feetHitPoints[i].collider.CompareTag("SlipperyGround"))
                 {
                     _hitNormal = Vector3.zero;
                     _slopeAngle = 0f;
                     return false;
                 }
-                normalSum += _slideHitPoints[i].normal;
+                normalSum += _feetHitPoints[i].normal;
             }
             //good but bad, okay for now
             _hitNormal = Vector3.ProjectOnPlane(normalSum.normalized, new Vector3(0, 0, 1)).normalized;
@@ -610,17 +630,17 @@ namespace HellsChicken.Scripts.Game.Player
             return true;
         }
 
-        private IEnumerator ImmunityTimer(float time) 
+        private IEnumerator ImmunityTimer(float time)
         {
             _isImmune = true;
             var material = _skinnedMeshRenderer.material;
             material.SetInt("alphaAnimation",1);
-            
+
             foreach (var mesh in eyesMeshRenderer)
             {
                 mesh. material.SetInt("alphaAnimation",1);
             }
-            
+
             gameObject.layer = LayerMask.NameToLayer("ImmunePlayer");
             InvokeRepeating(nameof(FlashMesh), 0f, 0.2f);
             //Debug.Log("Transparent");
@@ -630,18 +650,18 @@ namespace HellsChicken.Scripts.Game.Player
             CancelInvoke();
             //_meshRenderer.enabled = true;
             material.SetFloat("alphaValue",1.0f);
-            
-            foreach (var mesh in eyesMeshRenderer) 
+
+            foreach (var mesh in eyesMeshRenderer)
             {
                 mesh.material.SetFloat("alphaValue", 1.0f);
             }
-            
+
             material.SetInt("alphaAnimation",0);
-            foreach (var mesh in eyesMeshRenderer) 
+            foreach (var mesh in eyesMeshRenderer)
             {
                 mesh. material.SetInt("alphaAnimation",0);
             }
-            
+
             gameObject.layer = LayerMask.NameToLayer("Player");
             yield return null;
         }
@@ -652,8 +672,8 @@ namespace HellsChicken.Scripts.Game.Player
             //Use the next lines if you want it to be transparent
              var material = _skinnedMeshRenderer.material;
              material.SetFloat("alphaValue", material.GetFloat("alphaValue") == 1.0f ? -0.1f : 1.0f);
-             
-             foreach (var mesh in eyesMeshRenderer) 
+
+             foreach (var mesh in eyesMeshRenderer)
              {
                  mesh.material.SetFloat("alphaValue", mesh.material.GetFloat("alphaValue") == 1.0f ? -0.1f : 1.0f);
              }
@@ -673,7 +693,7 @@ namespace HellsChicken.Scripts.Game.Player
             _isLastHeart = false;
             EventManager.StartListening("NotLastHeart", NotLastHeart);
         }
-        
+
         private void Death()
         {
             //TODO: if death, it should only respawn player and destroyed object
@@ -697,8 +717,8 @@ namespace HellsChicken.Scripts.Game.Player
             mainModule.simulationSpeed = 3f;
             yield return null;
         }
-        
-        
+
+
         private void OnDisable()
         {
             EventManager.StopListening("PlayerDeath", Death);
@@ -706,16 +726,16 @@ namespace HellsChicken.Scripts.Game.Player
             EventManager.StopListening("NotLastHeart", NotLastHeart);
         }
 
-        private void StartImmunityCoroutine() 
+        private void StartImmunityCoroutine()
         {
             EventManager.StopListening("StartImmunityCoroutine", StartImmunityCoroutine);
             gameObject.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
-            
+
             if (!_isLastHeart)
             {
                 StartCoroutine(ImmunityTimer(immunityDuration));
             }
-            
+
             EventManager.TriggerEvent("DecreasePlayerHealth");
             EventManager.StartListening("StartImmunityCoroutine", StartImmunityCoroutine);
         }
