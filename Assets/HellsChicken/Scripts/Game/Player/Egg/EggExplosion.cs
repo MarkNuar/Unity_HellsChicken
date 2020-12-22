@@ -24,7 +24,7 @@ namespace HellsChicken.Scripts.Game.Player.Egg
 
         public void Start()
         {
-            gameObject.GetComponent<Rigidbody>().AddTorque(1000,1000,1000);
+            gameObject.GetComponent<Rigidbody>().AddTorque(0,0,1000);
         }
 
         private void OnCollisionEnter()

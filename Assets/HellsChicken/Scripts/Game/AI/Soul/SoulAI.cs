@@ -73,10 +73,10 @@ namespace HellsChicken.Scripts.Game.AI.Soul
             }
         }
 
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.transform.CompareTag("Player"))
-                Destroy(gameObject);
-        }
+        // private void OnTriggerEnter(Collider other)
+        // {
+        //     if (other.transform.CompareTag("Player"))
+        //         Destroy(gameObject);
+        // }
     }
 }

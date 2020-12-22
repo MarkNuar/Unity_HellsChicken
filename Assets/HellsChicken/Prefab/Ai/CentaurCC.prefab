@@ -424,6 +424,7 @@ GameObject:
   - component: {fileID: 3979258305056326399}
   - component: {fileID: 3979258305056326398}
   - component: {fileID: 3334874839438777466}
+  - component: {fileID: 2495151499843031970}
   m_Layer: 12
   m_Name: Body
   m_TagString: Enemy
@@ -521,6 +522,9 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 884531
+  slideMask:
+    serializedVersion: 2
+    m_Bits: 262144
 --- !u!143 &3979258305056326399
 CharacterController:
   m_ObjectHideFlags: 0
@@ -549,10 +553,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1.9362946
-  m_Height: 5.0644035
+  m_Radius: 1.2619476
+  m_Height: 4.662675
   m_Direction: 1
-  m_Center: {x: 0.07847595, y: 1.4822016, z: 0}
+  m_Center: {x: 0.35108948, y: 1.2813373, z: 0}
 --- !u!54 &3334874839438777466
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -569,6 +573,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &2495151499843031970
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3979258305056326397}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4380017504329228328, guid: 4dc76875c259da249b1f380945fd0ae2, type: 3}
 --- !u!1 &6756465267901397863
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,6 +1177,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Centaur
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474174905611635263, guid: 4dc76875c259da249b1f380945fd0ae2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474174905611635263, guid: 4dc76875c259da249b1f380945fd0ae2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dc76875c259da249b1f380945fd0ae2, type: 3}

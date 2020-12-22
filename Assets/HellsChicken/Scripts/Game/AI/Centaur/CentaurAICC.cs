@@ -42,6 +42,10 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
         private bool isDead;
         
         private PlayerController _playerController;
+        
+        private readonly RaycastHit[] _feetHitPoints = new RaycastHit[5];
+        [SerializeField] private LayerMask slideMask;
+        private Vector3 _hitNormal;
     
         private void Awake() 
         {
@@ -83,55 +87,94 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
         private void Update() 
         {
             if (_characterController.enabled)
+            {
+                // GroundCheck();
+                // Debug.DrawLine(Vector3.zero, Vector3.zero+_hitNormal,Color.green);
+                // _characterController.enabled = false;
+                // transform.rotation = Quaternion.Euler(0,0,Vector3.Angle(Vector3.up,_hitNormal));
+                // _characterController.enabled = true;
+                
+                
+                if (_characterController.isGrounded)
+                    _movement.y = -20f;
+                else
+                    _movement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
+                if (_canMove)
                 {
-                    if (_characterController.isGrounded)
-                        _movement.y = -20f;
-                    else
-                        _movement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
-                    if (_canMove)
+                    if (!_isColliding)
                     {
-                        if (!_isColliding)
+                        if (_right)
                         {
-                            if (_right)
-                            {
-                                _movement.x = agentVelocity;
-                            }
-                            else
-                            {
-                                _movement.x = -agentVelocity;
-                            }
+                            _movement.x = agentVelocity;
                         }
                         else
                         {
-                            _movement.x = 0;
+                            _movement.x = -agentVelocity;
                         }
                     }
                     else
                     {
                         _movement.x = 0;
                     }
-
-                    _characterController.Move(_movement * Time.deltaTime);
                 }
-
-                if (_textInstance != null && isQuestionMarkTriggered)
-                {
-                    EventManager.TriggerEvent("centaurQuestionMark");
-                    isQuestionMarkTriggered = false;
-                }
-
-                if (_textInstance == null)
-                    isQuestionMarkTriggered = true;
-
-                if (_movement.x != 0) 
-                    isMoving = true;
                 else
-                    isMoving = false;
-                
-                anim.SetBool("isMoving", isMoving);
-                anim.SetBool("isShooting", isShooting);
+                {
+                    _movement.x = 0;
+                }
+
+                _characterController.Move(_movement * Time.deltaTime);
+            }
+
+            if (_textInstance != null && isQuestionMarkTriggered)
+            {
+                EventManager.TriggerEvent("centaurQuestionMark");
+                isQuestionMarkTriggered = false;
+            }
+
+            if (_textInstance == null)
+                isQuestionMarkTriggered = true;
+
+            if (_movement.x != 0) 
+                isMoving = true;
+            else
+                isMoving = false;
+            
+            anim.SetBool("isMoving", isMoving);
+            anim.SetBool("isShooting", isShooting);
         }
         
+        
+        //If true, it sets _hitNormal and _slopeAngle variables to the current values.
+        private bool GroundCheck()
+        {
+            Vector3 normalSum = Vector3.zero;
+            CharacterController cc = _characterController;
+            float carRad = cc.radius;
+            Vector3 ccc = cc.center + transform.position;
+            var skinWidth = 0.5f;
+            Vector3 sourcePoint = new Vector3(ccc.x, ccc.y - (cc.height / 2 - carRad) + skinWidth / 2, ccc.z);
+            var numberOfHits = Physics.SphereCastNonAlloc(sourcePoint, carRad, Vector3.down, _feetHitPoints, skinWidth, slideMask);
+            if (numberOfHits == 0)
+            {
+                _hitNormal = Vector3.zero;
+                //_slopeAngle = 0f;
+                return false;
+            }
+            for(var i = 0; i < numberOfHits; i++)
+            {
+                if (!_feetHitPoints[i].collider.CompareTag("SlipperyGround"))
+                {
+                    _hitNormal = Vector3.zero;
+                    //_slopeAngle = 0f;
+                    return false;
+                }
+                normalSum += _feetHitPoints[i].normal;
+            }
+            //good but bad, okay for now
+            _hitNormal = Vector3.ProjectOnPlane(normalSum.normalized, new Vector3(0, 0, 1)).normalized;
+            //_slopeAngle = Vector3.Angle(Vector3.up, _hitNormal);
+            return true;
+        }
 
         private IEnumerator TreeCoroutine() 
         {
