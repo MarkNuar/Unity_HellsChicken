@@ -95,9 +95,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 2.244873
-  m_Height: 12.565292
+  m_Height: 7.342209
   m_Direction: 1
-  m_Center: {x: 0.016113281, y: 5.3525314, z: 0}
+  m_Center: {x: 0.016113281, y: 7.964073, z: 0}
 --- !u!54 &1558166113829876106
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -145,7 +145,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.01
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 7, z: 0}
 --- !u!1001 &5207532783480792671
 PrefabInstance:
   m_ObjectHideFlags: 0

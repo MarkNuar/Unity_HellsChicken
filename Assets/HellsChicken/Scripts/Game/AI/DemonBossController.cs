@@ -19,7 +19,7 @@ public class DemonBossController : MonoBehaviour
     public void Start()
     {
         _movement = Vector3.zero;
-        _movement.x = -5f;
+        _movement.x = -2f;
     }
 
     public void Update()
