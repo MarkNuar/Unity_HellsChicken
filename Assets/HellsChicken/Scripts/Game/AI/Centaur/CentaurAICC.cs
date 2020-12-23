@@ -46,6 +46,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
         private readonly RaycastHit[] _feetHitPoints = new RaycastHit[5];
         [SerializeField] private LayerMask slideMask;
         private Vector3 _hitNormal;
+        private float _slopeAngle;
     
         private void Awake() 
         {
@@ -87,16 +88,25 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
         private void Update()
         {
             if(!isDead){
-                
                 if (_characterController.enabled)
                 {
-                    // GroundCheck();
-                    // Debug.DrawLine(Vector3.zero, Vector3.zero+_hitNormal,Color.green);
-                    // _characterController.enabled = false;
-                    // transform.rotation = Quaternion.Euler(0,0,Vector3.Angle(Vector3.up,_hitNormal));
-                    // _characterController.enabled = true;
-
-
+                    //parallel to ground
+                    GroundCheck();
+                    float yRotation;
+                    float zRotation;
+                    if (_right)
+                    {
+                        yRotation = 0f;
+                        zRotation = _hitNormal.x > 0 ? -_slopeAngle : _slopeAngle;
+                    }
+                    else
+                    {
+                        yRotation = 180f;
+                        zRotation = _hitNormal.x > 0 ? _slopeAngle : -_slopeAngle;
+                    }
+                    transform.rotation = Quaternion.Euler(transform.rotation.x,yRotation,zRotation);
+                    //end parallel to ground
+                    
                     if (_characterController.isGrounded)
                         _movement.y = -20f;
                     else
@@ -160,22 +170,15 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
             if (numberOfHits == 0)
             {
                 _hitNormal = Vector3.zero;
-                //_slopeAngle = 0f;
+                _slopeAngle = 0f;
                 return false;
             }
             for(var i = 0; i < numberOfHits; i++)
             {
-                if (!_feetHitPoints[i].collider.CompareTag("SlipperyGround"))
-                {
-                    _hitNormal = Vector3.zero;
-                    //_slopeAngle = 0f;
-                    return false;
-                }
                 normalSum += _feetHitPoints[i].normal;
             }
-            //good but bad, okay for now
             _hitNormal = Vector3.ProjectOnPlane(normalSum.normalized, new Vector3(0, 0, 1)).normalized;
-            //_slopeAngle = Vector3.Angle(Vector3.up, _hitNormal);
+            _slopeAngle = Vector3.Angle(Vector3.up, _hitNormal);
             return true;
         }
 

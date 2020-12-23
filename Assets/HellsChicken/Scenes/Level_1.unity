@@ -3933,7 +3933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00020e6749226fd42b4112577a9888f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialCheckPoint: {fileID: 1751796439}
+  initialCheckPoint: {fileID: 1907701890}
   initialLight: {fileID: 1591134791}
   levelNumber: 1
 --- !u!1001 &1053470446
@@ -6544,12 +6544,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4619647348585272320}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1751796439 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 138184, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1761734873}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1761734873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6916,6 +6910,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3586187000817786736, guid: 933cc533cd697184980bc403017bf974,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000,
+        type: 0}
     - target: {fileID: 3979258305056326384, guid: 933cc533cd697184980bc403017bf974,
         type: 3}
       propertyPath: player
@@ -7710,6 +7710,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 710195982014139838, guid: 211676c411e084a40b2f352afc066f8a,
     type: 3}
   m_PrefabInstance: {fileID: 1883970657}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1907701890 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 138184, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1864219134}
   m_PrefabAsset: {fileID: 0}
 --- !u!43 &1911444937
 Mesh:
