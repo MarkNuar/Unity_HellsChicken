@@ -339,10 +339,55 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1920097502428840806, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
+      propertyPath: m_Height
+      value: 7.7350616
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920097502428840806, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1.5519403
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920097502428840806, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 7.767647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920097502428840806, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.21190476
+      objectReference: {fileID: 0}
     - target: {fileID: 2223872394637337062, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
         type: 3}
       propertyPath: m_Name
       value: DemonBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630858121511210244, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
+      propertyPath: m_Height
+      value: 3.1899676
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630858121511210244, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.1413026
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630858121511210244, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -1.2749386
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630858121511210244, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.034167405
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630858121511210244, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.010282947
       objectReference: {fileID: 0}
     - target: {fileID: 5811885408183834236, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
         type: 3}
