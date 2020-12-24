@@ -9773,6 +9773,31 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 1603275995713324789, guid: a83347a573d18664cb2f67dc7d21455d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 51.652496
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603275995713324789, guid: a83347a573d18664cb2f67dc7d21455d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 45.505856
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603275995713324789, guid: a83347a573d18664cb2f67dc7d21455d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.819e-12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603275995713324789, guid: a83347a573d18664cb2f67dc7d21455d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -23.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603275995713324789, guid: a83347a573d18664cb2f67dc7d21455d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -269.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1690955653003516001, guid: a83347a573d18664cb2f67dc7d21455d,
         type: 3}
       propertyPath: m_Layer
@@ -9803,6 +9828,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 2982303583777639682, guid: a83347a573d18664cb2f67dc7d21455d,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1340950973134705180}
+    - target: {fileID: 2982303583777639682, guid: a83347a573d18664cb2f67dc7d21455d,
+        type: 3}
+      propertyPath: directionalLight
+      value: 
+      objectReference: {fileID: 1591134791}
     - target: {fileID: 2995051816518813029, guid: a83347a573d18664cb2f67dc7d21455d,
         type: 3}
       propertyPath: m_Layer
@@ -9928,6 +9963,26 @@ PrefabInstance:
       propertyPath: gravityModifier
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5096965516750127908, guid: a83347a573d18664cb2f67dc7d21455d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 36.771843
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096965516750127908, guid: a83347a573d18664cb2f67dc7d21455d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.4552e-11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096965516750127908, guid: a83347a573d18664cb2f67dc7d21455d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -18.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096965516750127908, guid: a83347a573d18664cb2f67dc7d21455d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -621.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5145521354616243835, guid: a83347a573d18664cb2f67dc7d21455d,
         type: 3}
       propertyPath: m_Convex
@@ -9968,6 +10023,11 @@ PrefabInstance:
       propertyPath: directionalLight
       value: 
       objectReference: {fileID: 1591134791}
+    - target: {fileID: 6629389365709302903, guid: a83347a573d18664cb2f67dc7d21455d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6868647279544510274, guid: a83347a573d18664cb2f67dc7d21455d,
         type: 3}
       propertyPath: m_Constraints
@@ -10023,6 +10083,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 8782214337907984595, guid: a83347a573d18664cb2f67dc7d21455d,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1340950973134705180}
+    - target: {fileID: 8782214337907984595, guid: a83347a573d18664cb2f67dc7d21455d,
+        type: 3}
+      propertyPath: directionalLight
+      value: 
+      objectReference: {fileID: 1591134791}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a83347a573d18664cb2f67dc7d21455d, type: 3}
 --- !u!1 &4505301985778153973 stripped
