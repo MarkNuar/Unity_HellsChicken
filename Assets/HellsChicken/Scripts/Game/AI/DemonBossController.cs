@@ -28,7 +28,7 @@ public class DemonBossController : MonoBehaviour
 
     public void Update()
     {
-
+        
         if (_movement.x != 0)
             _isMoving = true;
         else
@@ -49,6 +49,7 @@ public class DemonBossController : MonoBehaviour
         if (other.gameObject.CompareTag("Attack"))
         {
             _health -= 10;
+            Debug.Log("oo");
         }
     }
 }
