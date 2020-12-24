@@ -11,6 +11,9 @@ public class DemonBossController : MonoBehaviour
     public Transform player;
     
     private GameObject bossSpine;
+    private GameObject bossHead;
+    private GameObject bossSword;
+    
     private bool isFlipped;
     private bool _isDead;
     private bool _isEnraged;
@@ -20,6 +23,8 @@ public class DemonBossController : MonoBehaviour
     public void Start()
     {
         bossSpine = GameObject.Find("DEMON_LORD_ Spine");
+        bossHead = GameObject.Find("DEMON_LORD_ Head");
+        bossSword = GameObject.Find("DEMON_LORD_SWORD");
     }
 
     public void Update()
@@ -32,7 +37,7 @@ public class DemonBossController : MonoBehaviour
             _isDead = true;
         
         if (_isDead)
-            StartCoroutine(DemonBossDeath(3f));
+            StartCoroutine(DemonBossDeath(5f));
         
         anim.SetBool("isDead",_isDead);
     }
@@ -70,6 +75,8 @@ public class DemonBossController : MonoBehaviour
     IEnumerator DemonBossDeath(float timer)
     {
         bossSpine.GetComponent<CapsuleCollider>().enabled = false;
+        bossSword.GetComponent<CapsuleCollider>().enabled = false;
+        bossHead.GetComponent<SphereCollider>().enabled = false;
         yield return new WaitForSeconds(timer);
         Destroy(gameObject);
     }
