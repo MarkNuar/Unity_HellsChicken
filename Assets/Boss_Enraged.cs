@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss_Walk : StateMachineBehaviour
+public class Boss_Enraged : StateMachineBehaviour
 {
-    public float speed;
-    public float attackRange;
-    public float flyAwayRange;
-    public float whipRange;
-    public float maxRange;
+   public float enragedSpeed;
+    public float enraged2HitComboRange;
+    public float enragedFlyAwayRange;
+    public float enraged3HitComboRange;
+    public float enragedMaxRange;
     
     private bool hasStoppedFlying;
     private GameObject player;
@@ -38,31 +38,33 @@ public class Boss_Walk : StateMachineBehaviour
         _demonBossController.LookAtPlayer();
         target = new Vector3(player.transform.position.x, demonBoss.transform.position.y,demonBoss.transform.position.z);
         moveVector = target - demonBoss.transform.position;
-        _bossCharacterController.Move(moveVector * speed * Time.deltaTime);
+        _bossCharacterController.Move(moveVector * enragedSpeed * Time.deltaTime);
 
-        if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= attackRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) >= flyAwayRange)
+        if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= enraged2HitComboRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) >= enragedFlyAwayRange)
         {
             demonBossSword.GetComponent<CapsuleCollider>().enabled = true;
-            animator.SetTrigger("SwordAttack2");
+            animator.SetTrigger("2HitCombo");
         }
 
-        if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= flyAwayRange && hasStoppedFlying)
+        if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= enragedFlyAwayRange && hasStoppedFlying)
         {
-            animator.SetTrigger("FlyBackwards");
+            animator.SetTrigger("EnragedFlyBackwards");
             hasStoppedFlying = false;
         }
 
-        if (Vector3.Distance(player.transform.position, demonBoss.transform.position) >= whipRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) <= maxRange)
+        if (Vector3.Distance(player.transform.position, demonBoss.transform.position) >= enraged3HitComboRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) <= enragedMaxRange)
         {
-            animator.SetTrigger("WhipAttack");
+            animator.SetTrigger("3HitCombo");
         }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.ResetTrigger("SwordAttack2");
+        animator.ResetTrigger("2HitCombo");
         animator.ResetTrigger("FlyBackwards");
-        animator.ResetTrigger("WhipAttack");
+        animator.ResetTrigger("3HitCombo");
     }
+
+   
 }

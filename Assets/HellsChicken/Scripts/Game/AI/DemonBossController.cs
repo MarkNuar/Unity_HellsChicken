@@ -5,23 +5,32 @@ using UnityEngine;
 
 public class DemonBossController : MonoBehaviour
 {
-    [SerializeField] public int _health = 100;
+    [SerializeField] public int _health;
+    [SerializeField] public int _enragedHealth;
     public Animator anim;
     public Transform player;
     
-    
+    private GameObject bossSpine;
     private bool isFlipped;
     private bool _isDead;
     private bool _isEnraged;
     private bool _isDamaged;
 
+
+    public void Start()
+    {
+        bossSpine = GameObject.Find("DEMON_LORD_ Spine");
+    }
+
     public void Update()
     {
 
+        if(_health == _enragedHealth)
+            anim.SetTrigger("Enraged");
+        
         if (_health == 0)
             _isDead = true;
-
-
+        
         if (_isDead)
             StartCoroutine(DemonBossDeath(3f));
         
@@ -60,6 +69,7 @@ public class DemonBossController : MonoBehaviour
 
     IEnumerator DemonBossDeath(float timer)
     {
+        bossSpine.GetComponent<CapsuleCollider>().enabled = false;
         yield return new WaitForSeconds(timer);
         Destroy(gameObject);
     }
