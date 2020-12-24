@@ -7,7 +7,9 @@ public class DemonBossController : MonoBehaviour
 {
     [SerializeField] public int _health = 100;
     public Animator anim;
-    private CharacterController _characterController;
+    public bool isFlipped;
+    public Transform player;
+    
     private Vector3 _movement;
 
     private bool _isMoving;
@@ -18,7 +20,7 @@ public class DemonBossController : MonoBehaviour
 
     public void Awake()
     {
-        _characterController = GetComponent<CharacterController>();
+        
     }
 
     public void Start()
@@ -41,7 +43,6 @@ public class DemonBossController : MonoBehaviour
         anim.SetBool("isMoving",_isMoving);
         anim.SetBool("isDead",_isDead);
         
-        _characterController.Move(_movement * Time.deltaTime);
     }
 
     public void OnCollisionEnter(Collision other)
@@ -50,6 +51,26 @@ public class DemonBossController : MonoBehaviour
         {
             _health -= 10;
             Debug.Log("oo");
+        }
+    }
+
+    public void LookAtPlayer()
+    {
+        Vector3 flipped = transform.localScale;
+        flipped.z *= -1f;
+
+        if (transform.position.x > player.position.x && isFlipped)
+        {
+            transform.localScale = flipped;
+            transform.Rotate(0f,180f,0f);
+            isFlipped = false;
+        }
+        
+        else if (transform.position.x < player.position.x && !isFlipped)
+        {
+            transform.localScale = flipped;
+            transform.Rotate(0f, 180f, 0f);
+            isFlipped = true;
         }
     }
 }
