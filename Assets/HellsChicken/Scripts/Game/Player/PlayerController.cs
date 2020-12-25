@@ -388,11 +388,11 @@ namespace HellsChicken.Scripts.Game.Player
                         _isGliding = false;
 
                         if (_isMoving)
-                            EventManager.TriggerEvent("footSteps");
+                            EventManager.TriggerEvent("footsteps");
                     }
 
                     if (!_isMoving || !IsGrounded())
-                        EventManager.TriggerEvent("stopFootSteps");
+                        EventManager.TriggerEvent("stopFootsteps");
 
                     //JUMPING
                     if (IsGrounded() && Input.GetButtonDown("Jump"))

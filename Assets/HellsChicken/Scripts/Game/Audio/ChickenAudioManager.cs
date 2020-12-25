@@ -6,7 +6,7 @@ namespace HellsChicken.Scripts.Game.Audio
     public class ChickenAudioManager : Singleton<ChickenAudioManager>
     {
         [SerializeField] private AudioSource flameThrowerAudioSource;
-        [SerializeField] private AudioSource footStepsAudioSource;
+        [SerializeField] private AudioSource footstepsAudioSource;
         [SerializeField] private AudioSource wingsFlappingAudioSource;
         [SerializeField] private AudioSource chickenDamageAudioSource;
         [SerializeField] private AudioSource chickenDeathAudioSource;
@@ -17,7 +17,7 @@ namespace HellsChicken.Scripts.Game.Audio
 
 
         [SerializeField] private AudioClip flameThrowerSound;
-        [SerializeField] private AudioClip footStepsSound;
+        [SerializeField] private AudioClip footstepsSound;
         [SerializeField] private AudioClip wingsFlappingSound;
         [SerializeField] private AudioClip chickenDamageSound;
         [SerializeField] private AudioClip chickenDeathSound;
@@ -29,8 +29,8 @@ namespace HellsChicken.Scripts.Game.Audio
 
         protected override void Awake() {
             EventManager.StartListening("flameThrower", FlameThrower);
-            EventManager.StartListening("footSteps", FootSteps);
-            EventManager.StartListening("stopFootSteps",StopFootSteps);
+            EventManager.StartListening("footsteps", Footsteps);
+            EventManager.StartListening("stopFootsteps",StopFootsteps);
             EventManager.StartListening("wingsFlap", WingsFlap);
             EventManager.StartListening("chickenDamage",ChickenDamage);
             EventManager.StartListening("chickenDeath",ChickenDeath);
@@ -50,20 +50,20 @@ namespace HellsChicken.Scripts.Game.Audio
             EventManager.StartListening("flameThrower", FlameThrower);
         }
 
-        private void FootSteps()
+        private void Footsteps()
         {
-            EventManager.StopListening("footSteps", FootSteps);
-            footStepsAudioSource.clip = footStepsSound;
-            if (!footStepsAudioSource.isPlaying)
-                footStepsAudioSource.Play();
-            EventManager.StartListening("footSteps",FootSteps);
+            EventManager.StopListening("footsteps", Footsteps);
+            footstepsAudioSource.clip = footstepsSound;
+            if (!footstepsAudioSource.isPlaying)
+                footstepsAudioSource.Play();
+            EventManager.StartListening("footSteps",Footsteps);
         }
 
-        private void StopFootSteps()
+        private void StopFootsteps()
         {
-            EventManager.StopListening("stopFootSteps",StopFootSteps);
-            footStepsAudioSource.Stop();
-            EventManager.StartListening("stopFootSteps",StopFootSteps);
+            EventManager.StopListening("stopFootsteps",StopFootsteps);
+            footstepsAudioSource.Stop();
+            EventManager.StartListening("stopFootsteps",StopFootsteps);
         }
 
         private void WingsFlap()

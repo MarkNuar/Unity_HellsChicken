@@ -248,6 +248,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 535368592921623705, guid: 3b2e08a2edd553945ad17d8016d01055,
+        type: 3}
+      propertyPath: footstepsSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c6daf91db4ec2d0499c4166b3e016306, type: 3}
+    - target: {fileID: 535368592921623705, guid: 3b2e08a2edd553945ad17d8016d01055,
+        type: 3}
+      propertyPath: footstepsAudioSource
+      value: 
+      objectReference: {fileID: 2104467274}
     - target: {fileID: 662464222376940482, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -588,3 +598,9 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &2104467274 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8330016071506394841, guid: 3b2e08a2edd553945ad17d8016d01055,
+    type: 3}
+  m_PrefabInstance: {fileID: 378639814}
+  m_PrefabAsset: {fileID: 0}
