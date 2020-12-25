@@ -463,6 +463,7 @@
                 <e p="PendulumEngine.cs" t="Include" />
                 <e p="Rock" t="Include">
                   <e p="FallingRock.cs" t="Include" />
+                  <e p="RockEndLevel.cs" t="Include" />
                   <e p="RockObstacle.cs" t="Include" />
                   <e p="SpawningRock.cs" t="Include" />
                 </e>

@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using EventManagerNamespace;
 using UnityEngine;
 
 public class DemonBossController : MonoBehaviour
 {
     [SerializeField] public int _MaxHealth;
     [SerializeField] public int _enragedHealth;
+    public GameObject healthBarCanvas;
     public HealthBarScript _healthBar;
     private int _currentHealth;
     public Animator anim;
@@ -29,6 +31,7 @@ public class DemonBossController : MonoBehaviour
         bossSword = GameObject.Find("DEMON_LORD_SWORD");
         _currentHealth = _MaxHealth;
         _healthBar.SetMaxHealth(_MaxHealth);
+        EventManager.StartListening("activateHealthBar",ActivateHealthBar);
     }
 
     public void Update()
@@ -90,5 +93,12 @@ public class DemonBossController : MonoBehaviour
     {
         yield return new WaitForSeconds(timer);
         anim.ResetTrigger("isDamaged");
+    }
+
+    private void ActivateHealthBar()
+    {        
+        EventManager.StopListening("activateHealthBar",ActivateHealthBar);
+        healthBarCanvas.SetActive(true);
+        EventManager.StartListening("activateHealthBar",ActivateHealthBar);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using EventManagerNamespace;
 using UnityEngine;
 
 public class Boss_TriggerFight : StateMachineBehaviour
@@ -20,7 +21,10 @@ public class Boss_TriggerFight : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= startFightRange)
+        {
+            EventManager.TriggerEvent("activateHealthBar");
             animator.SetTrigger("StartFight");
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

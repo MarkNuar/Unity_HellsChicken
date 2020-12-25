@@ -183,10 +183,20 @@ PrefabInstance:
       propertyPath: _enragedHealth
       value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 4922902427029398395, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+    - target: {fileID: 3817650523487044720, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
+      propertyPath: healthBarCanvas
+      value: 
+      objectReference: {fileID: 750749121}
+    - target: {fileID: 4425651695835855292, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4922902427029398395, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5764805969776635508, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
         type: 3}
@@ -197,6 +207,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776638299163732140, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0000061989
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776638299163732140, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 215.1
       objectReference: {fileID: 0}
     - target: {fileID: 5811885408183834236, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
         type: 3}
@@ -252,6 +272,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034744108476025226, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086, type: 3}
@@ -482,6 +507,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &750749121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4922902427029398395, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+    type: 3}
+  m_PrefabInstance: {fileID: 139576524}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &904955785
 GameObject:
   m_ObjectHideFlags: 0
