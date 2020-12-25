@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class DemonBossController : MonoBehaviour
 {
-    [SerializeField] public int _health;
+    [SerializeField] public int _MaxHealth;
     [SerializeField] public int _enragedHealth;
+    public HealthBarScript _healthBar;
+    private int _currentHealth;
     public Animator anim;
     public Transform player;
     
@@ -25,15 +27,17 @@ public class DemonBossController : MonoBehaviour
         bossSpine = GameObject.Find("DEMON_LORD_ Spine");
         bossHead = GameObject.Find("DEMON_LORD_ Head");
         bossSword = GameObject.Find("DEMON_LORD_SWORD");
+        _currentHealth = _MaxHealth;
+        _healthBar.SetMaxHealth(_MaxHealth);
     }
 
     public void Update()
     {
 
-        if(_health == _enragedHealth)
+        if(_currentHealth == _enragedHealth)
             anim.SetTrigger("Enraged");
         
-        if (_health == 0)
+        if (_currentHealth == 0)
             _isDead = true;
         
         if (_isDead)
@@ -46,7 +50,8 @@ public class DemonBossController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Attack"))
         {
-            _health -= 10;
+            _currentHealth -= 10;
+            _healthBar.SetHealth(_currentHealth);
             anim.SetTrigger("isDamaged");
             StartCoroutine(ResetTrigger(0.5f));
         }

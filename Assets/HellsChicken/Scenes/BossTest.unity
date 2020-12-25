@@ -163,6 +163,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3360389625238600049, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3817650523487044720, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
         type: 3}
       propertyPath: player
@@ -176,7 +181,22 @@ PrefabInstance:
     - target: {fileID: 3817650523487044720, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
         type: 3}
       propertyPath: _enragedHealth
-      value: 100
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4922902427029398395, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764805969776635508, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764805969776635508, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5811885408183834236, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
         type: 3}
