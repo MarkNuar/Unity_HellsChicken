@@ -215,6 +215,15 @@
               <e p="UnityReferenceHelper.cs" t="Include" />
             </e>
           </e>
+          <e p="HEROIC FANTASY CREATURES FULL PACK VOL 1" t="Include">
+            <e p="Demonic Creatures Pack" t="Include">
+              <e p="Demon Lord" t="Include">
+                <e p="Script" t="Include">
+                  <e p="ScrollingUVs.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
           <e p="Hovl Studio" t="Include">
             <e p="Procedural fire" t="Include">
               <e p="Shaders" t="Include">
@@ -395,12 +404,9 @@
             <e p="Game" t="Include">
               <e p="AI" t="Include">
                 <e p="Centaur" t="Include">
-                  <e p="Bow" t="Include">
-                    <e p="BowDirection.cs" t="Include" />
-                    <e p="CentaurFire.cs" t="Include" />
-                  </e>
                   <e p="CentaurAI.cs" t="Include" />
                   <e p="CentaurAICC.cs" t="Include" />
+                  <e p="CentaurFire.cs" t="Include" />
                   <e p="Explosion" t="Include">
                     <e p="Explosion.cs" t="Include" />
                   </e>
@@ -410,6 +416,16 @@
                   <e p="DTAction.cs" t="Include" />
                   <e p="DTDecision.cs" t="Include" />
                   <e p="IDTNode.cs" t="Include" />
+                </e>
+                <e p="DemonBoss" t="Include">
+                  <e p="DemonBossController.cs" t="Include" />
+                  <e p="StateMachine" t="Include">
+                    <e p="Boss_Enraged.cs" t="Include" />
+                    <e p="Boss_EnragedFlyAway.cs" t="Include" />
+                    <e p="Boss_FlyAway.cs" t="Include" />
+                    <e p="Boss_TriggerFight.cs" t="Include" />
+                    <e p="Boss_Walk.cs" t="Include" />
+                  </e>
                 </e>
                 <e p="Goomba" t="Include">
                   <e p="BombExplosion.cs" t="Include" />
@@ -428,6 +444,7 @@
                 <e p="ChickenAudioManager.cs" t="Include" />
                 <e p="ChickenThighAudioManager.cs" t="Include" />
                 <e p="DeathGoombaAudioManager.cs" t="Include" />
+                <e p="DemonLordAudioManager.cs" t="Include" />
                 <e p="EggAudioManager.cs" t="Include" />
                 <e p="GameAudioManager.cs" t="Include" />
                 <e p="GoombaAudioManager.cs" t="Include" />
@@ -445,9 +462,11 @@
                 <e p="PendulumEngine.cs" t="Include" />
                 <e p="Rock" t="Include">
                   <e p="FallingRock.cs" t="Include" />
+                  <e p="RockEndLevel.cs" t="Include" />
                   <e p="RockObstacle.cs" t="Include" />
                   <e p="SpawningRock.cs" t="Include" />
                 </e>
+                <e p="RollingRockGenerator.cs" t="Include" />
                 <e p="SpearMovement.cs" t="Include" />
               </e>
               <e p="FireBallGenerator" t="Include">
@@ -455,10 +474,12 @@
                 <e p="FireBallGenerator.cs" t="Include" />
               </e>
               <e p="GameManager.cs" t="Include" />
+              <e p="LandingDustScript.cs" t="Include" />
               <e p="LevelManager.cs" t="Include" />
               <e p="Light" t="Include">
                 <e p="LightController.cs" t="Include" />
                 <e p="LightSwitchController.cs" t="Include" />
+                <e p="NewLightSwitchController.cs" t="Include" />
               </e>
               <e p="LightningGeneratorScript.cs" t="Include" />
               <e p="Platform" t="Include">
@@ -471,6 +492,7 @@
                   </e>
                 </e>
                 <e p="FallenPlatform.cs" t="Include" />
+                <e p="PlatformController.cs" t="Include" />
                 <e p="PlatformMoveX.cs" t="Include" />
                 <e p="PlatformMoveY.cs" t="Include" />
               </e>
@@ -491,7 +513,6 @@
                 </e>
                 <e p="PlayerController.cs" t="Include" />
               </e>
-              <e p="SettingsMenu.cs" t="Include" />
               <e p="SkyBoxRotation.cs" t="Include" />
               <e p="UI" t="Include">
                 <e p="Crosshair" t="Include">
@@ -510,11 +531,11 @@
                   <e p="MainMenu.cs" t="Include" />
                   <e p="PauseMenu.cs" t="Include" />
                 </e>
+                <e p="SettingsMenu.cs" t="Include" />
               </e>
             </e>
           </e>
         </e>
-        <e p="LandingDustScript.cs" t="Include" />
         <e p="Particle Ribbon by Moonflower Carnivore" t="Include">
           <e p="readme_Simple_Particle_Ribbon.txt" t="Include" />
           <e p="Scripts" t="Include">
@@ -526,7 +547,6 @@
             <e p="Particle Alpha Blend HDR.shader" t="Include" />
           </e>
         </e>
-        <e p="RollingRockGenerator.cs" t="Include" />
       </e>
       <e p="AstarPathfindingProject.csproj" t="IncludeRecursive" />
       <e p="AstarPathfindingProjectEditor.csproj" t="IncludeRecursive" />

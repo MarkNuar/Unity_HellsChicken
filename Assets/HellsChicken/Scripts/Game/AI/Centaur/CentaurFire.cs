@@ -41,6 +41,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur.Bow
         //Search for the angle for the trajectory.
         public void FindAngle(bool right,Vector3 arrowPosition) 
         {
+            _target = new Vector3(_target.x,_target.y - 1f,_target.z);
             float g = -Physics.gravity.y;
             float v2 = initialVelocity * initialVelocity;
             float v4 = v2 * v2;
