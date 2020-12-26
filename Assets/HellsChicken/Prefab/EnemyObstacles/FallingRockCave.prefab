@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 1371468764284555596}
   - component: {fileID: 6044325165517402664}
   - component: {fileID: 2782288018290465053}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FallingRockCave
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
