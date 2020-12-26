@@ -312,7 +312,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
             }
             
             if(other.gameObject.CompareTag("Attack"))
-                StartCoroutine(CentaurDeath(3f));
+                TriggerCentaurDeath();
 
         }
     
@@ -325,6 +325,11 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
         private void OnDestroy() {
             if(_textInstance != null)
                 Destroy(_textInstance);                
+        }
+
+        public void TriggerCentaurDeath()
+        {
+            StartCoroutine(CentaurDeath(3f));
         }
         
         IEnumerator CentaurDeath(float time)

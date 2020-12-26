@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using HellsChicken.Scripts.Game.AI.Centaur;
 using HellsChicken.Scripts.Game.Player.Egg;
 using UnityEngine;
 
@@ -22,8 +23,11 @@ namespace HellsChicken.Scripts.Game.Player.FlameStream {
                 
                 if(destr == null)    
                     destr = other.gameObject.transform.parent.GetComponent<Destruction>();
-                
-                destr.Destroyer();
+
+                if (destr != null)
+                    destr.Destroyer();
+                else
+                    other.GetComponent<CentaurAICC>().TriggerCentaurDeath();
             }
         }
     }
