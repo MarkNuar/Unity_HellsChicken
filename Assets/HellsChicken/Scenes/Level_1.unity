@@ -1540,12 +1540,6 @@ Transform:
   m_Father: {fileID: 1505612702}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &472914605 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 138184, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 580081589}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &482679094
 GameObject:
   m_ObjectHideFlags: 0
@@ -3340,7 +3334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rollingRockPrefab: {fileID: 2897304115115655222, guid: 842c37f1b02f56646bfd7a20bebbba91,
     type: 3}
-  rockSpawnInterval: 10
+  rockSpawnInterval: 5
 --- !u!4 &940782887 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4022345223647062595, guid: a78ef1c5dc5dd9d48b5cb4c6fb867766,
@@ -3954,7 +3948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00020e6749226fd42b4112577a9888f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialCheckPoint: {fileID: 472914605}
+  initialCheckPoint: {fileID: 1361111386}
   initialLight: {fileID: 1591134791}
   levelNumber: 1
 --- !u!1001 &1053470446
@@ -5459,6 +5453,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4022345223647062595, guid: a78ef1c5dc5dd9d48b5cb4c6fb867766,
     type: 3}
   m_PrefabInstance: {fileID: 1359518674}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1361111386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 138184, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1761734873}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1371516455 stripped
 Transform:
