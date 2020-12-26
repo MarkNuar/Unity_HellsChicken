@@ -20,7 +20,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44fa9eaf-4901-4eb4-b858-67c1b19b2312" name="Default Changelist" comment="Some changing">
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/FallingRockCave.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/EnemyObstacles/FallingRockCave.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Audio/DemonBoss/Heavy Footstep Sound Effect HDHQ (mp3cut.net).wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Audio/DemonBoss/Heavy Footstep Sound Effect HDHQ (mp3cut.net).wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Audio/DemonBoss/Impact on Metal Sound Effect Third Variation.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Audio/DemonBoss/Impact on Metal Sound Effect Third Variation.mp3.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Audio/DemonBoss/Large dragon wings flapping SOUND EFFECTS.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Audio/DemonBoss/Large dragon wings flapping SOUND EFFECTS.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Audio/DemonBoss/Whip Lashing Sound Effect 2.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Audio/DemonBoss/Whip Lashing Sound Effect 2.mp3.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/HEROIC FANTASY CREATURES FULL PACK VOL 1/Demonic Creatures Pack/Demon Lord/DemonLord_Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/HEROIC FANTASY CREATURES FULL PACK VOL 1/Demonic Creatures Pack/Demon Lord/DemonLord_Controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/DemonCharacterController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/DemonCharacterController.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/DemonBossController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/DemonBossController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_Enraged.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_Enraged.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_EnragedFlyAway.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_EnragedFlyAway.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_FlyAway.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_FlyAway.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_TriggerFight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_TriggerFight.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_Walk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_Walk.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/DemonLordAudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/DemonLordAudioManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,10 +76,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/RockAudioSource.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/Rock/RockObstacle.cs" />
-        <option value="$PROJECT_DIR$/Assets/SpearAudioManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/SpearMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/BladeAudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/BladeAudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/BladeMovement.cs" />
@@ -101,14 +115,18 @@
         <option value="$PROJECT_DIR$/Assets/Boss_FlyAway.cs" />
         <option value="$PROJECT_DIR$/Assets/Boss_TriggerFight.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBossController.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/DemonLordAudioManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/ChickenAudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/HealthBarScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_TriggerFight.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/DemonBossController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAICC.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/FlameStream/ParticleCollision.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/ChickenAudioManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/DemonLordAudioManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_Walk.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_FlyAway.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_Enraged.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_EnragedFlyAway.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/DemonBossController.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_TriggerFight.cs" />
       </list>
     </option>
   </component>

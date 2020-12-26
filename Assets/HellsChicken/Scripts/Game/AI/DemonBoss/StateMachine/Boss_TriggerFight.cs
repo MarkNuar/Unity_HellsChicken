@@ -20,7 +20,7 @@ public class Boss_TriggerFight : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= startFightRange)
+        if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= startFightRange || demonBoss.GetComponent<DemonBossController>().getHasStartedFight())
         {
             EventManager.TriggerEvent("activateHealthBar");
             animator.SetTrigger("StartFight");
@@ -32,6 +32,5 @@ public class Boss_TriggerFight : StateMachineBehaviour
     {
         animator.ResetTrigger("StartFight");
     }
-
 
 }

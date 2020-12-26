@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using EventManagerNamespace;
 using UnityEngine;
 
 public class Boss_EnragedFlyAway : StateMachineBehaviour
@@ -38,6 +39,8 @@ public class Boss_EnragedFlyAway : StateMachineBehaviour
 
         if(Vector3.Distance(player.transform.position, demonBoss.transform.position) >= enragedLandingCoordinateX)
             animator.SetTrigger("EnragedStopFlying");
+        
+        EventManager.TriggerEvent("demonWings");
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

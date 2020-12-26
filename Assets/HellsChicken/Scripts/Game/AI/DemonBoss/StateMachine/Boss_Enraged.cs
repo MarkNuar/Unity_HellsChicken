@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using EventManagerNamespace;
 using UnityEngine;
 
 public class Boss_Enraged : StateMachineBehaviour
@@ -39,6 +40,7 @@ public class Boss_Enraged : StateMachineBehaviour
         target = new Vector3(player.transform.position.x, demonBoss.transform.position.y,demonBoss.transform.position.z);
         moveVector = target - demonBoss.transform.position;
         _bossCharacterController.Move(moveVector * enragedSpeed * Time.deltaTime);
+        EventManager.TriggerEvent("demonFootsteps");
 
         if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= enraged2HitComboRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) >= enragedFlyAwayRange)
         {
@@ -64,6 +66,7 @@ public class Boss_Enraged : StateMachineBehaviour
         animator.ResetTrigger("2HitCombo");
         animator.ResetTrigger("FlyBackwards");
         animator.ResetTrigger("3HitCombo");
+        EventManager.TriggerEvent("stopDemonFootsteps");
     }
 
    

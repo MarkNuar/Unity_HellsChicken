@@ -45,9 +45,9 @@ public class DemonLordAudioManager : MonoBehaviour
     
     private void StopFootsteps()
     {
-        EventManager.StopListening("demonFootsteps", StopFootsteps);
+        EventManager.StopListening("stopDemonFootsteps", StopFootsteps);
         demonLordFootStepsAudioSource.Stop();
-        EventManager.StartListening("demonFootsteps", StopFootsteps);
+        EventManager.StartListening("stopDemonFootsteps", StopFootsteps);
     }
     
     private void WingsFlap()

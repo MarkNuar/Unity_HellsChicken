@@ -396,7 +396,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 50
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1080,11 +1080,12 @@ MonoBehaviour:
   demonLordSwordAudioSource: {fileID: 496096775796545479}
   demonLordRoarAudioSource: {fileID: 9090675599350702451}
   demonLordDamageAudioSource: {fileID: 716887736113051149}
-  demonLordFootStepsSound: {fileID: 0}
-  demonLordWingsSound: {fileID: 0}
-  demonLordWhipSound: {fileID: 0}
+  demonLordFootStepsSound: {fileID: 8300000, guid: a18374f2cb2a2b54485a22ce737f274d,
+    type: 3}
+  demonLordWingsSound: {fileID: 8300000, guid: d3939addb573a57438f6177b57e2cab7, type: 3}
+  demonLordWhipSound: {fileID: 8300000, guid: c81f61b1233ee6f479221dcf5e66024e, type: 3}
   demonLordDeathSound: {fileID: 0}
-  demonLordSwordSound: {fileID: 0}
+  demonLordSwordSound: {fileID: 8300000, guid: 02ae442e91b10eb4d8d8d94e9bfd61ce, type: 3}
   demonLordRoarSound: {fileID: 0}
   demonLordDamageSound: {fileID: 0}
 --- !u!1 &7717224037734616017

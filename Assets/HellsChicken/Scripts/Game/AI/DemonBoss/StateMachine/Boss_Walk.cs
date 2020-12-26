@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using EventManagerNamespace;
 using UnityEngine;
 
 public class Boss_Walk : StateMachineBehaviour
@@ -39,22 +40,26 @@ public class Boss_Walk : StateMachineBehaviour
         target = new Vector3(player.transform.position.x, demonBoss.transform.position.y,demonBoss.transform.position.z);
         moveVector = target - demonBoss.transform.position;
         _bossCharacterController.Move(moveVector * speed * Time.deltaTime);
-
-        if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= attackRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) >= flyAwayRange)
-        {
-            demonBossSword.GetComponent<CapsuleCollider>().enabled = true;
-            animator.SetTrigger("SwordAttack2");
-        }
+        EventManager.TriggerEvent("demonFootsteps");
 
         if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= flyAwayRange && hasStoppedFlying)
         {
             animator.SetTrigger("FlyBackwards");
             hasStoppedFlying = false;
         }
+        
+        if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= attackRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) >= flyAwayRange)
+        {
+            demonBossSword.GetComponent<CapsuleCollider>().enabled = true;
+            animator.SetTrigger("SwordAttack2");
+            EventManager.TriggerEvent("demonSword");
+        }
+        
 
         if (Vector3.Distance(player.transform.position, demonBoss.transform.position) >= whipRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) <= maxRange)
         {
             animator.SetTrigger("WhipAttack");
+            EventManager.TriggerEvent("demonWhip");
         }
     }
 
@@ -64,5 +69,6 @@ public class Boss_Walk : StateMachineBehaviour
         animator.ResetTrigger("SwordAttack2");
         animator.ResetTrigger("FlyBackwards");
         animator.ResetTrigger("WhipAttack");
+        EventManager.TriggerEvent("stopDemonFootsteps");
     }
 }

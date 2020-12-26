@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using EventManagerNamespace;
+using Pathfinding.Util;
 using UnityEngine;
 
 public class DemonBossController : MonoBehaviour
@@ -19,10 +20,7 @@ public class DemonBossController : MonoBehaviour
     private GameObject bossSword;
     
     private bool isFlipped;
-    private bool _isDead;
-    private bool _isEnraged;
-    private bool _isDamaged;
-
+    private bool hasStartedFight;
 
     public void Start()
     {
@@ -32,6 +30,7 @@ public class DemonBossController : MonoBehaviour
         _currentHealth = _MaxHealth;
         _healthBar.SetMaxHealth(_MaxHealth);
         EventManager.StartListening("activateHealthBar",ActivateHealthBar);
+        hasStartedFight = false;
     }
 
     public void Update()
@@ -39,20 +38,17 @@ public class DemonBossController : MonoBehaviour
 
         if(_currentHealth == _enragedHealth)
             anim.SetTrigger("Enraged");
-        
+
         if (_currentHealth == 0)
-            _isDead = true;
+            DemonBossDeath();
         
-        if (_isDead)
-            StartCoroutine(DemonBossDeath(5f));
-        
-        anim.SetBool("isDead",_isDead);
     }
 
     public void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Attack"))
         {
+            hasStartedFight = true;
             _currentHealth -= 10;
             _healthBar.SetHealth(_currentHealth);
             anim.SetTrigger("isDamaged");
@@ -80,13 +76,12 @@ public class DemonBossController : MonoBehaviour
         }
     }
 
-    IEnumerator DemonBossDeath(float timer)
+    void DemonBossDeath()
     {
+        anim.SetTrigger("isDead");
         bossSpine.GetComponent<CapsuleCollider>().enabled = false;
         bossSword.GetComponent<CapsuleCollider>().enabled = false;
         bossHead.GetComponent<SphereCollider>().enabled = false;
-        yield return new WaitForSeconds(timer);
-        Destroy(gameObject);
     }
 
     IEnumerator ResetTrigger(float timer)
@@ -100,5 +95,10 @@ public class DemonBossController : MonoBehaviour
         EventManager.StopListening("activateHealthBar",ActivateHealthBar);
         healthBarCanvas.SetActive(true);
         EventManager.StartListening("activateHealthBar",ActivateHealthBar);
+    }
+
+    public bool getHasStartedFight()
+    {
+        return hasStartedFight;
     }
 }
