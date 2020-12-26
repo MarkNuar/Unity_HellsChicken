@@ -399,7 +399,6 @@
             </e>
           </e>
         </e>
-        <e p="HealthBarScript.cs" t="Include" />
         <e p="HellsChicken" t="Include">
           <e p="Scripts" t="Include">
             <e p="Game" t="Include">
@@ -420,6 +419,7 @@
                 </e>
                 <e p="DemonBoss" t="Include">
                   <e p="DemonBossController.cs" t="Include" />
+                  <e p="HealthBarScript.cs" t="Include" />
                   <e p="StateMachine" t="Include">
                     <e p="Boss_Enraged.cs" t="Include" />
                     <e p="Boss_EnragedFlyAway.cs" t="Include" />

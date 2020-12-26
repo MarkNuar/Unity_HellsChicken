@@ -56,7 +56,7 @@ namespace HellsChicken.Scripts.Game.Audio
             footstepsAudioSource.clip = footstepsSound;
             if (!footstepsAudioSource.isPlaying)
                 footstepsAudioSource.Play();
-            EventManager.StartListening("footSteps",Footsteps);
+            EventManager.StartListening("footsteps",Footsteps);
         }
 
         private void StopFootsteps()
