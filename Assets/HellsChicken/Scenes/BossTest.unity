@@ -180,8 +180,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3817650523487044720, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
         type: 3}
+      propertyPath: _maxHealth
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817650523487044720, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
       propertyPath: _enragedHealth
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817650523487044720, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
+      propertyPath: _headShotValue
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3817650523487044720, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
         type: 3}

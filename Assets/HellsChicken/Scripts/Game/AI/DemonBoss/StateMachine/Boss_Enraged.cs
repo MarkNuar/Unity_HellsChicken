@@ -20,8 +20,8 @@ public class Boss_Enraged : StateMachineBehaviour
     private Vector3 target;
     private Vector3 moveVector;
 
-    
-     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+
+    //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         player = GameObject.Find("PlayerBody");

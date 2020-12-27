@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class DemonBossController : MonoBehaviour
 {
-    [SerializeField] public int _MaxHealth;
+    [SerializeField] public int _maxHealth;
     [SerializeField] public int _enragedHealth;
     [SerializeField] public int _headShotValue;
     [SerializeField] public int _chestShotValue;
@@ -29,8 +29,8 @@ public class DemonBossController : MonoBehaviour
         bossSpine = GameObject.Find("DEMON_LORD_ Spine");
         bossHead = GameObject.Find("DEMON_LORD_ Head");
         bossSword = GameObject.Find("DEMON_LORD_SWORD");
-        _currentHealth = _MaxHealth;
-        _healthBar.SetMaxHealth(_MaxHealth);
+        _currentHealth = _maxHealth;
+        _healthBar.SetMaxHealth(_maxHealth);
         EventManager.StartListening("activateHealthBar",ActivateHealthBar);
         hasStartedFight = false;
     }
@@ -44,7 +44,7 @@ public class DemonBossController : MonoBehaviour
         if (_currentHealth <= 0)
             DemonBossDeath();
 
-        if (_currentHealth != _MaxHealth)
+        if (_currentHealth != _maxHealth)
             hasStartedFight = true;
 
     }
