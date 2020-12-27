@@ -9,6 +9,8 @@ public class DemonBossController : MonoBehaviour
 {
     [SerializeField] public int _MaxHealth;
     [SerializeField] public int _enragedHealth;
+    [SerializeField] public int _headShotValue;
+    [SerializeField] public int _chestShotValue;
     public GameObject healthBarCanvas;
     public HealthBarScript _healthBar;
     private int _currentHealth;
@@ -36,23 +38,31 @@ public class DemonBossController : MonoBehaviour
     public void Update()
     {
 
-        if(_currentHealth == _enragedHealth)
+        if(_currentHealth <= _enragedHealth)
             anim.SetTrigger("Enraged");
 
-        if (_currentHealth == 0)
+        if (_currentHealth <= 0)
             DemonBossDeath();
-        
+
+        if (_currentHealth != _MaxHealth)
+            hasStartedFight = true;
+
     }
 
-    public void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Attack"))
+        foreach (ContactPoint contact in other.contacts)
         {
-            hasStartedFight = true;
-            _currentHealth -= 10;
-            _healthBar.SetHealth(_currentHealth);
-            anim.SetTrigger("isDamaged");
-            StartCoroutine(ResetTrigger(0.5f));
+            var colName = contact.thisCollider.name;
+            switch (colName)
+            {
+                case "DEMON_LORD_ Head":
+                    Headshot();
+                    break;
+                case "DEMON_LORD_ Spine":
+                    ChestShot();
+                    break;
+            }
         }
     }
 
@@ -100,5 +110,21 @@ public class DemonBossController : MonoBehaviour
     public bool getHasStartedFight()
     {
         return hasStartedFight;
+    }
+
+    public void Headshot()
+    {
+        _currentHealth -= _headShotValue;
+        _healthBar.SetHealth(_currentHealth);
+        anim.SetTrigger("isDamaged");
+        StartCoroutine(ResetTrigger(0.5f));
+    }
+
+    public void ChestShot()
+    {
+        _currentHealth -= _chestShotValue;
+        _healthBar.SetHealth(_currentHealth);
+        anim.SetTrigger("isDamaged");
+        StartCoroutine(ResetTrigger(0.5f));
     }
 }

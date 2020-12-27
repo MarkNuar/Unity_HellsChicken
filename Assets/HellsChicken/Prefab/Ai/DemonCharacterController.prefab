@@ -192,8 +192,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af014df6b99b35846a908927b8b20463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _MaxHealth: 100
-  _enragedHealth: 50
+  _MaxHealth: 200
+  _enragedHealth: 100
+  _headShotValue: 20
+  _chestShotValue: 10
   healthBarCanvas: {fileID: 4922902427029398395}
   _healthBar: {fileID: 1101945474830530907}
   anim: {fileID: 3587983244548550739}
