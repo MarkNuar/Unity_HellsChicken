@@ -37,26 +37,29 @@ public class Boss_Enraged : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _demonBossController.LookAtPlayer();
-        target = new Vector3(player.transform.position.x, demonBoss.transform.position.y,demonBoss.transform.position.z);
-        moveVector = target - demonBoss.transform.position;
-        _bossCharacterController.Move(moveVector * enragedSpeed * Time.deltaTime);
-        EventManager.TriggerEvent("demonFootsteps");
-
+        
         if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= enraged2HitComboRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) >= enragedFlyAwayRange)
         {
             demonBossSword.GetComponent<CapsuleCollider>().enabled = true;
             animator.SetTrigger("2HitCombo");
         }
 
-        if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= enragedFlyAwayRange && hasStoppedFlying)
+        else if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= enragedFlyAwayRange && hasStoppedFlying)
         {
             animator.SetTrigger("EnragedFlyBackwards");
             hasStoppedFlying = false;
         }
 
-        if (Vector3.Distance(player.transform.position, demonBoss.transform.position) >= enraged3HitComboRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) <= enragedMaxRange)
+        else if (Vector3.Distance(player.transform.position, demonBoss.transform.position) >= enraged3HitComboRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) <= enragedMaxRange)
         {
             animator.SetTrigger("3HitCombo");
+        }
+        else
+        {
+            target = new Vector3(player.transform.position.x, demonBoss.transform.position.y,demonBoss.transform.position.z);
+            moveVector = target - demonBoss.transform.position;
+            _bossCharacterController.Move(moveVector * enragedSpeed * Time.deltaTime);
+            EventManager.TriggerEvent("demonFootsteps");
         }
     }
 

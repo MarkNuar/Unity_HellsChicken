@@ -8,8 +8,8 @@ public class Boss_Walk : StateMachineBehaviour
     public float speed;
     public float attackRange;
     public float flyAwayRange;
-    public float whipRange;
-    public float maxRange;
+    public float minWhipRange;
+    public float maxWhipRange;
     
     private bool hasStoppedFlying;
     private GameObject player;
@@ -37,10 +37,6 @@ public class Boss_Walk : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _demonBossController.LookAtPlayer();
-        target = new Vector3(player.transform.position.x, demonBoss.transform.position.y,demonBoss.transform.position.z);
-        moveVector = target - demonBoss.transform.position;
-        _bossCharacterController.Move(moveVector * speed * Time.deltaTime);
-        EventManager.TriggerEvent("demonFootsteps");
 
         if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= flyAwayRange && hasStoppedFlying)
         {
@@ -48,18 +44,24 @@ public class Boss_Walk : StateMachineBehaviour
             hasStoppedFlying = false;
         }
         
-        if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= attackRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) >= flyAwayRange)
+        else if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= attackRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) >= flyAwayRange)
         {
             demonBossSword.GetComponent<CapsuleCollider>().enabled = true;
             animator.SetTrigger("SwordAttack2");
             EventManager.TriggerEvent("demonSword");
         }
         
-
-        if (Vector3.Distance(player.transform.position, demonBoss.transform.position) >= whipRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) <= maxRange)
+        else if (Vector3.Distance(player.transform.position, demonBoss.transform.position) >= minWhipRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) <= maxWhipRange)
         {
             animator.SetTrigger("WhipAttack");
             EventManager.TriggerEvent("demonWhip");
+        }
+        else
+        {
+            target = new Vector3(player.transform.position.x, demonBoss.transform.position.y,demonBoss.transform.position.z);
+            moveVector = target - demonBoss.transform.position;
+            _bossCharacterController.Move(moveVector * speed * Time.deltaTime);
+            EventManager.TriggerEvent("demonFootsteps");
         }
     }
 

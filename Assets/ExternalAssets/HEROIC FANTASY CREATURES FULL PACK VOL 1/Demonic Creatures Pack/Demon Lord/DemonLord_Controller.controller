@@ -1276,7 +1276,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 2HitCombo
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 5780144865722116502}
@@ -1541,7 +1541,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 3HitCombo
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 246580650509229047}
@@ -1834,8 +1834,8 @@ MonoBehaviour:
   speed: 0.5
   attackRange: 15
   flyAwayRange: 5
-  whipRange: 25
-  maxRange: 40
+  minWhipRange: 20
+  maxWhipRange: 40
 --- !u!1101 &3379533089576855879
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -2014,7 +2014,7 @@ MonoBehaviour:
   enragedSpeed: 1
   enraged2HitComboRange: 15
   enragedFlyAwayRange: 5
-  enraged3HitComboRange: 25
+  enraged3HitComboRange: 20
   enragedMaxRange: 40
 --- !u!1102 &6057849796207919965
 AnimatorState:
