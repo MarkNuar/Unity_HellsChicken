@@ -53,7 +53,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 50
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af014df6b99b35846a908927b8b20463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _MaxHealth: 200
+  _maxHealth: 0
   _enragedHealth: 100
   _headShotValue: 20
   _chestShotValue: 10
@@ -1060,6 +1060,7 @@ Transform:
   - {fileID: 6351060491816352599}
   - {fileID: 5682365323815246490}
   - {fileID: 5338051032235592578}
+  - {fileID: 8346187139856658959}
   m_Father: {fileID: 5811885408183834236}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1082,14 +1083,146 @@ MonoBehaviour:
   demonLordSwordAudioSource: {fileID: 496096775796545479}
   demonLordRoarAudioSource: {fileID: 9090675599350702451}
   demonLordDamageAudioSource: {fileID: 716887736113051149}
+  demonLordStartFightAudioSource: {fileID: 2065005315535054328}
   demonLordFootStepsSound: {fileID: 8300000, guid: a18374f2cb2a2b54485a22ce737f274d,
     type: 3}
   demonLordWingsSound: {fileID: 8300000, guid: d3939addb573a57438f6177b57e2cab7, type: 3}
   demonLordWhipSound: {fileID: 8300000, guid: c81f61b1233ee6f479221dcf5e66024e, type: 3}
-  demonLordDeathSound: {fileID: 0}
+  demonLordDeathSound: {fileID: 8300000, guid: ce9bc357a6795cc48a863d19be7aebcc, type: 3}
   demonLordSwordSound: {fileID: 8300000, guid: 02ae442e91b10eb4d8d8d94e9bfd61ce, type: 3}
-  demonLordRoarSound: {fileID: 0}
-  demonLordDamageSound: {fileID: 0}
+  demonLordRoarSound: {fileID: 8300000, guid: f3c41c252a2bc7b44ac1004400064dfc, type: 3}
+  demonLordDamageSound: {fileID: 8300000, guid: f0cf2a6a48f1ed446a62de94bcdb88ae,
+    type: 3}
+  demonLordStartFightSound: {fileID: 8300000, guid: 387a77df19be46249baf31552276f18a,
+    type: 3}
+--- !u!1 &7579303290825703098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8346187139856658959}
+  - component: {fileID: 2065005315535054328}
+  m_Layer: 0
+  m_Name: DemonLordStartFight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8346187139856658959
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7579303290825703098}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4724343437201083961}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &2065005315535054328
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7579303290825703098}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 2839429124338449466, guid: fb29555b3c6e781468c191fd32586e26,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 0
+  MinDistance: 1
+  MaxDistance: 50
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7717224037734616017
 GameObject:
   m_ObjectHideFlags: 0

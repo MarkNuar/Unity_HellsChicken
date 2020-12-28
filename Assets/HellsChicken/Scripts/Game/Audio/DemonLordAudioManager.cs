@@ -12,6 +12,7 @@ public class DemonLordAudioManager : MonoBehaviour
     [SerializeField] private AudioSource demonLordSwordAudioSource;
     [SerializeField] private AudioSource demonLordRoarAudioSource;
     [SerializeField] private AudioSource demonLordDamageAudioSource;
+    [SerializeField] private AudioSource demonLordStartFightAudioSource;
 
     [SerializeField] private AudioClip demonLordFootStepsSound;
     [SerializeField] private AudioClip demonLordWingsSound;
@@ -20,6 +21,7 @@ public class DemonLordAudioManager : MonoBehaviour
     [SerializeField] private AudioClip demonLordSwordSound;
     [SerializeField] private AudioClip demonLordRoarSound;
     [SerializeField] private AudioClip demonLordDamageSound;
+    [SerializeField] private AudioClip demonLordStartFightSound;
 
 
     protected void Awake() {
@@ -31,7 +33,7 @@ public class DemonLordAudioManager : MonoBehaviour
         EventManager.StartListening("demonWhip",DemonWhip);
         EventManager.StartListening("demonSword",DemonSword);
         EventManager.StartListening("demonRoar",DemonRoar);
-
+        EventManager.StartListening("demonStartFight",DemonStartFight);
     }
 
     private void Footsteps()
@@ -97,5 +99,13 @@ public class DemonLordAudioManager : MonoBehaviour
         demonLordRoarAudioSource.clip = demonLordRoarSound;
         demonLordRoarAudioSource.Play();
         EventManager.StartListening("demonRoar",DemonRoar);
+    }
+    
+    private void DemonStartFight()
+    {
+        EventManager.StopListening("demonStartFight",DemonStartFight);
+        demonLordStartFightAudioSource.clip = demonLordStartFightSound;
+        demonLordStartFightAudioSource.Play();
+        EventManager.StartListening("demonStartFight",DemonStartFight);
     }
 }

@@ -24,6 +24,7 @@ public class Boss_TriggerFight : StateMachineBehaviour
         {
             EventManager.TriggerEvent("activateHealthBar");
             animator.SetTrigger("StartFight");
+            EventManager.TriggerEvent("demonStartFight");
         }
     }
 

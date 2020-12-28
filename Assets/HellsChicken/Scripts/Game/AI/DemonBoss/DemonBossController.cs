@@ -23,6 +23,8 @@ public class DemonBossController : MonoBehaviour
     
     private bool isFlipped;
     private bool hasStartedFight;
+    private bool isEnraged;
+    private bool isDead;
 
     public void Start()
     {
@@ -33,15 +35,21 @@ public class DemonBossController : MonoBehaviour
         _healthBar.SetMaxHealth(_maxHealth);
         EventManager.StartListening("activateHealthBar",ActivateHealthBar);
         hasStartedFight = false;
+        isEnraged = false;
+        isDead = false;
     }
 
     public void Update()
     {
 
-        if(_currentHealth <= _enragedHealth)
+        if (_currentHealth <= _enragedHealth && !isEnraged)
+        {
+            isEnraged = true;
+            EventManager.TriggerEvent("demonRoar");
             anim.SetTrigger("Enraged");
+        }
 
-        if (_currentHealth <= 0)
+        if (_currentHealth <= 0 && !isDead)
             DemonBossDeath();
 
         if (_currentHealth != _maxHealth)
@@ -88,6 +96,8 @@ public class DemonBossController : MonoBehaviour
 
     void DemonBossDeath()
     {
+        isDead = true;
+        EventManager.TriggerEvent("demonDeath");
         anim.SetTrigger("isDead");
         bossSpine.GetComponent<CapsuleCollider>().enabled = false;
         bossSword.GetComponent<CapsuleCollider>().enabled = false;
@@ -116,6 +126,7 @@ public class DemonBossController : MonoBehaviour
     {
         _currentHealth -= _headShotValue;
         _healthBar.SetHealth(_currentHealth);
+        EventManager.TriggerEvent("demonDamage");
         anim.SetTrigger("isDamaged");
         StartCoroutine(ResetTrigger(0.5f));
     }
@@ -124,6 +135,7 @@ public class DemonBossController : MonoBehaviour
     {
         _currentHealth -= _chestShotValue;
         _healthBar.SetHealth(_currentHealth);
+        EventManager.TriggerEvent("demonDamage");
         anim.SetTrigger("isDamaged");
         StartCoroutine(ResetTrigger(0.5f));
     }
