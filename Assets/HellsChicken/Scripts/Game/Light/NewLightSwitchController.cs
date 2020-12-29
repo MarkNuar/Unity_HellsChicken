@@ -72,11 +72,13 @@ public class NewLightSwitchController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        enabled = true;
+        if (other.CompareTag("Player"))
+            enabled = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        enabled = false;
+        if (other.CompareTag("Player"))
+            enabled = false;
     }
 }
