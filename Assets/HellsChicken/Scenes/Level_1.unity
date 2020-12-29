@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.008
   m_LinearFogStart: 0
   m_LinearFogEnd: 100
-  m_AmbientSkyColor: {r: 0.25618547, g: 0.4926611, b: 0.9528302, a: 1}
+  m_AmbientSkyColor: {r: 0.5849056, g: 0.36766544, b: 0.35590956, a: 1}
   m_AmbientEquatorColor: {r: 0, g: 0.5999999, b: 1, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 8e5a07b3935e98345ab15977ac75566a, type: 2}
   m_HaloStrength: 0.926
@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 6fd5d73aec672f44488159ba97c9ca42,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -9834,6 +9834,16 @@ PrefabInstance:
       objectReference: {fileID: 1340950973134705180}
     - target: {fileID: 2982303583777639682, guid: a83347a573d18664cb2f67dc7d21455d,
         type: 3}
+      propertyPath: maxIntensity
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982303583777639682, guid: a83347a573d18664cb2f67dc7d21455d,
+        type: 3}
+      propertyPath: minIntensity
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982303583777639682, guid: a83347a573d18664cb2f67dc7d21455d,
+        type: 3}
       propertyPath: directionalLight
       value: 
       objectReference: {fileID: 1591134791}
@@ -10104,6 +10114,16 @@ PrefabInstance:
       objectReference: {fileID: 1340950973134705180}
     - target: {fileID: 8782214337907984595, guid: a83347a573d18664cb2f67dc7d21455d,
         type: 3}
+      propertyPath: maxIntensity
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782214337907984595, guid: a83347a573d18664cb2f67dc7d21455d,
+        type: 3}
+      propertyPath: minIntensity
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782214337907984595, guid: a83347a573d18664cb2f67dc7d21455d,
+        type: 3}
       propertyPath: directionalLight
       value: 
       objectReference: {fileID: 1591134791}
@@ -10328,7 +10348,7 @@ PrefabInstance:
     - target: {fileID: 4947932090175730584, guid: bc97e0f654916554fb052c22e25edc34,
         type: 3}
       propertyPath: m_Intensity
-      value: 3
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4947932090175730584, guid: bc97e0f654916554fb052c22e25edc34,
         type: 3}
