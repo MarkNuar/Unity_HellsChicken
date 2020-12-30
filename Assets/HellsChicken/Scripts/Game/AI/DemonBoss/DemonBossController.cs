@@ -25,6 +25,7 @@ public class DemonBossController : MonoBehaviour
     private bool hasStartedFight;
     private bool isEnraged;
     private bool isDead;
+    private bool hasHitWall;
 
     public void Start()
     {
@@ -37,6 +38,7 @@ public class DemonBossController : MonoBehaviour
         hasStartedFight = false;
         isEnraged = false;
         isDead = false;
+        hasHitWall = false;
     }
 
     public void Update()
@@ -71,6 +73,12 @@ public class DemonBossController : MonoBehaviour
                     ChestShot();
                     break;
             }
+        }
+        
+        if (gameObject.CompareTag("Wall"))
+        {
+            hasHitWall = true;
+            Debug.Log("ammerdaaa");
         }
     }
 
@@ -117,9 +125,12 @@ public class DemonBossController : MonoBehaviour
         EventManager.StartListening("activateHealthBar",ActivateHealthBar);
     }
 
-    public bool getHasStartedFight()
+    public bool hasStartedFight1 => hasStartedFight;
+
+    public bool hasHitWall1
     {
-        return hasStartedFight;
+        get => hasHitWall;
+        set => hasHitWall = value;
     }
 
     public void Headshot()
@@ -139,4 +150,5 @@ public class DemonBossController : MonoBehaviour
         anim.SetTrigger("isDamaged");
         StartCoroutine(ResetTrigger(0.5f));
     }
+    
 }

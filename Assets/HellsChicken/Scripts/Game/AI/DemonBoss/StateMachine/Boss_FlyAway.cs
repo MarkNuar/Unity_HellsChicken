@@ -37,7 +37,7 @@ public class Boss_FlyAway : StateMachineBehaviour
         _demonBossController.LookAtPlayer();
         _bossCharacterController.Move(flyAwayMoveVector * flyingSpeed * Time.deltaTime);
 
-        if(Vector3.Distance(player.transform.position, demonBoss.transform.position) >= landingCoordinateX)
+        if(Vector3.Distance(player.transform.position, demonBoss.transform.position) >= landingCoordinateX || demonBoss.GetComponent<DemonBossController>().hasHitWall1)
             animator.SetTrigger("StopFlying");
         
         EventManager.TriggerEvent("demonWings");
@@ -47,6 +47,7 @@ public class Boss_FlyAway : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.ResetTrigger("StopFlying");
+        demonBoss.GetComponent<DemonBossController>().hasHitWall1 = false;
     }
     
 }

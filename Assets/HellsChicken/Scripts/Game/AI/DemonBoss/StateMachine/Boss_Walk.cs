@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using EventManagerNamespace;
 using UnityEngine;
+using Random = Unity.Mathematics.Random;
 
 public class Boss_Walk : StateMachineBehaviour
 {
@@ -10,7 +11,7 @@ public class Boss_Walk : StateMachineBehaviour
     public float flyAwayRange;
     public float minWhipRange;
     public float maxWhipRange;
-    
+
     private bool hasStoppedFlying;
     private GameObject player;
     private GameObject demonBoss;
@@ -19,6 +20,8 @@ public class Boss_Walk : StateMachineBehaviour
     private GameObject demonBossSword;
     private Vector3 target;
     private Vector3 moveVector;
+    private Random _random = new Random(0x6E624EB7u);
+    private bool choice;
 
     
      //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -31,6 +34,7 @@ public class Boss_Walk : StateMachineBehaviour
         demonBossSword = GameObject.Find("DEMON_LORD_SWORD");
         demonBossSword.GetComponent<CapsuleCollider>().enabled = false;
         hasStoppedFlying = true;
+        choice = _random.NextBool();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -51,7 +55,7 @@ public class Boss_Walk : StateMachineBehaviour
             EventManager.TriggerEvent("demonSword");
         }
         
-        else if (Vector3.Distance(player.transform.position, demonBoss.transform.position) >= minWhipRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) <= maxWhipRange)
+        else if (Vector3.Distance(player.transform.position, demonBoss.transform.position) >= minWhipRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) <= maxWhipRange && choice)
         {
             animator.SetTrigger("WhipAttack");
             EventManager.TriggerEvent("demonWhip");

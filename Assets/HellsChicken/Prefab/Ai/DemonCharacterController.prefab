@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 1558166113829876106}
   - component: {fileID: 3817650523487044720}
   - component: {fileID: 2995197301931268472}
+  - component: {fileID: 7256336852017877648}
   m_Layer: 0
   m_Name: DemonCharacterController
   m_TagString: DemonBoss
@@ -192,9 +193,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af014df6b99b35846a908927b8b20463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 0
+  _maxHealth: 200
   _enragedHealth: 100
-  _headShotValue: 20
+  _headShotValue: 25
   _chestShotValue: 10
   healthBarCanvas: {fileID: 4922902427029398395}
   _healthBar: {fileID: 1101945474830530907}
@@ -218,6 +219,20 @@ CharacterController:
   m_SkinWidth: 0.01
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 7, z: 0}
+--- !u!136 &7256336852017877648
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2223872394637337062}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.6447601
+  m_Direction: 1
+  m_Center: {x: 0, y: 9.486351, z: 0}
 --- !u!1 &2901966443055460155
 GameObject:
   m_ObjectHideFlags: 0
