@@ -26,18 +26,13 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles.Rock
             else 
             {
                 anim.SetBool("hasCollided",true);
-                StartCoroutine(DestroyGameObject(5.0f));
                 transform.gameObject.tag = "deadEnemy";
                 gameObject.layer = 21;
                 EventManager.TriggerEvent("rockSound");
+                transform.parent.gameObject.GetComponent<DissolvationRock>().Dissolvation = true;
             }
 
         }
 
-        IEnumerator DestroyGameObject(float time)
-        {
-            yield return new WaitForSeconds(time);
-            Destroy(gameObject);
-        }
     }
 }

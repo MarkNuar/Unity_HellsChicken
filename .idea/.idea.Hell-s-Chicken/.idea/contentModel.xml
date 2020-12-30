@@ -406,6 +406,7 @@
                 <e p="Centaur" t="Include">
                   <e p="CentaurAI.cs" t="Include" />
                   <e p="CentaurAICC.cs" t="Include" />
+                  <e p="CentaurDissolvation.cs" t="Include" />
                   <e p="CentaurFire.cs" t="Include" />
                   <e p="Explosion" t="Include">
                     <e p="Explosion.cs" t="Include" />
@@ -419,6 +420,7 @@
                 </e>
                 <e p="DemonBoss" t="Include">
                   <e p="DemonBossController.cs" t="Include" />
+                  <e p="HealthBarScript.cs" t="Include" />
                   <e p="StateMachine" t="Include">
                     <e p="Boss_Enraged.cs" t="Include" />
                     <e p="Boss_EnragedFlyAway.cs" t="Include" />
@@ -461,6 +463,7 @@
                 <e p="BladeMovement.cs" t="Include" />
                 <e p="PendulumEngine.cs" t="Include" />
                 <e p="Rock" t="Include">
+                  <e p="DissolvationRock.cs" t="Include" />
                   <e p="FallingRock.cs" t="Include" />
                   <e p="RockEndLevel.cs" t="Include" />
                   <e p="RockObstacle.cs" t="Include" />
@@ -527,6 +530,7 @@
                   <e p="KeyController.cs" t="Include" />
                 </e>
                 <e p="Menu" t="Include">
+                  <e p="CameraRotation.cs" t="Include" />
                   <e p="EndMenu.cs" t="Include" />
                   <e p="MainMenu.cs" t="Include" />
                   <e p="PauseMenu.cs" t="Include" />

@@ -7,8 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AllSky_Overcast4_Low
-  m_Shader: {fileID: 103, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: Rock
+  m_Shader: {fileID: -6465566751694194690, guid: 8b2285cd33bc36f47aa0239578de3f7b,
+    type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,12 +20,9 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Tex:
-        m_Texture: {fileID: 8900000, guid: c8f21f62fdb3e43c5b32917c84683698, type: 3}
+    - _SampleTexture2D_4C3B910A_Texture_1:
+        m_Texture: {fileID: 2800000, guid: c35891580206bbb4d902d53bf5ba5c0c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _Exposure: 0.69
-    - _Rotation: 13.709973
-    m_Colors:
-    - _Tint: {r: 0.4716981, g: 0.04672481, b: 0.04672481, a: 0.5}
+    m_Floats: []
+    m_Colors: []

@@ -335,13 +335,13 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
         IEnumerator CentaurDeath(float time)
         {
             isDead = true;
+            transform.parent.GetComponent<CentaurDissolvation>().Dissolvation = true;
             anim.SetBool("isDead",isDead);
             Destroy(_textInstance);
             gameObject.GetComponent<CapsuleCollider>().enabled = false;
             gameObject.GetComponent<CharacterController>().enabled = false;
             EventManager.TriggerEvent("centaurDeath");
-            yield return new WaitForSeconds(time);
-            Destroy(gameObject);
+            yield return null;
         }
     }
 }
