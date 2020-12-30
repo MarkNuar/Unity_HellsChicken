@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using EventManagerNamespace;
 using UnityEngine;
-
+using Random = Unity.Mathematics.Random;
+    
 public class Boss_Enraged : StateMachineBehaviour
 {
    public float enragedSpeed;
@@ -19,7 +20,8 @@ public class Boss_Enraged : StateMachineBehaviour
     private GameObject demonBossSword;
     private Vector3 target;
     private Vector3 moveVector;
-
+    private Random _random = new Random(0x6E624EB7u);
+    private bool choice;
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -31,6 +33,7 @@ public class Boss_Enraged : StateMachineBehaviour
         demonBossSword = GameObject.Find("DEMON_LORD_SWORD");
         demonBossSword.GetComponent<CapsuleCollider>().enabled = false;
         hasStoppedFlying = true;
+        choice = _random.NextBool();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -50,7 +53,7 @@ public class Boss_Enraged : StateMachineBehaviour
             hasStoppedFlying = false;
         }
 
-        else if (Vector3.Distance(player.transform.position, demonBoss.transform.position) >= enraged3HitComboRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) <= enragedMaxRange)
+        else if (Vector3.Distance(player.transform.position, demonBoss.transform.position) >= enraged3HitComboRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) <= enragedMaxRange && choice)
         {
             animator.SetTrigger("3HitCombo");
         }
