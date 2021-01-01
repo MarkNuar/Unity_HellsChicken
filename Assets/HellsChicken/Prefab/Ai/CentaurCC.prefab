@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderer: {fileID: 5120406412308027908}
+  transparent: {fileID: 2100000, guid: fcbac93b10ffcc54cb3b063b4a1b41ac, type: 2}
 --- !u!1 &882402468915794661
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,7 +1192,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e4b1859f4c3481445a0965a6dd005dae, type: 2}
+      objectReference: {fileID: 2100000, guid: 4fb68f2ce912ca84a8ccb238b2fef310, type: 2}
     - target: {fileID: 919132149155446097, guid: 4dc76875c259da249b1f380945fd0ae2,
         type: 3}
       propertyPath: m_Name

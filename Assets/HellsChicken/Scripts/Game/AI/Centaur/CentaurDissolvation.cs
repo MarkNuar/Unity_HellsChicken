@@ -9,6 +9,7 @@ public class CentaurDissolvation : MonoBehaviour {
 
     private bool dissolvation = false;
     [SerializeField] private Renderer renderer;
+    [SerializeField] private Material transparent;
 
     public bool Dissolvation {
         get => dissolvation;
@@ -18,20 +19,17 @@ public class CentaurDissolvation : MonoBehaviour {
     // Update is called once per frame
     void Update(){
         if (dissolvation) {
-            
             StartCoroutine(dissolvingCentaur());
             dissolvation = false;
         }
     }
 
     IEnumerator dissolvingCentaur() {
-        //print(renderer.material.GetInt("_SurfaceType"));
-       // renderer.material.SetInt("_RenderQueueType", 4);
-        float i = 0.97f;
+        float i = 0.78f;
         yield return new WaitForSeconds(2f);
+        renderer.material = transparent;
         while (i > 0) {
-            renderer.material.SetFloat("alpha",i);
-            renderer.material.SetFloat("alpha2",i);
+            renderer.material.SetColor("_BaseColor",new Color(1,1,1,i));
             i -= 0.03f;
             yield return new WaitForSeconds(0.05f);
         }

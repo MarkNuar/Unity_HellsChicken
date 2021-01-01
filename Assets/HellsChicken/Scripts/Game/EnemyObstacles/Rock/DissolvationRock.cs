@@ -6,6 +6,7 @@ using UnityEngine;
 public class DissolvationRock : MonoBehaviour {
 
     [SerializeField] private Renderer[] rocks;
+    [SerializeField] private Material transarent;
 
     private bool dissolvation = false;
 
@@ -31,9 +32,12 @@ public class DissolvationRock : MonoBehaviour {
     IEnumerator dissolvingRock() {
         float i = 0.97f;
         yield return new WaitForSeconds(2f);
+        foreach (var rock in rocks) {
+            rock.material = transarent;
+        }
         while (i > 0) {
             foreach (var rock in rocks) {
-                rock.material.SetFloat("alpha",i);
+                rock.material.SetColor("_BaseColor",new Color(1,1,1,i));
             }
 
             i -= 0.03f;
