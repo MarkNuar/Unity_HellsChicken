@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.44313726, g: 0.05882353, b: 0.05882353, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.008
@@ -3948,7 +3948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00020e6749226fd42b4112577a9888f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialCheckPoint: {fileID: 1827540723}
+  initialCheckPoint: {fileID: 1957594712}
   initialLight: {fileID: 1591134791}
   levelNumber: 1
 --- !u!1001 &1053470446
@@ -6693,12 +6693,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4022345221963159200}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1827540723 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 138184, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1864219134}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1830103580
 GameObject:
   m_ObjectHideFlags: 0
@@ -8293,6 +8287,12 @@ Transform:
   m_Father: {fileID: 329878727}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1957594712 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 138184, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1761734873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2044572883
 PrefabInstance:
   m_ObjectHideFlags: 0
