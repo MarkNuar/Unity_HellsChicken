@@ -655,6 +655,11 @@ PrefabInstance:
       propertyPath: m_textInfo.characterCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4662271717283100256, guid: 6d3cc7073200cc34baa33184163ccb81,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5052361671899982056, guid: 6d3cc7073200cc34baa33184163ccb81,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2557,6 +2562,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PixelPerfect
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3192172051128963138, guid: d2fe71f9426ca0a458252ce9ea152b40,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3192172051128963138, guid: d2fe71f9426ca0a458252ce9ea152b40,
         type: 3}
