@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using HellsChicken.Scripts.Game.UI.Menu;
+using UnityEngine;
 
 namespace HellsChicken.Scripts.Game.CheckPoint
 {
@@ -11,8 +12,6 @@ namespace HellsChicken.Scripts.Game.CheckPoint
         {
             if (other.CompareTag("Player"))
             {
-                //if boss is killed
-                //TODO: NOT INCREASE, BUT MARK THE LEVEL AS COMPLETED
                 GameManager.Instance.SetLevelAsCompleted(LevelManager.Instance.levelNumber);
                 endLevelCanvas.GetComponent<EndMenu>().Pause();
             }

@@ -22,6 +22,9 @@ namespace HellsChicken.Scripts.Game.UI.Menu
         public TMP_InputField tmpInputField;
         private const string VideoGameName = "Hell's Chicken";
         
+        public Animator transition;
+        public float transitionTime = 1f;
+        
         private void Start()
         {
             _gameIsPaused = false;
@@ -78,7 +81,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             Time.timeScale = 1f;
             _gameIsPaused = false;
             EventManager.TriggerEvent("stopGameSoundtrack");
-            SceneManager.LoadScene(0); //test if it works
+            StartCoroutine(LoadSceneWithFading(0)); 
         }
 
         public static bool GetGameIsPaused()
@@ -122,6 +125,14 @@ namespace HellsChicken.Scripts.Game.UI.Menu
 
             // at the end go back to the main menu
             //MenuManager.Instance.OpenMainMenu();
+        }
+        
+        IEnumerator LoadSceneWithFading(int index)
+        {
+            transition.SetTrigger("Start");
+            EventManager.TriggerEvent("fadeOutMusic");
+            yield return new WaitForSeconds(transitionTime);
+            SceneManager.LoadScene(index);
         }
     }
 }

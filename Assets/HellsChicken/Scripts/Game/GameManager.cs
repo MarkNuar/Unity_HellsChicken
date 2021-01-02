@@ -198,10 +198,10 @@ namespace HellsChicken.Scripts.Game
         {
             if(levelIndex == _gameState.levelToBeCompleted) //levels above should not be reachable
                 _gameState.levelToBeCompleted++;
-            if (_gameState.levelToBeCompleted > 3)
-            {
-                //TODO: IF LEVEL TO BE COMPLETED >= FINAL LEVEL -> SHOW END SCREEN
-            }
+            // if (_gameState.levelToBeCompleted > 2)
+            // {
+            //     //TODO: IF LEVEL TO BE COMPLETED >= FINAL LEVEL -> SHOW END SCREEN
+            // }
         }
 
         public int GetLevelToBeCompleted()

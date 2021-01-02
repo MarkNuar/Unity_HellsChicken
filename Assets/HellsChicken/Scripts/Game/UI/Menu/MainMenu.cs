@@ -32,13 +32,13 @@ namespace HellsChicken.Scripts.Game.UI.Menu
 
       public void PlayGame()
       {
-         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+         StartCoroutine(LoadSceneWithFading(SceneManager.GetActiveScene().buildIndex + 1));
       }
       
 
       public void PlayLevel(int levelIndex)
       {
-         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + levelIndex));
+         StartCoroutine(LoadSceneWithFading(SceneManager.GetActiveScene().buildIndex + levelIndex));
       }
 
       public void QuitGame()
@@ -84,7 +84,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             //MenuManager.Instance.OpenMainMenu();
        }
 
-       IEnumerator LoadLevel(int index)
+       IEnumerator LoadSceneWithFading(int index)
        {
           transition.SetTrigger("Start");
           EventManager.TriggerEvent("fadeOutMusic");
