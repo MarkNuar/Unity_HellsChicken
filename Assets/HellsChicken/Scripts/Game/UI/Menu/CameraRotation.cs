@@ -8,9 +8,8 @@ namespace HellsChicken.Scripts.Game.UI.Menu
         public Transform lookAtPoint;
         public Transform rotationCenter;
         public float cameraRotationSpeed = 2.0f;
-
-        // Update is called once per frame
-        void Update()
+        
+        void FixedUpdate()
         {
             transform.LookAt(lookAtPoint);
             transform.RotateAround(rotationCenter.position,Vector3.up, cameraRotationSpeed);

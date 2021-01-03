@@ -27,7 +27,6 @@ namespace HellsChicken.Scripts.Game.UI.Menu
          {
             levels[i].interactable = i < _levelToBeCompleted;
          }
-         
       }
 
       public void PlayGame()
@@ -59,6 +58,15 @@ namespace HellsChicken.Scripts.Game.UI.Menu
       public void CloseFeedbackPanel()
       {
          tmpInputField.text = "";
+      }
+
+      public void UnlockAllLevels()
+      {
+         for (var i = 0; i < levels.Count; i++)
+         {
+            levels[i].interactable = true;
+            GameManager.Instance.SetLevelAsCompleted(i+1);
+         }
       }
       
        private static IEnumerator PostFeedback(string videoGameName, string feedback) 
