@@ -14,56 +14,56 @@ public class NewLightSwitchController : MonoBehaviour
     [SerializeField] private Transform endPosition;
     [SerializeField] private Transform player;
     
-    private float yStart;
-    private float yEnd;
-    private bool enabled;
+    private float _yStart;
+    private float _yEnd;
+    private bool _enabled;
 
     // Start is called before the first frame update
     void Start()
     {
-        yStart = startPosition.position.y;
-        yEnd = endPosition.position.y;
-        enabled = false;
+        _yStart = startPosition.position.y;
+        _yEnd = endPosition.position.y;
+        _enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (enabled)
+        if (_enabled)
         {
             var yPlayer = player.position.y;
             if (turnOff)
             {
-                if (yPlayer > yStart)
+                if (yPlayer > _yStart)
                 {
                     directionalLight.intensity = maxIntensity;
                 }
-                else if (yPlayer < yEnd)
+                else if (yPlayer < _yEnd)
                 {
                     directionalLight.intensity = minIntensity;
                 }
                 else
                 {
                     directionalLight.intensity = maxIntensity +
-                                                 (minIntensity - maxIntensity) * (player.position.y - yStart) /
-                                                 (yEnd - yStart);
+                                                 (minIntensity - maxIntensity) * (player.position.y - _yStart) /
+                                                 (_yEnd - _yStart);
                 }
             }
             else
             {
-                if (yPlayer < yStart)
+                if (yPlayer < _yStart)
                 {
                     directionalLight.intensity = minIntensity;
                 }
-                else if (yPlayer > yEnd)
+                else if (yPlayer > _yEnd)
                 {
                     directionalLight.intensity = maxIntensity;
                 }
                 else
                 {
                     directionalLight.intensity = minIntensity +
-                                                 (maxIntensity - minIntensity) * (player.position.y - yStart) /
-                                                 (yEnd - yStart);
+                                                 (maxIntensity - minIntensity) * (player.position.y - _yStart) /
+                                                 (_yEnd - _yStart);
                 }
             }
             
@@ -73,12 +73,12 @@ public class NewLightSwitchController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-            enabled = true;
+            _enabled = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
-            enabled = false;
+            _enabled = false;
     }
 }
