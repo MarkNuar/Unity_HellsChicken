@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8518587087267543622}
   - component: {fileID: 5501134645009098257}
   m_Layer: 5
-  m_Name: EndLevelCanvasTEMP
+  m_Name: EndLevelCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &8518587087267543623
 MonoBehaviour:

@@ -36,7 +36,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             _gameIsPaused = true;
             Cursor.visible = true;
             eggCrosshairCanvas.SetActive(false);
-            healthCanvas.SetActive(false);
+            //healthCanvas.SetActive(false);
         }
     
         public static bool GetGameIsPaused()

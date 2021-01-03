@@ -22,6 +22,7 @@ namespace HellsChicken.Scripts.Game
                 DontDestroyOnLoad(Instance);
                 SetCurrentCheckPointPos(initialCheckPoint.transform.position);
                 SetCurrentLightIntensity(initialLight.intensity);
+                Debug.Log(initialLight.intensity);
             }
             else
             {
