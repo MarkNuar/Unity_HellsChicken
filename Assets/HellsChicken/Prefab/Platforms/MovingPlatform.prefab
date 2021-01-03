@@ -120,9 +120,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf071fa08733a74583a2e14ef9340f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPoint: {fileID: 9076555421722737982}
-  finishPoint: {fileID: 9076555419965291475}
-  player: {fileID: 0}
+  speed: 5
+  endPoint: {fileID: 9076555421722737982}
+  startPoint: {fileID: 9076555419965291475}
+  startFromStartPoint: 0
 --- !u!1 &9076555419965291472
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9076555419965291475}
   m_Layer: 0
-  m_Name: StartPoint
+  m_Name: EndPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,7 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9076555421722737982}
   m_Layer: 0
-  m_Name: EndPoint
+  m_Name: StartPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -7,11 +7,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Fireball 1
-  m_Shader: {fileID: -6465566751694194690, guid: 0f983dd492bdc7c4494cd3961a43b3e2,
+  m_Name: River2
+  m_Shader: {fileID: -6465566751694194690, guid: 301baa9643aba9447bb89cdeb2117609,
     type: 3}
   m_ShaderKeywords: 
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -29,26 +29,26 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_1E637966: 5
-    - Vector1_46AE36FE: 0.5
+    - Vector1_1E637966: 20
+    - Vector1_46AE36FE: 5
     - Vector1_48F920F3: 1
-    - Vector1_57CB783E: -6.7
+    - Vector1_57CB783E: 0.85
     - Vector1_6B381392: 0
-    - Vector1_732327B3: 0
-    - Vector1_88C800A0: 5
-    - Vector1_94C6BA8A: 3
-    - Vector1_C33E62F8: 97.2
+    - Vector1_732327B3: 1
+    - Vector1_88C800A0: 3
+    - Vector1_94C6BA8A: 3.5
+    - Vector1_C33E62F8: 30
     - Vector1_D526944D: 0.1
-    - Vector1_E9FAEE4F: 0.5
-    - Vector1_EFB5BE31: 2
+    - Vector1_E9FAEE4F: -0.05
+    - Vector1_EFB5BE31: 4.6
     - Vector1_FA5B83EC: 0
     m_Colors:
-    - Color_6E2C3B4A: {r: 1, g: 0.17356348, b: 0, a: 1}
-    - Color_7E18480B: {r: 1, g: 0.026158001, b: 0, a: 1}
-    - Vector2_3DB17B56: {r: 0, g: 0.01, b: 0, a: 0}
-    - Vector2_80A391B8: {r: 0.05, g: 0, b: 0, a: 0}
-    - Vector2_95E468B4: {r: 0, g: 0.05, b: 0, a: 0}
-    - Vector2_AC63DFE1: {r: 0, g: 1, b: 0, a: 0}
-    - Vector2_B768A6F4: {r: 0, g: 0, b: 0, a: 0}
-    - Vector2_C33143C9: {r: 2, g: 2, b: 0, a: 0}
-    - Vector2_E4A540DA: {r: 0, g: 1, b: 0, a: 0}
+    - Color_6E2C3B4A: {r: 14.754423, g: 2.4719453, b: 0, a: 1}
+    - Color_7E18480B: {r: 0.649, g: 0.035783637, b: 0, a: 1}
+    - Vector2_3DB17B56: {r: 0.01, g: 0.01, b: 0, a: 0}
+    - Vector2_80A391B8: {r: 0, g: 0.1, b: 0, a: 0}
+    - Vector2_95E468B4: {r: 0, g: 0.1, b: 0, a: 0}
+    - Vector2_AC63DFE1: {r: 0.3, g: 0.3, b: 0, a: 0}
+    - Vector2_B768A6F4: {r: 0.01, g: 0.1, b: 0, a: 0}
+    - Vector2_C33143C9: {r: 5, g: 2, b: 0, a: 0}
+    - Vector2_E4A540DA: {r: 1, g: 5, b: 0, a: 0}

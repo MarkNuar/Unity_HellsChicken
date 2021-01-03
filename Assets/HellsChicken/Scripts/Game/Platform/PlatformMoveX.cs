@@ -39,6 +39,7 @@ namespace HellsChicken.Scripts.Game.Platform
                 _turnBack = true;
             }
             
+            print(_turnBack);
             transform.position = Vector3.MoveTowards(transform.position, _turnBack ? endPoint.position : startPoint.position, speed * Time.fixedDeltaTime);
         }
     }
