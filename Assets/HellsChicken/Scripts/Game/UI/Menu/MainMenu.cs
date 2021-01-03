@@ -84,7 +84,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             //MenuManager.Instance.OpenMainMenu();
        }
 
-       IEnumerator LoadSceneWithFading(int index)
+       private IEnumerator LoadSceneWithFading(int index)
        {
           transition.SetTrigger("Start");
           EventManager.TriggerEvent("fadeOutMusic");

@@ -79,7 +79,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             LevelManager.Instance.DestroyLevelManagerInstance();
             GameAudioManager.Instance.DestroyGameAudioManagerInstance();
             Time.timeScale = 1f;
-            _gameIsPaused = false;
+            //_gameIsPaused = false; TODO
             EventManager.TriggerEvent("stopGameSoundtrack");
             StartCoroutine(LoadSceneWithFading(0)); 
         }
@@ -127,7 +127,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             //MenuManager.Instance.OpenMainMenu();
         }
         
-        IEnumerator LoadSceneWithFading(int index)
+        private IEnumerator LoadSceneWithFading(int index)
         {
             transition.SetTrigger("Start");
             EventManager.TriggerEvent("fadeOutMusic");
