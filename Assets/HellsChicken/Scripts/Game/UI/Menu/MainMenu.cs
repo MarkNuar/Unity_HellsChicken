@@ -31,7 +31,14 @@ namespace HellsChicken.Scripts.Game.UI.Menu
       
       public void PlayLevel(int levelIndex)
       {
-         StartCoroutine(LoadSceneWithFading("Level_" + levelIndex));
+         if (levelIndex == 1) 
+         {
+            StartCoroutine(LoadSceneWithFading("Intro"));
+         }
+         else
+         {
+            StartCoroutine(LoadSceneWithFading("Level_" + levelIndex));
+         }
       }
 
       public void QuitGame()
