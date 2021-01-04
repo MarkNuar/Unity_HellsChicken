@@ -20,14 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44fa9eaf-4901-4eb4-b858-67c1b19b2312" name="Default Changelist" comment="Some changing">
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Audio/DemonBoss/2HitComboSound.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Audio/DemonBoss/2HitComboSound.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/WindAudioManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/HEROIC FANTASY CREATURES FULL PACK VOL 1/Demonic Creatures Pack/Demon Lord/DemonLord_Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/HEROIC FANTASY CREATURES FULL PACK VOL 1/Demonic Creatures Pack/Demon Lord/DemonLord_Controller.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/DemonCharacterController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/DemonCharacterController.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_Enraged.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_Enraged.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/DemonLordAudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/DemonLordAudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Wind.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Wind.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +40,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FAA55637-FCC1-4BBF-B146-E6835A4641D9/60/72a5dd22/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/29AD182F-AA3F-478C-9310-D6A2E7143C15/ab/1d293e7a/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/KeyHolder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/WindAudioManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/KeyDoor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE47BE73-F7EF-409C-A5E5-CE4B121745B7/37/ee59fbd2/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/Doors/KeyDoor/Key.cs" root0="FORCE_HIGHLIGHTING" />
@@ -67,7 +63,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/BladeMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/CentaurAudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/CheckPointAudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/CheckPoint/CheckPointManager.cs" />
@@ -118,6 +113,7 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/DemonBossController.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Audio/DemonLordAudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_Enraged.cs" />
+        <option value="$PROJECT_DIR$/Assets/WindAudioManager.cs" />
       </list>
     </option>
   </component>
