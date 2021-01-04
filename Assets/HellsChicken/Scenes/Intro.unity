@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -241,7 +241,7 @@ MonoBehaviour:
   - {fileID: 585425928}
   - {fileID: 331668848}
   - {fileID: 871061283}
-  timeBetweenChapters: 3
+  timeBetweenChapters: 4
   dissolvingSpeed: 1
   transition: {fileID: 340509150}
   transitionTime: 1
@@ -431,7 +431,7 @@ PrefabInstance:
     - target: {fileID: 4416076793426972779, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
         type: 3}
       propertyPath: m_fontSize
-      value: 12
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4416076793426972779, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
         type: 3}
@@ -456,7 +456,7 @@ PrefabInstance:
     - target: {fileID: 4416076793426972779, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
         type: 3}
       propertyPath: m_fontSizeMax
-      value: 12
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4416076793426972779, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
         type: 3}
