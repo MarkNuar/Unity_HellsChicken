@@ -495,11 +495,14 @@
                   </e>
                 </e>
                 <e p="FallenPlatform.cs" t="Include" />
+                <e p="FallenPlatformLevel2.cs" t="Include" />
+                <e p="FallPlatformCheck.cs" t="Include" />
                 <e p="PlatformController.cs" t="Include" />
                 <e p="PlatformMoveX.cs" t="Include" />
                 <e p="PlatformMoveY.cs" t="Include" />
               </e>
               <e p="Player" t="Include">
+                <e p="CameraZoom.cs" t="Include" />
                 <e p="DissolveController.cs" t="Include" />
                 <e p="Egg" t="Include">
                   <e p="Destruction.cs" t="Include" />
@@ -532,10 +535,11 @@
                 <e p="Menu" t="Include">
                   <e p="CameraRotation.cs" t="Include" />
                   <e p="EndMenu.cs" t="Include" />
+                  <e p="IntroMenu.cs" t="Include" />
                   <e p="MainMenu.cs" t="Include" />
                   <e p="PauseMenu.cs" t="Include" />
+                  <e p="SettingsMenu.cs" t="Include" />
                 </e>
-                <e p="SettingsMenu.cs" t="Include" />
               </e>
             </e>
           </e>
