@@ -45,6 +45,7 @@ public class Boss_Enraged : StateMachineBehaviour
         {
             demonBossSword.GetComponent<CapsuleCollider>().enabled = true;
             animator.SetTrigger("2HitCombo");
+            EventManager.TriggerEvent("demon2HitCombo");
         }
 
         else if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= enragedFlyAwayRange && hasStoppedFlying)
@@ -56,6 +57,7 @@ public class Boss_Enraged : StateMachineBehaviour
         else if (Vector3.Distance(player.transform.position, demonBoss.transform.position) >= enraged3HitComboRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) <= enragedMaxRange && choice)
         {
             animator.SetTrigger("3HitCombo");
+            EventManager.TriggerEvent("demon3HitCombo");
         }
         else
         {
