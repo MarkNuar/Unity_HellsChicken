@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using EventManagerNamespace;
 using TMPro;
 using UnityEngine;
@@ -54,19 +55,18 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             LevelManager.Instance.DestroyLevelManagerInstance();
             GameAudioManager.Instance.DestroyGameAudioManagerInstance();
             Time.timeScale = 1f;
-            //_gameIsPaused = false; TODO
             EventManager.TriggerEvent("stopGameSoundtrack");
-            StartCoroutine(LoadSceneWithFading(0)); 
+            StartCoroutine(LoadSceneWithFading("MainMenu")); 
         }
 
         public void NextLevel()
         {
+            var nextLevel = LevelManager.Instance.levelNumber + 1;
             LevelManager.Instance.DestroyLevelManagerInstance();
             GameAudioManager.Instance.DestroyGameAudioManagerInstance();
             Time.timeScale = 1f;
-            //_gameIsPaused = false; TODO
             EventManager.TriggerEvent("stopGameSoundtrack");
-            StartCoroutine(LoadSceneWithFading(SceneManager.GetActiveScene().buildIndex + 1));
+            StartCoroutine(LoadSceneWithFading("Level_"+nextLevel));
         }
     
         public void SendFeedback()
@@ -107,20 +107,12 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             //MenuManager.Instance.OpenMainMenu();
         }
 
-        private IEnumerator LoadSceneWithFading(int index)
+        private IEnumerator LoadSceneWithFading(String sceneName)
         {
-            Debug.Log("arrived1");
-            Debug.Log(Time.timeScale);
             transition.SetTrigger("Start");
-            Debug.Log("arrived2");
-            Debug.Log(Time.timeScale);
             EventManager.TriggerEvent("fadeOutMusic");
-            Debug.Log("arrived3");
-            Debug.Log(Time.timeScale);
             yield return new WaitForSeconds(transitionTime);
-            Debug.Log("arrived4");
-            Debug.Log(Time.timeScale);
-            SceneManager.LoadScene(index);
+            SceneManager.LoadScene(sceneName);
         }
     }
 }

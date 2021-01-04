@@ -808,8 +808,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 262144
   eggCooldown: 2
-  windBreaking: 150
-  windPushing: 100
+  windBreaking: 100
+  windPushing: 70
   immunityDuration: 1.5
 --- !u!114 &8035021250589292805
 MonoBehaviour:
@@ -882,7 +882,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662464223060016393}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 543.9, y: -136.86107, z: -26.52}
+  m_LocalPosition: {x: -15.3, y: 21.448923, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6680412922169686547}
@@ -2220,7 +2220,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3171457457803546553}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

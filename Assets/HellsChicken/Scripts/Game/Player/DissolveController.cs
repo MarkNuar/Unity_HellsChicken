@@ -43,7 +43,7 @@ namespace HellsChicken.Scripts.Game.Player
                 }
                 else 
                 {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 }
             }
             else 
@@ -87,7 +87,7 @@ namespace HellsChicken.Scripts.Game.Player
                     gameObject.layer = LayerMask.NameToLayer("Player");
                 }
             }else if (i >= 1.6){
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }*/
             

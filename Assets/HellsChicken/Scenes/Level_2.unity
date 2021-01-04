@@ -199,6 +199,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 518810035}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &154481340 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7825149178345940463, guid: 3b2e08a2edd553945ad17d8016d01055,
+    type: 3}
+  m_PrefabInstance: {fileID: 1999525844}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &165614415 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 138184, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 969318038}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &348968321 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 825099919729571108, guid: c6b9f24e66eaa994c929ef053ade6013,
@@ -502,6 +514,11 @@ PrefabInstance:
     - target: {fileID: 8084867469905569844, guid: c8b1d6afbdfd7dd4cb699c9119d099c0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8084867469905569844, guid: c8b1d6afbdfd7dd4cb699c9119d099c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8518587087267543621, guid: c8b1d6afbdfd7dd4cb699c9119d099c0,
@@ -1704,6 +1721,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1746213826578795485, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1746213826578795485, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3329702079825037555, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
         type: 3}
       propertyPath: directionalLight
@@ -1783,12 +1810,6 @@ PrefabInstance:
       objectReference: {fileID: 379125001}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88e8f15d4b1faa645821ca8ff73ed8e4, type: 3}
---- !u!1 &1019091196 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 138184, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 969318038}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1024344558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 825099919729571108, guid: c6b9f24e66eaa994c929ef053ade6013,
@@ -3302,7 +3323,7 @@ PrefabInstance:
         type: 3}
       propertyPath: eggCrosshairCanvas
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 154481340}
     - target: {fileID: 700164981357215836, guid: 656b3940bd139914482aa7b5527b46d5,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3656,7 +3677,7 @@ PrefabInstance:
         type: 3}
       propertyPath: initialCheckPoint
       value: 
-      objectReference: {fileID: 1019091196}
+      objectReference: {fileID: 165614415}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29c5eebf31db64348a3310657a2d95f2, type: 3}
 --- !u!1 &1810372402
