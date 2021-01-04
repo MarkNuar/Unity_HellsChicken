@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 6fd5d73aec672f44488159ba97c9ca42,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6615,6 +6615,11 @@ PrefabInstance:
       propertyPath: directionalLight
       value: 
       objectReference: {fileID: 1591134791}
+    - target: {fileID: 3602824277800632340, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88e8f15d4b1faa645821ca8ff73ed8e4, type: 3}
 --- !u!114 &1770161077 stripped
@@ -11556,6 +11561,11 @@ PrefabInstance:
     - target: {fileID: 8084867469905569844, guid: c8b1d6afbdfd7dd4cb699c9119d099c0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8084867469905569844, guid: c8b1d6afbdfd7dd4cb699c9119d099c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8086396856360438979, guid: c8b1d6afbdfd7dd4cb699c9119d099c0,

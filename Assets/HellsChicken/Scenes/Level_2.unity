@@ -1679,7 +1679,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 402512, guid: 88e8f15d4b1faa645821ca8ff73ed8e4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.1
+      value: -29.83
       objectReference: {fileID: 0}
     - target: {fileID: 402512, guid: 88e8f15d4b1faa645821ca8ff73ed8e4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1736,6 +1736,11 @@ PrefabInstance:
       propertyPath: directionalLight
       value: 
       objectReference: {fileID: 379125001}
+    - target: {fileID: 3602824277800632340, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88e8f15d4b1faa645821ca8ff73ed8e4, type: 3}
 --- !u!4 &995549327 stripped
@@ -4147,6 +4152,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8035021252407303942, guid: 3b2e08a2edd553945ad17d8016d01055,
+        type: 3}
+      propertyPath: automaticMovementDuration
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b2e08a2edd553945ad17d8016d01055, type: 3}
