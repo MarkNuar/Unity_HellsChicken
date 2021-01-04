@@ -74,12 +74,6 @@ public class DemonBossController : MonoBehaviour
                     break;
             }
         }
-        
-        if (gameObject.CompareTag("Wall"))
-        {
-            hasHitWall = true;
-            Debug.Log("ammerdaaa");
-        }
     }
 
     public void LookAtPlayer()
@@ -150,5 +144,12 @@ public class DemonBossController : MonoBehaviour
         anim.SetTrigger("isDamaged");
         StartCoroutine(ResetTrigger(0.5f));
     }
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            hasHitWall = true;
+        }
+    }
 }
