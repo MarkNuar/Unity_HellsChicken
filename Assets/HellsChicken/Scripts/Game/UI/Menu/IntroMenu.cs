@@ -36,6 +36,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
         private string _currentChaptersName;
 
         private int _voiceOverCounter;
+        
         // Start is called before the first frame update
         private void Start()
         {
@@ -69,11 +70,10 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             _loadingNextChapter = false;
             _clearScreen = false;
             _clearingScreen = false;
-            StartCoroutine(TimerBetweenChapters(1));
+            StartCoroutine(TimerBetweenChapters(1.75f));
             EventManager.TriggerEvent("startIntroSoundtrack");
         }
 
-        // Update is called once per frame
         private void FixedUpdate()
         {
             if (Input.GetKeyDown(KeyCode.X))
@@ -81,16 +81,6 @@ namespace HellsChicken.Scripts.Game.UI.Menu
                 EventManager.TriggerEvent("stopVoiceOver");
                 EventManager.TriggerEvent("stopIntroSoundtrack"); //stop the music and destroy the audio manager
                 StartCoroutine(LoadSceneWithFading("Level_1"));
-            }
-
-            if (Input.GetButtonDown("Fire1"))
-            {
-                _lerpTime = 0f;
-                _loadNextChapter = true;
-                _loadingNextChapter = false;
-                _currentChapters[_nextChapterToBeLoaded].color = new Color(1, 1, 1, 1); //opaque
-                _nextChapterToBeLoaded++;
-                EventManager.TriggerEvent("stopVoiceOver");
             }
             
             if (_loadNextChapter)
@@ -111,7 +101,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
                     _lerpTime = 0f;
                     _loadingNextChapter = false;
                     _nextChapterToBeLoaded++;
-                    StartCoroutine(TimerBetweenChapters(_currentDurations[_nextChapterToBeLoaded-1] - 1.5f));
+                    StartCoroutine(TimerBetweenChapters(_currentDurations[_nextChapterToBeLoaded-1]));
                 }
             }
             if (_clearScreen)
