@@ -9,9 +9,12 @@ namespace HellsChicken.Scripts.Game.AI.Soul
         [SerializeField] private Transform soul;
 
         [SerializeField] private float speed = 200f;
-        [SerializeField] private float d = 50f;
+        [SerializeField] private float d = 25f;
         //how close are enemy need to be to a way point before it moves to the next one
         [SerializeField] private float nextWaypointDistance = 3f;
+        
+        private Quaternion _leftRotation;
+        private Quaternion _rightRotation;
 
         private Path _path;
         private int _currentWaypoint;
@@ -24,6 +27,9 @@ namespace HellsChicken.Scripts.Game.AI.Soul
         {
             _seeker = GetComponent<Seeker>();
             _rb = GetComponent<Rigidbody>();
+            
+            _leftRotation = transform.rotation;
+            _rightRotation = _leftRotation * Quaternion.Euler(0, 180, 0);
             
             InvokeRepeating(nameof(UpdatePath), 0f, 0.5f);
         }
@@ -52,25 +58,22 @@ namespace HellsChicken.Scripts.Game.AI.Soul
                 
             Vector2 direction = (_path.vectorPath[_currentWaypoint] - _rb.position).normalized;
             var force = direction * speed * Time.deltaTime;
-                
-            //TODO
+            
             if(Vector2.Distance(target.position, _rb.position) < d)
-            {
                 _rb.AddForce(force);
-            }
-                
+            
             var distance = Vector2.Distance(_rb.position, _path.vectorPath[_currentWaypoint]);
             if (distance < nextWaypointDistance)
                 _currentWaypoint++;
-                
+            
             //se all'inizio guarda a sinistra
             if (force.x >= 0.01f)
             {
-                soul.localScale = new Vector3(3f, -3f, 3f);
+                transform.rotation = _rightRotation;
             }
             else if (force.x <= -0.01f)
             {
-                soul.localScale = new Vector3(3f, 3f, 3f);
+                transform.rotation = _leftRotation;
             }
         }
 
