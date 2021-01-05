@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 825099919729571111}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -23.57, y: 13.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -44,8 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c8e93f193f0901479782546415711b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fireBall: {fileID: 6596761879288517882, guid: b3859215843fd114db6f93ae87f2bbe9,
+  fireBall: {fileID: 6596761879288517882, guid: b3859215843fd114db6f93ae87f2bbe9,
     type: 3}
+  timer: 1
+  timeBetweenMeteors: 2
 --- !u!65 &825099919729571110
 BoxCollider:
   m_ObjectHideFlags: 0
