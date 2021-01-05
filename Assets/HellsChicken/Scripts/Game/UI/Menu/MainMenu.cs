@@ -28,16 +28,17 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             levels[i].interactable = i < _levelToBeCompleted;
          }
       }
-
-      public void PlayGame()
-      {
-         StartCoroutine(LoadSceneWithFading(SceneManager.GetActiveScene().buildIndex + 1));
-      }
       
-
       public void PlayLevel(int levelIndex)
       {
-         StartCoroutine(LoadSceneWithFading(SceneManager.GetActiveScene().buildIndex + levelIndex));
+         if (levelIndex == 1) 
+         {
+            StartCoroutine(LoadSceneWithFading("Intro"));
+         }
+         else
+         {
+            StartCoroutine(LoadSceneWithFading("Level_" + levelIndex));
+         }
       }
 
       public void QuitGame()
@@ -92,12 +93,12 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             //MenuManager.Instance.OpenMainMenu();
        }
 
-       private IEnumerator LoadSceneWithFading(int index)
+       private IEnumerator LoadSceneWithFading(String sceneName)
        {
           transition.SetTrigger("Start");
           EventManager.TriggerEvent("fadeOutMusic");
           yield return new WaitForSeconds(transitionTime);
-          SceneManager.LoadScene(index);
+          SceneManager.LoadScene(sceneName);
        }
    }
 }

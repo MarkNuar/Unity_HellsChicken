@@ -13,6 +13,10 @@ public class DemonLordAudioManager : MonoBehaviour
     [SerializeField] private AudioSource demonLordRoarAudioSource;
     [SerializeField] private AudioSource demonLordDamageAudioSource;
     [SerializeField] private AudioSource demonLordStartFightAudioSource;
+    [SerializeField] private AudioSource demonLord2HitComboAudioSource;
+    [SerializeField] private AudioSource demonLord3HitComboAudioSource;
+
+
 
     [SerializeField] private AudioClip demonLordFootStepsSound;
     [SerializeField] private AudioClip demonLordWingsSound;
@@ -22,6 +26,8 @@ public class DemonLordAudioManager : MonoBehaviour
     [SerializeField] private AudioClip demonLordRoarSound;
     [SerializeField] private AudioClip demonLordDamageSound;
     [SerializeField] private AudioClip demonLordStartFightSound;
+    [SerializeField] private AudioClip demonLord2HitComboSound;
+    [SerializeField] private AudioClip demonLord3HitComboSound;
 
 
     protected void Awake() {
@@ -34,6 +40,9 @@ public class DemonLordAudioManager : MonoBehaviour
         EventManager.StartListening("demonSword",DemonSword);
         EventManager.StartListening("demonRoar",DemonRoar);
         EventManager.StartListening("demonStartFight",DemonStartFight);
+        EventManager.StartListening("demon2HitCombo",Demon2HitCombo);
+        EventManager.StartListening("demon3HitCombo",Demon3HitCombo);
+
     }
 
     private void Footsteps()
@@ -107,5 +116,21 @@ public class DemonLordAudioManager : MonoBehaviour
         demonLordStartFightAudioSource.clip = demonLordStartFightSound;
         demonLordStartFightAudioSource.Play();
         EventManager.StartListening("demonStartFight",DemonStartFight);
+    }
+    
+    private void Demon2HitCombo()
+    {
+        EventManager.StopListening("demon2HitCombo",Demon2HitCombo);
+        demonLord2HitComboAudioSource.clip = demonLord2HitComboSound;
+        demonLord2HitComboAudioSource.Play();
+        EventManager.StartListening("demon2HitCombo",Demon2HitCombo);
+    }
+    
+    private void Demon3HitCombo()
+    {
+        EventManager.StopListening("demon3HitCombo",Demon3HitCombo);
+        demonLord3HitComboAudioSource.clip = demonLord3HitComboSound;
+        demonLord3HitComboAudioSource.Play();
+        EventManager.StartListening("demon3HitCombo",Demon3HitCombo);
     }
 }

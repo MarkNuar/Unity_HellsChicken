@@ -12,7 +12,9 @@ namespace HellsChicken.Scripts.Game
         
         private Vector3 _currentCheckPointPos;
         private float _currentLightIntensity;
-    
+
+        public bool isCurrentCkptTheFirst;
+        
         // SINGLETON
         private void Awake()
         {
@@ -22,7 +24,7 @@ namespace HellsChicken.Scripts.Game
                 DontDestroyOnLoad(Instance);
                 SetCurrentCheckPointPos(initialCheckPoint.transform.position);
                 SetCurrentLightIntensity(initialLight.intensity);
-                Debug.Log(initialLight.intensity);
+                isCurrentCkptTheFirst = true;
             }
             else
             {
@@ -42,6 +44,7 @@ namespace HellsChicken.Scripts.Game
     
         public void SetCurrentCheckPointPos(Vector3 newCheckPointPos)
         {
+            isCurrentCkptTheFirst = false;
             _currentCheckPointPos = new Vector3(newCheckPointPos.x,newCheckPointPos.y, 0f);
         }
 

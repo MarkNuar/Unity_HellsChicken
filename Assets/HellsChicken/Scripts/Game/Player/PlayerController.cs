@@ -89,6 +89,11 @@ namespace HellsChicken.Scripts.Game.Player
         //public float maxWindVelocity = 20f;
 
         private Transform _cachedPlayerParent;
+        
+        
+        //TODO level 2 initial movement
+        private bool _isAutomaticallyMoved;
+        [SerializeField] private float automaticMovementDuration = 1.5f;
 
         public Vector3 getPredictedPosition() {
             Vector3 result = new Vector3(transform.position.x,transform.position.y,0);
@@ -155,13 +160,26 @@ namespace HellsChicken.Scripts.Game.Player
         private void Start()
         {
             //TODO
+            if (LevelManager.Instance.isCurrentCkptTheFirst && LevelManager.Instance.levelNumber != 1)
+            {
+                _isAutomaticallyMoved = true;
+                StartCoroutine(AutomaticMovementTimer(automaticMovementDuration));
+            }
+            else
+                _isAutomaticallyMoved = false;
+            
             _cachedPlayerParent = _transform.parent;
             _characterController.enabled = false;
-            //TODO
             if (LevelManager.Instance)
                 _transform.position = LevelManager.Instance.GetCurrentCheckPointPos();
             EventManager.TriggerEvent("chickenSpawnSound");
             _characterController.enabled = true;
+        }
+
+        private IEnumerator AutomaticMovementTimer(float time)
+        {
+            yield return new WaitForSeconds(time);
+            _isAutomaticallyMoved = false;
         }
 
         private void ShootFlames()
@@ -319,8 +337,19 @@ namespace HellsChicken.Scripts.Game.Player
                 // Debug.DrawLine(Vector3.zero,_hitNormal,Color.green);
                 // Debug.Log(_isSliding);
 
+
+                // AUTOMATIC RIGHT MOVEMENT AT THE BEGINNING OF THE LEVEL
+                if (_isAutomaticallyMoved)
+                {
+                    _moveDirection.x = walkSpeed*0.6f;
+                    _isYMovementCorrected = true;
+                    _moveDirection.y = -yMovementCorrection;
+                    _isGliding = false;
+                    if (_isMoving)
+                        EventManager.TriggerEvent("footsteps");
+                }
                 // SLIDING
-                if (_isSliding)
+                else if (_isSliding)
                 {
                     //FIRST FRAME SLIDING OR SLOPE ANGLE CHANGE
                     var slopeAngleChanged = Mathf.Abs(_slopeAngle - _prevSlopeAngle) > 5f; // check if the slide direction changed while sliding

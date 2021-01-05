@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using EventManagerNamespace;
 using UnityEngine;
 using TMPro;
@@ -77,11 +78,10 @@ namespace HellsChicken.Scripts.Game.UI.Menu
         public void MainMenu()
         {
             LevelManager.Instance.DestroyLevelManagerInstance();
-            GameAudioManager.Instance.DestroyGameAudioManagerInstance();
+            GameAudioManager.Instance.DestroyGameAudioManagerInstance(transitionTime - 0.05f);
             Time.timeScale = 1f;
-            //_gameIsPaused = false; TODO
             EventManager.TriggerEvent("stopGameSoundtrack");
-            StartCoroutine(LoadSceneWithFading(0)); 
+            StartCoroutine(LoadSceneWithFading("MainMenu")); 
         }
 
         public static bool GetGameIsPaused()
@@ -127,12 +127,13 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             //MenuManager.Instance.OpenMainMenu();
         }
         
-        private IEnumerator LoadSceneWithFading(int index)
+        private IEnumerator LoadSceneWithFading(String  sceneName)
         {
             transition.SetTrigger("Start");
-            EventManager.TriggerEvent("fadeOutMusic");
+            //EventManager.TriggerEvent("fadeOutMusic");
             yield return new WaitForSeconds(transitionTime);
-            SceneManager.LoadScene(index);
+            //TODO
+            SceneManager.LoadScene(sceneName);
         }
     }
 }
