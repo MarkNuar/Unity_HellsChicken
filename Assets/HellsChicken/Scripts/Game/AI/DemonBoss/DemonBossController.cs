@@ -20,7 +20,14 @@ public class DemonBossController : MonoBehaviour
     private GameObject bossSpine;
     private GameObject bossHead;
     private GameObject bossSword;
-    
+    private GameObject bossWhip00;
+    private GameObject bossWhip01;
+    private GameObject bossWhip02;
+    private GameObject bossWhip03;
+    private GameObject bossWhip04;
+    private GameObject bossWhip05;
+
+
     private bool isFlipped;
     private bool hasStartedFight;
     private bool isEnraged;
@@ -32,6 +39,14 @@ public class DemonBossController : MonoBehaviour
         bossSpine = GameObject.Find("DEMON_LORD_ Spine");
         bossHead = GameObject.Find("DEMON_LORD_ Head");
         bossSword = GameObject.Find("DEMON_LORD_SWORD");
+        bossWhip00 = GameObject.Find("DEMON_LORD_WHIP_HANDLE");
+        bossWhip01 = GameObject.Find("DEMON_LORD_WHIP_01");
+        bossWhip02 = GameObject.Find("DEMON_LORD_WHIP_02");
+        bossWhip03 = GameObject.Find("DEMON_LORD_WHIP_03");
+        bossWhip04 = GameObject.Find("DEMON_LORD_WHIP_04");
+        bossWhip05 = GameObject.Find("DEMON_LORD_WHIP_05");
+
+
         _currentHealth = _maxHealth;
         _healthBar.SetMaxHealth(_maxHealth);
         EventManager.StartListening("activateHealthBar",ActivateHealthBar);
@@ -104,6 +119,12 @@ public class DemonBossController : MonoBehaviour
         bossSpine.GetComponent<CapsuleCollider>().enabled = false;
         bossSword.GetComponent<CapsuleCollider>().enabled = false;
         bossHead.GetComponent<SphereCollider>().enabled = false;
+        bossWhip00.GetComponent<CapsuleCollider>().enabled = false;
+        bossWhip01.GetComponent<CapsuleCollider>().enabled = false;
+        bossWhip02.GetComponent<CapsuleCollider>().enabled = false;
+        bossWhip03.GetComponent<CapsuleCollider>().enabled = false;
+        bossWhip04.GetComponent<CapsuleCollider>().enabled = false;
+        bossWhip05.GetComponent<CapsuleCollider>().enabled = false;
     }
 
     IEnumerator ResetTrigger(float timer)
