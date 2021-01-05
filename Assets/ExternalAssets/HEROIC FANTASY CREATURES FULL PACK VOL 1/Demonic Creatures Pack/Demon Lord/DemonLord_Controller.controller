@@ -498,6 +498,7 @@ AnimatorState:
   m_Transitions:
   - {fileID: 4085430180064866334}
   - {fileID: -8879881697880300991}
+  - {fileID: 6762517219352638492}
   m_StateMachineBehaviours:
   - {fileID: -8141391539049846325}
   m_Position: {x: 50, y: 50, z: 0}
@@ -630,6 +631,31 @@ AnimatorStateTransition:
   m_ExitTime: 0.9
   m_HasExitTime: 1
   m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1101 &-4770165001985208955
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: isDamaged
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 1102023382098536614}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.150376
+  m_TransitionOffset: 0
+  m_ExitTime: 0.74999994
+  m_HasExitTime: 0
+  m_HasFixedDuration: 0
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
@@ -869,8 +895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 10
   flyAwayRange: 5
-  minWhipRange: 20
-  maxWhipRange: 40
+  maxWhipRange: 25
 --- !u!1101 &-1668654122835081854
 AnimatorStateTransition:
   m_ObjectHideFlags: 3
@@ -981,6 +1006,7 @@ AnimatorState:
   m_Transitions:
   - {fileID: -3080420299580117319}
   - {fileID: -7116138965007573597}
+  - {fileID: -4770165001985208955}
   m_StateMachineBehaviours:
   - {fileID: -7239541635895710226}
   m_Position: {x: 50, y: 50, z: 0}
@@ -1223,7 +1249,7 @@ AnimatorStateMachine:
     m_Position: {x: -960, y: -900, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102681873729156560}
-    m_Position: {x: 240, y: 600, z: 0}
+    m_Position: {x: 50, y: 590, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102812612023042044}
     m_Position: {x: -960, y: -380, z: 0}
@@ -1232,7 +1258,7 @@ AnimatorStateMachine:
     m_Position: {x: -960, y: -860, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5953825791975280094}
-    m_Position: {x: -40, y: 570, z: 0}
+    m_Position: {x: 330, y: 800, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 385478507987571061}
     m_Position: {x: 1130, y: 290, z: 0}
@@ -1266,7 +1292,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: EnragedFlyBackwards
-  m_Speed: 1
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -8280973337535108287}
@@ -2555,6 +2581,31 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1101 &6762517219352638492
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: isDamaged
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 1102264112015238002}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.09711779
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75000006
+  m_HasExitTime: 0
+  m_HasFixedDuration: 0
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &6934106559282892803
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -2592,10 +2643,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a88f711b44a481b4dabe37708f841408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enraged2HitComboRange: 10
+  enragedAttackRange: 10
   enragedFlyAwayRange: 5
-  enraged3HitComboRange: 20
-  enragedMaxRange: 40
+  enragedMaxRange: 25
 --- !u!1101 &8337803534148733217
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

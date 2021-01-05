@@ -8,7 +8,6 @@ public class Boss_Idle : StateMachineBehaviour
 {
     public float attackRange;
     public float flyAwayRange;
-    public float minWhipRange;
     public float maxWhipRange;
 
     private bool hasStoppedFlying;
@@ -19,6 +18,7 @@ public class Boss_Idle : StateMachineBehaviour
     private Vector3 target;
     private Vector3 moveVector;
     private Random _random = new Random(0x6E624EB7u);
+    private float random;
     private bool choice;
 
     
@@ -31,7 +31,13 @@ public class Boss_Idle : StateMachineBehaviour
         demonBossSword = GameObject.Find("DEMON_LORD_SWORD");
         demonBossSword.GetComponent<CapsuleCollider>().enabled = false;
         hasStoppedFlying = true;
-        choice = _random.NextBool();
+        
+        random = _random.NextFloat();
+        if(random<0.5f)
+            choice = true;
+        else
+            choice = false;
+        
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -51,7 +57,7 @@ public class Boss_Idle : StateMachineBehaviour
             EventManager.TriggerEvent("demonSword");
         }
         
-        else if (Vector3.Distance(player.transform.position, demonBoss.transform.position) >= minWhipRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) <= maxWhipRange && choice)
+        else if (Vector3.Distance(player.transform.position, demonBoss.transform.position) >= attackRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) <= maxWhipRange && choice)
         {
             animator.SetTrigger("WhipAttack");
             EventManager.TriggerEvent("demonWhip");
