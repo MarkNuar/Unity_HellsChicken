@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using EventManagerNamespace;
 using UnityEngine;
 using Random = Unity.Mathematics.Random;
-    
-public class Boss_Enraged : StateMachineBehaviour
+
+public class Boss_Idle_Enraged : StateMachineBehaviour
 {
-   public float enragedSpeed;
     public float enraged2HitComboRange;
     public float enragedFlyAwayRange;
     public float enraged3HitComboRange;
@@ -40,20 +39,18 @@ public class Boss_Enraged : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _demonBossController.LookAtPlayer();
-        
-        if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= enraged2HitComboRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) >= enragedFlyAwayRange)
+        if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= enragedFlyAwayRange && hasStoppedFlying)
+        {
+            animator.SetTrigger("EnragedFlyBackwards");
+            hasStoppedFlying = false;
+        }
+        else if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= enraged2HitComboRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) >= enragedFlyAwayRange)
         {
             demonBossSword.GetComponent<CapsuleCollider>().enabled = true;
             animator.SetTrigger("2HitCombo");
             EventManager.TriggerEvent("demon2HitCombo");
         }
-
-        else if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= enragedFlyAwayRange && hasStoppedFlying)
-        {
-            animator.SetTrigger("EnragedFlyBackwards");
-            hasStoppedFlying = false;
-        }
-
+        
         else if (Vector3.Distance(player.transform.position, demonBoss.transform.position) >= enraged3HitComboRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) <= enragedMaxRange && choice)
         {
             animator.SetTrigger("3HitCombo");
@@ -61,10 +58,7 @@ public class Boss_Enraged : StateMachineBehaviour
         }
         else
         {
-            target = new Vector3(player.transform.position.x, demonBoss.transform.position.y,demonBoss.transform.position.z);
-            moveVector = target - demonBoss.transform.position;
-            _bossCharacterController.Move(moveVector * enragedSpeed * Time.deltaTime);
-            EventManager.TriggerEvent("demonFootsteps");
+            animator.SetTrigger("Walk");
         }
     }
 
@@ -74,8 +68,6 @@ public class Boss_Enraged : StateMachineBehaviour
         animator.ResetTrigger("2HitCombo");
         animator.ResetTrigger("FlyBackwards");
         animator.ResetTrigger("3HitCombo");
-        EventManager.TriggerEvent("stopDemonFootsteps");
+        animator.ResetTrigger("Walk");
     }
-
-   
 }
