@@ -14,6 +14,8 @@ namespace HellsChicken.Scripts.Game
         private float _currentLightIntensity;
 
         public bool isCurrentCkptTheFirst;
+
+        public bool enableFirstCktpCheck = false;
         
         // SINGLETON
         private void Awake()
@@ -24,7 +26,8 @@ namespace HellsChicken.Scripts.Game
                 DontDestroyOnLoad(Instance);
                 SetCurrentCheckPointPos(initialCheckPoint.transform.position);
                 SetCurrentLightIntensity(initialLight.intensity);
-                isCurrentCkptTheFirst = true;
+                if(enableFirstCktpCheck)
+                    isCurrentCkptTheFirst = true;
             }
             else
             {

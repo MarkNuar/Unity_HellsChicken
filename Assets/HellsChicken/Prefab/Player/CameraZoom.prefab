@@ -57,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 6350356882074614893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8, y: 10, z: 1}
+  m_LocalScale: {x: 10.207225, y: 127.18225, z: 1}
   m_Children:
   - {fileID: 6497317998574015400}
   - {fileID: 5477998096965570505}
@@ -93,8 +93,8 @@ MonoBehaviour:
   minZoom: 30
   maxZoom: 50
   cmCam: {fileID: 0}
-  startPosition: {fileID: 6497317998574015400}
-  endPosition: {fileID: 5477998096965570505}
+  start: {fileID: 6497317998574015400}
+  end: {fileID: 5477998096965570505}
   player: {fileID: 0}
 --- !u!1 &7685677334627332203
 GameObject:
