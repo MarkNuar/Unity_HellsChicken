@@ -9,6 +9,7 @@ namespace HellsChicken.Scripts.Game.AI.Soul
         [SerializeField] private Transform soul;
 
         [SerializeField] private float speed = 200f;
+        [SerializeField] private float d = 50f;
         //how close are enemy need to be to a way point before it moves to the next one
         [SerializeField] private float nextWaypointDistance = 3f;
 
@@ -53,7 +54,7 @@ namespace HellsChicken.Scripts.Game.AI.Soul
             var force = direction * speed * Time.deltaTime;
                 
             //TODO
-            //if (target.position.x > transform.position.x && target.rotation.y == 180 || target.position.x < transform.position.x && target.rotation.y == 0)
+            if(Vector2.Distance(target.position, _rb.position) < d)
             {
                 _rb.AddForce(force);
             }
@@ -65,11 +66,11 @@ namespace HellsChicken.Scripts.Game.AI.Soul
             //se all'inizio guarda a sinistra
             if (force.x >= 0.01f)
             {
-                soul.localScale = new Vector3(-1f, 1f, 1f);
+                soul.localScale = new Vector3(3f, -3f, 3f);
             }
             else if (force.x <= -0.01f)
             {
-                soul.localScale = new Vector3(1f, 1f, 1f);
+                soul.localScale = new Vector3(3f, 3f, 3f);
             }
         }
 

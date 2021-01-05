@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Utente\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Utente\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_HellsChicken.-930839669.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Utente\Documents\GitHub\HellsChicken" t="IncludeRecursive">
+    <e p="C:\Users\tomma\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\tomma\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_HellsChicken.-1096897409.00" t="ExcludeRecursive" />
+    <e p="C:\Users\tomma\RiderProjects\HellsChicken" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -406,6 +406,7 @@
                 <e p="Centaur" t="Include">
                   <e p="CentaurAI.cs" t="Include" />
                   <e p="CentaurAICC.cs" t="Include" />
+                  <e p="CentaurDissolvation.cs" t="Include" />
                   <e p="CentaurFire.cs" t="Include" />
                   <e p="Explosion" t="Include">
                     <e p="Explosion.cs" t="Include" />
@@ -462,6 +463,7 @@
                 <e p="BladeMovement.cs" t="Include" />
                 <e p="PendulumEngine.cs" t="Include" />
                 <e p="Rock" t="Include">
+                  <e p="DissolvationRock.cs" t="Include" />
                   <e p="FallingRock.cs" t="Include" />
                   <e p="RockEndLevel.cs" t="Include" />
                   <e p="RockObstacle.cs" t="Include" />
@@ -498,6 +500,7 @@
                 <e p="PlatformMoveY.cs" t="Include" />
               </e>
               <e p="Player" t="Include">
+                <e p="CameraZoom.cs" t="Include" />
                 <e p="DissolveController.cs" t="Include" />
                 <e p="Egg" t="Include">
                   <e p="Destruction.cs" t="Include" />
@@ -528,6 +531,7 @@
                   <e p="KeyController.cs" t="Include" />
                 </e>
                 <e p="Menu" t="Include">
+                  <e p="CameraRotation.cs" t="Include" />
                   <e p="EndMenu.cs" t="Include" />
                   <e p="MainMenu.cs" t="Include" />
                   <e p="PauseMenu.cs" t="Include" />
