@@ -13,6 +13,7 @@ namespace HellsChicken.Scripts.Game.Platform
         [SerializeField] private float fallenTime = 1.0f;
         [SerializeField] private float timeShake;
         [SerializeField] private float delay;
+        [SerializeField] private float destroyTime = 3f;
         
         private Transform _transform;
         private float _startPosX;
@@ -71,7 +72,7 @@ namespace HellsChicken.Scripts.Game.Platform
             StopCoroutine(nameof(WaitForShake));
             yield return new WaitForSeconds(seconds);
             _isColliding = true;
-            yield return new WaitForSeconds(3f); 
+            yield return new WaitForSeconds(destroyTime); 
             Destroy(gameObject);
             yield return null;
         }
