@@ -204,7 +204,7 @@ MonoBehaviour:
   target: {fileID: 0}
   soul: {fileID: 4423460022567689016}
   speed: 600
-  d: 50
+  d: 25
   nextWaypointDistance: 3
 --- !u!136 &7582341521584749454
 CapsuleCollider:
