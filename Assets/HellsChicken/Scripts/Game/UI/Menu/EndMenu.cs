@@ -53,7 +53,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
         public void MainMenu()
         {
             LevelManager.Instance.DestroyLevelManagerInstance();
-            GameAudioManager.Instance.DestroyGameAudioManagerInstance();
+            GameAudioManager.Instance.DestroyGameAudioManagerInstance(transitionTime - 0.05f);
             Time.timeScale = 1f;
             EventManager.TriggerEvent("stopGameSoundtrack");
             StartCoroutine(LoadSceneWithFading("MainMenu")); 
@@ -63,7 +63,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
         {
             var nextLevel = LevelManager.Instance.levelNumber + 1;
             LevelManager.Instance.DestroyLevelManagerInstance();
-            GameAudioManager.Instance.DestroyGameAudioManagerInstance();
+            GameAudioManager.Instance.DestroyGameAudioManagerInstance(transitionTime - 0.05f);
             Time.timeScale = 1f;
             EventManager.TriggerEvent("stopGameSoundtrack");
             StartCoroutine(LoadSceneWithFading("Level_"+nextLevel));
@@ -110,7 +110,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
         private IEnumerator LoadSceneWithFading(String sceneName)
         {
             transition.SetTrigger("Start");
-            EventManager.TriggerEvent("fadeOutMusic");
+            //EventManager.TriggerEvent("fadeOutMusic");
             yield return new WaitForSeconds(transitionTime);
             SceneManager.LoadScene(sceneName);
         }

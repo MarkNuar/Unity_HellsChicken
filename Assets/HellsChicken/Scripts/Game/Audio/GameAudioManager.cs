@@ -43,7 +43,7 @@ public class GameAudioManager : MonoBehaviour
     private void StopGameSoundtrack()
     {
         EventManager.StopListening("stopGameSoundtrack",StopGameSoundtrack);
-        StartCoroutine(StartFade(gameAudioSource, 1, 0));
+        StartCoroutine(StartFade(gameAudioSource, 0.95f, 0));
         EventManager.StartListening("stopGameSoundtrack",StopGameSoundtrack);
     }
     
@@ -60,9 +60,9 @@ public class GameAudioManager : MonoBehaviour
         }
     }
     
-    public void DestroyGameAudioManagerInstance()
+    public void DestroyGameAudioManagerInstance(float time)
     {
-        Destroy(gameObject);
+        Destroy(gameObject,time);
     }
     
 }
