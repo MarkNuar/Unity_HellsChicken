@@ -41,7 +41,6 @@ public class Boss_Walk : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _demonBossController.LookAtPlayer();
-
         if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= flyAwayRange && hasStoppedFlying)
         {
             animator.SetTrigger("FlyBackwards");
@@ -66,6 +65,7 @@ public class Boss_Walk : StateMachineBehaviour
             moveVector = target - demonBoss.transform.position;
             _bossCharacterController.Move(moveVector * speed * Time.deltaTime);
             EventManager.TriggerEvent("demonFootsteps");
+            choice = _random.NextBool();
         }
     }
 
