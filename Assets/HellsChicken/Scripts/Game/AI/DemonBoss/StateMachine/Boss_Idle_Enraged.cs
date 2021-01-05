@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using EventManagerNamespace;
+﻿using EventManagerNamespace;
 using UnityEngine;
-using Random = Unity.Mathematics.Random;
 
 public class Boss_Idle_Enraged : StateMachineBehaviour
 {
@@ -17,7 +14,6 @@ public class Boss_Idle_Enraged : StateMachineBehaviour
     private GameObject demonBossSword;
     private Vector3 target;
     private Vector3 moveVector;
-    private Random _random = new Random(0x6E624EB7u);
     private float random;
     private bool choice;
 
@@ -31,7 +27,8 @@ public class Boss_Idle_Enraged : StateMachineBehaviour
         demonBossSword.GetComponent<CapsuleCollider>().enabled = false;
         hasStoppedFlying = true;
         
-        random = _random.NextFloat();
+        random = Random.Range(0f,1f);
+        
         if(random<0.5f)
             choice = true;
         else
