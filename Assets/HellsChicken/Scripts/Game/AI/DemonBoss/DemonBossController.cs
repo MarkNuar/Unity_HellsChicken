@@ -11,12 +11,17 @@ public class DemonBossController : MonoBehaviour
     [SerializeField] public int _enragedHealth;
     [SerializeField] public int _headShotValue;
     [SerializeField] public int _chestShotValue;
+    [SerializeField] private GameObject _chestDamageText;
+    [SerializeField] private GameObject _headDamageText;
+
     public GameObject healthBarCanvas;
     public HealthBarScript _healthBar;
     private int _currentHealth;
     public Animator anim;
     public Transform player;
-    
+
+
+    private GameObject _textInstance;
     private GameObject bossSpine;
     private GameObject bossHead;
     private GameObject bossSword;
@@ -26,7 +31,7 @@ public class DemonBossController : MonoBehaviour
     private GameObject bossWhip03;
     private GameObject bossWhip04;
     private GameObject bossWhip05;
-
+    
 
     private bool isFlipped;
     private bool hasStartedFight;
@@ -127,10 +132,11 @@ public class DemonBossController : MonoBehaviour
         bossWhip05.GetComponent<CapsuleCollider>().enabled = false;
     }
 
-    IEnumerator ResetTrigger(float timer)
+    IEnumerator ResetTriggerAndText(float timer)
     {
         yield return new WaitForSeconds(timer);
         anim.ResetTrigger("isDamaged");
+        Destroy(_textInstance);
     }
 
     private void ActivateHealthBar()
@@ -154,7 +160,8 @@ public class DemonBossController : MonoBehaviour
         _healthBar.SetHealth(_currentHealth);
         EventManager.TriggerEvent("demonDamage");
         anim.SetTrigger("isDamaged");
-        StartCoroutine(ResetTrigger(0.5f));
+        _textInstance = Instantiate(_headDamageText, gameObject.transform.position + new Vector3(0f, 15f, 0), Quaternion.identity);
+        StartCoroutine(ResetTriggerAndText(1.0f));
     }
 
     public void ChestShot()
@@ -163,7 +170,8 @@ public class DemonBossController : MonoBehaviour
         _healthBar.SetHealth(_currentHealth);
         EventManager.TriggerEvent("demonDamage");
         anim.SetTrigger("isDamaged");
-        StartCoroutine(ResetTrigger(0.5f));
+        _textInstance = Instantiate(_chestDamageText, gameObject.transform.position + new Vector3(0f, 15f, 0), Quaternion.identity);
+        StartCoroutine(ResetTriggerAndText(1.0f));
     }
 
     private void OnTriggerEnter(Collider other)
