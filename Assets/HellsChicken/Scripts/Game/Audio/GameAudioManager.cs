@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using EventManagerNamespace;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 public class GameAudioManager : MonoBehaviour
 {

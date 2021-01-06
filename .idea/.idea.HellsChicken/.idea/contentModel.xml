@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\tomma\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\tomma\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_HellsChicken.-1096897409.00" t="ExcludeRecursive" />
-    <e p="C:\Users\tomma\RiderProjects\HellsChicken" t="IncludeRecursive">
+    <e p="C:\Users\Utente\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Utente\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_HellsChicken.-930839669.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Utente\Documents\GitHub\HellsChicken" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -539,6 +539,7 @@
                 <e p="Key" t="Include">
                   <e p="KeyController.cs" t="Include" />
                 </e>
+                <e p="LevelTimerDisplay.cs" t="Include" />
                 <e p="Menu" t="Include">
                   <e p="CameraRotation.cs" t="Include" />
                   <e p="EndMenu.cs" t="Include" />
@@ -546,6 +547,7 @@
                   <e p="MainMenu.cs" t="Include" />
                   <e p="PauseMenu.cs" t="Include" />
                   <e p="SettingsMenu.cs" t="Include" />
+                  <e p="TimerUI.cs" t="Include" />
                 </e>
               </e>
             </e>

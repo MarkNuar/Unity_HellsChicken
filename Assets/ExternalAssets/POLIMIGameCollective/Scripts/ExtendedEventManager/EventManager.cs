@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 using System.Collections.Generic;
 
@@ -7,15 +8,31 @@ namespace EventManagerNamespace {
 	class FloatUnityEvent : UnityEvent<float> { }
 	class StringUnityEvent : UnityEvent<string> { }
 	
-	public class EventManager : MonoBehaviour {
+	public class EventManager : MonoBehaviour
+	{
 
+		public static EventManager Instance;
+		
 		private Dictionary <string, UnityEvent> _simpleEventDictionary;
 		private Dictionary <string, UnityEvent<int>> _intEventDictionary;
 		private Dictionary <string, UnityEvent<float>> _floatEventDictionary;
 		private Dictionary <string, UnityEvent<string>> _stringEventDictionary;
-		
-		
-		
+
+		public void Awake()
+		{
+			if (Instance == null)
+			{
+				Instance = this;
+				DontDestroyOnLoad(Instance);
+			}
+
+			else
+			{
+				Destroy(gameObject);
+			}		
+		}
+
+
 
 		private static EventManager eventManager;
 
