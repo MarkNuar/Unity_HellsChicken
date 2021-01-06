@@ -10,8 +10,10 @@ public class GameAudioManager : MonoBehaviour
     public static GameAudioManager Instance;
     
     [SerializeField] private AudioSource gameAudioSource;
+    [SerializeField] private AudioSource bossMusicAudioSource;
 
     [SerializeField] private AudioClip gameSoundtrackSound;
+    [SerializeField] private AudioClip bossMusicSound;
 
     private void Awake()
     {
@@ -20,6 +22,7 @@ public class GameAudioManager : MonoBehaviour
         {
             EventManager.StartListening("gameSoundtrack",gameSoundtrack);
             EventManager.StartListening("stopGameSoundtrack",StopGameSoundtrack);
+            EventManager.StartListening("startBossMusic",StartBossMusic);
             EventManager.TriggerEvent("gameSoundtrack");
             Instance = this;
             DontDestroyOnLoad(Instance);
@@ -64,5 +67,16 @@ public class GameAudioManager : MonoBehaviour
     {
         Destroy(gameObject,time);
     }
-    
+
+    private void StartBossMusic()
+    {
+        EventManager.StopListening("startBossMusic",StartBossMusic);
+        bossMusicAudioSource.clip = bossMusicSound;
+        bossMusicAudioSource.loop = true;
+        if(!bossMusicAudioSource.isPlaying)
+            bossMusicAudioSource.Play();
+        StartCoroutine(StartFade(bossMusicAudioSource, 2f, 1));
+        EventManager.StartListening("startBossMusic",StartBossMusic);
+
+    }
 }

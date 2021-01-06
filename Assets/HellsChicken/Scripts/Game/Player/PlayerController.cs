@@ -84,9 +84,8 @@ namespace HellsChicken.Scripts.Game.Player
         private float _glidingStartingTime;
 
         private bool _isFloating;
-        public float windBreaking = 20f;
-        public float windPushing = 20f;
-        //public float maxWindVelocity = 20f;
+        public float windBreaking = 100f;
+        public float windPushing = 10f;
 
         private Transform _cachedPlayerParent;
         
@@ -386,15 +385,15 @@ namespace HellsChicken.Scripts.Game.Player
                 {
                     //HORIZONTAL MOVEMENT APPLICATION
                     _moveDirection.x = cachedHorizontalMovement;
-
+                    
                     //VERTICAL MOVEMENT BY WIND
                     if (IsFalling() && !IsGrounded()) //wind against our fall
                         _moveDirection.y += windBreaking * ((Mathf.Abs(_moveDirection.y)+2)/maxSpeedVectorMagnitude) * Time.deltaTime; //acceleration up
                     else //wind with our fall
                         _moveDirection.y += windPushing * Time.deltaTime;
-
-                    if (_moveDirection.y > maxSpeedVectorMagnitude)
-                        _moveDirection.y = maxSpeedVectorMagnitude;
+                    
+                    if (_moveDirection.y > maxSpeedVectorMagnitude/2)
+                        _moveDirection.y = maxSpeedVectorMagnitude/2;
                 }
                 // NORMAL MOVEMENT
                 else

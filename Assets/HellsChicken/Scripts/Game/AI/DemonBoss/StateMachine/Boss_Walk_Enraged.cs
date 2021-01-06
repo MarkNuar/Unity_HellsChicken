@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using EventManagerNamespace;
 using UnityEngine;
 
-public class Boss_Walk : StateMachineBehaviour
+public class Boss_Walk_Enraged : StateMachineBehaviour
 {
-
     private GameObject player;
     private GameObject demonBoss;
     private CharacterController _bossCharacterController;
     private DemonBossController _demonBossController;
     private GameObject demonBossSword;
 
-    public float speed;
+    public float enragedSpeed;
     public float attackRange;
 
     private Vector3 target;
@@ -35,7 +34,7 @@ public class Boss_Walk : StateMachineBehaviour
         _demonBossController.LookAtPlayer();
         target = new Vector3(player.transform.position.x, demonBoss.transform.position.y,demonBoss.transform.position.z);
         moveVector = target - demonBoss.transform.position;
-        _bossCharacterController.Move(moveVector * speed * Time.deltaTime);
+        _bossCharacterController.Move(moveVector * enragedSpeed * Time.deltaTime);
         EventManager.TriggerEvent("demonFootsteps");
 
         if(Vector3.Distance(player.transform.position, demonBoss.transform.position) <= attackRange)
@@ -48,6 +47,5 @@ public class Boss_Walk : StateMachineBehaviour
     {
         animator.ResetTrigger("StopWalking");
         EventManager.TriggerEvent("stopDemonFootsteps");
-
     }
 }

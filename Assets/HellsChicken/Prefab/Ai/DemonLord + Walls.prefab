@@ -1,5 +1,62 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3291789613612489474
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6082277293732498483}
+  - component: {fileID: 3103718171409686450}
+  - component: {fileID: 6325841170123540625}
+  m_Layer: 0
+  m_Name: MusicTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6082277293732498483
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3291789613612489474}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5299380269395277196}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3103718171409686450
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3291789613612489474}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 29.816948, z: 4.0369873}
+  m_Center: {x: 0, y: -14.408474, z: 60.99919}
+--- !u!114 &6325841170123540625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3291789613612489474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5654f36556c9d43802aa4ff088a9c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5299380269395277187
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,6 +87,7 @@ Transform:
   - {fileID: 1814063048116217300}
   - {fileID: 5299380270353019633}
   - {fileID: 5299380269820403102}
+  - {fileID: 6082277293732498483}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -710,9 +768,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3817650523487044720, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
         type: 3}
+      propertyPath: _headDamageText
+      value: 
+      objectReference: {fileID: 8510559294250563345, guid: 8ede93534097f8645aa2c0c0091395f2,
+        type: 3}
+    - target: {fileID: 3817650523487044720, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
       propertyPath: healthBarCanvas
       value: 
       objectReference: {fileID: 998259714222264531}
+    - target: {fileID: 3817650523487044720, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
+      propertyPath: _chestDamageText
+      value: 
+      objectReference: {fileID: 5494635398241873062, guid: 58ad447251da81241937ec840bd926a9,
+        type: 3}
+    - target: {fileID: 3817650523487044720, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
+      propertyPath: _flameDamageText
+      value: 
+      objectReference: {fileID: 6640422758323229658, guid: 42a9374d3ad0a6644ad333638515114f,
+        type: 3}
     - target: {fileID: 4425651695835855292, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
         type: 3}
       propertyPath: m_Layer

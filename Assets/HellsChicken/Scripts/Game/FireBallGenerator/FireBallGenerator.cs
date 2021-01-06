@@ -8,6 +8,9 @@ namespace HellsChicken.Scripts.Game.FireBallGenerator
         [SerializeField] private GameObject fireBall;
         [SerializeField] private float timer;
 
+        public float timeBetweenMeteors;
+        public float throwForce = 1f;
+        
         private GameObject _lastFireBall;
     
         // Start is called before the first frame update
@@ -17,12 +20,18 @@ namespace HellsChicken.Scripts.Game.FireBallGenerator
 
         private void OnTriggerEnter(Collider other) {
             Destroy(_lastFireBall);
-            _lastFireBall = Instantiate(fireBall,transform.position + new Vector3(0,1f,0), Quaternion.identity);
+            StartCoroutine(SpawnMeteor(timeBetweenMeteors));
         }
 
-        IEnumerator StartTimer(float t) {
+        private IEnumerator SpawnMeteor(float t)
+        {
             yield return new WaitForSeconds(t);
-            _lastFireBall = Instantiate(fireBall,transform.position + new Vector3(0,1f,0), Quaternion.identity);
+            _lastFireBall = Instantiate(fireBall,transform.position + new Vector3(0,throwForce,0), Quaternion.identity);
+        }
+        
+        private IEnumerator StartTimer(float t) {
+            yield return new WaitForSeconds(t);
+            _lastFireBall = Instantiate(fireBall,transform.position + new Vector3(0,throwForce,0), Quaternion.identity);
             yield return null;
         }
     }

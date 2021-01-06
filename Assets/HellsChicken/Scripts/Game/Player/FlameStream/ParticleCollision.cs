@@ -23,11 +23,12 @@ namespace HellsChicken.Scripts.Game.Player.FlameStream {
                 
                 if(destr == null)    
                     destr = other.gameObject.transform.parent.GetComponent<Destruction>();
-
                 if (destr != null)
                     destr.Destroyer();
-                else
-                    other.GetComponent<CentaurAICC>().TriggerCentaurDeath();
+                else if(other.gameObject.CompareTag("DemonBoss"))
+                        other.GetComponent<DemonBossController>().FlameShot();
+                    else
+                        other.GetComponent<CentaurAICC>().TriggerCentaurDeath();
             }
         }
     }
