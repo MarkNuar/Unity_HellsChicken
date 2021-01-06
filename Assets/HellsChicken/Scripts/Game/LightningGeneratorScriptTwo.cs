@@ -16,6 +16,9 @@ public class LightningGeneratorScriptTwo : MonoBehaviour
     public LightningBoltScript lightningEight;
     public LightningBoltScript lightningNine;
     public LightningBoltScript lightningTen;
+    public LightningBoltScript lightningEleven;
+    public LightningBoltScript lightningTwelve;
+
 
     [SerializeField] public int lightningInterval = 5;
     public LightningBoltScript[] lightningBoltScripts;
@@ -32,7 +35,7 @@ public class LightningGeneratorScriptTwo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lightningBoltScripts = new LightningBoltScript[10];
+        lightningBoltScripts = new LightningBoltScript[12];
         lightningBoltScripts[0] = lightningOne;
         lightningBoltScripts[1] = lightningTwo;
         lightningBoltScripts[2] = lightningThree;
@@ -43,6 +46,9 @@ public class LightningGeneratorScriptTwo : MonoBehaviour
         lightningBoltScripts[7] = lightningEight;
         lightningBoltScripts[8] = lightningNine;
         lightningBoltScripts[9] = lightningTen;
+        lightningBoltScripts[10] = lightningEleven;
+        lightningBoltScripts[11] = lightningTwelve;
+
 
 
         StartCoroutine(WaitForNextLightning(lightningInterval));

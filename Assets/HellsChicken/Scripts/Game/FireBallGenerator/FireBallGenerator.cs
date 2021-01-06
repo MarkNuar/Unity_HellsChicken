@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using EventManagerNamespace;
 using UnityEngine;
 
 namespace HellsChicken.Scripts.Game.FireBallGenerator
@@ -27,6 +28,7 @@ namespace HellsChicken.Scripts.Game.FireBallGenerator
         {
             yield return new WaitForSeconds(t);
             _lastFireBall = Instantiate(fireBall,transform.position + new Vector3(0,throwForce,0), Quaternion.identity);
+            EventManager.TriggerEvent("fireBall");
         }
         
         private IEnumerator StartTimer(float t) {

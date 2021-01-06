@@ -7,8 +7,6 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="Boss_Sword.cs" t="Include" />
-        <e p="BossMusicTrigger.cs" t="Include" />
         <e p="ExternalAssets" t="Include">
           <e p="AllSkyFree" t="Include">
             <e p="AllSkyFree_Readme.txt" t="Include" />
@@ -421,6 +419,7 @@
                   <e p="IDTNode.cs" t="Include" />
                 </e>
                 <e p="DemonBoss" t="Include">
+                  <e p="BossMusicTrigger.cs" t="Include" />
                   <e p="DemonBossController.cs" t="Include" />
                   <e p="HealthBarScript.cs" t="Include" />
                   <e p="StateMachine" t="Include">
@@ -428,6 +427,7 @@
                     <e p="Boss_FlyAway.cs" t="Include" />
                     <e p="Boss_Idle.cs" t="Include" />
                     <e p="Boss_Idle_Enraged.cs" t="Include" />
+                    <e p="Boss_Sword.cs" t="Include" />
                     <e p="Boss_TriggerFight.cs" t="Include" />
                     <e p="Boss_Walk.cs" t="Include" />
                     <e p="Boss_Walk_Enraged.cs" t="Include" />
@@ -452,6 +452,7 @@
                 <e p="DeathGoombaAudioManager.cs" t="Include" />
                 <e p="DemonLordAudioManager.cs" t="Include" />
                 <e p="EggAudioManager.cs" t="Include" />
+                <e p="FireBallAudioManager.cs" t="Include" />
                 <e p="GameAudioManager.cs" t="Include" />
                 <e p="GoombaAudioManager.cs" t="Include" />
                 <e p="IntroAudioManager.cs" t="Include" />

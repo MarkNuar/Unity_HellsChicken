@@ -13,7 +13,6 @@ public class BladeAudioManager : MonoBehaviour
         EventManager.StartListening("bladeSound", bladeSound);
     }
 
-
     public void bladeSound()
     {
         EventManager.StopListening("bladeSound", bladeSound);
