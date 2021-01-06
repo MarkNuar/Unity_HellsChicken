@@ -49,7 +49,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             }
             else
             {
-                bestTimeText.text = "Current best Time:<br>" + 
+                bestTimeText.text = "Current best time<br>" + 
                                     LevelManager.Instance.GetFormattedTime(GameManager.Instance.GetBestTime(LevelManager.Instance.levelNumber));
                 bestTimeText.color = Color.gray;
             }
