@@ -9,6 +9,8 @@ public class Boss_Walk_Enraged : StateMachineBehaviour
     private GameObject demonBoss;
     private CharacterController _bossCharacterController;
     private DemonBossController _demonBossController;
+    private GameObject demonBossSword;
+
     public float enragedSpeed;
     public float attackRange;
 
@@ -19,6 +21,8 @@ public class Boss_Walk_Enraged : StateMachineBehaviour
     {
         player = GameObject.Find("PlayerBody");
         demonBoss = GameObject.FindGameObjectWithTag("DemonBoss");
+        demonBossSword = GameObject.Find("DEMON_LORD_SWORD");
+        demonBossSword.GetComponent<CapsuleCollider>().enabled = false;
         _bossCharacterController = demonBoss.GetComponent<CharacterController>();
         _demonBossController = demonBoss.GetComponent<DemonBossController>();
 

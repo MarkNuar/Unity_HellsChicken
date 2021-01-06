@@ -10,6 +10,8 @@ public class Boss_Walk : StateMachineBehaviour
     private GameObject demonBoss;
     private CharacterController _bossCharacterController;
     private DemonBossController _demonBossController;
+    private GameObject demonBossSword;
+
     public float speed;
     public float attackRange;
 
@@ -20,6 +22,8 @@ public class Boss_Walk : StateMachineBehaviour
     {
         player = GameObject.Find("PlayerBody");
         demonBoss = GameObject.FindGameObjectWithTag("DemonBoss");
+        demonBossSword = GameObject.Find("DEMON_LORD_SWORD");
+        demonBossSword.GetComponent<CapsuleCollider>().enabled = false;
         _bossCharacterController = demonBoss.GetComponent<CharacterController>();
         _demonBossController = demonBoss.GetComponent<DemonBossController>();
 

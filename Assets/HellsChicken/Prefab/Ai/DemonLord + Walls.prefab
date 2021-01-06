@@ -725,6 +725,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5494635398241873062, guid: 58ad447251da81241937ec840bd926a9,
         type: 3}
+    - target: {fileID: 3817650523487044720, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
+        type: 3}
+      propertyPath: _flameDamageText
+      value: 
+      objectReference: {fileID: 6640422758323229658, guid: 42a9374d3ad0a6644ad333638515114f,
+        type: 3}
     - target: {fileID: 4425651695835855292, guid: c7ddeeb7b87cf0c4f9e8e66e198bb086,
         type: 3}
       propertyPath: m_Layer

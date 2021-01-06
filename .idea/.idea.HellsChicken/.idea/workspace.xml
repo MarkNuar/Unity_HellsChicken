@@ -20,11 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44fa9eaf-4901-4eb4-b858-67c1b19b2312" name="Default Changelist" comment="Some changing">
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/FlameDamageText.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/FlameDamageText.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HellsChicken/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/AllSkyFree/Overcast Low/Materials/AllSky_Overcast4_Low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/AllSkyFree/Overcast Low/Materials/AllSky_Overcast4_Low.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/HEROIC FANTASY CREATURES FULL PACK VOL 1/Demonic Creatures Pack/Demon Lord/DemonLord_Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/HEROIC FANTASY CREATURES FULL PACK VOL 1/Demonic Creatures Pack/Demon Lord/DemonLord_Controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/DemonCharacterController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/DemonCharacterController.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/DemonLord + Walls.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/Ai/DemonLord + Walls.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_Idle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_Idle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_Idle_Enraged.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_Idle_Enraged.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/DemonBossController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/DemonBossController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_FlyAway.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_FlyAway.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_Walk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_Walk.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_Walk_Enraged.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_Walk_Enraged.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/FlameStream/ParticleCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/FlameStream/ParticleCollision.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,10 +72,13 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_Walk.cs" />
-      <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/DemonBossController.cs" />
-      <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_Idle.cs" />
       <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_Idle_Enraged.cs" />
+      <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_Idle.cs" />
+      <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_Walk.cs" />
+      <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_Walk_Enraged.cs" />
+      <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/FlameStream/ParticleCollision.cs" />
+      <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/DemonBossController.cs" />
+      <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/DemonBoss/StateMachine/Boss_FlyAway.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1j3OgIKWhtM8HMrodmHHVeCgfbO" />

@@ -11,8 +11,12 @@ public class DemonBossController : MonoBehaviour
     [SerializeField] public int _enragedHealth;
     [SerializeField] public int _headShotValue;
     [SerializeField] public int _chestShotValue;
+    [SerializeField] public int _flameShotValue;
+
     [SerializeField] private GameObject _chestDamageText;
     [SerializeField] private GameObject _headDamageText;
+    [SerializeField] private GameObject _flameDamageText;
+
 
     public GameObject healthBarCanvas;
     public HealthBarScript _healthBar;
@@ -171,6 +175,16 @@ public class DemonBossController : MonoBehaviour
         EventManager.TriggerEvent("demonDamage");
         anim.SetTrigger("isDamaged");
         _textInstance = Instantiate(_chestDamageText, gameObject.transform.position + new Vector3(0f, 15f, 0), Quaternion.identity);
+        StartCoroutine(ResetTriggerAndText(1.0f));
+    }
+    
+    public void FlameShot()
+    {
+        _currentHealth -= _flameShotValue;
+        _healthBar.SetHealth(_currentHealth);
+        EventManager.TriggerEvent("demonDamage");
+        anim.SetTrigger("isDamaged");
+        _textInstance = Instantiate(_flameDamageText, gameObject.transform.position + new Vector3(0f, 15f, 0), Quaternion.identity);
         StartCoroutine(ResetTriggerAndText(1.0f));
     }
 
