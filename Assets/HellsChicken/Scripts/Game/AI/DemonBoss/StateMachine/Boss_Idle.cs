@@ -47,17 +47,16 @@ public class Boss_Idle : StateMachineBehaviour
             hasStoppedFlying = false;
         }
         
-        else if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= attackRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) >= flyAwayRange)
+        else if (Vector3.Distance(player.transform.position, demonBoss.transform.position) <= attackRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) > flyAwayRange)
         {
             demonBossSword.GetComponent<CapsuleCollider>().enabled = true;
             animator.SetTrigger("SwordAttack2");
-            EventManager.TriggerEvent("demonSword");
         }
         
         else if (Vector3.Distance(player.transform.position, demonBoss.transform.position) >= attackRange && Vector3.Distance(player.transform.position, demonBoss.transform.position) <= maxWhipRange && choice)
         {
-            animator.SetTrigger("WhipAttack");
             EventManager.TriggerEvent("demonWhip");
+            animator.SetTrigger("WhipAttack");
         }
         else
         {

@@ -100,6 +100,7 @@ public class DemonLordAudioManager : MonoBehaviour
         demonLordSwordAudioSource.clip = demonLordSwordSound;
         demonLordSwordAudioSource.Play();
         EventManager.StartListening("demonSword",DemonSword);
+        
     }
     
     private void DemonRoar()
