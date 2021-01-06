@@ -117,6 +117,7 @@ MonoBehaviour:
   eggCrosshairCanvas: {fileID: 0}
   healthCanvas: {fileID: 0}
   feedbackMenuUI: {fileID: 0}
+  timerUI: {fileID: 0}
   endLevelMenuUI: {fileID: 3268101347747281428}
   backGround: {fileID: 0}
   tmpInputField: {fileID: 0}
@@ -380,6 +381,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3866536889847125139, guid: 12da07ec6ae52af40ad48a81f3c62d22,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3866536889847125139, guid: 12da07ec6ae52af40ad48a81f3c62d22,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 02bf7e70586923042bb696edd7a7e07a,
+        type: 2}
+    - target: {fileID: 3866536889847125139, guid: 12da07ec6ae52af40ad48a81f3c62d22,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3866536889847125139, guid: 12da07ec6ae52af40ad48a81f3c62d22,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1671788482594179480, guid: 02bf7e70586923042bb696edd7a7e07a,
+        type: 2}
     - target: {fileID: 3904358513574818293, guid: 12da07ec6ae52af40ad48a81f3c62d22,
         type: 3}
       propertyPath: m_AnchoredPosition.x

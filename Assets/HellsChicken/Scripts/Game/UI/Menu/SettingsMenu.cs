@@ -51,7 +51,7 @@ namespace HellsChicken.Scripts.Game
       fpsToggle.isOn = GameManager.Instance.GetFPSDisplay();
       GameManager.Instance.UpdateCurrentCamera(currentCamera);
       antiAliasToggle.isOn = GameManager.Instance.GetAntiAliasing();
-      shadowsToggle.isOn = GameManager.Instance.GetShadows();
+      //shadowsToggle.isOn = GameManager.Instance.GetShadows();
     }
 
     public void SetFPSDisplay(bool isDisplayed)

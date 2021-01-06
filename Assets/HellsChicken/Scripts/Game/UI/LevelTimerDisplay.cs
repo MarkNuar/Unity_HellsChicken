@@ -20,7 +20,7 @@ namespace HellsChicken.Scripts.Game.UI
                 }
                 else
                 {
-                    bestTimes[i].text = "No best time";
+                    bestTimes[i].text = "Not played yet";
                 }
                 
             }

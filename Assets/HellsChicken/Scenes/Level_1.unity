@@ -1162,8 +1162,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: this little chicken thigh might help you
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3747bf556077d6d45bef84f4a710d44f, type: 2}
-  m_sharedMaterial: {fileID: 4676208420648631540, guid: 3747bf556077d6d45bef84f4a710d44f,
+  m_fontAsset: {fileID: 11400000, guid: 02bf7e70586923042bb696edd7a7e07a, type: 2}
+  m_sharedMaterial: {fileID: -1671788482594179480, guid: 02bf7e70586923042bb696edd7a7e07a,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1197,7 +1197,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1211,7 +1211,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 32
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_isTextTruncated: 0
@@ -2187,8 +2187,8 @@ MonoBehaviour:
   m_text: HOLD RIGHT-CLICK on your mouse to aim, RELEASE to throw an explosive egg
     on the cracked rock!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3747bf556077d6d45bef84f4a710d44f, type: 2}
-  m_sharedMaterial: {fileID: 4676208420648631540, guid: 3747bf556077d6d45bef84f4a710d44f,
+  m_fontAsset: {fileID: 11400000, guid: 02bf7e70586923042bb696edd7a7e07a, type: 2}
+  m_sharedMaterial: {fileID: -1671788482594179480, guid: 02bf7e70586923042bb696edd7a7e07a,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2222,7 +2222,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2236,7 +2236,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 80
+  m_firstOverflowCharacterIndex: 76
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_isTextTruncated: 0
@@ -2772,6 +2772,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &800012229 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 138184, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1761734873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &806117414 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6776882778681166958, guid: 2c5d838d083daf9499dda784d92b2a47,
@@ -4395,8 +4401,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '!!!!'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3747bf556077d6d45bef84f4a710d44f, type: 2}
-  m_sharedMaterial: {fileID: 4676208420648631540, guid: 3747bf556077d6d45bef84f4a710d44f,
+  m_fontAsset: {fileID: 11400000, guid: 02bf7e70586923042bb696edd7a7e07a, type: 2}
+  m_sharedMaterial: {fileID: -1671788482594179480, guid: 02bf7e70586923042bb696edd7a7e07a,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4430,7 +4436,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4986,8 +4992,8 @@ MonoBehaviour:
   m_text: 'press LEFT-CLICK on your mouse to shoot fire, but beware: Degoros explode
     when hit!'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3747bf556077d6d45bef84f4a710d44f, type: 2}
-  m_sharedMaterial: {fileID: 4676208420648631540, guid: 3747bf556077d6d45bef84f4a710d44f,
+  m_fontAsset: {fileID: 11400000, guid: 02bf7e70586923042bb696edd7a7e07a, type: 2}
+  m_sharedMaterial: {fileID: -1671788482594179480, guid: 02bf7e70586923042bb696edd7a7e07a,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5021,7 +5027,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -5035,7 +5041,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 74
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_isTextTruncated: 0
@@ -5561,8 +5567,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: press SPACEBAR to jump
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3747bf556077d6d45bef84f4a710d44f, type: 2}
-  m_sharedMaterial: {fileID: 4676208420648631540, guid: 3747bf556077d6d45bef84f4a710d44f,
+  m_fontAsset: {fileID: 11400000, guid: 02bf7e70586923042bb696edd7a7e07a, type: 2}
+  m_sharedMaterial: {fileID: -1671788482594179480, guid: 02bf7e70586923042bb696edd7a7e07a,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5596,7 +5602,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -5930,8 +5936,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: the LONGER you press SPACEBAR, the HIGHER you will JUMP!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3747bf556077d6d45bef84f4a710d44f, type: 2}
-  m_sharedMaterial: {fileID: 4676208420648631540, guid: 3747bf556077d6d45bef84f4a710d44f,
+  m_fontAsset: {fileID: 11400000, guid: 02bf7e70586923042bb696edd7a7e07a, type: 2}
+  m_sharedMaterial: {fileID: -1671788482594179480, guid: 02bf7e70586923042bb696edd7a7e07a,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5965,7 +5971,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -5979,7 +5985,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 46
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_isTextTruncated: 0
@@ -7700,8 +7706,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: HOLD SPACEBAR to glide!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3747bf556077d6d45bef84f4a710d44f, type: 2}
-  m_sharedMaterial: {fileID: 4676208420648631540, guid: 3747bf556077d6d45bef84f4a710d44f,
+  m_fontAsset: {fileID: 11400000, guid: 02bf7e70586923042bb696edd7a7e07a, type: 2}
+  m_sharedMaterial: {fileID: -1671788482594179480, guid: 02bf7e70586923042bb696edd7a7e07a,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -7735,7 +7741,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -7921,12 +7927,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8164704960188800180, guid: 5030c202581b1ef4988e7dd98ad6feb0,
     type: 3}
   m_PrefabInstance: {fileID: 7889494828075029695}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1977770436 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 138184, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1479774141}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2044572883
 PrefabInstance:
@@ -8343,8 +8343,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Touch these markers to activate checkpoints!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3747bf556077d6d45bef84f4a710d44f, type: 2}
-  m_sharedMaterial: {fileID: 4676208420648631540, guid: 3747bf556077d6d45bef84f4a710d44f,
+  m_fontAsset: {fileID: 11400000, guid: 02bf7e70586923042bb696edd7a7e07a, type: 2}
+  m_sharedMaterial: {fileID: -1671788482594179480, guid: 02bf7e70586923042bb696edd7a7e07a,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -8378,7 +8378,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -10578,7 +10578,7 @@ PrefabInstance:
         type: 3}
       propertyPath: initialCheckPoint
       value: 
-      objectReference: {fileID: 1977770436}
+      objectReference: {fileID: 800012229}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29c5eebf31db64348a3310657a2d95f2, type: 3}
 --- !u!1001 &6744372766776364640
@@ -10821,6 +10821,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 333910888505781668, guid: 5030c202581b1ef4988e7dd98ad6feb0,
+        type: 3}
+      propertyPath: m_characterSpacing
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8164704960188800180, guid: 5030c202581b1ef4988e7dd98ad6feb0,
         type: 3}

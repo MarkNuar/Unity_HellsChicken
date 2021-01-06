@@ -230,7 +230,7 @@ PrefabInstance:
     - target: {fileID: 4416076793426972779, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
         type: 3}
       propertyPath: m_text
-      value: best time
+      value: Best time
       objectReference: {fileID: 0}
     - target: {fileID: 4416076793426972779, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
         type: 3}
@@ -239,9 +239,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4416076793426972779, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
         type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 02bf7e70586923042bb696edd7a7e07a,
+        type: 2}
+    - target: {fileID: 4416076793426972779, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4416076793426972779, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
+        type: 3}
       propertyPath: m_fontSizeBase
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 4416076793426972779, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1671788482594179480, guid: 02bf7e70586923042bb696edd7a7e07a,
+        type: 2}
     - target: {fileID: 4416076793426972779, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
         type: 3}
       propertyPath: m_enableAutoSizing
@@ -1291,9 +1308,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &124321122753990482 stripped
+--- !u!114 &6751558824647211154 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2916675025247992639, guid: 368763dfd8ceeca4b9b6471f9cf20a06,
+  m_CorrespondingSourceObject: {fileID: 8390746957026200831, guid: 368763dfd8ceeca4b9b6471f9cf20a06,
     type: 3}
   m_PrefabInstance: {fileID: 3009443711759987821}
   m_PrefabAsset: {fileID: 0}
@@ -1315,9 +1332,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6751558824647211154 stripped
+--- !u!114 &124321122753990482 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8390746957026200831, guid: 368763dfd8ceeca4b9b6471f9cf20a06,
+  m_CorrespondingSourceObject: {fileID: 2916675025247992639, guid: 368763dfd8ceeca4b9b6471f9cf20a06,
     type: 3}
   m_PrefabInstance: {fileID: 3009443711759987821}
   m_PrefabAsset: {fileID: 0}
@@ -1565,6 +1582,43 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2936751668090414194}
     m_Modifications:
+    - target: {fileID: 4416076793426972779, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
+        type: 3}
+      propertyPath: m_text
+      value: "Are you a pro player? \nunlock all levels!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4416076793426972779, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4416076793426972779, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 02bf7e70586923042bb696edd7a7e07a,
+        type: 2}
+    - target: {fileID: 4416076793426972779, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4416076793426972779, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1671788482594179480, guid: 02bf7e70586923042bb696edd7a7e07a,
+        type: 2}
+    - target: {fileID: 4416076793426972779, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4416076793426972779, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 41
+      objectReference: {fileID: 0}
     - target: {fileID: 8110523462365536426, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
         type: 3}
       propertyPath: m_Name
@@ -1921,9 +1975,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4416076793426972779, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
         type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 02bf7e70586923042bb696edd7a7e07a,
+        type: 2}
+    - target: {fileID: 4416076793426972779, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4416076793426972779, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
+        type: 3}
       propertyPath: m_fontSizeBase
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 4416076793426972779, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1671788482594179480, guid: 02bf7e70586923042bb696edd7a7e07a,
+        type: 2}
     - target: {fileID: 4416076793426972779, guid: 4f81cd0a4a1763d45ba5a374c850eb00,
         type: 3}
       propertyPath: m_enableAutoSizing
@@ -2485,6 +2556,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 4542759523407921808, guid: a436c5a443f347d4d82419021236b725,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6459250394898070137, guid: a436c5a443f347d4d82419021236b725,
         type: 3}
