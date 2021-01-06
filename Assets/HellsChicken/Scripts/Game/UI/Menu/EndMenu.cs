@@ -13,6 +13,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
         public GameObject eggCrosshairCanvas;
         public GameObject healthCanvas;
         public GameObject feedbackMenuUI;
+        public GameObject timerUI;
         public GameObject endLevelMenuUI;
         public GameObject backGround;
     
@@ -24,6 +25,9 @@ namespace HellsChicken.Scripts.Game.UI.Menu
         public Animator transition;
         public float transitionTime = 1f;
 
+        
+        public TextMeshProUGUI bestTimeText; 
+        
         private void Start()
         {
             _gameIsPaused = false;
@@ -37,7 +41,18 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             _gameIsPaused = true;
             Cursor.visible = true;
             eggCrosshairCanvas.SetActive(false);
-            //healthCanvas.SetActive(false);
+            if (LevelManager.Instance.isNewBestTime)
+            {
+                bestTimeText.text = "New best time!<br>" +
+                                    LevelManager.Instance.GetFormattedTime(GameManager.Instance.GetBestTime(LevelManager.Instance.levelNumber));
+                bestTimeText.color = Color.white;
+            }
+            else
+            {
+                bestTimeText.text = "Current best Time:<br>" + 
+                                    LevelManager.Instance.GetFormattedTime(GameManager.Instance.GetBestTime(LevelManager.Instance.levelNumber));
+                bestTimeText.color = Color.gray;
+            }
         }
     
         public static bool GetGameIsPaused()

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Rendering.Universal;
@@ -14,6 +15,7 @@ namespace HellsChicken.Scripts.Game
         public AudioMixer audioMixer;
         [SerializeField] private FPSDisplay fpsDisplayGui;
 
+        private const int _currentNumberOfLevels = 2;
         
         [System.Serializable] public class GameState
         {
@@ -27,6 +29,7 @@ namespace HellsChicken.Scripts.Game
             public bool shadows;
             public bool fpsDisplay;
             public int levelToBeCompleted; //current level to be completed
+            public float[] bestTimes;
             
             public static GameState CreateFromJsonString(string jsonString)
             {
@@ -83,8 +86,14 @@ namespace HellsChicken.Scripts.Game
                         antiAlias = true,
                         shadows = true,
                         fpsDisplay = false,
-                        levelToBeCompleted = 1
+                        levelToBeCompleted = 1,
+                        bestTimes = new float[_currentNumberOfLevels]
                     };
+                    for (var i = 0; i < _currentNumberOfLevels; i++)
+                    {
+                        _gameState.bestTimes[i] = 0;
+                        Debug.Log(_gameState.bestTimes);
+                    }
                 }
             }
             else
@@ -198,7 +207,7 @@ namespace HellsChicken.Scripts.Game
         {
             if(levelIndex == _gameState.levelToBeCompleted) //levels above should not be reachable
                 _gameState.levelToBeCompleted++;
-            // if (_gameState.levelToBeCompleted > 2)
+            // if (_gameState.levelToBeCompleted > _currentNumberOfLevels)
             // {
             //     //TODO: IF LEVEL TO BE COMPLETED >= FINAL LEVEL -> SHOW END SCREEN
             // }
@@ -207,6 +216,35 @@ namespace HellsChicken.Scripts.Game
         public int GetLevelToBeCompleted()
         {
             return _gameState.levelToBeCompleted;
+        }
+
+        public bool UpdateBestTime(int levelIndex, float newTime)
+        {
+            if (_gameState.bestTimes[levelIndex - 1] != 0)
+            {
+                if (newTime < _gameState.bestTimes[levelIndex - 1]) // here levels start counting from 0
+                {
+                    _gameState.bestTimes[levelIndex - 1] = newTime;
+                    return true;
+                }
+                else
+                    return false;
+            }
+            else //timer is 0, so update 100% 
+            {
+                _gameState.bestTimes[levelIndex - 1] = newTime;
+                return true;
+            }
+        }
+
+        public float GetBestTime(int levelIndex)
+        {
+            return _gameState.bestTimes[levelIndex - 1];
+        }
+
+        public bool IsBestTimeNonZero(int levelIndex)
+        {
+            return _gameState.bestTimes[levelIndex - 1] != 0;
         }
         
         private void OnDestroy()

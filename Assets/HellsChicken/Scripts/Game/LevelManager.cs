@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 namespace HellsChicken.Scripts.Game
 {
@@ -17,6 +18,12 @@ namespace HellsChicken.Scripts.Game
 
         public bool enableFirstCktpCheck = false;
         
+        public TextMeshProUGUI timerText; 
+        private bool _playing;
+        private float _timer;
+
+        public bool isNewBestTime;
+        
         // SINGLETON
         private void Awake()
         {
@@ -34,7 +41,38 @@ namespace HellsChicken.Scripts.Game
                 Destroy(gameObject);
             }
         }
+        
+        void Start()
+        {
+            _playing = true;
+        }
+        
+        void Update () {
+            if(_playing == true){
+                _timer += Time.deltaTime;
+                timerText.text = GetFormattedTime(_timer);
+            }
+        }
 
+        public string GetFormattedTime(float timer)
+        {
+            int minutes = Mathf.FloorToInt(timer / 60F);
+            int seconds = Mathf.FloorToInt(timer % 60F);
+            int milliseconds = Mathf.FloorToInt((timer * 100F) % 100F);
+            return minutes.ToString ("00") + ":" + seconds.ToString ("00") + ":" + milliseconds.ToString("00");
+        }
+
+        public float GetTimer()
+        {
+            return _timer;
+        }
+
+        public void StopTimer()
+        {
+            _playing = false;
+        }
+        
+        
         public Vector3 GetCurrentCheckPointPos()
         {
             return _currentCheckPointPos;

@@ -65,6 +65,7 @@ namespace HellsChicken.Scripts.Game.UI.Health
             {
                 EventManager.TriggerEvent("chickenDeath");
                 EventManager.TriggerEvent("PlayerDeath");
+                transition.SetTrigger("Start");
             }
         }
     
