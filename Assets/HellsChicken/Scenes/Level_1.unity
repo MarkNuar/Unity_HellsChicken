@@ -6377,30 +6377,55 @@ PrefabInstance:
       propertyPath: m_textInfo.characterCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1828710547345499160, guid: 656b3940bd139914482aa7b5527b46d5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828710547496870482, guid: 656b3940bd139914482aa7b5527b46d5,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828710547496870482, guid: 656b3940bd139914482aa7b5527b46d5,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828710547496870482, guid: 656b3940bd139914482aa7b5527b46d5,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1828710547496870482, guid: 656b3940bd139914482aa7b5527b46d5,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 0
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1828710547496870482, guid: 656b3940bd139914482aa7b5527b46d5,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1828710547496870482, guid: 656b3940bd139914482aa7b5527b46d5,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 0
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 1828710547496870482, guid: 656b3940bd139914482aa7b5527b46d5,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1828710547496870482, guid: 656b3940bd139914482aa7b5527b46d5,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 0
+      value: 102
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828710547496870482, guid: 656b3940bd139914482aa7b5527b46d5,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2017503933760763760, guid: 656b3940bd139914482aa7b5527b46d5,
         type: 3}
