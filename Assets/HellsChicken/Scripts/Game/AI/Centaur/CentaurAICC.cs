@@ -27,6 +27,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
 
         [SerializeField] private float gravityScale = 1f;
         [SerializeField] private LayerMask mask;
+        [SerializeField] private float yPosition;
 
         private CharacterController _characterController;
         private Vector3 _movement; 
@@ -216,7 +217,7 @@ namespace HellsChicken.Scripts.Game.AI.Centaur
             {
                 GameObject fire = Instantiate(bombPrefab, arrowPosition.position, Quaternion.LookRotation(player.position, transform.position));
                 CentaurFire ar = fire.GetComponent<CentaurFire>();
-                ar.Target = _playerController.getPredictedPosition();//player.position + new Vector3(0, 0.5f, 0);
+                ar.Target = _playerController.getPredictedPosition(yPosition);//player.position + new Vector3(0, 0.5f, 0);
                 ar.CentaurPos = transform.position;
                 ar.FindAngle(_right,arrowPosition.position);
                 EventManager.TriggerEvent("centaurShot");

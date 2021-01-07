@@ -84,8 +84,9 @@ namespace HellsChicken.Scripts.Game.Player
         private float _glidingStartingTime;
 
         private bool _isFloating;
-        public float windBreaking = 100f;
-        public float windPushing = 10f;
+        private float _maxWindVelocity;
+        private float _windBreaking;
+        private float _windPushing;
 
         private Transform _cachedPlayerParent;
         
@@ -94,15 +95,15 @@ namespace HellsChicken.Scripts.Game.Player
         private bool _isAutomaticallyMoved;
         [SerializeField] private float automaticMovementDuration = 1.5f;
 
-        public Vector3 getPredictedPosition() {
-            Vector3 result = new Vector3(transform.position.x,transform.position.y,0);
-            if (!_isMoving)
+        public Vector3 getPredictedPosition(float y) {
+            Vector3 result = new Vector3(transform.position.x,transform.position.y + y,0);
+            /*if (!_isMoving)
                 return _transform.position;
             else {
                 //result.x = transform.position.x + _lookDirection.normalized.x * walkSpeed * 5;
                 //result.y = transform.position.y + _lookDirection.normalized.y * walkSpeed * 2;
                 //result.y =
-            }
+            }*/
 
             return result;
         }
@@ -386,14 +387,15 @@ namespace HellsChicken.Scripts.Game.Player
                     //HORIZONTAL MOVEMENT APPLICATION
                     _moveDirection.x = cachedHorizontalMovement;
                     
+                    print(_windBreaking + " " +_windPushing + " " + _maxWindVelocity);
                     //VERTICAL MOVEMENT BY WIND
                     if (IsFalling() && !IsGrounded()) //wind against our fall
-                        _moveDirection.y += windBreaking * ((Mathf.Abs(_moveDirection.y)+2)/maxSpeedVectorMagnitude) * Time.deltaTime; //acceleration up
+                        _moveDirection.y += _windBreaking * ((Mathf.Abs(_moveDirection.y)+2)/_maxWindVelocity) * Time.deltaTime; //acceleration up
                     else //wind with our fall
-                        _moveDirection.y += windPushing * Time.deltaTime;
+                        _moveDirection.y += _windPushing * Time.deltaTime;
                     
-                    if (_moveDirection.y > maxSpeedVectorMagnitude/2)
-                        _moveDirection.y = maxSpeedVectorMagnitude/2;
+                    if (_moveDirection.y > _maxWindVelocity)
+                        _moveDirection.y = _maxWindVelocity;
                 }
                 // NORMAL MOVEMENT
                 else
@@ -590,8 +592,11 @@ namespace HellsChicken.Scripts.Game.Player
                     }
                 }
 
-                if (other.CompareTag("Wind"))
-                {
+                if (other.CompareTag("Wind")) {
+                    WindParameter windParameter = other.GetComponent<WindParameter>();
+                    _windBreaking = windParameter.windBreaking;
+                    _windPushing = windParameter.windPushing;
+                    _maxWindVelocity = windParameter.maxWindVelocity;
                     _isFloating = true;
                 }
 

@@ -23,10 +23,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hell-s-Chicken/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/AllSkyFree/Overcast Low/Materials/AllSky_Overcast4_Low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/AllSkyFree/Overcast Low/Materials/AllSky_Overcast4_Low.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shader/LavaShader.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Art/Shader/LavaShader.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/LevelPart/Level 02.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Prefab/LevelPart/Level 02.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scenes/Level_2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/PlatformMoveX.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/PlatformMoveX.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAICC.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAICC.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +52,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/ParticleDamage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/FallPlatformCheck.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/FlameStream/CheckEnemies.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/WindParameter.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -88,7 +88,6 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/Egg/EggExplosion.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/FlameStream/CheckEnemies.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/FireBallForce.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/FireBallGenerator/FireBallForce.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/RollingRockGenerator.cs" />
@@ -96,13 +95,15 @@
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurFire.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/FlameStream/ParticleCollision.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/Rock/RockObstacle.cs" />
-        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAICC.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/Rock/DissolvationRock.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurDissolvation.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/FireBallGenerator/FireBallGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/PlatformMoveX.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/FallPlatformCheck.cs" />
         <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Platform/FallenPlatformLevel2.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/AI/Centaur/CentaurAICC.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/EnemyObstacles/WindParameter.cs" />
+        <option value="$PROJECT_DIR$/Assets/HellsChicken/Scripts/Game/Player/PlayerController.cs" />
       </list>
     </option>
   </component>
@@ -197,6 +198,7 @@
       <workItem from="1609518387987" duration="2959000" />
       <workItem from="1609676934519" duration="7168000" />
       <workItem from="1609787393282" duration="2304000" />
+      <workItem from="1610032208494" duration="5400000" />
     </task>
     <servers />
   </component>
