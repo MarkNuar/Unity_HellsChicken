@@ -33,8 +33,9 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             _gameIsPaused = false;
         }
 
-        public void Pause()
+        public void EndLevel()
         {
+            TimerUI.Instance.DestroyTimerUI(0f);
             backGround.SetActive(true);
             endLevelMenuUI.SetActive(true);
             Time.timeScale = 0f;
@@ -125,7 +126,6 @@ namespace HellsChicken.Scripts.Game.UI.Menu
         private IEnumerator LoadSceneWithFading(String sceneName)
         {
             transition.SetTrigger("Start");
-            //EventManager.TriggerEvent("fadeOutMusic");
             yield return new WaitForSeconds(transitionTime);
             SceneManager.LoadScene(sceneName);
         }

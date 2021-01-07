@@ -77,6 +77,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
         
         public void MainMenu()
         {
+            TimerUI.Instance.DestroyTimerUI(transitionTime - 0.05f);
             LevelManager.Instance.DestroyLevelManagerInstance();
             GameAudioManager.Instance.DestroyGameAudioManagerInstance(transitionTime - 0.05f);
             Time.timeScale = 1f;

@@ -20,9 +20,9 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             }
         }
 
-        public void DestroyTimerUI()
+        public void DestroyTimerUI(float time)
         {
-            Destroy(gameObject);
+            Destroy(gameObject, time);
         }
     }
 }

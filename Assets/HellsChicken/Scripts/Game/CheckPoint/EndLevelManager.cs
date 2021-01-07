@@ -14,10 +14,10 @@ namespace HellsChicken.Scripts.Game.CheckPoint
             {
                 GameManager.Instance.SetLevelAsCompleted(LevelManager.Instance.levelNumber);
                 LevelManager.Instance.StopTimer();
-                LevelManager.Instance.isNewBestTime = GameManager.Instance.UpdateBestTime(LevelManager.Instance.levelNumber,
-                    LevelManager.Instance.GetTimer()); 
-                TimerUI.Instance.DestroyTimerUI(); //destroy the timer
-                endLevelCanvas.GetComponent<EndMenu>().Pause();
+                LevelManager.Instance.isNewBestTime = GameManager.Instance.UpdateBestTime(
+                    LevelManager.Instance.levelNumber,
+                    LevelManager.Instance.GetTimer());
+                endLevelCanvas.GetComponent<EndMenu>().EndLevel();
             }
         }
     }
