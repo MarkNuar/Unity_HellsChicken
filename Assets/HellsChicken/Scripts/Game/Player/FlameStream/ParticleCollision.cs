@@ -18,7 +18,7 @@ namespace HellsChicken.Scripts.Game.Player.FlameStream {
                 shield.gameObject.GetComponent<Destruction>().Destroyer();
             }
 
-            if (other.gameObject.layer == 12 && !listScript.GOList.Contains(other.gameObject.name)) {
+            if (other.gameObject.layer == 12 && !listScript.GOList.Contains(other.gameObject.name) && !other.transform.name.Contains("FallingRock")) {
                 Destruction destr = other.GetComponent<Destruction>();
                 
                 if(destr == null)    
@@ -27,8 +27,8 @@ namespace HellsChicken.Scripts.Game.Player.FlameStream {
                     destr.Destroyer();
                 else if(other.gameObject.CompareTag("DemonBoss"))
                         other.GetComponent<DemonBossController>().FlameShot();
-                    else
-                        other.GetComponent<CentaurAICC>().TriggerCentaurDeath();
+                else
+                    other.GetComponent<CentaurAICC>().TriggerCentaurDeath();
             }
         }
     }

@@ -11,6 +11,7 @@ using HellsChicken.Scripts.Game.UI.Menu;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Debug = UnityEngine.Debug;
+using Random = UnityEngine.Random;
 
 namespace HellsChicken.Scripts.Game.Player
 {
@@ -96,7 +97,7 @@ namespace HellsChicken.Scripts.Game.Player
         [SerializeField] private float automaticMovementDuration = 1.5f;
 
         public Vector3 getPredictedPosition(float y) {
-            Vector3 result = new Vector3(transform.position.x,transform.position.y + y,0);
+            Vector3 result = new Vector3(transform.position.x,transform.position.y + y + Random.Range(-2f,2f),0);
             /*if (!_isMoving)
                 return _transform.position;
             else {
@@ -387,7 +388,6 @@ namespace HellsChicken.Scripts.Game.Player
                     //HORIZONTAL MOVEMENT APPLICATION
                     _moveDirection.x = cachedHorizontalMovement;
                     
-                    print(_windBreaking + " " +_windPushing + " " + _maxWindVelocity);
                     //VERTICAL MOVEMENT BY WIND
                     if (IsFalling() && !IsGrounded()) //wind against our fall
                         _moveDirection.y += _windBreaking * ((Mathf.Abs(_moveDirection.y)+2)/_maxWindVelocity) * Time.deltaTime; //acceleration up

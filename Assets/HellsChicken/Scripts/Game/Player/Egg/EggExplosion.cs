@@ -98,10 +98,10 @@ namespace HellsChicken.Scripts.Game.Player.Egg
                     {
                             if (rb != null)
                                 rb.AddExplosionForce(force, transform.position, radius);
-
-                            if (dest == null)
-                                dest = nearbyObject.gameObject.transform.parent.GetComponent<Destruction>();
-                            else
+                            // if (dest == null)
+                            //     dest = nearbyObject.gameObject.transform.parent.GetComponent<Destruction>();
+                            // else
+                            if(dest!=null)
                                 dest.Destroyer();
                     }
                 }
