@@ -65,13 +65,13 @@ namespace HellsChicken.Scripts.Game
                     _gameState = GameState.CreateFromJsonString(reader.ReadToEnd());
                     if (_gameState != null)
                     {
-                        loaded = true;
+                        loaded = _gameState.bestTimes.Length == CurrentNumberOfLevels; //check if best times array has the correct lenght
+                        //TODO FOR THE FUTURE: if new level added, save previous best times.
                     }
                     else
                     {
                         Debug.LogError("State not correctly loaded");
                     }
-                    
                 }
                 if(!loaded)
                 {
