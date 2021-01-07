@@ -193,8 +193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af014df6b99b35846a908927b8b20463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 200
-  _enragedHealth: 100
+  _maxHealth: 250
+  _enragedHealth: 125
   _headShotValue: 25
   _chestShotValue: 10
   _flameShotValue: 1

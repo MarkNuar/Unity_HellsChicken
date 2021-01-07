@@ -5083,6 +5083,16 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1938681302}
+    - target: {fileID: 9038771369553459160, guid: 6fe778b580787b84d8d63a55130eb172,
+        type: 3}
+      propertyPath: _maxHealth
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038771369553459160, guid: 6fe778b580787b84d8d63a55130eb172,
+        type: 3}
+      propertyPath: _enragedHealth
+      value: 125
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fe778b580787b84d8d63a55130eb172, type: 3}
 --- !u!1001 &1297227090
@@ -6397,12 +6407,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 324488381}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1681069493 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 138184, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 969318038}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1697007658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6983,7 +6987,7 @@ PrefabInstance:
         type: 3}
       propertyPath: initialCheckPoint
       value: 
-      objectReference: {fileID: 1681069493}
+      objectReference: {fileID: 1992195206}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29c5eebf31db64348a3310657a2d95f2, type: 3}
 --- !u!1001 &1772970948
@@ -7709,6 +7713,12 @@ Transform:
   m_Father: {fileID: 484551120}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1992195206 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 138184, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 304381850}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1997551965
 PrefabInstance:
   m_ObjectHideFlags: 0
