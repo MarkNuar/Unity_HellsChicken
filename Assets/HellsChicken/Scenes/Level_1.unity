@@ -6151,7 +6151,7 @@ PrefabInstance:
         type: 3}
       propertyPath: transition
       value: 
-      objectReference: {fileID: 1154072736}
+      objectReference: {fileID: 1904701863}
     - target: {fileID: 700164981357215835, guid: 656b3940bd139914482aa7b5527b46d5,
         type: 3}
       propertyPath: tmpInputField
@@ -7302,6 +7302,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 710195982014139838, guid: 211676c411e084a40b2f352afc066f8a,
     type: 3}
   m_PrefabInstance: {fileID: 1883970657}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1904701863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1091260356614449692, guid: d2fe71f9426ca0a458252ce9ea152b40,
+    type: 3}
+  m_PrefabInstance: {fileID: 2087072867}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1910637668 stripped
 Transform:
@@ -10910,7 +10916,7 @@ PrefabInstance:
         type: 3}
       propertyPath: transition
       value: 
-      objectReference: {fileID: 1154072736}
+      objectReference: {fileID: 1904701863}
     - target: {fileID: 5501134645009098257, guid: c8b1d6afbdfd7dd4cb699c9119d099c0,
         type: 3}
       propertyPath: healthCanvas

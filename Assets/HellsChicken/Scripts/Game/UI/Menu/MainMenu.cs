@@ -14,13 +14,22 @@ namespace HellsChicken.Scripts.Game.UI.Menu
    {
       public TMP_InputField tmpInputField;
       private const string VideoGameName = "Hell's Chicken";
-      public Animator transition;
+      
+      public GameObject transition;
       public float transitionTime = 1f;
-
+      //TODO
+      private Animator _transitionAnimator;
+      private CanvasGroup _transitionGroup;
+      
       public List<Button> levels;
       private int _levelToBeCompleted;
       public void Start()
       {
+         //TODO
+         _transitionAnimator = transition.GetComponent<Animator>();
+         _transitionGroup = transition.GetComponent<CanvasGroup>();
+         
+         
          EventManager.TriggerEvent("menuSoundtrack");
          _levelToBeCompleted = GameManager.Instance.GetLevelToBeCompleted();
          for (var i = 0; i < levels.Count; i++)
@@ -95,7 +104,8 @@ namespace HellsChicken.Scripts.Game.UI.Menu
 
        private IEnumerator LoadSceneWithFading(String sceneName)
        {
-          transition.SetTrigger("Start");
+          _transitionGroup.blocksRaycasts = true; //disable other buttons
+          _transitionAnimator.SetTrigger("Start");
           EventManager.TriggerEvent("fadeOutMusic");
           yield return new WaitForSeconds(transitionTime);
           SceneManager.LoadScene(sceneName);

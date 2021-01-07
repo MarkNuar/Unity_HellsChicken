@@ -22,14 +22,21 @@ namespace HellsChicken.Scripts.Game.UI.Menu
 
         private static bool _gameIsPaused;
         
-        public Animator transition;
+        public GameObject transition;
         public float transitionTime = 1f;
+        //TODO
+        private Animator _transitionAnimator;
+        private CanvasGroup _transitionGroup;
 
         
         public TextMeshProUGUI bestTimeText; 
         
         private void Start()
         {
+            //TODO
+            _transitionAnimator = transition.GetComponent<Animator>();
+            _transitionGroup = transition.GetComponent<CanvasGroup>();
+            
             _gameIsPaused = false;
         }
 
@@ -125,7 +132,8 @@ namespace HellsChicken.Scripts.Game.UI.Menu
 
         private IEnumerator LoadSceneWithFading(String sceneName)
         {
-            transition.SetTrigger("Start");
+            _transitionGroup.blocksRaycasts = true; //disable other buttons
+            _transitionAnimator.SetTrigger("Start");
             yield return new WaitForSeconds(transitionTime);
             SceneManager.LoadScene(sceneName);
         }

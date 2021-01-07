@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 6fd5d73aec672f44488159ba97c9ca42,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -217,12 +217,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11e4f0ef71b626845b3ff335d7d42744, type: 3}
---- !u!95 &125393630 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2125772094646029920, guid: d2fe71f9426ca0a458252ce9ea152b40,
-    type: 3}
-  m_PrefabInstance: {fileID: 1320463073}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &189524257
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,6 +649,11 @@ PrefabInstance:
       propertyPath: m_textInfo.characterCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4450387149785655458, guid: 6d3cc7073200cc34baa33184163ccb81,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4662271717283100256, guid: 6d3cc7073200cc34baa33184163ccb81,
         type: 3}
       propertyPath: m_IsActive
@@ -719,7 +718,7 @@ PrefabInstance:
         type: 3}
       propertyPath: transition
       value: 
-      objectReference: {fileID: 125393630}
+      objectReference: {fileID: 545150017}
     - target: {fileID: 5664775007986272957, guid: 6d3cc7073200cc34baa33184163ccb81,
         type: 3}
       propertyPath: levels.Array.size
@@ -1166,6 +1165,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4947932090175730583, guid: bc97e0f654916554fb052c22e25edc34,
     type: 3}
   m_PrefabInstance: {fileID: 4947932089132055007}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &545150017 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1091260356614449692, guid: d2fe71f9426ca0a458252ce9ea152b40,
+    type: 3}
+  m_PrefabInstance: {fileID: 1320463073}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &566292453 stripped
 MonoBehaviour:
