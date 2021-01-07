@@ -64,7 +64,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: commands
+  m_text: back
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0a9bab1536f5fad459cea73711753184, type: 2}
   m_sharedMaterial: {fileID: 7797725633093429419, guid: 0a9bab1536f5fad459cea73711753184,
@@ -96,8 +96,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 9
-  m_fontSizeBase: 9
+  m_fontSize: 9.5
+  m_fontSizeBase: 9.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 1
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_margin: {x: 3.8026276, y: -0.0014648438, z: 2.6964417, w: 0.03755659}
   m_textInfo:
     textComponent: {fileID: 1180531754877862354}
-    characterCount: 8
+    characterCount: 4
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -179,7 +179,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5423410695633362283}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 3382380559630258725}
   - component: {fileID: 2177978577086996584}
   m_Layer: 5
-  m_Name: BUTTON
+  m_Name: back_BUTTON
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -357,7 +357,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 0}
         m_MethodName: SetActive
@@ -368,5 +368,5 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2

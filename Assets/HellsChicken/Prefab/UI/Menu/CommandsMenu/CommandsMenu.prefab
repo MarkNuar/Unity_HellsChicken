@@ -286,61 +286,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8248936315151791513}
     m_Modifications:
-    - target: {fileID: 1180531754877862354, guid: 9678aa027e1aa5c428396fbed3f44acf,
-        type: 3}
-      propertyPath: m_text
-      value: back
-      objectReference: {fileID: 0}
-    - target: {fileID: 1180531754877862354, guid: 9678aa027e1aa5c428396fbed3f44acf,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 9.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1180531754877862354, guid: 9678aa027e1aa5c428396fbed3f44acf,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 9.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1180531754877862354, guid: 9678aa027e1aa5c428396fbed3f44acf,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1180531754877862354, guid: 9678aa027e1aa5c428396fbed3f44acf,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1180531754877862354, guid: 9678aa027e1aa5c428396fbed3f44acf,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1180531754877862354, guid: 9678aa027e1aa5c428396fbed3f44acf,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1180531754877862354, guid: 9678aa027e1aa5c428396fbed3f44acf,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 2177978577086996584, guid: 9678aa027e1aa5c428396fbed3f44acf,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 8248936315151791514}
-    - target: {fileID: 2177978577086996584, guid: 9678aa027e1aa5c428396fbed3f44acf,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2177978577086996584, guid: 9678aa027e1aa5c428396fbed3f44acf,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2875104994224651322, guid: 9678aa027e1aa5c428396fbed3f44acf,
         type: 3}
       propertyPath: m_Pivot.x
@@ -450,11 +400,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: back_FRAME
-      objectReference: {fileID: 0}
-    - target: {fileID: 7088275245758364620, guid: 9678aa027e1aa5c428396fbed3f44acf,
-        type: 3}
-      propertyPath: m_Name
-      value: back_BUTTON
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9678aa027e1aa5c428396fbed3f44acf, type: 3}
