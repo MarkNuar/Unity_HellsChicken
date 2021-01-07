@@ -419,14 +419,18 @@
                   <e p="IDTNode.cs" t="Include" />
                 </e>
                 <e p="DemonBoss" t="Include">
+                  <e p="BossMusicTrigger.cs" t="Include" />
                   <e p="DemonBossController.cs" t="Include" />
                   <e p="HealthBarScript.cs" t="Include" />
                   <e p="StateMachine" t="Include">
-                    <e p="Boss_Enraged.cs" t="Include" />
                     <e p="Boss_EnragedFlyAway.cs" t="Include" />
                     <e p="Boss_FlyAway.cs" t="Include" />
+                    <e p="Boss_Idle.cs" t="Include" />
+                    <e p="Boss_Idle_Enraged.cs" t="Include" />
+                    <e p="Boss_Sword.cs" t="Include" />
                     <e p="Boss_TriggerFight.cs" t="Include" />
                     <e p="Boss_Walk.cs" t="Include" />
+                    <e p="Boss_Walk_Enraged.cs" t="Include" />
                   </e>
                 </e>
                 <e p="Goomba" t="Include">
@@ -448,12 +452,15 @@
                 <e p="DeathGoombaAudioManager.cs" t="Include" />
                 <e p="DemonLordAudioManager.cs" t="Include" />
                 <e p="EggAudioManager.cs" t="Include" />
+                <e p="FireBallAudioManager.cs" t="Include" />
                 <e p="GameAudioManager.cs" t="Include" />
                 <e p="GoombaAudioManager.cs" t="Include" />
+                <e p="IntroAudioManager.cs" t="Include" />
                 <e p="MenuAudioSource.cs" t="Include" />
                 <e p="PendulumAudioManager.cs" t="Include" />
                 <e p="RockAudioSource.cs" t="Include" />
                 <e p="SpearAudioManager.cs" t="Include" />
+                <e p="WindAudioManager.cs" t="Include" />
               </e>
               <e p="CheckPoint" t="Include">
                 <e p="CheckPointManager.cs" t="Include" />
@@ -471,6 +478,7 @@
                 </e>
                 <e p="RollingRockGenerator.cs" t="Include" />
                 <e p="SpearMovement.cs" t="Include" />
+                <e p="WindParameter.cs" t="Include" />
               </e>
               <e p="FireBallGenerator" t="Include">
                 <e p="FireBallForce.cs" t="Include" />
@@ -485,6 +493,7 @@
                 <e p="NewLightSwitchController.cs" t="Include" />
               </e>
               <e p="LightningGeneratorScript.cs" t="Include" />
+              <e p="LightningGeneratorScriptTwo.cs" t="Include" />
               <e p="Platform" t="Include">
                 <e p="Doors" t="Include">
                   <e p="ButtonDoor.cs" t="Include" />
@@ -532,13 +541,16 @@
                 <e p="Key" t="Include">
                   <e p="KeyController.cs" t="Include" />
                 </e>
+                <e p="LevelTimerDisplay.cs" t="Include" />
                 <e p="Menu" t="Include">
                   <e p="CameraRotation.cs" t="Include" />
+                  <e p="EndGameMenu.cs" t="Include" />
                   <e p="EndMenu.cs" t="Include" />
                   <e p="IntroMenu.cs" t="Include" />
                   <e p="MainMenu.cs" t="Include" />
                   <e p="PauseMenu.cs" t="Include" />
                   <e p="SettingsMenu.cs" t="Include" />
+                  <e p="TimerUI.cs" t="Include" />
                 </e>
               </e>
             </e>
