@@ -17,7 +17,6 @@ namespace HellsChicken.Scripts.Game.UI.Menu
       
       public GameObject transition;
       public float transitionTime = 1f;
-      //TODO
       private Animator _transitionAnimator;
       private CanvasGroup _transitionGroup;
       
@@ -25,11 +24,8 @@ namespace HellsChicken.Scripts.Game.UI.Menu
       private int _levelToBeCompleted;
       public void Start()
       {
-         //TODO
          _transitionAnimator = transition.GetComponent<Animator>();
          _transitionGroup = transition.GetComponent<CanvasGroup>();
-         
-         
          EventManager.TriggerEvent("menuSoundtrack");
          _levelToBeCompleted = GameManager.Instance.GetLevelToBeCompleted();
          for (var i = 0; i < levels.Count; i++)

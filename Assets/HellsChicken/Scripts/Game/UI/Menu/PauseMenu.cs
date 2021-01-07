@@ -25,17 +25,13 @@ namespace HellsChicken.Scripts.Game.UI.Menu
         
         public GameObject transition;
         public float transitionTime = 1f;
-        //TODO
         private Animator _transitionAnimator;
         private CanvasGroup _transitionGroup;
         
         private void Start()
         {
-            //TODO
             _transitionAnimator = transition.GetComponent<Animator>();
             _transitionGroup = transition.GetComponent<CanvasGroup>();
-            
-            
             _gameIsPaused = false;
         }
 

@@ -24,7 +24,6 @@ namespace HellsChicken.Scripts.Game.UI.Menu
         
         public GameObject transition;
         public float transitionTime = 1f;
-        //TODO
         private Animator _transitionAnimator;
         private CanvasGroup _transitionGroup;
 
@@ -33,7 +32,6 @@ namespace HellsChicken.Scripts.Game.UI.Menu
         
         private void Start()
         {
-            //TODO
             _transitionAnimator = transition.GetComponent<Animator>();
             _transitionGroup = transition.GetComponent<CanvasGroup>();
             
@@ -89,7 +87,10 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             GameAudioManager.Instance.DestroyGameAudioManagerInstance(transitionTime - 0.05f);
             Time.timeScale = 1f;
             EventManager.TriggerEvent("stopGameSoundtrack");
-            StartCoroutine(LoadSceneWithFading("Level_"+nextLevel));
+            if(nextLevel >= GameManager.Instance.GetCurrentNumberOfLevels())
+                StartCoroutine(LoadSceneWithFading("EndGame"));
+            else
+                StartCoroutine(LoadSceneWithFading("Level_"+nextLevel));
         }
     
         public void SendFeedback()

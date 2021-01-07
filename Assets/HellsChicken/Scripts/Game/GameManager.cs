@@ -15,7 +15,7 @@ namespace HellsChicken.Scripts.Game
         public AudioMixer audioMixer;
         [SerializeField] private FPSDisplay fpsDisplayGui;
 
-        private const int _currentNumberOfLevels = 2;
+        private const int CurrentNumberOfLevels = 2;
         
         [System.Serializable] public class GameState
         {
@@ -87,9 +87,9 @@ namespace HellsChicken.Scripts.Game
                         shadows = true,
                         fpsDisplay = false,
                         levelToBeCompleted = 1,
-                        bestTimes = new float[_currentNumberOfLevels]
+                        bestTimes = new float[CurrentNumberOfLevels]
                     };
-                    for (var i = 0; i < _currentNumberOfLevels; i++)
+                    for (var i = 0; i < CurrentNumberOfLevels; i++)
                     {
                         _gameState.bestTimes[i] = 0;
                         Debug.Log(_gameState.bestTimes);
@@ -100,6 +100,11 @@ namespace HellsChicken.Scripts.Game
             {
                 Destroy(gameObject);
             }
+        }
+
+        public int GetCurrentNumberOfLevels()
+        {
+            return CurrentNumberOfLevels;
         }
         
         public void SetMusicVolume(float volume)
@@ -207,7 +212,7 @@ namespace HellsChicken.Scripts.Game
         {
             if(levelIndex == _gameState.levelToBeCompleted) //levels above should not be reachable
                 _gameState.levelToBeCompleted++;
-            // if (_gameState.levelToBeCompleted > _currentNumberOfLevels)
+            // if (_gameState.levelToBeCompleted > currentNumberOfLevels)
             // {
             //     //TODO: IF LEVEL TO BE COMPLETED >= FINAL LEVEL -> SHOW END SCREEN
             // }

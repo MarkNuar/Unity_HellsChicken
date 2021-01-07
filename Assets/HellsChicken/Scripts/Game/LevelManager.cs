@@ -47,9 +47,10 @@ namespace HellsChicken.Scripts.Game
             _playing = true;
         }
         
-        void Update () {
+        void FixedUpdate () {
             if(_playing == true){
-                _timer += Time.deltaTime;
+                if(Time.fixedDeltaTime > 0.016f)
+                    _timer += Time.fixedDeltaTime;
                 timerText.text = GetFormattedTime(_timer);
             }
         }
