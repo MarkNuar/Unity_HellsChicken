@@ -6,12 +6,14 @@ namespace HellsChicken.Scripts.Game.AI.Soul
     public class SoulAI : MonoBehaviour
     {
         [SerializeField] private Transform target;
-        [SerializeField] private Transform soul;
+        //[SerializeField] private Transform soul;
 
         [SerializeField] private float speed = 200f;
         [SerializeField] private float d = 25f;
         //how close are enemy need to be to a way point before it moves to the next one
         [SerializeField] private float nextWaypointDistance = 3f;
+
+        [SerializeField] private Animator anim;
         
         private Quaternion _leftRotation;
         private Quaternion _rightRotation;
