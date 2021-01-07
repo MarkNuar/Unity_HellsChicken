@@ -87,7 +87,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             GameAudioManager.Instance.DestroyGameAudioManagerInstance(transitionTime - 0.05f);
             Time.timeScale = 1f;
             EventManager.TriggerEvent("stopGameSoundtrack");
-            if(nextLevel >= GameManager.Instance.GetCurrentNumberOfLevels())
+            if(nextLevel > GameManager.Instance.GetCurrentNumberOfLevels())
                 StartCoroutine(LoadSceneWithFading("EndGame"));
             else
                 StartCoroutine(LoadSceneWithFading("Level_"+nextLevel));
