@@ -478,6 +478,7 @@
                 </e>
                 <e p="RollingRockGenerator.cs" t="Include" />
                 <e p="SpearMovement.cs" t="Include" />
+                <e p="WindParameter.cs" t="Include" />
               </e>
               <e p="FireBallGenerator" t="Include">
                 <e p="FireBallForce.cs" t="Include" />
@@ -543,6 +544,7 @@
                 <e p="LevelTimerDisplay.cs" t="Include" />
                 <e p="Menu" t="Include">
                   <e p="CameraRotation.cs" t="Include" />
+                  <e p="EndGameMenu.cs" t="Include" />
                   <e p="EndMenu.cs" t="Include" />
                   <e p="IntroMenu.cs" t="Include" />
                   <e p="MainMenu.cs" t="Include" />
@@ -554,6 +556,7 @@
             </e>
           </e>
         </e>
+        <e p="KeyDrop.cs" t="Include" />
         <e p="Particle Ribbon by Moonflower Carnivore" t="Include">
           <e p="readme_Simple_Particle_Ribbon.txt" t="Include" />
           <e p="Scripts" t="Include">

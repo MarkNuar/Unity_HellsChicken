@@ -134,6 +134,7 @@ public class DemonBossController : MonoBehaviour
         bossWhip03.GetComponent<CapsuleCollider>().enabled = false;
         bossWhip04.GetComponent<CapsuleCollider>().enabled = false;
         bossWhip05.GetComponent<CapsuleCollider>().enabled = false;
+        EventManager.TriggerEvent("keyDrop");
     }
 
     IEnumerator ResetTriggerAndText(float timer)
