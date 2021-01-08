@@ -2567,12 +2567,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38ad33853253d3443a8a985ab6f6e495, type: 3}
---- !u!1 &686966195 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 138184, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 304381850}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &687271353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5540,7 +5534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 138184, guid: 88e8f15d4b1faa645821ca8ff73ed8e4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 402512, guid: 88e8f15d4b1faa645821ca8ff73ed8e4, type: 3}
       propertyPath: m_RootOrder
@@ -5624,6 +5618,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1281403250 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 138184, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 969318038}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1290730769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8453,7 +8453,7 @@ PrefabInstance:
         type: 3}
       propertyPath: initialCheckPoint
       value: 
-      objectReference: {fileID: 686966195}
+      objectReference: {fileID: 1281403250}
     - target: {fileID: 6702887782032787627, guid: 29c5eebf31db64348a3310657a2d95f2,
         type: 3}
       propertyPath: enableFirstCktpCheck
