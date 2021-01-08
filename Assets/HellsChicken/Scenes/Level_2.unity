@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3693,7 +3693,7 @@ PrefabInstance:
     - target: {fileID: 3787233283717681121, guid: 01675471aedf0394e920e4f2c54304e2,
         type: 3}
       propertyPath: rockSpawnInterval
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3787233283717681121, guid: 01675471aedf0394e920e4f2c54304e2,
         type: 3}
@@ -8457,7 +8457,7 @@ PrefabInstance:
     - target: {fileID: 6702887782032787627, guid: 29c5eebf31db64348a3310657a2d95f2,
         type: 3}
       propertyPath: enableFirstCktpCheck
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29c5eebf31db64348a3310657a2d95f2, type: 3}
@@ -10179,6 +10179,11 @@ PrefabInstance:
       propertyPath: targetPlayer
       value: 
       objectReference: {fileID: 1938681302}
+    - target: {fileID: 3396104423371839685, guid: 750602d7a076d3a4a8c90d780f1a8a98,
+        type: 3}
+      propertyPath: maxDistanceFromStartingPosition
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 3396104423371839687, guid: 750602d7a076d3a4a8c90d780f1a8a98,
         type: 3}
       propertyPath: m_Layer
