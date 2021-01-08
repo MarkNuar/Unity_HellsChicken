@@ -25,7 +25,7 @@ namespace HellsChicken.Scripts.Game.EnemyObstacles.Rock
 
         IEnumerator DissolvingRock() {
             float i = 0.97f;
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(5f);
             foreach (var rock in rocks) {
                 rock.material = transparent;
             }

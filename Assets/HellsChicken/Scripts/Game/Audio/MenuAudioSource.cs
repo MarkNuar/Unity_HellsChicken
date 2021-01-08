@@ -19,6 +19,7 @@ public class MenuAudioSource : MonoBehaviour
     {
         EventManager.StopListening("menuSoundtrack", menuSoundtrack);
         menuAudioSource.clip = menuSoundtrackSound;
+        menuAudioSource.loop = true;
         if(!menuAudioSource.isPlaying)
             menuAudioSource.Play();
         EventManager.StartListening("menuSoundtrack", menuSoundtrack);
