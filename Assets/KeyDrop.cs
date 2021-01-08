@@ -9,6 +9,8 @@ public class KeyDrop : MonoBehaviour
     private Rigidbody rb;
     public Transform _landingPosition;
 
+    public Transform bossPosition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,7 @@ public class KeyDrop : MonoBehaviour
 
     public void triggerKeyDrop()
     {
+        rb.position = new Vector3(bossPosition.position.x,rb.position.y,rb.position.z);
         rb.isKinematic = false;
     }
 
