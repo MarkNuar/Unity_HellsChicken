@@ -27,6 +27,7 @@ Transform:
   m_LocalPosition: {x: 385.1, y: 32.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 7230800151855749911}
   - {fileID: 3396104423685832233}
   - {fileID: 3396104423371839684}
   m_Father: {fileID: 0}
@@ -45,7 +46,7 @@ GameObject:
   - component: {fileID: 3396104423371839682}
   - component: {fileID: 3396104423371839685}
   - component: {fileID: 8897926483126087174}
-  m_Layer: 12
+  m_Layer: 23
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -60,12 +61,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3396104423371839687}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.1, y: 5.4, z: 0}
+  m_LocalPosition: {x: 19.1, y: 5.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9202701519256908894}
   m_Father: {fileID: 3396104422712786036}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3396104423371839680
 MonoBehaviour:
@@ -109,7 +110,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 72
+  m_Constraints: 88
   m_CollisionDetection: 0
 --- !u!114 &3396104423371839685
 MonoBehaviour:
@@ -123,8 +124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81879e20b928a58449328d1e406ceb53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 600
+  maxDistanceFromStartingPosition: 20
+  targetPlayer: {fileID: 0}
+  targetStartPosition: {fileID: 7230800151855749911}
+  speed: 1800
   d: 25
   nextWaypointDistance: 3
   anim: {fileID: 0}
@@ -171,7 +174,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3396104422712786036}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3396104423685832214
 MonoBehaviour:
@@ -187,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAIIewa7qTPbwIAABUFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzoWxjYG4t9YhpId8TGgnF18Ua401yJJHkgMkw3/vSraxQ6cnxO7bt2+fVv4kXJoacqv0RnP2oBiQ7xPizuTbZEjew5HulNzyD+gxr5zZ0oGox7xQyxXGQ1dmVAVW8/yH3AkHDjDYSF4oXa3ZDlJlrMFwQYUBTGllXbXE0OeEHPFnmriSE56ilTt94CkJJmc85iAt6AG6DBezRRTddPgwXM3im3g+X3Vl02QWJYsgSNbTYOUZGpkLWtXA3DgD0Sq49AzaVhJH7TCR66yE4KbTSeyp9j6ktDYNTokAxinO7cWFszkGSuC70l6XPxWFAdvZounplms0sOUlP1XrakXNvtX2TkXjJSyjMI69sJb34R/INPTpQqvqvm8d+rFsyfP9Cz3l1NiR8+Pw7Ui9d+lAxZ6+CXgtQT6qjVaNZJi0unGljYHodkR1GS8tId8PuFZrH+zRTT0Y39veX7Sb4uwtOKaCV2+dIPy7Fcqb7rcDNF7PLxTsd8d0BBh1Iv4Y+E134yXrEndcG4upjlQ6dW+q0Q5K1t4zN0xjU6Ul6DFDDZIKe3pGHnt9jVe5/1fdUfeeuu5drn8mVyU+POCD4Cr1rA6X2zKlOjyAKZ8aK7iEwX6XeESjUiVlu2Xma9JVbRtd0HxUtWs4+7paZF7ksKLLBSuWecyCZLqgcRTTJUviRRJGqyXxu8cljknFc6uzcwdvTQ7kEves/8pMNprWfuGZpocN/6jUSB+XhdrmGkA+tQy9QwY0NsGnydaMoz9bsJZLf9/kMyNC5Xtg2YUo85Ouj1bTbGDJSM3flXWRjKT+s5KRMzn/BVBLAwQUAAAICAAACCHsMefuVm0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNVRUEovSizIKAaKGII4pZkpIHa0knFacqp5oplpSppZskmKgaWuaaKJkUmiWYqliamloZG5mVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAACCHsGu6kz28CAAAVBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAACCHsMefuVm0AAAB4AAAACQAkAAAAAAAAAAAAAAC8AgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAHQDAAAAAA==
+    dataString: UEsDBBQAAAgIAAAIIezPj+45bwIAABYFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzoWxjYG4t9YhpId8TGgnF18Ua401yJJHkgMkw3/vSraxQ6cnxL63u2+fVv4kXJoacqv0RnP2oBiQ7xPizuTbZADv4Uh3Sm75B/ScV85s6UjUc16o5QrjoUszqgKref5D7oQjBxhsJC+UrtZsB6ky1mC4oMIAQlpZly0x9DkhR/yZJi7lhKdo5U4feEqCyRmPOUgLeqAuw8VsEUU3HT8MV7P4Jp7PV13aNJlFySIIkvU0WPkKjcwFrWpgbpyh0Cq49AzaVhJH7TiR66yE4KbTSeyp9j6ktDYNTokExinO7cWFszkGSuC70l6nPxWFAdvZounplms0sK1LfqrW1YqafavtnYrGS1hGYRx7YW3dh38o09DDhVbVfd869GPZkuf7F3rKqbEj58fh25F679KBij19E/BagnxUG60ayRC0unGpjYHodlTqMl5aQr4feK3WPtizm3owvre9v2g3xdlbcEwFr946Qfh3K5Q33W8HaLyeXyjY747pCmDUifhj4DfdjZesA+64Nhahrqh06t5Uox2VrL1nbpjGpkpL0OMKNUgq7OkZ69jra7zC/p91R9176rp3WP9MrlJ8eOAHwRX0rA6X2zKlOjyAKZ8aK7iEwX4HPKJRqZKy3TLzFXRZ20YXNB9l7RrOvq4WmRc5rOhywYplHrMgmS5oHMV0yZJ4kYTRakn87nGJY1Lx3Ors3MFbk0NxiXvWf2UmG01rv/BM08OGf1RqbDmXhdrmGkA+tSV6wIDGLvg22ZpxNGgL1nLpL5x8ZkSofA8su/TM/Kjro9U0G6pkpObvyrpIRlL/XcnImZz/AlBLAwQUAAAICAAACCHsMefuVm0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNVRUEovSizIKAaKGII4pZkpIHa0knFacqp5oplpSppZskmKgaWuaaKJkUmiWYqliamloZG5mVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAACCHsz4/uOW8CAAAWBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAACCHsMefuVm0AAAB4AAAACQAkAAAAAAAAAAAAAAC8AgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAHQDAAAAAA==
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -228,6 +231,36 @@ MonoBehaviour:
     pivotPointRoot: {fileID: 0}
     spreadOutCount: 1
   showGraphs: 1
+--- !u!1 &7290367013415071529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7230800151855749911}
+  m_Layer: 0
+  m_Name: StartPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7230800151855749911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7290367013415071529}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 14.15, y: 5.89, z: -6.362333}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3396104422712786036}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7413438976236230089
 Animator:
   serializedVersion: 3
@@ -247,6 +280,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9163026539584027559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8429965453688909540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a66bfaeb46b91b468fd41dc5c0ae0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soulController: {fileID: 3396104423371839685}
 --- !u!1001 &8663845118345483189
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,41 +5,64 @@ namespace HellsChicken.Scripts.Game.AI.Soul
 {
     public class SoulAI : MonoBehaviour
     {
-        [SerializeField] private Transform target;
+        private Vector3 _startingPosition;
+        [SerializeField] private float maxDistanceFromStartingPosition = 25f;
+        
+        [SerializeField] private Transform targetPlayer;
+        [SerializeField] private Transform targetStartPosition;
+        private bool _followPlayer;
+        
         //[SerializeField] private Transform soul;
 
         [SerializeField] private float speed = 200f;
-        [SerializeField] private float d = 25f;
+        [SerializeField] private float d = 20f;
         //how close are enemy need to be to a way point before it moves to the next one
-        [SerializeField] private float nextWaypointDistance = 3f;
+        [SerializeField] private float nextWaypointDistance = 3.5f;
 
         [SerializeField] private Animator anim;
         
-        private Quaternion _leftRotation;
-        private Quaternion _rightRotation;
+        // private Quaternion _leftRotation;
+        // private Quaternion _rightRotation;
 
         private Path _path;
         private int _currentWaypoint;
         
         private Seeker _seeker;
         private Rigidbody _rb;
+
+        private Vector3 _force;
         
         // Start is called before the first frame update
         private void Start()
         {
+            _followPlayer = false;
+            
+            _startingPosition = transform.position;
+
             _seeker = GetComponent<Seeker>();
             _rb = GetComponent<Rigidbody>();
             
-            _leftRotation = transform.rotation;
-            _rightRotation = _leftRotation * Quaternion.Euler(0, 180, 0);
+            // _leftRotation = transform.rotation;
+            // _rightRotation = _leftRotation * Quaternion.Euler(0, 180, 0);
+            // transform.rotation = _leftRotation;
             
             InvokeRepeating(nameof(UpdatePath), 0f, 0.5f);
         }
 
         private void UpdatePath()
         {
-            if (_seeker.IsDone()) 
-                _seeker.StartPath(_rb.position, target.position, OnPathComplete);
+            if (_seeker.IsDone())
+            {
+                if (_followPlayer)
+                {
+                    _seeker.StartPath(_rb.position, targetPlayer.position, OnPathComplete);
+                }
+                else
+                {
+                    _seeker.StartPath(_rb.position, targetStartPosition.position, OnPathComplete);
+                }
+            }
+                
         }
 
         private void OnPathComplete(Path p)
@@ -47,7 +70,7 @@ namespace HellsChicken.Scripts.Game.AI.Soul
             if (p.error) return;
             
             _path = p;
-            _currentWaypoint = 0;  //beginning of the new path
+            _currentWaypoint = 1;  //beginning of the new path
         }
 
         private void FixedUpdate()
@@ -57,32 +80,35 @@ namespace HellsChicken.Scripts.Game.AI.Soul
             //reached end of the path
             if (_currentWaypoint >= _path.vectorPath.Count)
                 return;
-                
-            Vector2 direction = (_path.vectorPath[_currentWaypoint] - _rb.position).normalized;
-            var force = direction * speed * Time.deltaTime;
+
+            var position = _rb.position;
             
-            if(Vector2.Distance(target.position, _rb.position) < d)
-                _rb.AddForce(force);
+            Vector2 direction = (_path.vectorPath[_currentWaypoint] - position).normalized;
+            _force = direction * (speed * Time.fixedDeltaTime);
+            
+            if (Vector3.Distance(targetPlayer.position, targetStartPosition.position) > maxDistanceFromStartingPosition)
+            {
+                _followPlayer = false;
+            }
+            else
+            {
+                _followPlayer = true;
+            }
+            _rb.AddForce(_force);
             
             var distance = Vector2.Distance(_rb.position, _path.vectorPath[_currentWaypoint]);
             if (distance < nextWaypointDistance)
                 _currentWaypoint++;
-            
-            //se all'inizio guarda a sinistra
-            if (force.x >= 0.01f)
-            {
-                transform.rotation = _rightRotation;
-            }
-            else if (force.x <= -0.01f)
-            {
-                transform.rotation = _leftRotation;
-            }
         }
 
-        // private void OnTriggerEnter(Collider other)
-        // {
-        //     if (other.transform.CompareTag("Player"))
-        //         Destroy(gameObject);
-        // }
+        public bool IsLookingLeft()
+        {
+            return _force.x <= -0.01f;
+        }
+
+        public bool IsLookingRight()
+        {
+            return _force.x >= 0.01f;
+        }
     }
 }
