@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using EventManagerNamespace;
 using Pathfinding.Util;
 using UnityEngine;
@@ -43,8 +44,12 @@ public class DemonBossController : MonoBehaviour
     private bool isDead;
     private bool hasHitWall;
 
+    private bool _enableFlameDamage;
+    
     public void Start()
     {
+        _enableFlameDamage = true;
+        
         bossSpine = GameObject.Find("DEMON_LORD_ Spine");
         bossHead = GameObject.Find("DEMON_LORD_ Head");
         bossSword = GameObject.Find("DEMON_LORD_SWORD");
@@ -134,6 +139,7 @@ public class DemonBossController : MonoBehaviour
         bossWhip03.GetComponent<CapsuleCollider>().enabled = false;
         bossWhip04.GetComponent<CapsuleCollider>().enabled = false;
         bossWhip05.GetComponent<CapsuleCollider>().enabled = false;
+        Destroy(_textInstance);
         EventManager.TriggerEvent("keyDrop");
     }
 
@@ -181,14 +187,25 @@ public class DemonBossController : MonoBehaviour
     
     public void FlameShot()
     {
-        _currentHealth -= _flameShotValue;
-        _healthBar.SetHealth(_currentHealth);
-        EventManager.TriggerEvent("demonDamage");
-        anim.SetTrigger("isDamaged");
-        _textInstance = Instantiate(_flameDamageText, gameObject.transform.position + new Vector3(0f, 15f, 0), Quaternion.identity);
-        StartCoroutine(ResetTriggerAndText(1.0f));
+        if (_enableFlameDamage)
+        {
+            _enableFlameDamage = false;
+            StartCoroutine(EnableFlameDamage());
+            _currentHealth -= _flameShotValue;
+            _healthBar.SetHealth(_currentHealth);
+            EventManager.TriggerEvent("demonDamage");
+            anim.SetTrigger("isDamaged");
+            _textInstance = Instantiate(_flameDamageText, gameObject.transform.position + new Vector3(0f, 15f, 0), Quaternion.identity);
+            StartCoroutine(ResetTriggerAndText(1.0f));
+        }
     }
 
+    private IEnumerator EnableFlameDamage()
+    {
+        yield return new WaitForSeconds(1.4f);
+        _enableFlameDamage = true;
+    }
+    
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Wall"))
