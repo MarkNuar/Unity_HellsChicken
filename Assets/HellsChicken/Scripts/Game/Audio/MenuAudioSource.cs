@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using EventManagerNamespace;
 using UnityEngine;
@@ -13,7 +14,6 @@ public class MenuAudioSource : MonoBehaviour
         EventManager.StartListening("menuSoundtrack", menuSoundtrack);
         EventManager.StartListening("fadeOutMusic", fadeOutMenuSoundtrack);
     }
-
 
     public void menuSoundtrack()
     {

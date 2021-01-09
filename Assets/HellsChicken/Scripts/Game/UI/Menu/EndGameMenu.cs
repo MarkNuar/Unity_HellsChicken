@@ -25,6 +25,7 @@ public class EndGameMenu : MonoBehaviour
     {
         _transitionAnimator = transition.GetComponent<Animator>();
         _transitionGroup = transition.GetComponent<CanvasGroup>();
+        EventManager.TriggerEvent("menuSoundtrack");
     }
     
         
