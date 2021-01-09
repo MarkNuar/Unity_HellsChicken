@@ -77,8 +77,8 @@ namespace HellsChicken.Scripts.Game
                 {
                     _gameState = new GameState
                     {
-                        musicVolume = -30f,
-                        effectsVolume = -30f,
+                        musicVolume = 0,
+                        effectsVolume = 0,
                         qualityIndex = 0,
                         isFullScreen = true,
                         screenWidth = Screen.currentResolution.width,
