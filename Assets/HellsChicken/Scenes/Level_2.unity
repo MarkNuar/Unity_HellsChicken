@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3978,6 +3978,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88e8f15d4b1faa645821ca8ff73ed8e4, type: 3}
+--- !u!1 &969318039 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 138184, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 969318038}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &971770195 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 402512, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
@@ -5755,12 +5761,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1281403250 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 138184, guid: 88e8f15d4b1faa645821ca8ff73ed8e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 969318038}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1290730769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6142,6 +6142,17 @@ PrefabInstance:
       propertyPath: _enragedHealth
       value: 125
       objectReference: {fileID: 0}
+    - target: {fileID: 9038771369553459160, guid: 6fe778b580787b84d8d63a55130eb172,
+        type: 3}
+      propertyPath: _flameShotValue
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038771369553459160, guid: 6fe778b580787b84d8d63a55130eb172,
+        type: 3}
+      propertyPath: _flameDamageText
+      value: 
+      objectReference: {fileID: 8510559294250563345, guid: 8ede93534097f8645aa2c0c0091395f2,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fe778b580787b84d8d63a55130eb172, type: 3}
 --- !u!1 &1296948002 stripped
@@ -8704,7 +8715,7 @@ PrefabInstance:
         type: 3}
       propertyPath: initialCheckPoint
       value: 
-      objectReference: {fileID: 1281403250}
+      objectReference: {fileID: 969318039}
     - target: {fileID: 6702887782032787627, guid: 29c5eebf31db64348a3310657a2d95f2,
         type: 3}
       propertyPath: enableFirstCktpCheck
@@ -9918,7 +9929,7 @@ PrefabInstance:
     - target: {fileID: 8035021252407303942, guid: 3b2e08a2edd553945ad17d8016d01055,
         type: 3}
       propertyPath: automaticMovementDuration
-      value: 1.5
+      value: 1.45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b2e08a2edd553945ad17d8016d01055, type: 3}
