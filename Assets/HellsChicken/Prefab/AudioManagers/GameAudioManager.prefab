@@ -42,7 +42,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6258269937442169686, guid: fb29555b3c6e781468c191fd32586e26,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 29ed17ff4d0adc34eb37f7c7614dd31b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
@@ -170,7 +170,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6258269937442169686, guid: fb29555b3c6e781468c191fd32586e26,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: dd3fc9147b6c6e9419eb4ded77030e9f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -302,6 +302,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameAudioSource: {fileID: 1698916650471528140}
-  bossMusicAudioSource: {fileID: 4631916580946231624}
-  gameSoundtrackSound: {fileID: 8300000, guid: dd3fc9147b6c6e9419eb4ded77030e9f, type: 3}
-  bossMusicSound: {fileID: 8300000, guid: dbd4ee35afda2e943b9473c34b1b8503, type: 3}
+  bossAudioSource: {fileID: 4631916580946231624}
+  gameSoundtrack: {fileID: 8300000, guid: dd3fc9147b6c6e9419eb4ded77030e9f, type: 3}
+  bossSoundtrack: {fileID: 8300000, guid: 29ed17ff4d0adc34eb37f7c7614dd31b, type: 3}

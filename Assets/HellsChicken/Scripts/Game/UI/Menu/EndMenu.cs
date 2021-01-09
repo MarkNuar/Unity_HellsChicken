@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using EventManagerNamespace;
+using HellsChicken.Scripts.Game.Audio;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -76,7 +77,8 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             LevelManager.Instance.DestroyLevelManagerInstance();
             GameAudioManager.Instance.DestroyGameAudioManagerInstance(transitionTime - 0.05f);
             Time.timeScale = 1f;
-            EventManager.TriggerEvent("stopGameSoundtrack");
+            //EventManager.TriggerEvent("stopGameSoundtrack");
+            EventManager.TriggerEvent("stopAllMusics");
             StartCoroutine(LoadSceneWithFading("MainMenu")); 
         }
 
@@ -86,11 +88,12 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             LevelManager.Instance.DestroyLevelManagerInstance();
             GameAudioManager.Instance.DestroyGameAudioManagerInstance(transitionTime - 0.05f);
             Time.timeScale = 1f;
-            EventManager.TriggerEvent("stopGameSoundtrack");
-            if(nextLevel > GameManager.Instance.GetCurrentNumberOfLevels())
-                StartCoroutine(LoadSceneWithFading("EndGame"));
-            else
-                StartCoroutine(LoadSceneWithFading("Level_"+nextLevel));
+            //EventManager.TriggerEvent("stopGameSoundtrack");
+            EventManager.TriggerEvent("stopAllMusics");
+
+            StartCoroutine(nextLevel > GameManager.Instance.GetCurrentNumberOfLevels()
+                ? LoadSceneWithFading("EndGame")
+                : LoadSceneWithFading("Level_" + nextLevel));
         }
     
         public void SendFeedback()

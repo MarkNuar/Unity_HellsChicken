@@ -8,7 +8,7 @@ public class RollingRockGenerator : MonoBehaviour
 
     
     public GameObject rollingRockPrefab;
-    public int rockSpawnInterval = 10;
+    public float rockSpawnInterval = 10;
 
     private Rigidbody _rigidbody;
 
@@ -23,7 +23,7 @@ public class RollingRockGenerator : MonoBehaviour
     }
 
 
-    IEnumerator SpawnRocks(int timer)
+    IEnumerator SpawnRocks(float timer)
     {
         while (true)
         {

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -972,10 +972,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 88608522178717860, guid: 83638049e636e1d41b755488f9e930d3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 88608522178717860, guid: 83638049e636e1d41b755488f9e930d3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.87
+      objectReference: {fileID: 0}
     - target: {fileID: 816229297485287089, guid: 83638049e636e1d41b755488f9e930d3,
         type: 3}
       propertyPath: m_Name
       value: RedKeyDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 816229297485287089, guid: 83638049e636e1d41b755488f9e930d3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1583595304014077457, guid: 83638049e636e1d41b755488f9e930d3,
         type: 3}
@@ -3056,7 +3071,7 @@ PrefabInstance:
     - target: {fileID: 6288873297218383900, guid: df3f63ea29817074fba954baf27609f4,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 111.323006
+      value: 118.08936
       objectReference: {fileID: 0}
     - target: {fileID: 6288873297218383900, guid: df3f63ea29817074fba954baf27609f4,
         type: 3}
@@ -3071,7 +3086,7 @@ PrefabInstance:
     - target: {fileID: 6288873297218383900, guid: df3f63ea29817074fba954baf27609f4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 149.3
+      value: 151.7
       objectReference: {fileID: 0}
     - target: {fileID: 6288873297218383900, guid: df3f63ea29817074fba954baf27609f4,
         type: 3}
@@ -3693,7 +3708,7 @@ PrefabInstance:
     - target: {fileID: 3787233283717681121, guid: 01675471aedf0394e920e4f2c54304e2,
         type: 3}
       propertyPath: rockSpawnInterval
-      value: 7
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 3787233283717681121, guid: 01675471aedf0394e920e4f2c54304e2,
         type: 3}
@@ -5542,11 +5557,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 402512, guid: 88e8f15d4b1faa645821ca8ff73ed8e4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 621.5
+      value: 1033.3
       objectReference: {fileID: 0}
     - target: {fileID: 402512, guid: 88e8f15d4b1faa645821ca8ff73ed8e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 73.7
+      value: 217.2
       objectReference: {fileID: 0}
     - target: {fileID: 402512, guid: 88e8f15d4b1faa645821ca8ff73ed8e4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5880,6 +5895,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5299380269820403102, guid: 6fe778b580787b84d8d63a55130eb172,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299380269820403102, guid: 6fe778b580787b84d8d63a55130eb172,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.82
+      objectReference: {fileID: 0}
     - target: {fileID: 5299380269820403103, guid: 6fe778b580787b84d8d63a55130eb172,
         type: 3}
       propertyPath: m_Size.x
@@ -5899,6 +5924,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.y
       value: -12.388039
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299380270353019633, guid: 6fe778b580787b84d8d63a55130eb172,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.78
       objectReference: {fileID: 0}
     - target: {fileID: 5299380270353019634, guid: 6fe778b580787b84d8d63a55130eb172,
         type: 3}
@@ -9108,16 +9138,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameAudioManager
       objectReference: {fileID: 0}
-    - target: {fileID: 1698916650616394067, guid: d4072334f6ba5db4cae93c790cddee04,
-        type: 3}
-      propertyPath: bossMusicSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 29ed17ff4d0adc34eb37f7c7614dd31b, type: 3}
-    - target: {fileID: 1698916650616394067, guid: d4072334f6ba5db4cae93c790cddee04,
-        type: 3}
-      propertyPath: gameSoundtrackSound
-      value: 
-      objectReference: {fileID: 8300000, guid: dd3fc9147b6c6e9419eb4ded77030e9f, type: 3}
     - target: {fileID: 1698916650616394068, guid: d4072334f6ba5db4cae93c790cddee04,
         type: 3}
       propertyPath: m_RootOrder

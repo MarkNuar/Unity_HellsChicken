@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using EventManagerNamespace;
+using HellsChicken.Scripts.Game.Audio;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Networking;
@@ -85,7 +86,8 @@ namespace HellsChicken.Scripts.Game.UI.Menu
             LevelManager.Instance.DestroyLevelManagerInstance();
             GameAudioManager.Instance.DestroyGameAudioManagerInstance(transitionTime - 0.05f);
             Time.timeScale = 1f;
-            EventManager.TriggerEvent("stopGameSoundtrack");
+            //EventManager.TriggerEvent("stopGameSoundtrack");
+            EventManager.TriggerEvent("stopAllMusics");
             StartCoroutine(LoadSceneWithFading("MainMenu")); 
         }
 
