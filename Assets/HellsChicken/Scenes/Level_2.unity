@@ -1095,7 +1095,7 @@ PrefabInstance:
     - target: {fileID: 88608522178717860, guid: 83638049e636e1d41b755488f9e930d3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.33
+      value: -1.91
       objectReference: {fileID: 0}
     - target: {fileID: 88608522178717860, guid: 83638049e636e1d41b755488f9e930d3,
         type: 3}
@@ -3066,7 +3066,7 @@ PrefabInstance:
     - target: {fileID: 636059363752288124, guid: 5d871d381fc88594ba1aadbb9e975e65,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 139.61
+      value: 141.02
       objectReference: {fileID: 0}
     - target: {fileID: 636059363752288124, guid: 5d871d381fc88594ba1aadbb9e975e65,
         type: 3}
@@ -7157,7 +7157,7 @@ PrefabInstance:
     - target: {fileID: 4100157078927945596, guid: 10eea92f4e27b1b4c8af1ca7409328ff,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1163.3
+      value: 1169.37
       objectReference: {fileID: 0}
     - target: {fileID: 4100157078927945596, guid: 10eea92f4e27b1b4c8af1ca7409328ff,
         type: 3}
@@ -10698,6 +10698,16 @@ PrefabInstance:
     - target: {fileID: 1678584872, guid: 227ada61d7df1464689fe30c777ea3a1, type: 3}
       propertyPath: gravityModifier
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 43658709609797273, guid: 227ada61d7df1464689fe30c777ea3a1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 43658709609797273, guid: 227ada61d7df1464689fe30c777ea3a1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lava
       objectReference: {fileID: 0}
     - target: {fileID: 282003747757302946, guid: 227ada61d7df1464689fe30c777ea3a1,
         type: 3}
