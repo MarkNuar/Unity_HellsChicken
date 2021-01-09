@@ -17,7 +17,7 @@ public class DemonBossController : MonoBehaviour
     [SerializeField] private GameObject _chestDamageText;
     [SerializeField] private GameObject _headDamageText;
     [SerializeField] private GameObject _flameDamageText;
-
+    
 
     public GameObject healthBarCanvas;
     public HealthBarScript _healthBar;
@@ -26,6 +26,7 @@ public class DemonBossController : MonoBehaviour
     public Transform player;
 
 
+    private List<GameObject> _textInstances;
     private GameObject _textInstance;
     private GameObject bossSpine;
     private GameObject bossHead;
@@ -49,7 +50,7 @@ public class DemonBossController : MonoBehaviour
     public void Start()
     {
         _enableFlameDamage = true;
-        
+        _textInstances = new List<GameObject>();
         bossSpine = GameObject.Find("DEMON_LORD_ Spine");
         bossHead = GameObject.Find("DEMON_LORD_ Head");
         bossSword = GameObject.Find("DEMON_LORD_SWORD");
@@ -139,7 +140,6 @@ public class DemonBossController : MonoBehaviour
         bossWhip03.GetComponent<CapsuleCollider>().enabled = false;
         bossWhip04.GetComponent<CapsuleCollider>().enabled = false;
         bossWhip05.GetComponent<CapsuleCollider>().enabled = false;
-        Destroy(_textInstance);
         EventManager.TriggerEvent("keyDrop");
     }
 
@@ -147,7 +147,8 @@ public class DemonBossController : MonoBehaviour
     {
         yield return new WaitForSeconds(timer);
         anim.ResetTrigger("isDamaged");
-        Destroy(_textInstance);
+        Destroy(_textInstances[0]);
+        _textInstances.RemoveAt(0);
     }
 
     private void ActivateHealthBar()
@@ -171,7 +172,7 @@ public class DemonBossController : MonoBehaviour
         _healthBar.SetHealth(_currentHealth);
         EventManager.TriggerEvent("demonDamage");
         anim.SetTrigger("isDamaged");
-        _textInstance = Instantiate(_headDamageText, gameObject.transform.position + new Vector3(0f, 15f, 0), Quaternion.identity);
+        _textInstances.Add(Instantiate(_headDamageText, gameObject.transform.position + new Vector3(0f, 15f, 0), Quaternion.identity));
         StartCoroutine(ResetTriggerAndText(1.0f));
     }
 
@@ -181,7 +182,7 @@ public class DemonBossController : MonoBehaviour
         _healthBar.SetHealth(_currentHealth);
         EventManager.TriggerEvent("demonDamage");
         anim.SetTrigger("isDamaged");
-        _textInstance = Instantiate(_chestDamageText, gameObject.transform.position + new Vector3(0f, 15f, 0), Quaternion.identity);
+        _textInstances.Add(Instantiate(_chestDamageText, gameObject.transform.position + new Vector3(0f, 15f, 0), Quaternion.identity));
         StartCoroutine(ResetTriggerAndText(1.0f));
     }
     
@@ -195,7 +196,7 @@ public class DemonBossController : MonoBehaviour
             _healthBar.SetHealth(_currentHealth);
             EventManager.TriggerEvent("demonDamage");
             anim.SetTrigger("isDamaged");
-            _textInstance = Instantiate(_flameDamageText, gameObject.transform.position + new Vector3(0f, 15f, 0), Quaternion.identity);
+            _textInstances.Add(Instantiate(_flameDamageText, gameObject.transform.position + new Vector3(0f, 15f, 0), Quaternion.identity));
             StartCoroutine(ResetTriggerAndText(1.0f));
         }
     }

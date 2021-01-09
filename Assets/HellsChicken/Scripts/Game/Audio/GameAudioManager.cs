@@ -23,7 +23,6 @@ namespace HellsChicken.Scripts.Game.Audio
             if (Instance == null)
             {
                 _audioSources = new List<AudioSource> {gameAudioSource, bossAudioSource};
-                Debug.Log("audio sources: "+_audioSources.Count);
                 
                 EventManager.StartListening("startGameSoundtrack",StartGameSoundtrack);
                 EventManager.StartListening("stopGameSoundtrack",StopGameSoundtrack);
