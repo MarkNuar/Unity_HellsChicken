@@ -65,8 +65,7 @@ namespace HellsChicken.Scripts.Game.Audio
             EventManager.StopListening("startBossMusic",StartBossMusic);
             bossAudioSource.clip = bossSoundtrack;
             bossAudioSource.loop = true;
-            if(!bossAudioSource.isPlaying)
-                bossAudioSource.Play();
+            bossAudioSource.Play();
             StartCoroutine(StartFade(bossAudioSource, 2f, 1));
             EventManager.StartListening("startBossMusic",StartBossMusic);
         }
