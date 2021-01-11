@@ -1,4 +1,5 @@
 ﻿using EventManagerNamespace;
+using HellsChicken.Scripts.Game.UI.Menu;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +16,8 @@ namespace HellsChicken.Scripts.Game.UI.Health
         private const float SpaceBetweenHearts = 0.06f;
         private Image[] _hearts;
         public Animator transition;
-        
+
+        public PauseMenu pauseMenuRef;
         private void OnEnable()
         {
             EventManager.StartListening("DecreasePlayerHealth",DecreaseHealth);
@@ -111,6 +113,7 @@ namespace HellsChicken.Scripts.Game.UI.Health
             _health = 0;
             Updating();
             transition.SetTrigger("Start");
+            pauseMenuRef.DisablePause();
             EventManager.StartListening("KillPlayer",KillPlayer);
         }
     

@@ -29,17 +29,27 @@ namespace HellsChicken.Scripts.Game.UI.Menu
         private Animator _transitionAnimator;
         private CanvasGroup _transitionGroup;
         
+        private bool _pauseEnabled;
+        
         private void Start()
         {
+            _pauseEnabled = false;
+            StartCoroutine(EnablePauseMenu());
             _transitionAnimator = transition.GetComponent<Animator>();
             _transitionGroup = transition.GetComponent<CanvasGroup>();
             _gameIsPaused = false;
         }
 
+        private IEnumerator EnablePauseMenu()
+        {
+            yield return new WaitForSeconds(.5f);
+            _pauseEnabled = true;
+        }
+
         // Update is called once per frame
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape) && _pauseEnabled)
             {
                 if (_gameIsPaused)
                 {
@@ -82,6 +92,7 @@ namespace HellsChicken.Scripts.Game.UI.Menu
         
         public void MainMenu()
         {
+            _pauseEnabled = false;
             TimerUI.Instance.DestroyTimerUI(transitionTime - 0.05f);
             LevelManager.Instance.DestroyLevelManagerInstance();
             GameAudioManager.Instance.DestroyGameAudioManagerInstance(transitionTime - 0.05f);
@@ -95,7 +106,30 @@ namespace HellsChicken.Scripts.Game.UI.Menu
         {
             return _gameIsPaused;
         }
-        
+
+        public void DisablePause()
+        {
+            StartCoroutine(DisablePauseMenu());
+        }
+
+        private IEnumerator DisablePauseMenu()
+        {
+            yield return new WaitForSeconds(0.5f);
+            _pauseEnabled = false;
+        }
+
+        public void RestartLevel()
+        {
+            _pauseEnabled = false;
+            var curLevel = LevelManager.Instance.levelNumber;
+            TimerUI.Instance.DestroyTimerUI(transitionTime - 0.05f);
+            LevelManager.Instance.DestroyLevelManagerInstance();
+            GameAudioManager.Instance.DestroyGameAudioManagerInstance(transitionTime - 0.05f);
+            Time.timeScale = 1f;
+            EventManager.TriggerEvent("stopAllMusics");
+            StartCoroutine(LoadSceneWithFading("Level_"+curLevel));
+        }
+
         public void SendFeedback()
         {
             var feedback = tmpInputField.text;
