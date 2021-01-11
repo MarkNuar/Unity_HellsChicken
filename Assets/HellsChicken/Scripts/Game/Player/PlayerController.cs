@@ -729,10 +729,12 @@ namespace HellsChicken.Scripts.Game.Player
 
         private void Death()
         {
+            EventManager.StopListening("PlayerDeath", Death);
             //TODO: if death, it should only respawn player and destroyed object
             _dissolve.Dead = true;
             gameObject.layer = LayerMask.NameToLayer("ImmunePlayer");
             enabled = false;
+            EventManager.StartListening("PlayerDeath", Death);
         }
 
         private IEnumerator EnableFlames(float time)

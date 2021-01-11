@@ -34,7 +34,7 @@ namespace HellsChicken.Scripts.Game.Player
             {
                 if (i < 1) 
                 {
-                    i += 0.006f;
+                    i += 0.011f;
                     _material.SetFloat("dissolveTime", i);
                     foreach (Renderer r in othersMaterials) 
                     {
@@ -50,7 +50,7 @@ namespace HellsChicken.Scripts.Game.Player
             {
                 if (i > 0) 
                 {
-                    i -= 0.01f;
+                    i -= 0.011f;
                     _material.SetFloat("dissolveTime", i);
                 
                     foreach (Renderer r in othersMaterials) 
