@@ -770,6 +770,10 @@ namespace HellsChicken.Scripts.Game.Player
             {
                 StartCoroutine(ImmunityTimer(immunityDuration));
             }
+            else
+            {
+                _isDead = true;
+            }
 
             EventManager.TriggerEvent("DecreasePlayerHealth");
             EventManager.StartListening("StartImmunityCoroutine", StartImmunityCoroutine);

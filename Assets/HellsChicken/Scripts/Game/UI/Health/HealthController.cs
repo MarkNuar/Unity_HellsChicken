@@ -65,6 +65,7 @@ namespace HellsChicken.Scripts.Game.UI.Health
             
             if (_health == 0)
             {
+                pauseMenuRef.DisablePause();
                 EventManager.TriggerEvent("chickenDeath");
                 EventManager.TriggerEvent("PlayerDeath");
                 transition.SetTrigger("Start");
@@ -74,25 +75,19 @@ namespace HellsChicken.Scripts.Game.UI.Health
         private void IncreaseHealth()
         {
             EventManager.StopListening("IncreasePlayerHealth",IncreaseHealth);
-            
             if (_health < numberOfHearts)
                 _health++;
             Updating();
-            
             EventManager.StartListening("IncreasePlayerHealth",IncreaseHealth);
         }
 
         private void DecreaseHealth()
         {
             EventManager.StopListening("DecreasePlayerHealth",DecreaseHealth);
-
             if (_health > 1)
                 EventManager.TriggerEvent("chickenDamage");
-
             if (_health > 0)
                 _health--;
-            
-
             Updating();
             EventManager.StartListening("DecreasePlayerHealth",DecreaseHealth);
         }
@@ -100,10 +95,8 @@ namespace HellsChicken.Scripts.Game.UI.Health
         private void RefillHealth()
         {
             EventManager.StopListening("RefillPlayerHealth", RefillHealth);
-            
             _health = numberOfHearts;
             Updating();
-            
             EventManager.StartListening("RefillPlayerHealth", RefillHealth);
         }
 
@@ -113,7 +106,6 @@ namespace HellsChicken.Scripts.Game.UI.Health
             _health = 0;
             Updating();
             transition.SetTrigger("Start");
-            pauseMenuRef.DisablePause();
             EventManager.StartListening("KillPlayer",KillPlayer);
         }
     
